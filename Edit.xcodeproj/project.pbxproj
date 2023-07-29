@@ -15,6 +15,8 @@
 		C9FE52BF2A7525D300CACA1A /* EditUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE52BE2A7525D300CACA1A /* EditUITestsLaunchTests.swift */; };
 		C9FE52E32A7533FE00CACA1A /* libDocument.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE52D42A7532C700CACA1A /* libDocument.a */; };
 		C9FE52E42A75343C00CACA1A /* TextDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE529E2A7525D000CACA1A /* TextDocument.swift */; };
+		C9FE52EA2A75377200CACA1A /* ContainedDocument in Frameworks */ = {isa = PBXBuildFile; productRef = C9FE52E92A75377200CACA1A /* ContainedDocument */; };
+		C9FE52EE2A7537AC00CACA1A /* ProjectDocumentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE52ED2A7537AC00CACA1A /* ProjectDocumentController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,7 @@
 		C9FE52CB2A7526C000CACA1A /* Project.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Project.xcconfig; sourceTree = "<group>"; };
 		C9FE52CC2A752B4D00CACA1A /* Edit.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Edit.xcconfig; sourceTree = "<group>"; };
 		C9FE52D42A7532C700CACA1A /* libDocument.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDocument.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9FE52ED2A7537AC00CACA1A /* ProjectDocumentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectDocumentController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +68,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9FE52E32A7533FE00CACA1A /* libDocument.a in Frameworks */,
+				C9FE52EA2A75377200CACA1A /* ContainedDocument in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,6 +169,7 @@
 		C9FE52DD2A7532D500CACA1A /* Document */ = {
 			isa = PBXGroup;
 			children = (
+				C9FE52ED2A7537AC00CACA1A /* ProjectDocumentController.swift */,
 				C9FE529E2A7525D000CACA1A /* TextDocument.swift */,
 			);
 			path = Document;
@@ -204,6 +209,9 @@
 				C9FE52DF2A7533BA00CACA1A /* PBXTargetDependency */,
 			);
 			name = Edit;
+			packageProductDependencies = (
+				C9FE52E92A75377200CACA1A /* ContainedDocument */,
+			);
 			productName = Edit;
 			productReference = C9FE52992A7525D000CACA1A /* Chime.app */;
 			productType = "com.apple.product-type.application";
@@ -255,8 +263,11 @@
 			buildRules = (
 			);
 			dependencies = (
+				C9FE52EC2A75378000CACA1A /* PBXTargetDependency */,
 			);
 			name = Document;
+			packageProductDependencies = (
+			);
 			productName = Document;
 			productReference = C9FE52D42A7532C700CACA1A /* libDocument.a */;
 			productType = "com.apple.product-type.library.static";
@@ -296,6 +307,9 @@
 				Base,
 			);
 			mainGroup = C9FE52902A7525D000CACA1A;
+			packageReferences = (
+				C9FE52E62A75375300CACA1A /* XCRemoteSwiftPackageReference "ContainedDocument" */,
+			);
 			productRefGroup = C9FE529A2A7525D000CACA1A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -364,6 +378,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9FE52EE2A7537AC00CACA1A /* ProjectDocumentController.swift in Sources */,
 				C9FE52E42A75343C00CACA1A /* TextDocument.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -385,6 +400,10 @@
 			isa = PBXTargetDependency;
 			target = C9FE52D32A7532C700CACA1A /* Document */;
 			targetProxy = C9FE52DE2A7533BA00CACA1A /* PBXContainerItemProxy */;
+		};
+		C9FE52EC2A75378000CACA1A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = C9FE52EB2A75378000CACA1A /* ContainedDocument */;
 		};
 /* End PBXTargetDependency section */
 
@@ -662,6 +681,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C9FE52E62A75375300CACA1A /* XCRemoteSwiftPackageReference "ContainedDocument" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ChimeHQ/ContainedDocument.git";
+			requirement = {
+				kind = revision;
+				revision = 70071cab32b9288097b15a816696a08c110a32ff;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C9FE52E92A75377200CACA1A /* ContainedDocument */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C9FE52E62A75375300CACA1A /* XCRemoteSwiftPackageReference "ContainedDocument" */;
+			productName = ContainedDocument;
+		};
+		C9FE52EB2A75378000CACA1A /* ContainedDocument */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C9FE52E62A75375300CACA1A /* XCRemoteSwiftPackageReference "ContainedDocument" */;
+			productName = ContainedDocument;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C9FE52912A7525D000CACA1A /* Project object */;
 }

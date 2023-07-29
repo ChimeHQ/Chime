@@ -1,0 +1,13 @@
+{
+  "pins" : [
+    {
+      "identity" : "containeddocument",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ChimeHQ/ContainedDocument.git",
+      "state" : {
+        "revision" : "70071cab32b9288097b15a816696a08c110a32ff"
+      }
+    }
+  ],
+  "version" : 2
+}

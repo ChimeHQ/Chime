@@ -1,13 +1,22 @@
 import AppKit
 
+import Document
+
 @main
+@MainActor
 final class AppDelegate: NSObject, NSApplicationDelegate {
+	private let documentController: ProjectDocumentController
+
+	override init() {
+		// NSDocumentController subclass instances must be manually created before any NSDocumentController functionality is used
+		self.documentController = ProjectDocumentController()
+
+	}
+
 	func applicationDidFinishLaunching(_ aNotification: Notification) {
-		// Insert code here to initialize your application
 	}
 
 	func applicationWillTerminate(_ aNotification: Notification) {
-		// Insert code here to tear down your application
 	}
 
 	func applicationSupportsSecureRestorableState(_ app: NSApplication) -> Bool {
