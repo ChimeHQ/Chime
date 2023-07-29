@@ -28,6 +28,7 @@
 		C9FE53302A75A1C100CACA1A /* RepresentableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE532E2A75A1C100CACA1A /* RepresentableViewController.swift */; };
 		C9FE53332A75A22800CACA1A /* libUIUtility.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE53232A75A17700CACA1A /* libUIUtility.a */; };
 		C9FE53362A75A40400CACA1A /* libProjectWindow.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE530E2A759ADA00CACA1A /* libProjectWindow.a */; };
+		C9FE533B2A75A76000CACA1A /* WindowTreatment in Frameworks */ = {isa = PBXBuildFile; productRef = C9FE533A2A75A76000CACA1A /* WindowTreatment */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +132,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9FE53362A75A40400CACA1A /* libProjectWindow.a in Frameworks */,
+				C9FE533B2A75A76000CACA1A /* WindowTreatment in Frameworks */,
 				C9FE53332A75A22800CACA1A /* libUIUtility.a in Frameworks */,
 				C9FE52FA2A7539B100CACA1A /* ChimeKit.framework in Frameworks */,
 				C9FE52E32A7533FE00CACA1A /* libDocument.a in Frameworks */,
@@ -356,6 +358,7 @@
 			name = Edit;
 			packageProductDependencies = (
 				C9FE52E92A75377200CACA1A /* ContainedDocument */,
+				C9FE533A2A75A76000CACA1A /* WindowTreatment */,
 			);
 			productName = Edit;
 			productReference = C9FE52992A7525D000CACA1A /* Chime.app */;
@@ -452,9 +455,12 @@
 			buildRules = (
 			);
 			dependencies = (
+				C9FE533D2A75A76A00CACA1A /* PBXTargetDependency */,
 				C9FE53322A75A21E00CACA1A /* PBXTargetDependency */,
 			);
 			name = ProjectWindow;
+			packageProductDependencies = (
+			);
 			productName = ProjectWindow;
 			productReference = C9FE530E2A759ADA00CACA1A /* libProjectWindow.a */;
 			productType = "com.apple.product-type.library.static";
@@ -525,6 +531,7 @@
 			packageReferences = (
 				C9FE52E62A75375300CACA1A /* XCRemoteSwiftPackageReference "ContainedDocument" */,
 				C9FE53002A753A3D00CACA1A /* XCRemoteSwiftPackageReference "ChimeKit" */,
+				C9FE53372A75A75400CACA1A /* XCRemoteSwiftPackageReference "WindowTreatment" */,
 			);
 			productRefGroup = C9FE529A2A7525D000CACA1A /* Products */;
 			projectDirPath = "";
@@ -681,6 +688,10 @@
 			isa = PBXTargetDependency;
 			target = C9FE530D2A759ADA00CACA1A /* ProjectWindow */;
 			targetProxy = C9FE53342A75A30E00CACA1A /* PBXContainerItemProxy */;
+		};
+		C9FE533D2A75A76A00CACA1A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = C9FE533C2A75A76A00CACA1A /* WindowTreatment */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1083,6 +1094,14 @@
 				revision = 6dd3247e9571ba67808bbb0d1a5576c478394ba6;
 			};
 		};
+		C9FE53372A75A75400CACA1A /* XCRemoteSwiftPackageReference "WindowTreatment" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ChimeHQ/WindowTreatment.git";
+			requirement = {
+				kind = revision;
+				revision = eb4bc3fe8da7da24c2aa602879a06d74fca9b79b;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1105,6 +1124,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C9FE53002A753A3D00CACA1A /* XCRemoteSwiftPackageReference "ChimeKit" */;
 			productName = ChimeKit;
+		};
+		C9FE533A2A75A76000CACA1A /* WindowTreatment */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C9FE53372A75A75400CACA1A /* XCRemoteSwiftPackageReference "WindowTreatment" */;
+			productName = WindowTreatment;
+		};
+		C9FE533C2A75A76A00CACA1A /* WindowTreatment */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C9FE53372A75A75400CACA1A /* XCRemoteSwiftPackageReference "WindowTreatment" */;
+			productName = WindowTreatment;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

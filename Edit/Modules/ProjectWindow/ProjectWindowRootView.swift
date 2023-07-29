@@ -1,7 +1,10 @@
 import SwiftUI
 
+import WindowTreatment
+
 struct ProjectWindowRootView<Content: View>: View {
-	@State var syncModel = WindowStateSynchronizationModel()
+	@State private var syncModel = WindowStateSynchronizationModel()
+	@Environment(\.controlActiveState) private var controlActiveState
 
 	let content: Content
 
@@ -15,5 +18,7 @@ struct ProjectWindowRootView<Content: View>: View {
 			content
 			Text("the root view")
 		}
+		.observeWindowTabBarState()
+		.onChange(of: controlActiveState) { syncModel.controlActiveState = $1 }
 	}
 }
