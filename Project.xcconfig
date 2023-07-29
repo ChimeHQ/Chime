@@ -1,0 +1,28 @@
+#include "User.xcconfig"
+
+// Primary behaviors
+MACOSX_DEPLOYMENT_TARGET = 14.0
+ENABLE_HARDENED_RUNTIME = YES
+DEAD_CODE_STRIPPING = YES
+SWIFT_STRICT_CONCURRENCY = complete
+SWIFT_VERSION = 5.0
+CODE_SIGN_STYLE = Automatic
+CODE_SIGN_IDENTITY = Apple Development
+
+// Version information
+CURRENT_PROJECT_VERSION = 151
+CURRENT_PROJECT_DISPLAY_VERSION = 3.0.0
+MARKETING_VERSION = $CURRENT_PROJECT_DISPLAY_VERSION
+INFOPLIST_KEY_NSHumanReadableCopyright = Copyright © 2023 Chime Systems Inc. All rights reserved.
+
+// Secondary behaviors
+GCC_PREPROCESSOR_DEFINITIONS[config=Debug] = DEBUG=1 $(inherited)
+SWIFT_ACTIVE_COMPILATION_CONDITIONS[config=Debug] = DEBUG $(inherited)
+SWIFT_COMPILATION_MODE[config=Release] = wholemodule
+SWIFT_OPTIMIZATION_LEVEL[config=Debug] = -Onone
+
+// Modern recommendations, but not critical
+ALWAYS_SEARCH_USER_PATHS = NO
+CLANG_ENABLE_MODULES = YES
+CLANG_ENABLE_OBJC_ARC = YES
+CLANG_ENABLE_OBJC_WEAK = YES

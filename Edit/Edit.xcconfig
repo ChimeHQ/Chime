@@ -1,0 +1,10 @@
+INFOPLIST_FILE = Edit/Resources/Info.plist
+CODE_SIGN_ENTITLEMENTS = Edit/Resources/Edit.entitlements
+GENERATE_INFOPLIST_FILE = YES
+INFOPLIST_KEY_NSMainNibFile = MainMenu
+
+PRODUCT_NAME = Chime
+PRODUCT_MODULE_NAME = Edit
+PRODUCT_BUNDLE_IDENTIFIER = com.chimehq.Edit
+
+LD_RUNPATH_SEARCH_PATHS = $(inherited) @executable_path/../Frameworks
