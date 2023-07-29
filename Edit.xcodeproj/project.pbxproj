@@ -17,6 +17,17 @@
 		C9FE52E42A75343C00CACA1A /* TextDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE529E2A7525D000CACA1A /* TextDocument.swift */; };
 		C9FE52EA2A75377200CACA1A /* ContainedDocument in Frameworks */ = {isa = PBXBuildFile; productRef = C9FE52E92A75377200CACA1A /* ContainedDocument */; };
 		C9FE52EE2A7537AC00CACA1A /* ProjectDocumentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE52ED2A7537AC00CACA1A /* ProjectDocumentController.swift */; };
+		C9FE52FA2A7539B100CACA1A /* ChimeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE52F42A7539B100CACA1A /* ChimeKit.framework */; };
+		C9FE52FC2A7539B100CACA1A /* ChimeKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE52F42A7539B100CACA1A /* ChimeKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C9FE53022A753A3D00CACA1A /* ChimeKit in Frameworks */ = {isa = PBXBuildFile; productRef = C9FE53012A753A3D00CACA1A /* ChimeKit */; };
+		C9FE53092A753B5500CACA1A /* ProjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE53082A753B5500CACA1A /* ProjectModel.swift */; };
+		C9FE53192A759AFE00CACA1A /* ProjectWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE53182A759AFE00CACA1A /* ProjectWindowController.swift */; };
+		C9FE531C2A759CE400CACA1A /* WindowStateSynchronizationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE531B2A759CE400CACA1A /* WindowStateSynchronizationModel.swift */; };
+		C9FE531E2A759F4C00CACA1A /* ProjectWindowRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE531D2A759F4C00CACA1A /* ProjectWindowRootView.swift */; };
+		C9FE532F2A75A1C100CACA1A /* RepresentableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE532D2A75A1C100CACA1A /* RepresentableView.swift */; };
+		C9FE53302A75A1C100CACA1A /* RepresentableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE532E2A75A1C100CACA1A /* RepresentableViewController.swift */; };
+		C9FE53332A75A22800CACA1A /* libUIUtility.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE53232A75A17700CACA1A /* libUIUtility.a */; };
+		C9FE53362A75A40400CACA1A /* libProjectWindow.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE530E2A759ADA00CACA1A /* libProjectWindow.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +52,49 @@
 			remoteGlobalIDString = C9FE52D32A7532C700CACA1A;
 			remoteInfo = Document;
 		};
+		C9FE52F82A7539B100CACA1A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9FE52F32A7539B100CACA1A;
+			remoteInfo = ChimeKit;
+		};
+		C9FE53052A753B2600CACA1A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9FE52F32A7539B100CACA1A;
+			remoteInfo = ChimeKit;
+		};
+		C9FE53312A75A21E00CACA1A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9FE53222A75A17700CACA1A;
+			remoteInfo = UIUtility;
+		};
+		C9FE53342A75A30E00CACA1A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9FE530D2A759ADA00CACA1A;
+			remoteInfo = ProjectWindow;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C9FE52FB2A7539B100CACA1A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C9FE52FC2A7539B100CACA1A /* ChimeKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		C9FE52992A7525D000CACA1A /* Chime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chime.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -60,6 +113,16 @@
 		C9FE52CC2A752B4D00CACA1A /* Edit.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Edit.xcconfig; sourceTree = "<group>"; };
 		C9FE52D42A7532C700CACA1A /* libDocument.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDocument.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9FE52ED2A7537AC00CACA1A /* ProjectDocumentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectDocumentController.swift; sourceTree = "<group>"; };
+		C9FE52F42A7539B100CACA1A /* ChimeKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ChimeKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9FE53082A753B5500CACA1A /* ProjectModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectModel.swift; sourceTree = "<group>"; };
+		C9FE530E2A759ADA00CACA1A /* libProjectWindow.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libProjectWindow.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9FE53182A759AFE00CACA1A /* ProjectWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectWindowController.swift; sourceTree = "<group>"; };
+		C9FE531A2A759BC400CACA1A /* StaticLib.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = StaticLib.xcconfig; sourceTree = "<group>"; };
+		C9FE531B2A759CE400CACA1A /* WindowStateSynchronizationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowStateSynchronizationModel.swift; sourceTree = "<group>"; };
+		C9FE531D2A759F4C00CACA1A /* ProjectWindowRootView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectWindowRootView.swift; sourceTree = "<group>"; };
+		C9FE53232A75A17700CACA1A /* libUIUtility.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libUIUtility.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9FE532D2A75A1C100CACA1A /* RepresentableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepresentableView.swift; sourceTree = "<group>"; };
+		C9FE532E2A75A1C100CACA1A /* RepresentableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepresentableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +130,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9FE53362A75A40400CACA1A /* libProjectWindow.a in Frameworks */,
+				C9FE53332A75A22800CACA1A /* libUIUtility.a in Frameworks */,
+				C9FE52FA2A7539B100CACA1A /* ChimeKit.framework in Frameworks */,
 				C9FE52E32A7533FE00CACA1A /* libDocument.a in Frameworks */,
 				C9FE52EA2A75377200CACA1A /* ContainedDocument in Frameworks */,
 			);
@@ -93,6 +159,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C9FE52F12A7539B100CACA1A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9FE53022A753A3D00CACA1A /* ChimeKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9FE530C2A759ADA00CACA1A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9FE53212A75A17700CACA1A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -100,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				C9FE52CB2A7526C000CACA1A /* Project.xcconfig */,
+				C9FE531A2A759BC400CACA1A /* StaticLib.xcconfig */,
 				C9FE529B2A7525D000CACA1A /* Edit */,
 				C9FE52B12A7525D300CACA1A /* EditTests */,
 				C9FE52BB2A7525D300CACA1A /* EditUITests */,
@@ -115,6 +204,9 @@
 				C9FE52AE2A7525D300CACA1A /* EditTests.xctest */,
 				C9FE52B82A7525D300CACA1A /* EditUITests.xctest */,
 				C9FE52D42A7532C700CACA1A /* libDocument.a */,
+				C9FE52F42A7539B100CACA1A /* ChimeKit.framework */,
+				C9FE530E2A759ADA00CACA1A /* libProjectWindow.a */,
+				C9FE53232A75A17700CACA1A /* libUIUtility.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -161,6 +253,8 @@
 		C9FE52CF2A75323800CACA1A /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				C9FE532C2A75A18500CACA1A /* UIUtility */,
+				C9FE53172A759AE800CACA1A /* ProjectWindow */,
 				C9FE52DD2A7532D500CACA1A /* Document */,
 			);
 			path = Modules;
@@ -169,6 +263,7 @@
 		C9FE52DD2A7532D500CACA1A /* Document */ = {
 			isa = PBXGroup;
 			children = (
+				C9FE53072A753B3D00CACA1A /* Models */,
 				C9FE52ED2A7537AC00CACA1A /* ProjectDocumentController.swift */,
 				C9FE529E2A7525D000CACA1A /* TextDocument.swift */,
 			);
@@ -182,10 +277,58 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C9FE53072A753B3D00CACA1A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C9FE53082A753B5500CACA1A /* ProjectModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C9FE53172A759AE800CACA1A /* ProjectWindow */ = {
+			isa = PBXGroup;
+			children = (
+				C9FE531B2A759CE400CACA1A /* WindowStateSynchronizationModel.swift */,
+				C9FE53182A759AFE00CACA1A /* ProjectWindowController.swift */,
+				C9FE531D2A759F4C00CACA1A /* ProjectWindowRootView.swift */,
+			);
+			path = ProjectWindow;
+			sourceTree = "<group>";
+		};
+		C9FE532C2A75A18500CACA1A /* UIUtility */ = {
+			isa = PBXGroup;
+			children = (
+				C9FE532E2A75A1C100CACA1A /* RepresentableViewController.swift */,
+				C9FE532D2A75A1C100CACA1A /* RepresentableView.swift */,
+			);
+			path = UIUtility;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
 		C9FE52D02A7532C700CACA1A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9FE52EF2A7539B100CACA1A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9FE530A2A759ADA00CACA1A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9FE531F2A75A17700CACA1A /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -202,11 +345,13 @@
 				C9FE52952A7525D000CACA1A /* Sources */,
 				C9FE52962A7525D000CACA1A /* Frameworks */,
 				C9FE52972A7525D000CACA1A /* Resources */,
+				C9FE52FB2A7539B100CACA1A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				C9FE52DF2A7533BA00CACA1A /* PBXTargetDependency */,
+				C9FE52F92A7539B100CACA1A /* PBXTargetDependency */,
 			);
 			name = Edit;
 			packageProductDependencies = (
@@ -263,6 +408,8 @@
 			buildRules = (
 			);
 			dependencies = (
+				C9FE53352A75A30E00CACA1A /* PBXTargetDependency */,
+				C9FE53062A753B2600CACA1A /* PBXTargetDependency */,
 				C9FE52EC2A75378000CACA1A /* PBXTargetDependency */,
 			);
 			name = Document;
@@ -270,6 +417,63 @@
 			);
 			productName = Document;
 			productReference = C9FE52D42A7532C700CACA1A /* libDocument.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		C9FE52F32A7539B100CACA1A /* ChimeKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C9FE52FD2A7539B100CACA1A /* Build configuration list for PBXNativeTarget "ChimeKit" */;
+			buildPhases = (
+				C9FE52EF2A7539B100CACA1A /* Headers */,
+				C9FE52F02A7539B100CACA1A /* Sources */,
+				C9FE52F12A7539B100CACA1A /* Frameworks */,
+				C9FE52F22A7539B100CACA1A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C9FE53042A753A4E00CACA1A /* PBXTargetDependency */,
+			);
+			name = ChimeKit;
+			packageProductDependencies = (
+				C9FE53012A753A3D00CACA1A /* ChimeKit */,
+			);
+			productName = ChimeKit;
+			productReference = C9FE52F42A7539B100CACA1A /* ChimeKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		C9FE530D2A759ADA00CACA1A /* ProjectWindow */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C9FE53142A759ADA00CACA1A /* Build configuration list for PBXNativeTarget "ProjectWindow" */;
+			buildPhases = (
+				C9FE530A2A759ADA00CACA1A /* Headers */,
+				C9FE530B2A759ADA00CACA1A /* Sources */,
+				C9FE530C2A759ADA00CACA1A /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C9FE53322A75A21E00CACA1A /* PBXTargetDependency */,
+			);
+			name = ProjectWindow;
+			productName = ProjectWindow;
+			productReference = C9FE530E2A759ADA00CACA1A /* libProjectWindow.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		C9FE53222A75A17700CACA1A /* UIUtility */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C9FE53292A75A17700CACA1A /* Build configuration list for PBXNativeTarget "UIUtility" */;
+			buildPhases = (
+				C9FE531F2A75A17700CACA1A /* Headers */,
+				C9FE53202A75A17700CACA1A /* Sources */,
+				C9FE53212A75A17700CACA1A /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UIUtility;
+			productName = UIUtility;
+			productReference = C9FE53232A75A17700CACA1A /* libUIUtility.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -296,6 +500,17 @@
 					C9FE52D32A7532C700CACA1A = {
 						CreatedOnToolsVersion = 15.0;
 					};
+					C9FE52F32A7539B100CACA1A = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					C9FE530D2A759ADA00CACA1A = {
+						CreatedOnToolsVersion = 15.0;
+						LastSwiftMigration = 1500;
+					};
+					C9FE53222A75A17700CACA1A = {
+						CreatedOnToolsVersion = 15.0;
+						LastSwiftMigration = 1500;
+					};
 				};
 			};
 			buildConfigurationList = C9FE52942A7525D000CACA1A /* Build configuration list for PBXProject "Edit" */;
@@ -309,15 +524,19 @@
 			mainGroup = C9FE52902A7525D000CACA1A;
 			packageReferences = (
 				C9FE52E62A75375300CACA1A /* XCRemoteSwiftPackageReference "ContainedDocument" */,
+				C9FE53002A753A3D00CACA1A /* XCRemoteSwiftPackageReference "ChimeKit" */,
 			);
 			productRefGroup = C9FE529A2A7525D000CACA1A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				C9FE52982A7525D000CACA1A /* Edit */,
+				C9FE52F32A7539B100CACA1A /* ChimeKit */,
 				C9FE52AD2A7525D300CACA1A /* EditTests */,
 				C9FE52B72A7525D300CACA1A /* EditUITests */,
 				C9FE52D32A7532C700CACA1A /* Document */,
+				C9FE530D2A759ADA00CACA1A /* ProjectWindow */,
+				C9FE53222A75A17700CACA1A /* UIUtility */,
 			);
 		};
 /* End PBXProject section */
@@ -340,6 +559,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		C9FE52B62A7525D300CACA1A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9FE52F22A7539B100CACA1A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -379,7 +605,34 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9FE52EE2A7537AC00CACA1A /* ProjectDocumentController.swift in Sources */,
+				C9FE53092A753B5500CACA1A /* ProjectModel.swift in Sources */,
 				C9FE52E42A75343C00CACA1A /* TextDocument.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9FE52F02A7539B100CACA1A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9FE530B2A759ADA00CACA1A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9FE531C2A759CE400CACA1A /* WindowStateSynchronizationModel.swift in Sources */,
+				C9FE531E2A759F4C00CACA1A /* ProjectWindowRootView.swift in Sources */,
+				C9FE53192A759AFE00CACA1A /* ProjectWindowController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9FE53202A75A17700CACA1A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9FE532F2A75A1C100CACA1A /* RepresentableView.swift in Sources */,
+				C9FE53302A75A1C100CACA1A /* RepresentableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -404,6 +657,30 @@
 		C9FE52EC2A75378000CACA1A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			productRef = C9FE52EB2A75378000CACA1A /* ContainedDocument */;
+		};
+		C9FE52F92A7539B100CACA1A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9FE52F32A7539B100CACA1A /* ChimeKit */;
+			targetProxy = C9FE52F82A7539B100CACA1A /* PBXContainerItemProxy */;
+		};
+		C9FE53042A753A4E00CACA1A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = C9FE53032A753A4E00CACA1A /* ChimeKit */;
+		};
+		C9FE53062A753B2600CACA1A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9FE52F32A7539B100CACA1A /* ChimeKit */;
+			targetProxy = C9FE53052A753B2600CACA1A /* PBXContainerItemProxy */;
+		};
+		C9FE53322A75A21E00CACA1A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9FE53222A75A17700CACA1A /* UIUtility */;
+			targetProxy = C9FE53312A75A21E00CACA1A /* PBXContainerItemProxy */;
+		};
+		C9FE53352A75A30E00CACA1A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9FE530D2A759ADA00CACA1A /* ProjectWindow */;
+			targetProxy = C9FE53342A75A30E00CACA1A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -616,19 +893,99 @@
 		};
 		C9FE52DB2A7532C700CACA1A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9FE531A2A759BC400CACA1A /* StaticLib.xcconfig */;
 			buildSettings = {
-				EXECUTABLE_PREFIX = lib;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
 			};
 			name = Debug;
 		};
 		C9FE52DC2A7532C700CACA1A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9FE531A2A759BC400CACA1A /* StaticLib.xcconfig */;
 			buildSettings = {
-				EXECUTABLE_PREFIX = lib;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		C9FE52FE2A7539B100CACA1A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.chimehq.ChimeKit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C9FE52FF2A7539B100CACA1A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.chimehq.ChimeKit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		C9FE53152A759ADA00CACA1A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9FE531A2A759BC400CACA1A /* StaticLib.xcconfig */;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		C9FE53162A759ADA00CACA1A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9FE531A2A759BC400CACA1A /* StaticLib.xcconfig */;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		C9FE532A2A75A17700CACA1A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9FE531A2A759BC400CACA1A /* StaticLib.xcconfig */;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		C9FE532B2A75A17700CACA1A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9FE531A2A759BC400CACA1A /* StaticLib.xcconfig */;
+			buildSettings = {
 			};
 			name = Release;
 		};
@@ -680,6 +1037,33 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		C9FE52FD2A7539B100CACA1A /* Build configuration list for PBXNativeTarget "ChimeKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9FE52FE2A7539B100CACA1A /* Debug */,
+				C9FE52FF2A7539B100CACA1A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C9FE53142A759ADA00CACA1A /* Build configuration list for PBXNativeTarget "ProjectWindow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9FE53152A759ADA00CACA1A /* Debug */,
+				C9FE53162A759ADA00CACA1A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C9FE53292A75A17700CACA1A /* Build configuration list for PBXNativeTarget "UIUtility" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9FE532A2A75A17700CACA1A /* Debug */,
+				C9FE532B2A75A17700CACA1A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
@@ -689,6 +1073,14 @@
 			requirement = {
 				kind = revision;
 				revision = 70071cab32b9288097b15a816696a08c110a32ff;
+			};
+		};
+		C9FE53002A753A3D00CACA1A /* XCRemoteSwiftPackageReference "ChimeKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ChimeHQ/ChimeKit.git";
+			requirement = {
+				kind = revision;
+				revision = 6dd3247e9571ba67808bbb0d1a5576c478394ba6;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -703,6 +1095,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C9FE52E62A75375300CACA1A /* XCRemoteSwiftPackageReference "ContainedDocument" */;
 			productName = ContainedDocument;
+		};
+		C9FE53012A753A3D00CACA1A /* ChimeKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C9FE53002A753A3D00CACA1A /* XCRemoteSwiftPackageReference "ChimeKit" */;
+			productName = ChimeKit;
+		};
+		C9FE53032A753A4E00CACA1A /* ChimeKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C9FE53002A753A3D00CACA1A /* XCRemoteSwiftPackageReference "ChimeKit" */;
+			productName = ChimeKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

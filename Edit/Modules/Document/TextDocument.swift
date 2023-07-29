@@ -1,9 +1,19 @@
 import AppKit
+import SwiftUI
+
+import ProjectWindow
 
 public final class TextDocument: NSDocument {
+	private let projectWindowController: ProjectWindowController
+
+	public internal(set) weak var project: ProjectModel?
+
 	override init() {
+		let contentController = NSHostingController(rootView: Color.orange)
+
+		self.projectWindowController = ProjectWindowController(contentViewController: contentController)
+
 	    super.init()
-		// Add your subclass-specific initialization here.
 	}
 
 	public override class var autosavesInPlace: Bool {
@@ -11,11 +21,7 @@ public final class TextDocument: NSDocument {
 	}
 
 	public override func makeWindowControllers() {
-		let window = NSWindow(contentViewController: NSViewController())
-
-		addWindowController(NSWindowController(window: window))
-
-		window.contentMinSize = NSSize(width: 100, height: 200)
+		addWindowController(projectWindowController)
 	}
 
 	public override func data(ofType typeName: String) throws -> Data {
