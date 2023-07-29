@@ -12,7 +12,7 @@
 				<string>com.example.plain-text</string>
 			</array>
 			<key>NSDocumentClass</key>
-			<string>$(PRODUCT_MODULE_NAME).Document</string>
+			<string>$(DOCUMENT_MODULE_NAME).TextDocument</string>
 		</dict>
 	</array>
 	<key>UTImportedTypeDeclarations</key>

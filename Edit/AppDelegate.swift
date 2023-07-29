@@ -1,17 +1,7 @@
-//
-//  AppDelegate.swift
-//  Edit
-//
-//  Created by Matthew Massicotte on 2023-07-29.
-//
-
-import Cocoa
+import AppKit
 
 @main
-class AppDelegate: NSObject, NSApplicationDelegate {
-
-
-
+final class AppDelegate: NSObject, NSApplicationDelegate {
 	func applicationDidFinishLaunching(_ aNotification: Notification) {
 		// Insert code here to initialize your application
 	}
@@ -23,7 +13,4 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	func applicationSupportsSecureRestorableState(_ app: NSApplication) -> Bool {
 		return true
 	}
-
-
 }
-

@@ -6,5 +6,8 @@ INFOPLIST_KEY_NSMainNibFile = MainMenu
 PRODUCT_NAME = Chime
 PRODUCT_MODULE_NAME = Edit
 PRODUCT_BUNDLE_IDENTIFIER = com.chimehq.Edit
+DOCUMENT_MODULE_NAME = Document
 
 LD_RUNPATH_SEARCH_PATHS = $(inherited) @executable_path/../Frameworks
+OTHER_LDFLAGS[config=Debug] = -ObjC -fprofile-instr-generate
+OTHER_LDFLAGS[config=Release] = -ObjC
