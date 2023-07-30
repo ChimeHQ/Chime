@@ -98,6 +98,15 @@
       }
     },
     {
+      "identity" : "scrollviewplus",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ChimeHQ/ScrollViewPlus.git",
+      "state" : {
+        "revision" : "cd9fa490c4b20ee841ce9230ab19057c02905062",
+        "version" : "0.1.2"
+      }
+    },
+    {
       "identity" : "semaphore",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/groue/Semaphore",

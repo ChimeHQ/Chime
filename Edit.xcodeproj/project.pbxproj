@@ -40,6 +40,9 @@
 		C9FE53942A766AB300CACA1A /* libSearch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE536A2A7661D400CACA1A /* libSearch.a */; };
 		C9FE53A62A7670BB00CACA1A /* StatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE53A52A7670BB00CACA1A /* StatusBar.swift */; };
 		C9FE53A92A76713900CACA1A /* libStatus.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE539B2A76709D00CACA1A /* libStatus.a */; };
+		C9FE53AB2A76753D00CACA1A /* SourcePresentationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE53AA2A76753D00CACA1A /* SourcePresentationViewController.swift */; };
+		C9FE53AD2A7677A700CACA1A /* EditorScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE53AC2A7677A700CACA1A /* EditorScrollView.swift */; };
+		C9FE53B22A7677E100CACA1A /* ScrollViewPlus in Frameworks */ = {isa = PBXBuildFile; productRef = C9FE53B12A7677E100CACA1A /* ScrollViewPlus */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -181,6 +184,8 @@
 		C9FE53862A7663D200CACA1A /* EditorRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorRootViewController.swift; sourceTree = "<group>"; };
 		C9FE539B2A76709D00CACA1A /* libStatus.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libStatus.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9FE53A52A7670BB00CACA1A /* StatusBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusBar.swift; sourceTree = "<group>"; };
+		C9FE53AA2A76753D00CACA1A /* SourcePresentationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SourcePresentationViewController.swift; sourceTree = "<group>"; };
+		C9FE53AC2A7677A700CACA1A /* EditorScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorScrollView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +197,7 @@
 				C9FE53942A766AB300CACA1A /* libSearch.a in Frameworks */,
 				C9FE53932A766AAD00CACA1A /* libInspector.a in Frameworks */,
 				C9FE53922A766AA900CACA1A /* libNavigator.a in Frameworks */,
+				C9FE53B22A7677E100CACA1A /* ScrollViewPlus in Frameworks */,
 				C9FE53912A766A9D00CACA1A /* libEditor.a in Frameworks */,
 				C9FE53362A75A40400CACA1A /* libProjectWindow.a in Frameworks */,
 				C9FE533B2A75A76000CACA1A /* WindowTreatment in Frameworks */,
@@ -438,6 +444,8 @@
 		C9FE53832A7662F800CACA1A /* Editor */ = {
 			isa = PBXGroup;
 			children = (
+				C9FE53AC2A7677A700CACA1A /* EditorScrollView.swift */,
+				C9FE53AA2A76753D00CACA1A /* SourcePresentationViewController.swift */,
 				C9FE53842A7662F800CACA1A /* SourceRoot.swift */,
 				C9FE53862A7663D200CACA1A /* EditorRootViewController.swift */,
 			);
@@ -550,6 +558,7 @@
 			packageProductDependencies = (
 				C9FE52E92A75377200CACA1A /* ContainedDocument */,
 				C9FE533A2A75A76000CACA1A /* WindowTreatment */,
+				C9FE53B12A7677E100CACA1A /* ScrollViewPlus */,
 			);
 			productName = Edit;
 			productReference = C9FE52992A7525D000CACA1A /* Chime.app */;
@@ -737,12 +746,15 @@
 			buildRules = (
 			);
 			dependencies = (
+				C9FE53B42A7677E800CACA1A /* PBXTargetDependency */,
 				C9FE53A82A76712B00CACA1A /* PBXTargetDependency */,
 				C9FE538D2A76646000CACA1A /* PBXTargetDependency */,
 				C9FE538B2A76645C00CACA1A /* PBXTargetDependency */,
 				C9FE53892A76645900CACA1A /* PBXTargetDependency */,
 			);
 			name = Editor;
+			packageProductDependencies = (
+			);
 			productName = Editor;
 			productReference = C9FE537A2A7662DC00CACA1A /* libEditor.a */;
 			productType = "com.apple.product-type.library.static";
@@ -830,6 +842,7 @@
 				C9FE52E62A75375300CACA1A /* XCRemoteSwiftPackageReference "ContainedDocument" */,
 				C9FE53002A753A3D00CACA1A /* XCRemoteSwiftPackageReference "ChimeKit" */,
 				C9FE53372A75A75400CACA1A /* XCRemoteSwiftPackageReference "WindowTreatment" */,
+				C9FE53AE2A7677D100CACA1A /* XCRemoteSwiftPackageReference "ScrollViewPlus" */,
 			);
 			productRefGroup = C9FE529A2A7525D000CACA1A /* Products */;
 			projectDirPath = "";
@@ -976,6 +989,8 @@
 			files = (
 				C9FE53852A7662F800CACA1A /* SourceRoot.swift in Sources */,
 				C9FE53872A7663D200CACA1A /* EditorRootViewController.swift in Sources */,
+				C9FE53AD2A7677A700CACA1A /* EditorScrollView.swift in Sources */,
+				C9FE53AB2A76753D00CACA1A /* SourcePresentationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1065,6 +1080,10 @@
 			isa = PBXTargetDependency;
 			target = C9FE539A2A76709D00CACA1A /* Status */;
 			targetProxy = C9FE53A72A76712B00CACA1A /* PBXContainerItemProxy */;
+		};
+		C9FE53B42A7677E800CACA1A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = C9FE53B32A7677E800CACA1A /* ScrollViewPlus */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1616,6 +1635,14 @@
 				revision = 83dea802a687db2313506f9ef53c5f257ece8c10;
 			};
 		};
+		C9FE53AE2A7677D100CACA1A /* XCRemoteSwiftPackageReference "ScrollViewPlus" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ChimeHQ/ScrollViewPlus.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1653,6 +1680,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C9FE53372A75A75400CACA1A /* XCRemoteSwiftPackageReference "WindowTreatment" */;
 			productName = WindowTreatment;
+		};
+		C9FE53B12A7677E100CACA1A /* ScrollViewPlus */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C9FE53AE2A7677D100CACA1A /* XCRemoteSwiftPackageReference "ScrollViewPlus" */;
+			productName = ScrollViewPlus;
+		};
+		C9FE53B32A7677E800CACA1A /* ScrollViewPlus */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C9FE53AE2A7677D100CACA1A /* XCRemoteSwiftPackageReference "ScrollViewPlus" */;
+			productName = ScrollViewPlus;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
