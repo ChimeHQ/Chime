@@ -8,6 +8,8 @@ public struct RepresentableViewController<Controller: NSViewController>: NSViewC
 	}
 
 	public func makeNSViewController(context: Context) -> some NSViewController {
+//		controller.view.translatesAutoresizingMaskIntoConstraints = false
+
 		return controller
 	}
 

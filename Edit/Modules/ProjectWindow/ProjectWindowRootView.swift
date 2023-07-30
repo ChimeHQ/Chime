@@ -3,8 +3,8 @@ import SwiftUI
 import WindowTreatment
 
 struct ProjectWindowRootView<Content: View>: View {
-	@State private var syncModel = WindowStateSynchronizationModel()
-	@Environment(\.controlActiveState) private var controlActiveState
+	@Environment(WindowStateSynchronizationModel.self) private var syncModel
+	@Environment(\.windowState) private var windowState
 
 	let content: Content
 
@@ -13,12 +13,10 @@ struct ProjectWindowRootView<Content: View>: View {
 	}
 	
 	var body: some View {
-		HStack {
-			Text("This is")
+		VStack {
 			content
-			Text("the root view")
+			Text("state: \(windowState.tabBarVisible ? "true" : "false")")
 		}
-		.observeWindowTabBarState()
-		.onChange(of: controlActiveState) { syncModel.controlActiveState = $1 }
+		.onChange(of: windowState) { syncModel.windowStateChanged($0, $1) }
 	}
 }

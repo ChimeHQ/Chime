@@ -111,7 +111,7 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ChimeHQ/WindowTreatment.git",
       "state" : {
-        "revision" : "eb4bc3fe8da7da24c2aa602879a06d74fca9b79b"
+        "revision" : "83dea802a687db2313506f9ef53c5f257ece8c10"
       }
     }
   ],

@@ -2,18 +2,31 @@ import AppKit
 import SwiftUI
 
 import UIUtility
+import WindowTreatment
 
 public final class ProjectWindowController: NSWindowController {
-	public init(contentViewController: NSViewController) {
-		let representedController = RepresentableViewController(contentViewController)
-		let rootView = ProjectWindowRootView(content: { representedController })
-		let window = NSWindow(contentViewController: NSHostingController(rootView: rootView))
+	private let syncModel = WindowStateSynchronizationModel()
 
-		// Only explicitly enable this if the document's project gets set. This prevents accidentally getting into tab mode for a single file.
-		window.tabbingMode = .disallowed
-		window.isExcludedFromWindowsMenu = true
+	public init(contentViewController: NSViewController) {
+		// we know that our initial core view requires AppKit...
+		let representedController = RepresentableViewController(contentViewController)
+
+		// but we want to manage as much as possible with SwiftUI here...
+		let rootView = ProjectWindowRootView(content: { representedController })
+			.environment(syncModel)
+			.observeWindowState()
+			.frame(minWidth: 100, minHeight: 100)
+
+		// and then get it all back into the NSWindow
+		let hostingController = NSHostingController(rootView: rootView)
+		let window = NSWindow(contentViewController: hostingController)
 
 		super.init(window: window)
+
+		window.tabbingMode = .preferred
+		window.tabbingIdentifier = "hello"
+
+		syncModel.siblingProvider = { [weak self] in self?.siblingModels ?? [] }
 	}
 
 	@available(*, unavailable)
@@ -25,5 +38,14 @@ public final class ProjectWindowController: NSWindowController {
 extension ProjectWindowController: NSWindowDelegate {
 	public func windowWillReturnUndoManager(_ window: NSWindow) -> UndoManager? {
 		(document as? NSDocument)?.undoManager
+	}
+}
+
+extension ProjectWindowController {
+	private var siblingModels: [WindowStateSynchronizationModel] {
+		let siblingWindows = window?.tabGroup?.windows.filter({ $0 !== window }) ?? []
+		let siblingControllers = siblingWindows.compactMap { $0.windowController as? ProjectWindowController }
+
+		return siblingControllers.map { $0.syncModel }
 	}
 }

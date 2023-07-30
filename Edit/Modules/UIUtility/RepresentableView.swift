@@ -8,6 +8,8 @@ public struct RepresentableView<View: NSView>: NSViewRepresentable {
 	}
 
 	public func makeNSView(context: Context) -> View {
+		view.translatesAutoresizingMaskIntoConstraints = false
+		
 		return view
 	}
 
