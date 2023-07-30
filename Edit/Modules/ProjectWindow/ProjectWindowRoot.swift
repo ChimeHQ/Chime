@@ -2,7 +2,7 @@ import SwiftUI
 
 import WindowTreatment
 
-struct ProjectWindowRootView<Content: View>: View {
+struct ProjectWindowRoot<Content: View>: View {
 	@Environment(WindowStateSynchronizationModel.self) private var syncModel
 	@Environment(\.windowState) private var windowState
 
@@ -13,10 +13,9 @@ struct ProjectWindowRootView<Content: View>: View {
 	}
 	
 	var body: some View {
-		VStack {
-			content
-			Text("state: \(windowState.tabBarVisible ? "true" : "false")")
-		}
-		.onChange(of: windowState) { syncModel.windowStateChanged($0, $1) }
+		content
+			.frame(minWidth: 100, minHeight: 100)
+			.ignoresSafeArea()
+			.onChange(of: windowState) { syncModel.windowStateChanged($0, $1) }
 	}
 }

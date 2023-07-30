@@ -10,6 +10,6 @@ final class WindowStateSynchronizationModel {
 	var siblingProvider: SiblingProvider = { [] }
 
 	func windowStateChanged(_ old: WindowStateObserver.State, _ new: WindowStateObserver.State) {
-		print("siblings: \(siblingProvider())")
+//		print("siblings: \(siblingProvider())")
 	}
 }

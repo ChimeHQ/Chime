@@ -1,6 +1,7 @@
 import AppKit
 import SwiftUI
 
+import Editor
 import ProjectWindow
 
 public final class TextDocument: NSDocument {
@@ -9,9 +10,9 @@ public final class TextDocument: NSDocument {
 	public internal(set) weak var project: ProjectModel?
 
 	override init() {
-		let contentController = NSHostingController(rootView: Color.orange)
+		let editorController = EditorRootViewController()
 
-		self.projectWindowController = ProjectWindowController(contentViewController: contentController)
+		self.projectWindowController = ProjectWindowController(contentViewController: editorController)
 
 	    super.init()
 	}

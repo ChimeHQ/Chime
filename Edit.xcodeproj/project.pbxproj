@@ -23,12 +23,23 @@
 		C9FE53092A753B5500CACA1A /* ProjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE53082A753B5500CACA1A /* ProjectModel.swift */; };
 		C9FE53192A759AFE00CACA1A /* ProjectWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE53182A759AFE00CACA1A /* ProjectWindowController.swift */; };
 		C9FE531C2A759CE400CACA1A /* WindowStateSynchronizationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE531B2A759CE400CACA1A /* WindowStateSynchronizationModel.swift */; };
-		C9FE531E2A759F4C00CACA1A /* ProjectWindowRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE531D2A759F4C00CACA1A /* ProjectWindowRootView.swift */; };
+		C9FE531E2A759F4C00CACA1A /* ProjectWindowRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE531D2A759F4C00CACA1A /* ProjectWindowRoot.swift */; };
 		C9FE532F2A75A1C100CACA1A /* RepresentableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE532D2A75A1C100CACA1A /* RepresentableView.swift */; };
 		C9FE53302A75A1C100CACA1A /* RepresentableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE532E2A75A1C100CACA1A /* RepresentableViewController.swift */; };
 		C9FE53332A75A22800CACA1A /* libUIUtility.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE53232A75A17700CACA1A /* libUIUtility.a */; };
 		C9FE53362A75A40400CACA1A /* libProjectWindow.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE530E2A759ADA00CACA1A /* libProjectWindow.a */; };
 		C9FE533B2A75A76000CACA1A /* WindowTreatment in Frameworks */ = {isa = PBXBuildFile; productRef = C9FE533A2A75A76000CACA1A /* WindowTreatment */; };
+		C9FE53622A76619800CACA1A /* Inspector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE53612A76619800CACA1A /* Inspector.swift */; };
+		C9FE53652A7661A800CACA1A /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE53642A7661A800CACA1A /* Navigator.swift */; };
+		C9FE53752A7661F100CACA1A /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE53742A7661F100CACA1A /* SearchBar.swift */; };
+		C9FE53852A7662F800CACA1A /* SourceRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE53842A7662F800CACA1A /* SourceRoot.swift */; };
+		C9FE53872A7663D200CACA1A /* EditorRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE53862A7663D200CACA1A /* EditorRootViewController.swift */; };
+		C9FE53912A766A9D00CACA1A /* libEditor.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE537A2A7662DC00CACA1A /* libEditor.a */; };
+		C9FE53922A766AA900CACA1A /* libNavigator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE53432A765FE900CACA1A /* libNavigator.a */; };
+		C9FE53932A766AAD00CACA1A /* libInspector.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE53522A7660DF00CACA1A /* libInspector.a */; };
+		C9FE53942A766AB300CACA1A /* libSearch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE536A2A7661D400CACA1A /* libSearch.a */; };
+		C9FE53A62A7670BB00CACA1A /* StatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE53A52A7670BB00CACA1A /* StatusBar.swift */; };
+		C9FE53A92A76713900CACA1A /* libStatus.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE539B2A76709D00CACA1A /* libStatus.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +92,41 @@
 			remoteGlobalIDString = C9FE530D2A759ADA00CACA1A;
 			remoteInfo = ProjectWindow;
 		};
+		C9FE53882A76645900CACA1A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9FE53422A765FE900CACA1A;
+			remoteInfo = Navigator;
+		};
+		C9FE538A2A76645C00CACA1A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9FE53512A7660DF00CACA1A;
+			remoteInfo = Inspector;
+		};
+		C9FE538C2A76646000CACA1A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9FE53692A7661D400CACA1A;
+			remoteInfo = Search;
+		};
+		C9FE538F2A766A9400CACA1A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9FE53792A7662DC00CACA1A;
+			remoteInfo = Editor;
+		};
+		C9FE53A72A76712B00CACA1A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9FE539A2A76709D00CACA1A;
+			remoteInfo = Status;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -118,12 +164,23 @@
 		C9FE53082A753B5500CACA1A /* ProjectModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectModel.swift; sourceTree = "<group>"; };
 		C9FE530E2A759ADA00CACA1A /* libProjectWindow.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libProjectWindow.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9FE53182A759AFE00CACA1A /* ProjectWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectWindowController.swift; sourceTree = "<group>"; };
-		C9FE531A2A759BC400CACA1A /* StaticLib.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = StaticLib.xcconfig; sourceTree = "<group>"; };
+		C9FE531A2A759BC400CACA1A /* Module.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Module.xcconfig; sourceTree = "<group>"; };
 		C9FE531B2A759CE400CACA1A /* WindowStateSynchronizationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowStateSynchronizationModel.swift; sourceTree = "<group>"; };
-		C9FE531D2A759F4C00CACA1A /* ProjectWindowRootView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectWindowRootView.swift; sourceTree = "<group>"; };
+		C9FE531D2A759F4C00CACA1A /* ProjectWindowRoot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectWindowRoot.swift; sourceTree = "<group>"; };
 		C9FE53232A75A17700CACA1A /* libUIUtility.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libUIUtility.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9FE532D2A75A1C100CACA1A /* RepresentableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepresentableView.swift; sourceTree = "<group>"; };
 		C9FE532E2A75A1C100CACA1A /* RepresentableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepresentableViewController.swift; sourceTree = "<group>"; };
+		C9FE53432A765FE900CACA1A /* libNavigator.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libNavigator.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9FE53522A7660DF00CACA1A /* libInspector.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libInspector.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9FE53612A76619800CACA1A /* Inspector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Inspector.swift; sourceTree = "<group>"; };
+		C9FE53642A7661A800CACA1A /* Navigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
+		C9FE536A2A7661D400CACA1A /* libSearch.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSearch.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9FE53742A7661F100CACA1A /* SearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		C9FE537A2A7662DC00CACA1A /* libEditor.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libEditor.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9FE53842A7662F800CACA1A /* SourceRoot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SourceRoot.swift; sourceTree = "<group>"; };
+		C9FE53862A7663D200CACA1A /* EditorRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorRootViewController.swift; sourceTree = "<group>"; };
+		C9FE539B2A76709D00CACA1A /* libStatus.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libStatus.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9FE53A52A7670BB00CACA1A /* StatusBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +188,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9FE53A92A76713900CACA1A /* libStatus.a in Frameworks */,
+				C9FE53942A766AB300CACA1A /* libSearch.a in Frameworks */,
+				C9FE53932A766AAD00CACA1A /* libInspector.a in Frameworks */,
+				C9FE53922A766AA900CACA1A /* libNavigator.a in Frameworks */,
+				C9FE53912A766A9D00CACA1A /* libEditor.a in Frameworks */,
 				C9FE53362A75A40400CACA1A /* libProjectWindow.a in Frameworks */,
 				C9FE533B2A75A76000CACA1A /* WindowTreatment in Frameworks */,
 				C9FE53332A75A22800CACA1A /* libUIUtility.a in Frameworks */,
@@ -183,14 +245,48 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C9FE53412A765FE900CACA1A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9FE53502A7660DF00CACA1A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9FE53682A7661D400CACA1A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9FE53782A7662DC00CACA1A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9FE53992A76709D00CACA1A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		C9FE52902A7525D000CACA1A = {
 			isa = PBXGroup;
 			children = (
-				C9FE52CB2A7526C000CACA1A /* Project.xcconfig */,
-				C9FE531A2A759BC400CACA1A /* StaticLib.xcconfig */,
+				C9FE538E2A76674600CACA1A /* Configurations */,
 				C9FE529B2A7525D000CACA1A /* Edit */,
 				C9FE52B12A7525D300CACA1A /* EditTests */,
 				C9FE52BB2A7525D300CACA1A /* EditUITests */,
@@ -209,6 +305,11 @@
 				C9FE52F42A7539B100CACA1A /* ChimeKit.framework */,
 				C9FE530E2A759ADA00CACA1A /* libProjectWindow.a */,
 				C9FE53232A75A17700CACA1A /* libUIUtility.a */,
+				C9FE53432A765FE900CACA1A /* libNavigator.a */,
+				C9FE53522A7660DF00CACA1A /* libInspector.a */,
+				C9FE536A2A7661D400CACA1A /* libSearch.a */,
+				C9FE537A2A7662DC00CACA1A /* libEditor.a */,
+				C9FE539B2A76709D00CACA1A /* libStatus.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -216,7 +317,6 @@
 		C9FE529B2A7525D000CACA1A /* Edit */ = {
 			isa = PBXGroup;
 			children = (
-				C9FE52CC2A752B4D00CACA1A /* Edit.xcconfig */,
 				C9FE529C2A7525D000CACA1A /* AppDelegate.swift */,
 				C9FE52CD2A752BA800CACA1A /* Resources */,
 				C9FE52CF2A75323800CACA1A /* Modules */,
@@ -255,9 +355,14 @@
 		C9FE52CF2A75323800CACA1A /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				C9FE532C2A75A18500CACA1A /* UIUtility */,
-				C9FE53172A759AE800CACA1A /* ProjectWindow */,
 				C9FE52DD2A7532D500CACA1A /* Document */,
+				C9FE53832A7662F800CACA1A /* Editor */,
+				C9FE53602A76619800CACA1A /* Inspector */,
+				C9FE53632A7661A800CACA1A /* Navigator */,
+				C9FE53172A759AE800CACA1A /* ProjectWindow */,
+				C9FE53732A7661F100CACA1A /* Search */,
+				C9FE53A42A7670BB00CACA1A /* Status */,
+				C9FE532C2A75A18500CACA1A /* UIUtility */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -292,7 +397,7 @@
 			children = (
 				C9FE531B2A759CE400CACA1A /* WindowStateSynchronizationModel.swift */,
 				C9FE53182A759AFE00CACA1A /* ProjectWindowController.swift */,
-				C9FE531D2A759F4C00CACA1A /* ProjectWindowRootView.swift */,
+				C9FE531D2A759F4C00CACA1A /* ProjectWindowRoot.swift */,
 			);
 			path = ProjectWindow;
 			sourceTree = "<group>";
@@ -304,6 +409,57 @@
 				C9FE532D2A75A1C100CACA1A /* RepresentableView.swift */,
 			);
 			path = UIUtility;
+			sourceTree = "<group>";
+		};
+		C9FE53602A76619800CACA1A /* Inspector */ = {
+			isa = PBXGroup;
+			children = (
+				C9FE53612A76619800CACA1A /* Inspector.swift */,
+			);
+			path = Inspector;
+			sourceTree = "<group>";
+		};
+		C9FE53632A7661A800CACA1A /* Navigator */ = {
+			isa = PBXGroup;
+			children = (
+				C9FE53642A7661A800CACA1A /* Navigator.swift */,
+			);
+			path = Navigator;
+			sourceTree = "<group>";
+		};
+		C9FE53732A7661F100CACA1A /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				C9FE53742A7661F100CACA1A /* SearchBar.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		C9FE53832A7662F800CACA1A /* Editor */ = {
+			isa = PBXGroup;
+			children = (
+				C9FE53842A7662F800CACA1A /* SourceRoot.swift */,
+				C9FE53862A7663D200CACA1A /* EditorRootViewController.swift */,
+			);
+			path = Editor;
+			sourceTree = "<group>";
+		};
+		C9FE538E2A76674600CACA1A /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				C9FE52CC2A752B4D00CACA1A /* Edit.xcconfig */,
+				C9FE52CB2A7526C000CACA1A /* Project.xcconfig */,
+				C9FE531A2A759BC400CACA1A /* Module.xcconfig */,
+			);
+			path = Configurations;
+			sourceTree = "<group>";
+		};
+		C9FE53A42A7670BB00CACA1A /* Status */ = {
+			isa = PBXGroup;
+			children = (
+				C9FE53A52A7670BB00CACA1A /* StatusBar.swift */,
+			);
+			path = Status;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -331,6 +487,41 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		C9FE531F2A75A17700CACA1A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9FE533F2A765FE900CACA1A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9FE534E2A7660DF00CACA1A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9FE53662A7661D400CACA1A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9FE53762A7662DC00CACA1A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9FE53972A76709D00CACA1A /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -411,6 +602,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				C9FE53902A766A9400CACA1A /* PBXTargetDependency */,
 				C9FE53352A75A30E00CACA1A /* PBXTargetDependency */,
 				C9FE53062A753B2600CACA1A /* PBXTargetDependency */,
 				C9FE52EC2A75378000CACA1A /* PBXTargetDependency */,
@@ -482,6 +674,96 @@
 			productReference = C9FE53232A75A17700CACA1A /* libUIUtility.a */;
 			productType = "com.apple.product-type.library.static";
 		};
+		C9FE53422A765FE900CACA1A /* Navigator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C9FE53492A765FE900CACA1A /* Build configuration list for PBXNativeTarget "Navigator" */;
+			buildPhases = (
+				C9FE533F2A765FE900CACA1A /* Headers */,
+				C9FE53402A765FE900CACA1A /* Sources */,
+				C9FE53412A765FE900CACA1A /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Navigator;
+			productName = Navigator;
+			productReference = C9FE53432A765FE900CACA1A /* libNavigator.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		C9FE53512A7660DF00CACA1A /* Inspector */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C9FE53582A7660DF00CACA1A /* Build configuration list for PBXNativeTarget "Inspector" */;
+			buildPhases = (
+				C9FE534E2A7660DF00CACA1A /* Headers */,
+				C9FE534F2A7660DF00CACA1A /* Sources */,
+				C9FE53502A7660DF00CACA1A /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C9FE53962A766D2F00CACA1A /* PBXTargetDependency */,
+			);
+			name = Inspector;
+			productName = Inspector;
+			productReference = C9FE53522A7660DF00CACA1A /* libInspector.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		C9FE53692A7661D400CACA1A /* Search */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C9FE53702A7661D400CACA1A /* Build configuration list for PBXNativeTarget "Search" */;
+			buildPhases = (
+				C9FE53662A7661D400CACA1A /* Headers */,
+				C9FE53672A7661D400CACA1A /* Sources */,
+				C9FE53682A7661D400CACA1A /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Search;
+			productName = Search;
+			productReference = C9FE536A2A7661D400CACA1A /* libSearch.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		C9FE53792A7662DC00CACA1A /* Editor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C9FE53802A7662DD00CACA1A /* Build configuration list for PBXNativeTarget "Editor" */;
+			buildPhases = (
+				C9FE53762A7662DC00CACA1A /* Headers */,
+				C9FE53772A7662DC00CACA1A /* Sources */,
+				C9FE53782A7662DC00CACA1A /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C9FE53A82A76712B00CACA1A /* PBXTargetDependency */,
+				C9FE538D2A76646000CACA1A /* PBXTargetDependency */,
+				C9FE538B2A76645C00CACA1A /* PBXTargetDependency */,
+				C9FE53892A76645900CACA1A /* PBXTargetDependency */,
+			);
+			name = Editor;
+			productName = Editor;
+			productReference = C9FE537A2A7662DC00CACA1A /* libEditor.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		C9FE539A2A76709D00CACA1A /* Status */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C9FE53A12A76709D00CACA1A /* Build configuration list for PBXNativeTarget "Status" */;
+			buildPhases = (
+				C9FE53972A76709D00CACA1A /* Headers */,
+				C9FE53982A76709D00CACA1A /* Sources */,
+				C9FE53992A76709D00CACA1A /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Status;
+			productName = Status;
+			productReference = C9FE539B2A76709D00CACA1A /* libStatus.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -517,6 +799,22 @@
 						CreatedOnToolsVersion = 15.0;
 						LastSwiftMigration = 1500;
 					};
+					C9FE53422A765FE900CACA1A = {
+						CreatedOnToolsVersion = 15.0;
+						LastSwiftMigration = 1500;
+					};
+					C9FE53512A7660DF00CACA1A = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					C9FE53692A7661D400CACA1A = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					C9FE53792A7662DC00CACA1A = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					C9FE539A2A76709D00CACA1A = {
+						CreatedOnToolsVersion = 15.0;
+					};
 				};
 			};
 			buildConfigurationList = C9FE52942A7525D000CACA1A /* Build configuration list for PBXProject "Edit" */;
@@ -544,6 +842,11 @@
 				C9FE52D32A7532C700CACA1A /* Document */,
 				C9FE530D2A759ADA00CACA1A /* ProjectWindow */,
 				C9FE53222A75A17700CACA1A /* UIUtility */,
+				C9FE53422A765FE900CACA1A /* Navigator */,
+				C9FE53512A7660DF00CACA1A /* Inspector */,
+				C9FE53692A7661D400CACA1A /* Search */,
+				C9FE53792A7662DC00CACA1A /* Editor */,
+				C9FE539A2A76709D00CACA1A /* Status */,
 			);
 		};
 /* End PBXProject section */
@@ -629,7 +932,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9FE531C2A759CE400CACA1A /* WindowStateSynchronizationModel.swift in Sources */,
-				C9FE531E2A759F4C00CACA1A /* ProjectWindowRootView.swift in Sources */,
+				C9FE531E2A759F4C00CACA1A /* ProjectWindowRoot.swift in Sources */,
 				C9FE53192A759AFE00CACA1A /* ProjectWindowController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -640,6 +943,47 @@
 			files = (
 				C9FE532F2A75A1C100CACA1A /* RepresentableView.swift in Sources */,
 				C9FE53302A75A1C100CACA1A /* RepresentableViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9FE53402A765FE900CACA1A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9FE53652A7661A800CACA1A /* Navigator.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9FE534F2A7660DF00CACA1A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9FE53622A76619800CACA1A /* Inspector.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9FE53672A7661D400CACA1A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9FE53752A7661F100CACA1A /* SearchBar.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9FE53772A7662DC00CACA1A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9FE53852A7662F800CACA1A /* SourceRoot.swift in Sources */,
+				C9FE53872A7663D200CACA1A /* EditorRootViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9FE53982A76709D00CACA1A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9FE53A62A7670BB00CACA1A /* StatusBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -692,6 +1036,35 @@
 		C9FE533D2A75A76A00CACA1A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			productRef = C9FE533C2A75A76A00CACA1A /* WindowTreatment */;
+		};
+		C9FE53892A76645900CACA1A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9FE53422A765FE900CACA1A /* Navigator */;
+			targetProxy = C9FE53882A76645900CACA1A /* PBXContainerItemProxy */;
+		};
+		C9FE538B2A76645C00CACA1A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9FE53512A7660DF00CACA1A /* Inspector */;
+			targetProxy = C9FE538A2A76645C00CACA1A /* PBXContainerItemProxy */;
+		};
+		C9FE538D2A76646000CACA1A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9FE53692A7661D400CACA1A /* Search */;
+			targetProxy = C9FE538C2A76646000CACA1A /* PBXContainerItemProxy */;
+		};
+		C9FE53902A766A9400CACA1A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9FE53792A7662DC00CACA1A /* Editor */;
+			targetProxy = C9FE538F2A766A9400CACA1A /* PBXContainerItemProxy */;
+		};
+		C9FE53962A766D2F00CACA1A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = C9FE53952A766D2F00CACA1A /* WindowTreatment */;
+		};
+		C9FE53A82A76712B00CACA1A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9FE539A2A76709D00CACA1A /* Status */;
+			targetProxy = C9FE53A72A76712B00CACA1A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -904,14 +1277,14 @@
 		};
 		C9FE52DB2A7532C700CACA1A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C9FE531A2A759BC400CACA1A /* StaticLib.xcconfig */;
+			baseConfigurationReference = C9FE531A2A759BC400CACA1A /* Module.xcconfig */;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		C9FE52DC2A7532C700CACA1A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C9FE531A2A759BC400CACA1A /* StaticLib.xcconfig */;
+			baseConfigurationReference = C9FE531A2A759BC400CACA1A /* Module.xcconfig */;
 			buildSettings = {
 			};
 			name = Release;
@@ -974,29 +1347,125 @@
 		};
 		C9FE53152A759ADA00CACA1A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C9FE531A2A759BC400CACA1A /* StaticLib.xcconfig */;
+			baseConfigurationReference = C9FE531A2A759BC400CACA1A /* Module.xcconfig */;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		C9FE53162A759ADA00CACA1A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C9FE531A2A759BC400CACA1A /* StaticLib.xcconfig */;
+			baseConfigurationReference = C9FE531A2A759BC400CACA1A /* Module.xcconfig */;
 			buildSettings = {
 			};
 			name = Release;
 		};
 		C9FE532A2A75A17700CACA1A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C9FE531A2A759BC400CACA1A /* StaticLib.xcconfig */;
+			baseConfigurationReference = C9FE531A2A759BC400CACA1A /* Module.xcconfig */;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		C9FE532B2A75A17700CACA1A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C9FE531A2A759BC400CACA1A /* StaticLib.xcconfig */;
+			baseConfigurationReference = C9FE531A2A759BC400CACA1A /* Module.xcconfig */;
 			buildSettings = {
+			};
+			name = Release;
+		};
+		C9FE534A2A765FE900CACA1A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9FE531A2A759BC400CACA1A /* Module.xcconfig */;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		C9FE534B2A765FE900CACA1A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9FE531A2A759BC400CACA1A /* Module.xcconfig */;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		C9FE53592A7660DF00CACA1A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9FE531A2A759BC400CACA1A /* Module.xcconfig */;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		C9FE535A2A7660DF00CACA1A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9FE531A2A759BC400CACA1A /* Module.xcconfig */;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		C9FE53712A7661D400CACA1A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9FE531A2A759BC400CACA1A /* Module.xcconfig */;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		C9FE53722A7661D400CACA1A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9FE531A2A759BC400CACA1A /* Module.xcconfig */;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		C9FE53812A7662DD00CACA1A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9FE531A2A759BC400CACA1A /* Module.xcconfig */;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		C9FE53822A7662DD00CACA1A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9FE531A2A759BC400CACA1A /* Module.xcconfig */;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		C9FE53A22A76709D00CACA1A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 77X93NZ3G2;
+				EXECUTABLE_PREFIX = lib;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		C9FE53A32A76709D00CACA1A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 77X93NZ3G2;
+				EXECUTABLE_PREFIX = lib;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
@@ -1075,6 +1544,51 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		C9FE53492A765FE900CACA1A /* Build configuration list for PBXNativeTarget "Navigator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9FE534A2A765FE900CACA1A /* Debug */,
+				C9FE534B2A765FE900CACA1A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C9FE53582A7660DF00CACA1A /* Build configuration list for PBXNativeTarget "Inspector" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9FE53592A7660DF00CACA1A /* Debug */,
+				C9FE535A2A7660DF00CACA1A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C9FE53702A7661D400CACA1A /* Build configuration list for PBXNativeTarget "Search" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9FE53712A7661D400CACA1A /* Debug */,
+				C9FE53722A7661D400CACA1A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C9FE53802A7662DD00CACA1A /* Build configuration list for PBXNativeTarget "Editor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9FE53812A7662DD00CACA1A /* Debug */,
+				C9FE53822A7662DD00CACA1A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C9FE53A12A76709D00CACA1A /* Build configuration list for PBXNativeTarget "Status" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9FE53A22A76709D00CACA1A /* Debug */,
+				C9FE53A32A76709D00CACA1A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
@@ -1131,6 +1645,11 @@
 			productName = WindowTreatment;
 		};
 		C9FE533C2A75A76A00CACA1A /* WindowTreatment */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C9FE53372A75A75400CACA1A /* XCRemoteSwiftPackageReference "WindowTreatment" */;
+			productName = WindowTreatment;
+		};
+		C9FE53952A766D2F00CACA1A /* WindowTreatment */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C9FE53372A75A75400CACA1A /* XCRemoteSwiftPackageReference "WindowTreatment" */;
 			productName = WindowTreatment;

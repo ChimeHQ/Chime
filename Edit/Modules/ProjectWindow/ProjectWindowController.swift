@@ -12,14 +12,16 @@ public final class ProjectWindowController: NSWindowController {
 		let representedController = RepresentableViewController(contentViewController)
 
 		// but we want to manage as much as possible with SwiftUI here...
-		let rootView = ProjectWindowRootView(content: { representedController })
+		let rootView = ProjectWindowRoot(content: { representedController })
 			.environment(syncModel)
 			.observeWindowState()
-			.frame(minWidth: 100, minHeight: 100)
 
 		// and then get it all back into the NSWindow
 		let hostingController = NSHostingController(rootView: rootView)
 		let window = NSWindow(contentViewController: hostingController)
+
+		window.titlebarAppearsTransparent = true
+		window.styleMask.insert(.fullSizeContentView)
 
 		super.init(window: window)
 
