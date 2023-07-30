@@ -4,6 +4,7 @@ import SwiftUI
 import Inspector
 import Navigator
 import Search
+import UIUtility
 
 /// Defines the overall editor scene.
 ///
@@ -27,6 +28,7 @@ public final class EditorRootViewController: NSViewController {
 		editorScrollView.hasHorizontalScroller = true
 		editorScrollView.drawsBackground = true
 		editorScrollView.backgroundColor = .black
+		editorScrollView.automaticallyAdjustsContentInsets = false
 
 		let navigatorHost = NSHostingController(rootView: Navigator())
 		let navigatorItem = NSSplitViewItem(sidebarWithViewController: navigatorHost)
@@ -42,12 +44,13 @@ public final class EditorRootViewController: NSViewController {
 				.foregroundStyle(.red)
 				.frame(height: 10.0)
 		}
-			.frame(minWidth: 100, minHeight: 100)
+			.frame(minWidth: 300, minHeight: 300)
 
-		presentationController.gutterView = NSHostingView(rootView: Color.yellow)
+		presentationController.gutterView = NSHostingView(rootView: Color.yellow.ignoresSafeArea())
 //		presentationController.underlayView = NSHostingView(rootView: Color.red)
 //		presentationController.overlayView = NSHostingView(rootView: Color.blue)
-		presentationController.documentView = NSHostingView(rootView: phonyDocView)
+		presentationController.documentView = NSHostingView(rootView: phonyDocView.ignoresSafeArea())
+//		presentationController.documentView = colorView
 
 		// necessary for now to get correct view layout
 		presentationController.documentView?.translatesAutoresizingMaskIntoConstraints = false

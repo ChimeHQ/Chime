@@ -43,6 +43,7 @@
 		C9FE53AB2A76753D00CACA1A /* SourcePresentationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE53AA2A76753D00CACA1A /* SourcePresentationViewController.swift */; };
 		C9FE53AD2A7677A700CACA1A /* EditorScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE53AC2A7677A700CACA1A /* EditorScrollView.swift */; };
 		C9FE53B22A7677E100CACA1A /* ScrollViewPlus in Frameworks */ = {isa = PBXBuildFile; productRef = C9FE53B12A7677E100CACA1A /* ScrollViewPlus */; };
+		C9FE53B62A76B81200CACA1A /* ColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE53B52A76B81200CACA1A /* ColorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -186,6 +187,7 @@
 		C9FE53A52A7670BB00CACA1A /* StatusBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusBar.swift; sourceTree = "<group>"; };
 		C9FE53AA2A76753D00CACA1A /* SourcePresentationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SourcePresentationViewController.swift; sourceTree = "<group>"; };
 		C9FE53AC2A7677A700CACA1A /* EditorScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorScrollView.swift; sourceTree = "<group>"; };
+		C9FE53B52A76B81200CACA1A /* ColorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -413,6 +415,7 @@
 			children = (
 				C9FE532E2A75A1C100CACA1A /* RepresentableViewController.swift */,
 				C9FE532D2A75A1C100CACA1A /* RepresentableView.swift */,
+				C9FE53B52A76B81200CACA1A /* ColorView.swift */,
 			);
 			path = UIUtility;
 			sourceTree = "<group>";
@@ -954,6 +957,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9FE53B62A76B81200CACA1A /* ColorView.swift in Sources */,
 				C9FE532F2A75A1C100CACA1A /* RepresentableView.swift in Sources */,
 				C9FE53302A75A1C100CACA1A /* RepresentableViewController.swift in Sources */,
 			);
