@@ -32,8 +32,7 @@
 		C9FE53622A76619800CACA1A /* Inspector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE53612A76619800CACA1A /* Inspector.swift */; };
 		C9FE53652A7661A800CACA1A /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE53642A7661A800CACA1A /* Navigator.swift */; };
 		C9FE53752A7661F100CACA1A /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE53742A7661F100CACA1A /* SearchBar.swift */; };
-		C9FE53852A7662F800CACA1A /* SourceRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE53842A7662F800CACA1A /* SourceRoot.swift */; };
-		C9FE53872A7663D200CACA1A /* EditorRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE53862A7663D200CACA1A /* EditorRootViewController.swift */; };
+		C9FE53872A7663D200CACA1A /* EditorContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE53862A7663D200CACA1A /* EditorContentViewController.swift */; };
 		C9FE53912A766A9D00CACA1A /* libEditor.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE537A2A7662DC00CACA1A /* libEditor.a */; };
 		C9FE53922A766AA900CACA1A /* libNavigator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE53432A765FE900CACA1A /* libNavigator.a */; };
 		C9FE53932A766AAD00CACA1A /* libInspector.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE53522A7660DF00CACA1A /* libInspector.a */; };
@@ -43,7 +42,10 @@
 		C9FE53AB2A76753D00CACA1A /* SourcePresentationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE53AA2A76753D00CACA1A /* SourcePresentationViewController.swift */; };
 		C9FE53AD2A7677A700CACA1A /* EditorScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE53AC2A7677A700CACA1A /* EditorScrollView.swift */; };
 		C9FE53B22A7677E100CACA1A /* ScrollViewPlus in Frameworks */ = {isa = PBXBuildFile; productRef = C9FE53B12A7677E100CACA1A /* ScrollViewPlus */; };
-		C9FE53B62A76B81200CACA1A /* ColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE53B52A76B81200CACA1A /* ColorView.swift */; };
+		C9FE53B92A77334E00CACA1A /* SourceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE53B82A77334E00CACA1A /* SourceViewController.swift */; };
+		C9FE53BD2A77354400CACA1A /* SourceView in Frameworks */ = {isa = PBXBuildFile; productRef = C9FE53BC2A77354400CACA1A /* SourceView */; };
+		C9FE53BF2A77C02400CACA1A /* BoundingBorders.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE53BE2A77C02400CACA1A /* BoundingBorders.swift */; };
+		C9FE53C12A77C06800CACA1A /* ColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE53C02A77C06700CACA1A /* ColorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +133,13 @@
 			remoteGlobalIDString = C9FE539A2A76709D00CACA1A;
 			remoteInfo = Status;
 		};
+		C9FE53C22A77C14800CACA1A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9FE53222A75A17700CACA1A;
+			remoteInfo = UIUtility;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -181,13 +190,15 @@
 		C9FE536A2A7661D400CACA1A /* libSearch.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSearch.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9FE53742A7661F100CACA1A /* SearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		C9FE537A2A7662DC00CACA1A /* libEditor.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libEditor.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		C9FE53842A7662F800CACA1A /* SourceRoot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SourceRoot.swift; sourceTree = "<group>"; };
-		C9FE53862A7663D200CACA1A /* EditorRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorRootViewController.swift; sourceTree = "<group>"; };
+		C9FE53862A7663D200CACA1A /* EditorContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorContentViewController.swift; sourceTree = "<group>"; };
 		C9FE539B2A76709D00CACA1A /* libStatus.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libStatus.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9FE53A52A7670BB00CACA1A /* StatusBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusBar.swift; sourceTree = "<group>"; };
 		C9FE53AA2A76753D00CACA1A /* SourcePresentationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SourcePresentationViewController.swift; sourceTree = "<group>"; };
 		C9FE53AC2A7677A700CACA1A /* EditorScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorScrollView.swift; sourceTree = "<group>"; };
-		C9FE53B52A76B81200CACA1A /* ColorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorView.swift; sourceTree = "<group>"; };
+		C9FE53B72A77328E00CACA1A /* SourceView */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = SourceView; path = ../SourceView; sourceTree = "<group>"; };
+		C9FE53B82A77334E00CACA1A /* SourceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SourceViewController.swift; sourceTree = "<group>"; };
+		C9FE53BE2A77C02400CACA1A /* BoundingBorders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoundingBorders.swift; sourceTree = "<group>"; };
+		C9FE53C02A77C06700CACA1A /* ColorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +211,7 @@
 				C9FE53932A766AAD00CACA1A /* libInspector.a in Frameworks */,
 				C9FE53922A766AA900CACA1A /* libNavigator.a in Frameworks */,
 				C9FE53B22A7677E100CACA1A /* ScrollViewPlus in Frameworks */,
+				C9FE53BD2A77354400CACA1A /* SourceView in Frameworks */,
 				C9FE53912A766A9D00CACA1A /* libEditor.a in Frameworks */,
 				C9FE53362A75A40400CACA1A /* libProjectWindow.a in Frameworks */,
 				C9FE533B2A75A76000CACA1A /* WindowTreatment in Frameworks */,
@@ -294,6 +306,7 @@
 		C9FE52902A7525D000CACA1A = {
 			isa = PBXGroup;
 			children = (
+				C9FE53B72A77328E00CACA1A /* SourceView */,
 				C9FE538E2A76674600CACA1A /* Configurations */,
 				C9FE529B2A7525D000CACA1A /* Edit */,
 				C9FE52B12A7525D300CACA1A /* EditTests */,
@@ -413,9 +426,10 @@
 		C9FE532C2A75A18500CACA1A /* UIUtility */ = {
 			isa = PBXGroup;
 			children = (
+				C9FE53C02A77C06700CACA1A /* ColorView.swift */,
+				C9FE53BE2A77C02400CACA1A /* BoundingBorders.swift */,
 				C9FE532E2A75A1C100CACA1A /* RepresentableViewController.swift */,
 				C9FE532D2A75A1C100CACA1A /* RepresentableView.swift */,
-				C9FE53B52A76B81200CACA1A /* ColorView.swift */,
 			);
 			path = UIUtility;
 			sourceTree = "<group>";
@@ -449,8 +463,8 @@
 			children = (
 				C9FE53AC2A7677A700CACA1A /* EditorScrollView.swift */,
 				C9FE53AA2A76753D00CACA1A /* SourcePresentationViewController.swift */,
-				C9FE53842A7662F800CACA1A /* SourceRoot.swift */,
-				C9FE53862A7663D200CACA1A /* EditorRootViewController.swift */,
+				C9FE53862A7663D200CACA1A /* EditorContentViewController.swift */,
+				C9FE53B82A77334E00CACA1A /* SourceViewController.swift */,
 			);
 			path = Editor;
 			sourceTree = "<group>";
@@ -562,6 +576,7 @@
 				C9FE52E92A75377200CACA1A /* ContainedDocument */,
 				C9FE533A2A75A76000CACA1A /* WindowTreatment */,
 				C9FE53B12A7677E100CACA1A /* ScrollViewPlus */,
+				C9FE53BC2A77354400CACA1A /* SourceView */,
 			);
 			productName = Edit;
 			productReference = C9FE52992A7525D000CACA1A /* Chime.app */;
@@ -749,6 +764,8 @@
 			buildRules = (
 			);
 			dependencies = (
+				C9FE53C32A77C14800CACA1A /* PBXTargetDependency */,
+				C9FE53BB2A77353900CACA1A /* PBXTargetDependency */,
 				C9FE53B42A7677E800CACA1A /* PBXTargetDependency */,
 				C9FE53A82A76712B00CACA1A /* PBXTargetDependency */,
 				C9FE538D2A76646000CACA1A /* PBXTargetDependency */,
@@ -957,9 +974,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9FE53B62A76B81200CACA1A /* ColorView.swift in Sources */,
+				C9FE53C12A77C06800CACA1A /* ColorView.swift in Sources */,
 				C9FE532F2A75A1C100CACA1A /* RepresentableView.swift in Sources */,
 				C9FE53302A75A1C100CACA1A /* RepresentableViewController.swift in Sources */,
+				C9FE53BF2A77C02400CACA1A /* BoundingBorders.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -991,8 +1009,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9FE53852A7662F800CACA1A /* SourceRoot.swift in Sources */,
-				C9FE53872A7663D200CACA1A /* EditorRootViewController.swift in Sources */,
+				C9FE53B92A77334E00CACA1A /* SourceViewController.swift in Sources */,
+				C9FE53872A7663D200CACA1A /* EditorContentViewController.swift in Sources */,
 				C9FE53AD2A7677A700CACA1A /* EditorScrollView.swift in Sources */,
 				C9FE53AB2A76753D00CACA1A /* SourcePresentationViewController.swift in Sources */,
 			);
@@ -1088,6 +1106,15 @@
 		C9FE53B42A7677E800CACA1A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			productRef = C9FE53B32A7677E800CACA1A /* ScrollViewPlus */;
+		};
+		C9FE53BB2A77353900CACA1A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = C9FE53BA2A77353900CACA1A /* SourceView */;
+		};
+		C9FE53C32A77C14800CACA1A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9FE53222A75A17700CACA1A /* UIUtility */;
+			targetProxy = C9FE53C22A77C14800CACA1A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1694,6 +1721,14 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C9FE53AE2A7677D100CACA1A /* XCRemoteSwiftPackageReference "ScrollViewPlus" */;
 			productName = ScrollViewPlus;
+		};
+		C9FE53BA2A77353900CACA1A /* SourceView */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SourceView;
+		};
+		C9FE53BC2A77354400CACA1A /* SourceView */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SourceView;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

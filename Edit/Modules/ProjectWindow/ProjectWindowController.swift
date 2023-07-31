@@ -5,20 +5,23 @@ import UIUtility
 import WindowTreatment
 
 public final class ProjectWindowController: NSWindowController {
-	private let syncModel = WindowStateSynchronizationModel()
+	private let syncModel: WindowStateSynchronizationModel
 
 	public init(contentViewController: NSViewController) {
-		// we know that our initial core view requires AppKit...
-		let representedController = RepresentableViewController(contentViewController)
+		let syncModel = WindowStateSynchronizationModel()
 
-		// but we want to manage as much as possible with SwiftUI here...
-		let rootView = ProjectWindowRoot(content: { representedController })
+		// Kind of a lot going on here. Want to manage a bunch of stuff from SwiftUI, but have to estalish our context here so we can get window state and the syncing model into the root.
+		let controller = RepresentableViewController.wrap(controller: contentViewController) { view in
+			ProjectWindowRoot {
+				view
+			}
 			.environment(syncModel)
 			.observeWindowState()
+		}
 
-		// and then get it all back into the NSWindow
-		let hostingController = NSHostingController(rootView: rootView)
-		let window = NSWindow(contentViewController: hostingController)
+		self.syncModel = syncModel
+
+		let window = NSWindow(contentViewController: controller)
 
 		window.titlebarAppearsTransparent = true
 		window.styleMask.insert(.fullSizeContentView)

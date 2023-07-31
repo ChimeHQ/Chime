@@ -1,6 +1,7 @@
 import SwiftUI
 
 import WindowTreatment
+import Search
 
 struct ProjectWindowRoot<Content: View>: View {
 	@Environment(WindowStateSynchronizationModel.self) private var syncModel
@@ -13,9 +14,12 @@ struct ProjectWindowRoot<Content: View>: View {
 	}
 	
 	var body: some View {
-		content
-			.frame(minWidth: 100, minHeight: 100)
-			.ignoresSafeArea()
-			.onChange(of: windowState) { syncModel.windowStateChanged($0, $1) }
+		VStack(spacing: 0) {
+			content
+			SearchBar()
+		}
+		.frame(minWidth: 100, minHeight: 100)
+		.ignoresSafeArea()
+		.onChange(of: windowState) { syncModel.windowStateChanged($0, $1) }
 	}
 }

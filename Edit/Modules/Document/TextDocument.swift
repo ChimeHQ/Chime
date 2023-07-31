@@ -10,7 +10,7 @@ public final class TextDocument: NSDocument {
 	public internal(set) weak var project: ProjectModel?
 
 	override init() {
-		let editorController = EditorRootViewController()
+		let editorController = EditorContentViewController()
 
 		self.projectWindowController = ProjectWindowController(contentViewController: editorController)
 
