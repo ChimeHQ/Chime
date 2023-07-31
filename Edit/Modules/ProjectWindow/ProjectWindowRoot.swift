@@ -19,6 +19,7 @@ struct ProjectWindowRoot<Content: View>: View {
 			SearchBar()
 		}
 		.frame(minWidth: 100, minHeight: 100)
+		.environment(\.theme, syncModel.currentTheme)
 		.ignoresSafeArea()
 		.onChange(of: windowState) { syncModel.windowStateChanged($0, $1) }
 	}

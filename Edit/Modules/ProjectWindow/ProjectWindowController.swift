@@ -1,6 +1,7 @@
 import AppKit
 import SwiftUI
 
+import Theme
 import UIUtility
 import WindowTreatment
 

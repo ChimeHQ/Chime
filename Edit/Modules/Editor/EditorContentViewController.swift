@@ -4,6 +4,7 @@ import SwiftUI
 import Inspector
 import Navigator
 import Search
+import Theme
 import UIUtility
 
 /// Defines the overall editor scene.
@@ -12,6 +13,7 @@ import UIUtility
 public final class EditorContentViewController: NSViewController {
 	let controller = NSSplitViewController()
 	let editorScrollView = NSScrollView()
+	let sourceViewController = SourceViewController()
 
 	public init() {
 		super.init(nibName: nil, bundle: nil)
@@ -46,14 +48,20 @@ public final class EditorContentViewController: NSViewController {
 		presentationController.gutterView = NSHostingView(rootView: Color.yellow.ignoresSafeArea())
 //		presentationController.underlayView = NSHostingView(rootView: Color.red)
 //		presentationController.overlayView = NSHostingView(rootView: Color.blue)
-//		presentationController.documentView = SourceViewController().view
-		presentationController.documentView = NSHostingView(rootView: BoundingBorders())
+		presentationController.documentView = sourceViewController.view
 
-		// TEMP: necessary for now to get correct view layout
-		presentationController.documentView?.translatesAutoresizingMaskIntoConstraints = false
+		// For debugging. Just be careful, because the SourceView/ScrollView relationship is extremely complex.
+//		presentationController.documentView = NSHostingView(rootView: BoundingBorders())
+//		presentationController.documentView?.translatesAutoresizingMaskIntoConstraints = false
 
-		// Here's a trick you'll love. Bouncing into SwiftUI and back out establishes safe areas for the title bar. But, it also provides a wrapper SwiftUI view for future use.
-		let presentationHost = RepresentableViewController.wrap(controller: presentationController) { $0 }
+		let presentationHost = RepresentableViewController.wrap(controller: presentationController) { presentationView in
+			EditorContent {
+				presentationView
+			} themeUpdateAction: { [sourceViewController] in
+				sourceViewController.updateTheme($0, context: $1)
+			}
+
+		}
 
 		let editorItem = NSSplitViewItem(viewController: presentationHost)
 		editorItem.minimumThickness = 200

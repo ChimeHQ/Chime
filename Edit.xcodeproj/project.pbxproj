@@ -46,6 +46,9 @@
 		C9FE53BD2A77354400CACA1A /* SourceView in Frameworks */ = {isa = PBXBuildFile; productRef = C9FE53BC2A77354400CACA1A /* SourceView */; };
 		C9FE53BF2A77C02400CACA1A /* BoundingBorders.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE53BE2A77C02400CACA1A /* BoundingBorders.swift */; };
 		C9FE53C12A77C06800CACA1A /* ColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE53C02A77C06700CACA1A /* ColorView.swift */; };
+		C9FE53D52A77CC8300CACA1A /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE53D42A77CC8300CACA1A /* Theme.swift */; };
+		C9FE53D62A77CDE500CACA1A /* libTheme.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE53C82A77CC1E00CACA1A /* libTheme.a */; };
+		C9FE53D82A77D98A00CACA1A /* EditorContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE53D72A77D98A00CACA1A /* EditorContent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,13 +115,6 @@
 			remoteGlobalIDString = C9FE53512A7660DF00CACA1A;
 			remoteInfo = Inspector;
 		};
-		C9FE538C2A76646000CACA1A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C9FE53692A7661D400CACA1A;
-			remoteInfo = Search;
-		};
 		C9FE538F2A766A9400CACA1A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
@@ -139,6 +135,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = C9FE53222A75A17700CACA1A;
 			remoteInfo = UIUtility;
+		};
+		C9FE53D12A77CC3100CACA1A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9FE53C72A77CC1E00CACA1A;
+			remoteInfo = Theme;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -199,6 +202,9 @@
 		C9FE53B82A77334E00CACA1A /* SourceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SourceViewController.swift; sourceTree = "<group>"; };
 		C9FE53BE2A77C02400CACA1A /* BoundingBorders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoundingBorders.swift; sourceTree = "<group>"; };
 		C9FE53C02A77C06700CACA1A /* ColorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorView.swift; sourceTree = "<group>"; };
+		C9FE53C82A77CC1E00CACA1A /* libTheme.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTheme.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9FE53D42A77CC8300CACA1A /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		C9FE53D72A77D98A00CACA1A /* EditorContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorContent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +212,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9FE53D62A77CDE500CACA1A /* libTheme.a in Frameworks */,
 				C9FE53A92A76713900CACA1A /* libStatus.a in Frameworks */,
 				C9FE53942A766AB300CACA1A /* libSearch.a in Frameworks */,
 				C9FE53932A766AAD00CACA1A /* libInspector.a in Frameworks */,
@@ -300,6 +307,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C9FE53C62A77CC1E00CACA1A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -331,6 +345,7 @@
 				C9FE536A2A7661D400CACA1A /* libSearch.a */,
 				C9FE537A2A7662DC00CACA1A /* libEditor.a */,
 				C9FE539B2A76709D00CACA1A /* libStatus.a */,
+				C9FE53C82A77CC1E00CACA1A /* libTheme.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -383,6 +398,7 @@
 				C9FE53172A759AE800CACA1A /* ProjectWindow */,
 				C9FE53732A7661F100CACA1A /* Search */,
 				C9FE53A42A7670BB00CACA1A /* Status */,
+				C9FE53D32A77CC8300CACA1A /* Theme */,
 				C9FE532C2A75A18500CACA1A /* UIUtility */,
 			);
 			path = Modules;
@@ -465,6 +481,7 @@
 				C9FE53AA2A76753D00CACA1A /* SourcePresentationViewController.swift */,
 				C9FE53862A7663D200CACA1A /* EditorContentViewController.swift */,
 				C9FE53B82A77334E00CACA1A /* SourceViewController.swift */,
+				C9FE53D72A77D98A00CACA1A /* EditorContent.swift */,
 			);
 			path = Editor;
 			sourceTree = "<group>";
@@ -485,6 +502,14 @@
 				C9FE53A52A7670BB00CACA1A /* StatusBar.swift */,
 			);
 			path = Status;
+			sourceTree = "<group>";
+		};
+		C9FE53D32A77CC8300CACA1A /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				C9FE53D42A77CC8300CACA1A /* Theme.swift */,
+			);
+			path = Theme;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -547,6 +572,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		C9FE53972A76709D00CACA1A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9FE53C42A77CC1E00CACA1A /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -764,11 +796,11 @@
 			buildRules = (
 			);
 			dependencies = (
+				C9FE53D22A77CC3100CACA1A /* PBXTargetDependency */,
 				C9FE53C32A77C14800CACA1A /* PBXTargetDependency */,
 				C9FE53BB2A77353900CACA1A /* PBXTargetDependency */,
 				C9FE53B42A7677E800CACA1A /* PBXTargetDependency */,
 				C9FE53A82A76712B00CACA1A /* PBXTargetDependency */,
-				C9FE538D2A76646000CACA1A /* PBXTargetDependency */,
 				C9FE538B2A76645C00CACA1A /* PBXTargetDependency */,
 				C9FE53892A76645900CACA1A /* PBXTargetDependency */,
 			);
@@ -794,6 +826,23 @@
 			name = Status;
 			productName = Status;
 			productReference = C9FE539B2A76709D00CACA1A /* libStatus.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		C9FE53C72A77CC1E00CACA1A /* Theme */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C9FE53CE2A77CC1F00CACA1A /* Build configuration list for PBXNativeTarget "Theme" */;
+			buildPhases = (
+				C9FE53C42A77CC1E00CACA1A /* Headers */,
+				C9FE53C52A77CC1E00CACA1A /* Sources */,
+				C9FE53C62A77CC1E00CACA1A /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Theme;
+			productName = Theme;
+			productReference = C9FE53C82A77CC1E00CACA1A /* libTheme.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -847,6 +896,9 @@
 					C9FE539A2A76709D00CACA1A = {
 						CreatedOnToolsVersion = 15.0;
 					};
+					C9FE53C72A77CC1E00CACA1A = {
+						CreatedOnToolsVersion = 15.0;
+					};
 				};
 			};
 			buildConfigurationList = C9FE52942A7525D000CACA1A /* Build configuration list for PBXProject "Edit" */;
@@ -880,6 +932,7 @@
 				C9FE53692A7661D400CACA1A /* Search */,
 				C9FE53792A7662DC00CACA1A /* Editor */,
 				C9FE539A2A76709D00CACA1A /* Status */,
+				C9FE53C72A77CC1E00CACA1A /* Theme */,
 			);
 		};
 /* End PBXProject section */
@@ -1012,6 +1065,7 @@
 				C9FE53B92A77334E00CACA1A /* SourceViewController.swift in Sources */,
 				C9FE53872A7663D200CACA1A /* EditorContentViewController.swift in Sources */,
 				C9FE53AD2A7677A700CACA1A /* EditorScrollView.swift in Sources */,
+				C9FE53D82A77D98A00CACA1A /* EditorContent.swift in Sources */,
 				C9FE53AB2A76753D00CACA1A /* SourcePresentationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1021,6 +1075,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9FE53A62A7670BB00CACA1A /* StatusBar.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9FE53C52A77CC1E00CACA1A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9FE53D52A77CC8300CACA1A /* Theme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1084,11 +1146,6 @@
 			target = C9FE53512A7660DF00CACA1A /* Inspector */;
 			targetProxy = C9FE538A2A76645C00CACA1A /* PBXContainerItemProxy */;
 		};
-		C9FE538D2A76646000CACA1A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = C9FE53692A7661D400CACA1A /* Search */;
-			targetProxy = C9FE538C2A76646000CACA1A /* PBXContainerItemProxy */;
-		};
 		C9FE53902A766A9400CACA1A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C9FE53792A7662DC00CACA1A /* Editor */;
@@ -1115,6 +1172,11 @@
 			isa = PBXTargetDependency;
 			target = C9FE53222A75A17700CACA1A /* UIUtility */;
 			targetProxy = C9FE53C22A77C14800CACA1A /* PBXContainerItemProxy */;
+		};
+		C9FE53D22A77CC3100CACA1A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9FE53C72A77CC1E00CACA1A /* Theme */;
+			targetProxy = C9FE53D12A77CC3100CACA1A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1481,41 +1543,29 @@
 		};
 		C9FE53A22A76709D00CACA1A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9FE531A2A759BC400CACA1A /* Module.xcconfig */;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 77X93NZ3G2;
-				EXECUTABLE_PREFIX = lib;
-				GCC_C_LANGUAGE_STANDARD = gnu17;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
 			};
 			name = Debug;
 		};
 		C9FE53A32A76709D00CACA1A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9FE531A2A759BC400CACA1A /* Module.xcconfig */;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 77X93NZ3G2;
-				EXECUTABLE_PREFIX = lib;
-				GCC_C_LANGUAGE_STANDARD = gnu17;
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		C9FE53CF2A77CC1F00CACA1A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9FE531A2A759BC400CACA1A /* Module.xcconfig */;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		C9FE53D02A77CC1F00CACA1A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9FE531A2A759BC400CACA1A /* Module.xcconfig */;
+			buildSettings = {
 			};
 			name = Release;
 		};
@@ -1635,6 +1685,15 @@
 			buildConfigurations = (
 				C9FE53A22A76709D00CACA1A /* Debug */,
 				C9FE53A32A76709D00CACA1A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C9FE53CE2A77CC1F00CACA1A /* Build configuration list for PBXNativeTarget "Theme" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9FE53CF2A77CC1F00CACA1A /* Debug */,
+				C9FE53D02A77CC1F00CACA1A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
