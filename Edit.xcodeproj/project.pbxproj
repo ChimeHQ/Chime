@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C96A852D2A7A6E22005ED222 /* DirectoryDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96A852C2A7A6E22005ED222 /* DirectoryDocument.swift */; };
+		C96A852F2A7A703D005ED222 /* OpenPanelAccessoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96A852E2A7A703D005ED222 /* OpenPanelAccessoryViewController.swift */; };
+		C96A85312A7A7515005ED222 /* BaseDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96A85302A7A7515005ED222 /* BaseDocument.swift */; };
+		C96A85342A7A8339005ED222 /* URL+Bookmarks.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96A85332A7A8339005ED222 /* URL+Bookmarks.swift */; };
 		C9FE529D2A7525D000CACA1A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE529C2A7525D000CACA1A /* AppDelegate.swift */; };
 		C9FE52A42A7525D300CACA1A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9FE52A32A7525D300CACA1A /* Assets.xcassets */; };
 		C9FE52A72A7525D300CACA1A /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9FE52A52A7525D300CACA1A /* MainMenu.xib */; };
@@ -58,6 +62,7 @@
 		C9FE540A2A7A62DB00CACA1A /* MockExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE54092A7A62DB00CACA1A /* MockExtension.swift */; };
 		C9FE540D2A7A630200CACA1A /* libExtensionHost.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE53DD2A7A5A2A00CACA1A /* libExtensionHost.a */; };
 		C9FE54102A7A642A00CACA1A /* ChimeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE52F42A7539B100CACA1A /* ChimeKit.framework */; };
+		C9FE54122A7A66D500CACA1A /* ContextBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE54112A7A66D500CACA1A /* ContextBuffer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -197,6 +202,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C96A852C2A7A6E22005ED222 /* DirectoryDocument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectoryDocument.swift; sourceTree = "<group>"; };
+		C96A852E2A7A703D005ED222 /* OpenPanelAccessoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenPanelAccessoryViewController.swift; sourceTree = "<group>"; };
+		C96A85302A7A7515005ED222 /* BaseDocument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseDocument.swift; sourceTree = "<group>"; };
+		C96A85332A7A8339005ED222 /* URL+Bookmarks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+Bookmarks.swift"; sourceTree = "<group>"; };
 		C9FE52992A7525D000CACA1A /* Chime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9FE529C2A7525D000CACA1A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C9FE529E2A7525D000CACA1A /* TextDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextDocument.swift; sourceTree = "<group>"; };
@@ -250,6 +259,7 @@
 		C9FE54062A7A617000CACA1A /* ExtensionDocumentState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionDocumentState.swift; sourceTree = "<group>"; };
 		C9FE54082A7A625300CACA1A /* EditTests.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = EditTests.xcconfig; sourceTree = "<group>"; };
 		C9FE54092A7A62DB00CACA1A /* MockExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockExtension.swift; sourceTree = "<group>"; };
+		C9FE54112A7A66D500CACA1A /* ContextBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContextBuffer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -380,6 +390,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C96A85322A7A8322005ED222 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C96A85332A7A8339005ED222 /* URL+Bookmarks.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		C9FE52902A7525D000CACA1A = {
 			isa = PBXGroup;
 			children = (
@@ -475,9 +493,13 @@
 		C9FE52DD2A7532D500CACA1A /* Document */ = {
 			isa = PBXGroup;
 			children = (
+				C96A85322A7A8322005ED222 /* Extensions */,
 				C9FE53072A753B3D00CACA1A /* Models */,
 				C9FE52ED2A7537AC00CACA1A /* ProjectDocumentController.swift */,
 				C9FE529E2A7525D000CACA1A /* TextDocument.swift */,
+				C96A852C2A7A6E22005ED222 /* DirectoryDocument.swift */,
+				C96A852E2A7A703D005ED222 /* OpenPanelAccessoryViewController.swift */,
+				C96A85302A7A7515005ED222 /* BaseDocument.swift */,
 			);
 			path = Document;
 			sourceTree = "<group>";
@@ -492,6 +514,7 @@
 		C9FE53072A753B3D00CACA1A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C9FE54112A7A66D500CACA1A /* ContextBuffer.swift */,
 				C9FE53082A753B5500CACA1A /* ProjectModel.swift */,
 			);
 			path = Models;
@@ -1149,7 +1172,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C96A852F2A7A703D005ED222 /* OpenPanelAccessoryViewController.swift in Sources */,
 				C9FE52EE2A7537AC00CACA1A /* ProjectDocumentController.swift in Sources */,
+				C96A85312A7A7515005ED222 /* BaseDocument.swift in Sources */,
+				C96A852D2A7A6E22005ED222 /* DirectoryDocument.swift in Sources */,
+				C9FE54122A7A66D500CACA1A /* ContextBuffer.swift in Sources */,
+				C96A85342A7A8339005ED222 /* URL+Bookmarks.swift in Sources */,
 				C9FE53092A753B5500CACA1A /* ProjectModel.swift in Sources */,
 				C9FE52E42A75343C00CACA1A /* TextDocument.swift in Sources */,
 			);

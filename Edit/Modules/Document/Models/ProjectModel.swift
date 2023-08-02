@@ -3,12 +3,20 @@ import AppKit
 import ChimeKit
 
 public final class ProjectModel: ObservableObject {
-	public private(set) var documents = Set<TextDocument>()
+	public private(set) var documents = Set<BaseDocument>()
 
 	public let context: ProjectContext
 
 	public init(url: URL) {
 		self.context = ProjectContext(url: url)
+	}
+
+	public var url: URL {
+		context.url
+	}
+
+	public var frontmostWindow: NSWindow? {
+		nil
 	}
 }
 
@@ -24,13 +32,13 @@ extension ProjectModel: Hashable {
 }
 
 extension ProjectModel {
-	public func addDocument(_ document: TextDocument) {
+	public func addDocument(_ document: BaseDocument) {
 		assert(documents.contains(document) == false)
 		
 		documents.insert(document)
 	}
 
-	public func removeDocument(_ document: TextDocument) {
+	public func removeDocument(_ document: BaseDocument) {
 		assert(documents.remove(document) != nil)
 	}
 }

@@ -1,13 +1,12 @@
 import AppKit
 import SwiftUI
 
+import ContainedDocument
 import Editor
 import ProjectWindow
 
-public final class TextDocument: NSDocument {
+public final class TextDocument: BaseDocument {
 	private let projectWindowController: ProjectWindowController
-
-	public internal(set) weak var project: ProjectModel?
 
 	override init() {
 		let editorController = EditorContentViewController()
@@ -38,4 +37,3 @@ public final class TextDocument: NSDocument {
 		throw NSError(domain: NSOSStatusErrorDomain, code: unimpErr, userInfo: nil)
 	}
 }
-
