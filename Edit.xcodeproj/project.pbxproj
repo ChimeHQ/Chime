@@ -10,7 +10,7 @@
 		C9FE529D2A7525D000CACA1A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE529C2A7525D000CACA1A /* AppDelegate.swift */; };
 		C9FE52A42A7525D300CACA1A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9FE52A32A7525D300CACA1A /* Assets.xcassets */; };
 		C9FE52A72A7525D300CACA1A /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9FE52A52A7525D300CACA1A /* MainMenu.xib */; };
-		C9FE52B32A7525D300CACA1A /* EditTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE52B22A7525D300CACA1A /* EditTests.swift */; };
+		C9FE52B32A7525D300CACA1A /* FilteringExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE52B22A7525D300CACA1A /* FilteringExtensionTests.swift */; };
 		C9FE52BD2A7525D300CACA1A /* EditUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE52BC2A7525D300CACA1A /* EditUITests.swift */; };
 		C9FE52BF2A7525D300CACA1A /* EditUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE52BE2A7525D300CACA1A /* EditUITestsLaunchTests.swift */; };
 		C9FE52E32A7533FE00CACA1A /* libDocument.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE52D42A7532C700CACA1A /* libDocument.a */; };
@@ -49,6 +49,15 @@
 		C9FE53D52A77CC8300CACA1A /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE53D42A77CC8300CACA1A /* Theme.swift */; };
 		C9FE53D62A77CDE500CACA1A /* libTheme.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE53C82A77CC1E00CACA1A /* libTheme.a */; };
 		C9FE53D82A77D98A00CACA1A /* EditorContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE53D72A77D98A00CACA1A /* EditorContent.swift */; };
+		C9FE53E82A7A5B2000CACA1A /* LazyRemoteExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE53E72A7A5B2000CACA1A /* LazyRemoteExtension.swift */; };
+		C9FE53FF2A7A5F1600CACA1A /* Logger+init.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE53FE2A7A5F1600CACA1A /* Logger+init.swift */; };
+		C9FE54022A7A607100CACA1A /* libUtility.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE53F42A7A5EF900CACA1A /* libUtility.a */; };
+		C9FE54032A7A607D00CACA1A /* libExtensionHost.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE53DD2A7A5A2A00CACA1A /* libExtensionHost.a */; };
+		C9FE54052A7A613C00CACA1A /* FilteringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE54042A7A613C00CACA1A /* FilteringExtension.swift */; };
+		C9FE54072A7A617000CACA1A /* ExtensionDocumentState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE54062A7A617000CACA1A /* ExtensionDocumentState.swift */; };
+		C9FE540A2A7A62DB00CACA1A /* MockExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE54092A7A62DB00CACA1A /* MockExtension.swift */; };
+		C9FE540D2A7A630200CACA1A /* libExtensionHost.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE53DD2A7A5A2A00CACA1A /* libExtensionHost.a */; };
+		C9FE54102A7A642A00CACA1A /* ChimeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE52F42A7539B100CACA1A /* ChimeKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -143,6 +152,34 @@
 			remoteGlobalIDString = C9FE53C72A77CC1E00CACA1A;
 			remoteInfo = Theme;
 		};
+		C9FE53E92A7A5D4000CACA1A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9FE52F32A7539B100CACA1A;
+			remoteInfo = ChimeKit;
+		};
+		C9FE54002A7A606100CACA1A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9FE53F32A7A5EF900CACA1A;
+			remoteInfo = Utility;
+		};
+		C9FE540B2A7A62FB00CACA1A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9FE53DC2A7A5A2A00CACA1A;
+			remoteInfo = ExtensionHost;
+		};
+		C9FE540E2A7A642500CACA1A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9FE52F32A7539B100CACA1A;
+			remoteInfo = ChimeKit;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -168,7 +205,7 @@
 		C9FE52A82A7525D300CACA1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9FE52A92A7525D300CACA1A /* Edit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Edit.entitlements; sourceTree = "<group>"; };
 		C9FE52AE2A7525D300CACA1A /* EditTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EditTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C9FE52B22A7525D300CACA1A /* EditTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTests.swift; sourceTree = "<group>"; };
+		C9FE52B22A7525D300CACA1A /* FilteringExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilteringExtensionTests.swift; sourceTree = "<group>"; };
 		C9FE52B82A7525D300CACA1A /* EditUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EditUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9FE52BC2A7525D300CACA1A /* EditUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUITests.swift; sourceTree = "<group>"; };
 		C9FE52BE2A7525D300CACA1A /* EditUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -205,6 +242,14 @@
 		C9FE53C82A77CC1E00CACA1A /* libTheme.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTheme.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9FE53D42A77CC8300CACA1A /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		C9FE53D72A77D98A00CACA1A /* EditorContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorContent.swift; sourceTree = "<group>"; };
+		C9FE53DD2A7A5A2A00CACA1A /* libExtensionHost.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libExtensionHost.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9FE53E72A7A5B2000CACA1A /* LazyRemoteExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LazyRemoteExtension.swift; sourceTree = "<group>"; };
+		C9FE53F42A7A5EF900CACA1A /* libUtility.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libUtility.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9FE53FE2A7A5F1600CACA1A /* Logger+init.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Logger+init.swift"; sourceTree = "<group>"; };
+		C9FE54042A7A613C00CACA1A /* FilteringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilteringExtension.swift; sourceTree = "<group>"; };
+		C9FE54062A7A617000CACA1A /* ExtensionDocumentState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionDocumentState.swift; sourceTree = "<group>"; };
+		C9FE54082A7A625300CACA1A /* EditTests.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = EditTests.xcconfig; sourceTree = "<group>"; };
+		C9FE54092A7A62DB00CACA1A /* MockExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +257,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9FE54032A7A607D00CACA1A /* libExtensionHost.a in Frameworks */,
+				C9FE54022A7A607100CACA1A /* libUtility.a in Frameworks */,
 				C9FE53D62A77CDE500CACA1A /* libTheme.a in Frameworks */,
 				C9FE53A92A76713900CACA1A /* libStatus.a in Frameworks */,
 				C9FE53942A766AB300CACA1A /* libSearch.a in Frameworks */,
@@ -233,6 +280,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9FE54102A7A642A00CACA1A /* ChimeKit.framework in Frameworks */,
+				C9FE540D2A7A630200CACA1A /* libExtensionHost.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,6 +363,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C9FE53DB2A7A5A2A00CACA1A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9FE53F22A7A5EF900CACA1A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -346,6 +409,8 @@
 				C9FE537A2A7662DC00CACA1A /* libEditor.a */,
 				C9FE539B2A76709D00CACA1A /* libStatus.a */,
 				C9FE53C82A77CC1E00CACA1A /* libTheme.a */,
+				C9FE53DD2A7A5A2A00CACA1A /* libExtensionHost.a */,
+				C9FE53F42A7A5EF900CACA1A /* libUtility.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -363,7 +428,8 @@
 		C9FE52B12A7525D300CACA1A /* EditTests */ = {
 			isa = PBXGroup;
 			children = (
-				C9FE52B22A7525D300CACA1A /* EditTests.swift */,
+				C9FE54092A7A62DB00CACA1A /* MockExtension.swift */,
+				C9FE52B22A7525D300CACA1A /* FilteringExtensionTests.swift */,
 			);
 			path = EditTests;
 			sourceTree = "<group>";
@@ -393,6 +459,7 @@
 			children = (
 				C9FE52DD2A7532D500CACA1A /* Document */,
 				C9FE53832A7662F800CACA1A /* Editor */,
+				C9FE53E62A7A5B2000CACA1A /* ExtensionHost */,
 				C9FE53602A76619800CACA1A /* Inspector */,
 				C9FE53632A7661A800CACA1A /* Navigator */,
 				C9FE53172A759AE800CACA1A /* ProjectWindow */,
@@ -400,6 +467,7 @@
 				C9FE53A42A7670BB00CACA1A /* Status */,
 				C9FE53D32A77CC8300CACA1A /* Theme */,
 				C9FE532C2A75A18500CACA1A /* UIUtility */,
+				C9FE53FD2A7A5F1600CACA1A /* Utility */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -490,6 +558,7 @@
 			isa = PBXGroup;
 			children = (
 				C9FE52CC2A752B4D00CACA1A /* Edit.xcconfig */,
+				C9FE54082A7A625300CACA1A /* EditTests.xcconfig */,
 				C9FE52CB2A7526C000CACA1A /* Project.xcconfig */,
 				C9FE531A2A759BC400CACA1A /* Module.xcconfig */,
 			);
@@ -510,6 +579,24 @@
 				C9FE53D42A77CC8300CACA1A /* Theme.swift */,
 			);
 			path = Theme;
+			sourceTree = "<group>";
+		};
+		C9FE53E62A7A5B2000CACA1A /* ExtensionHost */ = {
+			isa = PBXGroup;
+			children = (
+				C9FE54062A7A617000CACA1A /* ExtensionDocumentState.swift */,
+				C9FE54042A7A613C00CACA1A /* FilteringExtension.swift */,
+				C9FE53E72A7A5B2000CACA1A /* LazyRemoteExtension.swift */,
+			);
+			path = ExtensionHost;
+			sourceTree = "<group>";
+		};
+		C9FE53FD2A7A5F1600CACA1A /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				C9FE53FE2A7A5F1600CACA1A /* Logger+init.swift */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -585,6 +672,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C9FE53D92A7A5A2A00CACA1A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9FE53F02A7A5EF900CACA1A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
@@ -625,6 +726,8 @@
 			buildRules = (
 			);
 			dependencies = (
+				C9FE540F2A7A642500CACA1A /* PBXTargetDependency */,
+				C9FE540C2A7A62FB00CACA1A /* PBXTargetDependency */,
 				C9FE52B02A7525D300CACA1A /* PBXTargetDependency */,
 			);
 			name = EditTests;
@@ -845,6 +948,42 @@
 			productReference = C9FE53C82A77CC1E00CACA1A /* libTheme.a */;
 			productType = "com.apple.product-type.library.static";
 		};
+		C9FE53DC2A7A5A2A00CACA1A /* ExtensionHost */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C9FE53E32A7A5A2A00CACA1A /* Build configuration list for PBXNativeTarget "ExtensionHost" */;
+			buildPhases = (
+				C9FE53D92A7A5A2A00CACA1A /* Headers */,
+				C9FE53DA2A7A5A2A00CACA1A /* Sources */,
+				C9FE53DB2A7A5A2A00CACA1A /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C9FE54012A7A606100CACA1A /* PBXTargetDependency */,
+				C9FE53EA2A7A5D4000CACA1A /* PBXTargetDependency */,
+			);
+			name = ExtensionHost;
+			productName = ExtensionHost;
+			productReference = C9FE53DD2A7A5A2A00CACA1A /* libExtensionHost.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		C9FE53F32A7A5EF900CACA1A /* Utility */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C9FE53FA2A7A5EF900CACA1A /* Build configuration list for PBXNativeTarget "Utility" */;
+			buildPhases = (
+				C9FE53F02A7A5EF900CACA1A /* Headers */,
+				C9FE53F12A7A5EF900CACA1A /* Sources */,
+				C9FE53F22A7A5EF900CACA1A /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Utility;
+			productName = Utility;
+			productReference = C9FE53F42A7A5EF900CACA1A /* libUtility.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -899,6 +1038,12 @@
 					C9FE53C72A77CC1E00CACA1A = {
 						CreatedOnToolsVersion = 15.0;
 					};
+					C9FE53DC2A7A5A2A00CACA1A = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					C9FE53F32A7A5EF900CACA1A = {
+						CreatedOnToolsVersion = 15.0;
+					};
 				};
 			};
 			buildConfigurationList = C9FE52942A7525D000CACA1A /* Build configuration list for PBXProject "Edit" */;
@@ -915,6 +1060,7 @@
 				C9FE53002A753A3D00CACA1A /* XCRemoteSwiftPackageReference "ChimeKit" */,
 				C9FE53372A75A75400CACA1A /* XCRemoteSwiftPackageReference "WindowTreatment" */,
 				C9FE53AE2A7677D100CACA1A /* XCRemoteSwiftPackageReference "ScrollViewPlus" */,
+				C9FE53EB2A7A5D9700CACA1A /* XCRemoteSwiftPackageReference "Extendable" */,
 			);
 			productRefGroup = C9FE529A2A7525D000CACA1A /* Products */;
 			projectDirPath = "";
@@ -933,6 +1079,8 @@
 				C9FE53792A7662DC00CACA1A /* Editor */,
 				C9FE539A2A76709D00CACA1A /* Status */,
 				C9FE53C72A77CC1E00CACA1A /* Theme */,
+				C9FE53DC2A7A5A2A00CACA1A /* ExtensionHost */,
+				C9FE53F32A7A5EF900CACA1A /* Utility */,
 			);
 		};
 /* End PBXProject section */
@@ -983,7 +1131,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9FE52B32A7525D300CACA1A /* EditTests.swift in Sources */,
+				C9FE52B32A7525D300CACA1A /* FilteringExtensionTests.swift in Sources */,
+				C9FE540A2A7A62DB00CACA1A /* MockExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1086,6 +1235,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C9FE53DA2A7A5A2A00CACA1A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9FE54052A7A613C00CACA1A /* FilteringExtension.swift in Sources */,
+				C9FE53E82A7A5B2000CACA1A /* LazyRemoteExtension.swift in Sources */,
+				C9FE54072A7A617000CACA1A /* ExtensionDocumentState.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9FE53F12A7A5EF900CACA1A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9FE53FF2A7A5F1600CACA1A /* Logger+init.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1177,6 +1344,26 @@
 			isa = PBXTargetDependency;
 			target = C9FE53C72A77CC1E00CACA1A /* Theme */;
 			targetProxy = C9FE53D12A77CC3100CACA1A /* PBXContainerItemProxy */;
+		};
+		C9FE53EA2A7A5D4000CACA1A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9FE52F32A7539B100CACA1A /* ChimeKit */;
+			targetProxy = C9FE53E92A7A5D4000CACA1A /* PBXContainerItemProxy */;
+		};
+		C9FE54012A7A606100CACA1A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9FE53F32A7A5EF900CACA1A /* Utility */;
+			targetProxy = C9FE54002A7A606100CACA1A /* PBXContainerItemProxy */;
+		};
+		C9FE540C2A7A62FB00CACA1A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9FE53DC2A7A5A2A00CACA1A /* ExtensionHost */;
+			targetProxy = C9FE540B2A7A62FB00CACA1A /* PBXContainerItemProxy */;
+		};
+		C9FE540F2A7A642500CACA1A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9FE52F32A7539B100CACA1A /* ChimeKit */;
+			targetProxy = C9FE540E2A7A642500CACA1A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1317,39 +1504,27 @@
 		};
 		C9FE52C62A7525D300CACA1A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9FE54082A7A625300CACA1A /* EditTests.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 77X93NZ3G2;
 				GENERATE_INFOPLIST_FILE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.chimehq.EditTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Edit.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Edit";
 			};
 			name = Debug;
 		};
 		C9FE52C72A7525D300CACA1A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9FE54082A7A625300CACA1A /* EditTests.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 77X93NZ3G2;
 				GENERATE_INFOPLIST_FILE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.chimehq.EditTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Edit.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Edit";
 			};
 			name = Release;
 		};
@@ -1569,6 +1744,34 @@
 			};
 			name = Release;
 		};
+		C9FE53E42A7A5A2A00CACA1A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9FE531A2A759BC400CACA1A /* Module.xcconfig */;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		C9FE53E52A7A5A2A00CACA1A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9FE531A2A759BC400CACA1A /* Module.xcconfig */;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		C9FE53FB2A7A5EF900CACA1A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9FE531A2A759BC400CACA1A /* Module.xcconfig */;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		C9FE53FC2A7A5EF900CACA1A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9FE531A2A759BC400CACA1A /* Module.xcconfig */;
+			buildSettings = {
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1698,6 +1901,24 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		C9FE53E32A7A5A2A00CACA1A /* Build configuration list for PBXNativeTarget "ExtensionHost" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9FE53E42A7A5A2A00CACA1A /* Debug */,
+				C9FE53E52A7A5A2A00CACA1A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C9FE53FA2A7A5EF900CACA1A /* Build configuration list for PBXNativeTarget "Utility" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9FE53FB2A7A5EF900CACA1A /* Debug */,
+				C9FE53FC2A7A5EF900CACA1A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
@@ -1731,6 +1952,14 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 0.1.2;
+			};
+		};
+		C9FE53EB2A7A5D9700CACA1A /* XCRemoteSwiftPackageReference "Extendable" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ChimeHQ/Extendable.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
