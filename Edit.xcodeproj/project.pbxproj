@@ -398,6 +398,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		C96A85372A7A83FA005ED222 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				C9FE54092A7A62DB00CACA1A /* MockExtension.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		C9FE52902A7525D000CACA1A = {
 			isa = PBXGroup;
 			children = (
@@ -446,7 +454,7 @@
 		C9FE52B12A7525D300CACA1A /* EditTests */ = {
 			isa = PBXGroup;
 			children = (
-				C9FE54092A7A62DB00CACA1A /* MockExtension.swift */,
+				C96A85372A7A83FA005ED222 /* Mocks */,
 				C9FE52B22A7525D300CACA1A /* FilteringExtensionTests.swift */,
 			);
 			path = EditTests;

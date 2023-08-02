@@ -165,11 +165,11 @@ public final class ProjectDocumentController: ContainedDocumentController<Projec
 	}
 
 	public override func encodeRestorableState(with coder: NSCoder, for document: NSDocument) {
-//		guard let textDoc = document as? TextDocument else { return }
-//
-//		if let data = textDoc.project?.url.fileBookmarkData() {
-//			coder.encode(data, forKey: ProjectDocumentController.bookmarkDataKey)
-//		}
+		guard let doc = document as? BaseDocument else { return }
+
+		if let data = doc.project?.url.fileBookmarkData() {
+			coder.encode(data, forKey: ProjectDocumentController.bookmarkDataKey)
+		}
 	}
 
 	public override func restoreState(with coder: NSCoder, for document: NSDocument) {
