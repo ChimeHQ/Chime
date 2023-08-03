@@ -50,7 +50,9 @@ final class OpenPanelAccessoryViewController: NSViewController {
 		hiddenFilesButton.state = panel.showsHiddenFiles ? .on : .off
 
 		kvoObservation = panel.observe(\.showsHiddenFiles, changeHandler: { [unowned self] (obj, _) in
-			self.hiddenFilesButton.state = obj.showsHiddenFiles ? .on : .off
+			MainActor.assumeIsolated {
+				self.hiddenFilesButton.state = obj.showsHiddenFiles ? .on : .off
+			}
 		})
 	}
 

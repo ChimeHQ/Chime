@@ -1,17 +1,30 @@
 import AppKit
 import SwiftUI
+import OSLog
 
+import ChimeKit
 import ContainedDocument
 import Editor
 import ProjectWindow
+import Utility
 
-public final class TextDocument: BaseDocument {
+public final class TextDocument: ContainedDocument<Project> {
 	private let projectWindowController: ProjectWindowController
+	private var isClosing = false
+	private let logger = Logger(type: TextDocument.self)
+	private var state: DocumentState {
+		didSet { stateUpdated(oldValue) }
+	}
 
 	override init() {
+		self.state = DocumentState()
+
 		let editorController = EditorContentViewController()
 
-		self.projectWindowController = ProjectWindowController(contentViewController: editorController)
+		self.projectWindowController = ProjectWindowController(
+			contentViewController: editorController,
+			documentContext: state.context
+		)
 
 	    super.init()
 	}
@@ -35,5 +48,39 @@ public final class TextDocument: BaseDocument {
 		// Alternatively, you could remove this method and override read(from:ofType:) instead.
 		// If you do, you should also override isEntireFileLoaded to return false if the contents are lazily loaded.
 		throw NSError(domain: NSOSStatusErrorDomain, code: unimpErr, userInfo: nil)
+	}
+
+	public override func close() {
+		// Closing removes the project, which results in a state mutation and normally kicks off all kinds of work
+		self.isClosing = true
+
+		super.close()
+
+//		AppDelegate.shared.extensionManager.host.setServiceConfigurationHandler(for: state.id, handler: nil)
+	}
+}
+
+extension TextDocument {
+	private func stateUpdated(_ oldValue: DocumentState) {
+		if oldValue == state || isClosing {
+			return
+		}
+
+		logger.debug("document state changed")
+
+		projectWindowController.documentContext = state.context
+	}
+}
+
+extension TextDocument: ProjectDocument {
+	var projectContext: ProjectContext? {
+		get { projectWindowController.projectContext }
+		set { projectWindowController.projectContext = newValue }
+	}
+	
+	func willRemoveDocument() {
+	}
+	
+	func didCompleteOpen() {
 	}
 }

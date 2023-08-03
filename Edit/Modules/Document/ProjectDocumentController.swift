@@ -2,13 +2,27 @@ import AppKit
 import UniformTypeIdentifiers
 
 import ContainedDocument
+import ChimeKit
+import ProjectWindow
 
-public final class ProjectDocumentController: ContainedDocumentController<ProjectModel> {
-	private(set) var projects = Set<ProjectModel>()
+protocol ProjectDocument: ContainedDocument<Project>, Hashable {
+	@MainActor
+	var projectContext: ProjectContext? { get set }
+
+	@MainActor
+	func willRemoveDocument()
+	@MainActor
+	func didCompleteOpen()
+}
+
+public final class ProjectDocumentController: ContainedDocumentController<Project> {
+	private typealias InternalDocument = any ProjectDocument
+
+	private(set) var projects = Set<Project>()
 	private var restoringSet = Set<NSDocument>()
 	private lazy var openPanelAccessoryViewController = OpenPanelAccessoryViewController()
 
-	public var projectRemovedHandler: (ProjectModel) -> Void = { _ in }
+	public var projectRemovedHandler: (Project) -> Void = { _ in }
 
 	public override init() {
 		super.init()
@@ -21,8 +35,8 @@ public final class ProjectDocumentController: ContainedDocumentController<Projec
 
 	public override func removeDocument(_ document: NSDocument) {
 		switch document {
-		case let doc as BaseDocument:
-			if let proj = doc.project {
+		case let doc as InternalDocument:
+			if let proj = project(for: doc) {
 				doc.willRemoveDocument()
 
 				closeProjectIfRequired(proj)
@@ -68,9 +82,9 @@ public final class ProjectDocumentController: ContainedDocumentController<Projec
 	public override func makeDocument(withContentsOf url: URL, ofType typeName: String) throws -> NSDocument {
 		let doc = try super.makeDocument(withContentsOf: url, ofType: typeName)
 
-		if let doc = doc as? DirectoryDocument {
-			setupDirectoryDocumentIfNeeded(doc, for: url)
-		}
+//		if let doc = doc as? DirectoryDocument {
+//			setupDirectoryDocumentIfNeeded(doc, for: url)
+//		}
 
 		handleNewDocument(doc)
 
@@ -89,8 +103,8 @@ public final class ProjectDocumentController: ContainedDocumentController<Projec
 	}
 
 	public override func noteNewRecentDocument(_ document: NSDocument) {
-		if let doc = document as? BaseDocument {
-			if doc.project != nil || restoringSet.contains(document) {
+		if let doc = document as? InternalDocument {
+			if project(for: doc) != nil || restoringSet.contains(document) {
 				return
 			}
 		}
@@ -148,15 +162,15 @@ public final class ProjectDocumentController: ContainedDocumentController<Projec
 		}
 	}
 
-	private func setupDirectoryDocumentIfNeeded(_ document: DirectoryDocument, for url: URL) {
-		let project = getOrAddProject(for: url)
-
-		document.project = project
-	}
+//	private func setupDirectoryDocumentIfNeeded(_ document: DirectoryDocument, for url: URL) {
+//		let project = getOrAddProject(for: url)
+//
+//		document.projectContext = project.context
+//	}
 
 	func associateDefaultProjectIfNeeded(to document: NSDocument) {
-		guard let doc = document as? BaseDocument else { return }
-		guard doc.project == nil else { return }
+		guard let doc = document as? InternalDocument else { return }
+		guard project(for: doc) == nil else { return }
 		guard let containingURL = document.fileURL?.deletingLastPathComponent() else { return }
 
 		let project = getOrAddProject(for: containingURL)
@@ -165,9 +179,9 @@ public final class ProjectDocumentController: ContainedDocumentController<Projec
 	}
 
 	public override func encodeRestorableState(with coder: NSCoder, for document: NSDocument) {
-		guard let doc = document as? BaseDocument else { return }
+		guard let doc = document as? InternalDocument else { return }
 
-		if let data = doc.project?.url.fileBookmarkData() {
+		if let data = project(for: doc)?.url.fileBookmarkData() {
 			coder.encode(data, forKey: ProjectDocumentController.bookmarkDataKey)
 		}
 	}
@@ -180,15 +194,16 @@ public final class ProjectDocumentController: ContainedDocumentController<Projec
 		associateDocument(document, to: project)
 	}
 
-	public override func associateDocument(_ document: NSDocument, to container: ProjectModel) {
-		guard let document = document as? BaseDocument else { return }
+	public override func associateDocument(_ document: NSDocument, to container: Project) {
+		guard let document = document as? InternalDocument else { return }
 
 		container.addDocument(document)
+		document.projectContext = container.context
 	}
 
 	public override func disassociateDocument(_ document: NSDocument) {
-		guard let document = document as? BaseDocument else { return }
-		guard let proj = document.project else { return }
+		guard let document = document as? InternalDocument else { return }
+		guard let proj = project(for: document) else { return }
 
 		proj.removeDocument(document)
 
@@ -203,7 +218,7 @@ public final class ProjectDocumentController: ContainedDocumentController<Projec
 		return try super.openUntitledDocumentAndDisplay(displayDocument)
 	}
 
-	public override func openUntitledDocumentAndDisplay(_ displayDocument: Bool, in container: ProjectModel) throws -> NSDocument {
+	public override func openUntitledDocumentAndDisplay(_ displayDocument: Bool, in container: Project) throws -> NSDocument {
 		let doc = try super.openUntitledDocumentAndDisplay(false, in: container)
 
 		let result = OpenDocumentResult.success((doc, false))
@@ -213,7 +228,7 @@ public final class ProjectDocumentController: ContainedDocumentController<Projec
 		return doc
 	}
 
-	public func openDocument(withContentsOf url: URL, inOrFind container: ProjectModel?, display: Bool) async throws -> (NSDocument, Bool) {
+	public func openDocument(withContentsOf url: URL, inOrFind container: Project?, display: Bool) async throws -> (NSDocument, Bool) {
 		let project = container ?? projects.first { url.absoluteString.hasPrefix($0.url.absoluteString) }
 
 		if let project = project {
@@ -225,29 +240,40 @@ public final class ProjectDocumentController: ContainedDocumentController<Projec
 }
 
 extension ProjectDocumentController {
-	private func addProject(_ project: ProjectModel) {
+	private func addProject(_ project: Project) {
 		if getProject(for: project.url) == nil {
 			projects.insert(project)
 		}
 	}
 
-	private func getProject(for url: URL) -> ProjectModel? {
+	private func getProject(for url: URL) -> Project? {
 		return projects.first(where: { url.path.hasPrefix($0.url.path) })
 	}
 
-	private func getOrAddProject(for url: URL) -> ProjectModel {
+	private func getOrAddProject(for url: URL) -> Project {
 		if let p = getProject(for: url) {
 			return p
 		}
 
-		let project = ProjectModel(url: url)
+		let project = Project(url: url)
 
 		addProject(project)
 
 		return project
 	}
 
-	private func closeProjectIfRequired(_ project: ProjectModel) {
+	private func project(for document: InternalDocument) -> Project? {
+		switch document {
+		case let doc as TextDocument:
+			projects.first(where: { $0.documents.contains(doc) })
+		case let doc as DirectoryDocument:
+			projects.first(where: { $0.directoryRootDocument == doc })
+		default:
+			nil
+		}
+	}
+
+	private func closeProjectIfRequired(_ project: Project) {
 		guard project.documents.count == 0 else {
 			return
 		}
@@ -274,7 +300,7 @@ extension ProjectDocumentController {
 }
 
 extension ProjectDocumentController {
-	private func closeProject(_ project: ProjectModel) {
+	private func closeProject(_ project: Project) {
 		assert(projects.remove(project) != nil)
 	}
 
@@ -282,7 +308,7 @@ extension ProjectDocumentController {
 	}
 
 	private func handleNewDocument(_ document: NSDocument) {
-		guard let doc = document as? BaseDocument else { return }
+		guard let doc = document as? InternalDocument else { return }
 
 		doc.didCompleteOpen()
 	}

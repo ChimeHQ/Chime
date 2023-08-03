@@ -4,7 +4,7 @@ import WindowTreatment
 import Search
 
 struct ProjectWindowRoot<Content: View>: View {
-	@Environment(WindowStateSynchronizationModel.self) private var syncModel
+	@Environment(WindowStateModel.self) private var model
 	@Environment(\.windowState) private var windowState
 
 	let content: Content
@@ -19,8 +19,10 @@ struct ProjectWindowRoot<Content: View>: View {
 			SearchBar()
 		}
 		.frame(minWidth: 100, minHeight: 100)
-		.environment(\.theme, syncModel.currentTheme)
+		.environment(\.theme, model.currentTheme)
+		.environment(\.projectContext, model.projectContext)
+		.environment(\.documentContext, model.documentContext)
 		.ignoresSafeArea()
-		.onChange(of: windowState) { syncModel.windowStateChanged($0, $1) }
+		.onChange(of: windowState) { model.windowStateChanged($0, $1) }
 	}
 }

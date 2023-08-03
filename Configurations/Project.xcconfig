@@ -17,8 +17,8 @@ MARKETING_VERSION = $CURRENT_PROJECT_DISPLAY_VERSION
 INFOPLIST_KEY_NSHumanReadableCopyright = Copyright © 2023 Chime Systems Inc. All rights reserved.
 
 // Secondary behaviors
-GCC_PREPROCESSOR_DEFINITIONS[config=Debug] = DEBUG=1 $(inherited)
-SWIFT_ACTIVE_COMPILATION_CONDITIONS[config=Debug] = DEBUG $(inherited)
+GCC_PREPROCESSOR_DEFINITIONS[config=Debug] = DEBUG=1
+SWIFT_ACTIVE_COMPILATION_CONDITIONS[config=Debug] = DEBUG
 SWIFT_COMPILATION_MODE[config=Release] = wholemodule
 SWIFT_OPTIMIZATION_LEVEL[config=Debug] = -Onone
 

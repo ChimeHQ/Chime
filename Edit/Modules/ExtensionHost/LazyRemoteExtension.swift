@@ -1,4 +1,4 @@
-import ExtensionFoundation
+@preconcurrency import ExtensionFoundation
 import Foundation
 import OSLog
 

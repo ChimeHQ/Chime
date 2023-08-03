@@ -8,6 +8,10 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 	private let documentController: ProjectDocumentController
 
 	override init() {
+		UserDefaults.standard.register(defaults: [
+			"NSApplicationCrashOnExceptions": true,
+		])
+
 		// NSDocumentController subclass instances must be manually created before any NSDocumentController functionality is used
 		self.documentController = ProjectDocumentController()
 

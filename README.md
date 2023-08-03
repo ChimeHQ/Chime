@@ -10,7 +10,7 @@ Goals:
 
 ## Project State
 
-Chime used to be commercial, but is now [free][download]. It built up some pretty significant cruft over time. In particular, the core UI application architecture is just in a bad state. It is also quite complex to build. So, I've opted to re-implement that core and pull in parts as appropriate. I'll be putting an emphasis on extracting additional components as I go. A fitting rebirth, I would say.
+Chime used to be commercial, but is now [free][download]. It built up some pretty significant cruft over time. In particular, the core UI application architecture is just in a bad state. It is also quite complex to build. So, I've opted to re-implement that core and pull in parts as appropriate. I'll be putting an emphasis on extracting components into packages as I go. A fitting rebirth, I would say.
 
 I don't yet have a good sense for when this version will be usable. Those two buttons up at the top will help. ⭐️💖
 
@@ -29,8 +29,7 @@ I don't yet have a good sense for when this version will be usable. Those two bu
 
 - SwiftUI where possible, AppKit where useful
 - using packages is a wonderful way to support open source software
-- supporting older OSes is less important that making something good
-- correct first, fast second
+- supporting older versions of macOS is nice, not critical
 
 ### Conventions
 
