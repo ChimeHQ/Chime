@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C94F7EC12A7D8C1900E0361A /* ProjectContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94F7EC02A7D8C1900E0361A /* ProjectContentViewController.swift */; };
 		C96A852D2A7A6E22005ED222 /* DirectoryDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96A852C2A7A6E22005ED222 /* DirectoryDocument.swift */; };
 		C96A852F2A7A703D005ED222 /* OpenPanelAccessoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96A852E2A7A703D005ED222 /* OpenPanelAccessoryViewController.swift */; };
 		C96A85342A7A8339005ED222 /* URL+Bookmarks.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96A85332A7A8339005ED222 /* URL+Bookmarks.swift */; };
@@ -230,6 +231,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C94F7EC02A7D8C1900E0361A /* ProjectContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectContentViewController.swift; sourceTree = "<group>"; };
 		C96A852C2A7A6E22005ED222 /* DirectoryDocument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectoryDocument.swift; sourceTree = "<group>"; };
 		C96A852E2A7A703D005ED222 /* OpenPanelAccessoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenPanelAccessoryViewController.swift; sourceTree = "<group>"; };
 		C96A85332A7A8339005ED222 /* URL+Bookmarks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+Bookmarks.swift"; sourceTree = "<group>"; };
@@ -562,6 +564,7 @@
 				C9FE531B2A759CE400CACA1A /* WindowStateModel.swift */,
 				C9FE53182A759AFE00CACA1A /* ProjectWindowController.swift */,
 				C9FE531D2A759F4C00CACA1A /* ProjectWindowRoot.swift */,
+				C94F7EC02A7D8C1900E0361A /* ProjectContentViewController.swift */,
 			);
 			path = ProjectWindow;
 			sourceTree = "<group>";
@@ -1236,6 +1239,7 @@
 			files = (
 				C9FE531C2A759CE400CACA1A /* WindowStateModel.swift in Sources */,
 				C9FE531E2A759F4C00CACA1A /* ProjectWindowRoot.swift in Sources */,
+				C94F7EC12A7D8C1900E0361A /* ProjectContentViewController.swift in Sources */,
 				C9FE53192A759AFE00CACA1A /* ProjectWindowController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

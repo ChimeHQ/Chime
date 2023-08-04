@@ -8,11 +8,23 @@ Goals:
 - be an editor people enjoy using
 - support cool [extensions][chimekit]
 
+Features:
+- completions
+- command line tool
+- document/project-scoped search
+- [extensions][chimekit]
+- file navigator
+- syntax highlighting (driven by tree-sitter and LSP)
+- structure highlighting
+- semantic symbol information
+- textual/symbolic quick open
+- UI theming
+
 ## Project State
 
 Chime used to be commercial, but is now [free][download]. It built up some pretty significant cruft over time. In particular, the core UI application architecture is just in a bad state. It is also quite complex to build. So, I've opted to re-implement that core and pull in parts as appropriate. I'll be putting an emphasis on extracting components into packages as I go. A fitting rebirth, I would say.
 
-I don't yet have a good sense for when this version will be usable. Those two buttons up at the top will help. ⭐️💖
+I don't yet have a good sense for when this version will be usable.
 
 ## Contributing
 

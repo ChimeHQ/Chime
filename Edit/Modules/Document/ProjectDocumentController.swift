@@ -82,10 +82,6 @@ public final class ProjectDocumentController: ContainedDocumentController<Projec
 	public override func makeDocument(withContentsOf url: URL, ofType typeName: String) throws -> NSDocument {
 		let doc = try super.makeDocument(withContentsOf: url, ofType: typeName)
 
-//		if let doc = doc as? DirectoryDocument {
-//			setupDirectoryDocumentIfNeeded(doc, for: url)
-//		}
-
 		handleNewDocument(doc)
 
 		return doc
@@ -161,12 +157,6 @@ public final class ProjectDocumentController: ContainedDocumentController<Projec
 			self.handleOpen(result: result, display: displayDocument, completionHandler: completionHandler)
 		}
 	}
-
-//	private func setupDirectoryDocumentIfNeeded(_ document: DirectoryDocument, for url: URL) {
-//		let project = getOrAddProject(for: url)
-//
-//		document.projectContext = project.context
-//	}
 
 	func associateDefaultProjectIfNeeded(to document: NSDocument) {
 		guard let doc = document as? InternalDocument else { return }

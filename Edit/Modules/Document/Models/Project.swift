@@ -57,7 +57,7 @@ extension Project {
 
 			directoryRootDocument = doc
 		default:
-			assertionFailure("Unsupported document type")
+			preconditionFailure("Unsupported document type")
 		}
 	}
 
@@ -70,7 +70,7 @@ extension Project {
 
 			directoryRootDocument = nil
 		default:
-			assertionFailure("Unsupported document type")
+			preconditionFailure("Unsupported document type")
 		}
 	}
 }
