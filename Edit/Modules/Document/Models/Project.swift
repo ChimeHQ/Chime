@@ -16,19 +16,32 @@ public final class Project {
 		context.url
 	}
 
+	private var allDocuments: Set<NSDocument> {
+		guard let dirDoc = directoryRootDocument else {
+			return documents
+		}
+
+		return (documents as Set<NSDocument>).union(Set([dirDoc as NSDocument]))
+	}
+
+	@MainActor
 	public var frontmostWindow: NSWindow? {
-		nil
+		allDocuments
+			.flatMap { $0.windowControllers }
+			.compactMap { $0.window }
+			.sorted(by: { $0.orderedIndex < $1.orderedIndex })
+			.first
 	}
 }
 
 extension Project: Hashable {
 	public static func == (lhs: Project, rhs: Project) -> Bool {
-		lhs.context == rhs.context && lhs.documents == rhs.documents
+		lhs.context == rhs.context && lhs.allDocuments == rhs.allDocuments
 	}
 
 	public func hash(into hasher: inout Hasher) {
 		hasher.combine(context)
-		hasher.combine(documents)
+		hasher.combine(allDocuments)
 	}
 }
 
