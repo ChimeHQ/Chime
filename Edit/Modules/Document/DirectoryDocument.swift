@@ -82,4 +82,8 @@ extension DirectoryDocument: ProjectDocument {
 	
 	func didCompleteOpen() {
 	}
+
+	var defaultProjectRoot: URL? {
+		fileURL
+	}
 }

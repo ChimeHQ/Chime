@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		C94F7EC12A7D8C1900E0361A /* ProjectContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94F7EC02A7D8C1900E0361A /* ProjectContentViewController.swift */; };
+		C94F7EC32A7E58E900E0361A /* NavigatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94F7EC22A7E58E900E0361A /* NavigatorViewController.swift */; };
+		C94F7EC52A7E730200E0361A /* NavigatorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94F7EC42A7E730200E0361A /* NavigatorModel.swift */; };
 		C96A852D2A7A6E22005ED222 /* DirectoryDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96A852C2A7A6E22005ED222 /* DirectoryDocument.swift */; };
 		C96A852F2A7A703D005ED222 /* OpenPanelAccessoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96A852E2A7A703D005ED222 /* OpenPanelAccessoryViewController.swift */; };
 		C96A85342A7A8339005ED222 /* URL+Bookmarks.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96A85332A7A8339005ED222 /* URL+Bookmarks.swift */; };
@@ -95,6 +97,13 @@
 			remoteGlobalIDString = C9FE53692A7661D400CACA1A;
 			remoteInfo = Search;
 		};
+		C9F79DCE2A83F0A7005ED8E9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9FE53422A765FE900CACA1A;
+			remoteInfo = Navigator;
+		};
 		C9FE52AF2A7525D300CACA1A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
@@ -144,33 +153,12 @@
 			remoteGlobalIDString = C9FE530D2A759ADA00CACA1A;
 			remoteInfo = ProjectWindow;
 		};
-		C9FE53882A76645900CACA1A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C9FE53422A765FE900CACA1A;
-			remoteInfo = Navigator;
-		};
-		C9FE538A2A76645C00CACA1A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C9FE53512A7660DF00CACA1A;
-			remoteInfo = Inspector;
-		};
 		C9FE538F2A766A9400CACA1A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = C9FE53792A7662DC00CACA1A;
 			remoteInfo = Editor;
-		};
-		C9FE53A72A76712B00CACA1A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C9FE539A2A76709D00CACA1A;
-			remoteInfo = Status;
 		};
 		C9FE53C22A77C14800CACA1A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -232,11 +220,14 @@
 
 /* Begin PBXFileReference section */
 		C94F7EC02A7D8C1900E0361A /* ProjectContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectContentViewController.swift; sourceTree = "<group>"; };
+		C94F7EC22A7E58E900E0361A /* NavigatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigatorViewController.swift; sourceTree = "<group>"; };
+		C94F7EC42A7E730200E0361A /* NavigatorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigatorModel.swift; sourceTree = "<group>"; };
 		C96A852C2A7A6E22005ED222 /* DirectoryDocument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectoryDocument.swift; sourceTree = "<group>"; };
 		C96A852E2A7A703D005ED222 /* OpenPanelAccessoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenPanelAccessoryViewController.swift; sourceTree = "<group>"; };
 		C96A85332A7A8339005ED222 /* URL+Bookmarks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+Bookmarks.swift"; sourceTree = "<group>"; };
 		C96A85392A7B2C47005ED222 /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		C96A853F2A7BC3F5005ED222 /* DocumentState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentState.swift; sourceTree = "<group>"; };
+		C9F79DD02A83F737005ED8E9 /* ProcessEnv */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = ProcessEnv; path = ../ProcessEnv; sourceTree = "<group>"; };
 		C9FE52992A7525D000CACA1A /* Chime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9FE529C2A7525D000CACA1A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C9FE529E2A7525D000CACA1A /* TextDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextDocument.swift; sourceTree = "<group>"; };
@@ -439,6 +430,7 @@
 		C9FE52902A7525D000CACA1A = {
 			isa = PBXGroup;
 			children = (
+				C9F79DD02A83F737005ED8E9 /* ProcessEnv */,
 				C9FE53B72A77328E00CACA1A /* SourceView */,
 				C9FE538E2A76674600CACA1A /* Configurations */,
 				C9FE529B2A7525D000CACA1A /* Edit */,
@@ -592,6 +584,8 @@
 			isa = PBXGroup;
 			children = (
 				C9FE53642A7661A800CACA1A /* Navigator.swift */,
+				C94F7EC22A7E58E900E0361A /* NavigatorViewController.swift */,
+				C94F7EC42A7E730200E0361A /* NavigatorModel.swift */,
 			);
 			path = Navigator;
 			sourceTree = "<group>";
@@ -871,6 +865,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				C9F79DCF2A83F0A7005ED8E9 /* PBXTargetDependency */,
 				C96A85482A7BEBC4005ED222 /* PBXTargetDependency */,
 				C96A85462A7BEBB0005ED222 /* PBXTargetDependency */,
 				C9FE533D2A75A76A00CACA1A /* PBXTargetDependency */,
@@ -969,9 +964,6 @@
 				C9FE53C32A77C14800CACA1A /* PBXTargetDependency */,
 				C9FE53BB2A77353900CACA1A /* PBXTargetDependency */,
 				C9FE53B42A7677E800CACA1A /* PBXTargetDependency */,
-				C9FE53A82A76712B00CACA1A /* PBXTargetDependency */,
-				C9FE538B2A76645C00CACA1A /* PBXTargetDependency */,
-				C9FE53892A76645900CACA1A /* PBXTargetDependency */,
 			);
 			name = Editor;
 			packageProductDependencies = (
@@ -1259,6 +1251,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C94F7EC52A7E730200E0361A /* NavigatorModel.swift in Sources */,
+				C94F7EC32A7E58E900E0361A /* NavigatorViewController.swift in Sources */,
 				C9FE53652A7661A800CACA1A /* Navigator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1348,6 +1342,11 @@
 			target = C9FE53692A7661D400CACA1A /* Search */;
 			targetProxy = C96A85472A7BEBC4005ED222 /* PBXContainerItemProxy */;
 		};
+		C9F79DCF2A83F0A7005ED8E9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9FE53422A765FE900CACA1A /* Navigator */;
+			targetProxy = C9F79DCE2A83F0A7005ED8E9 /* PBXContainerItemProxy */;
+		};
 		C9FE52B02A7525D300CACA1A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C9FE52982A7525D000CACA1A /* Edit */;
@@ -1395,16 +1394,6 @@
 			isa = PBXTargetDependency;
 			productRef = C9FE533C2A75A76A00CACA1A /* WindowTreatment */;
 		};
-		C9FE53892A76645900CACA1A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = C9FE53422A765FE900CACA1A /* Navigator */;
-			targetProxy = C9FE53882A76645900CACA1A /* PBXContainerItemProxy */;
-		};
-		C9FE538B2A76645C00CACA1A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = C9FE53512A7660DF00CACA1A /* Inspector */;
-			targetProxy = C9FE538A2A76645C00CACA1A /* PBXContainerItemProxy */;
-		};
 		C9FE53902A766A9400CACA1A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C9FE53792A7662DC00CACA1A /* Editor */;
@@ -1413,11 +1402,6 @@
 		C9FE53962A766D2F00CACA1A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			productRef = C9FE53952A766D2F00CACA1A /* WindowTreatment */;
-		};
-		C9FE53A82A76712B00CACA1A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = C9FE539A2A76709D00CACA1A /* Status */;
-			targetProxy = C9FE53A72A76712B00CACA1A /* PBXContainerItemProxy */;
 		};
 		C9FE53B42A7677E800CACA1A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;

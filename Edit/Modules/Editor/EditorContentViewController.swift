@@ -1,9 +1,6 @@
 import AppKit
 import SwiftUI
 
-import Inspector
-import Navigator
-import Search
 import Theme
 import UIUtility
 

@@ -1,46 +1,91 @@
 import SwiftUI
 
 import ChimeKit
-import WindowTreatment
 
 extension URL {
 	var directoryContents: [URL] {
-		let children = try? FileManager.default.contentsOfDirectory(at: self, includingPropertiesForKeys: [.isDirectoryKey])
+		let keys: [URLResourceKey] = [
+			.isDirectoryKey,
+			.isHiddenKey
+		]
+
+		let children = try? FileManager.default.contentsOfDirectory(at: self, includingPropertiesForKeys: keys)
 
 		return children ?? []
 	}
+
+	var isDirectory: Bool {
+		(try? resourceValues(forKeys: [.isDirectoryKey]))?.isDirectory ?? false
+	}
 }
 
-/// The model to be displayed
-struct Node<Value: Hashable>: Hashable {
-	let value: Value
-	var children: [Node]? = nil
+enum NavigatorItem: Hashable {
+	case file(URL)
+
+	func children() -> [NavigatorItem] {
+		switch self {
+		case .file(let url):
+			if url.isDirectory == false {
+				return []
+			}
+
+			return url.directoryContents.map { NavigatorItem.file($0) }
+		}
+	}
+
+	var hasChildren: Bool {
+		switch self {
+		case let .file(url):
+			return url.isDirectory
+		}
+	}
 }
 
-/// The state of the view
-struct NavigatorState {
-	var expandedSet: Set<IndexPath>
-	var selectedSet: Set<IndexPath>
+@Observable
+final class FileNavigatorModel {
+	typealias InternalModel = NavigatorModel<NavigatorItem>
+
+	private(set) var outlineModel: InternalModel?
+
+	init() {
+	}
+
+	func updateContext(_ context: ProjectContext?) {
+		guard let context = context else {
+			self.outlineModel = nil
+			return
+		}
+
+		let root = NavigatorItem.file(context.url)
+
+		self.outlineModel = InternalModel(root: root, configuration: navigatorConfiguration)
+	}
+
+	private var navigatorConfiguration: InternalModel.Configuration {
+		.init(subValueProvider: { $0.children() }, hasSubvalues: { $0.hasChildren })
+	}
 }
 
 public struct Navigator: View {
 	@Environment(\.projectContext) private var context
-	@Environment(\.windowState) private var windowState
-
-	private let root = Node<String>(value: "a", children: [Node(value: "b"), Node(value: "c")])
+	@State private var model = FileNavigatorModel()
 
 	public init() {
 	}
 
-	public var body: some View {
-		Text("context: \(context?.url.absoluteString ?? "none")")
-		List {
-			OutlineGroup(root, id: \.value, children: \.children) { item in
-				Text(item.value)
-			}
+	@ViewBuilder
+	private var content: some View {
+		if let outlineModel = model.outlineModel {
+			NavigatorView(model: outlineModel)
+				.listStyle(.sidebar)
+		} else {
+			Text("no project")
+				.frame(maxWidth: .infinity, maxHeight: .infinity)
 		}
-		.listStyle(.sidebar)
-		.onChange(of: windowState) { _, _ in print("window state") }
-		.onChange(of: context) { _, _ in print("context changed") }
+	}
+
+	public var body: some View {
+		content
+			.onChange(of: context) { model.updateContext($1) }
 	}
 }

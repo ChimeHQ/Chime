@@ -5,6 +5,7 @@ import OSLog
 import ChimeKit
 import ContainedDocument
 import Editor
+import ProcessEnv
 import ProjectWindow
 import Utility
 
@@ -82,5 +83,14 @@ extension TextDocument: ProjectDocument {
 	}
 	
 	func didCompleteOpen() {
+	}
+
+	var defaultProjectRoot: URL? {
+		if ProcessInfo.processInfo.isSandboxed {
+			return fileURL
+		}
+
+		// we cannot do this when sandboxed
+		return fileURL?.deletingLastPathComponent()
 	}
 }

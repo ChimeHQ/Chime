@@ -10,6 +10,9 @@ protocol ProjectDocument: ContainedDocument<Project>, Hashable {
 	var projectContext: ProjectContext? { get set }
 
 	@MainActor
+	var defaultProjectRoot: URL? { get }
+
+	@MainActor
 	func willRemoveDocument()
 	@MainActor
 	func didCompleteOpen()
@@ -159,11 +162,15 @@ public final class ProjectDocumentController: ContainedDocumentController<Projec
 	}
 
 	func associateDefaultProjectIfNeeded(to document: NSDocument) {
-		guard let doc = document as? InternalDocument else { return }
-		guard project(for: doc) == nil else { return }
-		guard let containingURL = document.fileURL?.deletingLastPathComponent() else { return }
+		guard
+			let doc = document as? InternalDocument,
+			project(for: doc) == nil,
+			let url = doc.defaultProjectRoot
+		else {
+			return
+		}
 
-		let project = getOrAddProject(for: containingURL)
+		let project = getOrAddProject(for: url)
 
 		associateDocument(doc, to: project)
 	}
