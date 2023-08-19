@@ -24,7 +24,8 @@ public final class TextDocument: ContainedDocument<Project> {
 
 		self.projectWindowController = ProjectWindowController(
 			contentViewController: editorController,
-			documentContext: state.context
+			documentContext: state.context,
+			onOpen: { Swift.print("textdoc opened: ", $0) }
 		)
 
 	    super.init()
@@ -35,6 +36,8 @@ public final class TextDocument: ContainedDocument<Project> {
 	}
 
 	public override func makeWindowControllers() {
+		precondition(windowControllers.isEmpty)
+
 		addWindowController(projectWindowController)
 	}
 

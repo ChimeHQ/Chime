@@ -7,9 +7,15 @@ import UIUtility
 import WindowTreatment
 
 public final class ProjectWindowController: NSWindowController {
+	public typealias OnOpen = (URL) -> Void
+
 	private let model: WindowStateModel
 
-	public init(contentViewController: NSViewController, documentContext: DocumentContext) {
+	public init(
+		contentViewController: NSViewController,
+		documentContext: DocumentContext,
+		onOpen: @escaping OnOpen
+	) {
 		let syncModel = WindowStateModel(documentContext: documentContext)
 
 		let contentController = ProjectContentViewController(contentViewController: contentViewController)
@@ -20,6 +26,11 @@ public final class ProjectWindowController: NSWindowController {
 				view
 			}
 			.environment(syncModel)
+			.environment(\.openURL, OpenURLAction { url in
+				onOpen(url)
+				
+				return .handled
+			})
 			.observeWindowState()
 		}
 

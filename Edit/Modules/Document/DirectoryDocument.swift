@@ -13,18 +13,19 @@ extension DocumentContext {
 }
 
 public final class DirectoryDocument: ContainedDocument<Project> {
-	private let projectWindowController: ProjectWindowController
-
-	override init() {
+	private lazy var projectWindowController: ProjectWindowController = {
 		let placeholderController = NSHostingController(rootView: Color.orange)
 
-		self.projectWindowController = ProjectWindowController(
+		return ProjectWindowController(
 			contentViewController: placeholderController,
-			documentContext: .nonDocumentContext
+			documentContext: .nonDocumentContext,
+			onOpen: { url in
+				Task { [weak self] in
+					await self?.openURL(url)
+				}
+			}
 		)
-
-		super.init()
-	}
+	}()
 
 	public override func makeWindowControllers() {
 		precondition(windowControllers.isEmpty)

@@ -41,8 +41,20 @@ public final class FileNavigatorModel {
 public struct Navigator: View {
 	@Environment(FileNavigatorModel.self) private var model
 	@Environment(\.projectContext) private var context
+	@Environment(\.openURL) private var openURL
+
+	let openTapCount = 1
 
 	public init() {
+	}
+
+	public func openItem(_ item: NavigatorItem) {
+		switch item {
+		case .file(let url):
+			openURL(url)
+		default:
+			fatalError("need to handle this")
+		}
 	}
 
 	public var body: some View {
@@ -56,6 +68,7 @@ public struct Navigator: View {
 				configuration: FileNavigatorModel.configureView
 			) { value in
 				Text(value.name)
+					.onTapGesture(count: openTapCount, perform: { self.openItem(value) })
 			}
 		}
 		.padding()

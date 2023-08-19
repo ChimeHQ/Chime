@@ -5,21 +5,8 @@ import ContainedDocument
 import ChimeKit
 import ProjectWindow
 
-protocol ProjectDocument: ContainedDocument<Project>, Hashable {
-	@MainActor
-	var projectContext: ProjectContext? { get set }
-
-	@MainActor
-	var defaultProjectRoot: URL? { get }
-
-	@MainActor
-	func willRemoveDocument()
-	@MainActor
-	func didCompleteOpen()
-}
-
 public final class ProjectDocumentController: ContainedDocumentController<Project> {
-	private typealias InternalDocument = any ProjectDocument
+	typealias InternalDocument = any ProjectDocument
 
 	private(set) var projects = Set<Project>()
 	private var restoringSet = Set<NSDocument>()
@@ -226,7 +213,7 @@ public final class ProjectDocumentController: ContainedDocumentController<Projec
 	}
 
 	public func openDocument(withContentsOf url: URL, inOrFind container: Project?, display: Bool) async throws -> (NSDocument, Bool) {
-		let project = container ?? projects.first { url.absoluteString.hasPrefix($0.url.absoluteString) }
+		let project = container ?? getProject(for: url)
 
 		if let project = project {
 			return try await openDocument(withContentsOf: url, in: project, display: true)
@@ -297,6 +284,10 @@ extension ProjectDocumentController {
 }
 
 extension ProjectDocumentController {
+	static var sharedController: ProjectDocumentController {
+		ProjectDocumentController.shared as! ProjectDocumentController
+	}
+
 	private func closeProject(_ project: Project) {
 		assert(projects.remove(project) != nil)
 	}

@@ -13,6 +13,7 @@
 		C96A85342A7A8339005ED222 /* URL+Bookmarks.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96A85332A7A8339005ED222 /* URL+Bookmarks.swift */; };
 		C96A853B2A7B2CA0005ED222 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96A85392A7B2C47005ED222 /* Project.swift */; };
 		C96A85402A7BC3F5005ED222 /* DocumentState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96A853F2A7BC3F5005ED222 /* DocumentState.swift */; };
+		C98EA41C2A912A5E00B8815E /* ProjectDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98EA4192A912A2900B8815E /* ProjectDocument.swift */; };
 		C9F79DD72A87E3FA005ED8E9 /* URL+Contents.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F79DD62A87E3FA005ED8E9 /* URL+Contents.swift */; };
 		C9F79DE02A87E661005ED8E9 /* Outline in Frameworks */ = {isa = PBXBuildFile; productRef = C9F79DDF2A87E661005ED8E9 /* Outline */; };
 		C9F79DF72A8FFC65005ED8E9 /* NavigatorItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F79DD82A87E44A005ED8E9 /* NavigatorItem.swift */; };
@@ -241,6 +242,8 @@
 		C96A85332A7A8339005ED222 /* URL+Bookmarks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+Bookmarks.swift"; sourceTree = "<group>"; };
 		C96A85392A7B2C47005ED222 /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		C96A853F2A7BC3F5005ED222 /* DocumentState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentState.swift; sourceTree = "<group>"; };
+		C98EA4192A912A2900B8815E /* ProjectDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDocument.swift; sourceTree = "<group>"; };
+		C98EA41D2A91574D00B8815E /* ContainedDocument */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = ContainedDocument; path = ../ContainedDocument; sourceTree = "<group>"; };
 		C9F79DD62A87E3FA005ED8E9 /* URL+Contents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Contents.swift"; sourceTree = "<group>"; };
 		C9F79DD82A87E44A005ED8E9 /* NavigatorItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigatorItem.swift; sourceTree = "<group>"; };
 		C9F79DDA2A87E46A005ED8E9 /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
@@ -460,6 +463,7 @@
 			children = (
 				C9FE53B72A77328E00CACA1A /* SourceView */,
 				C9F79DDC2A87E64C005ED8E9 /* Outline */,
+				C98EA41D2A91574D00B8815E /* ContainedDocument */,
 				C9FE538E2A76674600CACA1A /* Configurations */,
 				C9FE529B2A7525D000CACA1A /* Edit */,
 				C9FE52B12A7525D300CACA1A /* EditTests */,
@@ -557,6 +561,7 @@
 				C96A852E2A7A703D005ED222 /* OpenPanelAccessoryViewController.swift */,
 				C9FE52ED2A7537AC00CACA1A /* ProjectDocumentController.swift */,
 				C9FE529E2A7525D000CACA1A /* TextDocument.swift */,
+				C98EA4192A912A2900B8815E /* ProjectDocument.swift */,
 			);
 			path = Document;
 			sourceTree = "<group>";
@@ -1242,6 +1247,7 @@
 			files = (
 				C96A852F2A7A703D005ED222 /* OpenPanelAccessoryViewController.swift in Sources */,
 				C9FE52EE2A7537AC00CACA1A /* ProjectDocumentController.swift in Sources */,
+				C98EA41C2A912A5E00B8815E /* ProjectDocument.swift in Sources */,
 				C96A852D2A7A6E22005ED222 /* DirectoryDocument.swift in Sources */,
 				C9FE54122A7A66D500CACA1A /* ContextBuffer.swift in Sources */,
 				C96A853B2A7B2CA0005ED222 /* Project.swift in Sources */,
