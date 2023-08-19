@@ -1,5 +1,6 @@
 import SwiftUI
 
+import Navigator
 import WindowTreatment
 import Search
 
@@ -18,10 +19,11 @@ struct ProjectWindowRoot<Content: View>: View {
 			content
 			SearchBar()
 		}
-		.frame(minWidth: 100, minHeight: 100)
+		.frame(minWidth: 450, minHeight: 300)
 		.environment(\.theme, model.currentTheme)
 		.environment(\.projectContext, model.projectContext)
 		.environment(\.documentContext, model.documentContext)
+		.environment(model.navigatorModel)
 		.ignoresSafeArea()
 		.onChange(of: windowState) { model.windowStateChanged($0, $1) }
 	}

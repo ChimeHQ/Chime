@@ -1,9 +1,11 @@
 import SwiftUI
 
 import ChimeKit
+import Navigator
 import Theme
 import WindowTreatment
 
+@MainActor
 @Observable
 final class WindowStateModel {
 	typealias SiblingProvider = () -> [WindowStateModel]
@@ -11,9 +13,15 @@ final class WindowStateModel {
 	@ObservationIgnored
 	var siblingProvider: SiblingProvider = { [] }
 	var currentTheme: Theme = Theme()
-	var projectContext: ProjectContext?
+	var projectContext: ProjectContext? {
+		didSet {
+			navigatorModel.root = projectContext.flatMap { NavigatorItem.file($0.url) } ?? .none
+		}
+	}
 	var documentContext: DocumentContext
-	var appeared = false
+
+	@ObservationIgnored
+	let navigatorModel = FileNavigatorModel()
 
 	init(documentContext: DocumentContext) {
 		self.documentContext = documentContext

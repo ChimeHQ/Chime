@@ -1,91 +1,65 @@
 import SwiftUI
 
 import ChimeKit
+import Outline
 
-extension URL {
-	var directoryContents: [URL] {
-		let keys: [URLResourceKey] = [
-			.isDirectoryKey,
-			.isHiddenKey
-		]
-
-		let children = try? FileManager.default.contentsOfDirectory(at: self, includingPropertiesForKeys: keys)
-
-		return children ?? []
-	}
-
-	var isDirectory: Bool {
-		(try? resourceValues(forKeys: [.isDirectoryKey]))?.isDirectory ?? false
-	}
-}
-
-enum NavigatorItem: Hashable {
-	case file(URL)
-
-	func children() -> [NavigatorItem] {
-		switch self {
-		case .file(let url):
-			if url.isDirectory == false {
-				return []
-			}
-
-			return url.directoryContents.map { NavigatorItem.file($0) }
-		}
-	}
-
-	var hasChildren: Bool {
-		switch self {
-		case let .file(url):
-			return url.isDirectory
-		}
-	}
-}
-
+@MainActor
 @Observable
-final class FileNavigatorModel {
-	typealias InternalModel = NavigatorModel<NavigatorItem>
+public final class FileNavigatorModel {
+	private(set) var outlineData: OutlineData<NavigatorItem, String>
 
-	private(set) var outlineModel: InternalModel?
+	public var expansion = Set<String>()
+	public var selection = Set<String>()
 
-	init() {
+	public init() {
+		self.outlineData = OutlineData(
+			root: .none,
+			subValues: {
+				try await Task.sleep(for: .seconds(2))
+				return $0.children()
+			},
+			id: \.id,
+			hasSubvalues: \.hasChildren
+		)
 	}
 
-	func updateContext(_ context: ProjectContext?) {
-		guard let context = context else {
-			self.outlineModel = nil
-			return
+	public var root: NavigatorItem {
+		get { outlineData.root }
+		set {
+			outlineData.root = newValue
 		}
-
-		let root = NavigatorItem.file(context.url)
-
-		self.outlineModel = InternalModel(root: root, configuration: navigatorConfiguration)
 	}
 
-	private var navigatorConfiguration: InternalModel.Configuration {
-		.init(subValueProvider: { $0.children() }, hasSubvalues: { $0.hasChildren })
+	static func configureView(_ view: NSOutlineView) {
+		view.setDraggingSourceOperationMask([.move, .copy, .delete], forLocal: false)
+		view.setDraggingSourceOperationMask([.move, .copy], forLocal: true)
+		view.registerForDraggedTypes([.fileURL])
 	}
 }
 
+@MainActor
 public struct Navigator: View {
+	@Environment(FileNavigatorModel.self) private var model
 	@Environment(\.projectContext) private var context
-	@State private var model = FileNavigatorModel()
 
 	public init() {
 	}
 
-	@ViewBuilder
-	private var content: some View {
-		if let outlineModel = model.outlineModel {
-			NavigatorView(model: outlineModel)
-				.listStyle(.sidebar)
-		} else {
-			Text("no project")
-				.frame(maxWidth: .infinity, maxHeight: .infinity)
-		}
-	}
-
 	public var body: some View {
-		content
-			.onChange(of: context) { model.updateContext($1) }
+		@Bindable var model = model
+
+		NavigatorScrollView {
+			OutlineView(
+				data: model.outlineData,
+				expansion: $model.expansion,
+				selection: $model.selection,
+				configuration: FileNavigatorModel.configureView
+			) { value in
+				Text(value.name)
+			}
+		}
+		.padding()
+//			.onChange(of: context) { model.updateContext($1) }
+		.onChange(of: model.selection) { print("selection:", $0, $1) }
 	}
 }
