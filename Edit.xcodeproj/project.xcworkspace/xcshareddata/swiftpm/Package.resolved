@@ -1,124 +1,128 @@
 {
-  "object": {
-    "pins": [
-      {
-        "package": "AsyncXPCConnection",
-        "repositoryURL": "https://github.com/ChimeHQ/AsyncXPCConnection",
-        "state": {
-          "branch": null,
-          "revision": "82a0eb00a0d881e6a65cad0acc031c1efd058d06",
-          "version": "1.0.0"
-        }
-      },
-      {
-        "package": "ChimeKit",
-        "repositoryURL": "https://github.com/ChimeHQ/ChimeKit.git",
-        "state": {
-          "branch": null,
-          "revision": "6e80898da48c7d4c4fb78bbad7700c7065b9e241",
-          "version": null
-        }
-      },
-      {
-        "package": "Extendable",
-        "repositoryURL": "https://github.com/ChimeHQ/Extendable",
-        "state": {
-          "branch": null,
-          "revision": "ed81589a7be2b990baf41cbefffd2ac19e669694",
-          "version": "0.2.0"
-        }
-      },
-      {
-        "package": "FSEventsWrapper",
-        "repositoryURL": "https://github.com/Frizlab/FSEventsWrapper",
-        "state": {
-          "branch": null,
-          "revision": "70bbea4b108221fcabfce8dbced8502831c0ae04",
-          "version": "2.1.0"
-        }
-      },
-      {
-        "package": "GlobPattern",
-        "repositoryURL": "https://github.com/ChimeHQ/GlobPattern",
-        "state": {
-          "branch": null,
-          "revision": "4ebb9e89e07cc475efa74f87dc6d21f4a9e060f8",
-          "version": "0.1.1"
-        }
-      },
-      {
-        "package": "JSONRPC",
-        "repositoryURL": "https://github.com/ChimeHQ/JSONRPC",
-        "state": {
-          "branch": null,
-          "revision": "1ae27fceaec3208f62b3ef23d2d565d4222c3ac6",
-          "version": "0.8.1"
-        }
-      },
-      {
-        "package": "LanguageClient",
-        "repositoryURL": "https://github.com/ChimeHQ/LanguageClient",
-        "state": {
-          "branch": null,
-          "revision": "bae3819325a2d6e592c2bf881f45144ddc1cfb96",
-          "version": "0.6.1"
-        }
-      },
-      {
-        "package": "LanguageServerProtocol",
-        "repositoryURL": "https://github.com/ChimeHQ/LanguageServerProtocol",
-        "state": {
-          "branch": null,
-          "revision": "a244efe43ac7a42577b4afd9ccc43b5223c7f18d",
-          "version": "0.10.0"
-        }
-      },
-      {
-        "package": "ProcessEnv",
-        "repositoryURL": "https://github.com/ChimeHQ/ProcessEnv.git",
-        "state": {
-          "branch": null,
-          "revision": "83f1ebc9dd6fb1db0bd89a3fcae00488a0f3fdd9",
-          "version": "1.0.0"
-        }
-      },
-      {
-        "package": "Queue",
-        "repositoryURL": "https://github.com/mattmassicotte/Queue",
-        "state": {
-          "branch": null,
-          "revision": "8d6f936097888f97011610ced40313655dc5948d",
-          "version": "0.1.4"
-        }
-      },
-      {
-        "package": "ScrollViewPlus",
-        "repositoryURL": "https://github.com/ChimeHQ/ScrollViewPlus.git",
-        "state": {
-          "branch": null,
-          "revision": "cd9fa490c4b20ee841ce9230ab19057c02905062",
-          "version": "0.1.2"
-        }
-      },
-      {
-        "package": "Semaphore",
-        "repositoryURL": "https://github.com/groue/Semaphore",
-        "state": {
-          "branch": null,
-          "revision": "f1c4a0acabeb591068dea6cffdd39660b86dec28",
-          "version": "0.0.8"
-        }
-      },
-      {
-        "package": "WindowTreatment",
-        "repositoryURL": "https://github.com/ChimeHQ/WindowTreatment.git",
-        "state": {
-          "branch": null,
-          "revision": "83dea802a687db2313506f9ef53c5f257ece8c10",
-          "version": null
-        }
+  "pins" : [
+    {
+      "identity" : "asyncxpcconnection",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ChimeHQ/AsyncXPCConnection",
+      "state" : {
+        "revision" : "82a0eb00a0d881e6a65cad0acc031c1efd058d06",
+        "version" : "1.0.0"
       }
-    ]
-  },
-  "version": 1
+    },
+    {
+      "identity" : "chimekit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ChimeHQ/ChimeKit.git",
+      "state" : {
+        "revision" : "6e80898da48c7d4c4fb78bbad7700c7065b9e241"
+      }
+    },
+    {
+      "identity" : "containeddocument",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ChimeHQ/ContainedDocument.git",
+      "state" : {
+        "revision" : "70071cab32b9288097b15a816696a08c110a32ff"
+      }
+    },
+    {
+      "identity" : "extendable",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ChimeHQ/Extendable",
+      "state" : {
+        "revision" : "ed81589a7be2b990baf41cbefffd2ac19e669694",
+        "version" : "0.2.0"
+      }
+    },
+    {
+      "identity" : "fseventswrapper",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Frizlab/FSEventsWrapper",
+      "state" : {
+        "revision" : "70bbea4b108221fcabfce8dbced8502831c0ae04",
+        "version" : "2.1.0"
+      }
+    },
+    {
+      "identity" : "globpattern",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ChimeHQ/GlobPattern",
+      "state" : {
+        "revision" : "4ebb9e89e07cc475efa74f87dc6d21f4a9e060f8",
+        "version" : "0.1.1"
+      }
+    },
+    {
+      "identity" : "jsonrpc",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ChimeHQ/JSONRPC",
+      "state" : {
+        "revision" : "1ae27fceaec3208f62b3ef23d2d565d4222c3ac6",
+        "version" : "0.8.1"
+      }
+    },
+    {
+      "identity" : "languageclient",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ChimeHQ/LanguageClient",
+      "state" : {
+        "revision" : "bae3819325a2d6e592c2bf881f45144ddc1cfb96",
+        "version" : "0.6.1"
+      }
+    },
+    {
+      "identity" : "languageserverprotocol",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ChimeHQ/LanguageServerProtocol",
+      "state" : {
+        "revision" : "a244efe43ac7a42577b4afd9ccc43b5223c7f18d",
+        "version" : "0.10.0"
+      }
+    },
+    {
+      "identity" : "processenv",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ChimeHQ/ProcessEnv.git",
+      "state" : {
+        "revision" : "83f1ebc9dd6fb1db0bd89a3fcae00488a0f3fdd9",
+        "version" : "1.0.0"
+      }
+    },
+    {
+      "identity" : "queue",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/mattmassicotte/Queue",
+      "state" : {
+        "revision" : "8d6f936097888f97011610ced40313655dc5948d",
+        "version" : "0.1.4"
+      }
+    },
+    {
+      "identity" : "scrollviewplus",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ChimeHQ/ScrollViewPlus.git",
+      "state" : {
+        "revision" : "cd9fa490c4b20ee841ce9230ab19057c02905062",
+        "version" : "0.1.2"
+      }
+    },
+    {
+      "identity" : "semaphore",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/groue/Semaphore",
+      "state" : {
+        "revision" : "f1c4a0acabeb591068dea6cffdd39660b86dec28",
+        "version" : "0.0.8"
+      }
+    },
+    {
+      "identity" : "windowtreatment",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ChimeHQ/WindowTreatment.git",
+      "state" : {
+        "revision" : "83dea802a687db2313506f9ef53c5f257ece8c10"
+      }
+    }
+  ],
+  "version" : 2
 }
