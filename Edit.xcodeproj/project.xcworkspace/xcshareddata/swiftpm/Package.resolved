@@ -22,7 +22,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ChimeHQ/ContainedDocument.git",
       "state" : {
-        "revision" : "70071cab32b9288097b15a816696a08c110a32ff"
+        "revision" : "ce89c75facd32f7b2ed77266b14dfbeb340953dd",
+        "version" : "1.0.0"
       }
     },
     {
@@ -120,7 +121,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ChimeHQ/WindowTreatment.git",
       "state" : {
-        "revision" : "83dea802a687db2313506f9ef53c5f257ece8c10"
+        "revision" : "3ab18f6df0a69b63cef1d158c47da3992e89b733",
+        "version" : "2.3.0"
       }
     }
   ],

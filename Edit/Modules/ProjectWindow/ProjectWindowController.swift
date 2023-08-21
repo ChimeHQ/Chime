@@ -7,13 +7,16 @@ import UIUtility
 import WindowTreatment
 
 public final class ProjectWindowController: NSWindowController {
+	public typealias SiblingProvider = () -> [ProjectWindowController]
 	public typealias OnOpen = (URL) -> Void
 
 	private let model: WindowStateModel
+	private let siblingProvider: SiblingProvider
 
 	public init(
 		contentViewController: NSViewController,
 		documentContext: DocumentContext,
+		siblingProvider: @escaping SiblingProvider,
 		onOpen: @escaping OnOpen
 	) {
 		let syncModel = WindowStateModel(documentContext: documentContext)
@@ -34,6 +37,7 @@ public final class ProjectWindowController: NSWindowController {
 			.observeWindowState()
 		}
 
+		self.siblingProvider = siblingProvider
 		self.model = syncModel
 
 		let window = NSWindow(contentViewController: controller)
@@ -72,9 +76,12 @@ extension ProjectWindowController: NSWindowDelegate {
 }
 
 extension ProjectWindowController {
+	/// Return all sibling models for this project group.
+	///
+	/// I tried to use window?.tabGroup do to this, and it was really tempting. I was never able to get it to work right, because just accessing the tabGroup property of a window affects its tabbing behavior.
 	private var siblingModels: [WindowStateModel] {
-		let siblingWindows = window?.tabGroup?.windows.filter({ $0 !== window }) ?? []
-		let siblingControllers = siblingWindows.compactMap { $0.windowController as? ProjectWindowController }
+//		let siblingWindows = window?.tabGroup?.windows.filter({ $0 !== window }) ?? []
+		let siblingControllers = siblingProvider()
 
 		return siblingControllers.map { $0.model }
 	}

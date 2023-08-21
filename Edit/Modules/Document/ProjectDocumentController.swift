@@ -191,11 +191,15 @@ public final class ProjectDocumentController: ContainedDocumentController<Projec
 
 		proj.removeDocument(document)
 
-		if proj.documents.isEmpty {
+		if proj.textDocuments.isEmpty {
 			closeProject(proj)
 		}
 
 		updateWindowMenu()
+	}
+
+	public override func documentContainer(for document: NSDocument) -> Project? {
+		projects.first(where: { $0.documents.contains(document) })
 	}
 
 	public override func openUntitledDocumentAndDisplay(_ displayDocument: Bool) throws -> NSDocument {
@@ -249,7 +253,7 @@ extension ProjectDocumentController {
 	private func project(for document: InternalDocument) -> Project? {
 		switch document {
 		case let doc as TextDocument:
-			projects.first(where: { $0.documents.contains(doc) })
+			projects.first(where: { $0.textDocuments.contains(doc) })
 		case let doc as DirectoryDocument:
 			projects.first(where: { $0.directoryRootDocument == doc })
 		default:
@@ -258,7 +262,7 @@ extension ProjectDocumentController {
 	}
 
 	private func closeProjectIfRequired(_ project: Project) {
-		guard project.documents.count == 0 else {
+		guard project.textDocuments.count == 0 else {
 			return
 		}
 

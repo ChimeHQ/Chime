@@ -2052,8 +2052,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ChimeHQ/ContainedDocument.git";
 			requirement = {
-				kind = revision;
-				revision = 70071cab32b9288097b15a816696a08c110a32ff;
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
 			};
 		};
 		C9FE53002A753A3D00CACA1A /* XCRemoteSwiftPackageReference "ChimeKit" */ = {
@@ -2068,8 +2068,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ChimeHQ/WindowTreatment.git";
 			requirement = {
-				kind = revision;
-				revision = 83dea802a687db2313506f9ef53c5f257ece8c10;
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.3.0;
 			};
 		};
 		C9FE53AE2A7677D100CACA1A /* XCRemoteSwiftPackageReference "ScrollViewPlus" */ = {

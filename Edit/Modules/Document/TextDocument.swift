@@ -10,7 +10,15 @@ import ProjectWindow
 import Utility
 
 public final class TextDocument: ContainedDocument<Project> {
-	private let projectWindowController: ProjectWindowController
+	private lazy var projectWindowController: ProjectWindowController = {
+		let editorController = EditorContentViewController()
+
+		return makeProjectWindowController(
+			contentViewController: editorController,
+			context: state.context
+		)
+	}()
+
 	private var isClosing = false
 	private let logger = Logger(type: TextDocument.self)
 	private var state: DocumentState {
@@ -19,14 +27,6 @@ public final class TextDocument: ContainedDocument<Project> {
 
 	override init() {
 		self.state = DocumentState()
-
-		let editorController = EditorContentViewController()
-
-		self.projectWindowController = ProjectWindowController(
-			contentViewController: editorController,
-			documentContext: state.context,
-			onOpen: { Swift.print("textdoc opened: ", $0) }
-		)
 
 	    super.init()
 	}
@@ -79,7 +79,9 @@ extension TextDocument {
 extension TextDocument: ProjectDocument {
 	var projectContext: ProjectContext? {
 		get { projectWindowController.projectContext }
-		set { projectWindowController.projectContext = newValue }
+		set {
+			projectWindowController.projectContext = newValue
+		}
 	}
 	
 	func willRemoveDocument() {

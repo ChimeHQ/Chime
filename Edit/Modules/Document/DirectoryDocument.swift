@@ -16,14 +16,9 @@ public final class DirectoryDocument: ContainedDocument<Project> {
 	private lazy var projectWindowController: ProjectWindowController = {
 		let placeholderController = NSHostingController(rootView: Color.orange)
 
-		return ProjectWindowController(
+		return makeProjectWindowController(
 			contentViewController: placeholderController,
-			documentContext: .nonDocumentContext,
-			onOpen: { url in
-				Task { [weak self] in
-					await self?.openURL(url)
-				}
-			}
+			context: .nonDocumentContext
 		)
 	}()
 

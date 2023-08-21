@@ -3,8 +3,8 @@ import AppKit
 import ChimeKit
 
 public final class Project {
-	public private(set) var documents = Set<TextDocument>()
-	public var directoryRootDocument: DirectoryDocument?
+	public private(set) var textDocuments = Set<TextDocument>()
+	public internal(set) var directoryRootDocument: DirectoryDocument?
 
 	public let context: ProjectContext
 
@@ -16,17 +16,38 @@ public final class Project {
 		context.url
 	}
 
-	private var allDocuments: Set<NSDocument> {
+	/// The set of all contained documents.
+	///
+	/// This is a superset of `textDocuments`, possibly also including the root directory.
+	public var documents: Set<NSDocument> {
 		guard let dirDoc = directoryRootDocument else {
-			return documents
+			return textDocuments
 		}
 
-		return (documents as Set<NSDocument>).union(Set([dirDoc as NSDocument]))
+		var docs = textDocuments as Set<NSDocument>
+
+		docs.insert(dirDoc)
+
+		return docs
+	}
+}
+
+extension Project: Hashable {
+	public static func == (lhs: Project, rhs: Project) -> Bool {
+		lhs.context == rhs.context &&
+		lhs.documents == rhs.documents
 	}
 
-	@MainActor
+	public func hash(into hasher: inout Hasher) {
+		hasher.combine(context)
+		hasher.combine(documents)
+	}
+}
+
+@MainActor
+extension Project {
 	public var frontmostWindow: NSWindow? {
-		allDocuments
+		documents
 			.flatMap { $0.windowControllers }
 			.compactMap { $0.window }
 			.sorted(by: { $0.orderedIndex < $1.orderedIndex })
@@ -34,24 +55,13 @@ public final class Project {
 	}
 }
 
-extension Project: Hashable {
-	public static func == (lhs: Project, rhs: Project) -> Bool {
-		lhs.context == rhs.context && lhs.allDocuments == rhs.allDocuments
-	}
-
-	public func hash(into hasher: inout Hasher) {
-		hasher.combine(context)
-		hasher.combine(allDocuments)
-	}
-}
-
 extension Project {
 	func addDocument(_ document: any ProjectDocument) {
 		switch document {
 		case let doc as TextDocument:
-			assert(documents.contains(doc) == false)
+			assert(textDocuments.contains(doc) == false)
 
-			documents.insert(doc)
+			textDocuments.insert(doc)
 		case let doc as DirectoryDocument:
 			assert(directoryRootDocument == nil)
 
@@ -64,7 +74,7 @@ extension Project {
 	func removeDocument(_ document: any ProjectDocument) {
 		switch document {
 		case let doc as TextDocument:
-			assert(documents.remove(doc) != nil)
+			assert(textDocuments.remove(doc) != nil)
 		case let doc as DirectoryDocument:
 			assert(directoryRootDocument == doc)
 
