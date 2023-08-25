@@ -8,7 +8,7 @@ import ProjectWindow
 public final class ProjectDocumentController: ContainedDocumentController<Project> {
 	typealias InternalDocument = any ProjectDocument
 
-	private(set) var projects = Set<Project>()
+	private var projects = [URL: Project]()
 	private var restoringSet = Set<NSDocument>()
 	private lazy var openPanelAccessoryViewController = OpenPanelAccessoryViewController()
 
@@ -191,15 +191,15 @@ public final class ProjectDocumentController: ContainedDocumentController<Projec
 
 		proj.removeDocument(document)
 
-		if proj.textDocuments.isEmpty {
-			closeProject(proj)
-		}
+		closeProjectIfRequired(proj)
 
 		updateWindowMenu()
 	}
 
 	public override func documentContainer(for document: NSDocument) -> Project? {
-		projects.first(where: { $0.documents.contains(document) })
+		guard let doc  = document as? InternalDocument else { return nil}
+
+		return project(for: doc)
 	}
 
 	public override func openUntitledDocumentAndDisplay(_ displayDocument: Bool) throws -> NSDocument {
@@ -230,12 +230,12 @@ public final class ProjectDocumentController: ContainedDocumentController<Projec
 extension ProjectDocumentController {
 	private func addProject(_ project: Project) {
 		if getProject(for: project.url) == nil {
-			projects.insert(project)
+			projects[project.url] = project
 		}
 	}
 
 	private func getProject(for url: URL) -> Project? {
-		return projects.first(where: { url.path.hasPrefix($0.url.path) })
+		return projects.values.first(where: { url.path.hasPrefix($0.url.path) })
 	}
 
 	private func getOrAddProject(for url: URL) -> Project {
@@ -253,22 +253,24 @@ extension ProjectDocumentController {
 	private func project(for document: InternalDocument) -> Project? {
 		switch document {
 		case let doc as TextDocument:
-			projects.first(where: { $0.textDocuments.contains(doc) })
+			projects.values.first(where: { $0.textDocuments.contains(doc) })
 		case let doc as DirectoryDocument:
-			projects.first(where: { $0.directoryRootDocument == doc })
+			projects.values.first(where: { $0.directoryRootDocument == doc })
 		default:
 			nil
 		}
 	}
 
 	private func closeProjectIfRequired(_ project: Project) {
+		assert(projects[project.url] != nil)
+
 		guard project.textDocuments.count == 0 else {
 			return
 		}
 
 		projectRemovedHandler(project)
 
-		self.projects.remove(project)
+		projects[project.url] = nil
 
 		updateWindowMenu()
 	}
@@ -290,10 +292,6 @@ extension ProjectDocumentController {
 extension ProjectDocumentController {
 	static var sharedController: ProjectDocumentController {
 		ProjectDocumentController.shared as! ProjectDocumentController
-	}
-
-	private func closeProject(_ project: Project) {
-		assert(projects.remove(project) != nil)
 	}
 
 	private func updateWindowMenu() {

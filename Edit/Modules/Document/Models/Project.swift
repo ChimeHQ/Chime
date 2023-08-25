@@ -32,18 +32,6 @@ public final class Project {
 	}
 }
 
-extension Project: Hashable {
-	public static func == (lhs: Project, rhs: Project) -> Bool {
-		lhs.context == rhs.context &&
-		lhs.documents == rhs.documents
-	}
-
-	public func hash(into hasher: inout Hasher) {
-		hasher.combine(context)
-		hasher.combine(documents)
-	}
-}
-
 @MainActor
 extension Project {
 	public var frontmostWindow: NSWindow? {
