@@ -81,6 +81,14 @@
       }
     },
     {
+      "identity" : "outline",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/chimeHQ/Outline",
+      "state" : {
+        "revision" : "49faa5075b2e781850ddedb64ba98262bde0f645"
+      }
+    },
+    {
       "identity" : "processenv",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ChimeHQ/ProcessEnv.git",
@@ -114,6 +122,14 @@
       "state" : {
         "revision" : "f1c4a0acabeb591068dea6cffdd39660b86dec28",
         "version" : "0.0.8"
+      }
+    },
+    {
+      "identity" : "sourceview",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ChimeHQ/SourceView",
+      "state" : {
+        "revision" : "d563ef0ba6c1c91aa6bcee406577b8826baa1f69"
       }
     },
     {

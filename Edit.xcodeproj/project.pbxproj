@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C9409C662A98CC9800B5D898 /* Outline in Frameworks */ = {isa = PBXBuildFile; productRef = C9409C652A98CC9800B5D898 /* Outline */; };
+		C9409C692A98CCCB00B5D898 /* SourceView in Frameworks */ = {isa = PBXBuildFile; productRef = C9409C682A98CCCB00B5D898 /* SourceView */; };
 		C94F7EC12A7D8C1900E0361A /* ProjectContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94F7EC02A7D8C1900E0361A /* ProjectContentViewController.swift */; };
 		C96A852D2A7A6E22005ED222 /* DirectoryDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96A852C2A7A6E22005ED222 /* DirectoryDocument.swift */; };
 		C96A852F2A7A703D005ED222 /* OpenPanelAccessoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96A852E2A7A703D005ED222 /* OpenPanelAccessoryViewController.swift */; };
@@ -15,7 +17,6 @@
 		C96A85402A7BC3F5005ED222 /* DocumentState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96A853F2A7BC3F5005ED222 /* DocumentState.swift */; };
 		C98EA41C2A912A5E00B8815E /* ProjectDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98EA4192A912A2900B8815E /* ProjectDocument.swift */; };
 		C9F79DD72A87E3FA005ED8E9 /* URL+Contents.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F79DD62A87E3FA005ED8E9 /* URL+Contents.swift */; };
-		C9F79DE02A87E661005ED8E9 /* Outline in Frameworks */ = {isa = PBXBuildFile; productRef = C9F79DDF2A87E661005ED8E9 /* Outline */; };
 		C9F79DF72A8FFC65005ED8E9 /* NavigatorItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F79DD82A87E44A005ED8E9 /* NavigatorItem.swift */; };
 		C9F79DF82A8FFC6A005ED8E9 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F79DDA2A87E46A005ED8E9 /* Navigator.swift */; };
 		C9F79DF92A8FFC6D005ED8E9 /* NavigatorScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F79DE52A8B9C8A005ED8E9 /* NavigatorScrollView.swift */; };
@@ -53,7 +54,6 @@
 		C9FE53AD2A7677A700CACA1A /* EditorScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE53AC2A7677A700CACA1A /* EditorScrollView.swift */; };
 		C9FE53B22A7677E100CACA1A /* ScrollViewPlus in Frameworks */ = {isa = PBXBuildFile; productRef = C9FE53B12A7677E100CACA1A /* ScrollViewPlus */; };
 		C9FE53B92A77334E00CACA1A /* SourceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE53B82A77334E00CACA1A /* SourceViewController.swift */; };
-		C9FE53BD2A77354400CACA1A /* SourceView in Frameworks */ = {isa = PBXBuildFile; productRef = C9FE53BC2A77354400CACA1A /* SourceView */; };
 		C9FE53BF2A77C02400CACA1A /* BoundingBorders.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE53BE2A77C02400CACA1A /* BoundingBorders.swift */; };
 		C9FE53C12A77C06800CACA1A /* ColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE53C02A77C06700CACA1A /* ColorView.swift */; };
 		C9FE53D52A77CC8300CACA1A /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE53D42A77CC8300CACA1A /* Theme.swift */; };
@@ -246,7 +246,6 @@
 		C9F79DD62A87E3FA005ED8E9 /* URL+Contents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Contents.swift"; sourceTree = "<group>"; };
 		C9F79DD82A87E44A005ED8E9 /* NavigatorItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigatorItem.swift; sourceTree = "<group>"; };
 		C9F79DDA2A87E46A005ED8E9 /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
-		C9F79DDC2A87E64C005ED8E9 /* Outline */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Outline; path = ../Outline; sourceTree = "<group>"; };
 		C9F79DE52A8B9C8A005ED8E9 /* NavigatorScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigatorScrollView.swift; sourceTree = "<group>"; };
 		C9F79DED2A8FF065005ED8E9 /* libNavigator.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libNavigator.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9FE52992A7525D000CACA1A /* Chime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chime.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -284,7 +283,6 @@
 		C9FE53A52A7670BB00CACA1A /* StatusBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusBar.swift; sourceTree = "<group>"; };
 		C9FE53AA2A76753D00CACA1A /* SourcePresentationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SourcePresentationViewController.swift; sourceTree = "<group>"; };
 		C9FE53AC2A7677A700CACA1A /* EditorScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorScrollView.swift; sourceTree = "<group>"; };
-		C9FE53B72A77328E00CACA1A /* SourceView */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = SourceView; path = ../SourceView; sourceTree = "<group>"; };
 		C9FE53B82A77334E00CACA1A /* SourceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SourceViewController.swift; sourceTree = "<group>"; };
 		C9FE53BE2A77C02400CACA1A /* BoundingBorders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoundingBorders.swift; sourceTree = "<group>"; };
 		C9FE53C02A77C06700CACA1A /* ColorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorView.swift; sourceTree = "<group>"; };
@@ -316,14 +314,14 @@
 			files = (
 				C9F79E002A90DCE9005ED8E9 /* libNavigator.a in Frameworks */,
 				C9FE54032A7A607D00CACA1A /* libExtensionHost.a in Frameworks */,
+				C9409C692A98CCCB00B5D898 /* SourceView in Frameworks */,
 				C9FE54022A7A607100CACA1A /* libUtility.a in Frameworks */,
 				C9FE53D62A77CDE500CACA1A /* libTheme.a in Frameworks */,
 				C9FE53A92A76713900CACA1A /* libStatus.a in Frameworks */,
 				C9FE53942A766AB300CACA1A /* libSearch.a in Frameworks */,
 				C9FE53932A766AAD00CACA1A /* libInspector.a in Frameworks */,
 				C9FE53B22A7677E100CACA1A /* ScrollViewPlus in Frameworks */,
-				C9F79DE02A87E661005ED8E9 /* Outline in Frameworks */,
-				C9FE53BD2A77354400CACA1A /* SourceView in Frameworks */,
+				C9409C662A98CC9800B5D898 /* Outline in Frameworks */,
 				C9FE53912A766A9D00CACA1A /* libEditor.a in Frameworks */,
 				C9FE53362A75A40400CACA1A /* libProjectWindow.a in Frameworks */,
 				C9FE533B2A75A76000CACA1A /* WindowTreatment in Frameworks */,
@@ -460,8 +458,6 @@
 		C9FE52902A7525D000CACA1A = {
 			isa = PBXGroup;
 			children = (
-				C9FE53B72A77328E00CACA1A /* SourceView */,
-				C9F79DDC2A87E64C005ED8E9 /* Outline */,
 				C9FE538E2A76674600CACA1A /* Configurations */,
 				C9FE529B2A7525D000CACA1A /* Edit */,
 				C9FE52B12A7525D300CACA1A /* EditTests */,
@@ -806,8 +802,8 @@
 				C9FE52E92A75377200CACA1A /* ContainedDocument */,
 				C9FE533A2A75A76000CACA1A /* WindowTreatment */,
 				C9FE53B12A7677E100CACA1A /* ScrollViewPlus */,
-				C9FE53BC2A77354400CACA1A /* SourceView */,
-				C9F79DDF2A87E661005ED8E9 /* Outline */,
+				C9409C652A98CC9800B5D898 /* Outline */,
+				C9409C682A98CCCB00B5D898 /* SourceView */,
 			);
 			productName = Edit;
 			productReference = C9FE52992A7525D000CACA1A /* Chime.app */;
@@ -1145,6 +1141,8 @@
 				C9FE53AE2A7677D100CACA1A /* XCRemoteSwiftPackageReference "ScrollViewPlus" */,
 				C9FE53EB2A7A5D9700CACA1A /* XCRemoteSwiftPackageReference "Extendable" */,
 				C98EA4162A90F17700B8815E /* XCRemoteSwiftPackageReference "ProcessEnv" */,
+				C9409C642A98CC9800B5D898 /* XCRemoteSwiftPackageReference "Outline" */,
+				C9409C672A98CCCB00B5D898 /* XCRemoteSwiftPackageReference "SourceView" */,
 			);
 			productRefGroup = C9FE529A2A7525D000CACA1A /* Products */;
 			projectDirPath = "";
@@ -2040,6 +2038,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		C9409C642A98CC9800B5D898 /* XCRemoteSwiftPackageReference "Outline" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/chimeHQ/Outline";
+			requirement = {
+				kind = revision;
+				revision = 49faa5075b2e781850ddedb64ba98262bde0f645;
+			};
+		};
+		C9409C672A98CCCB00B5D898 /* XCRemoteSwiftPackageReference "SourceView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ChimeHQ/SourceView";
+			requirement = {
+				kind = revision;
+				revision = d563ef0ba6c1c91aa6bcee406577b8826baa1f69;
+			};
+		};
 		C98EA4162A90F17700B8815E /* XCRemoteSwiftPackageReference "ProcessEnv" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ChimeHQ/ProcessEnv.git";
@@ -2091,11 +2105,17 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		C9F79DDD2A87E656005ED8E9 /* Outline */ = {
+		C9409C652A98CC9800B5D898 /* Outline */ = {
 			isa = XCSwiftPackageProductDependency;
+			package = C9409C642A98CC9800B5D898 /* XCRemoteSwiftPackageReference "Outline" */;
 			productName = Outline;
 		};
-		C9F79DDF2A87E661005ED8E9 /* Outline */ = {
+		C9409C682A98CCCB00B5D898 /* SourceView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C9409C672A98CCCB00B5D898 /* XCRemoteSwiftPackageReference "SourceView" */;
+			productName = SourceView;
+		};
+		C9F79DDD2A87E656005ED8E9 /* Outline */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Outline;
 		};
@@ -2145,10 +2165,6 @@
 			productName = ScrollViewPlus;
 		};
 		C9FE53BA2A77353900CACA1A /* SourceView */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = SourceView;
-		};
-		C9FE53BC2A77354400CACA1A /* SourceView */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SourceView;
 		};
