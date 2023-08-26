@@ -30,6 +30,8 @@ Chime used to be commercial, but is now [free][download]. It built up some prett
 
 **Ask** before taking on a significant task. That said, I have a strong bias towards enthusiasm. If you are excited about doing something, I'll do my best to get out of your way.
 
+By participating in this project you agree to abide by the [Contributor Code of Conduct](CODE_OF_CONDUCT.md).
+
 ### Building
  
 - clone the repo
