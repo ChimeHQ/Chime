@@ -71,19 +71,15 @@ extension TextDocument {
 		}
 
 		logger.debug("document state changed")
-
-		projectWindowController.documentContext = state.context
 	}
 }
 
 extension TextDocument: ProjectDocument {
-	var projectContext: ProjectContext? {
-		get { projectWindowController.projectContext }
-		set {
-			projectWindowController.projectContext = newValue
-		}
+	var projectState: ProjectState? {
+		get { projectWindowController.state }
+		set { projectWindowController.state = newValue }
 	}
-	
+
 	func willRemoveDocument() {
 	}
 	

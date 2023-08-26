@@ -7,10 +7,10 @@ import ProjectWindow
 
 /// Common interface for all documents contained within a Project.
 ///
-/// I've tried to factor this into an inheritance arrangement, but its quite complex because of the relationship between NSDocument and NSDocumentController. It might be possible to do something with NSDocumentController's makeDocument, but I haven't looked into it closely.
+/// I've tried to factor this into an inheritance arrangement, but its quite complex because of the relationship between NSDocument and NSDocumentController. It might be possible to do something with NSDocumentController's makeDocument, but I think doing so would require changes to ContainedDocument.
 protocol ProjectDocument: ContainedDocument<Project>, Hashable {
 	@MainActor
-	var projectContext: ProjectContext? { get set }
+	var projectState: ProjectState? { get set }
 
 	@MainActor
 	var defaultProjectRoot: URL? { get }
@@ -19,6 +19,13 @@ protocol ProjectDocument: ContainedDocument<Project>, Hashable {
 	func willRemoveDocument()
 	@MainActor
 	func didCompleteOpen()
+}
+
+@MainActor
+extension ProjectDocument {
+	var projectContext: ProjectContext? {
+		projectState?.context
+	}
 }
 
 @MainActor
@@ -58,7 +65,7 @@ extension ProjectDocument {
 	func makeProjectWindowController(contentViewController: NSViewController, context: DocumentContext) -> ProjectWindowController {
 		ProjectWindowController(
 			contentViewController: contentViewController,
-			documentContext: context,
+			context: context,
 			siblingProvider: { [weak self] in self?.siblingWindowControllers ?? [] },
 			onOpen: { [weak self] in self?.openURL($0) }
 		)

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C9409C662A98CC9800B5D898 /* Outline in Frameworks */ = {isa = PBXBuildFile; productRef = C9409C652A98CC9800B5D898 /* Outline */; };
 		C9409C692A98CCCB00B5D898 /* SourceView in Frameworks */ = {isa = PBXBuildFile; productRef = C9409C682A98CCCB00B5D898 /* SourceView */; };
+		C9409C6C2A99059C00B5D898 /* ProjectState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9409C6A2A99047000B5D898 /* ProjectState.swift */; };
 		C94F7EC12A7D8C1900E0361A /* ProjectContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94F7EC02A7D8C1900E0361A /* ProjectContentViewController.swift */; };
 		C96A852D2A7A6E22005ED222 /* DirectoryDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96A852C2A7A6E22005ED222 /* DirectoryDocument.swift */; };
 		C96A852F2A7A703D005ED222 /* OpenPanelAccessoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96A852E2A7A703D005ED222 /* OpenPanelAccessoryViewController.swift */; };
@@ -236,6 +237,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C9409C6A2A99047000B5D898 /* ProjectState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectState.swift; sourceTree = "<group>"; };
 		C94F7EC02A7D8C1900E0361A /* ProjectContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectContentViewController.swift; sourceTree = "<group>"; };
 		C96A852C2A7A6E22005ED222 /* DirectoryDocument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectoryDocument.swift; sourceTree = "<group>"; };
 		C96A852E2A7A703D005ED222 /* OpenPanelAccessoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenPanelAccessoryViewController.swift; sourceTree = "<group>"; };
@@ -584,6 +586,7 @@
 				C9FE53182A759AFE00CACA1A /* ProjectWindowController.swift */,
 				C9FE531D2A759F4C00CACA1A /* ProjectWindowRoot.swift */,
 				C94F7EC02A7D8C1900E0361A /* ProjectContentViewController.swift */,
+				C9409C6A2A99047000B5D898 /* ProjectState.swift */,
 			);
 			path = ProjectWindow;
 			sourceTree = "<group>";
@@ -1264,6 +1267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9409C6C2A99059C00B5D898 /* ProjectState.swift in Sources */,
 				C9FE531C2A759CE400CACA1A /* WindowStateModel.swift in Sources */,
 				C9FE531E2A759F4C00CACA1A /* ProjectWindowRoot.swift in Sources */,
 				C94F7EC12A7D8C1900E0361A /* ProjectContentViewController.swift in Sources */,
@@ -2043,7 +2047,7 @@
 			repositoryURL = "https://github.com/chimeHQ/Outline";
 			requirement = {
 				kind = revision;
-				revision = 49faa5075b2e781850ddedb64ba98262bde0f645;
+				revision = 43a755ca50bc73a23ed1cb0c93362518ab27bd3b;
 			};
 		};
 		C9409C672A98CCCB00B5D898 /* XCRemoteSwiftPackageReference "SourceView" */ = {

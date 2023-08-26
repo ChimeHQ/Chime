@@ -68,9 +68,9 @@ public final class DirectoryDocument: ContainedDocument<Project> {
 }
 
 extension DirectoryDocument: ProjectDocument {
-	var projectContext: ProjectContext? {
-		get { projectWindowController.projectContext }
-		set { projectWindowController.projectContext = newValue }
+	var projectState: ProjectState? {
+		get { projectWindowController.state }
+		set { projectWindowController.state = newValue }
 	}
 
 	func willRemoveDocument() {

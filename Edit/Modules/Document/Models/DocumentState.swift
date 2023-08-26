@@ -4,7 +4,7 @@ import UniformTypeIdentifiers
 import ChimeKit
 
 struct DocumentState {
-	let context: DocumentContext
+	var context: DocumentContext
 
 	init() {
 		self.context = DocumentContext()

@@ -2,6 +2,7 @@ import AppKit
 import SwiftUI
 
 import ChimeKit
+import Navigator
 import Theme
 import UIUtility
 import WindowTreatment
@@ -15,11 +16,11 @@ public final class ProjectWindowController: NSWindowController {
 
 	public init(
 		contentViewController: NSViewController,
-		documentContext: DocumentContext,
+		context: DocumentContext,
 		siblingProvider: @escaping SiblingProvider,
 		onOpen: @escaping OnOpen
 	) {
-		let syncModel = WindowStateModel(documentContext: documentContext)
+		let syncModel = WindowStateModel(documentContext: context)
 
 		let contentController = ProjectContentViewController(contentViewController: contentViewController)
 
@@ -58,14 +59,13 @@ public final class ProjectWindowController: NSWindowController {
 		fatalError("init(coder:) has not been implemented")
 	}
 
-	public var projectContext: ProjectContext? {
-		get { model.projectContext }
-		set { model.projectContext = newValue }
-	}
+//	public var documentContext: DocumentContext? {
+//		model.documentContext
+//	}
 
-	public var documentContext: DocumentContext {
-		get { model.documentContext }
-		set { model.documentContext = newValue }
+	public var state: ProjectState? {
+		get { model.projectState }
+		set { model.projectState = newValue }
 	}
 }
 

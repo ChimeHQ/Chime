@@ -1,15 +1,21 @@
 import AppKit
 
 import ChimeKit
+import ProjectWindow
 
+@MainActor
 public final class Project {
 	public private(set) var textDocuments = Set<TextDocument>()
 	public internal(set) var directoryRootDocument: DirectoryDocument?
 
-	public let context: ProjectContext
+	public let state: ProjectState
 
 	public init(url: URL) {
-		self.context = ProjectContext(url: url)
+		self.state = ProjectState(url: url)
+	}
+
+	public var context: ProjectContext {
+		state.context
 	}
 
 	public var url: URL {
@@ -57,6 +63,8 @@ extension Project {
 		default:
 			preconditionFailure("Unsupported document type")
 		}
+
+		document.projectState = state
 	}
 
 	func removeDocument(_ document: any ProjectDocument) {

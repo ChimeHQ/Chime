@@ -21,13 +21,11 @@ final class WindowStateModel {
 	@ObservationIgnored
 	var siblingProvider: SiblingProvider = { [] }
 	var currentTheme: Theme = Theme()
-	var projectContext: ProjectContext? {
-		didSet { projectContextUpdated() }
-	}
 	var documentContext: DocumentContext
 
-	@ObservationIgnored
-	let navigatorModel = FileNavigatorModel()
+	var projectState: ProjectState? {
+		didSet { stateUpdated() }
+	}
 
 	init(documentContext: DocumentContext) {
 		self.documentContext = documentContext
@@ -48,9 +46,26 @@ final class WindowStateModel {
 
 		self.windowState = new
 	}
+
+	var navigatorModel: FileNavigatorModel {
+		projectState?.navigatorModel ?? FileNavigatorModel()
+	}
+
+	var projectContext: ProjectContext? {
+		projectState?.context
+	}
 }
 
 extension WindowStateModel {
+	private func stateUpdated() {
+		print("project state updated")
+		projectContextUpdated()
+
+		let value = Unmanaged.passUnretained(navigatorModel).toOpaque()
+
+		print("nav model: ", value)
+	}
+
 	private func projectContextUpdated() {
 		navigatorModel.root = projectContext.flatMap { NavigatorItem.file($0.url) } ?? .none
 

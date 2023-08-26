@@ -182,7 +182,6 @@ public final class ProjectDocumentController: ContainedDocumentController<Projec
 		guard let document = document as? InternalDocument else { return }
 
 		container.addDocument(document)
-		document.projectContext = container.context
 	}
 
 	public override func disassociateDocument(_ document: NSDocument) {
