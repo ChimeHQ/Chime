@@ -5,6 +5,6 @@ public struct StatusBar: View {
 	}
 	
 	public var body: some View {
-		Color.yellow
+		StatusBarContent(searchCount: 1)
 	}
 }

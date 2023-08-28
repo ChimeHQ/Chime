@@ -17,6 +17,9 @@ public struct Theme: Hashable, Sendable {
 		case source
 		case insertionPoint
 		case background
+
+		case statusBackground
+		case statusLabel
 	}
 
 	public enum ControlState {
@@ -61,6 +64,10 @@ extension Theme {
 			NSColor.textColor
 		case .background:
 			NSColor.windowBackgroundColor
+		case .statusBackground:
+			NSColor.green
+		case .statusLabel:
+			NSColor.white
 		}
 	}
 }

@@ -3,6 +3,7 @@ import SwiftUI
 import Navigator
 import WindowTreatment
 import Search
+import Status
 
 struct ProjectWindowRoot<Content: View>: View {
 	@Environment(WindowStateModel.self) private var model

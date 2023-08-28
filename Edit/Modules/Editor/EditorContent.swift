@@ -1,6 +1,7 @@
 import AppKit
 import SwiftUI
 
+import Status
 import Theme
 import UIUtility
 
@@ -12,6 +13,7 @@ struct EditorContent<Content: View>: View {
 	@Environment(\.colorScheme) private var colorScheme
 	let content: Content
 	let themeUpdateAction: ThemeUpdateHandler
+	var statusMargin = CGSize()
 
 	init(_ content: () -> Content, themeUpdateAction: @escaping ThemeUpdateHandler) {
 		self.content = content()
@@ -26,12 +28,20 @@ struct EditorContent<Content: View>: View {
 		.init(controlActiveState: controlActiveState, hover: false, colorScheme: colorScheme)
 	}
 
+	private var padding: EdgeInsets {
+		EdgeInsets(top: 0.0, leading: 0.0, bottom: statusMargin.height, trailing: statusMargin.width)
+	}
+
 	// also does not explicitly ignore safe areas, which ensures the titlebar is respected
 	var body: some View {
-		content
-			.background(Color(theme.color(for: .background, context: context)))
-			.onChange(of: theme) { _, _ in themeUpdated() }
-			.onChange(of: colorScheme) { _, _ in themeUpdated() }
-			.onChange(of: controlActiveState) { _, _ in themeUpdated() }
+		ZStack(alignment: .bottomTrailing) {
+			content
+			StatusBar()
+				.padding(padding)
+		}
+		.background(Color(theme.color(for: .background, context: context)))
+		.onChange(of: theme) { _, _ in themeUpdated() }
+		.onChange(of: colorScheme) { _, _ in themeUpdated() }
+		.onChange(of: controlActiveState) { _, _ in themeUpdated() }
 	}
 }
