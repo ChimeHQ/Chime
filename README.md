@@ -39,6 +39,7 @@ There are a few areas that would make for excellent targets though, if you reall
 - The text search system is bad and I'd love to build something better
 - The view-based [extension system][chimekit] could really use some more attention
 - I'd like to finish migrating the preferences to SwiftUI
+- Support for the [Debug Adapter Protocol](https://github.com/ChimeHQ/DebugAdapterProtocol)
 
 By participating in this project you agree to abide by the [Contributor Code of Conduct](CODE_OF_CONDUCT.md).
 
