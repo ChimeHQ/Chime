@@ -48,7 +48,7 @@ By participating in this project you agree to abide by the [Contributor Code of 
 - clone the repo
 - `cp User.xcconfig.template User.xcconfig`
 - update `User.xcconfig` with your personal information
-- build/run with Xcode
+- build/run with Xcode 15+
 
 ### Guidelines
 
