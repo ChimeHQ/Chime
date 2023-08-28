@@ -3,7 +3,7 @@
 # Chime
 An editor for macOS
 
-Version [2.2.1][download] is available for download.
+Version [2.2.1][download] is now free and available as a beta download.
 
 Goals:
 - develop modular, open source components
