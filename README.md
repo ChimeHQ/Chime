@@ -24,13 +24,21 @@ Features:
 
 ## Project State
 
-**Non-Functional**. I don't yet have a good sense for when this version will be usable.
+The code in this repo should currently be considered **Non-Functional**. You can [download][download] the currently released version.
 
 Chime used to be commercial, but is now [free][download]. It built up some pretty significant cruft over time. In particular, the core UI application architecture is just in a bad state. It is also quite complex to build. So, I've opted to re-implement that core and pull in parts as appropriate. I'll be putting an emphasis on extracting components into packages as I go. A fitting rebirth, I would say.
 
 ## Contributing
 
-**Ask** before taking on a significant task. That said, I have a strong bias towards enthusiasm. If you are excited about doing something, I'll do my best to get out of your way.
+It is always a good idea to **discuss** before taking on a significant task. That said, I have a strong bias towards enthusiasm. If you are excited about doing something, I'll do my best to get out of your way.
+
+There are a few areas that would make for excellent targets though, if you really feel so inclined.
+
+- It would be really interesting to explore the [TreeSitterDocument](https://github.com/ChimeHQ/SwiftTreeSitter#treesitterdocument) concept
+- I'd love to expand on more [universal theme support](https://github.com/chimeHQ/ThemePark)
+- The text search system is bad and I'd love to build something better
+- The view-based [extension system][chimekit] could really use some more attention
+- I'd like to finish migrating the preferences to SwiftUI
 
 By participating in this project you agree to abide by the [Contributor Code of Conduct](CODE_OF_CONDUCT.md).
 
