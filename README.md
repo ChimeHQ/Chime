@@ -3,6 +3,8 @@
 # Chime
 An editor for macOS
 
+Version [2.2.1][download] is available for download.
+
 Goals:
 - develop modular, open source components
 - be an editor people enjoy using
