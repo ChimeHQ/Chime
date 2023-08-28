@@ -44,11 +44,13 @@ There are a few areas that would make for excellent targets though, if you reall
 By participating in this project you agree to abide by the [Contributor Code of Conduct](CODE_OF_CONDUCT.md).
 
 ### Building
- 
+
+**Note**: requires Xcode 15 and macOS 14
+
 - clone the repo
 - `cp User.xcconfig.template User.xcconfig`
 - update `User.xcconfig` with your personal information
-- build/run with Xcode 15+
+- build/run with Xcode
 
 ### Guidelines
 
