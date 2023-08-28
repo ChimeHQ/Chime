@@ -24,7 +24,7 @@ Features:
 
 ## Project State
 
-The code in this repo should currently be considered **Non-Functional**. You can [download][download] the currently released version.
+The code in this repo should be considered **Non-Functional** right now. You can [download][download] the currently released version.
 
 Chime used to be commercial, but is now [free][download]. It built up some pretty significant cruft over time. In particular, the core UI application architecture is just in a bad state. It is also quite complex to build. So, I've opted to re-implement that core and pull in parts as appropriate. I'll be putting an emphasis on extracting components into packages as I go. A fitting rebirth, I would say.
 
