@@ -59,6 +59,8 @@ By participating in this project you agree to abide by the [Contributor Code of 
 
 - tabs for indentation
 - configuration in xcconfig files
+- project resources are sorted alphabetically
+- imports are sorted by alphabetically, but parititioned to system/non-system
 
 ## Other Notable Projects
 
