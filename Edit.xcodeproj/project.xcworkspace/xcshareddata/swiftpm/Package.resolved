@@ -45,6 +45,14 @@
       }
     },
     {
+      "identity" : "fuzzyfind",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/mattmassicotte/FuzzyFind",
+      "state" : {
+        "revision" : "1e66ecbb80de85d5ecefacbcc0702fafaf67c1d8"
+      }
+    },
+    {
       "identity" : "globpattern",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ChimeHQ/GlobPattern",
@@ -130,6 +138,15 @@
       "location" : "https://github.com/ChimeHQ/SourceView",
       "state" : {
         "revision" : "d563ef0ba6c1c91aa6bcee406577b8826baa1f69"
+      }
+    },
+    {
+      "identity" : "viewplus",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ChimeHQ/ViewPlus.git",
+      "state" : {
+        "revision" : "a769b565c125fea01e68a37c2c81af1850d87252",
+        "version" : "1.2.0"
       }
     },
     {

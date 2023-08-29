@@ -3,6 +3,7 @@ import SwiftUI
 
 import ChimeKit
 import Navigator
+import OpenQuickly
 import Theme
 import UIUtility
 import WindowTreatment
@@ -13,6 +14,16 @@ public final class ProjectWindowController: NSWindowController {
 
 	private let model: WindowStateModel
 	private let siblingProvider: SiblingProvider
+
+    private lazy var openQuicklyWindowController: OpenQuicklyWindowController = {
+        let rootURL = self.model.projectContext?.url
+        let context = OpenQuicklyContext(
+            rootURL: rootURL,
+            selectionHandler: { print("item selected: \($0)") }
+        )
+
+        return OpenQuicklyWindowController(context: context, symbolQueryService: nil)
+    }()
 
 	public init(
 		contentViewController: NSViewController,
@@ -85,4 +96,12 @@ extension ProjectWindowController {
 
 		return siblingControllers.map { $0.model }
 	}
+}
+
+extension ProjectWindowController {
+    @IBAction func openQuickly(_ sender: Any?) {
+        guard let window = window else { preconditionFailure() }
+
+        openQuicklyWindowController.showWindow(parent: window)
+    }
 }

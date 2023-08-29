@@ -1,39 +1,65 @@
 import AppKit
 
-public final class ColorView: NSView {
-	public var color: NSColor {
-		didSet {
-			setNeedsDisplay(bounds)
-		}
-	}
+open class ColorView: ShapeView {
+    open var radii: NSBezierPath.Radii {
+        didSet {
+            let value = self.radii
 
-	private let flippedFlag: Bool
+            self.pathProvider = { (rect) in
+                NSBezierPath.roundedPath(rect: rect, radii: value)
+            }
+        }
+    }
 
-	public init(color: NSColor, flipped: Bool = false) {
-		self.color = color
-		self.flippedFlag = flipped
+    public var color: NSColor {
+        get {
+            return fillColor!
+        }
+        set {
+            fillColor = newValue
+        }
+    }
 
-		super.init(frame: .zero)
-	}
+    public init(frame frameRect: NSRect = .zero, color: NSColor, radii: NSBezierPath.Radii) {
+        self.radii = radii
 
-	@available(*, unavailable)
-	required init?(coder: NSCoder) {
-		fatalError("init(coder:) has not been implemented")
-	}
+        super.init { (rect) in
+            return NSBezierPath.roundedPath(rect: rect, radii: radii)
+        }
 
-	public override var isFlipped: Bool {
-		flippedFlag
-	}
-	
-	public override var isOpaque: Bool {
-		color.alphaComponent >= 1.0
-	}
+        self.fillColor = color
+    }
 
-	public override func draw(_ dirtyRect: NSRect) {
-		NSColor.clear.setFill()
-		NSBezierPath.fill(dirtyRect)
+    public convenience init(frame frameRect: NSRect = .zero, color: NSColor, radii: RoundedRectRadii = .zero) {
+        let adaptedRadii = (radii.topLeading, radii.topTrailing, radii.bottomTrailing, radii.bottomLeading)
 
-		color.setFill()
-		NSBezierPath.fill(bounds.intersection(dirtyRect))
-	}
+        self.init(frame: frameRect, color: color, radii: adaptedRadii)
+    }
+
+    @available(*, unavailable)
+    public required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+extension ShapeView {
+    public static func rect(color: NSColor) -> ShapeView {
+        let view = ShapeView { (rect) -> NSBezierPath in
+            NSBezierPath(rect: rect)
+        }
+
+        view.fillColor = color
+
+        return view
+    }
+
+    public static func roundedRect(color: NSColor? = nil, radii: NSBezierPath.Radii) -> ShapeView {
+        let view = ShapeView { (rect) -> NSBezierPath in
+            NSBezierPath.roundedPath(rect: rect, radii: radii)
+        }
+
+        view.fillColor = color
+
+        return view
+    }
 }
