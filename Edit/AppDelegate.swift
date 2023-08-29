@@ -1,29 +1,40 @@
 import AppKit
 
 import Document
+import ServiceConnection
+import ExtensionHost
 
 @main
 @MainActor
 final class AppDelegate: NSObject, NSApplicationDelegate {
-	private let documentController: ProjectDocumentController
+    private let documentController: ProjectDocumentController
+    private let extensionManager: ExtensionManager
+    private let appHost: AppHost
 
-	override init() {
-		UserDefaults.standard.register(defaults: [
-			"NSApplicationCrashOnExceptions": true,
-		])
+    override init() {
+        UserDefaults.standard.register(defaults: [
+            "NSApplicationCrashOnExceptions": true,
+        ])
 
-		// NSDocumentController subclass instances must be manually created before any NSDocumentController functionality is used
-		self.documentController = ProjectDocumentController()
+        // NSDocumentController subclass instances must be manually created before any NSDocumentController functionality is used
+        self.documentController = ProjectDocumentController()
 
-	}
+        let appHostConfig = AppHost.Configuration(
+            contentProvider: { _ in throw ServiceProviderError.unsupported },
+            combinedContentProvider: { _, _ in throw ServiceProviderError.unsupported }
+        )
 
-	func applicationDidFinishLaunching(_ aNotification: Notification) {
-	}
+        self.appHost = AppHost(config: appHostConfig)
+        self.extensionManager = ExtensionManager(host: appHost)
+    }
 
-	func applicationWillTerminate(_ aNotification: Notification) {
-	}
+    func applicationDidFinishLaunching(_ aNotification: Notification) {
+    }
 
-	func applicationSupportsSecureRestorableState(_ app: NSApplication) -> Bool {
-		return true
-	}
+    func applicationWillTerminate(_ aNotification: Notification) {
+    }
+
+    func applicationSupportsSecureRestorableState(_ app: NSApplication) -> Bool {
+        return true
+    }
 }

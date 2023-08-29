@@ -6,7 +6,7 @@ import ChimeKit
 import Utility
 
 @MainActor
-final class ExtensionManager {
+public final class ExtensionManager {
     private static let extensionsEnabled = true
 
     private let localExtensions: [any ExtensionProtocol]
@@ -17,7 +17,7 @@ final class ExtensionManager {
     let host: any HostProtocol
     private let extensionRouter: ExtensionRouter
 
-    init(host: any HostProtocol) {
+    public init(host: any HostProtocol) {
         self.host = host
 
         if Self.extensionsEnabled {
