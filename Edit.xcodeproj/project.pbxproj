@@ -46,6 +46,10 @@
 		C97918F22A9E49EE0046EAF1 /* BinaryFloatingPoint+AngleUnits.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97918F12A9E49EE0046EAF1 /* BinaryFloatingPoint+AngleUnits.swift */; };
 		C97918F52A9E4A3B0046EAF1 /* HexagonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97918F32A9E4A1C0046EAF1 /* HexagonView.swift */; };
 		C97918F62A9E4A4D0046EAF1 /* NSBezierPath+Paths.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97918EF2A9E49AD0046EAF1 /* NSBezierPath+Paths.swift */; };
+		C97918F82A9E5E520046EAF1 /* ExtensionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97918F72A9E5E520046EAF1 /* ExtensionRouter.swift */; };
+		C97918FA2A9E5EAF0046EAF1 /* CompositeDocumentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97918F92A9E5EAF0046EAF1 /* CompositeDocumentService.swift */; };
+		C97918FC2A9E5EFC0046EAF1 /* CompositeProjectService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97918FB2A9E5EFC0046EAF1 /* CompositeProjectService.swift */; };
+		C97918FE2A9E5F3D0046EAF1 /* ExtensionRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97918FD2A9E5F3D0046EAF1 /* ExtensionRouterTests.swift */; };
 		C98EA41C2A912A5E00B8815E /* ProjectDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98EA4192A912A2900B8815E /* ProjectDocument.swift */; };
 		C9F79DD72A87E3FA005ED8E9 /* URL+Contents.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F79DD62A87E3FA005ED8E9 /* URL+Contents.swift */; };
 		C9F79DF72A8FFC65005ED8E9 /* NavigatorItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F79DD82A87E44A005ED8E9 /* NavigatorItem.swift */; };
@@ -365,6 +369,10 @@
 		C97918EF2A9E49AD0046EAF1 /* NSBezierPath+Paths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSBezierPath+Paths.swift"; sourceTree = "<group>"; };
 		C97918F12A9E49EE0046EAF1 /* BinaryFloatingPoint+AngleUnits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BinaryFloatingPoint+AngleUnits.swift"; sourceTree = "<group>"; };
 		C97918F32A9E4A1C0046EAF1 /* HexagonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexagonView.swift; sourceTree = "<group>"; };
+		C97918F72A9E5E520046EAF1 /* ExtensionRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionRouter.swift; sourceTree = "<group>"; };
+		C97918F92A9E5EAF0046EAF1 /* CompositeDocumentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositeDocumentService.swift; sourceTree = "<group>"; };
+		C97918FB2A9E5EFC0046EAF1 /* CompositeProjectService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositeProjectService.swift; sourceTree = "<group>"; };
+		C97918FD2A9E5F3D0046EAF1 /* ExtensionRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionRouterTests.swift; sourceTree = "<group>"; };
 		C98EA4192A912A2900B8815E /* ProjectDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDocument.swift; sourceTree = "<group>"; };
 		C9F79DD62A87E3FA005ED8E9 /* URL+Contents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Contents.swift"; sourceTree = "<group>"; };
 		C9F79DD82A87E44A005ED8E9 /* NavigatorItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigatorItem.swift; sourceTree = "<group>"; };
@@ -680,6 +688,7 @@
 			children = (
 				C96A85372A7A83FA005ED222 /* Mocks */,
 				C9FE52B22A7525D300CACA1A /* FilteringExtensionTests.swift */,
+				C97918FD2A9E5F3D0046EAF1 /* ExtensionRouterTests.swift */,
 			);
 			path = EditTests;
 			sourceTree = "<group>";
@@ -854,6 +863,9 @@
 				C9FE54062A7A617000CACA1A /* ExtensionDocumentState.swift */,
 				C9FE54042A7A613C00CACA1A /* FilteringExtension.swift */,
 				C9FE53E72A7A5B2000CACA1A /* LazyRemoteExtension.swift */,
+				C97918F72A9E5E520046EAF1 /* ExtensionRouter.swift */,
+				C97918F92A9E5EAF0046EAF1 /* CompositeDocumentService.swift */,
+				C97918FB2A9E5EFC0046EAF1 /* CompositeProjectService.swift */,
 			);
 			path = ExtensionHost;
 			sourceTree = "<group>";
@@ -1477,6 +1489,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9FE52B32A7525D300CACA1A /* FilteringExtensionTests.swift in Sources */,
+				C97918FE2A9E5F3D0046EAF1 /* ExtensionRouterTests.swift in Sources */,
 				C9FE540A2A7A62DB00CACA1A /* MockExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1605,7 +1618,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9FE54052A7A613C00CACA1A /* FilteringExtension.swift in Sources */,
+				C97918FC2A9E5EFC0046EAF1 /* CompositeProjectService.swift in Sources */,
 				C9FE53E82A7A5B2000CACA1A /* LazyRemoteExtension.swift in Sources */,
+				C97918F82A9E5E520046EAF1 /* ExtensionRouter.swift in Sources */,
+				C97918FA2A9E5EAF0046EAF1 /* CompositeDocumentService.swift in Sources */,
 				C9FE54072A7A617000CACA1A /* ExtensionDocumentState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

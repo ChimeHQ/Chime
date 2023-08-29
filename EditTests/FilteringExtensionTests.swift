@@ -3,7 +3,6 @@ import XCTest
 @testable import ExtensionHost
 import ChimeKit
 
-@available(macOS 13.0, *)
 final class FilteringExtensionTests: XCTestCase {
 	private func makeTmpProjectContext() -> ProjectContext {
 		let tmpDir = URL(filePath: NSTemporaryDirectory(), directoryHint: .isDirectory)
