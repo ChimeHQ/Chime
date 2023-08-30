@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C900A7C52A9E9468000556A6 /* PreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C900A7C42A9E9468000556A6 /* PreferencesWindowController.swift */; };
+		C900A7C82A9E94AE000556A6 /* libPreferencesWindow.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C900A7BA2A9E93FC000556A6 /* libPreferencesWindow.a */; };
+		C900A7CA2A9E94B4000556A6 /* ExtendableHost in Frameworks */ = {isa = PBXBuildFile; productRef = C900A7C92A9E94B4000556A6 /* ExtendableHost */; };
 		C9409C662A98CC9800B5D898 /* Outline in Frameworks */ = {isa = PBXBuildFile; productRef = C9409C652A98CC9800B5D898 /* Outline */; };
 		C9409C692A98CCCB00B5D898 /* SourceView in Frameworks */ = {isa = PBXBuildFile; productRef = C9409C682A98CCCB00B5D898 /* SourceView */; };
 		C9409C6C2A99059C00B5D898 /* ProjectState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9409C6A2A99047000B5D898 /* ProjectState.swift */; };
@@ -114,6 +117,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		C900A7CD2A9E9600000556A6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C900A7B92A9E93FC000556A6;
+			remoteInfo = PreferencesWindow;
+		};
 		C96A85412A7BEB92005ED222 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
@@ -362,6 +372,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C900A7BA2A9E93FC000556A6 /* libPreferencesWindow.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPreferencesWindow.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C900A7C42A9E9468000556A6 /* PreferencesWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesWindowController.swift; sourceTree = "<group>"; };
 		C9409C6A2A99047000B5D898 /* ProjectState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectState.swift; sourceTree = "<group>"; };
 		C94F7EC02A7D8C1900E0361A /* ProjectContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectContentViewController.swift; sourceTree = "<group>"; };
 		C96A852C2A7A6E22005ED222 /* DirectoryDocument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectoryDocument.swift; sourceTree = "<group>"; };
@@ -467,6 +479,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		C900A7B82A9E93FC000556A6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C979189C2A9D1D6D0046EAF1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -492,6 +511,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C900A7C82A9E94AE000556A6 /* libPreferencesWindow.a in Frameworks */,
 				C97919222A9E8BAA0046EAF1 /* libServiceConnection.a in Frameworks */,
 				C97918AB2A9D1DFE0046EAF1 /* libOpenQuickly.a in Frameworks */,
 				C9F79E002A90DCE9005ED8E9 /* libNavigator.a in Frameworks */,
@@ -505,6 +525,7 @@
 				C9FE53B22A7677E100CACA1A /* ScrollViewPlus in Frameworks */,
 				C9409C662A98CC9800B5D898 /* Outline in Frameworks */,
 				C97918DA2A9E080C0046EAF1 /* ViewPlus in Frameworks */,
+				C900A7CA2A9E94B4000556A6 /* ExtendableHost in Frameworks */,
 				C97918CB2A9D4C740046EAF1 /* FuzzyFind in Frameworks */,
 				C9FE53912A766A9D00CACA1A /* libEditor.a in Frameworks */,
 				C9FE53362A75A40400CACA1A /* libProjectWindow.a in Frameworks */,
@@ -613,6 +634,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C900A7C32A9E9417000556A6 /* PreferencesWindow */ = {
+			isa = PBXGroup;
+			children = (
+				C900A7C42A9E9468000556A6 /* PreferencesWindowController.swift */,
+			);
+			path = PreferencesWindow;
+			sourceTree = "<group>";
+		};
 		C96A85322A7A8322005ED222 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -723,6 +752,7 @@
 				C9F79DED2A8FF065005ED8E9 /* libNavigator.a */,
 				C979189E2A9D1D6D0046EAF1 /* libOpenQuickly.a */,
 				C979190D2A9E82910046EAF1 /* libServiceConnection.a */,
+				C900A7BA2A9E93FC000556A6 /* libPreferencesWindow.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -776,6 +806,7 @@
 				C9FE53602A76619800CACA1A /* Inspector */,
 				C9F79DF62A8FF06E005ED8E9 /* Navigator */,
 				C97918A72A9D1D760046EAF1 /* OpenQuickly */,
+				C900A7C32A9E9417000556A6 /* PreferencesWindow */,
 				C9FE53172A759AE800CACA1A /* ProjectWindow */,
 				C9FE53732A7661F100CACA1A /* Search */,
 				C97919162A9E829A0046EAF1 /* ServiceConnection */,
@@ -940,6 +971,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		C900A7B62A9E93FC000556A6 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C979189A2A9D1D6D0046EAF1 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -1041,6 +1079,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		C900A7B92A9E93FC000556A6 /* PreferencesWindow */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C900A7C22A9E93FC000556A6 /* Build configuration list for PBXNativeTarget "PreferencesWindow" */;
+			buildPhases = (
+				C900A7B62A9E93FC000556A6 /* Headers */,
+				C900A7B72A9E93FC000556A6 /* Sources */,
+				C900A7B82A9E93FC000556A6 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C900A7CC2A9E956B000556A6 /* PBXTargetDependency */,
+			);
+			name = PreferencesWindow;
+			productName = PreferencesWindow;
+			productReference = C900A7BA2A9E93FC000556A6 /* libPreferencesWindow.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 		C979189D2A9D1D6D0046EAF1 /* OpenQuickly */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C97918A42A9D1D6D0046EAF1 /* Build configuration list for PBXNativeTarget "OpenQuickly" */;
@@ -1114,6 +1170,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				C900A7CE2A9E9600000556A6 /* PBXTargetDependency */,
 				C97919242A9E8C260046EAF1 /* PBXTargetDependency */,
 				C97919212A9E8BA10046EAF1 /* PBXTargetDependency */,
 				C9FE52DF2A7533BA00CACA1A /* PBXTargetDependency */,
@@ -1128,6 +1185,7 @@
 				C9409C682A98CCCB00B5D898 /* SourceView */,
 				C97918CA2A9D4C740046EAF1 /* FuzzyFind */,
 				C97918D92A9E080C0046EAF1 /* ViewPlus */,
+				C900A7C92A9E94B4000556A6 /* ExtendableHost */,
 			);
 			productName = Edit;
 			productReference = C9FE52992A7525D000CACA1A /* Chime.app */;
@@ -1405,6 +1463,10 @@
 				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
+					C900A7B92A9E93FC000556A6 = {
+						CreatedOnToolsVersion = 15.0;
+						LastSwiftMigration = 1500;
+					};
 					C979189D2A9D1D6D0046EAF1 = {
 						CreatedOnToolsVersion = 15.0;
 					};
@@ -1504,6 +1566,7 @@
 				C9F79DEC2A8FF065005ED8E9 /* Navigator */,
 				C979189D2A9D1D6D0046EAF1 /* OpenQuickly */,
 				C979190C2A9E82910046EAF1 /* ServiceConnection */,
+				C900A7B92A9E93FC000556A6 /* PreferencesWindow */,
 			);
 		};
 /* End PBXProject section */
@@ -1542,6 +1605,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		C900A7B72A9E93FC000556A6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C900A7C52A9E9468000556A6 /* PreferencesWindowController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C979189B2A9D1D6D0046EAF1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1741,6 +1812,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		C900A7CC2A9E956B000556A6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = C900A7CB2A9E956B000556A6 /* ViewPlus */;
+		};
+		C900A7CE2A9E9600000556A6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C900A7B92A9E93FC000556A6 /* PreferencesWindow */;
+			targetProxy = C900A7CD2A9E9600000556A6 /* PBXContainerItemProxy */;
+		};
 		C96A85422A7BEB92005ED222 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C9FE52F32A7539B100CACA1A /* ChimeKit */;
@@ -1968,6 +2048,25 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		C900A7C02A9E93FC000556A6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9FE531A2A759BC400CACA1A /* Module.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		C900A7C12A9E93FC000556A6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9FE531A2A759BC400CACA1A /* Module.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		C97918A52A9D1D6D0046EAF1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C9FE531A2A759BC400CACA1A /* Module.xcconfig */;
@@ -2392,6 +2491,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		C900A7C22A9E93FC000556A6 /* Build configuration list for PBXNativeTarget "PreferencesWindow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C900A7C02A9E93FC000556A6 /* Debug */,
+				C900A7C12A9E93FC000556A6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		C97918A42A9D1D6D0046EAF1 /* Build configuration list for PBXNativeTarget "OpenQuickly" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -2648,6 +2756,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		C900A7C92A9E94B4000556A6 /* ExtendableHost */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C9FE53EB2A7A5D9700CACA1A /* XCRemoteSwiftPackageReference "Extendable" */;
+			productName = ExtendableHost;
+		};
+		C900A7CB2A9E956B000556A6 /* ViewPlus */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C97918D42A9E07F00046EAF1 /* XCRemoteSwiftPackageReference "ViewPlus" */;
+			productName = ViewPlus;
+		};
 		C9409C652A98CC9800B5D898 /* Outline */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C9409C642A98CC9800B5D898 /* XCRemoteSwiftPackageReference "Outline" */;

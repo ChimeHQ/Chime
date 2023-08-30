@@ -1,6 +1,7 @@
 import AppKit
 
 import Document
+import PreferencesWindow
 import ServiceConnection
 import ExtensionHost
 
@@ -10,6 +11,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     private let documentController: ProjectDocumentController
     private let extensionManager: ExtensionManager
     private let appHost: AppHost
+    private lazy var preferencesController = PreferencesWindowController()
 
     override init() {
         UserDefaults.standard.register(defaults: [
@@ -36,5 +38,11 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationSupportsSecureRestorableState(_ app: NSApplication) -> Bool {
         return true
+    }
+}
+
+extension AppDelegate {
+    @IBAction func showPreferences(_ sender: Any?) {
+        preferencesController.showWindow(self)
     }
 }
