@@ -1,5 +1,6 @@
 import SwiftUI
 
+import Status
 import WindowTreatment
 
 public struct Inspector: View {
@@ -7,8 +8,11 @@ public struct Inspector: View {
 	}
 
 	public var body: some View {
-        TrailingSidebarView() {
-            Text("hello")
+        ZStack(alignment: .bottomTrailing) {
+            TrailingSidebarView() {
+                Text("hello")
+            }
+            ExtensionSelectorItem()
         }
 	}
 }

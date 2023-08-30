@@ -20,7 +20,7 @@ struct TrailingSidebarView<Content: View>: View {
     }
 
     private var ignoringTopSafeArea: Bool {
-        windowState.tabBarVisible == true
+        windowState.tabBarVisible == false
     }
 
     private var edges: Edge.Set {

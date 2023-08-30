@@ -67,6 +67,8 @@
 		C9E878092A9F53530018340C /* UIPlaceholderExtension.appex in Copy Extensions */ = {isa = PBXBuildFile; fileRef = C9E878012A9F53530018340C /* UIPlaceholderExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C9E878102A9F53800018340C /* ChimeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE52F42A7539B100CACA1A /* ChimeKit.framework */; };
 		C9E878172A9F671B0018340C /* SynchronizedScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E878162A9F671B0018340C /* SynchronizedScrollViewController.swift */; };
+		C9E878192A9FC9CF0018340C /* ExtensionSelectorItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E878182A9FC9CF0018340C /* ExtensionSelectorItem.swift */; };
+		C9E8781C2A9FD0390018340C /* StatusBarPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E8781A2A9FCF3E0018340C /* StatusBarPadding.swift */; };
 		C9F79DD72A87E3FA005ED8E9 /* URL+Contents.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F79DD62A87E3FA005ED8E9 /* URL+Contents.swift */; };
 		C9F79DF72A8FFC65005ED8E9 /* NavigatorItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F79DD82A87E44A005ED8E9 /* NavigatorItem.swift */; };
 		C9F79DF82A8FFC6A005ED8E9 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F79DDA2A87E46A005ED8E9 /* Navigator.swift */; };
@@ -248,6 +250,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = C9FE52F32A7539B100CACA1A;
 			remoteInfo = ChimeKit;
+		};
+		C9E8781D2A9FD0B70018340C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9FE539A2A76709D00CACA1A;
+			remoteInfo = Status;
 		};
 		C9F79DE32A87E756005ED8E9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -463,6 +472,8 @@
 		C9E878142A9F56A80018340C /* validate.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = validate.sh; sourceTree = "<group>"; };
 		C9E878152A9F5B2B0018340C /* validate.xcfilelist */ = {isa = PBXFileReference; lastKnownFileType = text.xcfilelist; path = validate.xcfilelist; sourceTree = "<group>"; };
 		C9E878162A9F671B0018340C /* SynchronizedScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynchronizedScrollViewController.swift; sourceTree = "<group>"; };
+		C9E878182A9FC9CF0018340C /* ExtensionSelectorItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionSelectorItem.swift; sourceTree = "<group>"; };
+		C9E8781A2A9FCF3E0018340C /* StatusBarPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarPadding.swift; sourceTree = "<group>"; };
 		C9F79DD62A87E3FA005ED8E9 /* URL+Contents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Contents.swift"; sourceTree = "<group>"; };
 		C9F79DD82A87E44A005ED8E9 /* NavigatorItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigatorItem.swift; sourceTree = "<group>"; };
 		C9F79DDA2A87E46A005ED8E9 /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
@@ -1015,6 +1026,8 @@
 				C979187F2A9CC23F0046EAF1 /* StatusItem.swift */,
 				C97918862A9CC9140046EAF1 /* CharacterSelectionItem.swift */,
 				C979188B2A9CCA5C0046EAF1 /* LineSelectionItem.swift */,
+				C9E878182A9FC9CF0018340C /* ExtensionSelectorItem.swift */,
+				C9E8781A2A9FCF3E0018340C /* StatusBarPadding.swift */,
 			);
 			path = Status;
 			sourceTree = "<group>";
@@ -1437,6 +1450,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				C9E8781E2A9FD0B70018340C /* PBXTargetDependency */,
 				C9FE53962A766D2F00CACA1A /* PBXTargetDependency */,
 			);
 			name = Inspector;
@@ -1918,6 +1932,8 @@
 				C979187D2A9CC1200046EAF1 /* ItemBackground.swift in Sources */,
 				C97918872A9CC9140046EAF1 /* CharacterSelectionItem.swift in Sources */,
 				C979187E2A9CC1270046EAF1 /* StatusBarContent.swift in Sources */,
+				C9E878192A9FC9CF0018340C /* ExtensionSelectorItem.swift in Sources */,
+				C9E8781C2A9FD0390018340C /* StatusBarPadding.swift in Sources */,
 				C97918812A9CC2B00046EAF1 /* StatusItem.swift in Sources */,
 				C979187B2A9CC1110046EAF1 /* SearchItem.swift in Sources */,
 				C9FE53A62A7670BB00CACA1A /* StatusBar.swift in Sources */,
@@ -2074,6 +2090,11 @@
 			isa = PBXTargetDependency;
 			target = C9FE52F32A7539B100CACA1A /* ChimeKit */;
 			targetProxy = C9E8780E2A9F53770018340C /* PBXContainerItemProxy */;
+		};
+		C9E8781E2A9FD0B70018340C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9FE539A2A76709D00CACA1A /* Status */;
+			targetProxy = C9E8781D2A9FD0B70018340C /* PBXContainerItemProxy */;
 		};
 		C9F79DDE2A87E656005ED8E9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
