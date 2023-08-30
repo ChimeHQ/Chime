@@ -3,7 +3,7 @@
 # Chime
 An editor for macOS
 
-Version [2.2.1][download] is now free and available as a beta download.
+Version [2.2.1][download] is now available.
 
 Goals:
 - develop modular, open source components
@@ -14,6 +14,7 @@ Features:
 - completions
 - command line tool
 - document/project-scoped search
+- [editorconfig](https://editorconfig.org)
 - [extensions][chimekit]
 - file navigator
 - syntax highlighting (driven by tree-sitter and LSP)
@@ -24,9 +25,9 @@ Features:
 
 ## Project State
 
-The code in this repo should be considered **Non-Functional** right now. You can [download][download] the currently released version.
+The code in this repo should be considered **non-functional** right now. If you want to use Chime, you can [download][download] the currently released version. The goal is to have something of alpha quality by the time macOS 14 ships.
 
-Chime used to be commercial, but is now [free][download]. It built up some pretty significant cruft over time. In particular, the core UI application architecture is just in a bad state. It is also quite complex to build. So, I've opted to re-implement that core and pull in parts as appropriate. I'll be putting an emphasis on extracting components into packages as I go. A fitting rebirth, I would say.
+Chime used to be commercial, but is now free. It built up some pretty significant cruft over time. In particular, the core UI application architecture is just in a bad state. It is also quite complex to build. So, I've opted to re-implement that core and pull in parts as appropriate. I'll be putting an emphasis on extracting components into packages as I go. A fitting rebirth, I would say.
 
 ## Contributing
 
@@ -40,6 +41,7 @@ There are a few areas that would make for excellent targets though, if you reall
 - The view-based [extension system][chimekit] could really use some more attention
 - I'd like to finish migrating the preferences to SwiftUI
 - Support for the [Debug Adapter Protocol](https://github.com/ChimeHQ/DebugAdapterProtocol)
+- The autocomplete result window isn't very pretty
 
 By participating in this project you agree to abide by the [Contributor Code of Conduct](CODE_OF_CONDUCT.md).
 
