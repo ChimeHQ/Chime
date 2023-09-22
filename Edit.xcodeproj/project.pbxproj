@@ -69,6 +69,10 @@
 		C9E878172A9F671B0018340C /* SynchronizedScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E878162A9F671B0018340C /* SynchronizedScrollViewController.swift */; };
 		C9E878192A9FC9CF0018340C /* ExtensionSelectorItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E878182A9FC9CF0018340C /* ExtensionSelectorItem.swift */; };
 		C9E8781C2A9FD0390018340C /* StatusBarPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E8781A2A9FCF3E0018340C /* StatusBarPadding.swift */; };
+		C9E878202A9FD3770018340C /* ExtensionContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E8781F2A9FD3770018340C /* ExtensionContent.swift */; };
+		C9E878232A9FDA210018340C /* InspectorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E878212A9FD3F10018340C /* InspectorModel.swift */; };
+		C9E878262A9FDDDA0018340C /* ExtensionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E878242A9FDDCA0018340C /* ExtensionList.swift */; };
+		C9E878282A9FDE160018340C /* UIExtensionDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E878272A9FDE160018340C /* UIExtensionDescriptor.swift */; };
 		C9F79DD72A87E3FA005ED8E9 /* URL+Contents.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F79DD62A87E3FA005ED8E9 /* URL+Contents.swift */; };
 		C9F79DF72A8FFC65005ED8E9 /* NavigatorItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F79DD82A87E44A005ED8E9 /* NavigatorItem.swift */; };
 		C9F79DF82A8FFC6A005ED8E9 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F79DDA2A87E46A005ED8E9 /* Navigator.swift */; };
@@ -236,6 +240,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = C9FE53DC2A7A5A2A00CACA1A;
 			remoteInfo = ExtensionHost;
+		};
+		C999C7852ABDA97500D49939 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9FE52F32A7539B100CACA1A;
+			remoteInfo = ChimeKit;
 		};
 		C9E878072A9F53530018340C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -474,6 +485,10 @@
 		C9E878162A9F671B0018340C /* SynchronizedScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynchronizedScrollViewController.swift; sourceTree = "<group>"; };
 		C9E878182A9FC9CF0018340C /* ExtensionSelectorItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionSelectorItem.swift; sourceTree = "<group>"; };
 		C9E8781A2A9FCF3E0018340C /* StatusBarPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarPadding.swift; sourceTree = "<group>"; };
+		C9E8781F2A9FD3770018340C /* ExtensionContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionContent.swift; sourceTree = "<group>"; };
+		C9E878212A9FD3F10018340C /* InspectorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspectorModel.swift; sourceTree = "<group>"; };
+		C9E878242A9FDDCA0018340C /* ExtensionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionList.swift; sourceTree = "<group>"; };
+		C9E878272A9FDE160018340C /* UIExtensionDescriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtensionDescriptor.swift; sourceTree = "<group>"; };
 		C9F79DD62A87E3FA005ED8E9 /* URL+Contents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Contents.swift"; sourceTree = "<group>"; };
 		C9F79DD82A87E44A005ED8E9 /* NavigatorItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigatorItem.swift; sourceTree = "<group>"; };
 		C9F79DDA2A87E46A005ED8E9 /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
@@ -980,6 +995,10 @@
 				C9FE53612A76619800CACA1A /* Inspector.swift */,
 				C9E877FB2A9F4B820018340C /* TrailingSidebar.swift */,
 				C9E878162A9F671B0018340C /* SynchronizedScrollViewController.swift */,
+				C9E8781F2A9FD3770018340C /* ExtensionContent.swift */,
+				C9E878212A9FD3F10018340C /* InspectorModel.swift */,
+				C9E878242A9FDDCA0018340C /* ExtensionList.swift */,
+				C9E878272A9FDE160018340C /* UIExtensionDescriptor.swift */,
 			);
 			path = Inspector;
 			sourceTree = "<group>";
@@ -1450,6 +1469,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				C999C7862ABDA97500D49939 /* PBXTargetDependency */,
 				C9E8781E2A9FD0B70018340C /* PBXTargetDependency */,
 				C9FE53962A766D2F00CACA1A /* PBXTargetDependency */,
 			);
@@ -1737,6 +1757,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		C9E878122A9F563F0018340C /* Validate Build */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -1900,6 +1921,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9E877FC2A9F4B820018340C /* TrailingSidebar.swift in Sources */,
+				C9E878262A9FDDDA0018340C /* ExtensionList.swift in Sources */,
+				C9E878202A9FD3770018340C /* ExtensionContent.swift in Sources */,
+				C9E878282A9FDE160018340C /* UIExtensionDescriptor.swift in Sources */,
+				C9E878232A9FDA210018340C /* InspectorModel.swift in Sources */,
 				C9E878172A9F671B0018340C /* SynchronizedScrollViewController.swift in Sources */,
 				C9FE53622A76619800CACA1A /* Inspector.swift in Sources */,
 			);
@@ -2080,6 +2105,11 @@
 			isa = PBXTargetDependency;
 			target = C9FE53DC2A7A5A2A00CACA1A /* ExtensionHost */;
 			targetProxy = C97919232A9E8C260046EAF1 /* PBXContainerItemProxy */;
+		};
+		C999C7862ABDA97500D49939 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9FE52F32A7539B100CACA1A /* ChimeKit */;
+			targetProxy = C999C7852ABDA97500D49939 /* PBXContainerItemProxy */;
 		};
 		C9E878082A9F53530018340C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
