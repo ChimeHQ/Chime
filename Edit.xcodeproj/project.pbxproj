@@ -837,6 +837,7 @@
 				C9FE529A2A7525D000CACA1A /* Products */,
 			);
 			sourceTree = "<group>";
+			usesTabs = 1;
 		};
 		C9FE529A2A7525D000CACA1A /* Products */ = {
 			isa = PBXGroup;
