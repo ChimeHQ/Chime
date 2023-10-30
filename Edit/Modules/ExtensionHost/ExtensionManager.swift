@@ -68,7 +68,7 @@ public final class ExtensionManager {
             }
     }
 
-    var extensionInterface: some ExtensionProtocol {
+	public var extensionInterface: some ExtensionProtocol {
         return extensionRouter
     }
 

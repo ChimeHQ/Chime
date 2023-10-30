@@ -73,6 +73,7 @@
 		C9E878232A9FDA210018340C /* InspectorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E878212A9FD3F10018340C /* InspectorModel.swift */; };
 		C9E878262A9FDDDA0018340C /* ExtensionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E878242A9FDDCA0018340C /* ExtensionList.swift */; };
 		C9E878282A9FDE160018340C /* UIExtensionDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E878272A9FDE160018340C /* UIExtensionDescriptor.swift */; };
+		C9EFDFAF2AEEF15400568E15 /* ApplicationServiceEventRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EFDFAE2AEEF15400568E15 /* ApplicationServiceEventRouter.swift */; };
 		C9F79DD72A87E3FA005ED8E9 /* URL+Contents.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F79DD62A87E3FA005ED8E9 /* URL+Contents.swift */; };
 		C9F79DF72A8FFC65005ED8E9 /* NavigatorItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F79DD82A87E44A005ED8E9 /* NavigatorItem.swift */; };
 		C9F79DF82A8FFC6A005ED8E9 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F79DDA2A87E46A005ED8E9 /* Navigator.swift */; };
@@ -268,6 +269,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = C9FE539A2A76709D00CACA1A;
 			remoteInfo = Status;
+		};
+		C9EFDFAC2AEEE9BC00568E15 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9FE53F32A7A5EF900CACA1A;
+			remoteInfo = Utility;
 		};
 		C9F79DE32A87E756005ED8E9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -491,6 +499,7 @@
 		C9E878212A9FD3F10018340C /* InspectorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspectorModel.swift; sourceTree = "<group>"; };
 		C9E878242A9FDDCA0018340C /* ExtensionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionList.swift; sourceTree = "<group>"; };
 		C9E878272A9FDE160018340C /* UIExtensionDescriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtensionDescriptor.swift; sourceTree = "<group>"; };
+		C9EFDFAE2AEEF15400568E15 /* ApplicationServiceEventRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationServiceEventRouter.swift; sourceTree = "<group>"; };
 		C9F79DD62A87E3FA005ED8E9 /* URL+Contents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Contents.swift"; sourceTree = "<group>"; };
 		C9F79DD82A87E44A005ED8E9 /* NavigatorItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigatorItem.swift; sourceTree = "<group>"; };
 		C9F79DDA2A87E46A005ED8E9 /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
@@ -869,6 +878,7 @@
 			isa = PBXGroup;
 			children = (
 				C9FE529C2A7525D000CACA1A /* AppDelegate.swift */,
+				C9EFDFAE2AEEF15400568E15 /* ApplicationServiceEventRouter.swift */,
 				C9FE52CF2A75323800CACA1A /* Modules */,
 				C9FE52CD2A752BA800CACA1A /* Resources */,
 				C9E878132A9F56720018340C /* Scripts */,
@@ -1311,6 +1321,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				C9EFDFAD2AEEE9BC00568E15 /* PBXTargetDependency */,
 				C900A7CE2A9E9600000556A6 /* PBXTargetDependency */,
 				C97919242A9E8C260046EAF1 /* PBXTargetDependency */,
 				C97919212A9E8BA10046EAF1 /* PBXTargetDependency */,
@@ -1839,6 +1850,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9FE529D2A7525D000CACA1A /* AppDelegate.swift in Sources */,
+				C9EFDFAF2AEEF15400568E15 /* ApplicationServiceEventRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2130,6 +2142,11 @@
 			isa = PBXTargetDependency;
 			target = C9FE539A2A76709D00CACA1A /* Status */;
 			targetProxy = C9E8781D2A9FD0B70018340C /* PBXContainerItemProxy */;
+		};
+		C9EFDFAD2AEEE9BC00568E15 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9FE53F32A7A5EF900CACA1A /* Utility */;
+			targetProxy = C9EFDFAC2AEEE9BC00568E15 /* PBXContainerItemProxy */;
 		};
 		C9F79DDE2A87E656005ED8E9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;

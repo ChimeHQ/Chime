@@ -13,6 +13,9 @@ public final class ProjectDocumentController: ContainedDocumentController<Projec
 	private lazy var openPanelAccessoryViewController = OpenPanelAccessoryViewController()
 
 	public var projectRemovedHandler: (Project) -> Void = { _ in }
+	public var projectAddedHandler: (Project) -> Void = { _ in }
+	public var documentDidOpenHandler: (NSDocument) -> Void = { _ in }
+	public var documentWillCloseHandler: (NSDocument) -> Void = { _ in }
 
 	public override init() {
 		super.init()
@@ -24,6 +27,8 @@ public final class ProjectDocumentController: ContainedDocumentController<Projec
 	}
 
 	public override func removeDocument(_ document: NSDocument) {
+		documentWillCloseHandler(document)
+
 		switch document {
 		case let doc as InternalDocument:
 			if let proj = project(for: doc) {
@@ -230,6 +235,8 @@ extension ProjectDocumentController {
 	private func addProject(_ project: Project) {
 		if getProject(for: project.url) == nil {
 			projects[project.url] = project
+
+			projectAddedHandler(project)
 		}
 	}
 
@@ -297,6 +304,8 @@ extension ProjectDocumentController {
 	}
 
 	private func handleNewDocument(_ document: NSDocument) {
+		documentDidOpenHandler(document)
+
 		guard let doc = document as? InternalDocument else { return }
 
 		doc.didCompleteOpen()

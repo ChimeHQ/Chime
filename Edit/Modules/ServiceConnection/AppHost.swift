@@ -178,4 +178,3 @@ extension AppHost {
         serviceConfigurationHandlers[documentId] = handler
     }
 }
-

@@ -1,5 +1,7 @@
 import AppKit
+import OSLog
 
+import ChimeKit
 import Document
 import PreferencesWindow
 import ServiceConnection
@@ -12,6 +14,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     private let extensionManager: ExtensionManager
     private let appHost: AppHost
     private lazy var preferencesController = PreferencesWindowController()
+	private let eventRouter: ApplicationServiceEventRouter
 
     override init() {
         UserDefaults.standard.register(defaults: [
@@ -28,6 +31,10 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 
         self.appHost = AppHost(config: appHostConfig)
         self.extensionManager = ExtensionManager(host: appHost)
+		self.eventRouter = ApplicationServiceEventRouter(documentController: documentController,
+														 extensionInterface: extensionManager.extensionInterface)
+
+		super.init()
     }
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {

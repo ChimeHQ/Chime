@@ -21,6 +21,8 @@ public final class TextDocument: ContainedDocument<Project> {
 
 	private var isClosing = false
 	private let logger = Logger(type: TextDocument.self)
+	public var statedChangedHandler: (DocumentState, DocumentState) -> Void = { _, _ in }
+
 	private var state: DocumentState {
 		didSet { stateUpdated(oldValue) }
 	}
@@ -29,6 +31,10 @@ public final class TextDocument: ContainedDocument<Project> {
 		self.state = DocumentState()
 
 	    super.init()
+	}
+
+	public var context: DocumentContext {
+		state.context
 	}
 
 	public override class var autosavesInPlace: Bool {
@@ -59,8 +65,17 @@ public final class TextDocument: ContainedDocument<Project> {
 		self.isClosing = true
 
 		super.close()
+	}
 
-//		AppDelegate.shared.extensionManager.host.setServiceConfigurationHandler(for: state.id, handler: nil)
+	public override var fileURL: URL? {
+		didSet {
+			// this can be set on a non-main thread
+			DispatchQueue.main.asyncUnsafe {
+				MainActor.assumeIsolated {
+					self.state.update(url: self.fileURL, typeName: self.state.context.uti.identifier)
+				}
+			}
+		}
 	}
 }
 
@@ -71,6 +86,8 @@ extension TextDocument {
 		}
 
 		logger.debug("document state changed")
+
+		statedChangedHandler(oldValue, state)
 	}
 }
 
