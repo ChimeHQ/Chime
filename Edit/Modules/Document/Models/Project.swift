@@ -70,7 +70,9 @@ extension Project {
 	func removeDocument(_ document: any ProjectDocument) {
 		switch document {
 		case let doc as TextDocument:
-			assert(textDocuments.remove(doc) != nil)
+			let removed = textDocuments.remove(doc) != nil
+
+			assert(removed)
 		case let doc as DirectoryDocument:
 			assert(directoryRootDocument == doc)
 
