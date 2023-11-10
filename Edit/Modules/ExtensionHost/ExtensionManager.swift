@@ -97,7 +97,7 @@ extension ExtensionManager {
                                                         ChimeExtensionPoint.documentSyncedUI.rawValue)
 
             for try await identities in stream {
-                for identity in identities {
+				for identity in identities {
                     await setUpIdentity(identity)
                 }
 
@@ -109,6 +109,12 @@ extension ExtensionManager {
     }
 
     private func setUpIdentity(_ identity: AppExtensionIdentity) async {
+		let bundleIdLoaded = loadedExtensions.keys.contains(where: { $0.bundleIdentifier == identity.bundleIdentifier })
+		if bundleIdLoaded {
+			logger.warning("Already loaded an extension with id \(identity.bundleIdentifier, privacy: .public)")
+			return
+		}
+
         logger.info("Setting up: \(identity.bundleIdentifier, privacy: .public)")
 
         do {
