@@ -35,7 +35,7 @@ public final class ProjectWindowController: NSWindowController {
 
 		let contentController = ProjectContentViewController(contentViewController: contentViewController)
 
-		// Kind of a lot going on here. Want to manage a bunch of stuff from SwiftUI, but have to estalish our context here so we can get window state and the syncing model into the root.
+		// Kind of a lot going on here. Want to manage a bunch of stuff from SwiftUI, but have to establish our context here so we can get window state and the syncing model into the root.
 		let controller = RepresentableViewController.wrap(controller: contentController) { view in
 			ProjectWindowRoot {
 				view
