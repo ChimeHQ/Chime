@@ -78,6 +78,10 @@ public final class ProjectWindowController: NSWindowController {
 		get { model.projectState }
 		set { model.projectState = newValue }
 	}
+
+	public var theme: Theme {
+		get { model.currentTheme }
+	}
 }
 
 extension ProjectWindowController: NSWindowDelegate {

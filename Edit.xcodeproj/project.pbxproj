@@ -62,6 +62,9 @@
 		C97919192A9E83620046EAF1 /* ServiceProviderError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97919182A9E83620046EAF1 /* ServiceProviderError.swift */; };
 		C979191B2A9E83950046EAF1 /* AppHost.swift in Sources */ = {isa = PBXBuildFile; fileRef = C979191A2A9E83950046EAF1 /* AppHost.swift */; };
 		C97919222A9E8BAA0046EAF1 /* libServiceConnection.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C979190D2A9E82910046EAF1 /* libServiceConnection.a */; };
+		C9891AF82AFE996300C8F393 /* NSParagraphStyle+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9891AF72AFE996300C8F393 /* NSParagraphStyle+Helpers.swift */; };
+		C9891AFA2AFE9A3900C8F393 /* NSFont+Measurements.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9891AF92AFE9A3900C8F393 /* NSFont+Measurements.swift */; };
+		C9891B002AFEA3F100C8F393 /* NSAppearance+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9891AFC2AFEA35F00C8F393 /* NSAppearance+Style.swift */; };
 		C98EA41C2A912A5E00B8815E /* ProjectDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98EA4192A912A2900B8815E /* ProjectDocument.swift */; };
 		C9E877FC2A9F4B820018340C /* TrailingSidebar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E877FB2A9F4B820018340C /* TrailingSidebar.swift */; };
 		C9E878042A9F53530018340C /* UIPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E878032A9F53530018340C /* UIPlaceholder.swift */; };
@@ -242,6 +245,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = C9FE53DC2A7A5A2A00CACA1A;
 			remoteInfo = ExtensionHost;
+		};
+		C9891AFE2AFEA3E400C8F393 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9FE53C72A77CC1E00CACA1A;
+			remoteInfo = Theme;
 		};
 		C999C7852ABDA97500D49939 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -484,6 +494,9 @@
 		C979190D2A9E82910046EAF1 /* libServiceConnection.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libServiceConnection.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C97919182A9E83620046EAF1 /* ServiceProviderError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProviderError.swift; sourceTree = "<group>"; };
 		C979191A2A9E83950046EAF1 /* AppHost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHost.swift; sourceTree = "<group>"; };
+		C9891AF72AFE996300C8F393 /* NSParagraphStyle+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSParagraphStyle+Helpers.swift"; sourceTree = "<group>"; };
+		C9891AF92AFE9A3900C8F393 /* NSFont+Measurements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSFont+Measurements.swift"; sourceTree = "<group>"; };
+		C9891AFC2AFEA35F00C8F393 /* NSAppearance+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAppearance+Style.swift"; sourceTree = "<group>"; };
 		C98EA4192A912A2900B8815E /* ProjectDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDocument.swift; sourceTree = "<group>"; };
 		C9C2133A2AD1FD6F00C60282 /* ChimeKit.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ChimeKit.xcconfig; sourceTree = "<group>"; };
 		C9E877FB2A9F4B820018340C /* TrailingSidebar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailingSidebar.swift; sourceTree = "<group>"; };
@@ -799,6 +812,15 @@
 			path = ServiceConnection;
 			sourceTree = "<group>";
 		};
+		C9891AF62AFE994C00C8F393 /* AppKit */ = {
+			isa = PBXGroup;
+			children = (
+				C9891AF72AFE996300C8F393 /* NSParagraphStyle+Helpers.swift */,
+				C9891AF92AFE9A3900C8F393 /* NSFont+Measurements.swift */,
+			);
+			path = AppKit;
+			sourceTree = "<group>";
+		};
 		C9E878022A9F53530018340C /* UIPlaceholder */ = {
 			isa = PBXGroup;
 			children = (
@@ -1073,6 +1095,7 @@
 			isa = PBXGroup;
 			children = (
 				C9FE53D42A77CC8300CACA1A /* Theme.swift */,
+				C9891AFC2AFEA35F00C8F393 /* NSAppearance+Style.swift */,
 			);
 			path = Theme;
 			sourceTree = "<group>";
@@ -1096,6 +1119,7 @@
 		C9FE53FD2A7A5F1600CACA1A /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				C9891AF62AFE994C00C8F393 /* AppKit */,
 				C9FE53FE2A7A5F1600CACA1A /* Logger+init.swift */,
 				C9F79DD62A87E3FA005ED8E9 /* URL+Contents.swift */,
 			);
@@ -1396,6 +1420,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				C9891AFF2AFEA3E400C8F393 /* PBXTargetDependency */,
 				C9FE53902A766A9400CACA1A /* PBXTargetDependency */,
 				C9FE53352A75A30E00CACA1A /* PBXTargetDependency */,
 				C9FE53062A753B2600CACA1A /* PBXTargetDependency */,
@@ -1991,6 +2016,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9891B002AFEA3F100C8F393 /* NSAppearance+Style.swift in Sources */,
 				C9FE53D52A77CC8300CACA1A /* Theme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2015,6 +2041,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9891AFA2AFE9A3900C8F393 /* NSFont+Measurements.swift in Sources */,
+				C9891AF82AFE996300C8F393 /* NSParagraphStyle+Helpers.swift in Sources */,
 				C9FE53FF2A7A5F1600CACA1A /* Logger+init.swift in Sources */,
 				C9F79DD72A87E3FA005ED8E9 /* URL+Contents.swift in Sources */,
 			);
@@ -2126,6 +2154,11 @@
 			isa = PBXTargetDependency;
 			target = C9FE53DC2A7A5A2A00CACA1A /* ExtensionHost */;
 			targetProxy = C97919232A9E8C260046EAF1 /* PBXContainerItemProxy */;
+		};
+		C9891AFF2AFEA3E400C8F393 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9FE53C72A77CC1E00CACA1A /* Theme */;
+			targetProxy = C9891AFE2AFEA3E400C8F393 /* PBXContainerItemProxy */;
 		};
 		C999C7862ABDA97500D49939 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;

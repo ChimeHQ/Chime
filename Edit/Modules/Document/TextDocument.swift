@@ -7,6 +7,7 @@ import ContainedDocument
 import Editor
 import ProcessEnv
 import ProjectWindow
+import Theme
 import Utility
 
 public final class TextDocument: ContainedDocument<Project> {
@@ -55,7 +56,12 @@ public final class TextDocument: ContainedDocument<Project> {
 
 	public override func read(from url: URL, ofType typeName: String) throws {
 		try MainActor.assumeIsolated {
-			try self.state.read(from: url, typeName: typeName)
+			let window = projectWindowController.window
+			let theme = projectWindowController.theme
+
+			let attrs = theme.typingAttributes(tabWidth: state.context.configuration.tabWidth, context: .init(window: window))
+			
+			try self.state.read(from: url, typeName: typeName, documentAttributes: attrs)
 		}
 	}
 

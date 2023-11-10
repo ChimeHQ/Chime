@@ -21,9 +21,9 @@ extension DocumentState {
 		update(url: url, typeName: context.uti.identifier)
 	}
 
-	mutating func read(from url: URL, typeName: String) throws {
-		// TODO: doc attributes need to be inited from the theme
-		self.content = try DocumentContent(url: url, documentAttributes: [:])
+	mutating func read(from url: URL, typeName: String, documentAttributes: [NSAttributedString.Key : Any]) throws {
+		self.content = try DocumentContent(url: url, documentAttributes: documentAttributes)
+		
 		update(url: url, typeName: typeName)
 	}
 	

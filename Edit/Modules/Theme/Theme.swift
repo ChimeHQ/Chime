@@ -1,6 +1,8 @@
 import Foundation
 import SwiftUI
 
+import Utility
+
 public struct ThemeKey: EnvironmentKey {
 	public static let defaultValue = Theme()
 }
@@ -82,3 +84,31 @@ extension Theme {
 	}
 }
 
+extension Theme {
+	public var isDark: Bool {
+		// TODO: this is not correct...
+		guard let color = NSColor.windowBackgroundColor.usingColorSpace(.deviceRGB) else { return false }
+
+		return color.brightnessComponent < 0.5
+	}
+}
+
+extension Theme {
+	public func typingAttributes(tabWidth: Int, context: Context) -> [NSAttributedString.Key : Any] {
+		let baseFont = font(for: .source, context: context)
+
+		let charWidth = baseFont.advancementForSpaceGlyph.width
+		let indentationWidth = charWidth * CGFloat(tabWidth)
+
+		let style = NSParagraphStyle.with { style in
+			style.tabStops = []
+			style.defaultTabInterval = indentationWidth
+		}
+
+		return [
+			.font: baseFont,
+			.foregroundColor: color(for: .source, context: context),
+			.paragraphStyle: style,
+		]
+	}
+}
