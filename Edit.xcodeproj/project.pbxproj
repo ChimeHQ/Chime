@@ -11,6 +11,7 @@
 		C900A7C82A9E94AE000556A6 /* libPreferencesWindow.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C900A7BA2A9E93FC000556A6 /* libPreferencesWindow.a */; };
 		C900A7CA2A9E94B4000556A6 /* ExtendableHost in Frameworks */ = {isa = PBXBuildFile; productRef = C900A7C92A9E94B4000556A6 /* ExtendableHost */; };
 		C900A7D12A9F472E000556A6 /* Chime.appextensionpoint in Copy Extensions */ = {isa = PBXBuildFile; fileRef = C900A7CF2A9F46EF000556A6 /* Chime.appextensionpoint */; };
+		C93C2DD62AF04CB700558DCF /* DocumentContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93C2DD52AF04CB700558DCF /* DocumentContent.swift */; };
 		C9409C662A98CC9800B5D898 /* Outline in Frameworks */ = {isa = PBXBuildFile; productRef = C9409C652A98CC9800B5D898 /* Outline */; };
 		C9409C692A98CCCB00B5D898 /* SourceView in Frameworks */ = {isa = PBXBuildFile; productRef = C9409C682A98CCCB00B5D898 /* SourceView */; };
 		C9409C6C2A99059C00B5D898 /* ProjectState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9409C6A2A99047000B5D898 /* ProjectState.swift */; };
@@ -436,6 +437,7 @@
 		C900A7C42A9E9468000556A6 /* PreferencesWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesWindowController.swift; sourceTree = "<group>"; };
 		C900A7CF2A9F46EF000556A6 /* Chime.appextensionpoint */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Chime.appextensionpoint; sourceTree = "<group>"; };
 		C93791A32AD5E02C00665F50 /* Project-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Project-Debug.xcconfig"; sourceTree = "<group>"; };
+		C93C2DD52AF04CB700558DCF /* DocumentContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentContent.swift; sourceTree = "<group>"; };
 		C9409C6A2A99047000B5D898 /* ProjectState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectState.swift; sourceTree = "<group>"; };
 		C94F7EC02A7D8C1900E0361A /* ProjectContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectContentViewController.swift; sourceTree = "<group>"; };
 		C96A852C2A7A6E22005ED222 /* DirectoryDocument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectoryDocument.swift; sourceTree = "<group>"; };
@@ -965,6 +967,7 @@
 				C9FE54112A7A66D500CACA1A /* ContextBuffer.swift */,
 				C96A853F2A7BC3F5005ED222 /* DocumentState.swift */,
 				C96A85392A7B2C47005ED222 /* Project.swift */,
+				C93C2DD52AF04CB700558DCF /* DocumentContent.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1877,6 +1880,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C93C2DD62AF04CB700558DCF /* DocumentContent.swift in Sources */,
 				C96A852F2A7A703D005ED222 /* OpenPanelAccessoryViewController.swift in Sources */,
 				C9FE52EE2A7537AC00CACA1A /* ProjectDocumentController.swift in Sources */,
 				C98EA41C2A912A5E00B8815E /* ProjectDocument.swift in Sources */,

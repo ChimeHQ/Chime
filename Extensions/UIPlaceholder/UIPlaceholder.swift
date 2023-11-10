@@ -6,7 +6,7 @@ import ChimeKit
 
 @main
 final class UIPlaceholderExtension: SidebarChimeUIExtension {
-    required init() {
+    required nonisolated init() {
     }
 
     func acceptHostConnection(_ host: HostProtocol) throws {

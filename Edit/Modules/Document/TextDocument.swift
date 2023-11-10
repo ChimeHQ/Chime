@@ -53,11 +53,19 @@ public final class TextDocument: ContainedDocument<Project> {
 		throw NSError(domain: NSOSStatusErrorDomain, code: unimpErr, userInfo: nil)
 	}
 
-	public override func read(from data: Data, ofType typeName: String) throws {
-		// Insert code here to read your document from the given data of the specified type, throwing an error in case of failure.
-		// Alternatively, you could remove this method and override read(from:ofType:) instead.
-		// If you do, you should also override isEntireFileLoaded to return false if the contents are lazily loaded.
-//		throw NSError(domain: NSOSStatusErrorDomain, code: unimpErr, userInfo: nil)
+	public override func read(from url: URL, ofType typeName: String) throws {
+		try MainActor.assumeIsolated {
+			try self.state.read(from: url, typeName: typeName)
+		}
+	}
+
+	public override func save(to url: URL, ofType typeName: String, for saveOperation: NSDocument.SaveOperationType) async throws {
+		try await super.save(to: url, ofType: typeName, for: saveOperation)
+
+		// at this point, we can re-check the url for an updated UTI
+		let newTypeName = (try? url.resourceValues(forKeys: [.typeIdentifierKey]).typeIdentifier) ?? typeName
+
+		self.state.update(url: url, typeName: newTypeName)
 	}
 
 	public override func close() {
@@ -72,7 +80,7 @@ public final class TextDocument: ContainedDocument<Project> {
 			// this can be set on a non-main thread
 			DispatchQueue.main.asyncUnsafe {
 				MainActor.assumeIsolated {
-					self.state.update(url: self.fileURL, typeName: self.state.context.uti.identifier)
+					self.state.update(url: self.fileURL)
 				}
 			}
 		}
