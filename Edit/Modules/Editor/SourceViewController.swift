@@ -1,12 +1,13 @@
 import AppKit
 
+import DocumentContent
 import SourceView
 import Theme
 
 public final class SourceViewController: NSViewController {
 	let sourceView = SourceView()
 
-	public init(storage: NSTextStorage) {
+	public init(content: DocumentContent) {
 		super.init(nibName: nil, bundle: nil)
 
 		sourceView.drawsBackground = false
@@ -14,7 +15,7 @@ public final class SourceViewController: NSViewController {
 
 		sourceView.delegate = self
 
-		self.representedObject = storage
+		self.representedObject = content
 	}
 
 	@available(*, unavailable)
@@ -26,17 +27,17 @@ public final class SourceViewController: NSViewController {
 		self.view = sourceView
 	}
 
-	var representedContent: NSTextStorage {
-		representedObject as! NSTextStorage
+	var representedContent: DocumentContent {
+		representedObject as! DocumentContent
 	}
 
 	override public var representedObject: Any? {
 		didSet {
-			if sourceView.textContentStorage?.textStorage === representedContent {
+			if sourceView.textContentStorage?.textStorage === representedContent.storage {
 				return
 			}
 			
-			sourceView.textContentStorage?.textStorage = representedContent
+			sourceView.textContentStorage?.textStorage = representedContent.storage
 		}
 	}
 }

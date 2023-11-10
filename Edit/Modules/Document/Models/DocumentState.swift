@@ -2,6 +2,7 @@ import Foundation
 import UniformTypeIdentifiers
 
 import ChimeKit
+import DocumentContent
 
 public struct DocumentState {
 	public internal(set) var context: DocumentContext
@@ -23,7 +24,7 @@ extension DocumentState {
 
 	mutating func read(from url: URL, typeName: String, documentAttributes: [NSAttributedString.Key : Any]) throws {
 		self.content = try DocumentContent(url: url, documentAttributes: documentAttributes)
-		
+
 		update(url: url, typeName: typeName)
 	}
 	

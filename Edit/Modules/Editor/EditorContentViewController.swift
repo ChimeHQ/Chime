@@ -1,6 +1,7 @@
 import AppKit
 import SwiftUI
 
+import DocumentContent
 import Theme
 import UIUtility
 
@@ -11,9 +12,9 @@ public final class EditorContentViewController: NSViewController {
 	let editorScrollView = NSScrollView()
 	let sourceViewController: SourceViewController
 
-	public init(storage: NSTextStorage) {
-		self.sourceViewController = SourceViewController(storage: storage)
-		
+	public init(content: DocumentContent) {
+		self.sourceViewController = SourceViewController(content: content)
+
 		super.init(nibName: nil, bundle: nil)
 
 		addChild(sourceViewController)

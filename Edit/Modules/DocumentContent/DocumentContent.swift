@@ -2,19 +2,20 @@ import AppKit
 import Foundation
 
 import ChimeKit
+import TextStory
 
 public struct DocumentContent {
-	public let storage: NSTextStorage
+	public let storage: VersionedTextStorage
 	public let identity: DocumentContentIdentity
 
-	init(storage: NSTextStorage) {
+	init(storage: VersionedTextStorage) {
 		self.storage = storage
 		self.identity = DocumentContentIdentity()
 	}
 
 	/// Initialize with default, empty storage
 	public init() {
-		self.init(storage: NSTextStorage())
+		self.init(storage: VersionedTextStorage())
 	}
 
 	/// Initialize by reading data in a file.
@@ -23,7 +24,7 @@ public struct DocumentContent {
 			.defaultAttributes: documentAttributes,
 		]
 
-		let storage = try NSTextStorage(url: url, options: options, documentAttributes: nil)
+		let storage = try VersionedTextStorage(url: url, options: options, documentAttributes: nil)
 
 		self.init(storage: storage)
 	}

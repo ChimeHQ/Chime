@@ -1,3 +1,7 @@
 SKIP_INSTALL = YES
 EXECUTABLE_PREFIX = lib
 PRODUCT_NAME = $(TARGET_NAME)
+
+// This is a workaround for a ridiculous problem related to non-Swift SPM dependencies.
+// - "Internal" is for TextStory
+OTHER_SWIFT_FLAGS = $(inherited) -Xcc -fmodule-map-file=$(GENERATED_MODULEMAP_DIR)/Internal.modulemap

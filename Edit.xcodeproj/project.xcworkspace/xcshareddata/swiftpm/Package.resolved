@@ -89,6 +89,15 @@
       }
     },
     {
+      "identity" : "mainoffender",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/mattmassicotte/MainOffender",
+      "state" : {
+        "revision" : "343cc3797618c29b48b037b4e2beea0664e75315",
+        "version" : "0.1.0"
+      }
+    },
+    {
       "identity" : "outline",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/chimeHQ/Outline",
@@ -115,6 +124,15 @@
       }
     },
     {
+      "identity" : "rearrange",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ChimeHQ/Rearrange",
+      "state" : {
+        "revision" : "0fb658e721c68495f6340c211cc6d4719e6b52d8",
+        "version" : "1.6.0"
+      }
+    },
+    {
       "identity" : "scrollviewplus",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ChimeHQ/ScrollViewPlus.git",
@@ -138,6 +156,15 @@
       "location" : "https://github.com/ChimeHQ/SourceView",
       "state" : {
         "revision" : "d563ef0ba6c1c91aa6bcee406577b8826baa1f69"
+      }
+    },
+    {
+      "identity" : "textstory",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ChimeHQ/TextStory.git",
+      "state" : {
+        "revision" : "8883fa739aa213e70e6cb109bfbf0a0b551e4cb5",
+        "version" : "0.8.0"
       }
     },
     {

@@ -4,28 +4,15 @@ import OSLog
 
 import ChimeKit
 import ContainedDocument
+import DocumentContent
 import Editor
 import ProcessEnv
 import ProjectWindow
 import Theme
 import Utility
 
-final class DocumentContentMonitor: NSObject {
-
-}
-
-extension DocumentContentMonitor: NSTextStorageDelegate {
-	func textStorage(_ textStorage: NSTextStorage, willProcessEditing editedMask: NSTextStorageEditActions, range editedRange: NSRange, changeInLength delta: Int) {
-
-	}
-
-	func textStorage(_ textStorage: NSTextStorage, didProcessEditing editedMask: NSTextStorageEditActions, range editedRange: NSRange, changeInLength delta: Int) {
-		print("oh")
-	}
-}
-
 public final class TextDocument: ContainedDocument<Project> {
-	private lazy var editorContentController = EditorContentViewController(storage: self.state.content.storage)
+	private lazy var editorContentController = EditorContentViewController(content: self.state.content)
 	private lazy var projectWindowController = makeProjectWindowController(
 		contentViewController: editorContentController,
 		context: state.context
@@ -33,7 +20,7 @@ public final class TextDocument: ContainedDocument<Project> {
 
 	private var isClosing = false
 	private let logger = Logger(type: TextDocument.self)
-	private let contentMonitor = DocumentContentMonitor()
+	private let contentMonitor = StorageMonitor()
 	public var statedChangedHandler: (DocumentState, DocumentState) -> Void = { _, _ in }
 
 	private var state: DocumentState {
@@ -45,7 +32,7 @@ public final class TextDocument: ContainedDocument<Project> {
 
 	    super.init()
 
-		state.content.storage.delegate = contentMonitor
+		contentMonitor.monitor(state.content)
 	}
 
 	public var context: DocumentContext {
@@ -120,9 +107,9 @@ extension TextDocument {
 		}
 
 		logger.debug("document state changed")
-		state.content.storage.delegate = contentMonitor
+		contentMonitor.monitor(state.content)
 
-		editorContentController.representedObject = state.content.storage
+		editorContentController.representedObject = state.content
 
 		statedChangedHandler(oldValue, state)
 	}
