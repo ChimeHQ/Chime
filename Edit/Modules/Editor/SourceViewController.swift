@@ -6,13 +6,15 @@ import Theme
 public final class SourceViewController: NSViewController {
 	let sourceView = SourceView()
 
-	public init() {
+	public init(storage: NSTextStorage) {
 		super.init(nibName: nil, bundle: nil)
 
 		sourceView.drawsBackground = false
 		sourceView.wrapsTextToHorizontalBounds = false
 
 		sourceView.delegate = self
+
+		self.representedObject = storage
 	}
 
 	@available(*, unavailable)
@@ -22,6 +24,20 @@ public final class SourceViewController: NSViewController {
 	
 	override public func loadView() {
 		self.view = sourceView
+	}
+
+	var representedContent: NSTextStorage {
+		representedObject as! NSTextStorage
+	}
+
+	override public var representedObject: Any? {
+		didSet {
+			if sourceView.textContentStorage?.textStorage === representedContent {
+				return
+			}
+			
+			sourceView.textContentStorage?.textStorage = representedContent
+		}
 	}
 }
 

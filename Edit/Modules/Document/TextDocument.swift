@@ -10,18 +10,30 @@ import ProjectWindow
 import Theme
 import Utility
 
-public final class TextDocument: ContainedDocument<Project> {
-	private lazy var projectWindowController: ProjectWindowController = {
-		let editorController = EditorContentViewController()
+final class DocumentContentMonitor: NSObject {
 
-		return makeProjectWindowController(
-			contentViewController: editorController,
-			context: state.context
-		)
-	}()
+}
+
+extension DocumentContentMonitor: NSTextStorageDelegate {
+	func textStorage(_ textStorage: NSTextStorage, willProcessEditing editedMask: NSTextStorageEditActions, range editedRange: NSRange, changeInLength delta: Int) {
+
+	}
+
+	func textStorage(_ textStorage: NSTextStorage, didProcessEditing editedMask: NSTextStorageEditActions, range editedRange: NSRange, changeInLength delta: Int) {
+		print("oh")
+	}
+}
+
+public final class TextDocument: ContainedDocument<Project> {
+	private lazy var editorContentController = EditorContentViewController(storage: self.state.content.storage)
+	private lazy var projectWindowController = makeProjectWindowController(
+		contentViewController: editorContentController,
+		context: state.context
+	)
 
 	private var isClosing = false
 	private let logger = Logger(type: TextDocument.self)
+	private let contentMonitor = DocumentContentMonitor()
 	public var statedChangedHandler: (DocumentState, DocumentState) -> Void = { _, _ in }
 
 	private var state: DocumentState {
@@ -32,6 +44,8 @@ public final class TextDocument: ContainedDocument<Project> {
 		self.state = DocumentState()
 
 	    super.init()
+
+		state.content.storage.delegate = contentMonitor
 	}
 
 	public var context: DocumentContext {
@@ -106,6 +120,9 @@ extension TextDocument {
 		}
 
 		logger.debug("document state changed")
+		state.content.storage.delegate = contentMonitor
+
+		editorContentController.representedObject = state.content.storage
 
 		statedChangedHandler(oldValue, state)
 	}

@@ -9,9 +9,11 @@ import UIUtility
 /// This controller establishes the larger editor scene, typing together the sub components.
 public final class EditorContentViewController: NSViewController {
 	let editorScrollView = NSScrollView()
-	let sourceViewController = SourceViewController()
+	let sourceViewController: SourceViewController
 
-	public init() {
+	public init(storage: NSTextStorage) {
+		self.sourceViewController = SourceViewController(storage: storage)
+		
 		super.init(nibName: nil, bundle: nil)
 
 		addChild(sourceViewController)
@@ -49,5 +51,10 @@ public final class EditorContentViewController: NSViewController {
 		   }
 
 		self.view = NSHostingView(rootView: hostedView)
+	}
+
+	public override var representedObject: Any? {
+		get { sourceViewController.representedObject }
+		set { sourceViewController.representedObject = newValue }
 	}
 }
