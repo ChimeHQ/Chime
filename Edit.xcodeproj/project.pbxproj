@@ -821,6 +821,14 @@
 			path = AppKit;
 			sourceTree = "<group>";
 		};
+		C9891B012AFEAA1100C8F393 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C9891AFC2AFEA35F00C8F393 /* NSAppearance+Style.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		C9E878022A9F53530018340C /* UIPlaceholder */ = {
 			isa = PBXGroup;
 			children = (
@@ -1094,8 +1102,8 @@
 		C9FE53D32A77CC8300CACA1A /* Theme */ = {
 			isa = PBXGroup;
 			children = (
+				C9891B012AFEAA1100C8F393 /* Extensions */,
 				C9FE53D42A77CC8300CACA1A /* Theme.swift */,
-				C9891AFC2AFEA35F00C8F393 /* NSAppearance+Style.swift */,
 			);
 			path = Theme;
 			sourceTree = "<group>";

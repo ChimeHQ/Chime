@@ -31,17 +31,3 @@ extension NSAppearance {
 		}
 	}
 }
-
-extension Theme.Context {
-	@MainActor
-	public init(window: NSWindow?) {
-		self.init(appearance: window?.appearance)
-	}
-
-	@MainActor
-	public init(appearance: NSAppearance?) {
-		let dark = appearance?.isDark == true
-
-		self.init(controlActiveState: .inactive, hover: false, colorScheme: dark ? .dark : .light)
-	}
-}
