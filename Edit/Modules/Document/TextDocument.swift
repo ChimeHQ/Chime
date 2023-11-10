@@ -65,13 +65,19 @@ public final class TextDocument: ContainedDocument<Project> {
 		}
 	}
 
-	public override func save(to url: URL, ofType typeName: String, for saveOperation: NSDocument.SaveOperationType) async throws {
-		try await super.save(to: url, ofType: typeName, for: saveOperation)
+	public override func save(
+		to url: URL,
+		ofType typeName: String,
+		for saveOperation: NSDocument.SaveOperationType,
+		completionHandler: @escaping (Error?) -> Void
+	) {
+		super.save(to: url, ofType: typeName, for: saveOperation, completionHandler: {
+			let newTypeName = (try? url.resourceValues(forKeys: [.typeIdentifierKey]).typeIdentifier) ?? typeName
 
-		// at this point, we can re-check the url for an updated UTI
-		let newTypeName = (try? url.resourceValues(forKeys: [.typeIdentifierKey]).typeIdentifier) ?? typeName
+			self.state.update(url: url, typeName: newTypeName)
 
-		self.state.update(url: url, typeName: newTypeName)
+			completionHandler($0)
+		})
 	}
 
 	public override func close() {
