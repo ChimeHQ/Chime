@@ -2,6 +2,7 @@ import AppKit
 import SwiftUI
 
 import DocumentContent
+import Gutter
 import Theme
 import UIUtility
 
@@ -36,7 +37,7 @@ public final class EditorContentViewController: NSViewController {
 
 		let presentationController = SourcePresentationViewController(scrollView: editorScrollView)
 
-		presentationController.gutterView = NSHostingView(rootView: Color.yellow.ignoresSafeArea())
+		presentationController.gutterView = NSHostingView(rootView: Gutter())
 //		presentationController.underlayView = NSHostingView(rootView: Color.red)
 //		presentationController.overlayView = NSHostingView(rootView: Color.blue)
 		presentationController.documentView = sourceViewController.view
