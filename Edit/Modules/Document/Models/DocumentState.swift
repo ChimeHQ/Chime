@@ -18,6 +18,15 @@ extension DocumentState: Equatable {
 }
 
 extension DocumentState {
+	mutating func updateProjectContext(_ projectContext: ProjectContext?) {
+		self.context = DocumentContext(id: context.id,
+									   contentId: content.identity,
+									   url: context.url,
+									   uti: context.uti,
+									   configuration: context.configuration,
+									   projectContext: projectContext)
+	}
+
 	mutating func update(url: URL?) {
 		update(url: url, typeName: context.uti.identifier)
 	}

@@ -45,13 +45,17 @@ extension ApplicationServiceEventRouter {
 	private func documentOpened(_ document: NSDocument) {
 		guard let doc = document as? TextDocument else { return }
 
-		doc.statedChangedHandler = { [weak self] in self?.documentStateChanged(doc, $0, $1) }
+		Swift.print("opening doc")
+
+		doc.stateChangedHandler = { [weak self] in self?.documentStateChanged(doc, $0, $1) }
 
 		do {
 			try appService.didOpenDocument(with: doc.context)
 		} catch {
 			logger.error("Failed to route didOpenDocument: \(error, privacy: .public)")
 		}
+
+		updateAppService(for: doc)
 	}
 
 	private func documentClosed(_ document: NSDocument) {
@@ -65,6 +69,23 @@ extension ApplicationServiceEventRouter {
 	}
 
 	private func documentStateChanged(_ document: TextDocument, _ oldState: DocumentState, _ newState: DocumentState) {
-		print("document state changed: ", oldState, newState)
+		let changed = oldState != newState
+
+		logger.info("State change: \(document.context.id, privacy: .public), \(changed, privacy: .public)")
+		if changed == false {
+			return
+		}
+
+		updateAppService(for: document)
+	}
+}
+
+extension ApplicationServiceEventRouter {
+	private func updateAppService(for document: TextDocument) {
+		do {
+			document.updateApplicationService(try appService)
+		} catch {
+			logger.error("Failed to update document application service: \(error, privacy: .public)")
+		}
 	}
 }

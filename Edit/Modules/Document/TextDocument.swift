@@ -21,7 +21,7 @@ public final class TextDocument: ContainedDocument<Project> {
 	private var isClosing = false
 	private let logger = Logger(type: TextDocument.self)
 	private let contentMonitor = StorageMonitor()
-	public var statedChangedHandler: (DocumentState, DocumentState) -> Void = { _, _ in }
+	public var stateChangedHandler: (DocumentState, DocumentState) -> Void = { _, _ in }
 
 	private var state: DocumentState {
 		didSet { stateUpdated(oldValue) }
@@ -98,6 +98,16 @@ public final class TextDocument: ContainedDocument<Project> {
 			}
 		}
 	}
+
+	public func updateApplicationService(_ service: any ApplicationService) {
+		do {
+			projectWindowController.symbolQueryService = try projectContext.flatMap { try service.symbolService(for: $0) }
+
+			Swift.print("service is now: ", projectWindowController.symbolQueryService)
+		} catch {
+			logger.error("Failed to update symbolService: \(error, privacy: .public)")
+		}
+	}
 }
 
 extension TextDocument {
@@ -111,14 +121,17 @@ extension TextDocument {
 
 		editorContentController.representedObject = state.content
 
-		statedChangedHandler(oldValue, state)
+		stateChangedHandler(oldValue, state)
 	}
 }
 
 extension TextDocument: ProjectDocument {
 	var projectState: ProjectState? {
 		get { projectWindowController.state }
-		set { projectWindowController.state = newValue }
+		set {
+			self.state.updateProjectContext(newValue?.context)
+			projectWindowController.state = newValue
+		}
 	}
 
 	func willRemoveDocument() {

@@ -82,6 +82,11 @@ public final class ProjectWindowController: NSWindowController {
 	public var theme: Theme {
 		get { model.currentTheme }
 	}
+
+	public var symbolQueryService: SymbolQueryService? {
+		get { openQuicklyWindowController.symbolQueryService }
+		set { openQuicklyWindowController.symbolQueryService = newValue }
+	}
 }
 
 extension ProjectWindowController: NSWindowDelegate {

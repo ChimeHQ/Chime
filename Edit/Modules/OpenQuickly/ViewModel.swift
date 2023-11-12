@@ -1,8 +1,10 @@
 import Cocoa
 import Combine
+import OSLog
 
 import ChimeKit
 import FuzzyFind
+import Utility
 
 public struct OpenQuicklyContext {
     public typealias SelectionHandler = (OpenQuicklyItem) -> Void
@@ -52,6 +54,7 @@ final class OpenQuicklyViewModel: ObservableObject {
 	private let querySubject: PassthroughSubject<String, Never>
 	private var subscriptions = Set<AnyCancellable>()
 	private var activeSearchTasks: [Task<(), Error>] = []
+	private let logger = Logger(type: OpenQuicklyViewModel.self)
 
 	init(context: OpenQuicklyContext, symbolQueryService: SymbolQueryService?) {
 		self.items = []
@@ -124,38 +127,47 @@ final class OpenQuicklyViewModel: ObservableObject {
 		}
 
 		let serviceTask = Task {
-			let time = Date.now
-			print("starting service task")
-			let service = self.symbolQueryService
-
-			try Task.checkCancellation()
-
-			let symbols = (try? await service?.symbols(matching: query)) ?? []
-
-			try Task.checkCancellation()
-
-			let newItems = computeItems(from: symbols, query: query)
-
-			print("completed service task: \(Date.now.timeIntervalSince(time))")
-
-			try Task.checkCancellation()
-
-			if newItems.isEmpty { return }
-
-			try await MainActor.run {
-				try Task.checkCancellation()
-
-				print("committing service task")
-				var allItems = items + newItems
-
-				allItems.sort(by: { $0 > $1 })
-
-				self.items = allItems
+			do {
+				try await runServiceQuery(query)
+			} catch {
+				logger.warning("service query failed: \(error, privacy: .public)")
+				throw error
 			}
-
 		}
 
 		self.activeSearchTasks = [fileTask, serviceTask]
+	}
+
+	private func runServiceQuery(_ query: String) async throws {
+		guard let service = self.symbolQueryService else { return }
+
+		let time = Date.now
+		print("starting service task")
+
+		try Task.checkCancellation()
+
+		let symbols = try await service.symbols(matching: query)
+
+		try Task.checkCancellation()
+
+		let newItems = computeItems(from: symbols, query: query)
+
+		print("completed service task: \(Date.now.timeIntervalSince(time))")
+
+		try Task.checkCancellation()
+
+		if newItems.isEmpty { return }
+
+		try await MainActor.run {
+			try Task.checkCancellation()
+
+			print("committing service task")
+			var allItems = items + newItems
+
+			allItems.sort(by: { $0 > $1 })
+
+			self.items = allItems
+		}
 	}
 }
 
