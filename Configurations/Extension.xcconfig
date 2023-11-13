@@ -1,5 +1,5 @@
 PRODUCT_NAME = ${TARGET_NAME}Extension
-PRODUCT_BUNDLE_IDENTIFIER = com.chimehq.Edit.${TARGET_NAME}
+PRODUCT_BUNDLE_IDENTIFIER = $(BUNDLE_ID_PREFIX).Edit.${TARGET_NAME}
 SKIP_INSTALL = YES
 
 LD_RUNPATH_SEARCH_PATHS = $(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks
