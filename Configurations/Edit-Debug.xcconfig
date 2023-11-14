@@ -1,0 +1,3 @@
+#include "Configurations/Edit.xcconfig"
+
+OTHER_LDFLAGS[config=Debug] = -ObjC -fprofile-instr-generate

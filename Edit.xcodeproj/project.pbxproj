@@ -515,6 +515,7 @@
 		C900A7C42A9E9468000556A6 /* PreferencesWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesWindowController.swift; sourceTree = "<group>"; };
 		C900A7CF2A9F46EF000556A6 /* Chime.appextensionpoint */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Chime.appextensionpoint; sourceTree = "<group>"; };
 		C92672F72B0399D800B3CE2F /* SwiftExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftExtension.swift; path = "submodules/chime-swift/Sources/ChimeSwift/SwiftExtension.swift"; sourceTree = SOURCE_ROOT; };
+		C92673282B04046700B3CE2F /* Edit-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Edit-Debug.xcconfig"; sourceTree = "<group>"; };
 		C93791A32AD5E02C00665F50 /* Project-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Project-Debug.xcconfig"; sourceTree = "<group>"; };
 		C93C2DD52AF04CB700558DCF /* DocumentContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentContent.swift; sourceTree = "<group>"; };
 		C9409C6A2A99047000B5D898 /* ProjectState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectState.swift; sourceTree = "<group>"; };
@@ -1209,6 +1210,7 @@
 			isa = PBXGroup;
 			children = (
 				C9C2133A2AD1FD6F00C60282 /* ChimeKit.xcconfig */,
+				C92673282B04046700B3CE2F /* Edit-Debug.xcconfig */,
 				C9FE52CC2A752B4D00CACA1A /* Edit.xcconfig */,
 				C9FE54082A7A625300CACA1A /* EditTests.xcconfig */,
 				C9E878112A9F53BB0018340C /* Extension.xcconfig */,
@@ -2835,7 +2837,7 @@
 		};
 		C9FE52C32A7525D300CACA1A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C9FE52CC2A752B4D00CACA1A /* Edit.xcconfig */;
+			baseConfigurationReference = C92673282B04046700B3CE2F /* Edit-Debug.xcconfig */;
 			buildSettings = {
 			};
 			name = Debug;
