@@ -14,7 +14,7 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ChimeHQ/ChimeKit.git",
       "state" : {
-        "revision" : "6e80898da48c7d4c4fb78bbad7700c7065b9e241"
+        "revision" : "ab2986f24b815b3ceb547407b0d12beb8eb242cd"
       }
     },
     {
@@ -66,8 +66,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ChimeHQ/JSONRPC",
       "state" : {
-        "revision" : "c6ec759d41a76ac88fe7327c41a77d9033943374",
-        "version" : "0.9.0"
+        "revision" : "1ae27fceaec3208f62b3ef23d2d565d4222c3ac6",
+        "version" : "0.8.1"
       }
     },
     {

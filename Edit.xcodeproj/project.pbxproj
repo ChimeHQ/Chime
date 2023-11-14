@@ -1963,6 +1963,7 @@
 				C97918C92A9D4C600046EAF1 /* XCRemoteSwiftPackageReference "FuzzyFind" */,
 				C97918D42A9E07F00046EAF1 /* XCRemoteSwiftPackageReference "ViewPlus" */,
 				C9891B262AFEC24100C8F393 /* XCRemoteSwiftPackageReference "TextStory" */,
+				C926732A2B0406F700B3CE2F /* XCRemoteSwiftPackageReference "JSONRPC" */,
 			);
 			productRefGroup = C9FE529A2A7525D000CACA1A /* Products */;
 			projectDirPath = "";
@@ -2853,12 +2854,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C9FE54082A7A625300CACA1A /* EditTests.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				GENERATE_INFOPLIST_FILE = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.chimehq.EditTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
 			};
 			name = Debug;
 		};
@@ -2866,12 +2861,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C9FE54082A7A625300CACA1A /* EditTests.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				GENERATE_INFOPLIST_FILE = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.chimehq.EditTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
 			};
 			name = Release;
 		};
@@ -3270,6 +3259,15 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		C926732A2B0406F700B3CE2F /* XCRemoteSwiftPackageReference "JSONRPC" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ChimeHQ/JSONRPC.git";
+			requirement = {
+				kind = versionRange;
+				maximumVersion = 0.9.0;
+				minimumVersion = 0.8.1;
+			};
+		};
 		C9409C642A98CC9800B5D898 /* XCRemoteSwiftPackageReference "Outline" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/chimeHQ/Outline";
@@ -3339,7 +3337,7 @@
 			repositoryURL = "https://github.com/ChimeHQ/ChimeKit.git";
 			requirement = {
 				kind = revision;
-				revision = 6e80898da48c7d4c4fb78bbad7700c7065b9e241;
+				revision = ab2986f24b815b3ceb547407b0d12beb8eb242cd;
 			};
 		};
 		C9FE53372A75A75400CACA1A /* XCRemoteSwiftPackageReference "WindowTreatment" */ = {

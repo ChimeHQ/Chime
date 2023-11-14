@@ -3,7 +3,7 @@
 #include "Configurations/Extension.xcconfig"
 
 PRODUCT_NAME = SwiftExtension
-PRODUCT_BUNDLE_IDENTIFIER = com.chimehq.Edit.Swift
+PRODUCT_BUNDLE_IDENTIFIER = $(BUNDLE_ID_PREFIX).Edit.Swift
 INFOPLIST_KEY_CFBundleDisplayName = Swift
 
 INFOPLIST_FILE = Extensions/Swift/Info.plist
