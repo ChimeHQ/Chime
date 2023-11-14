@@ -1,0 +1,3 @@
+[submodule "submodules/chime-swift"]
+	path = submodules/chime-swift
+	url = git@github.com:ChimeHQ/chime-swift.git

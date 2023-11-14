@@ -1,0 +1,9 @@
+// Must be customized, because you cannot use the name "Swift" as a module.
+
+#include "Configurations/Extension.xcconfig"
+
+PRODUCT_NAME = SwiftExtension
+PRODUCT_BUNDLE_IDENTIFIER = com.chimehq.Edit.Swift
+INFOPLIST_KEY_CFBundleDisplayName = Swift
+
+INFOPLIST_FILE = Extensions/Swift/Info.plist

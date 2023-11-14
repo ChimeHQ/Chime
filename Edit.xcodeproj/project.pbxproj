@@ -11,6 +11,8 @@
 		C900A7C82A9E94AE000556A6 /* libPreferencesWindow.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C900A7BA2A9E93FC000556A6 /* libPreferencesWindow.a */; };
 		C900A7CA2A9E94B4000556A6 /* ExtendableHost in Frameworks */ = {isa = PBXBuildFile; productRef = C900A7C92A9E94B4000556A6 /* ExtendableHost */; };
 		C900A7D12A9F472E000556A6 /* Chime.appextensionpoint in Copy Extensions */ = {isa = PBXBuildFile; fileRef = C900A7CF2A9F46EF000556A6 /* Chime.appextensionpoint */; };
+		C92672F82B0399D800B3CE2F /* SwiftExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92672F72B0399D800B3CE2F /* SwiftExtension.swift */; };
+		C92672FA2B039AA300B3CE2F /* SwiftExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92672F72B0399D800B3CE2F /* SwiftExtension.swift */; };
 		C9409C662A98CC9800B5D898 /* Outline in Frameworks */ = {isa = PBXBuildFile; productRef = C9409C652A98CC9800B5D898 /* Outline */; };
 		C9409C692A98CCCB00B5D898 /* SourceView in Frameworks */ = {isa = PBXBuildFile; productRef = C9409C682A98CCCB00B5D898 /* SourceView */; };
 		C9409C6C2A99059C00B5D898 /* ProjectState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9409C6A2A99047000B5D898 /* ProjectState.swift */; };
@@ -72,6 +74,9 @@
 		C9891B402AFFF23D00C8F393 /* Gutter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9891B3F2AFFF23D00C8F393 /* Gutter.swift */; };
 		C9891B432AFFF2AF00C8F393 /* libGutter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9891B352AFFF1F700C8F393 /* libGutter.a */; };
 		C98EA41C2A912A5E00B8815E /* ProjectDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98EA4192A912A2900B8815E /* ProjectDocument.swift */; };
+		C9BDB54B2B00FD89009225FB /* SwiftStandaloneExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BDB54A2B00FD89009225FB /* SwiftStandaloneExtension.swift */; };
+		C9BDB5502B00FD89009225FB /* SwiftExtension.appex in Copy Extensions */ = {isa = PBXBuildFile; fileRef = C9BDB5482B00FD89009225FB /* SwiftExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C9BDB5572B010094009225FB /* ChimeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE52F42A7539B100CACA1A /* ChimeKit.framework */; };
 		C9E877FC2A9F4B820018340C /* TrailingSidebar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E877FB2A9F4B820018340C /* TrailingSidebar.swift */; };
 		C9E878042A9F53530018340C /* UIPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E878032A9F53530018340C /* UIPlaceholder.swift */; };
 		C9E878092A9F53530018340C /* UIPlaceholderExtension.appex in Copy Extensions */ = {isa = PBXBuildFile; fileRef = C9E878012A9F53530018340C /* UIPlaceholderExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -308,6 +313,20 @@
 			remoteGlobalIDString = C9FE52F32A7539B100CACA1A;
 			remoteInfo = ChimeKit;
 		};
+		C9BDB54E2B00FD89009225FB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9BDB5472B00FD89009225FB;
+			remoteInfo = SwiftExtension;
+		};
+		C9BDB5552B010088009225FB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9FE52F32A7539B100CACA1A;
+			remoteInfo = ChimeKit;
+		};
 		C9E878072A9F53530018340C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
@@ -472,6 +491,7 @@
 			dstSubfolderSpec = 16;
 			files = (
 				C9E878092A9F53530018340C /* UIPlaceholderExtension.appex in Copy Extensions */,
+				C9BDB5502B00FD89009225FB /* SwiftExtension.appex in Copy Extensions */,
 				C900A7D12A9F472E000556A6 /* Chime.appextensionpoint in Copy Extensions */,
 			);
 			name = "Copy Extensions";
@@ -494,6 +514,7 @@
 		C900A7BA2A9E93FC000556A6 /* libPreferencesWindow.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPreferencesWindow.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C900A7C42A9E9468000556A6 /* PreferencesWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesWindowController.swift; sourceTree = "<group>"; };
 		C900A7CF2A9F46EF000556A6 /* Chime.appextensionpoint */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Chime.appextensionpoint; sourceTree = "<group>"; };
+		C92672F72B0399D800B3CE2F /* SwiftExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftExtension.swift; path = "submodules/chime-swift/Sources/ChimeSwift/SwiftExtension.swift"; sourceTree = SOURCE_ROOT; };
 		C93791A32AD5E02C00665F50 /* Project-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Project-Debug.xcconfig"; sourceTree = "<group>"; };
 		C93C2DD52AF04CB700558DCF /* DocumentContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentContent.swift; sourceTree = "<group>"; };
 		C9409C6A2A99047000B5D898 /* ProjectState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectState.swift; sourceTree = "<group>"; };
@@ -551,6 +572,10 @@
 		C9891B352AFFF1F700C8F393 /* libGutter.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libGutter.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9891B3F2AFFF23D00C8F393 /* Gutter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gutter.swift; sourceTree = "<group>"; };
 		C98EA4192A912A2900B8815E /* ProjectDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDocument.swift; sourceTree = "<group>"; };
+		C9BDB5482B00FD89009225FB /* SwiftExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.extensionkit-extension"; includeInIndex = 0; path = SwiftExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9BDB54A2B00FD89009225FB /* SwiftStandaloneExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftStandaloneExtension.swift; sourceTree = "<group>"; };
+		C9BDB54C2B00FD89009225FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C9BDB5542B00FF5A009225FB /* SwiftExtension.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = SwiftExtension.xcconfig; sourceTree = "<group>"; };
 		C9C2133A2AD1FD6F00C60282 /* ChimeKit.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ChimeKit.xcconfig; sourceTree = "<group>"; };
 		C9E877FB2A9F4B820018340C /* TrailingSidebar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailingSidebar.swift; sourceTree = "<group>"; };
 		C9E878012A9F53530018340C /* UIPlaceholderExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.extensionkit-extension"; includeInIndex = 0; path = UIPlaceholderExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -658,6 +683,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9BDB5452B00FD89009225FB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9BDB5572B010094009225FB /* ChimeKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -917,6 +950,16 @@
 			path = Gutter;
 			sourceTree = "<group>";
 		};
+		C9BDB5492B00FD89009225FB /* Swift */ = {
+			isa = PBXGroup;
+			children = (
+				C92672F72B0399D800B3CE2F /* SwiftExtension.swift */,
+				C9BDB54A2B00FD89009225FB /* SwiftStandaloneExtension.swift */,
+				C9BDB54C2B00FD89009225FB /* Info.plist */,
+			);
+			path = Swift;
+			sourceTree = "<group>";
+		};
 		C9E878022A9F53530018340C /* UIPlaceholder */ = {
 			isa = PBXGroup;
 			children = (
@@ -930,6 +973,7 @@
 			isa = PBXGroup;
 			children = (
 				C9E878062A9F53530018340C /* Extension.entitlements */,
+				C9BDB5492B00FD89009225FB /* Swift */,
 				C9E878022A9F53530018340C /* UIPlaceholder */,
 			);
 			path = Extensions;
@@ -992,6 +1036,7 @@
 				C9E878012A9F53530018340C /* UIPlaceholderExtension.appex */,
 				C9891B132AFEC11A00C8F393 /* libDocumentContent.a */,
 				C9891B352AFFF1F700C8F393 /* libGutter.a */,
+				C9BDB5482B00FD89009225FB /* SwiftExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1170,6 +1215,7 @@
 				C9FE531A2A759BC400CACA1A /* Module.xcconfig */,
 				C93791A32AD5E02C00665F50 /* Project-Debug.xcconfig */,
 				C9FE52CB2A7526C000CACA1A /* Project.xcconfig */,
+				C9BDB5542B00FF5A009225FB /* SwiftExtension.xcconfig */,
 			);
 			path = Configurations;
 			sourceTree = "<group>";
@@ -1447,6 +1493,24 @@
 			productReference = C9891B352AFFF1F700C8F393 /* libGutter.a */;
 			productType = "com.apple.product-type.library.static";
 		};
+		C9BDB5472B00FD89009225FB /* SwiftExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C9BDB5512B00FD89009225FB /* Build configuration list for PBXNativeTarget "SwiftExtension" */;
+			buildPhases = (
+				C9BDB5442B00FD89009225FB /* Sources */,
+				C9BDB5452B00FD89009225FB /* Frameworks */,
+				C9BDB5462B00FD89009225FB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C9BDB5562B010088009225FB /* PBXTargetDependency */,
+			);
+			name = SwiftExtension;
+			productName = SwiftExtension;
+			productReference = C9BDB5482B00FD89009225FB /* SwiftExtension.appex */;
+			productType = "com.apple.product-type.extensionkit-extension";
+		};
 		C9E878002A9F53530018340C /* UIPlaceholder */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C9E8780A2A9F53530018340C /* Build configuration list for PBXNativeTarget "UIPlaceholder" */;
@@ -1505,6 +1569,7 @@
 				C9FE52DF2A7533BA00CACA1A /* PBXTargetDependency */,
 				C9FE52F92A7539B100CACA1A /* PBXTargetDependency */,
 				C9E878082A9F53530018340C /* PBXTargetDependency */,
+				C9BDB54F2B00FD89009225FB /* PBXTargetDependency */,
 			);
 			name = Edit;
 			packageProductDependencies = (
@@ -1798,7 +1863,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1500;
+				LastSwiftUpdateCheck = 1510;
 				LastUpgradeCheck = 1510;
 				TargetAttributes = {
 					C900A7B92A9E93FC000556A6 = {
@@ -1817,6 +1882,9 @@
 					C9891B342AFFF1F700C8F393 = {
 						CreatedOnToolsVersion = 15.1;
 						LastSwiftMigration = 1510;
+					};
+					C9BDB5472B00FD89009225FB = {
+						CreatedOnToolsVersion = 15.1;
 					};
 					C9E878002A9F53530018340C = {
 						CreatedOnToolsVersion = 15.0;
@@ -1919,11 +1987,19 @@
 				C9E878002A9F53530018340C /* UIPlaceholder */,
 				C9891B122AFEC11A00C8F393 /* DocumentContent */,
 				C9891B342AFFF1F700C8F393 /* Gutter */,
+				C9BDB5472B00FD89009225FB /* SwiftExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		C9BDB5462B00FD89009225FB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C9E877FF2A9F53530018340C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2035,6 +2111,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9891B402AFFF23D00C8F393 /* Gutter.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9BDB5442B00FD89009225FB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9BDB54B2B00FD89009225FB /* SwiftStandaloneExtension.swift in Sources */,
+				C92672F82B0399D800B3CE2F /* SwiftExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2210,6 +2295,7 @@
 				C97919022A9E72FF0046EAF1 /* UIExtensionDescriptor.swift in Sources */,
 				C9FE54052A7A613C00CACA1A /* FilteringExtension.swift in Sources */,
 				C97918FC2A9E5EFC0046EAF1 /* CompositeProjectService.swift in Sources */,
+				C92672FA2B039AA300B3CE2F /* SwiftExtension.swift in Sources */,
 				C9FE53E82A7A5B2000CACA1A /* LazyRemoteExtension.swift in Sources */,
 				C97919002A9E728F0046EAF1 /* ExtensionManager.swift in Sources */,
 				C97918F82A9E5E520046EAF1 /* ExtensionRouter.swift in Sources */,
@@ -2380,6 +2466,16 @@
 			isa = PBXTargetDependency;
 			target = C9FE52F32A7539B100CACA1A /* ChimeKit */;
 			targetProxy = C999C7852ABDA97500D49939 /* PBXContainerItemProxy */;
+		};
+		C9BDB54F2B00FD89009225FB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9BDB5472B00FD89009225FB /* SwiftExtension */;
+			targetProxy = C9BDB54E2B00FD89009225FB /* PBXContainerItemProxy */;
+		};
+		C9BDB5562B010088009225FB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9FE52F32A7539B100CACA1A /* ChimeKit */;
+			targetProxy = C9BDB5552B010088009225FB /* PBXContainerItemProxy */;
 		};
 		C9E878082A9F53530018340C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -2608,14 +2704,24 @@
 			};
 			name = Release;
 		};
+		C9BDB5522B00FD89009225FB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9BDB5542B00FF5A009225FB /* SwiftExtension.xcconfig */;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		C9BDB5532B00FD89009225FB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9BDB5542B00FF5A009225FB /* SwiftExtension.xcconfig */;
+			buildSettings = {
+			};
+			name = Release;
+		};
 		C9E8780B2A9F53530018340C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C9E878112A9F53BB0018340C /* Extension.xcconfig */;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				GCC_C_LANGUAGE_STANDARD = gnu17;
-				SWIFT_EMIT_LOC_STRINGS = YES;
 			};
 			name = Debug;
 		};
@@ -2623,10 +2729,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C9E878112A9F53BB0018340C /* Extension.xcconfig */;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				GCC_C_LANGUAGE_STANDARD = gnu17;
-				SWIFT_EMIT_LOC_STRINGS = YES;
 			};
 			name = Release;
 		};
@@ -3038,6 +3140,15 @@
 			buildConfigurations = (
 				C9891B3C2AFFF1F700C8F393 /* Debug */,
 				C9891B3D2AFFF1F700C8F393 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C9BDB5512B00FD89009225FB /* Build configuration list for PBXNativeTarget "SwiftExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9BDB5522B00FD89009225FB /* Debug */,
+				C9BDB5532B00FD89009225FB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

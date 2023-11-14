@@ -7,7 +7,7 @@ import Utility
 
 @MainActor
 public final class ExtensionManager {
-    private static let extensionsEnabled = true
+	private static let extensionsEnabled = true
 
     private let localExtensions: [any ExtensionProtocol]
     private var loadedExtensions = [AppExtensionIdentity: ExtensionProtocol]()
@@ -20,19 +20,15 @@ public final class ExtensionManager {
     public init(host: any HostProtocol) {
         self.host = host
 
-        if Self.extensionsEnabled {
-            self.localExtensions = [
-            ]
-        } else {
-            self.localExtensions = [
-//                FilteringExtension(ext: ElixirExtension(host: host)),
-//                FilteringExtension(ext: GoExtension(host: host)),
-//                FilteringExtension(ext: PythonExtension(host: host)),
-//                FilteringExtension(ext: RubyExtension(host: host)),
-//                FilteringExtension(ext: RustExtension(host: host)),
-//                FilteringExtension(ext: SwiftExtension(host: host)),
-            ]
-        }
+		if Self.extensionsEnabled {
+			self.localExtensions = [
+			]
+		} else {
+			// To use local extensions, you must uncomment one of these, *and also* make sure to add the extension sources to the ExtensionHost target.
+			self.localExtensions = [
+//				FilteringExtension(ext: SwiftExtension(host: host)),
+			]
+		}
 
         logger.debug("local extensions: \(self.localExtensions.count, privacy: .public)")
 

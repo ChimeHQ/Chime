@@ -68,18 +68,22 @@ public final class DirectoryDocument: ContainedDocument<Project> {
 }
 
 extension DirectoryDocument: ProjectDocument {
-	var projectState: ProjectState? {
+	public var projectState: ProjectState? {
 		get { projectWindowController.state }
 		set { projectWindowController.state = newValue }
 	}
 
-	func willRemoveDocument() {
-	}
-	
-	func didCompleteOpen() {
+	public var defaultProjectRoot: URL? {
+		fileURL
 	}
 
-	var defaultProjectRoot: URL? {
-		fileURL
+	public func updateApplicationService(_ service: ChimeExtensionInterface.ApplicationService) {
+		projectWindowController.symbolQueryService = try? projectContext.flatMap { try service.symbolService(for: $0) }
+	}
+
+	public func willRemoveDocument() {
+	}
+	
+	public func didCompleteOpen() {
 	}
 }

@@ -98,16 +98,6 @@ public final class TextDocument: ContainedDocument<Project> {
 			}
 		}
 	}
-
-	public func updateApplicationService(_ service: any ApplicationService) {
-		do {
-			projectWindowController.symbolQueryService = try projectContext.flatMap { try service.symbolService(for: $0) }
-
-			Swift.print("service is now: ", projectWindowController.symbolQueryService)
-		} catch {
-			logger.error("Failed to update symbolService: \(error, privacy: .public)")
-		}
-	}
 }
 
 extension TextDocument {
@@ -126,7 +116,7 @@ extension TextDocument {
 }
 
 extension TextDocument: ProjectDocument {
-	var projectState: ProjectState? {
+	public var projectState: ProjectState? {
 		get { projectWindowController.state }
 		set {
 			self.state.updateProjectContext(newValue?.context)
@@ -134,18 +124,28 @@ extension TextDocument: ProjectDocument {
 		}
 	}
 
-	func willRemoveDocument() {
-	}
-	
-	func didCompleteOpen() {
-	}
-
-	var defaultProjectRoot: URL? {
+	public var defaultProjectRoot: URL? {
 		if ProcessInfo.processInfo.isSandboxed {
 			return fileURL
 		}
 
 		// we cannot do this when sandboxed
 		return fileURL?.deletingLastPathComponent()
+	}
+
+	public func updateApplicationService(_ service: any ApplicationService) {
+		do {
+			projectWindowController.symbolQueryService = try projectContext.flatMap { try service.symbolService(for: $0) }
+
+			Swift.print("service is now: ", projectWindowController.symbolQueryService)
+		} catch {
+			logger.error("Failed to update symbolService: \(error, privacy: .public)")
+		}
+	}
+	
+	public func willRemoveDocument() {
+	}
+	
+	public func didCompleteOpen() {
 	}
 }

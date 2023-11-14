@@ -14,8 +14,9 @@ public final class ProjectDocumentController: ContainedDocumentController<Projec
 
 	public var projectRemovedHandler: (Project) -> Void = { _ in }
 	public var projectAddedHandler: (Project) -> Void = { _ in }
-	public var documentDidOpenHandler: (NSDocument) -> Void = { _ in }
-	public var documentWillCloseHandler: (NSDocument) -> Void = { _ in }
+	public var documentWillOpenHandler: (any ProjectDocument) -> Void = { _ in }
+	public var documentDidOpenHandler: (any ProjectDocument) -> Void = { _ in }
+	public var documentWillCloseHandler: (any ProjectDocument) -> Void = { _ in }
 
 	public override init() {
 		super.init()
@@ -27,10 +28,10 @@ public final class ProjectDocumentController: ContainedDocumentController<Projec
 	}
 
 	public override func removeDocument(_ document: NSDocument) {
-		documentWillCloseHandler(document)
-
 		switch document {
 		case let doc as InternalDocument:
+			documentWillCloseHandler(doc)
+
 			if let proj = project(for: doc) {
 				doc.willRemoveDocument()
 
@@ -67,11 +68,15 @@ public final class ProjectDocumentController: ContainedDocumentController<Projec
 	}
 
 	public override func makeUntitledDocument(ofType typeName: String) throws -> NSDocument {
-		let doc = try super.makeUntitledDocument(ofType: typeName)
+		let document = try super.makeUntitledDocument(ofType: typeName)
 
-		handleNewDocument(doc)
+		handleNewDocument(document)
 
-		return doc
+		if let doc = document as? InternalDocument {
+			documentDidOpenHandler(doc)
+		}
+
+		return document
 	}
 
 	public override func makeDocument(withContentsOf url: URL, ofType typeName: String) throws -> NSDocument {
@@ -105,6 +110,13 @@ public final class ProjectDocumentController: ContainedDocumentController<Projec
 	}
 
 	private func handleOpen(result: OpenDocumentResult, display: Bool, completionHandler: (OpenDocumentResult) -> Void) {
+		// this is really gross, can it be improved?
+		defer {
+			if case let .success((document, _)) = result, let doc = document as? InternalDocument {
+				self.documentDidOpenHandler(doc)
+			}
+		}
+
 		guard case .success((let doc, let alreadyOpen)) = result else {
 			completionHandler(result)
 			return
@@ -124,14 +136,17 @@ public final class ProjectDocumentController: ContainedDocumentController<Projec
 	}
 
 	public override func reopenDocument(for urlOrNil: URL?, withContentsOf contentsURL: URL, display displayDocument: Bool, completionHandler: @escaping (NSDocument?, Bool, Error?) -> Void) {
-		super.reopenDocument(for: urlOrNil, withContentsOf: contentsURL, display: displayDocument) {doc, alreadyOpen, error in
+		super.reopenDocument(for: urlOrNil, withContentsOf: contentsURL, display: displayDocument) { doc, alreadyOpen, error in
 			completionHandler(doc, alreadyOpen, error)
 
 			if let doc = doc {
-				// now that this is complete, we have setup the document enough to
-				// actually decide if we should note it as recent
+				// now that this is complete, we have setup the document enough to actually decide if we should note it as recent
 				self.restoringSet.remove(doc)
 				self.noteNewRecentDocument(doc)
+			}
+
+			if let doc = doc as? InternalDocument {
+				self.documentDidOpenHandler(doc)
 			}
 		}
 	}
@@ -304,9 +319,9 @@ extension ProjectDocumentController {
 	}
 
 	private func handleNewDocument(_ document: NSDocument) {
-		documentDidOpenHandler(document)
-
 		guard let doc = document as? InternalDocument else { return }
+
+		documentWillOpenHandler(doc)
 
 		doc.didCompleteOpen()
 	}
