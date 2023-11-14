@@ -2837,11 +2837,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C9FE52CC2A752B4D00CACA1A /* Edit.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
 			};
 			name = Debug;
 		};
@@ -2849,11 +2844,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C9FE52CC2A752B4D00CACA1A /* Edit.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
 			};
 			name = Release;
 		};
@@ -2929,7 +2919,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C9C2133A2AD1FD6F00C60282 /* ChimeKit.xcconfig */;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
 				ENABLE_MODULE_VERIFIER = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -2944,7 +2933,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C9C2133A2AD1FD6F00C60282 /* ChimeKit.xcconfig */;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
 				ENABLE_MODULE_VERIFIER = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
