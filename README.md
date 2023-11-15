@@ -1,5 +1,3 @@
-[![License][license badge]][license]
-
 # Chime
 An editor for macOS
 
@@ -78,7 +76,5 @@ Why are their submodules you ask? Chime embeds many of its extensions inside the
 - [CotEditor](https://coteditor.com)
 - [Nova](https://nova.app)
 
-[license]: https://opensource.org/licenses/BSD-3-Clause
-[license badge]: https://img.shields.io/github/license/ChimeHQ/Chime
 [download]: https://www.chimehq.com/download
 [chimekit]: https://github.com/ChimeHQ/ChimeKit
