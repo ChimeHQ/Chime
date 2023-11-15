@@ -516,6 +516,7 @@
 		C900A7CF2A9F46EF000556A6 /* Chime.appextensionpoint */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Chime.appextensionpoint; sourceTree = "<group>"; };
 		C92672F72B0399D800B3CE2F /* SwiftExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftExtension.swift; path = "submodules/chime-swift/Sources/ChimeSwift/SwiftExtension.swift"; sourceTree = SOURCE_ROOT; };
 		C92673282B04046700B3CE2F /* Edit-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Edit-Debug.xcconfig"; sourceTree = "<group>"; };
+		C92673432B05244600B3CE2F /* EditUITests.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = EditUITests.xcconfig; sourceTree = "<group>"; };
 		C93791A32AD5E02C00665F50 /* Project-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Project-Debug.xcconfig"; sourceTree = "<group>"; };
 		C93C2DD52AF04CB700558DCF /* DocumentContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentContent.swift; sourceTree = "<group>"; };
 		C9409C6A2A99047000B5D898 /* ProjectState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectState.swift; sourceTree = "<group>"; };
@@ -1213,6 +1214,7 @@
 				C92673282B04046700B3CE2F /* Edit-Debug.xcconfig */,
 				C9FE52CC2A752B4D00CACA1A /* Edit.xcconfig */,
 				C9FE54082A7A625300CACA1A /* EditTests.xcconfig */,
+				C92673432B05244600B3CE2F /* EditUITests.xcconfig */,
 				C9E878112A9F53BB0018340C /* Extension.xcconfig */,
 				C9FE531A2A759BC400CACA1A /* Module.xcconfig */,
 				C93791A32AD5E02C00665F50 /* Project-Debug.xcconfig */,
@@ -2865,29 +2867,15 @@
 		};
 		C9FE52C92A7525D300CACA1A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C92673432B05244600B3CE2F /* EditUITests.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.chimehq.EditUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				TEST_TARGET_NAME = Edit;
 			};
 			name = Debug;
 		};
 		C9FE52CA2A7525D300CACA1A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C92673432B05244600B3CE2F /* EditUITests.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.chimehq.EditUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				TEST_TARGET_NAME = Edit;
 			};
 			name = Release;
 		};
