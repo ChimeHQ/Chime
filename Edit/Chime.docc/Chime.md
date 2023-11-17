@@ -1,13 +1,14 @@
 # ``Chime``
 
-Summary
+An editor for macOS.
 
 ## Overview
 
-Text
+Chime is an editor for macOS. The project is complex, and is undergoing major changes.
 
 ## Topics
 
-### <!--@START_MENU_TOKEN@-->Group<!--@END_MENU_TOKEN@-->
+### Getting Started
 
-- <!--@START_MENU_TOKEN@-->``Symbol``<!--@END_MENU_TOKEN@-->
+- ``<doc:Building>``
+- ``<doc:Structure>``

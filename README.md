@@ -31,6 +31,8 @@ Chime used to be commercial, but is now free. It built up some pretty significan
 
 It is always a good idea to **discuss** before taking on a significant task. That said, I have a strong bias towards enthusiasm. If you are excited about doing something, I'll do my best to get out of your way.
 
+The project is [internally documented](Edit/Chime.docc) with [DocC](https://www.swift.org/documentation/docc/#). The docs contains details about getting started, structure, and internal systems/behaviors.
+
 There are a few areas that would make for excellent targets though, if you really feel so inclined.
 
 - It would be really interesting to explore the [TreeSitterDocument](https://github.com/ChimeHQ/SwiftTreeSitter#treesitterdocument) concept
@@ -66,7 +68,17 @@ Why are their submodules you ask? Chime embeds many of its extensions inside the
 - tabs for indentation
 - configuration in xcconfig files
 - project resources are sorted alphabetically
-- imports are sorted by alphabetically, but parititioned to system/non-system
+- imports are sorted by alphabetically, but partitioned to system/non-system
+
+### Significant Issues
+
+Chime is a reasonably complex project. It's bound to run into bugs in Apple frameworks, Xcode, and other systems that present a real problem to its development. This is a list of the **most serious** issues, which have a major impact on either the user or developer experience.
+
+- FB12094161: System Settings extension approval system does not appear to work
+- FB11716027: EXAppExtensionBrowserViewController duplicate apps
+- FB11748287: Static metadata for extension available in AppExtensionIdentity
+- FB13384096: Package with non-Swift target fails to build unless explicitly linked
+- [Add macOS 14 (Sonoma) Runner Image](https://github.com/actions/runner-images/issues/7508)
 
 ## Other Notable Projects
 
