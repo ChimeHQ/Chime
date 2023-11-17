@@ -18,7 +18,7 @@
 		C926734B2B0568EB00B3CE2F /* NumberWidthCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C926734A2B0568EB00B3CE2F /* NumberWidthCalculator.swift */; };
 		C926736B2B06B90900B3CE2F /* ThemeMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C926736A2B06B90900B3CE2F /* ThemeMonitor.swift */; };
 		C926736E2B06BE1200B3CE2F /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C926736D2B06BE1200B3CE2F /* Environment.swift */; };
-		C92673702B06BFCB00B3CE2F /* DocumentContentMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C926736F2B06BFCB00B3CE2F /* DocumentContentMonitor.swift */; };
+		C92673702B06BFCB00B3CE2F /* StateMonitors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C926736F2B06BFCB00B3CE2F /* StateMonitors.swift */; };
 		C92673912B078D3200B3CE2F /* Neon in Frameworks */ = {isa = PBXBuildFile; productRef = C92673902B078D3200B3CE2F /* Neon */; };
 		C92673932B07924A00B3CE2F /* Chime.docc in Sources */ = {isa = PBXBuildFile; fileRef = C92673922B07924A00B3CE2F /* Chime.docc */; };
 		C9409C662A98CC9800B5D898 /* Outline in Frameworks */ = {isa = PBXBuildFile; productRef = C9409C652A98CC9800B5D898 /* Outline */; };
@@ -82,6 +82,8 @@
 		C9891B402AFFF23D00C8F393 /* Gutter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9891B3F2AFFF23D00C8F393 /* Gutter.swift */; };
 		C9891B432AFFF2AF00C8F393 /* libGutter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9891B352AFFF1F700C8F393 /* libGutter.a */; };
 		C98EA41C2A912A5E00B8815E /* ProjectDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98EA4192A912A2900B8815E /* ProjectDocument.swift */; };
+		C99491A82B07F94C002DC2AC /* SourceViewStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99491A72B07F94C002DC2AC /* SourceViewStateModel.swift */; };
+		C99491AA2B07FA8C002DC2AC /* DocumentStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99491A92B07FA8C002DC2AC /* DocumentStateModel.swift */; };
 		C9BDB54B2B00FD89009225FB /* SwiftStandaloneExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BDB54A2B00FD89009225FB /* SwiftStandaloneExtension.swift */; };
 		C9BDB5502B00FD89009225FB /* SwiftExtension.appex in Copy Extensions */ = {isa = PBXBuildFile; fileRef = C9BDB5482B00FD89009225FB /* SwiftExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C9BDB5572B010094009225FB /* ChimeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE52F42A7539B100CACA1A /* ChimeKit.framework */; };
@@ -565,7 +567,7 @@
 		C926734A2B0568EB00B3CE2F /* NumberWidthCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberWidthCalculator.swift; sourceTree = "<group>"; };
 		C926736A2B06B90900B3CE2F /* ThemeMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeMonitor.swift; sourceTree = "<group>"; };
 		C926736D2B06BE1200B3CE2F /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
-		C926736F2B06BFCB00B3CE2F /* DocumentContentMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentContentMonitor.swift; sourceTree = "<group>"; };
+		C926736F2B06BFCB00B3CE2F /* StateMonitors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateMonitors.swift; sourceTree = "<group>"; };
 		C926737D2B07827800B3CE2F /* NonSwiftWorkaround.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = NonSwiftWorkaround.xcconfig; sourceTree = "<group>"; };
 		C926738A2B078B0200B3CE2F /* WorkaroundModule.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = WorkaroundModule.xcconfig; sourceTree = "<group>"; };
 		C92673922B07924A00B3CE2F /* Chime.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Chime.docc; sourceTree = "<group>"; };
@@ -626,6 +628,8 @@
 		C9891B352AFFF1F700C8F393 /* libGutter.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libGutter.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9891B3F2AFFF23D00C8F393 /* Gutter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gutter.swift; sourceTree = "<group>"; };
 		C98EA4192A912A2900B8815E /* ProjectDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDocument.swift; sourceTree = "<group>"; };
+		C99491A72B07F94C002DC2AC /* SourceViewStateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceViewStateModel.swift; sourceTree = "<group>"; };
+		C99491A92B07FA8C002DC2AC /* DocumentStateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentStateModel.swift; sourceTree = "<group>"; };
 		C9BDB5482B00FD89009225FB /* SwiftExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.extensionkit-extension"; includeInIndex = 0; path = SwiftExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9BDB54A2B00FD89009225FB /* SwiftStandaloneExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftStandaloneExtension.swift; sourceTree = "<group>"; };
 		C9BDB54C2B00FD89009225FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -994,7 +998,8 @@
 				C9891B242AFEC1BE00C8F393 /* StorageMonitor.swift */,
 				C9891B2D2AFEC91B00C8F393 /* VersionedTextStorage.swift */,
 				C926736D2B06BE1200B3CE2F /* Environment.swift */,
-				C926736F2B06BFCB00B3CE2F /* DocumentContentMonitor.swift */,
+				C926736F2B06BFCB00B3CE2F /* StateMonitors.swift */,
+				C99491A92B07FA8C002DC2AC /* DocumentStateModel.swift */,
 			);
 			path = DocumentContent;
 			sourceTree = "<group>";
@@ -1262,6 +1267,7 @@
 				C9FE53862A7663D200CACA1A /* EditorContentViewController.swift */,
 				C9FE53B82A77334E00CACA1A /* SourceViewController.swift */,
 				C9FE53D72A77D98A00CACA1A /* EditorContent.swift */,
+				C99491A72B07F94C002DC2AC /* SourceViewStateModel.swift */,
 			);
 			path = Editor;
 			sourceTree = "<group>";
@@ -2176,11 +2182,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C99491AA2B07FA8C002DC2AC /* DocumentStateModel.swift in Sources */,
 				C9891B252AFEC1BE00C8F393 /* StorageMonitor.swift in Sources */,
 				C926736E2B06BE1200B3CE2F /* Environment.swift in Sources */,
 				C9891B2E2AFEC91B00C8F393 /* VersionedTextStorage.swift in Sources */,
 				C9891B1C2AFEC12700C8F393 /* DocumentContent.swift in Sources */,
-				C92673702B06BFCB00B3CE2F /* DocumentContentMonitor.swift in Sources */,
+				C92673702B06BFCB00B3CE2F /* StateMonitors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2342,6 +2349,7 @@
 				C9FE53AD2A7677A700CACA1A /* EditorScrollView.swift in Sources */,
 				C9FE53D82A77D98A00CACA1A /* EditorContent.swift in Sources */,
 				C9FE53AB2A76753D00CACA1A /* SourcePresentationViewController.swift in Sources */,
+				C99491A82B07F94C002DC2AC /* SourceViewStateModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

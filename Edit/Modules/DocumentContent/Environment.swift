@@ -10,3 +10,14 @@ extension EnvironmentValues {
 		set { self[DocumentContentKey.self] = newValue }
 	}
 }
+
+public struct DocumentSelectionKey: EnvironmentKey {
+	public static let defaultValue: [NSRange] = []
+}
+
+extension EnvironmentValues {
+	public var documentSelection: [NSRange] {
+		get { self[DocumentSelectionKey.self] }
+		set { self[DocumentSelectionKey.self] = newValue }
+	}
+}

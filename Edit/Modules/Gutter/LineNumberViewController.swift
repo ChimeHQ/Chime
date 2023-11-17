@@ -36,6 +36,7 @@ final class LineNumberViewController: NSViewController {
 			.hidden()
 			.onThemeChange { [weak self] in self?.updateTheme($0, context: $1) }
 			.onDocumentContentChange { [weak self] in self?.representedObject = $0 }
+			.onDocumentSelectionChange { [weak self] in self?.selectionChanged($0) }
 
 		let hiddenView = NSHostingView(rootView: observingView)
 
@@ -56,6 +57,10 @@ final class LineNumberViewController: NSViewController {
 extension LineNumberViewController {
 	func updateTheme(_ theme: Theme, context: Theme.Context) {
 		print("oh really?")
+	}
+
+	func selectionChanged(_ ranges: [NSRange]) {
+		print("ranges are now: \(ranges)")
 	}
 }
 

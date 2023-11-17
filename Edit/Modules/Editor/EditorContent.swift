@@ -1,27 +1,20 @@
 import AppKit
 import SwiftUI
 
+import DocumentContent
 import Status
 import Theme
 import UIUtility
 
 struct EditorContent<Content: View>: View {
-	typealias ThemeUpdateHandler = (Theme, Theme.Context) -> Void
-
+	@Environment(DocumentStateModel.self) private var model
 	@Environment(\.theme) private var theme
 	@Environment(\.controlActiveState) private var controlActiveState
 	@Environment(\.colorScheme) private var colorScheme
 	let content: Content
-	let themeUpdateAction: ThemeUpdateHandler
-	var statusMargin = CGSize()
 
-	init(_ content: () -> Content, themeUpdateAction: @escaping ThemeUpdateHandler) {
+	init(_ content: () -> Content) {
 		self.content = content()
-		self.themeUpdateAction = themeUpdateAction
-	}
-
-	private func themeUpdated() {
-		themeUpdateAction(theme, context)
 	}
 
 	private var context: Theme.Context {
@@ -35,8 +28,7 @@ struct EditorContent<Content: View>: View {
 			StatusBar()
 		}
 		.background(Color(theme.color(for: .background, context: context)))
-		.onChange(of: theme) { _, _ in themeUpdated() }
-		.onChange(of: colorScheme) { _, _ in themeUpdated() }
-		.onChange(of: controlActiveState) { _, _ in themeUpdated() }
+		.environment(\.documentSelection, model.selectedRanges)
+		.environment(\.documentContent, model.documentContent)
 	}
 }

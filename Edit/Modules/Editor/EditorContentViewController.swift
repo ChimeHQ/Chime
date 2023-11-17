@@ -12,11 +12,15 @@ import UIUtility
 public final class EditorContentViewController: NSViewController {
 	let editorScrollView = NSScrollView()
 	let sourceViewController: SourceViewController
+	let documentState: DocumentStateModel
 
 	public init(content: DocumentContent) {
+		self.documentState = DocumentStateModel(content: content)
 		self.sourceViewController = SourceViewController(content: content)
 
 		super.init(nibName: nil, bundle: nil)
+
+		sourceViewController.selectionChangedHandler = { [documentState] in documentState.selectedRanges = $0 }
 
 		addChild(sourceViewController)
 	}
@@ -48,15 +52,17 @@ public final class EditorContentViewController: NSViewController {
 
 		let hostedView = EditorContent {
 			RepresentableViewController({ presentationController })
-		} themeUpdateAction: { [sourceViewController] in
-			sourceViewController.updateTheme($0, context: $1)
 		}
+			.environment(documentState)
 
 		self.view = NSHostingView(rootView: hostedView)
 	}
 
 	public override var representedObject: Any? {
 		get { sourceViewController.representedObject }
-		set { sourceViewController.representedObject = newValue }
+		set {
+			sourceViewController.representedObject = newValue
+			documentState.documentContent = newValue as! DocumentContent
+		}
 	}
 }

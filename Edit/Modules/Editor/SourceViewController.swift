@@ -1,4 +1,5 @@
 import AppKit
+import SwiftUI
 
 import DocumentContent
 import SourceView
@@ -6,6 +7,8 @@ import Theme
 
 public final class SourceViewController: NSViewController {
 	let sourceView = SourceView()
+
+	var selectionChangedHandler: ([NSRange]) -> Void = { _ in }
 
 	public init(content: DocumentContent) {
 		super.init(nibName: nil, bundle: nil)
@@ -24,6 +27,14 @@ public final class SourceViewController: NSViewController {
 	}
 	
 	override public func loadView() {
+		let observingView = Text("")
+			.hidden()
+			.onThemeChange { [weak self] in self?.updateTheme($0, context: $1) }
+
+		let hiddenView = NSHostingView(rootView: observingView)
+
+		sourceView.addSubview(hiddenView)
+
 		self.view = sourceView
 	}
 
@@ -56,5 +67,11 @@ extension SourceViewController {
 extension SourceViewController: NSTextViewDelegate {
 	public func textView(_ textView: NSTextView, shouldChangeTextInRanges affectedRanges: [NSValue], replacementStrings: [String]?) -> Bool {
 		return true
+	}
+
+	public func textViewDidChangeSelection(_ notification: Notification) {
+		let ranges = sourceView.selectedTextRanges
+
+		selectionChangedHandler(ranges)
 	}
 }
