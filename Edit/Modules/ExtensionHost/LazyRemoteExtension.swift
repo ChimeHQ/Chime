@@ -44,9 +44,11 @@ public final class RunningRemoteExtension {
 
 	/// Deactivate the underlying `AppExtensionProcess` if it is currently active.
 	func deactivate() {
+		guard let ext = runningExtension else { return }
+
 		logger.info("deactivating: \(self.identifier, privacy: .public)")
 
-		runningExtension?.process.invalidate()
+		ext.process.invalidate()
 		runningExtension = nil
 	}
 }
