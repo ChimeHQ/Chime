@@ -20,6 +20,7 @@
 		C926736E2B06BE1200B3CE2F /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C926736D2B06BE1200B3CE2F /* Environment.swift */; };
 		C92673702B06BFCB00B3CE2F /* DocumentContentMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C926736F2B06BFCB00B3CE2F /* DocumentContentMonitor.swift */; };
 		C92673912B078D3200B3CE2F /* Neon in Frameworks */ = {isa = PBXBuildFile; productRef = C92673902B078D3200B3CE2F /* Neon */; };
+		C92673932B07924A00B3CE2F /* Chime.docc in Sources */ = {isa = PBXBuildFile; fileRef = C92673922B07924A00B3CE2F /* Chime.docc */; };
 		C9409C662A98CC9800B5D898 /* Outline in Frameworks */ = {isa = PBXBuildFile; productRef = C9409C652A98CC9800B5D898 /* Outline */; };
 		C9409C692A98CCCB00B5D898 /* SourceView in Frameworks */ = {isa = PBXBuildFile; productRef = C9409C682A98CCCB00B5D898 /* SourceView */; };
 		C9409C6C2A99059C00B5D898 /* ProjectState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9409C6A2A99047000B5D898 /* ProjectState.swift */; };
@@ -567,6 +568,7 @@
 		C926736F2B06BFCB00B3CE2F /* DocumentContentMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentContentMonitor.swift; sourceTree = "<group>"; };
 		C926737D2B07827800B3CE2F /* NonSwiftWorkaround.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = NonSwiftWorkaround.xcconfig; sourceTree = "<group>"; };
 		C926738A2B078B0200B3CE2F /* WorkaroundModule.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = WorkaroundModule.xcconfig; sourceTree = "<group>"; };
+		C92673922B07924A00B3CE2F /* Chime.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Chime.docc; sourceTree = "<group>"; };
 		C93791A32AD5E02C00665F50 /* Project-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Project-Debug.xcconfig"; sourceTree = "<group>"; };
 		C93C2DD52AF04CB700558DCF /* DocumentContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentContent.swift; sourceTree = "<group>"; };
 		C9409C6A2A99047000B5D898 /* ProjectState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectState.swift; sourceTree = "<group>"; };
@@ -1104,6 +1106,7 @@
 			children = (
 				C9FE529C2A7525D000CACA1A /* AppDelegate.swift */,
 				C9EFDFAE2AEEF15400568E15 /* ApplicationServiceEventRouter.swift */,
+				C92673922B07924A00B3CE2F /* Chime.docc */,
 				C9FE52CF2A75323800CACA1A /* Modules */,
 				C9FE52CD2A752BA800CACA1A /* Resources */,
 				C9E878132A9F56720018340C /* Scripts */,
@@ -2223,6 +2226,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C92673932B07924A00B3CE2F /* Chime.docc in Sources */,
 				C9FE529D2A7525D000CACA1A /* AppDelegate.swift in Sources */,
 				C9EFDFAF2AEEF15400568E15 /* ApplicationServiceEventRouter.swift in Sources */,
 			);
