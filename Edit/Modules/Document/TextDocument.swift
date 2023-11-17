@@ -15,7 +15,8 @@ public final class TextDocument: ContainedDocument<Project> {
 	private lazy var editorContentController = EditorContentViewController(content: self.state.content)
 	private lazy var projectWindowController = makeProjectWindowController(
 		contentViewController: editorContentController,
-		context: state.context
+		context: state.context,
+		content: state.content
 	)
 
 	private var isClosing = false
@@ -109,6 +110,7 @@ extension TextDocument {
 		logger.debug("document state changed")
 		contentMonitor.monitor(state.content)
 
+		projectWindowController.documentContent = state.content
 		editorContentController.representedObject = state.content
 
 		stateChangedHandler(oldValue, state)
@@ -136,8 +138,6 @@ extension TextDocument: ProjectDocument {
 	public func updateApplicationService(_ service: any ApplicationService) {
 		do {
 			projectWindowController.symbolQueryService = try projectContext.flatMap { try service.symbolService(for: $0) }
-
-			Swift.print("service is now: ", projectWindowController.symbolQueryService)
 		} catch {
 			logger.error("Failed to update symbolService: \(error, privacy: .public)")
 		}

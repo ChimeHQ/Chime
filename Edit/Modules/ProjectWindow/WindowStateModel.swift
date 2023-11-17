@@ -1,6 +1,7 @@
 import SwiftUI
 
 import ChimeKit
+import DocumentContent
 import Navigator
 import Theme
 import WindowTreatment
@@ -22,13 +23,15 @@ final class WindowStateModel {
 	var siblingProvider: SiblingProvider = { [] }
 	var currentTheme: Theme = Theme()
 	var documentContext: DocumentContext
+	var documentContent: DocumentContent
 
 	var projectState: ProjectState? {
 		didSet { stateUpdated() }
 	}
 
-	init(documentContext: DocumentContext) {
-		self.documentContext = documentContext
+	init(context: DocumentContext, content: DocumentContent) {
+		self.documentContext = context
+		self.documentContent = content
 	}
 
 	func windowStateChanged(_ old: WindowStateObserver.State, _ new: WindowStateObserver.State) {
@@ -94,6 +97,6 @@ extension WindowStateModel {
 	}
 
 	private func synchronizeUI() {
-		print("syncing: ", self, " -> ", activeSibling)
+//		print("syncing: ", self, " -> ", activeSibling)
 	}
 }

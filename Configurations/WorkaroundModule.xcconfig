@@ -1,0 +1,2 @@
+#include "Configurations/NonSwiftWorkaround.xcconfig"
+#include "Configurations/Module.xcconfig"

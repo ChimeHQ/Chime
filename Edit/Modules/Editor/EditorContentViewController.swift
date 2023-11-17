@@ -47,10 +47,10 @@ public final class EditorContentViewController: NSViewController {
 //		presentationController.documentView?.translatesAutoresizingMaskIntoConstraints = false
 
 		let hostedView = EditorContent {
-			RepresentableViewController(presentationController)
-		   } themeUpdateAction: { [sourceViewController] in
-			   sourceViewController.updateTheme($0, context: $1)
-		   }
+			RepresentableViewController({ presentationController })
+		} themeUpdateAction: { [sourceViewController] in
+			sourceViewController.updateTheme($0, context: $1)
+		}
 
 		self.view = NSHostingView(rootView: hostedView)
 	}

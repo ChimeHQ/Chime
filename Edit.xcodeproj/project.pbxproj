@@ -13,6 +13,13 @@
 		C900A7D12A9F472E000556A6 /* Chime.appextensionpoint in Copy Extensions */ = {isa = PBXBuildFile; fileRef = C900A7CF2A9F46EF000556A6 /* Chime.appextensionpoint */; };
 		C92672F82B0399D800B3CE2F /* SwiftExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92672F72B0399D800B3CE2F /* SwiftExtension.swift */; };
 		C92672FA2B039AA300B3CE2F /* SwiftExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92672F72B0399D800B3CE2F /* SwiftExtension.swift */; };
+		C92673452B05500500B3CE2F /* RegionLabellingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92673442B05500500B3CE2F /* RegionLabellingView.swift */; };
+		C92673472B055AD300B3CE2F /* LineNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92673462B055AD300B3CE2F /* LineNumberViewController.swift */; };
+		C926734B2B0568EB00B3CE2F /* NumberWidthCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C926734A2B0568EB00B3CE2F /* NumberWidthCalculator.swift */; };
+		C926736B2B06B90900B3CE2F /* ThemeMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C926736A2B06B90900B3CE2F /* ThemeMonitor.swift */; };
+		C926736E2B06BE1200B3CE2F /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C926736D2B06BE1200B3CE2F /* Environment.swift */; };
+		C92673702B06BFCB00B3CE2F /* DocumentContentMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C926736F2B06BFCB00B3CE2F /* DocumentContentMonitor.swift */; };
+		C92673912B078D3200B3CE2F /* Neon in Frameworks */ = {isa = PBXBuildFile; productRef = C92673902B078D3200B3CE2F /* Neon */; };
 		C9409C662A98CC9800B5D898 /* Outline in Frameworks */ = {isa = PBXBuildFile; productRef = C9409C652A98CC9800B5D898 /* Outline */; };
 		C9409C692A98CCCB00B5D898 /* SourceView in Frameworks */ = {isa = PBXBuildFile; productRef = C9409C682A98CCCB00B5D898 /* SourceView */; };
 		C9409C6C2A99059C00B5D898 /* ProjectState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9409C6A2A99047000B5D898 /* ProjectState.swift */; };
@@ -151,6 +158,41 @@
 			proxyType = 1;
 			remoteGlobalIDString = C900A7B92A9E93FC000556A6;
 			remoteInfo = PreferencesWindow;
+		};
+		C92673482B055DD700B3CE2F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9FE53222A75A17700CACA1A;
+			remoteInfo = UIUtility;
+		};
+		C926734C2B056BA900B3CE2F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9FE53C72A77CC1E00CACA1A;
+			remoteInfo = Theme;
+		};
+		C92673552B06885100B3CE2F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9891B122AFEC11A00C8F393;
+			remoteInfo = DocumentContent;
+		};
+		C92673712B06C28200B3CE2F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9891B122AFEC11A00C8F393;
+			remoteInfo = DocumentContent;
+		};
+		C926738B2B078B6D00B3CE2F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9FE53F32A7A5EF900CACA1A;
+			remoteInfo = Utility;
 		};
 		C96A85412A7BEB92005ED222 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -517,6 +559,14 @@
 		C92672F72B0399D800B3CE2F /* SwiftExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftExtension.swift; path = "submodules/chime-swift/Sources/ChimeSwift/SwiftExtension.swift"; sourceTree = SOURCE_ROOT; };
 		C92673282B04046700B3CE2F /* Edit-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Edit-Debug.xcconfig"; sourceTree = "<group>"; };
 		C92673432B05244600B3CE2F /* EditUITests.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = EditUITests.xcconfig; sourceTree = "<group>"; };
+		C92673442B05500500B3CE2F /* RegionLabellingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionLabellingView.swift; sourceTree = "<group>"; };
+		C92673462B055AD300B3CE2F /* LineNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineNumberViewController.swift; sourceTree = "<group>"; };
+		C926734A2B0568EB00B3CE2F /* NumberWidthCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberWidthCalculator.swift; sourceTree = "<group>"; };
+		C926736A2B06B90900B3CE2F /* ThemeMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeMonitor.swift; sourceTree = "<group>"; };
+		C926736D2B06BE1200B3CE2F /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		C926736F2B06BFCB00B3CE2F /* DocumentContentMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentContentMonitor.swift; sourceTree = "<group>"; };
+		C926737D2B07827800B3CE2F /* NonSwiftWorkaround.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = NonSwiftWorkaround.xcconfig; sourceTree = "<group>"; };
+		C926738A2B078B0200B3CE2F /* WorkaroundModule.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = WorkaroundModule.xcconfig; sourceTree = "<group>"; };
 		C93791A32AD5E02C00665F50 /* Project-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Project-Debug.xcconfig"; sourceTree = "<group>"; };
 		C93C2DD52AF04CB700558DCF /* DocumentContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentContent.swift; sourceTree = "<group>"; };
 		C9409C6A2A99047000B5D898 /* ProjectState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectState.swift; sourceTree = "<group>"; };
@@ -731,6 +781,7 @@
 				C9FE53B22A7677E100CACA1A /* ScrollViewPlus in Frameworks */,
 				C9409C662A98CC9800B5D898 /* Outline in Frameworks */,
 				C97918DA2A9E080C0046EAF1 /* ViewPlus in Frameworks */,
+				C92673912B078D3200B3CE2F /* Neon in Frameworks */,
 				C900A7CA2A9E94B4000556A6 /* ExtendableHost in Frameworks */,
 				C97918CB2A9D4C740046EAF1 /* FuzzyFind in Frameworks */,
 				C9FE53912A766A9D00CACA1A /* libEditor.a in Frameworks */,
@@ -940,6 +991,8 @@
 				C93C2DD52AF04CB700558DCF /* DocumentContent.swift */,
 				C9891B242AFEC1BE00C8F393 /* StorageMonitor.swift */,
 				C9891B2D2AFEC91B00C8F393 /* VersionedTextStorage.swift */,
+				C926736D2B06BE1200B3CE2F /* Environment.swift */,
+				C926736F2B06BFCB00B3CE2F /* DocumentContentMonitor.swift */,
 			);
 			path = DocumentContent;
 			sourceTree = "<group>";
@@ -948,6 +1001,9 @@
 			isa = PBXGroup;
 			children = (
 				C9891B3F2AFFF23D00C8F393 /* Gutter.swift */,
+				C92673442B05500500B3CE2F /* RegionLabellingView.swift */,
+				C92673462B055AD300B3CE2F /* LineNumberViewController.swift */,
+				C926734A2B0568EB00B3CE2F /* NumberWidthCalculator.swift */,
 			);
 			path = Gutter;
 			sourceTree = "<group>";
@@ -1217,9 +1273,11 @@
 				C92673432B05244600B3CE2F /* EditUITests.xcconfig */,
 				C9E878112A9F53BB0018340C /* Extension.xcconfig */,
 				C9FE531A2A759BC400CACA1A /* Module.xcconfig */,
+				C926737D2B07827800B3CE2F /* NonSwiftWorkaround.xcconfig */,
 				C93791A32AD5E02C00665F50 /* Project-Debug.xcconfig */,
 				C9FE52CB2A7526C000CACA1A /* Project.xcconfig */,
 				C9BDB5542B00FF5A009225FB /* SwiftExtension.xcconfig */,
+				C926738A2B078B0200B3CE2F /* WorkaroundModule.xcconfig */,
 			);
 			path = Configurations;
 			sourceTree = "<group>";
@@ -1245,6 +1303,7 @@
 			children = (
 				C9891B012AFEAA1100C8F393 /* Extensions */,
 				C9FE53D42A77CC8300CACA1A /* Theme.swift */,
+				C926736A2B06B90900B3CE2F /* ThemeMonitor.swift */,
 			);
 			path = Theme;
 			sourceTree = "<group>";
@@ -1429,6 +1488,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				C926738C2B078B6D00B3CE2F /* PBXTargetDependency */,
 				C97918E42A9E40FF0046EAF1 /* PBXTargetDependency */,
 				C97918DC2A9E08490046EAF1 /* PBXTargetDependency */,
 				C97918D82A9E07FE0046EAF1 /* PBXTargetDependency */,
@@ -1471,6 +1531,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				C926737F2B0782C500B3CE2F /* PBXTargetDependency */,
 				C9891B2C2AFEC88300C8F393 /* PBXTargetDependency */,
 				C9891B2A2AFEC24B00C8F393 /* PBXTargetDependency */,
 				C9891B1E2AFEC13500C8F393 /* PBXTargetDependency */,
@@ -1491,6 +1552,10 @@
 			buildRules = (
 			);
 			dependencies = (
+				C92673562B06885100B3CE2F /* PBXTargetDependency */,
+				C92673502B06719C00B3CE2F /* PBXTargetDependency */,
+				C926734D2B056BA900B3CE2F /* PBXTargetDependency */,
+				C92673492B055DD700B3CE2F /* PBXTargetDependency */,
 			);
 			name = Gutter;
 			productName = Gutter;
@@ -1544,6 +1609,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				C926738E2B078B8900B3CE2F /* PBXTargetDependency */,
 				C9F79DFF2A90DCCC005ED8E9 /* PBXTargetDependency */,
 				C9F79DFD2A90DCBF005ED8E9 /* PBXTargetDependency */,
 			);
@@ -1586,6 +1652,7 @@
 				C97918D92A9E080C0046EAF1 /* ViewPlus */,
 				C900A7C92A9E94B4000556A6 /* ExtendableHost */,
 				C9891B272AFEC24100C8F393 /* TextStory */,
+				C92673902B078D3200B3CE2F /* Neon */,
 			);
 			productName = Edit;
 			productReference = C9FE52992A7525D000CACA1A /* Chime.app */;
@@ -1687,6 +1754,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				C92673722B06C28200B3CE2F /* PBXTargetDependency */,
 				C97918EA2A9E41CB0046EAF1 /* PBXTargetDependency */,
 				C97918E82A9E41B90046EAF1 /* PBXTargetDependency */,
 				C97918E62A9E41160046EAF1 /* PBXTargetDependency */,
@@ -1965,6 +2033,7 @@
 				C97918C92A9D4C600046EAF1 /* XCRemoteSwiftPackageReference "FuzzyFind" */,
 				C97918D42A9E07F00046EAF1 /* XCRemoteSwiftPackageReference "ViewPlus" */,
 				C9891B262AFEC24100C8F393 /* XCRemoteSwiftPackageReference "TextStory" */,
+				C926738F2B078D3200B3CE2F /* XCRemoteSwiftPackageReference "Neon" */,
 			);
 			productRefGroup = C9FE529A2A7525D000CACA1A /* Products */;
 			projectDirPath = "";
@@ -2105,8 +2174,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9891B252AFEC1BE00C8F393 /* StorageMonitor.swift in Sources */,
+				C926736E2B06BE1200B3CE2F /* Environment.swift in Sources */,
 				C9891B2E2AFEC91B00C8F393 /* VersionedTextStorage.swift in Sources */,
 				C9891B1C2AFEC12700C8F393 /* DocumentContent.swift in Sources */,
+				C92673702B06BFCB00B3CE2F /* DocumentContentMonitor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2114,6 +2185,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C92673472B055AD300B3CE2F /* LineNumberViewController.swift in Sources */,
+				C926734B2B0568EB00B3CE2F /* NumberWidthCalculator.swift in Sources */,
+				C92673452B05500500B3CE2F /* RegionLabellingView.swift in Sources */,
 				C9891B402AFFF23D00C8F393 /* Gutter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2289,6 +2363,7 @@
 			files = (
 				C9891B002AFEA3F100C8F393 /* NSAppearance+Style.swift in Sources */,
 				C9FE53D52A77CC8300CACA1A /* Theme.swift in Sources */,
+				C926736B2B06B90900B3CE2F /* ThemeMonitor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2331,6 +2406,43 @@
 			isa = PBXTargetDependency;
 			target = C900A7B92A9E93FC000556A6 /* PreferencesWindow */;
 			targetProxy = C900A7CD2A9E9600000556A6 /* PBXContainerItemProxy */;
+		};
+		C92673492B055DD700B3CE2F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9FE53222A75A17700CACA1A /* UIUtility */;
+			targetProxy = C92673482B055DD700B3CE2F /* PBXContainerItemProxy */;
+		};
+		C926734D2B056BA900B3CE2F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9FE53C72A77CC1E00CACA1A /* Theme */;
+			targetProxy = C926734C2B056BA900B3CE2F /* PBXContainerItemProxy */;
+		};
+		C92673502B06719C00B3CE2F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = C926734F2B06719C00B3CE2F /* Neon */;
+		};
+		C92673562B06885100B3CE2F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9891B122AFEC11A00C8F393 /* DocumentContent */;
+			targetProxy = C92673552B06885100B3CE2F /* PBXContainerItemProxy */;
+		};
+		C92673722B06C28200B3CE2F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9891B122AFEC11A00C8F393 /* DocumentContent */;
+			targetProxy = C92673712B06C28200B3CE2F /* PBXContainerItemProxy */;
+		};
+		C926737F2B0782C500B3CE2F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = C926737E2B0782C500B3CE2F /* Neon */;
+		};
+		C926738C2B078B6D00B3CE2F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9FE53F32A7A5EF900CACA1A /* Utility */;
+			targetProxy = C926738B2B078B6D00B3CE2F /* PBXContainerItemProxy */;
+		};
+		C926738E2B078B8900B3CE2F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = C926738D2B078B8900B3CE2F /* Outline */;
 		};
 		C96A85422A7BEB92005ED222 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -2677,28 +2789,28 @@
 		};
 		C9891B1A2AFEC11A00C8F393 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C9FE531A2A759BC400CACA1A /* Module.xcconfig */;
+			baseConfigurationReference = C926738A2B078B0200B3CE2F /* WorkaroundModule.xcconfig */;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		C9891B1B2AFEC11A00C8F393 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C9FE531A2A759BC400CACA1A /* Module.xcconfig */;
+			baseConfigurationReference = C926738A2B078B0200B3CE2F /* WorkaroundModule.xcconfig */;
 			buildSettings = {
 			};
 			name = Release;
 		};
 		C9891B3C2AFFF1F700C8F393 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C9FE531A2A759BC400CACA1A /* Module.xcconfig */;
+			baseConfigurationReference = C926738A2B078B0200B3CE2F /* WorkaroundModule.xcconfig */;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		C9891B3D2AFFF1F700C8F393 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C9FE531A2A759BC400CACA1A /* Module.xcconfig */;
+			baseConfigurationReference = C926738A2B078B0200B3CE2F /* WorkaroundModule.xcconfig */;
 			buildSettings = {
 			};
 			name = Release;
@@ -2803,14 +2915,14 @@
 		};
 		C9FE52DB2A7532C700CACA1A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C9FE531A2A759BC400CACA1A /* Module.xcconfig */;
+			baseConfigurationReference = C926738A2B078B0200B3CE2F /* WorkaroundModule.xcconfig */;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		C9FE52DC2A7532C700CACA1A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C9FE531A2A759BC400CACA1A /* Module.xcconfig */;
+			baseConfigurationReference = C926738A2B078B0200B3CE2F /* WorkaroundModule.xcconfig */;
 			buildSettings = {
 			};
 			name = Release;
@@ -2831,14 +2943,14 @@
 		};
 		C9FE53152A759ADA00CACA1A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C9FE531A2A759BC400CACA1A /* Module.xcconfig */;
+			baseConfigurationReference = C926738A2B078B0200B3CE2F /* WorkaroundModule.xcconfig */;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		C9FE53162A759ADA00CACA1A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C9FE531A2A759BC400CACA1A /* Module.xcconfig */;
+			baseConfigurationReference = C926738A2B078B0200B3CE2F /* WorkaroundModule.xcconfig */;
 			buildSettings = {
 			};
 			name = Release;
@@ -2887,14 +2999,14 @@
 		};
 		C9FE53812A7662DD00CACA1A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C9FE531A2A759BC400CACA1A /* Module.xcconfig */;
+			baseConfigurationReference = C926738A2B078B0200B3CE2F /* WorkaroundModule.xcconfig */;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		C9FE53822A7662DD00CACA1A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C9FE531A2A759BC400CACA1A /* Module.xcconfig */;
+			baseConfigurationReference = C926738A2B078B0200B3CE2F /* WorkaroundModule.xcconfig */;
 			buildSettings = {
 			};
 			name = Release;
@@ -3168,6 +3280,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		C926738F2B078D3200B3CE2F /* XCRemoteSwiftPackageReference "Neon" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ChimeHQ/Neon.git";
+			requirement = {
+				kind = revision;
+				revision = f12faf1e596b22a710456d59dcb4f56787507290;
+			};
+		};
 		C9409C642A98CC9800B5D898 /* XCRemoteSwiftPackageReference "Outline" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/chimeHQ/Outline";
@@ -3276,6 +3396,24 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C97918D42A9E07F00046EAF1 /* XCRemoteSwiftPackageReference "ViewPlus" */;
 			productName = ViewPlus;
+		};
+		C926734F2B06719C00B3CE2F /* Neon */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Neon;
+		};
+		C926737E2B0782C500B3CE2F /* Neon */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Neon;
+		};
+		C926738D2B078B8900B3CE2F /* Outline */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C9409C642A98CC9800B5D898 /* XCRemoteSwiftPackageReference "Outline" */;
+			productName = Outline;
+		};
+		C92673902B078D3200B3CE2F /* Neon */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C926738F2B078D3200B3CE2F /* XCRemoteSwiftPackageReference "Neon" */;
+			productName = Neon;
 		};
 		C9409C652A98CC9800B5D898 /* Outline */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -2,7 +2,7 @@ import AppKit
 
 import ChimeKit
 import ContainedDocument
-
+import DocumentContent
 import ProjectWindow
 
 /// Common interface for all documents contained within a Project.
@@ -65,10 +65,11 @@ extension ProjectDocument {
 			.compactMap { $0 as? ProjectWindowController }
 	}
 
-	func makeProjectWindowController(contentViewController: NSViewController, context: DocumentContext) -> ProjectWindowController {
+	func makeProjectWindowController(contentViewController: NSViewController, context: DocumentContext, content: DocumentContent) -> ProjectWindowController {
 		ProjectWindowController(
 			contentViewController: contentViewController,
 			context: context,
+			content: content,
 			siblingProvider: { [weak self] in self?.siblingWindowControllers ?? [] },
 			onOpen: { [weak self] in self?.openURL($0) }
 		)

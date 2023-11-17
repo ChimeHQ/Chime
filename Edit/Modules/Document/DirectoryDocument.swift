@@ -3,6 +3,7 @@ import SwiftUI
 
 import ChimeKit
 import ContainedDocument
+import DocumentContent
 import ProjectWindow
 
 extension DocumentContext {
@@ -12,13 +13,21 @@ extension DocumentContext {
 	static let nonDocumentContext = DocumentContext()
 }
 
+extension DocumentContent {
+	/// This is a placeholder representing a non-document.
+	///
+	/// It exists to avoid annoying optionals or create a second form of ProjectWindowController.
+	static let nonDocumentContent = DocumentContent()
+}
+
 public final class DirectoryDocument: ContainedDocument<Project> {
 	private lazy var projectWindowController: ProjectWindowController = {
 		let placeholderController = NSHostingController(rootView: Color.orange)
 
 		return makeProjectWindowController(
 			contentViewController: placeholderController,
-			context: .nonDocumentContext
+			context: .nonDocumentContext,
+			content: .nonDocumentContent
 		)
 	}()
 

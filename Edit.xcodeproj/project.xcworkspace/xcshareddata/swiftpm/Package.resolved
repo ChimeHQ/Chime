@@ -98,6 +98,14 @@
       }
     },
     {
+      "identity" : "neon",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ChimeHQ/Neon.git",
+      "state" : {
+        "revision" : "f12faf1e596b22a710456d59dcb4f56787507290"
+      }
+    },
+    {
       "identity" : "outline",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/chimeHQ/Outline",
@@ -156,6 +164,15 @@
       "location" : "https://github.com/ChimeHQ/SourceView",
       "state" : {
         "revision" : "d563ef0ba6c1c91aa6bcee406577b8826baa1f69"
+      }
+    },
+    {
+      "identity" : "swifttreesitter",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ChimeHQ/SwiftTreeSitter",
+      "state" : {
+        "revision" : "a9b1335d5151b62b11f07599bd07d07dc5965de3",
+        "version" : "0.7.2"
       }
     },
     {

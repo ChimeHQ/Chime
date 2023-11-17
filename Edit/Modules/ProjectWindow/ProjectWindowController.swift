@@ -2,6 +2,7 @@ import AppKit
 import SwiftUI
 
 import ChimeKit
+import DocumentContent
 import Navigator
 import OpenQuickly
 import Theme
@@ -28,10 +29,11 @@ public final class ProjectWindowController: NSWindowController {
 	public init(
 		contentViewController: NSViewController,
 		context: DocumentContext,
+		content: DocumentContent,
 		siblingProvider: @escaping SiblingProvider,
 		onOpen: @escaping OnOpen
 	) {
-		let syncModel = WindowStateModel(documentContext: context)
+		let syncModel = WindowStateModel(context: context, content: content)
 
 		let contentController = ProjectContentViewController(contentViewController: contentViewController)
 
@@ -74,6 +76,11 @@ public final class ProjectWindowController: NSWindowController {
 //		model.documentContext
 //	}
 
+	public var documentContent: DocumentContent {
+		get { model.documentContent }
+		set { model.documentContent = newValue }
+	}
+	
 	public var state: ProjectState? {
 		get { model.projectState }
 		set { model.projectState = newValue }
