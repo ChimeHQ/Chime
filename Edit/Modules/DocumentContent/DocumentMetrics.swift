@@ -3,10 +3,34 @@ import Foundation
 import Rearrange
 import RelativeCollections
 
+extension RelativeList {
+	func replaceSubrange<Elements>(_ range: Range<Index>, with newElements: Elements) where WeightedValue == Elements.Element, Elements : Sequence {
+		// this is a naive implemenation and it is very suboptimal
+		for i in range.reversed() {
+			remove(at: i)
+		}
+
+		for element in newElements.reversed() {
+			insert(element, at: range.lowerBound)
+		}
+	}
+}
+
+extension Line {
+	var weightedValue: DocumentMetrics.List.WeightedValue {
+		.init(
+			value: DocumentMetrics.LineValue(whitespaceOnly: whitespaceOnly),
+			weight: range.length
+		)
+	}
+}
+
 public final class DocumentMetrics {
-	private struct LineValue {
+	struct LineValue {
 		let whitespaceOnly: Bool
 	}
+
+	typealias List = RelativeList<LineValue, Int>
 
 	private lazy var rangeStateProcessor = LazyRangeStateProcessor(
 		configuration: .init(minimumDelta: 1024),
@@ -21,6 +45,11 @@ public final class DocumentMetrics {
 
 	init(storage: TextStorageReference) {
 		self.storage = storage
+
+		// insert a single empty line as a starting point
+		let line = Line(index: 0, range: NSRange(0..<0), whitespaceOnly: true)
+
+		lineList.insert(line.weightedValue, at: 0)
 	}
 
 	public func line(at index: Int) -> Line {
@@ -68,7 +97,27 @@ extension DocumentMetrics {
 			fatalError("Unable to compute substring from readableRange")
 		}
 
-		print("substring: ", substring)
+		let indexOffset = lowerIndex ?? 0
+		let includeLastLine = affectedRange.max == limit
+
+		let newLines = parser.parseLines(in: substring, indexOffset: indexOffset, locationOffset: affectedRange.location, includeLastLine: includeLastLine)
+
+		print("newLines: ", newLines)
+
+		let replacementLower = lowerIndex ?? lineList.startIndex
+		let replacementUpper: Int
+
+		if affectedRange.max < limit {
+			replacementUpper = upperIndex ?? lineList.endIndex
+		} else {
+			replacementUpper = lineList.endIndex
+		}
+
+		let replacementRange = replacementLower..<replacementUpper
+
+		let weightedValues = newLines.map { $0.weightedValue }
+
+		lineList.replaceSubrange(replacementRange, with: weightedValues)
 	}
 }
 
