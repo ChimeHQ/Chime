@@ -7,7 +7,7 @@ import Theme
 import UIUtility
 
 struct EditorContent<Content: View>: View {
-	@Environment(DocumentStateModel.self) private var model
+	@Environment(EditorStateModel.self) private var model
 	@Environment(\.theme) private var theme
 	@Environment(\.controlActiveState) private var controlActiveState
 	@Environment(\.colorScheme) private var colorScheme
@@ -28,7 +28,6 @@ struct EditorContent<Content: View>: View {
 			StatusBar()
 		}
 		.background(Color(theme.color(for: .background, context: context)))
-		.environment(\.documentSelection, model.selectedRanges)
-		.environment(\.documentContent, model.documentContent)
+		.environment(\.documentCursors, model.cursors)
 	}
 }

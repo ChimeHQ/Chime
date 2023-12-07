@@ -10,17 +10,19 @@ import UIUtility
 ///
 /// This controller establishes the larger editor scene, typing together the sub components.
 public final class EditorContentViewController: NSViewController {
+	public typealias ShouldChangeTextHandler = (NSRange, String?) -> Bool
+
 	let editorScrollView = NSScrollView()
 	let sourceViewController: SourceViewController
-	let documentState: DocumentStateModel
+	let editorState: EditorStateModel
 
-	public init(content: DocumentContent) {
-		self.documentState = DocumentStateModel(content: content)
-		self.sourceViewController = SourceViewController(content: content)
+	public init(sourceViewController: SourceViewController) {
+		self.editorState = EditorStateModel()
+		self.sourceViewController = sourceViewController
 
 		super.init(nibName: nil, bundle: nil)
 
-		sourceViewController.selectionChangedHandler = { [documentState] in documentState.selectedRanges = $0 }
+		sourceViewController.selectionChangedHandler = { [editorState] in editorState.selectedRanges = $0 }
 
 		addChild(sourceViewController)
 	}
@@ -53,16 +55,8 @@ public final class EditorContentViewController: NSViewController {
 		let hostedView = EditorContent {
 			RepresentableViewController({ presentationController })
 		}
-			.environment(documentState)
+			.environment(editorState)
 
 		self.view = NSHostingView(rootView: hostedView)
-	}
-
-	public override var representedObject: Any? {
-		get { sourceViewController.representedObject }
-		set {
-			sourceViewController.representedObject = newValue
-			documentState.documentContent = newValue as! DocumentContent
-		}
 	}
 }

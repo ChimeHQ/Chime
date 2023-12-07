@@ -1,24 +1,25 @@
 import AppKit
 import SwiftUI
 
+import ChimeKit
 import DocumentContent
 import SourceView
+import TextStory
 import Theme
 
 public final class SourceViewController: NSViewController {
-	let sourceView = SourceView()
+	public let sourceView = SourceView()
+	public var selectionChangedHandler: ([NSRange]) -> Void = { _ in }
+	public var shouldChangeTextHandler: (NSRange, String?) -> Bool = { _, _ in true }
 
-	var selectionChangedHandler: ([NSRange]) -> Void = { _ in }
-
-	public init(content: DocumentContent) {
+	public init() {
 		super.init(nibName: nil, bundle: nil)
 
 		sourceView.drawsBackground = false
 		sourceView.wrapsTextToHorizontalBounds = false
 
 		sourceView.delegate = self
-
-		self.representedObject = content
+		self.representedObject = TSYTextStorage()
 	}
 
 	@available(*, unavailable)
@@ -38,18 +39,36 @@ public final class SourceViewController: NSViewController {
 		self.view = sourceView
 	}
 
-	var representedContent: DocumentContent {
-		representedObject as! DocumentContent
+	public var storage: TextStorage {
+		.init(textView: self.sourceView)
+	}
+
+	private var representedStorage: TSYTextStorage {
+		representedObject as! TSYTextStorage
 	}
 
 	override public var representedObject: Any? {
 		didSet {
-			if sourceView.textContentStorage?.textStorage === representedContent.storage {
+			if sourceView.textContentStorage?.textStorage === representedStorage {
 				return
 			}
 			
-			sourceView.textContentStorage?.textStorage = representedContent.storage
+			sourceView.textContentStorage?.textStorage = representedStorage
+
+			representedStorage.storageDelegate = self
 		}
+	}
+
+	public func reload(from url: URL, documentConfiguration: ChimeKit.DocumentConfiguration, theme: Theme) throws {
+		let context = Theme.Context(window: view.window)
+
+		let attrs = theme.typingAttributes(tabWidth: documentConfiguration.tabWidth, context: context)
+
+		let options: [NSAttributedString.DocumentReadingOptionKey: Any] = [
+			.defaultAttributes: attrs,
+		]
+
+		self.representedObject = try TSYTextStorage(url: url, options: options, documentAttributes: nil)
 	}
 }
 
@@ -65,13 +84,23 @@ extension SourceViewController {
 }
 
 extension SourceViewController: NSTextViewDelegate {
-	public func textView(_ textView: NSTextView, shouldChangeTextInRanges affectedRanges: [NSValue], replacementStrings: [String]?) -> Bool {
-		return true
+	public func textView(_ textView: NSTextView, shouldChangeTextIn affectedCharRange: NSRange, replacementString: String?) -> Bool {
+		shouldChangeTextHandler(affectedCharRange, replacementString)
 	}
 
 	public func textViewDidChangeSelection(_ notification: Notification) {
 		let ranges = sourceView.selectedTextRanges
 
 		selectionChangedHandler(ranges)
+	}
+}
+
+extension SourceViewController: TSYTextStorageDelegate {
+	public nonisolated func textStorage(_ textStorage: TSYTextStorage, doubleClickRangeForLocation location: UInt) -> NSRange {
+		textStorage.internalStorage.doubleClick(at: Int(location))
+	}
+
+	public nonisolated func textStorage(_ textStorage: TSYTextStorage, nextWordIndexFromLocation location: UInt, direction forward: Bool) -> UInt {
+		UInt(textStorage.internalStorage.nextWord(from: Int(location), forward: forward))
 	}
 }

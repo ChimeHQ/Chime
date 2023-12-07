@@ -5,33 +5,58 @@ import ChimeKit
 import TextStory
 
 public struct DocumentContent {
-	public let storage: VersionedTextStorage
-	public let identity: DocumentContentIdentity
+	private var contentID = UUID()
 
-	init(storage: VersionedTextStorage) {
-		self.storage = storage
-		self.identity = DocumentContentIdentity()
-	}
+	public let storage: TextStorageReference
+
+	/// Access structural information about the text.
+	///
+	/// This reference will remain stable across the lifetime of a editor window, even if the content is changed.
+	public let metrics: DocumentMetrics
 
 	/// Initialize with default, empty storage
-	public init() {
-		self.init(storage: VersionedTextStorage())
+	public init(storage: TextStorage) {
+		let storageRef = TextStorageReference(storage: storage)
+
+		self.storage = storageRef
+		self.metrics = DocumentMetrics(storage: storageRef)
 	}
 
-	/// Initialize by reading data in a file.
-	public init(url: URL, documentAttributes: [NSAttributedString.Key : Any]) throws {
-		let options: [NSAttributedString.DocumentReadingOptionKey: Any] = [
-			.defaultAttributes: documentAttributes,
-		]
+	public mutating func replaceStorage(_ newStorage: TextStorage) {
+		self.storage.storage = newStorage
 
-		let storage = try VersionedTextStorage(url: url, options: options, documentAttributes: nil)
+		//metrics.resetSomehow()
 
-		self.init(storage: storage)
+		self.contentID = UUID()
 	}
 }
 
 extension DocumentContent: Equatable {
 	public static func == (lhs: DocumentContent, rhs: DocumentContent) -> Bool {
-		return lhs.storage === rhs.storage && lhs.identity == rhs.identity
+		lhs.contentID == rhs.contentID
+	}
+}
+
+extension DocumentContent {
+	public static let textStorageMutationsKey = "mutations"
+	public static let willApplyMutationsNotification = Notification.Name("willApplyMutationsNotification")
+	/// This is very strongly recommended to restrict events only to the actual document content you are interested in. If it is not used, you will receive events from all open documents.
+	public static let didApplyMutationsNotification = Notification.Name("didApplyMutationsNotification")
+	public static let didCompleteMutationsNotification = Notification.Name("didCompleteMutationsNotification")
+
+	private func postEvent(_ named: Notification.Name, _ mutations: [TextStorageMutation]) {
+		NotificationCenter.default.post(
+			name: named,
+			object: storage,
+			userInfo: [DocumentContent.textStorageMutationsKey: mutations]
+		)
+	}
+
+	public var notificationMonitor: TextStorageDispatcher.Monitor {
+		.init(
+			willApplyMutations: { postEvent(Self.willApplyMutationsNotification, $0) },
+			didApplyMutations: { postEvent(Self.didApplyMutationsNotification, $0) },
+			didCompleteMutations: { postEvent(Self.didCompleteMutationsNotification, $0) }
+		)
 	}
 }

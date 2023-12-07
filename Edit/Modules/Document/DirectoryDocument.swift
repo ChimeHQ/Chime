@@ -17,7 +17,7 @@ extension DocumentContent {
 	/// This is a placeholder representing a non-document.
 	///
 	/// It exists to avoid annoying optionals or create a second form of ProjectWindowController.
-	static let nonDocumentContent = DocumentContent()
+	static let nonDocumentContent = DocumentContent(storage: .null)
 }
 
 public final class DirectoryDocument: ContainedDocument<Project> {

@@ -6,6 +6,8 @@ import Neon
 import Theme
 
 final class LineNumberViewController: NSViewController {
+	private var didChangeObserver: NSObjectProtocol?
+
 	private lazy var regionView = RegionLabellingView(
 		regionProvider: { [weak self] in self?.labelledRegions(for: $0) ?? [] }
 	)
@@ -22,6 +24,14 @@ final class LineNumberViewController: NSViewController {
 
 	init() {
 		super.init(nibName: nil, bundle: nil)
+
+		self.didChangeObserver = NotificationCenter.default.addObserver(
+			forName: DocumentContent.didApplyMutationsNotification,
+			object: nil,
+			queue: nil,
+			using: { _ in
+				print("did this happen?")
+			})
 	}
 
 	@available(*, unavailable)
@@ -30,13 +40,13 @@ final class LineNumberViewController: NSViewController {
 	}
 
 	override func loadView() {
-		// inject a hidden view into the hierarchy to observe SwiftUI theme changes
+		// inject a hidden view into the hierarchy to observe SwiftUI changes
 
 		let observingView = Text("")
 			.hidden()
 			.onThemeChange { [weak self] in self?.updateTheme($0, context: $1) }
-			.onDocumentContentChange { [weak self] in self?.representedObject = $0 }
-			.onDocumentSelectionChange { [weak self] in self?.selectionChanged($0) }
+			.onDocumentContentChange { [weak self] _ in self?.contentChanged() }
+			.onDocumentCursorsChange { [weak self] in self?.cursorsChanged($0) }
 
 		let hiddenView = NSHostingView(rootView: observingView)
 
@@ -44,23 +54,19 @@ final class LineNumberViewController: NSViewController {
 
 		self.view = regionView
 	}
-
-	override var representedObject: Any? {
-		didSet {
-			precondition(representedObject is DocumentContent)
-
-			rangeValidator.invalidate(.all)
-		}
-	}
 }
 
 extension LineNumberViewController {
-	func updateTheme(_ theme: Theme, context: Theme.Context) {
-		print("oh really?")
+	private func updateTheme(_ theme: Theme, context: Theme.Context) {
+		print("theme change?")
 	}
 
-	func selectionChanged(_ ranges: [NSRange]) {
-		print("ranges are now: \(ranges)")
+	private func cursorsChanged(_ cursors: [Cursor]) {
+		print("cursors are now: \(cursors)")
+	}
+
+	private func contentChanged() {
+		rangeValidator.invalidate(.all)
 	}
 }
 

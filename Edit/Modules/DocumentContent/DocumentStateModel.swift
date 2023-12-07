@@ -2,11 +2,18 @@ import SwiftUI
 
 @MainActor
 @Observable
-public final class DocumentStateModel {
-	public var selectedRanges: [NSRange] = []
-	public var documentContent: DocumentContent
+public final class EditorStateModel {
+	public var cursors: [Cursor] = []
 
-	public init(content: DocumentContent) {
-		self.documentContent = content
+	public init() {
+	}
+
+	public var selectedRanges: [NSRange] {
+		get {
+			cursors.map { $0.selection }
+		}
+		set {
+			self.cursors = zip(newValue, newValue.indices).map { Cursor(index: $0.1, selection: $0.0) }
+		}
 	}
 }

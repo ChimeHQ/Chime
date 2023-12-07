@@ -8,9 +8,11 @@ public struct DocumentState {
 	public internal(set) var context: DocumentContext
 	public internal(set) var content: DocumentContent
 
+	private let temporaryID = UUID()
+
 	init() {
 		self.context = DocumentContext()
-		self.content = DocumentContent()
+		self.content = DocumentContent(storage: .null)
 	}
 }
 
@@ -20,7 +22,7 @@ extension DocumentState: Equatable {
 extension DocumentState {
 	mutating func updateProjectContext(_ projectContext: ProjectContext?) {
 		self.context = DocumentContext(id: context.id,
-									   contentId: content.identity,
+									   contentId: temporaryID,
 									   url: context.url,
 									   uti: context.uti,
 									   configuration: context.configuration,
@@ -29,12 +31,6 @@ extension DocumentState {
 
 	mutating func update(url: URL?) {
 		update(url: url, typeName: context.uti.identifier)
-	}
-
-	mutating func read(from url: URL, typeName: String, documentAttributes: [NSAttributedString.Key : Any]) throws {
-		self.content = try DocumentContent(url: url, documentAttributes: documentAttributes)
-
-		update(url: url, typeName: typeName)
 	}
 	
 	mutating func update(url: URL?, typeName: String) {
@@ -50,7 +46,7 @@ extension DocumentState {
 		let config = context.configuration
 
 		self.context = DocumentContext(id: context.id,
-									   contentId: content.identity,
+									   contentId: temporaryID,
 									   url: url,
 									   uti: uti,
 									   configuration: config,

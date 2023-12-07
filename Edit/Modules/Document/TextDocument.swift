@@ -8,20 +8,22 @@ import DocumentContent
 import Editor
 import ProcessEnv
 import ProjectWindow
+import TextStory
 import Theme
 import Utility
 
 public final class TextDocument: ContainedDocument<Project> {
-	private lazy var editorContentController = EditorContentViewController(content: self.state.content)
+	private let editorContentController: EditorContentViewController
+	private let sourceViewController: SourceViewController
 	private lazy var projectWindowController = makeProjectWindowController(
 		contentViewController: editorContentController,
 		context: state.context,
 		content: state.content
 	)
 
+	private let storageDispatcher: TextStorageDispatcher
 	private var isClosing = false
 	private let logger = Logger(type: TextDocument.self)
-	private let contentMonitor = StorageMonitor()
 	public var stateChangedHandler: (DocumentState, DocumentState) -> Void = { _, _ in }
 
 	private var state: DocumentState {
@@ -30,10 +32,16 @@ public final class TextDocument: ContainedDocument<Project> {
 
 	override init() {
 		self.state = DocumentState()
+		self.sourceViewController = SourceViewController()
+		self.editorContentController = EditorContentViewController(sourceViewController: sourceViewController)
+		self.storageDispatcher = TextStorageDispatcher(monitors: [
+			state.content.metrics.textStorageMonitor,
+			state.content.notificationMonitor,
+		])
 
 	    super.init()
 
-		contentMonitor.monitor(state.content)
+		contentUpdated()
 	}
 
 	public var context: DocumentContext {
@@ -58,12 +66,12 @@ public final class TextDocument: ContainedDocument<Project> {
 
 	public override func read(from url: URL, ofType typeName: String) throws {
 		try MainActor.assumeIsolated {
-			let window = projectWindowController.window
 			let theme = projectWindowController.theme
 
-			let attrs = theme.typingAttributes(tabWidth: state.context.configuration.tabWidth, context: .init(window: window))
-			
-			try self.state.read(from: url, typeName: typeName, documentAttributes: attrs)
+			try sourceViewController.reload(from: url, documentConfiguration: state.context.configuration, theme: theme)
+
+			self.state.content.replaceStorage(sourceViewController.storage)
+			self.state.update(url: url, typeName: typeName)
 		}
 	}
 
@@ -102,16 +110,18 @@ public final class TextDocument: ContainedDocument<Project> {
 }
 
 extension TextDocument {
+	private func contentUpdated() {
+	}
+
 	private func stateUpdated(_ oldValue: DocumentState) {
 		if oldValue == state || isClosing {
 			return
 		}
 
 		logger.debug("document state changed")
-		contentMonitor.monitor(state.content)
+		contentUpdated()
 
 		projectWindowController.documentContent = state.content
-		editorContentController.representedObject = state.content
 
 		stateChangedHandler(oldValue, state)
 	}
