@@ -100,6 +100,22 @@
 		C9B8AA062B31FFB300C79606 /* TextMetricsMonitorModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B8A9D72B30617400C79606 /* TextMetricsMonitorModifier.swift */; };
 		C9B8AA082B32005400C79606 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B8AA072B32005400C79606 /* Environment.swift */; };
 		C9B8AA092B320D8B00C79606 /* libTextSystem.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9B8A9DD2B31E43800C79606 /* libTextSystem.a */; };
+		C9B8AA1A2B362DDE00C79606 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9B8AA192B362DDE00C79606 /* Quartz.framework */; };
+		C9B8AA1D2B362DDE00C79606 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B8AA1C2B362DDE00C79606 /* PreviewViewController.swift */; };
+		C9B8AA282B362DDE00C79606 /* Preview.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = C9B8AA182B362DDE00C79606 /* Preview.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C9B8AA352B3636A100C79606 /* ChimeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE52F42A7539B100CACA1A /* ChimeKit.framework */; };
+		C9B8AA362B3636A800C79606 /* libEditor.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE537A2A7662DC00CACA1A /* libEditor.a */; };
+		C9B8AA372B3636AC00C79606 /* libTextSystem.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9B8A9DD2B31E43800C79606 /* libTextSystem.a */; };
+		C9B8AA382B3636AF00C79606 /* libTheme.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE53C82A77CC1E00CACA1A /* libTheme.a */; };
+		C9B8AA3A2B3636D000C79606 /* SourceView in Frameworks */ = {isa = PBXBuildFile; productRef = C9B8AA392B3636D000C79606 /* SourceView */; };
+		C9B8AA3B2B3636E700C79606 /* libDocumentContent.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9891B132AFEC11A00C8F393 /* libDocumentContent.a */; };
+		C9B8AA3D2B3636F700C79606 /* RelativeCollections in Frameworks */ = {isa = PBXBuildFile; productRef = C9B8AA3C2B3636F700C79606 /* RelativeCollections */; };
+		C9B8AA3F2B3636FB00C79606 /* Neon in Frameworks */ = {isa = PBXBuildFile; productRef = C9B8AA3E2B3636FB00C79606 /* Neon */; };
+		C9B8AA402B36370F00C79606 /* libGutter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9891B352AFFF1F700C8F393 /* libGutter.a */; };
+		C9B8AA412B36371500C79606 /* libUIUtility.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE53232A75A17700CACA1A /* libUIUtility.a */; };
+		C9B8AA422B36371C00C79606 /* libUtility.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE53F42A7A5EF900CACA1A /* libUtility.a */; };
+		C9B8AA432B36373600C79606 /* libStatus.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE539B2A76709D00CACA1A /* libStatus.a */; };
+		C9B8AA452B36374700C79606 /* TextStory in Frameworks */ = {isa = PBXBuildFile; productRef = C9B8AA442B36374700C79606 /* TextStory */; };
 		C9BDB54B2B00FD89009225FB /* SwiftStandaloneExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BDB54A2B00FD89009225FB /* SwiftStandaloneExtension.swift */; };
 		C9BDB5502B00FD89009225FB /* SwiftExtension.appex in Copy Extensions */ = {isa = PBXBuildFile; fileRef = C9BDB5482B00FD89009225FB /* SwiftExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C9BDB5572B010094009225FB /* ChimeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE52F42A7539B100CACA1A /* ChimeKit.framework */; };
@@ -416,6 +432,41 @@
 			remoteGlobalIDString = C9B8A9DC2B31E43800C79606;
 			remoteInfo = TextSystem;
 		};
+		C9B8AA252B362DDE00C79606 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9B8AA172B362DDD00C79606;
+			remoteInfo = Preview;
+		};
+		C9B8AA2D2B36351E00C79606 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9FE53792A7662DC00CACA1A;
+			remoteInfo = Editor;
+		};
+		C9B8AA2F2B36359000C79606 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9B8A9DC2B31E43800C79606;
+			remoteInfo = TextSystem;
+		};
+		C9B8AA312B36369100C79606 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9FE53C72A77CC1E00CACA1A;
+			remoteInfo = Theme;
+		};
+		C9B8AA332B36369500C79606 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9FE52F32A7539B100CACA1A;
+			remoteInfo = ChimeKit;
+		};
 		C9BDB54E2B00FD89009225FB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
@@ -600,6 +651,17 @@
 			name = "Copy Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C9B8AA272B362DDE00C79606 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				C9B8AA282B362DDE00C79606 /* Preview.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C9FE52FB2A7539B100CACA1A /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -701,6 +763,12 @@
 		C9B8A9F32B31F09E00C79606 /* TextStorageMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextStorageMonitor.swift; sourceTree = "<group>"; };
 		C9B8A9FF2B31F93800C79606 /* RangeProcessor+Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RangeProcessor+Storage.swift"; sourceTree = "<group>"; };
 		C9B8AA072B32005400C79606 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		C9B8AA182B362DDE00C79606 /* Preview.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Preview.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9B8AA192B362DDE00C79606 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
+		C9B8AA1C2B362DDE00C79606 /* PreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
+		C9B8AA232B362DDE00C79606 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C9B8AA242B362DDE00C79606 /* Preview.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Preview.entitlements; sourceTree = "<group>"; };
+		C9B8AA2C2B36326D00C79606 /* Preview.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Preview.xcconfig; sourceTree = "<group>"; };
 		C9BDB5482B00FD89009225FB /* SwiftExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.extensionkit-extension"; includeInIndex = 0; path = SwiftExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9BDB54A2B00FD89009225FB /* SwiftStandaloneExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftStandaloneExtension.swift; sourceTree = "<group>"; };
 		C9BDB54C2B00FD89009225FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -819,6 +887,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9B8AA152B362DDD00C79606 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9B8AA432B36373600C79606 /* libStatus.a in Frameworks */,
+				C9B8AA422B36371C00C79606 /* libUtility.a in Frameworks */,
+				C9B8AA412B36371500C79606 /* libUIUtility.a in Frameworks */,
+				C9B8AA402B36370F00C79606 /* libGutter.a in Frameworks */,
+				C9B8AA3B2B3636E700C79606 /* libDocumentContent.a in Frameworks */,
+				C9B8AA382B3636AF00C79606 /* libTheme.a in Frameworks */,
+				C9B8AA3F2B3636FB00C79606 /* Neon in Frameworks */,
+				C9B8AA372B3636AC00C79606 /* libTextSystem.a in Frameworks */,
+				C9B8AA3A2B3636D000C79606 /* SourceView in Frameworks */,
+				C9B8AA362B3636A800C79606 /* libEditor.a in Frameworks */,
+				C9B8AA352B3636A100C79606 /* ChimeKit.framework in Frameworks */,
+				C9B8AA3D2B3636F700C79606 /* RelativeCollections in Frameworks */,
+				C9B8AA1A2B362DDE00C79606 /* Quartz.framework in Frameworks */,
+				C9B8AA452B36374700C79606 /* TextStory in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1132,6 +1221,16 @@
 			path = Storage;
 			sourceTree = "<group>";
 		};
+		C9B8AA1B2B362DDE00C79606 /* Preview */ = {
+			isa = PBXGroup;
+			children = (
+				C9B8AA1C2B362DDE00C79606 /* PreviewViewController.swift */,
+				C9B8AA232B362DDE00C79606 /* Info.plist */,
+				C9B8AA242B362DDE00C79606 /* Preview.entitlements */,
+			);
+			path = Preview;
+			sourceTree = "<group>";
+		};
 		C9BDB5492B00FD89009225FB /* Swift */ = {
 			isa = PBXGroup;
 			children = (
@@ -1188,6 +1287,7 @@
 				C9FE52B12A7525D300CACA1A /* EditTests */,
 				C9FE52BB2A7525D300CACA1A /* EditUITests */,
 				C9E8780D2A9F535C0018340C /* Extensions */,
+				C9B8AA1B2B362DDE00C79606 /* Preview */,
 				C9FE52E22A7533FE00CACA1A /* Frameworks */,
 				C9FE529A2A7525D000CACA1A /* Products */,
 			);
@@ -1220,6 +1320,7 @@
 				C9891B352AFFF1F700C8F393 /* libGutter.a */,
 				C9BDB5482B00FD89009225FB /* SwiftExtension.appex */,
 				C9B8A9DD2B31E43800C79606 /* libTextSystem.a */,
+				C9B8AA182B362DDE00C79606 /* Preview.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1310,6 +1411,7 @@
 		C9FE52E22A7533FE00CACA1A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C9B8AA192B362DDE00C79606 /* Quartz.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1402,6 +1504,7 @@
 				C9E878112A9F53BB0018340C /* Extension.xcconfig */,
 				C9FE531A2A759BC400CACA1A /* Module.xcconfig */,
 				C926737D2B07827800B3CE2F /* NonSwiftWorkaround.xcconfig */,
+				C9B8AA2C2B36326D00C79606 /* Preview.xcconfig */,
 				C93791A32AD5E02C00665F50 /* Project-Debug.xcconfig */,
 				C9FE52CB2A7526C000CACA1A /* Project.xcconfig */,
 				C9BDB5542B00FF5A009225FB /* SwiftExtension.xcconfig */,
@@ -1720,6 +1823,33 @@
 			productReference = C9B8A9DD2B31E43800C79606 /* libTextSystem.a */;
 			productType = "com.apple.product-type.library.static";
 		};
+		C9B8AA172B362DDD00C79606 /* Preview */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C9B8AA2B2B362DDE00C79606 /* Build configuration list for PBXNativeTarget "Preview" */;
+			buildPhases = (
+				C9B8AA142B362DDD00C79606 /* Sources */,
+				C9B8AA152B362DDD00C79606 /* Frameworks */,
+				C9B8AA162B362DDD00C79606 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C9B8AA342B36369500C79606 /* PBXTargetDependency */,
+				C9B8AA322B36369100C79606 /* PBXTargetDependency */,
+				C9B8AA302B36359000C79606 /* PBXTargetDependency */,
+				C9B8AA2E2B36351E00C79606 /* PBXTargetDependency */,
+			);
+			name = Preview;
+			packageProductDependencies = (
+				C9B8AA392B3636D000C79606 /* SourceView */,
+				C9B8AA3C2B3636F700C79606 /* RelativeCollections */,
+				C9B8AA3E2B3636FB00C79606 /* Neon */,
+				C9B8AA442B36374700C79606 /* TextStory */,
+			);
+			productName = Preview;
+			productReference = C9B8AA182B362DDE00C79606 /* Preview.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		C9BDB5472B00FD89009225FB /* SwiftExtension */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C9BDB5512B00FD89009225FB /* Build configuration list for PBXNativeTarget "SwiftExtension" */;
@@ -1786,6 +1916,7 @@
 				C9FE52FB2A7539B100CACA1A /* Embed Frameworks */,
 				C900A7D02A9F471F000556A6 /* Copy Extensions */,
 				C9E878122A9F563F0018340C /* Validate Build */,
+				C9B8AA272B362DDE00C79606 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
@@ -1798,6 +1929,7 @@
 				C9FE52F92A7539B100CACA1A /* PBXTargetDependency */,
 				C9E878082A9F53530018340C /* PBXTargetDependency */,
 				C9BDB54F2B00FD89009225FB /* PBXTargetDependency */,
+				C9B8AA262B362DDE00C79606 /* PBXTargetDependency */,
 			);
 			name = Edit;
 			packageProductDependencies = (
@@ -2124,6 +2256,9 @@
 						CreatedOnToolsVersion = 15.1;
 						LastSwiftMigration = 1510;
 					};
+					C9B8AA172B362DDD00C79606 = {
+						CreatedOnToolsVersion = 15.1;
+					};
 					C9BDB5472B00FD89009225FB = {
 						CreatedOnToolsVersion = 15.1;
 					};
@@ -2233,11 +2368,19 @@
 				C9891B342AFFF1F700C8F393 /* Gutter */,
 				C9BDB5472B00FD89009225FB /* SwiftExtension */,
 				C9B8A9DC2B31E43800C79606 /* TextSystem */,
+				C9B8AA172B362DDD00C79606 /* Preview */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		C9B8AA162B362DDD00C79606 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C9BDB5462B00FD89009225FB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2381,6 +2524,14 @@
 				C9B8A9EA2B31E79500C79606 /* NSTextView+Mutations.swift in Sources */,
 				C9B8A9E72B31E47300C79606 /* TextViewSystem.swift in Sources */,
 				C9B8AA052B31FD3700C79606 /* DocumentMutationMonitorModifier.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9B8AA142B362DDD00C79606 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9B8AA1D2B362DDE00C79606 /* PreviewViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2827,6 +2978,31 @@
 			target = C9B8A9DC2B31E43800C79606 /* TextSystem */;
 			targetProxy = C9B8AA032B31FB5900C79606 /* PBXContainerItemProxy */;
 		};
+		C9B8AA262B362DDE00C79606 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9B8AA172B362DDD00C79606 /* Preview */;
+			targetProxy = C9B8AA252B362DDE00C79606 /* PBXContainerItemProxy */;
+		};
+		C9B8AA2E2B36351E00C79606 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9FE53792A7662DC00CACA1A /* Editor */;
+			targetProxy = C9B8AA2D2B36351E00C79606 /* PBXContainerItemProxy */;
+		};
+		C9B8AA302B36359000C79606 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9B8A9DC2B31E43800C79606 /* TextSystem */;
+			targetProxy = C9B8AA2F2B36359000C79606 /* PBXContainerItemProxy */;
+		};
+		C9B8AA322B36369100C79606 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9FE53C72A77CC1E00CACA1A /* Theme */;
+			targetProxy = C9B8AA312B36369100C79606 /* PBXContainerItemProxy */;
+		};
+		C9B8AA342B36369500C79606 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9FE52F32A7539B100CACA1A /* ChimeKit */;
+			targetProxy = C9B8AA332B36369500C79606 /* PBXContainerItemProxy */;
+		};
 		C9BDB54F2B00FD89009225FB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C9BDB5472B00FD89009225FB /* SwiftExtension */;
@@ -3073,6 +3249,20 @@
 			};
 			name = Release;
 		};
+		C9B8AA292B362DDE00C79606 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9B8AA2C2B36326D00C79606 /* Preview.xcconfig */;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		C9B8AA2A2B362DDE00C79606 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9B8AA2C2B36326D00C79606 /* Preview.xcconfig */;
+			buildSettings = {
+			};
+			name = Release;
+		};
 		C9BDB5522B00FD89009225FB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C9BDB5542B00FF5A009225FB /* SwiftExtension.xcconfig */;
@@ -3133,6 +3323,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C92673282B04046700B3CE2F /* Edit-Debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 			};
 			name = Debug;
 		};
@@ -3140,6 +3331,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C9FE52CC2A752B4D00CACA1A /* Edit.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 			};
 			name = Release;
 		};
@@ -3378,6 +3570,15 @@
 			buildConfigurations = (
 				C9B8A9E42B31E43800C79606 /* Debug */,
 				C9B8A9E52B31E43800C79606 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C9B8AA2B2B362DDE00C79606 /* Build configuration list for PBXNativeTarget "Preview" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9B8AA292B362DDE00C79606 /* Debug */,
+				C9B8AA2A2B362DDE00C79606 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -3784,6 +3985,26 @@
 			productName = Rearrange;
 		};
 		C9B8A9ED2B31E83800C79606 /* TextStory */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C9891B262AFEC24100C8F393 /* XCRemoteSwiftPackageReference "TextStory" */;
+			productName = TextStory;
+		};
+		C9B8AA392B3636D000C79606 /* SourceView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C9409C672A98CCCB00B5D898 /* XCRemoteSwiftPackageReference "SourceView" */;
+			productName = SourceView;
+		};
+		C9B8AA3C2B3636F700C79606 /* RelativeCollections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C99491C82B1538FD002DC2AC /* XCRemoteSwiftPackageReference "RelativeCollections" */;
+			productName = RelativeCollections;
+		};
+		C9B8AA3E2B3636FB00C79606 /* Neon */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C926738F2B078D3200B3CE2F /* XCRemoteSwiftPackageReference "Neon" */;
+			productName = Neon;
+		};
+		C9B8AA442B36374700C79606 /* TextStory */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C9891B262AFEC24100C8F393 /* XCRemoteSwiftPackageReference "TextStory" */;
 			productName = TextStory;

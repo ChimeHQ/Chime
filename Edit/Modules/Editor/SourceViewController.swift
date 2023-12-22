@@ -2,7 +2,7 @@ import AppKit
 import SwiftUI
 
 import SourceView
-import TextViewPlus
+//import TextViewPlus
 import Theme
 
 public final class SourceViewController: NSViewController {
