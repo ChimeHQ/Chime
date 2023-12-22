@@ -1,6 +1,6 @@
 import Foundation
 
-public struct LineParser {
+public struct LineParser: Sendable {
 	private let nonWhitespaceCharacterSet = CharacterSet.whitespacesAndNewlines.inverted
 
 	public init() {

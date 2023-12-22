@@ -13,21 +13,13 @@ extension DocumentContext {
 	static let nonDocumentContext = DocumentContext()
 }
 
-extension DocumentContent {
-	/// This is a placeholder representing a non-document.
-	///
-	/// It exists to avoid annoying optionals or create a second form of ProjectWindowController.
-	static let nonDocumentContent = DocumentContent(storage: .null)
-}
-
 public final class DirectoryDocument: ContainedDocument<Project> {
 	private lazy var projectWindowController: ProjectWindowController = {
 		let placeholderController = NSHostingController(rootView: Color.orange)
 
 		return makeProjectWindowController(
 			contentViewController: placeholderController,
-			context: .nonDocumentContext,
-			content: .nonDocumentContent
+			context: .nonDocumentContext
 		)
 	}()
 

@@ -1,16 +1,20 @@
 import SwiftUI
 
-import DocumentContent
+import TextSystem
 import UIUtility
 
 public struct Gutter: View {
-	public init() {
+	private let textSystem: TextViewSystem
+
+	public init(textSystem: TextViewSystem) {
+		self.textSystem = textSystem
 	}
 	
     public var body: some View {
 		ZStack {
 			Color.yellow
-			RepresentableViewController({ LineNumberViewController() })
+			RepresentableViewController({ LineNumberViewController(textSystem: textSystem) })
+				.padding(EdgeInsets(top: 0.0, leading: 2.0, bottom: 0.0, trailing: 2.0))
 		}
 		.ignoresSafeArea()
     }

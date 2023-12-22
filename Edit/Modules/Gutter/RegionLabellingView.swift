@@ -19,11 +19,13 @@ extension CGRect {
 
 public struct LabelledRegion {
 	public let label: NSAttributedString
+	public let background: NSColor?
 	public let region: Region
 
-	public init(label: NSAttributedString, region: Region) {
+	public init(label: NSAttributedString, background: NSColor? = nil, region: Region) {
 		self.label = label
 		self.region = region
+		self.background = background
 	}
 }
 
@@ -47,12 +49,12 @@ public final class RegionLabellingView: NSView {
 
 		super.init(frame: .zero)
 	}
-	
+
 	@available(*, unavailable)
 	required init?(coder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
 	}
-	
+
 	public override var isFlipped: Bool { true }
 
 	public override var intrinsicContentSize: NSSize {
@@ -60,13 +62,22 @@ public final class RegionLabellingView: NSView {
 	}
 
 	public override func draw(_ dirtyRect: NSRect) {
-		let dirtyRegion = dirtyRect.verticalRegion
+		let dirtyRegion = dirtyRect.intersection(bounds).verticalRegion
 
 		let labelledRegions = provider(dirtyRegion)
 
 		for labelledRegion in labelledRegions {
+			if let color = labelledRegion.background {
+				color.setFill()
+				NSBezierPath.fill(boundingRectForRegion(labelledRegion.region))
+			}
+
 			drawLabelledRegion(labelledRegion)
 		}
+	}
+
+	private func boundingRectForRegion(_ region: Region) -> NSRect {
+		CGRect(x: 0.0, y: region.position, width: bounds.size.width, height: region.size)
 	}
 
 	private func drawLabelledRegion(_ labelledRegion: LabelledRegion) {

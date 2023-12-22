@@ -13,6 +13,14 @@ public struct RangedString: Hashable, Sendable {
 	public init(insert string: String, at location: Int) {
 		self.init(range: NSRange(location: location, length: 0), string: string)
 	}
+
+	public init(delete range: NSRange) {
+		self.init(range: range, string: "")
+	}
+
+	public var delta: Int {
+		string.utf16.count - range.length
+	}
 }
 
 /// Represents a single cursor within an editor view.

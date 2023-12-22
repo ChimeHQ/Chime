@@ -93,7 +93,7 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ChimeHQ/Neon.git",
       "state" : {
-        "revision" : "f12faf1e596b22a710456d59dcb4f56787507290"
+        "revision" : "6be0054bc778764242740ec203888c49483f6b19"
       }
     },
     {
@@ -136,7 +136,7 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ChimeHQ/RelativeCollections",
       "state" : {
-        "revision" : "6a52e050614a92cad3a474c0872071bc6fb19014"
+        "revision" : "20fbdb0c5948a205f4341c6a26d3bc84258cf56b"
       }
     },
     {

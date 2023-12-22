@@ -9,19 +9,22 @@ import Editor
 import ProcessEnv
 import ProjectWindow
 import TextStory
+import TextSystem
 import Theme
 import Utility
 
 public final class TextDocument: ContainedDocument<Project> {
+	typealias StorageDispatcher = TextStorageDispatcher<TextViewSystem.Version>
+
 	private let editorContentController: EditorContentViewController
 	private let sourceViewController: SourceViewController
 	private lazy var projectWindowController = makeProjectWindowController(
 		contentViewController: editorContentController,
-		context: state.context,
-		content: state.content
+		context: state.context
 	)
 
-	private let storageDispatcher: TextStorageDispatcher
+	private let textSystem: TextViewSystem
+	private let storageDispatcher: StorageDispatcher
 	private var isClosing = false
 	private let logger = Logger(type: TextDocument.self)
 	public var stateChangedHandler: (DocumentState, DocumentState) -> Void = { _, _ in }
@@ -31,17 +34,25 @@ public final class TextDocument: ContainedDocument<Project> {
 	}
 
 	override init() {
-		self.state = DocumentState()
 		self.sourceViewController = SourceViewController()
-		self.editorContentController = EditorContentViewController(sourceViewController: sourceViewController)
-		self.storageDispatcher = TextStorageDispatcher(monitors: [
-			state.content.metrics.textStorageMonitor,
-			state.content.notificationMonitor,
+		self.textSystem = TextViewSystem(textView: sourceViewController.textView)
+
+		self.state = DocumentState(contentId: textSystem.contentIdentity)
+
+		self.editorContentController = EditorContentViewController(textSystem: textSystem, sourceViewController: sourceViewController)
+		let dispatcher = StorageDispatcher(storage: textSystem.storage, monitors: [
+			textSystem.storageMonitor,
 		])
+
+		self.storageDispatcher = dispatcher
 
 	    super.init()
 
-		contentUpdated()
+		let textView = sourceViewController.textView
+
+		sourceViewController.shouldChangeTextHandler = {
+			dispatcher.textView(textView, shouldChangeTextIn: $0, replacementString: $1)
+		}
 	}
 
 	public var context: DocumentContext {
@@ -66,12 +77,16 @@ public final class TextDocument: ContainedDocument<Project> {
 
 	public override func read(from url: URL, ofType typeName: String) throws {
 		try MainActor.assumeIsolated {
+			let config = state.context.configuration
 			let theme = projectWindowController.theme
+			let context = Theme.Context(window: projectWindowController.window)
+			let attrs = theme.typingAttributes(tabWidth: config.tabWidth, context: context)
 
-			try sourceViewController.reload(from: url, documentConfiguration: state.context.configuration, theme: theme)
+			try textSystem.reload(from: url, attributes: attrs)
 
-			self.state.content.replaceStorage(sourceViewController.storage)
-			self.state.update(url: url, typeName: typeName)
+			let newContentId = textSystem.contentIdentity
+
+			self.state.update(url: url, typeName: typeName, contentId: newContentId)
 		}
 	}
 
@@ -110,18 +125,12 @@ public final class TextDocument: ContainedDocument<Project> {
 }
 
 extension TextDocument {
-	private func contentUpdated() {
-	}
-
 	private func stateUpdated(_ oldValue: DocumentState) {
 		if oldValue == state || isClosing {
 			return
 		}
 
 		logger.debug("document state changed")
-		contentUpdated()
-
-		projectWindowController.documentContent = state.content
 
 		stateChangedHandler(oldValue, state)
 	}

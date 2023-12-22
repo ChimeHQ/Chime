@@ -4,25 +4,27 @@ import UniformTypeIdentifiers
 import ChimeKit
 import DocumentContent
 
+@MainActor
 public struct DocumentState {
 	public internal(set) var context: DocumentContext
-	public internal(set) var content: DocumentContent
+	public private(set) var contentId: DocumentContentIdentity
 
-	private let temporaryID = UUID()
-
-	init() {
+	init(contentId: DocumentContentIdentity) {
 		self.context = DocumentContext()
-		self.content = DocumentContent(storage: .null)
+		self.contentId = contentId
 	}
 }
 
-extension DocumentState: Equatable {
+extension DocumentState {
+	public static func == (lhs: DocumentState, rhs: DocumentState) -> Bool {
+		lhs.context == rhs.context && lhs.contentId == rhs.contentId
+	}
 }
 
 extension DocumentState {
 	mutating func updateProjectContext(_ projectContext: ProjectContext?) {
 		self.context = DocumentContext(id: context.id,
-									   contentId: temporaryID,
+									   contentId: contentId,
 									   url: context.url,
 									   uti: context.uti,
 									   configuration: context.configuration,
@@ -32,7 +34,12 @@ extension DocumentState {
 	mutating func update(url: URL?) {
 		update(url: url, typeName: context.uti.identifier)
 	}
-	
+
+	mutating func update(url: URL?, typeName: String, contentId: DocumentContentIdentity) {
+		self.contentId = contentId
+		self.update(url: url, typeName: typeName)
+	}
+
 	mutating func update(url: URL?, typeName: String) {
 		let uti: UTType
 
@@ -46,7 +53,7 @@ extension DocumentState {
 		let config = context.configuration
 
 		self.context = DocumentContext(id: context.id,
-									   contentId: temporaryID,
+									   contentId: contentId,
 									   url: url,
 									   uti: uti,
 									   configuration: config,

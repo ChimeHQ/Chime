@@ -29,11 +29,10 @@ public final class ProjectWindowController: NSWindowController {
 	public init(
 		contentViewController: NSViewController,
 		context: DocumentContext,
-		content: DocumentContent,
 		siblingProvider: @escaping SiblingProvider,
 		onOpen: @escaping OnOpen
 	) {
-		let syncModel = WindowStateModel(context: context, content: content)
+		let syncModel = WindowStateModel(context: context)
 
 		let contentController = ProjectContentViewController(contentViewController: contentViewController)
 
@@ -70,15 +69,6 @@ public final class ProjectWindowController: NSWindowController {
 	@available(*, unavailable)
 	required init?(coder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
-	}
-
-//	public var documentContext: DocumentContext? {
-//		model.documentContext
-//	}
-
-	public var documentContent: DocumentContent {
-		get { model.documentContent }
-		set { model.documentContent = newValue }
 	}
 	
 	public var state: ProjectState? {

@@ -3,6 +3,7 @@ import SwiftUI
 
 import DocumentContent
 import Gutter
+import TextSystem
 import Theme
 import UIUtility
 
@@ -15,10 +16,12 @@ public final class EditorContentViewController: NSViewController {
 	let editorScrollView = NSScrollView()
 	let sourceViewController: SourceViewController
 	let editorState: EditorStateModel
+	let textSystem: TextViewSystem
 
-	public init(sourceViewController: SourceViewController) {
+	public init(textSystem: TextViewSystem, sourceViewController: SourceViewController) {
 		self.editorState = EditorStateModel()
 		self.sourceViewController = sourceViewController
+		self.textSystem = textSystem
 
 		super.init(nibName: nil, bundle: nil)
 
@@ -43,7 +46,7 @@ public final class EditorContentViewController: NSViewController {
 
 		let presentationController = SourcePresentationViewController(scrollView: editorScrollView)
 
-		presentationController.gutterView = NSHostingView(rootView: Gutter())
+		presentationController.gutterView = NSHostingView(rootView: Gutter(textSystem: textSystem))
 //		presentationController.underlayView = NSHostingView(rootView: Color.red)
 //		presentationController.overlayView = NSHostingView(rootView: Color.blue)
 		presentationController.documentView = sourceViewController.view
@@ -56,6 +59,7 @@ public final class EditorContentViewController: NSViewController {
 			RepresentableViewController({ presentationController })
 		}
 			.environment(editorState)
+			.environment(\.textViewSystem, textSystem)
 
 		self.view = NSHostingView(rootView: hostedView)
 	}

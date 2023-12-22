@@ -1,47 +1,8 @@
 import AppKit
 import Foundation
 
-public protocol TextStorageMonitor {
-	func willApplyMutations(_ mutations: [TextStorageMutation]) -> Void
-	func didApplyMutations(_ mutations: [TextStorageMutation]) -> Void
-	func didCompleteMutations(_ mutations: [TextStorageMutation]) -> Void
-}
-
-extension TextStorageMonitor {
-	public func willApplyMutations(_ mutations: [TextStorageMutation]) -> Void {}
-	public func didCompleteMutations(_ mutations: [TextStorageMutation]) -> Void {}
-}
-
-extension TextStorageMonitor where Self: AnyObject {
-	public var textStorageMonitor: TextStorageDispatcher.Monitor {
-		.init(
-			willApplyMutations: { [weak self] in self?.willApplyMutations($0) },
-			didApplyMutations: { [weak self] in self?.didApplyMutations($0) },
-			didCompleteMutations: { [weak self] in self?.didCompleteMutations($0) }
-		)
-	}
-}
-
-public final class TextStorageDispatcher {
-	public typealias Storage = TextStorage
-
-	public struct Monitor {
-		public typealias Handler = ([TextStorageMutation]) -> Void
-
-		public let willApplyMutations: Handler
-		public let didApplyMutations: Handler
-		public let didCompleteMutations: Handler
-
-		public init(
-			willApplyMutations: @escaping Handler,
-			didApplyMutations: @escaping Handler,
-			didCompleteMutations: @escaping Handler
-		) {
-			self.willApplyMutations = willApplyMutations
-			self.didApplyMutations = didApplyMutations
-			self.didCompleteMutations = didCompleteMutations
-		}
-	}
+public final class TextStorageDispatcher<Version> {
+	public typealias Storage = TextStorage<Version>
 
 	public enum AsynchronousMutationPhase {
 		case none
@@ -49,10 +10,10 @@ public final class TextStorageDispatcher {
 		case progress(Int, Int)
 	}
 
-	public var storage: Storage
-	public let monitors: [Monitor]
+	public let storage: Storage
+	public let monitors: [TextStorageMonitor]
 
-	public init(storage: Storage = .null, monitors: [Monitor]) {
+	public init(storage: Storage, monitors: [TextStorageMonitor]) {
 		self.storage = storage
 		self.monitors = monitors
 	}
@@ -64,7 +25,7 @@ public final class TextStorageDispatcher {
 	public func handleProposedMutations(_ mutations: [TextStorageMutation]) -> Bool {
 		beginEditing(with: mutations)
 
-		storage.applyMutation(mutations)
+		storage.applyMutations(mutations)
 
 		endEditing(with: mutations)
 		completeEditing(with: mutations)
@@ -104,13 +65,19 @@ extension TextStorageDispatcher {
 extension TextStorageDispatcher {
 	@MainActor
 	public func textView(_ textView: NSTextView, shouldChangeTextIn affectedCharRange: NSRange, replacementString: String?) -> Bool {
+		let cursor = Cursor(index: 0, selection: textView.selectedRange())
+
+		return shouldChangeText(in: affectedCharRange, replacementString: replacementString, cursor: cursor)
+	}
+
+	public func shouldChangeText(in range: NSRange, replacementString: String?, cursor: Cursor) -> Bool {
 		guard let string = replacementString else { return true }
 
-		let rangedString = RangedString(range: affectedCharRange, string: string)
-		let cursor = Cursor(index: 0, selection: textView.selectedRange())
+		let rangedString = RangedString(range: range, string: string)
 		let cursorMutation = CursorMutation(cursor: cursor, selection: nil)
 		let mutation = TextStorageMutation(stringMutations: [rangedString], cursorMutation: cursorMutation)
 
 		return handleProposedMutation(mutation)
+
 	}
 }

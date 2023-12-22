@@ -71,7 +71,7 @@ extension ApplicationServiceEventRouter {
 	}
 
 	private func documentStateChanged(_ document: TextDocument, _ oldState: DocumentState, _ newState: DocumentState) {
-		let changed = oldState != newState
+		let changed = (oldState == newState) == false
 
 		logger.info("State change: \(document.context.id, privacy: .public), \(changed, privacy: .public)")
 		if changed == false {

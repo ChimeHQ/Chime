@@ -15,7 +15,7 @@ final class NumberWidthCalculator {
 		}
 	}
 
-	var maximumLineNumber: Int = 0 {
+	var maximumNumber: Int = 0 {
 		didSet {
 			if cachedWidth == nil {
 				return
@@ -39,7 +39,7 @@ final class NumberWidthCalculator {
 	}
 
 	var minimumDigitsRequired: Int {
-		let total = max(maximumLineNumber + 1, reservedDigits)
+		let total = max(maximumNumber + 1, reservedDigits)
 
 		precondition(total > 0)
 

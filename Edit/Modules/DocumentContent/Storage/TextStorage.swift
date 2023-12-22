@@ -1,42 +1,66 @@
 import Foundation
 
-public struct TextStorage {
+public enum TextStorageError: Error {
+	case underlyingStorageInvalid
+	case rangeInvalid(NSRange, length: Int)
+	case stale
+}
+
+public struct TextStorage<Version> {
 	// mutation
 	public let beginEditing: () -> Void
 	public let endEditing: () -> Void
-	public let applyMutation: ([TextStorageMutation]) -> Void
+	public let applyMutations: ([TextStorageMutation]) -> Void
 
 	// read-only
-	public let length: () -> Int
-	public let substring: (NSRange) throws -> String
+	public let version: () -> Version
+	public let length: (Version) -> Int?
+	public let substring: (NSRange, Version) throws -> String
 
 	public init(
 		beginEditing: @escaping () -> Void,
 		endEditing: @escaping () -> Void,
-		applyMutation: @escaping ([TextStorageMutation]) -> Void,
-		length: @escaping () -> Int,
-		substring: @escaping (NSRange) throws -> String
+		applyMutations: @escaping ([TextStorageMutation]) -> Void,
+		version: @escaping () -> Version,
+		length: @escaping (Version) -> Int?,
+		substring: @escaping (NSRange, Version) throws -> String
 	) {
 		self.beginEditing = beginEditing
 		self.endEditing = endEditing
-		self.applyMutation = applyMutation
+		self.applyMutations = applyMutations
+		self.version = version
 		self.length = length
 		self.substring = substring
 	}
+
+	public var currentVersion: Version {
+		version()
+	}
+
+	public var currentLength: Int {
+		guard let value = length(currentVersion) else {
+			preconditionFailure("Calculating the length of the current storage version must always be possible")
+		}
+
+		return value
+	}
+
+	public func substring(with range: NSRange) throws -> String {
+		try substring(range, currentVersion)
+	}
 }
 
-public final class TextStorageReference {
-	var storage: TextStorage
-
-	public init(storage: TextStorage) {
-		self.storage = storage
-	}
-
-	public var length: Int {
-		storage.length()
-	}
-
-	public func substring(from range: NSRange) throws -> String {
-		try storage.substring(range)
+extension TextStorage where Version : AdditiveArithmetic {
+	public static func null() -> Self {
+		.init(
+			beginEditing: { },
+			endEditing: {},
+			applyMutations: { _ in },
+			version: { Version.zero },
+			length: { _ in 0},
+			substring: { range, _ in
+				throw TextStorageError.rangeInvalid(range, length: 0)
+			}
+		)
 	}
 }

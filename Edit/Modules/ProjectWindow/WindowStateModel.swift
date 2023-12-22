@@ -23,15 +23,13 @@ final class WindowStateModel {
 	var siblingProvider: SiblingProvider = { [] }
 	var currentTheme: Theme = Theme()
 	var documentContext: DocumentContext
-	var documentContent: DocumentContent
 
 	var projectState: ProjectState? {
 		didSet { stateUpdated() }
 	}
 
-	init(context: DocumentContext, content: DocumentContent) {
+	init(context: DocumentContext) {
 		self.documentContext = context
-		self.documentContent = content
 	}
 
 	func windowStateChanged(_ old: WindowStateObserver.State, _ new: WindowStateObserver.State) {
