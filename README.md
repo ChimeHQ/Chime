@@ -55,7 +55,7 @@ By participating in this project you agree to abide by the [Contributor Code of 
 - update `User.xcconfig` with your personal information
 - build/run with Xcode
 
-Why are their submodules you ask? Chime embeds many of its extensions inside the application itself for ease of installation. However, because of limitations in how you can influence the linking process with SPM, I cannot figure out how to use SPM *and also* link against the included ChimeKit.framework.
+Why the submodules you ask? Chime embeds many of its extensions inside the application itself for ease of installation. However, because of limitations in how you can influence the linking process with SPM, I cannot figure out how to use SPM *and also* link against the included ChimeKit.framework.
 
 ### Guidelines
 
