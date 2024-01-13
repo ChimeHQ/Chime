@@ -35,7 +35,6 @@ The project is [internally documented](Edit/Chime.docc) with [DocC](https://www.
 
 There are a few areas that would make for excellent targets though, if you really feel so inclined.
 
-- It would be really interesting to explore the [TreeSitterDocument](https://github.com/ChimeHQ/SwiftTreeSitter#treesitterdocument) concept
 - I'd love to expand on more [universal theme support](https://github.com/chimeHQ/ThemePark)
 - The text search system is bad and I'd love to build something better
 - The view-based [extension system][chimekit] could really use some more attention
