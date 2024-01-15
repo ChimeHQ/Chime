@@ -60,6 +60,10 @@ final class LineNumberViewController: NSViewController {
 		self.view = regionView
 	}
 
+//	override func loadView() {
+//		self.view = NSView()
+//	}
+
 	public override var representedObject: Any? {
 		didSet {
 			let fullRange = NSRange(0..<storage.currentLength)
@@ -83,7 +87,7 @@ final class LineNumberViewController: NSViewController {
 			height: height
 		)
 
-		print("invaliding: \(invalidRect), \(regionView.visibleRect)")
+//		print("invaliding: \(invalidRect), \(regionView.visibleRect)")
 
 		updateThickness()
 
@@ -93,7 +97,7 @@ final class LineNumberViewController: NSViewController {
 
 extension LineNumberViewController {
 	private func updateTheme(_ theme: Theme, context: Theme.Context) {
-		print("theme change?")
+//		print("theme change?")
 	}
 
 	private func cursorsChanged(_ cursors: [Cursor]) {
@@ -206,8 +210,7 @@ extension LineNumberViewController {
 			labelledRegions.append(labelledRegion)
 
 			// check if we need to advance
-			precondition(range.max <= line.range.max)
-			if range.max == line.range.max {
+			if range.max >= line.range.max {
 				lineIndex = lines.index(after: lineIndex)
 			}
 

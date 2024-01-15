@@ -2,7 +2,7 @@ import Foundation
 
 import Rearrange
 import RelativeCollections
-import Neon
+import RangeState
 
 extension RelativeList {
 	func replaceSubrange<Elements>(_ range: Range<Index>, with newElements: Elements) where WeightedValue == Elements.Element, Elements : Sequence {
@@ -61,7 +61,7 @@ public final class TextMetrics {
 	private lazy var rangeProcessor = Processor(
 		configuration: .init(
 			lengthProvider: { [storage] in storage.currentLength },
-			changeHandler: { self.didChange($0) }
+			changeHandler: { self.didChange($0, completion: $1) }
 		)
 	)
 
@@ -69,6 +69,7 @@ public final class TextMetrics {
 //	private let lineList = List()
 	private var lineList = List()
 	private let storage: Storage
+	private var thing: Int = 0
 
 	public init(storage: Storage) {
 		self.storage = storage
@@ -86,8 +87,8 @@ public final class TextMetrics {
 
 	public var valueProvider: ValueProvider {
 		.init(
-			processor: self,
-			lazyProcessor: rangeProcessor,
+			value: self,
+			rangeProcessor: rangeProcessor,
 			inputTransformer: { self.transformQuery($0) }
 		)
 	}
@@ -155,9 +156,9 @@ public final class TextMetrics {
 		get { invalidator.invalidationHandler }
 		set {
 			invalidator.invalidationHandler = { [rangeProcessor] in
-				let transformedSet = rangeProcessor.transformSetToCurrent($0)
+				let target = $0.apply(mutations: rangeProcessor.pendingMutations)
 
-				newValue(transformedSet)
+				newValue(target)
 			}
 		}
 	}
@@ -173,7 +174,7 @@ extension TextMetrics {
 	/// Apply an effective change.
 	///
 	/// This is invoked lazily by `rangeProcessor`.
-	private func didChange(_ mutation: RangeMutation) {
+	private func didChange(_ mutation: RangeMutation, completion: @escaping @MainActor () -> Void) {
 		let limit = mutation.postApplyLimit
 		let range = mutation.range
 		let delta = mutation.delta
@@ -202,7 +203,7 @@ extension TextMetrics {
 		let indexOffset = lowerIndex ?? 0
 		let includeLastLine = affectedRange.max == limit
 
-		DispatchQueue.global().async {
+		DispatchQueue.global().asyncUnsafe {
 			let newLines = self.parser.parseLines(in: substring, indexOffset: indexOffset, locationOffset: affectedRange.location, includeLastLine: includeLastLine)
 
 			let replacementRange = replacementLower..<replacementUpper
@@ -211,9 +212,9 @@ extension TextMetrics {
 
 			DispatchQueue.main.async {
 				self.lineList.replaceSubrange(replacementRange, with: weightedValues)
-					
-				self.rangeProcessor.completeContentChanged(mutation)
-				self.invalidator.invalidate(affectedRange)
+
+				completion()
+				self.invalidator.invalidate(.range(affectedRange))
 			}
 		}
 	}

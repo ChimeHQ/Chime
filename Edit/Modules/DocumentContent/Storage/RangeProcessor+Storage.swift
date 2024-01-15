@@ -1,13 +1,13 @@
 import Foundation
 
-import Neon
+import RangeState
 
 extension RangeProcessor {
 	func didApplyMutations(_ mutations: [TextStorageMutation]) {
 		let stringMutations = mutations.flatMap({ $0.stringMutations })
 
 		for mutation in stringMutations {
-			contentChanged(in: mutation.range, delta: mutation.delta)
+			didChangeContent(in: mutation.range, delta: mutation.delta)
 		}
 	}
 

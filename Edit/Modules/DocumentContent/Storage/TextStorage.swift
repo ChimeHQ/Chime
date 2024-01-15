@@ -6,7 +6,7 @@ public enum TextStorageError: Error {
 	case stale
 }
 
-public struct TextStorage<Version> {
+public struct TextStorage<Version: Sendable> {
 	// mutation
 	public let beginEditing: () -> Void
 	public let endEditing: () -> Void
@@ -47,6 +47,14 @@ public struct TextStorage<Version> {
 
 	public func substring(with range: NSRange) throws -> String {
 		try substring(range, currentVersion)
+	}
+
+	public var string: String {
+		guard let value = try? substring(with: NSRange(0..<currentLength)) else {
+			preconditionFailure("Failed to get a substring with the current length")
+		}
+
+		return value
 	}
 }
 

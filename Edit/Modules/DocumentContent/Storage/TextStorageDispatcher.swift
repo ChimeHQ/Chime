@@ -1,7 +1,7 @@
 import AppKit
 import Foundation
 
-public final class TextStorageDispatcher<Version> {
+public final class TextStorageDispatcher<Version: Sendable> {
 	public typealias Storage = TextStorage<Version>
 
 	public enum AsynchronousMutationPhase {

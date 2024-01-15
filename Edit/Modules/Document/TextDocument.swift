@@ -8,6 +8,7 @@ import DocumentContent
 import Editor
 import ProcessEnv
 import ProjectWindow
+import SyntaxService
 import TextStory
 import TextSystem
 import Theme
@@ -24,9 +25,11 @@ public final class TextDocument: ContainedDocument<Project> {
 	)
 
 	private let textSystem: TextViewSystem
+	private let syntaxService: SyntaxService
 	private let storageDispatcher: StorageDispatcher
 	private var isClosing = false
 	private let logger = Logger(type: TextDocument.self)
+	private let highlighter: Highligher
 	public var stateChangedHandler: (DocumentState, DocumentState) -> Void = { _, _ in }
 
 	private var state: DocumentState {
@@ -36,12 +39,13 @@ public final class TextDocument: ContainedDocument<Project> {
 	override init() {
 		self.sourceViewController = SourceViewController()
 		self.textSystem = TextViewSystem(textView: sourceViewController.textView)
-
+		self.syntaxService = SyntaxService(textSystem: textSystem, languageDataStore: LanguageDataStore.global)
+		self.highlighter = Highligher(textSystem: textSystem, syntaxService: syntaxService)
 		self.state = DocumentState(contentId: textSystem.contentIdentity)
-
 		self.editorContentController = EditorContentViewController(textSystem: textSystem, sourceViewController: sourceViewController)
 		let dispatcher = StorageDispatcher(storage: textSystem.storage, monitors: [
 			textSystem.storageMonitor,
+			syntaxService.storageMonitor
 		])
 
 		self.storageDispatcher = dispatcher
@@ -52,6 +56,18 @@ public final class TextDocument: ContainedDocument<Project> {
 
 		sourceViewController.shouldChangeTextHandler = {
 			dispatcher.textView(textView, shouldChangeTextIn: $0, replacementString: $1)
+		}
+
+		syntaxService.invalidationHandler = { [highlighter] in
+			highlighter.invalidate(.set($0))
+		}
+
+		editorContentController.contentVisbleRectChanged = { [highlighter] _ in
+			highlighter.visibleContentDidChange()
+		}
+
+		LanguageDataStore.global.configurationLoaded = { [weak syntaxService] in
+			syntaxService?.languageConfigurationChanged(for: $0)
 		}
 	}
 
@@ -132,6 +148,7 @@ extension TextDocument {
 
 		logger.debug("document state changed")
 
+		syntaxService.documentContextChanged(from: oldValue.context, to: state.context)
 		stateChangedHandler(oldValue, state)
 	}
 }
@@ -166,5 +183,14 @@ extension TextDocument: ProjectDocument {
 	}
 	
 	public func didCompleteOpen() {
+	}
+}
+
+extension TextDocument {
+	private func tokenStyle(for name: String) -> [NSAttributedString.Key : Any] {
+		let theme = projectWindowController.theme
+		let context = Theme.Context(window: projectWindowController.window)
+
+		return theme.syntaxStyle(for: name, context: context)
 	}
 }

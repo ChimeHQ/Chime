@@ -104,6 +104,12 @@ extension TextViewSystem {
 }
 
 extension TextViewSystem {
+	public var textPresentation: TextPresentation {
+		TextPresentation(textView: textView)
+	}
+}
+
+extension TextViewSystem {
 	public var storageMonitor: TextStorageMonitor {
 		TextStorageMonitor(
 			monitors: [
@@ -154,10 +160,12 @@ extension TextViewSystem {
 		self.textMetrics = TextMetrics(storage: storage)
 
 		textMetrics.invalidationHandler = {
+			let set = $0.indexSet(with: textStorage.length)
+
 			NotificationCenter.default.post(
 				name: TextMetrics.textMetricsDidChangeNotification,
 				object: self,
-				userInfo: [TextMetrics.invalidationSetKey: $0]
+				userInfo: [TextMetrics.invalidationSetKey: set]
 			)
 		}
 

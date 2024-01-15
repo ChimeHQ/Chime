@@ -1,6 +1,7 @@
 import Foundation
 import SwiftUI
 
+import ColorToolbox
 import Utility
 
 public struct ThemeKey: EnvironmentKey {
@@ -22,6 +23,8 @@ public struct Theme: Hashable, Sendable {
 
 		case statusBackground
 		case statusLabel
+
+		case syntaxSpecifier(String)
 	}
 
 	public enum ControlState {
@@ -70,6 +73,41 @@ extension Theme {
 			NSColor.green
 		case .statusLabel:
 			NSColor.white
+		case let .syntaxSpecifier(name):
+			resolveSyntaxColor(for: name)
+		}
+	}
+
+	private func resolveSyntaxColor(for specifier: String) -> NSColor {
+		syntaxColor(for: specifier) ?? NSColor.textColor
+	}
+
+	private func syntaxColor(for name: String) -> NSColor? {
+		switch name {
+		case "type":
+			NSColor(hex: "#8FBCBB")
+		case "member.constructor", "invocation.function", "member.method":
+			NSColor(hex: "#88C0D0")
+		case "parameter", "member.property":
+			NSColor(hex: "#D8DEE9")
+		case "invocation.macro":
+			NSColor(hex: "#526B9E")
+		case "keyword.return", "keyword.function", "keyword", "keyword.loop", "keyword.include", "keyword.conditional":
+			NSColor(hex: "#81A1C1")
+		case "keyword.operator.text", "keyword.operator":
+			NSColor(hex: "#81A1C1")
+		case "label":
+			NSColor(hex: "#526B9E")
+		case "comment":
+			NSColor(hex: "#4C566A")
+		case "literal.string", "literal.regex":
+			NSColor(hex: "#A3BE8C")
+		case "literal.boolean", "literal.float", "literal.number":
+			NSColor(hex: "#B48EAD")
+		case "variable", "variable.builtin":
+			NSColor(hex: "#D8DEE9")
+		default:
+			nil
 		}
 	}
 }

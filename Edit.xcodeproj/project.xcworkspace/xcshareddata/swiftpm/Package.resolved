@@ -18,6 +18,15 @@
       }
     },
     {
+      "identity" : "colortoolbox",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/raymondjavaxx/ColorToolbox",
+      "state" : {
+        "revision" : "77a4bcfd5073ca4f29d37bbce7fac20dd085eea2",
+        "version" : "1.0.1"
+      }
+    },
+    {
       "identity" : "containeddocument",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ChimeHQ/ContainedDocument.git",
@@ -89,11 +98,20 @@
       }
     },
     {
+      "identity" : "mainoffender",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/mattmassicotte/MainOffender.git",
+      "state" : {
+        "revision" : "750730d33acec0f79edc836221937389e7455bae",
+        "version" : "0.2.0"
+      }
+    },
+    {
       "identity" : "neon",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ChimeHQ/Neon.git",
       "state" : {
-        "revision" : "6be0054bc778764242740ec203888c49483f6b19"
+        "revision" : "e2a38d86a44964e9225e8651922dc1143623dc58"
       }
     },
     {
@@ -127,8 +145,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ChimeHQ/Rearrange",
       "state" : {
-        "revision" : "0fb658e721c68495f6340c211cc6d4719e6b52d8",
-        "version" : "1.6.0"
+        "revision" : "3b154b59176ce40839071e7830c83410a0139d86",
+        "version" : "1.8.0"
       }
     },
     {
@@ -170,8 +188,7 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ChimeHQ/SwiftTreeSitter",
       "state" : {
-        "revision" : "a9b1335d5151b62b11f07599bd07d07dc5965de3",
-        "version" : "0.7.2"
+        "revision" : "87ed52a71d4ad6b5e6a11185b42f6f74eb5b47da"
       }
     },
     {
@@ -180,6 +197,24 @@
       "location" : "https://github.com/ChimeHQ/TextStory.git",
       "state" : {
         "revision" : "5cd0787b43f038051d42b39db3319cbf78c42861"
+      }
+    },
+    {
+      "identity" : "tree-sitter-markdown",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/MDeiml/tree-sitter-markdown",
+      "state" : {
+        "branch" : "split_parser",
+        "revision" : "f9820b2db958228f9be339b67d2de874d065866e"
+      }
+    },
+    {
+      "identity" : "tree-sitter-swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/alex-pinkus/tree-sitter-swift/",
+      "state" : {
+        "branch" : "with-generated-files",
+        "revision" : "eda05af7ac41adb4eb19c346883c0fa32fe3bdd8"
       }
     },
     {

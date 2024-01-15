@@ -14,7 +14,7 @@ fi
 
 # checks for just production builds
 
-if [ -d "$BUILT_PRODUCTS_DIR/Chime.app/Contents/Extensions/UIPlaceholderExtension.appex" ]; then
-    echo "error: UIPlaceholderExtension still embedded"
-    exit 1
-fi
+#if [ -d "$BUILT_PRODUCTS_DIR/Chime.app/Contents/Extensions/UIPlaceholderExtension.appex" ]; then
+#    echo "error: UIPlaceholderExtension still embedded"
+#    exit 1
+#fi

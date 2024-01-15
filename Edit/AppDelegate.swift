@@ -3,9 +3,9 @@ import OSLog
 
 import ChimeKit
 import Document
+import ExtensionHost
 import PreferencesWindow
 import ServiceConnection
-import ExtensionHost
 
 @main
 @MainActor

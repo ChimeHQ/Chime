@@ -10,6 +10,7 @@ public struct TextLayout {
 	}
 
 	public let visibleRect: () -> NSRect
+	public let visibleRange: () -> NSRange
 	public let lineFragmentsInRect: (NSRect) -> [LineFragment]
 	public let lineFragmentsInRange: (NSRange) -> [LineFragment]
 }
@@ -106,6 +107,16 @@ extension TextLayout {
 		self.init(
 			visibleRect: {
 				textLayoutManager.textViewportLayoutController.viewportBounds
+			},
+			visibleRange: {
+				guard
+					let contentManager = textLayoutManager.textContentManager,
+					let textRange = textLayoutManager.textViewportLayoutController.viewportRange
+				else {
+					return .zero
+				}
+
+				return NSRange(textRange, provider: contentManager)
 			},
 			lineFragmentsInRect: { rect in
 				guard let contentManager = textLayoutManager.textContentManager else { return [] }
