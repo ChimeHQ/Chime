@@ -111,7 +111,7 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ChimeHQ/Neon.git",
       "state" : {
-        "revision" : "e2a38d86a44964e9225e8651922dc1143623dc58"
+        "revision" : "0e73c2df944b717aba57bb8c53f31605ff33a731"
       }
     },
     {
