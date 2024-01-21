@@ -87,9 +87,10 @@ public final class TextMetrics {
 
 	public var valueProvider: ValueProvider {
 		.init(
-			value: self,
 			rangeProcessor: rangeProcessor,
-			inputTransformer: { self.transformQuery($0) }
+			inputTransformer: transformQuery,
+			syncValue: { _ in self },
+			asyncValue: { _ in self }
 		)
 	}
 

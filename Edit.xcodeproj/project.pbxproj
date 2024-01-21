@@ -4107,8 +4107,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ChimeHQ/ChimeKit.git";
 			requirement = {
-				kind = revision;
-				revision = cef43ff45c87b10434e43eb276c1c8666bd9a393;
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.4.2;
 			};
 		};
 		C9FE53372A75A75400CACA1A /* XCRemoteSwiftPackageReference "WindowTreatment" */ = {
