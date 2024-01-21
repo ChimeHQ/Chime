@@ -223,7 +223,7 @@ extension TextMetrics {
 
 extension TextMetrics {
 	private func firstLineIndex(after location: Int) -> Int? {
-		lineList.firstIndex { record in
+		lineList.binarySearch { record, _ in
 			location < record.dependency
 		}
 	}
