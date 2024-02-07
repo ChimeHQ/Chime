@@ -31,6 +31,7 @@ struct TrailingSidebarView<Content: View>: View {
         return Divider().opacity(ignoringTopSafeArea ? 0.0 : 1.0)
     }
 
+	@MainActor
     private var leadingDivider: some View {
         return Rectangle()
             .frame(width: 1, height: nil)

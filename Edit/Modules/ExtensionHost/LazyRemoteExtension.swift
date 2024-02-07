@@ -137,7 +137,7 @@ final class LazyRemoteExtension {
 
 @available(macOS 13.0, *)
 extension LazyRemoteExtension: ExtensionProtocol {
-	var applicationService: ApplicationService {
+	var applicationService: some ApplicationService {
 		get throws { runningExtension.remoteExtension }
 	}
 }

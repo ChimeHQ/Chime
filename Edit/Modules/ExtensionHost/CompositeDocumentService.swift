@@ -5,69 +5,69 @@ import ChimeKit
 import Utility
 
 @MainActor
-struct CompositeDocumentService {
+public struct CompositeDocumentService {
     let context: DocumentContext
-    let documentServices: [DocumentService]
+    let documentServices: [any DocumentService]
     private let logger = Logger(type: CompositeDocumentService.self)
 
-    init(context: DocumentContext, documentServices: [DocumentService]) {
+    init(context: DocumentContext, documentServices: [any DocumentService]) {
         self.context = context
         self.documentServices = documentServices
     }
 }
 
 extension CompositeDocumentService: DocumentService {
-    func willApplyChange(_ change: CombinedTextChange) throws {
+	public func willApplyChange(_ change: CombinedTextChange) throws {
         for service in documentServices {
             try service.willApplyChange(change)
         }
     }
 
-    func didApplyChange(_ change: CombinedTextChange) throws {
+	public  func didApplyChange(_ change: CombinedTextChange) throws {
         for service in documentServices {
             try service.didApplyChange(change)
         }
     }
 
-    func willSave() throws {
+	public func willSave() throws {
         for service in documentServices {
             try service.willSave()
         }
     }
 
-    func didSave() throws {
+	public func didSave() throws {
         for service in documentServices {
             try service.didSave()
         }
     }
 
-    var completionService: CompletionService? {
+	public var completionService: Self? {
         get throws { return self }
     }
 
-    var formattingService: FormattingService? {
+	public var formattingService: Self? {
         get throws { return self }
     }
 
-    var semanticDetailsService: SemanticDetailsService? {
+	public var semanticDetailsService: Self? {
         get throws { return self }
     }
 
-    var defintionService: DefinitionService? {
+	public var defintionService: Self? {
         get throws { return self }
     }
 
-    var tokenService: TokenService? {
+	public var tokenService: Self? {
         get throws { return self }
     }
 
-    var symbolService: SymbolQueryService? {
+	public var symbolService: Self? {
         get throws { return self }
     }
 }
 
 extension CompositeDocumentService: CompletionService {
-    func completions(at position: CombinedTextPosition, trigger: CompletionTrigger) async throws -> [Completion] {
+	public func completions(at position: CombinedTextPosition, trigger: CompletionTrigger) async throws -> [Completion] {
         var values = [Completion]()
 
         for service in documentServices {
@@ -89,7 +89,7 @@ extension CompositeDocumentService: FormattingService {
     // to go out to each extension, and may not guarantee the same
     // extension replies each time.
 
-    func formatting(for ranges: [CombinedTextRange]) async throws -> [TextChange] {
+	public func formatting(for ranges: [CombinedTextRange]) async throws -> [TextChange] {
         for service in documentServices {
             do {
                 if let values = try await service.formattingService?.formatting(for: ranges) {
@@ -105,7 +105,7 @@ extension CompositeDocumentService: FormattingService {
         return []
     }
 
-    func organizeImports() async throws -> [TextChange] {
+	public func organizeImports() async throws -> [TextChange] {
         for service in documentServices {
             do {
                 if let values = try await service.formattingService?.organizeImports() {
@@ -123,7 +123,7 @@ extension CompositeDocumentService: FormattingService {
 }
 
 extension CompositeDocumentService: SemanticDetailsService {
-    func semanticDetails(at position: CombinedTextPosition) async throws -> SemanticDetails? {
+	public func semanticDetails(at position: CombinedTextPosition) async throws -> SemanticDetails? {
         for service in documentServices {
             do {
                 if let values = try await service.semanticDetailsService?.semanticDetails(at: position) {
@@ -141,7 +141,7 @@ extension CompositeDocumentService: SemanticDetailsService {
 }
 
 extension CompositeDocumentService: TokenService {
-    func tokens(in range: CombinedTextRange) async throws -> [Token] {
+	public func tokens(in range: CombinedTextRange) async throws -> [Token] {
         var values = [Token]()
 
         for service in documentServices {
@@ -159,7 +159,7 @@ extension CompositeDocumentService: TokenService {
 }
 
 extension CompositeDocumentService: DefinitionService {
-    func definitions(at position: CombinedTextPosition) async throws -> [DefinitionLocation] {
+	public func definitions(at position: CombinedTextPosition) async throws -> [DefinitionLocation] {
         var values = [DefinitionLocation]()
 
         for service in documentServices {
@@ -177,7 +177,7 @@ extension CompositeDocumentService: DefinitionService {
 }
 
 extension CompositeDocumentService: SymbolQueryService {
-    func symbols(matching query: String) async throws -> [Symbol] {
+	public func symbols(matching query: String) async throws -> [Symbol] {
         var values = [Symbol]()
 
         for service in documentServices {

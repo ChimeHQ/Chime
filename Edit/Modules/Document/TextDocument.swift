@@ -6,6 +6,8 @@ import ChimeKit
 import ContainedDocument
 import DocumentContent
 import Editor
+import ExtensionHost
+import Highlighting
 import ProcessEnv
 import ProjectWindow
 import SyntaxService
@@ -14,6 +16,7 @@ import TextSystem
 import Theme
 import Utility
 
+@MainActor
 public final class TextDocument: ContainedDocument<Project> {
 	typealias StorageDispatcher = TextStorageDispatcher<TextViewSystem.Version>
 
@@ -24,13 +27,14 @@ public final class TextDocument: ContainedDocument<Project> {
 		context: state.context
 	)
 
-	private let textSystem: TextViewSystem
 	private let syntaxService: SyntaxService
 	private let storageDispatcher: StorageDispatcher
 	private var isClosing = false
 	private let logger = Logger(type: TextDocument.self)
-	private let highlighter: Highligher
+	private let highlighter: Highlighter<ExtensionRouter.TokenService>
+	public let textSystem: TextViewSystem
 	public var stateChangedHandler: (DocumentState, DocumentState) -> Void = { _, _ in }
+	public let layoutBuffer = LayoutInvalidationBuffer()
 
 	private var state: DocumentState {
 		didSet { stateUpdated(oldValue) }
@@ -40,12 +44,13 @@ public final class TextDocument: ContainedDocument<Project> {
 		self.sourceViewController = SourceViewController()
 		self.textSystem = TextViewSystem(textView: sourceViewController.textView)
 		self.syntaxService = SyntaxService(textSystem: textSystem, languageDataStore: LanguageDataStore.global)
-		self.highlighter = Highligher(textSystem: textSystem, syntaxService: syntaxService)
+		self.highlighter = Highlighter(textSystem: textSystem, syntaxService: syntaxService)
 		self.state = DocumentState(contentId: textSystem.contentIdentity)
 		self.editorContentController = EditorContentViewController(textSystem: textSystem, sourceViewController: sourceViewController)
 		let dispatcher = StorageDispatcher(storage: textSystem.storage, monitors: [
 			textSystem.storageMonitor,
-			syntaxService.storageMonitor
+			syntaxService.storageMonitor,
+			highlighter.storageMonitor
 		])
 
 		self.storageDispatcher = dispatcher
@@ -58,12 +63,23 @@ public final class TextDocument: ContainedDocument<Project> {
 			dispatcher.textView(textView, shouldChangeTextIn: $0, replacementString: $1)
 		}
 
-		syntaxService.invalidationHandler = { [highlighter] in
-			highlighter.invalidate(.set($0))
+		sourceViewController.selectionChangedHandler = { [editorContentController] in
+			editorContentController.selectedRanges = $0
 		}
 
-		editorContentController.contentVisbleRectChanged = { [highlighter] _ in
+		sourceViewController.willLayoutHandler = { [layoutBuffer] in layoutBuffer.willLayout() }
+		sourceViewController.didLayoutHandler = { [layoutBuffer] in layoutBuffer.didLayout() }
+
+		syntaxService.invalidationHandler = { [highlighter] in
+			highlighter.invalidate(textTarget: $0)
+		}
+
+		layoutBuffer.handler = { [highlighter] in
 			highlighter.visibleContentDidChange()
+		}
+
+		editorContentController.contentVisibleRectChanged = { [layoutBuffer] _ in
+			layoutBuffer.contentVisibleRectChanged()
 		}
 
 		LanguageDataStore.global.configurationLoaded = { [weak syntaxService] in
@@ -149,6 +165,8 @@ extension TextDocument {
 		logger.debug("document state changed")
 
 		syntaxService.documentContextChanged(from: oldValue.context, to: state.context)
+		highlighter.documentContextChanged(from: oldValue.context, to: state.context)
+
 		stateChangedHandler(oldValue, state)
 	}
 }
@@ -171,18 +189,32 @@ extension TextDocument: ProjectDocument {
 		return fileURL?.deletingLastPathComponent()
 	}
 
-	public func updateApplicationService(_ service: any ApplicationService) {
+	public func willRemoveDocument() {
+	}
+	
+	public func didCompleteOpen() {
+	}
+}
+
+extension TextDocument {
+	public func updateApplicationService(_ service: ExtensionRouter) {
 		do {
 			projectWindowController.symbolQueryService = try projectContext.flatMap { try service.symbolService(for: $0) }
 		} catch {
 			logger.error("Failed to update symbolService: \(error, privacy: .public)")
 		}
+
+		do {
+			let docService = try service.documentService(for: context)
+
+			self.highlighter.tokenService = try docService?.tokenService
+		} catch {
+			logger.error("Failed to create new document service connection: \(error, privacy: .public)")
+		}
 	}
-	
-	public func willRemoveDocument() {
-	}
-	
-	public func didCompleteOpen() {
+
+	public func invalidateTokens(_ target: TextTarget) {
+		highlighter.invalidate(textTarget: target)
 	}
 }
 

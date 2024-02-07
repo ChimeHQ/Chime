@@ -4,15 +4,21 @@ import OSLog
 
 import ChimeKit
 import Document
+import ExtensionHost
 import Utility
 
 @MainActor
 final class ApplicationServiceEventRouter {
 	private let logger = Logger(type: ApplicationServiceEventRouter.self)
-	private let extensionInterface: any ExtensionProtocol
+	private let extensionInterface: ExtensionRouter
+	private let host: AppHost
+	private let documentController: ProjectDocumentController
+	private var tokenInvalidationTasks = [DocumentIdentity: Task<Void, Never>]()
 
-	init(documentController: ProjectDocumentController, extensionInterface: any ExtensionProtocol) {
+	init(documentController: ProjectDocumentController, extensionInterface: ExtensionRouter, host: AppHost) {
 		self.extensionInterface = extensionInterface
+		self.host = host
+		self.documentController = documentController
 
 		documentController.projectAddedHandler = { [weak self] in self?.projectAdded($0) }
 		documentController.projectRemovedHandler = { [weak self] in self?.projectRemoved($0) }
@@ -22,8 +28,20 @@ final class ApplicationServiceEventRouter {
 }
 
 extension ApplicationServiceEventRouter {
-	private var appService: any ApplicationService {
-		get throws { try extensionInterface.applicationService }
+	public func extensionsWillChange() {
+
+	}
+
+	public func extensionsDidChange() {
+		for document in documentController.projectDocuments {
+			updateAppService(for: document)
+		}
+	}
+}
+
+extension ApplicationServiceEventRouter {
+	private var appService: ExtensionRouter.AppService {
+		get throws { extensionInterface.applicationService }
 	}
 
 	private func projectAdded(_ project: Project) {
@@ -45,8 +63,6 @@ extension ApplicationServiceEventRouter {
 	private func documentOpened(_ document: any ProjectDocument) {
 		logger.info("Document opened")
 
-		updateAppService(for: document)
-
 		guard let doc = document as? TextDocument else {
 			return
 		}
@@ -58,6 +74,9 @@ extension ApplicationServiceEventRouter {
 		} catch {
 			logger.error("Failed to route didOpenDocument: \(error, privacy: .public)")
 		}
+
+		updateAppService(for: document)
+		beginMonitoring(for: doc.context.id)
 	}
 
 	private func documentClosed(_ document: NSDocument) {
@@ -68,6 +87,8 @@ extension ApplicationServiceEventRouter {
 		} catch {
 			logger.error("Failed to route didOpenDocument: \(error, privacy: .public)")
 		}
+
+		endMonitoring(for:  doc.context.id)
 	}
 
 	private func documentStateChanged(_ document: TextDocument, _ oldState: DocumentState, _ newState: DocumentState) {
@@ -89,5 +110,20 @@ extension ApplicationServiceEventRouter {
 		} catch {
 			logger.error("Failed to update document application service: \(error, privacy: .public)")
 		}
+	}
+
+	private func beginMonitoring(for documentId: DocumentIdentity) {
+		tokenInvalidationTasks[documentId] = Task { [host, documentController] in
+			for await invalidation in host.tokenInvalidateSequence(for: documentId) {
+				if let textDoc = documentController.textDocument(for: documentId) {
+					textDoc.invalidateTokens(invalidation)
+				}
+			}
+		}
+	}
+
+	private func endMonitoring(for documentId: DocumentIdentity) {
+		tokenInvalidationTasks[documentId]?.cancel()
+		tokenInvalidationTasks[documentId] = nil
 	}
 }

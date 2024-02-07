@@ -1,4 +1,3 @@
-import Combine
 import Foundation
 import OSLog
 
@@ -17,6 +16,7 @@ public final class AppHost {
     public typealias ServiceConfigurationHandler = (ServiceConfiguration) -> Void
     public typealias ContentProvider = (UUID) throws -> (String, Int)
     public typealias CombinedContentProvider = (UUID, ChimeKit.TextRange) throws -> CombinedTextContent
+	public typealias InvalidationSequence = AsyncStream<TextTarget>
 
     public struct Configuration {
         public let contentProvider: ContentProvider
@@ -33,28 +33,22 @@ public final class AppHost {
 
     private let config: Configuration
     private let logger = Logger(type: AppHost.self)
-    private var diagnosticsSubject: CurrentValueSubject<[URL: DocumentDiagnostics], Never>
-    private var tokenInvalidationSubjects: [DocumentIdentity: PassthroughSubject<TextTarget, Never>]
+//    private var diagnosticsSubject: CurrentValueSubject<[URL: DocumentDiagnostics], Never>
+	private var tokenInvalidationSequences: [DocumentIdentity: InvalidationSequence.Pair]
     private var serviceConfigurationHandlers = [DocumentIdentity: ServiceConfigurationHandler]()
     private var hostedProcesses = [UUID: Process]()
 
     public init(config: Configuration) {
         self.config = config
-        self.diagnosticsSubject = CurrentValueSubject([:])
-        self.tokenInvalidationSubjects = [:]
+//        self.diagnosticsSubject = CurrentValueSubject([:])
+        self.tokenInvalidationSequences = [:]
     }
 
-    private func tokenInvalidateSubject(for id: DocumentIdentity) -> PassthroughSubject<TextTarget, Never> {
-        if let existing = tokenInvalidationSubjects[id] {
-            return existing
-        }
-
-        let subject = PassthroughSubject<TextTarget, Never>()
-
-        tokenInvalidationSubjects[id] = subject
-
-        return subject
-    }
+	private func tokenInvalidationSequence(for documentId: DocumentIdentity) -> InvalidationSequence.Pair {
+		tokenInvalidationSequences.getOrFill(key: documentId) {
+			InvalidationSequence.makeStream()
+		}
+	}
 }
 
 extension AppHost: HostProtocol {
@@ -67,7 +61,7 @@ extension AppHost: HostProtocol {
     }
 
     public func textBounds(for documentId: DocumentIdentity, in ranges: [ChimeKit.TextRange], version: Int) async throws -> [NSRect] {
-        throw ServiceProviderError.unsupported
+		throw ChimeExtensionError.unsupported
 //        guard let doc = textDocument(for: documentId) else {
 //            throw ServiceProviderError.unsupported
 //        }
@@ -91,19 +85,19 @@ extension AppHost: HostProtocol {
     }
 
     public func publishDiagnostics(_ diagnostics: [Diagnostic], for documentURL: URL, version: Int?) {
-        DispatchQueue.main.async {
-            var newValue = self.diagnosticsSubject.value
-
-            newValue[documentURL] = DocumentDiagnostics(version: version, url: documentURL, diagnostics: diagnostics)
-
-            self.diagnosticsSubject.send(newValue)
-        }
+//        DispatchQueue.main.async {
+//            var newValue = self.diagnosticsSubject.value
+//
+//            newValue[documentURL] = DocumentDiagnostics(version: version, url: documentURL, diagnostics: diagnostics)
+//
+//            self.diagnosticsSubject.send(newValue)
+//        }
     }
 
     public func invalidateTokens(for documentId: DocumentIdentity, in target: TextTarget) {
-        let subject = self.tokenInvalidateSubject(for: documentId)
+		let seqPair = tokenInvalidationSequence(for: documentId)
 
-        subject.send(target)
+		seqPair.1.yield(target)
     }
 
     public func serviceConfigurationChanged(for documentId: DocumentIdentity, to configuration: ServiceConfiguration) {
@@ -166,12 +160,12 @@ extension AppHost {
 }
 
 extension AppHost {
-    public var diagnosticsPublisher: some Publisher<[URL: DocumentDiagnostics], Never> {
-        return diagnosticsSubject
-    }
+//    public var diagnosticsPublisher: some Publisher<[URL: DocumentDiagnostics], Never> {
+//        return diagnosticsSubject
+//    }
 
-    public func tokenInvalidatePublisher(for documentId: DocumentIdentity) -> some Publisher<TextTarget, Never> {
-        return tokenInvalidateSubject(for: documentId)
+    public func tokenInvalidateSequence(for documentId: DocumentIdentity) -> InvalidationSequence {
+		tokenInvalidationSequence(for: documentId).0
     }
 
     public func setServiceConfigurationHandler(for documentId: DocumentIdentity, handler: ServiceConfigurationHandler?) {

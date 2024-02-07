@@ -18,7 +18,7 @@ final class FilteringExtension<Extension: ExtensionProtocol> {
 		self.deactivateBlock = deactivate
 	}
 
-	private var wrappedAppService: ApplicationService {
+	private var wrappedAppService: Extension.AppService {
 		get throws { try wrappedExtension.applicationService }
 	}
 }
@@ -127,7 +127,7 @@ extension FilteringExtension: ExtensionProtocol {
 		get throws { try wrappedExtension.configuration }
 	}
 
-	var applicationService: ApplicationService {
+	var applicationService: some ApplicationService {
 		get throws { self }
 	}
 }
@@ -185,22 +185,25 @@ extension FilteringExtension: ApplicationService {
 		try unfilteredWillCloseDocument(with: context)
 	}
 
-	func documentService(for context: DocumentContext) throws -> DocumentService? {
-		guard try checkActive(for: context) else { return nil }
+	func documentService(for context: DocumentContext) throws -> (some DocumentService)? {
+		let nilValue: Extension.AppService.DocumentServiceType? = nil
+
+		guard try checkActive(for: context) else { return nilValue }
 
 		guard let service = try wrappedAppService.documentService(for: context) else {
-			return nil
+			return nilValue
 		}
 
 		guard try configuration.isDocumentIncluded(context) else {
-			return nil
+			return nilValue
 		}
 
 		return service
 	}
 
-	func symbolService(for context: ProjectContext) throws -> SymbolQueryService? {
-		guard try checkActive(for: context) else { return nil }
+	func symbolService(for context: ProjectContext) throws -> (some SymbolQueryService)? {
+		// little bit tricky to return nil here
+		guard try checkActive(for: context) else { return Extension.AppService.SymbolQueryServiceType?.none }
 
 		return try wrappedAppService.symbolService(for: context)
 	}

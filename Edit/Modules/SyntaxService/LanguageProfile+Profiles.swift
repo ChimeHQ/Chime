@@ -3,9 +3,11 @@ import Foundation
 import SwiftTreeSitter
 import UniformTypeIdentifiers
 
-import TreeSitterSwift
+import TreeSitterGo
 import TreeSitterMarkdown
 import TreeSitterMarkdownInline
+import TreeSitterSwift
+
 
 extension LanguageProfile {
 	static func profile(for utType: UTType) -> LanguageProfile {
@@ -21,11 +23,20 @@ extension LanguageProfile {
 			return LanguageProfile.swiftProfile
 		}
 
+		if utType.conforms(to: .goSource) {
+			return LanguageProfile.goProfile
+		}
+
 		return LanguageProfile.genericProfile
 	}
 }
 
 extension LanguageProfile {
+	static let goProfile = LanguageProfile(
+		name: "Go",
+		language: Language(tree_sitter_go())
+	)
+
 	static let markdownProfile = LanguageProfile(
 		name: "Markdown",
 		language: Language(tree_sitter_markdown())

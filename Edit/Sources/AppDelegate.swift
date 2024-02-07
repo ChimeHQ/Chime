@@ -1,20 +1,16 @@
 import AppKit
 import OSLog
 
-import ChimeKit
 import Document
 import ExtensionHost
 import PreferencesWindow
-import ServiceConnection
 
 @main
 @MainActor
 final class AppDelegate: NSObject, NSApplicationDelegate {
     private let documentController: ProjectDocumentController
-    private let extensionManager: ExtensionManager
-    private let appHost: AppHost
     private lazy var preferencesController = PreferencesWindowController()
-	private let eventRouter: ApplicationServiceEventRouter
+	private let extensionSystem: ExtensionSystem
 
     override init() {
         UserDefaults.standard.register(defaults: [
@@ -23,16 +19,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 
         // NSDocumentController subclass instances must be manually created before any NSDocumentController functionality is used
         self.documentController = ProjectDocumentController()
-
-        let appHostConfig = AppHost.Configuration(
-            contentProvider: { _ in throw ServiceProviderError.unsupported },
-            combinedContentProvider: { _, _ in throw ServiceProviderError.unsupported }
-        )
-
-        self.appHost = AppHost(config: appHostConfig)
-        self.extensionManager = ExtensionManager(host: appHost)
-		self.eventRouter = ApplicationServiceEventRouter(documentController: documentController,
-														 extensionInterface: extensionManager.extensionInterface)
+		self.extensionSystem = ExtensionSystem(documentController: documentController)
 
 		super.init()
     }

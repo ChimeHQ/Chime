@@ -10,11 +10,11 @@ public struct TextPresentation {
 extension TextPresentation {
 	@MainActor
 	public init(textView: NSTextView) {
-		guard let textLayoutManager = textView.textLayoutManager else {
-			fatalError("This only supports TextKit 2 views")
+		if let textLayoutManager = textView.textLayoutManager {
+			self.init(textLayoutManager: textLayoutManager)
+		} else {
+			self.init(layoutManager: textView.layoutManager!)
 		}
-		
-		self.init(textLayoutManager: textLayoutManager)
 	}
 	
 	@MainActor
@@ -39,6 +39,15 @@ extension TextPresentation {
 				if let selection {
 					textView?.selectedRanges = selection
 				}
+			}
+		)
+	}
+
+	@MainActor
+	public init(layoutManager: NSLayoutManager) {
+		self.init(
+			applyRenderingStyle: { attrs, range in
+				layoutManager.setTemporaryAttributes(attrs, forCharacterRange: range)
 			}
 		)
 	}

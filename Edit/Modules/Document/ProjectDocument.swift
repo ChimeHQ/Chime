@@ -3,6 +3,7 @@ import AppKit
 import ChimeKit
 import ContainedDocument
 import DocumentContent
+import ExtensionHost
 import ProjectWindow
 
 /// Common interface for all documents contained within a Project.
@@ -16,8 +17,8 @@ public protocol ProjectDocument: ContainedDocument<Project>, Hashable {
 	var defaultProjectRoot: URL? { get }
 
 	@MainActor
-	func updateApplicationService(_ service: any ApplicationService)
-	
+	func updateApplicationService(_ service: ExtensionRouter)
+
 	@MainActor
 	func willRemoveDocument()
 	@MainActor

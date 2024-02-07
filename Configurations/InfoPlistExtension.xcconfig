@@ -1,0 +1,4 @@
+#include "Configurations/Extension.xcconfig"
+
+INFOPLIST_FILE = Extensions/${TARGET_NAME}/Info.plist
+ 

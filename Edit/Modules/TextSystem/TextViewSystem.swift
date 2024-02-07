@@ -154,7 +154,7 @@ extension TextViewSystem {
 
 extension TextViewSystem {
 	private func replaceTextStorage(_ textStorage: TSYTextStorage) {
-		textView.textContentStorage?.textStorage = textStorage
+		textView.replaceTextStorage(textStorage)
 
 		// create a fresh copy here because everything has changed
 		self.textMetrics = TextMetrics(storage: storage)

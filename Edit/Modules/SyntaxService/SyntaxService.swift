@@ -12,6 +12,21 @@ import TreeSitterClient
 import UniformTypeIdentifiers
 import Utility
 
+extension TextTarget {
+	@MainActor
+	public init(rangeTarget: RangeTarget) {
+		switch rangeTarget {
+		case .all:
+			self = .all
+		case let .range(range):
+			self = .range(TextRange.range(range))
+		case let .set(set):
+			self = .set(set)
+		}
+	}
+}
+
+
 @MainActor
 public final class SyntaxService {
 	private enum State {
@@ -26,21 +41,11 @@ public final class SyntaxService {
 
 	private let languageDataStore: LanguageDataStore
 	private let textSystem: TextViewSystem
-	private let invalidatorBuffer = RangeInvalidationBuffer()
-	public var invalidationHandler: (IndexSet) -> Void {
-		didSet {
-			invalidatorBuffer.invalidationHandler = { [textSystem, invalidationHandler] target in
-				let set = target.indexSet(with: textSystem.storage.currentLength)
-
-				invalidationHandler(set)
-			}	
-		}
-	}
+	public var invalidationHandler: (TextTarget) -> Void = { _ in }
 
 	public init(textSystem: TextViewSystem, languageDataStore: LanguageDataStore) {
 		self.textSystem = textSystem
 		self.languageDataStore = languageDataStore
-		self.invalidationHandler = { _ in }
 	}
 
 	public func documentContextChanged(from: DocumentContext, to: DocumentContext) {
@@ -53,9 +58,7 @@ public final class SyntaxService {
 	}
 
 	private func invalidate() {
-		let fullRange = NSRange(0..<textSystem.storage.currentLength)
-
-		invalidationHandler(IndexSet(integersIn: fullRange))
+		invalidationHandler(.all)
 	}
 
 	private func setUpClient(with utType: UTType) {
@@ -69,7 +72,7 @@ public final class SyntaxService {
 			languageProvider: languageDataStore.languageConfiguration(with:),
 			contentProvider: { [textSystem] in textSystem.storage.layerContent(for: $0) },
 			lengthProvider: { [textSystem] in textSystem.storage.currentLength },
-			invalidationHandler: { [unowned self] in self.invalidationHandler($0) },
+			invalidationHandler: { [unowned self] in self.invalidationHandler(.set($0)) },
 			locationTransformer: { [textSystem] in textSystem.textMetrics.locationTransformer($0) }
 		)
 
@@ -80,7 +83,7 @@ public final class SyntaxService {
 				let client = try TreeSitterClient(rootLanguageConfig: languageConfig, configuration: config)
 
 				logger.info("HybridTreeSitterClient set up")
-				
+
 				self.state = .active(client, profile)
 			} catch {
 				logger.error("Failed to set up HybridTreeSitterClient: \(error, privacy: .public)")
@@ -92,9 +95,7 @@ public final class SyntaxService {
 		.init(
 			willApplyMutations: { self.willApplyMutations($0) },
 			didApplyMutations: { self.didApplyMutations($0) },
-			didCompleteMutations: { [invalidatorBuffer] _ in
-				invalidatorBuffer.endBuffering()
-			}
+			didCompleteMutations: { _ in }
 		)
 	}
 	
@@ -105,6 +106,39 @@ public final class SyntaxService {
 		case let .active(client, _):
 			return client
 		}
+	}
+
+	public func languageConfigurationChanged(for name: String) {
+		treeSitterClient?.languageConfigurationChanged(for: name)
+	}
+}
+
+extension SyntaxService {
+	private func willApplyMutations(_ mutations: [TextStorageMutation]) {
+		guard let client = treeSitterClient else { return }
+
+		for mutation in mutations.flatMap({ $0.stringMutations}) {
+			client.willChangeContent(in: mutation.range)
+		}
+	}
+
+	private func didApplyMutations(_ mutations: [TextStorageMutation]) {
+		guard let client = treeSitterClient else { return }
+
+		for mutation in mutations.flatMap({ $0.stringMutations}) {
+			client.didChangeContent(in: mutation.range, delta: mutation.delta)
+		}
+	}
+}
+
+extension SyntaxService {
+	private func highlightsQueryParams(for range: NSRange) throws -> TreeSitterClient.ClientQueryParams {
+		// TODO: this is really not good
+		let fullRange = NSRange(0..<self.textSystem.storage.currentLength)
+		let fullString = try self.textSystem.storage.substring(with: fullRange)
+		let textProvider = fullString.predicateTextProvider
+
+		return TreeSitterClient.ClientQueryParams(range: range, textProvider: textProvider, mode: .optional)
 	}
 
 	private static let highlightsMap: [String: String] = [
@@ -147,81 +181,46 @@ public final class SyntaxService {
 		"text.reference": "label",
 	]
 
-	public func languageConfigurationChanged(for name: String) {
-		treeSitterClient?.languageConfigurationChanged(for: name)
-	}
-}
-
-extension SyntaxService {
-	private func willApplyMutations(_ mutations: [TextStorageMutation]) {
-		invalidatorBuffer.beginBuffering()
-
-		guard let client = treeSitterClient else { return }
-
-		for mutation in mutations.flatMap({ $0.stringMutations}) {
-			client.willChangeContent(in: mutation.range)
-		}
-	}
-
-	private func didApplyMutations(_ mutations: [TextStorageMutation]) {
-		guard let client = treeSitterClient else { return }
-
-		for mutation in mutations.flatMap({ $0.stringMutations}) {
-			client.didChangeContent(in: mutation.range, delta: mutation.delta)
-		}
-	}
-}
-
-extension SyntaxService {
-	private func highlightsQueryParams(for range: NSRange) throws -> TreeSitterClient.ClientQueryParams {
-		// TODO: this is really not good
-		let fullRange = NSRange(0..<self.textSystem.storage.currentLength)
-		let fullString = try self.textSystem.storage.substring(with: fullRange)
-		let textProvider = fullString.predicateTextProvider
-
-		return TreeSitterClient.ClientQueryParams(range: range, textProvider: textProvider, mode: .optional)
-	}
-
 	public var tokenProvider: TokenProvider {
-		HybridValueProvider<NSRange, [NamedRange]>(
+		TokenProvider(
 			syncValue: { range in
 				guard let client = self.treeSitterClient else {
-					return []
+					return TokenApplication.noChange
 				}
 
 				do {
 					let queryParams = try self.highlightsQueryParams(for: range)
+					guard let namedRanges = try client.highlightsProvider.sync(queryParams) else {
+						return nil
+					}
 
-					return try client.highlightsProvider.sync(queryParams)
+					print("primary sync")
+
+					return TokenApplication(namedRanges: namedRanges, nameMap: Self.highlightsMap, range: range)
 				} catch {
 					self.logger.warning("Failed to get highlighting: \(error)")
 
-					return []
+					return TokenApplication.noChange
 				}
 			},
-			asyncValue: { range in
+			mainActorAsyncValue: { range in
 				guard let client = self.treeSitterClient else {
-					return []
+					return TokenApplication.noChange
 				}
 
 				do {
 					let queryParams = try self.highlightsQueryParams(for: range)
+					let namedRanges = try await client.highlightsProvider.mainActorAsync(queryParams)
 
-					return try await client.highlightsProvider.async(queryParams)
+					print("primary async")
+
+					return TokenApplication(namedRanges: namedRanges, nameMap: Self.highlightsMap, range: range)
 				} catch {
 					self.logger.warning("Failed to get highlighting: \(error)")
 
-					return []
+					return TokenApplication.noChange
 				}
 			}
-		).map { namedRange in
-			let tokens = namedRange.map {
-				let name = Self.highlightsMap[$0.name] ?? $0.name
-
-				return Token(name: name, range: $0.range)
-			}
-
-			return TokenApplication(tokens: tokens)
-		}
+		)
 	}
 }

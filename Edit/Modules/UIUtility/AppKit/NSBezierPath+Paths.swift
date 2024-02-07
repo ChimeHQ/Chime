@@ -1,6 +1,6 @@
 import AppKit
 
-public struct RoundedRectRadii {
+public struct RoundedRectRadii: Sendable, Hashable {
     public let topLeading: CGFloat
     public let bottomLeading: CGFloat
     public let topTrailing: CGFloat
@@ -57,9 +57,6 @@ public struct RoundedRectRadii {
     }
 
     public static let zero = RoundedRectRadii(topLeading: 0.0, bottomLeading: 0.0, topTrailing: 0.0, bottomTrailing: 0.0)
-}
-
-extension RoundedRectRadii: Equatable {
 }
 
 public extension NSBezierPath {

@@ -5,21 +5,23 @@ import ChimeKit
 import Utility
 
 @MainActor
-final class ExtensionRouter {
+public final class ExtensionRouter {
+	public typealias TokenService = CompositeDocumentService
+
     private var openProjects = Set<ProjectContext>()
     private var openDocuments = [DocumentIdentity: DocumentContext]()
     private let logger = Logger(type: ExtensionRouter.self)
-    private var activeExtensions = [ExtensionProtocol]()
+    private var activeExtensions = [any ExtensionProtocol]()
 
-    init(extensions: [ExtensionProtocol]) {
+    init(extensions: [any ExtensionProtocol]) {
         self.activeExtensions = extensions
     }
 
-    func updateExtensions(with newValue: [ExtensionProtocol]) {
+    func updateExtensions(with newValue: [any ExtensionProtocol]) {
         let extensions = self.activeExtensions
 
-        var addedExtensions = [ExtensionProtocol]()
-        var removedExtensions = [ExtensionProtocol]()
+        var addedExtensions = [any ExtensionProtocol]()
+        var removedExtensions = [any ExtensionProtocol]()
 
         for ext in newValue {
             if extensions.contains(where: { $0 === ext }) {
@@ -42,7 +44,7 @@ final class ExtensionRouter {
         handleChangedExtension(removedExtensions: removedExtensions, addedExtensions: addedExtensions)
     }
 
-    private func handleChangedExtension(removedExtensions: [ExtensionProtocol], addedExtensions: [ExtensionProtocol]) {
+    private func handleChangedExtension(removedExtensions: [any ExtensionProtocol], addedExtensions: [any ExtensionProtocol]) {
         let activeProjects = self.openProjects
         let activeDocs = self.openDocuments
 
@@ -52,38 +54,38 @@ final class ExtensionRouter {
 }
 
 extension ExtensionRouter: ExtensionProtocol {
-    var configuration: ExtensionConfiguration {
+    public var configuration: ExtensionConfiguration {
         fatalError()
     }
 
-    var applicationService: ApplicationService {
-        return self
-    }
+	public var applicationService: ExtensionRouter {
+		get { return self }
+	}
 }
 
 extension ExtensionRouter: ApplicationService {
-    func didOpenProject(with context: ProjectContext) throws {
+	public func didOpenProject(with context: ProjectContext) throws {
         assert(openProjects.contains(context) == false)
         self.openProjects.insert(context)
 
         relayOpenProject(with: context, to: activeExtensions)
     }
 
-    func willCloseProject(with context: ProjectContext) throws {
+	public func willCloseProject(with context: ProjectContext) throws {
         assert(openProjects.contains(context))
         openProjects.remove(context)
 
         relayCloseProject(with: context, to: activeExtensions)
     }
 
-    func didOpenDocument(with context: DocumentContext) throws {
+	public func didOpenDocument(with context: DocumentContext) throws {
         assert(openDocuments[context.id] == nil)
         self.openDocuments[context.id] = context
 
         relayDidOpenDocument(with: context, to: activeExtensions)
     }
 
-    func didChangeDocumentContext(from oldContext: DocumentContext, to newContext: DocumentContext) throws {
+	public func didChangeDocumentContext(from oldContext: DocumentContext, to newContext: DocumentContext) throws {
         precondition(oldContext.id == newContext.id)
         precondition(oldContext != newContext)
         assert(openDocuments[oldContext.id] != nil)
@@ -93,15 +95,15 @@ extension ExtensionRouter: ApplicationService {
         relayDidChangeDocumentContext(from: oldContext, to: newContext, toExtensions: activeExtensions)
     }
 
-    func willCloseDocument(with context: DocumentContext) throws {
+	public func willCloseDocument(with context: DocumentContext) throws {
         assert(openDocuments[context.id] != nil)
         self.openDocuments[context.id] = nil
 
         relayWillCloseDocument(with: context, to: activeExtensions)
     }
 
-    func documentService(for context: DocumentContext) throws -> DocumentService? {
-        var services = [DocumentService?]()
+	public func documentService(for context: DocumentContext) throws -> CompositeDocumentService? {
+        var services = [(any DocumentService)?]()
 
         for ext in activeExtensions {
             do {
@@ -114,7 +116,7 @@ extension ExtensionRouter: ApplicationService {
         return CompositeDocumentService(context: context, documentServices: services.compactMap({ $0 }))
     }
 
-    func symbolService(for context: ProjectContext) throws -> SymbolQueryService? {
+	public func symbolService(for context: ProjectContext) throws -> (some SymbolQueryService)? {
         var services = [SymbolQueryService?]()
 
         for ext in activeExtensions {
@@ -130,7 +132,7 @@ extension ExtensionRouter: ApplicationService {
 }
 
 extension ExtensionRouter {
-    private func relayOpenProject(with context: ProjectContext, to extensions: [ExtensionProtocol]) {
+    private func relayOpenProject(with context: ProjectContext, to extensions: [any ExtensionProtocol]) {
         for ext in extensions {
             do {
                 try ext.applicationService.didOpenProject(with: context)
@@ -140,7 +142,7 @@ extension ExtensionRouter {
         }
     }
 
-    private func relayCloseProject(with context: ProjectContext, to extensions: [ExtensionProtocol]) {
+    private func relayCloseProject(with context: ProjectContext, to extensions: [any ExtensionProtocol]) {
         for ext in extensions {
             do {
                 try ext.applicationService.willCloseProject(with: context)
@@ -150,7 +152,7 @@ extension ExtensionRouter {
         }
     }
 
-    private func relayDidOpenDocument(with context: DocumentContext, to extensions: [ExtensionProtocol]) {
+    private func relayDidOpenDocument(with context: DocumentContext, to extensions: [any ExtensionProtocol]) {
         for ext in extensions {
             do {
                 try ext.applicationService.didOpenDocument(with: context)
@@ -160,7 +162,7 @@ extension ExtensionRouter {
         }
     }
 
-    private func relayDidChangeDocumentContext(from oldContext: DocumentContext, to newContext: DocumentContext, toExtensions extensions: [ExtensionProtocol]) {
+    private func relayDidChangeDocumentContext(from oldContext: DocumentContext, to newContext: DocumentContext, toExtensions extensions: [any ExtensionProtocol]) {
         for ext in extensions {
             do {
                 try ext.applicationService.didChangeDocumentContext(from: oldContext, to: newContext)
@@ -170,7 +172,7 @@ extension ExtensionRouter {
         }
     }
 
-    private func relayWillCloseDocument(with context: DocumentContext, to extensions: [ExtensionProtocol]) {
+    private func relayWillCloseDocument(with context: DocumentContext, to extensions: [any ExtensionProtocol]) {
         for ext in extensions {
             do {
                 try ext.applicationService.willCloseDocument(with: context)
@@ -182,7 +184,7 @@ extension ExtensionRouter {
 }
 
 extension ExtensionRouter {
-    private func tearDownExtensions(_ extensions: [ExtensionProtocol], projects: Set<ProjectContext>, documents: [DocumentIdentity: DocumentContext]) {
+    private func tearDownExtensions(_ extensions: [any ExtensionProtocol], projects: Set<ProjectContext>, documents: [DocumentIdentity: DocumentContext]) {
         // relay documents
         for doc in documents.values {
             relayWillCloseDocument(with: doc, to: extensions)
@@ -194,7 +196,7 @@ extension ExtensionRouter {
         }
     }
 
-    private func setUpExtensions(_ extensions: [ExtensionProtocol], projects: Set<ProjectContext>, documents: [DocumentIdentity: DocumentContext]) {
+    private func setUpExtensions(_ extensions: [any ExtensionProtocol], projects: Set<ProjectContext>, documents: [DocumentIdentity: DocumentContext]) {
         // relay projects
         for proj in projects {
             relayOpenProject(with: proj, to: extensions)

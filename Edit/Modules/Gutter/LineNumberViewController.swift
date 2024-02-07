@@ -43,26 +43,26 @@ final class LineNumberViewController: NSViewController {
 		textSystem.textMetrics.valueProvider
 	}
 
-	override func loadView() {
-		// inject a hidden view into the hierarchy to observe SwiftUI changes
-
-		let observingView = Text("")
-			.hidden()
-			.onThemeChange { [weak self] in self?.updateTheme($0, context: $1) }
-//			.onDocumentContentChange { [weak self] in self?.contentChanged($0) }
-			.onDocumentCursorsChange { [weak self] in self?.cursorsChanged($0) }
-			.onTextMetricsInvalidation { [weak self] in self?.invalidate($0.nsRangeView) }
-
-		let hiddenView = NSHostingView(rootView: observingView)
-
-		regionView.addSubview(hiddenView)
-
-		self.view = regionView
-	}
-
 //	override func loadView() {
-//		self.view = NSView()
+//		// inject a hidden view into the hierarchy to observe SwiftUI changes
+//
+//		let observingView = Text("")
+//			.hidden()
+//			.onThemeChange { [weak self] in self?.updateTheme($0, context: $1) }
+////			.onDocumentContentChange { [weak self] in self?.contentChanged($0) }
+//			.onDocumentCursorsChange { [weak self] in self?.cursorsChanged($0) }
+//			.onTextMetricsInvalidation { [weak self] in self?.invalidate($0.nsRangeView) }
+//
+//		let hiddenView = NSHostingView(rootView: observingView)
+//
+//		regionView.addSubview(hiddenView)
+//
+//		self.view = regionView
 //	}
+
+	override func loadView() {
+		self.view = NSView()
+	}
 
 	public override var representedObject: Any? {
 		didSet {

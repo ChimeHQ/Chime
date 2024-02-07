@@ -31,12 +31,19 @@ final class ExtensionRouterTests: XCTestCase {
 
         try router.didOpenProject(with: expectedContext)
 
-        await fulfillment(of: [openExp], timeout: 1.0, enforceOrder: true)
+		await fulfillment(of: [openExp], timeout: 1.0, enforceOrder: true)
 
         try router.willCloseProject(with: expectedContext)
 
         await fulfillment(of: [closeExp], timeout: 1.0)
     }
+
+	@MainActor
+	func testExample() async {
+		let exp = expectation(description: "hmm")
+
+		await fulfillment(of: [exp], timeout: 1.0)
+	}
 
     @MainActor
     func testOpenCloseDocumentRouting() async throws {

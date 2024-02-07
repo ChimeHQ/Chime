@@ -21,7 +21,7 @@ extension RangeProcessor {
 }
 
 extension TextStorageMonitor {
-	func withInvalidationBuffer(_ invalidator: RangeInvalidationBuffer) -> TextStorageMonitor {
+	public func withInvalidationBuffer(_ invalidator: RangeInvalidationBuffer) -> TextStorageMonitor {
 		.init(
 			willApplyMutations: {
 				invalidator.beginBuffering()

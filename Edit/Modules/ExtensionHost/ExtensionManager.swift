@@ -6,18 +6,18 @@ import ChimeKit
 import Utility
 
 @MainActor
-public final class ExtensionManager {
-	private static let extensionsEnabled = true
+public final class ExtensionManager<Host: HostProtocol> {
+	private static var extensionsEnabled: Bool { true }
 
     private let localExtensions: [any ExtensionProtocol]
-    private var loadedExtensions = [AppExtensionIdentity: ExtensionProtocol]()
+    private var loadedExtensions = [AppExtensionIdentity: any ExtensionProtocol]()
     private let logger = Logger(type: ExtensionManager.self)
-    var extensionsWillChangeHandler: ([any ExtensionProtocol]) -> Void
-    var extensionsDidChangeHandler: ([any ExtensionProtocol]) -> Void
+    public var extensionsWillChangeHandler: ([any ExtensionProtocol]) -> Void
+    public var extensionsDidChangeHandler: ([any ExtensionProtocol]) -> Void
     let host: any HostProtocol
-    private let extensionRouter: ExtensionRouter
+    public let extensionRouter: ExtensionRouter
 
-    public init(host: any HostProtocol) {
+    public init(host: Host) {
         self.host = host
 
 		if Self.extensionsEnabled {
@@ -27,6 +27,7 @@ public final class ExtensionManager {
 			// To use local extensions, you must uncomment one of these, *and also* make sure to add the extension sources to the ExtensionHost target.
 			self.localExtensions = [
 //				FilteringExtension(ext: SwiftExtension(host: host)),
+//				FilteringExtension(ext: UserScriptExtension(host: host))
 			]
 		}
 
@@ -42,16 +43,14 @@ public final class ExtensionManager {
             return
         }
 
-        Task {
-            await matchIdentities()
-        }
+        matchIdentities()
     }
 
     private var extensions: [any ExtensionProtocol] {
         localExtensions + externalExtensions
     }
 
-    var externalExtensions: [ExtensionProtocol] {
+    var externalExtensions: [any ExtensionProtocol] {
         return Array(loadedExtensions.values)
     }
 
@@ -62,10 +61,6 @@ public final class ExtensionManager {
             .map { identity, ext in
                 UIExtensionDescriptor(ext, identity: identity)
             }
-    }
-
-	public var extensionInterface: some ExtensionProtocol {
-        return extensionRouter
     }
 
     private func extensionsUpdated() {
@@ -85,24 +80,33 @@ public final class ExtensionManager {
 }
 
 extension ExtensionManager {
-    private func matchIdentities() async {
-        do {
-            let stream = try AppExtensionIdentity.matching(appExtensionPointIDs:
-                                                        ChimeExtensionPoint.nonui.rawValue,
-                                                        ChimeExtensionPoint.sidebarUI.rawValue,
-                                                        ChimeExtensionPoint.documentSyncedUI.rawValue)
+	private func matchIdentities() {
+		Task.detached {
+			do {
+				let stream = try AppExtensionIdentity.matching(
+					appExtensionPointIDs:
+						ChimeExtensionPoint.nonui.rawValue,
+					ChimeExtensionPoint.sidebarUI.rawValue,
+					ChimeExtensionPoint.documentSyncedUI.rawValue
+				)
 
-            for try await identities in stream {
-				for identity in identities {
-                    await setUpIdentity(identity)
-                }
 
-                extensionsUpdated()
-            }
-        } catch {
-            logger.error("Failed to set up extensions: \(String(describing: error), privacy: .public)")
-        }
-    }
+				for try await identities in stream {
+					for identity in identities {
+						await self.setUpIdentity(identity)
+					}
+
+					await self.extensionsUpdated()
+				}
+			} catch {
+				await self.logError(error)
+			}
+		}
+	}
+
+	private func logError(_ error: Error) {
+		logger.error("Failed to set up extensions: \(String(describing: error), privacy: .public)")
+	}
 
     private func setUpIdentity(_ identity: AppExtensionIdentity) async {
 		let bundleIdLoaded = loadedExtensions.keys.contains(where: { $0.bundleIdentifier == identity.bundleIdentifier })

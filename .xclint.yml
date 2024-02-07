@@ -1,2 +1,7 @@
 opt_in_rules:
   - embedded_build_setting
+  - groups_sorted
+  - implicit_dependencies
+  - targets_use_xcconfig
+  - projects_use_xcconfig
+  - shared_scheme_skips_tests

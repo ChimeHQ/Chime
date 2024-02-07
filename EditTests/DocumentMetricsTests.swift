@@ -2,10 +2,9 @@ import XCTest
 
 @testable import DocumentContent
 
-final class DocumentMetricsTests: XCTestCase {
-	func makeMetrics(with string: String) -> (DocumentMetrics, TextStorageReference) {
+final class TextMetricsTests: XCTestCase {
+	func makeMetrics(with string: String) -> (TextMetrics, TextStorage<Int>) {
 		let textStorage = NSTextStorage(string: string)
-		let storageRef = TextStorageReference(storage: TextStorage(textStorage: textStorage))
 
 		let metrics = DocumentMetrics(storage: storageRef)
 

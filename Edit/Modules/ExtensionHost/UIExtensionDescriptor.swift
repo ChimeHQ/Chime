@@ -9,7 +9,7 @@ public struct UIExtensionDescriptor {
     public let sceneID: ChimeExtensionSceneIdentifier
     public let icon: NSImage
 
-    public init(_ extensionConnection: ExtensionProtocol, identity: AppExtensionIdentity) {
+    public init(_ extensionConnection: some ExtensionProtocol, identity: AppExtensionIdentity) {
         self.extensionConnection = extensionConnection
         self.identity = identity
         self.sceneID = ChimeExtensionSceneIdentifier.main

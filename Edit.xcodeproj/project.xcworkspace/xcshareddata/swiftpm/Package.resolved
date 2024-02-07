@@ -1,12 +1,13 @@
 {
+  "originHash" : "f4663614d88fb73a29978bc6785d29ba6e19a30ee8e384cc1dedd1a60e8be2e8",
   "pins" : [
     {
       "identity" : "asyncxpcconnection",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ChimeHQ/AsyncXPCConnection",
       "state" : {
-        "revision" : "82a0eb00a0d881e6a65cad0acc031c1efd058d06",
-        "version" : "1.0.0"
+        "revision" : "d7f6ec40d9f050fef87c25ab67ba5f626e4d4dee",
+        "version" : "1.1.0"
       }
     },
     {
@@ -99,12 +100,20 @@
       }
     },
     {
+      "identity" : "lowlight",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ChimeHQ/Lowlight",
+      "state" : {
+        "revision" : "51f98f2d252d1346d76a032f02a4a9b2add63084"
+      }
+    },
+    {
       "identity" : "mainoffender",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/mattmassicotte/MainOffender.git",
       "state" : {
-        "revision" : "750730d33acec0f79edc836221937389e7455bae",
-        "version" : "0.2.0"
+        "revision" : "8de872d9256ff7f9913cbc5dd560568ab164be45",
+        "version" : "0.2.1"
       }
     },
     {
@@ -112,7 +121,7 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ChimeHQ/Neon.git",
       "state" : {
-        "revision" : "0e73c2df944b717aba57bb8c53f31605ff33a731"
+        "revision" : "e49e0c2595be56d28d82ed711b2dcac1fc60379a"
       }
     },
     {
@@ -146,8 +155,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ChimeHQ/Rearrange",
       "state" : {
-        "revision" : "3b154b59176ce40839071e7830c83410a0139d86",
-        "version" : "1.8.0"
+        "revision" : "5ff7f3363f7a08f77e0d761e38e6add31c2136e1",
+        "version" : "1.8.1"
       }
     },
     {
@@ -189,7 +198,7 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ChimeHQ/SwiftTreeSitter",
       "state" : {
-        "revision" : "87ed52a71d4ad6b5e6a11185b42f6f74eb5b47da"
+        "revision" : "7ccb58219c3e928bf1938dd43d33fd349dc71808"
       }
     },
     {
@@ -198,6 +207,15 @@
       "location" : "https://github.com/ChimeHQ/TextStory.git",
       "state" : {
         "revision" : "5cd0787b43f038051d42b39db3319cbf78c42861"
+      }
+    },
+    {
+      "identity" : "tree-sitter-go",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/tree-sitter/tree-sitter-go",
+      "state" : {
+        "revision" : "bbaa67a180cfe0c943e50c55130918be8efb20bd",
+        "version" : "0.20.0"
       }
     },
     {
@@ -237,5 +255,5 @@
       }
     }
   ],
-  "version" : 2
+  "version" : 3
 }

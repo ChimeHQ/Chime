@@ -18,7 +18,7 @@ public final class EditorContentViewController: NSViewController {
 	let sourceViewController: SourceViewController
 	let editorState: EditorStateModel
 	let textSystem: TextViewSystem
-	public var contentVisbleRectChanged: (NSRect) -> Void = { _ in }
+	public var contentVisibleRectChanged: (NSRect) -> Void = { _ in }
 	private lazy var observer = ScrollViewVisibleRectObserver(scrollView: editorScrollView)
 
 	public init(textSystem: TextViewSystem, sourceViewController: SourceViewController) {
@@ -28,12 +28,10 @@ public final class EditorContentViewController: NSViewController {
 
 		super.init(nibName: nil, bundle: nil)
 
-		sourceViewController.selectionChangedHandler = { [editorState] in editorState.selectedRanges = $0 }
-
 		addChild(sourceViewController)
 
-		observer.contentBoundsChangedHandler = { [weak self] in self?.contentVisbleRectChanged($0.documentVisibleRect) }
-		observer.frameChangedHandler = { [weak self] in self?.contentVisbleRectChanged($0.documentVisibleRect) }
+		observer.contentBoundsChangedHandler = { [weak self] in self?.contentVisibleRectChanged($0.documentVisibleRect) }
+		observer.frameChangedHandler = { [weak self] in self?.contentVisibleRectChanged($0.documentVisibleRect) }
 	}
 
 	@available(*, unavailable)
@@ -68,5 +66,10 @@ public final class EditorContentViewController: NSViewController {
 			.environment(\.textViewSystem, textSystem)
 
 		self.view = NSHostingView(rootView: hostedView)
+	}
+
+	public var selectedRanges: [NSRange] {
+		get { editorState.selectedRanges }
+		set { editorState.selectedRanges = newValue }
 	}
 }

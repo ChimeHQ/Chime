@@ -2,7 +2,6 @@ import Foundation
 import SwiftUI
 
 import ChimeKit
-//import Extendable
 
 @main
 final class UIPlaceholderExtension: SidebarChimeUIExtension {
@@ -16,9 +15,9 @@ final class UIPlaceholderExtension: SidebarChimeUIExtension {
         return ExtensionConfiguration()
     }
 
-    var applicationService: ApplicationService {
+    var applicationService: some ApplicationService {
         get throws {
-            throw ChimeExtensionError.noHostConnection
+			ApplicationServicePlaceholder()
         }
     }
 

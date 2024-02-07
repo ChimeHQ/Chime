@@ -4,6 +4,7 @@ import SwiftUI
 import ChimeKit
 import ContainedDocument
 import DocumentContent
+import ExtensionHost
 import ProjectWindow
 
 extension DocumentContext {
@@ -78,7 +79,7 @@ extension DirectoryDocument: ProjectDocument {
 		fileURL
 	}
 
-	public func updateApplicationService(_ service: ChimeExtensionInterface.ApplicationService) {
+	public func updateApplicationService(_ service: ExtensionRouter) {
 		projectWindowController.symbolQueryService = try? projectContext.flatMap { try service.symbolService(for: $0) }
 	}
 

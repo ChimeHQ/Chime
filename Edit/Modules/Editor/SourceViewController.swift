@@ -6,9 +6,14 @@ import SourceView
 import Theme
 
 public final class SourceViewController: NSViewController {
-	private let sourceView = SourceView()
+//	private let sourceView = SourceView()
+	private let sourceView = NSTextView(usingTextLayoutManager: false)
 	public var selectionChangedHandler: ([NSRange]) -> Void = { _ in }
 	public var shouldChangeTextHandler: (NSRange, String?) -> Bool = { _, _ in true }
+	public var willLayoutHandler: () -> Void = { }
+	public var didLayoutHandler: () -> Void = { }
+
+	private var set = Set<NSKeyValueObservation>()
 
 	public init() {
 		super.init(nibName: nil, bundle: nil)
@@ -18,6 +23,19 @@ public final class SourceViewController: NSViewController {
 		sourceView.textContainer?.size.width = sourceView.frame.width
 		sourceView.isHorizontallyResizable = false
 
+		// temp stuff
+		let max = CGFloat.greatestFiniteMagnitude
+
+		sourceView.minSize = NSSize.zero
+		sourceView.maxSize = NSSize(width: max, height: max)
+		sourceView.isVerticallyResizable = true
+		sourceView.isHorizontallyResizable = true
+		sourceView.autoresizingMask = [.width, .height]
+
+		sourceView.layoutManager?.allowsNonContiguousLayout = true
+
+		// end temp stuff
+
 		sourceView.delegate = self
 	}
 
@@ -25,7 +43,7 @@ public final class SourceViewController: NSViewController {
 	required init?(coder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
 	}
-	
+
 	override public func loadView() {
 		let observingView = Text("")
 			.hidden()

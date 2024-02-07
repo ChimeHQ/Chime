@@ -55,6 +55,7 @@ public final class TextMetrics {
 		case location(Int, fill: RangeFillMode)
 		case index(Int, fill: RangeFillMode)
 		case entireDocument(fill: RangeFillMode)
+		case processed
 	}
 
 	private let invalidator = RangeInvalidationBuffer()
@@ -68,7 +69,7 @@ public final class TextMetrics {
 	private let parser = LineParser()
 //	private let lineList = List()
 	private var lineList = List()
-	private let storage: Storage
+	let storage: Storage
 	private var thing: Int = 0
 
 	public init(storage: Storage) {
@@ -114,6 +115,8 @@ public final class TextMetrics {
 			return (target, fill)
 		case let .entireDocument(fill: fill):
 			return (storage.currentLength, fill)
+		case .processed:
+			return (rangeProcessor.maximumProcessedLocation ?? 0, .none)
 		}
 	}
 

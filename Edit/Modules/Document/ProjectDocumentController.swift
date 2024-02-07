@@ -311,8 +311,16 @@ extension ProjectDocumentController {
 }
 
 extension ProjectDocumentController {
-	static var sharedController: ProjectDocumentController {
+	public static var sharedController: ProjectDocumentController {
 		ProjectDocumentController.shared as! ProjectDocumentController
+	}
+
+	public var projectDocuments: [any ProjectDocument] {
+		documents.compactMap { $0 as? InternalDocument }
+	}
+
+	public var textDocuments: [TextDocument] {
+		documents.compactMap { $0 as? TextDocument }
 	}
 
 	private func updateWindowMenu() {

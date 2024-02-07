@@ -19,6 +19,7 @@ public struct TextStorageMonitor {
 }
 
 extension TextStorageMonitor {
+	@MainActor
 	public static let null = TextStorageMonitor(willApplyMutations: { _ in }, didApplyMutations: { _ in }, didCompleteMutations: { _ in })
 
 	public init(monitors: [TextStorageMonitor]) {

@@ -4,11 +4,11 @@ import ExtensionFoundation
 import ChimeKit
 
 @main
-final class SwiftStandaloneExtension: ChimeExtension {
-	private let localExtension: StandaloneExtension<SwiftExtension>
+final class UserScriptStandaloneExtension: ChimeExtension {
+	private let localExtension: StandaloneExtension<UserScriptExtension>
 
-	init() {
-		self.localExtension = StandaloneExtension(extensionProvider: { SwiftExtension(host: $0) })
+	required init() {
+		self.localExtension = StandaloneExtension(extensionProvider: { UserScriptExtension(host: $0) })
 	}
 
 	func acceptHostConnection(_ host: HostProtocol) throws {
@@ -16,7 +16,7 @@ final class SwiftStandaloneExtension: ChimeExtension {
 	}
 }
 
-extension SwiftStandaloneExtension {
+extension UserScriptStandaloneExtension {
 	var configuration: ExtensionConfiguration {
 		get throws {
 			return try localExtension.configuration
