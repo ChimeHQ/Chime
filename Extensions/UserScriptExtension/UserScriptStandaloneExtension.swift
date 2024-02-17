@@ -2,13 +2,18 @@ import Foundation
 import ExtensionFoundation
 
 import ChimeKit
+import Extendable
 
 @main
 final class UserScriptStandaloneExtension: ChimeExtension {
-	private let localExtension: StandaloneExtension<UserScriptExtension>
+	@InitializerTransferred private var localExtension: StandaloneExtension<UserScriptExtension>
 
-	required init() {
-		self.localExtension = StandaloneExtension(extensionProvider: { UserScriptExtension(host: $0) })
+	nonisolated init() {
+		self._localExtension = InitializerTransferred(mainActorProvider: {
+			StandaloneExtension(extensionProvider: { host in
+				UserScriptExtension(host: host)
+			})
+		})
 	}
 
 	func acceptHostConnection(_ host: HostProtocol) throws {
