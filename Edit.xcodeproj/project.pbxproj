@@ -1305,10 +1305,10 @@
 			isa = PBXGroup;
 			children = (
 				C973DFF62B62808D000998F7 /* Highlighter.swift */,
+				C941F0A62B6C6FA00003B640 /* TextTarget+RangeTarget.swift */,
 				C99D76112B5EFA050028E3B0 /* TextViewSystemNeonInterface.swift */,
 				C973E01E2B62C007000998F7 /* TokenServiceWrapper.swift */,
 				C942E6702B65248F00792DD4 /* TokenStyleSource.swift */,
-				C941F0A62B6C6FA00003B640 /* TextTarget+RangeTarget.swift */,
 			);
 			path = Highlighting;
 			sourceTree = "<group>";
@@ -1338,9 +1338,9 @@
 				C97918B22A9D48750046EAF1 /* IgnoringFocusRowView.swift */,
 				C97918B92A9D49460046EAF1 /* ItemView.swift */,
 				C97918B52A9D48980046EAF1 /* OpenQuicklyItem.swift */,
-				C97918C12A9D49F20046EAF1 /* ViewModel.swift */,
 				C97918CC2A9D4CD50046EAF1 /* OpenQuicklyViewController.swift */,
 				C97918DD2A9E39030046EAF1 /* OpenQuicklyWindowController.swift */,
+				C97918C12A9D49F20046EAF1 /* ViewModel.swift */,
 			);
 			path = OpenQuickly;
 			sourceTree = "<group>";
@@ -1375,13 +1375,13 @@
 		C9891B142AFEC11A00C8F393 /* DocumentContent */ = {
 			isa = PBXGroup;
 			children = (
-				C9B8A9F82B31F34C00C79606 /* Storage */,
-				C9B8A9D22B3060F400C79606 /* Modifiers */,
 				C93C2DD52AF04CB700558DCF /* DocumentContent.swift */,
-				C926736D2B06BE1200B3CE2F /* Environment.swift */,
 				C99491A92B07FA8C002DC2AC /* DocumentStateModel.swift */,
+				C926736D2B06BE1200B3CE2F /* Environment.swift */,
 				C99491AF2B09573F002DC2AC /* Line.swift */,
 				C99491AD2B09570A002DC2AC /* LineParser.swift */,
+				C9B8A9D22B3060F400C79606 /* Modifiers */,
+				C9B8A9F82B31F34C00C79606 /* Storage */,
 				C99491C42B153051002DC2AC /* TextMetrics.swift */,
 				C99D75F32B5DB42E0028E3B0 /* TextMetrics+ChimeKit.swift */,
 			);
@@ -1392,9 +1392,9 @@
 			isa = PBXGroup;
 			children = (
 				C9891B3F2AFFF23D00C8F393 /* Gutter.swift */,
-				C92673442B05500500B3CE2F /* RegionLabellingView.swift */,
 				C92673462B055AD300B3CE2F /* LineNumberViewController.swift */,
 				C926734A2B0568EB00B3CE2F /* NumberWidthCalculator.swift */,
+				C92673442B05500500B3CE2F /* RegionLabellingView.swift */,
 			);
 			path = Gutter;
 			sourceTree = "<group>";
@@ -1410,15 +1410,15 @@
 		C9B8A9DE2B31E43800C79606 /* TextSystem */ = {
 			isa = PBXGroup;
 			children = (
-				C941F0B62B71410B0003B640 /* LayoutInvalidationBuffer.swift */,
-				C9B8A9D72B30617400C79606 /* TextMetricsMonitorModifier.swift */,
 				C926736F2B06BFCB00B3CE2F /* DocumentMutationMonitorModifier.swift */,
-				C9B8A9E62B31E47300C79606 /* TextViewSystem.swift */,
-				C9B8A9B32B23446400C79606 /* TextLayout.swift */,
-				C9B8A9E92B31E79500C79606 /* NSTextView+Mutations.swift */,
 				C9B8AA072B32005400C79606 /* Environment.swift */,
-				C9EA09652B4DC57800732203 /* TextPresentation.swift */,
+				C941F0B62B71410B0003B640 /* LayoutInvalidationBuffer.swift */,
 				C941F0B92B7171BA0003B640 /* NSTextView+Additions.swift */,
+				C9B8A9E92B31E79500C79606 /* NSTextView+Mutations.swift */,
+				C9B8A9B32B23446400C79606 /* TextLayout.swift */,
+				C9B8A9D72B30617400C79606 /* TextMetricsMonitorModifier.swift */,
+				C9EA09652B4DC57800732203 /* TextPresentation.swift */,
+				C9B8A9E62B31E47300C79606 /* TextViewSystem.swift */,
 			);
 			path = TextSystem;
 			sourceTree = "<group>";
@@ -1426,11 +1426,11 @@
 		C9B8A9F82B31F34C00C79606 /* Storage */ = {
 			isa = PBXGroup;
 			children = (
+				C9B8A9FF2B31F93800C79606 /* RangeProcessor+Storage.swift */,
 				C9B8A98B2B209F6900C79606 /* TextStorage.swift */,
-				C9B8A9872B209D7E00C79606 /* TextStorageMutation.swift */,
 				C99491C12B0D1660002DC2AC /* TextStorageDispatcher.swift */,
 				C9B8A9F32B31F09E00C79606 /* TextStorageMonitor.swift */,
-				C9B8A9FF2B31F93800C79606 /* RangeProcessor+Storage.swift */,
+				C9B8A9872B209D7E00C79606 /* TextStorageMutation.swift */,
 			);
 			path = Storage;
 			sourceTree = "<group>";
@@ -1438,9 +1438,9 @@
 		C9B8AA1B2B362DDE00C79606 /* Preview */ = {
 			isa = PBXGroup;
 			children = (
-				C9B8AA1C2B362DDE00C79606 /* PreviewViewController.swift */,
 				C9B8AA232B362DDE00C79606 /* Info.plist */,
 				C9B8AA242B362DDE00C79606 /* Preview.entitlements */,
+				C9B8AA1C2B362DDE00C79606 /* PreviewViewController.swift */,
 			);
 			path = Preview;
 			sourceTree = "<group>";
@@ -1448,10 +1448,10 @@
 		C9B8AA4B2B37055900C79606 /* SyntaxService */ = {
 			isa = PBXGroup;
 			children = (
-				C9B8AA532B37057C00C79606 /* SyntaxService.swift */,
+				C9EA095C2B4D695400732203 /* LanguageDataStore.swift */,
 				C9EA09562B4D62B800732203 /* LanguageProfile.swift */,
 				C9EA095A2B4D645F00732203 /* LanguageProfile+Profiles.swift */,
-				C9EA095C2B4D695400732203 /* LanguageDataStore.swift */,
+				C9B8AA532B37057C00C79606 /* SyntaxService.swift */,
 				C9EA09632B4DAB6A00732203 /* SyntaxServiceHighligher.swift */,
 				C9CDEB542B504485009E252A /* TextSystem+SwiftTreeSitterLayer.swift */,
 			);
@@ -1470,8 +1470,8 @@
 		C9E878022A9F53530018340C /* UIPlaceholder */ = {
 			isa = PBXGroup;
 			children = (
-				C9E878032A9F53530018340C /* UIPlaceholder.swift */,
 				C9E878052A9F53530018340C /* Info.plist */,
+				C9E878032A9F53530018340C /* UIPlaceholder.swift */,
 			);
 			path = UIPlaceholder;
 			sourceTree = "<group>";
@@ -1500,8 +1500,8 @@
 		C9F79DF62A8FF06E005ED8E9 /* Navigator */ = {
 			isa = PBXGroup;
 			children = (
-				C9F79DD82A87E44A005ED8E9 /* NavigatorItem.swift */,
 				C9F79DDA2A87E46A005ED8E9 /* Navigator.swift */,
+				C9F79DD82A87E44A005ED8E9 /* NavigatorItem.swift */,
 				C9F79DE52A8B9C8A005ED8E9 /* NavigatorScrollView.swift */,
 			);
 			path = Navigator;
@@ -1660,11 +1660,11 @@
 		C9FE53172A759AE800CACA1A /* ProjectWindow */ = {
 			isa = PBXGroup;
 			children = (
-				C9FE531B2A759CE400CACA1A /* WindowStateModel.swift */,
-				C9FE53182A759AFE00CACA1A /* ProjectWindowController.swift */,
-				C9FE531D2A759F4C00CACA1A /* ProjectWindowRoot.swift */,
 				C94F7EC02A7D8C1900E0361A /* ProjectContentViewController.swift */,
 				C9409C6A2A99047000B5D898 /* ProjectState.swift */,
+				C9FE53182A759AFE00CACA1A /* ProjectWindowController.swift */,
+				C9FE531D2A759F4C00CACA1A /* ProjectWindowRoot.swift */,
+				C9FE531B2A759CE400CACA1A /* WindowStateModel.swift */,
 			);
 			path = ProjectWindow;
 			sourceTree = "<group>";
@@ -1693,12 +1693,12 @@
 		C9FE53602A76619800CACA1A /* Inspector */ = {
 			isa = PBXGroup;
 			children = (
-				C9FE53612A76619800CACA1A /* Inspector.swift */,
-				C9E877FB2A9F4B820018340C /* TrailingSidebar.swift */,
-				C9E878162A9F671B0018340C /* SynchronizedScrollViewController.swift */,
 				C9E8781F2A9FD3770018340C /* ExtensionContent.swift */,
-				C9E878212A9FD3F10018340C /* InspectorModel.swift */,
 				C9E878242A9FDDCA0018340C /* ExtensionList.swift */,
+				C9FE53612A76619800CACA1A /* Inspector.swift */,
+				C9E878212A9FD3F10018340C /* InspectorModel.swift */,
+				C9E878162A9F671B0018340C /* SynchronizedScrollViewController.swift */,
+				C9E877FB2A9F4B820018340C /* TrailingSidebar.swift */,
 				C9E878272A9FDE160018340C /* UIExtensionDescriptor.swift */,
 			);
 			path = Inspector;
@@ -1715,11 +1715,11 @@
 		C9FE53832A7662F800CACA1A /* Editor */ = {
 			isa = PBXGroup;
 			children = (
+				C9FE53D72A77D98A00CACA1A /* EditorContent.swift */,
+				C9FE53862A7663D200CACA1A /* EditorContentViewController.swift */,
 				C9FE53AC2A7677A700CACA1A /* EditorScrollView.swift */,
 				C9FE53AA2A76753D00CACA1A /* SourcePresentationViewController.swift */,
-				C9FE53862A7663D200CACA1A /* EditorContentViewController.swift */,
 				C9FE53B82A77334E00CACA1A /* SourceViewController.swift */,
-				C9FE53D72A77D98A00CACA1A /* EditorContent.swift */,
 			);
 			path = Editor;
 			sourceTree = "<group>";
@@ -1750,15 +1750,15 @@
 		C9FE53A42A7670BB00CACA1A /* Status */ = {
 			isa = PBXGroup;
 			children = (
+				C97918862A9CC9140046EAF1 /* CharacterSelectionItem.swift */,
+				C9E878182A9FC9CF0018340C /* ExtensionSelectorItem.swift */,
+				C97918772A9CBF330046EAF1 /* ItemBackground.swift */,
+				C979188B2A9CCA5C0046EAF1 /* LineSelectionItem.swift */,
+				C97918752A9CBEF20046EAF1 /* SearchItem.swift */,
 				C9FE53A52A7670BB00CACA1A /* StatusBar.swift */,
 				C97918732A9CBEBA0046EAF1 /* StatusBarContent.swift */,
-				C97918752A9CBEF20046EAF1 /* SearchItem.swift */,
-				C97918772A9CBF330046EAF1 /* ItemBackground.swift */,
-				C979187F2A9CC23F0046EAF1 /* StatusItem.swift */,
-				C97918862A9CC9140046EAF1 /* CharacterSelectionItem.swift */,
-				C979188B2A9CCA5C0046EAF1 /* LineSelectionItem.swift */,
-				C9E878182A9FC9CF0018340C /* ExtensionSelectorItem.swift */,
 				C9E8781A2A9FCF3E0018340C /* StatusBarPadding.swift */,
+				C979187F2A9CC23F0046EAF1 /* StatusItem.swift */,
 			);
 			path = Status;
 			sourceTree = "<group>";
@@ -1768,8 +1768,8 @@
 			children = (
 				C9891B012AFEAA1100C8F393 /* Extensions */,
 				C9FE53D42A77CC8300CACA1A /* Theme.swift */,
-				C926736A2B06B90900B3CE2F /* ThemeMonitor.swift */,
 				C9CDEB562B508C3C009E252A /* Theme+Highlighting.swift */,
+				C926736A2B06B90900B3CE2F /* ThemeMonitor.swift */,
 			);
 			path = Theme;
 			sourceTree = "<group>";
@@ -1777,8 +1777,8 @@
 		C9FE53E62A7A5B2000CACA1A /* ExtensionHost */ = {
 			isa = PBXGroup;
 			children = (
-				C979191A2A9E83950046EAF1 /* AppHost.swift */,
 				C97919032A9E74620046EAF1 /* AppExtensionIdentity+UI.swift */,
+				C979191A2A9E83950046EAF1 /* AppHost.swift */,
 				C97918F92A9E5EAF0046EAF1 /* CompositeDocumentService.swift */,
 				C97918FB2A9E5EFC0046EAF1 /* CompositeProjectService.swift */,
 				C9FE54062A7A617000CACA1A /* ExtensionDocumentState.swift */,
@@ -1786,8 +1786,8 @@
 				C97918F72A9E5E520046EAF1 /* ExtensionRouter.swift */,
 				C9FE54042A7A613C00CACA1A /* FilteringExtension.swift */,
 				C9FE53E72A7A5B2000CACA1A /* LazyRemoteExtension.swift */,
-				C97919012A9E72FF0046EAF1 /* UIExtensionDescriptor.swift */,
 				C97919072A9E7BA90046EAF1 /* Process+Pipes.swift */,
+				C97919012A9E72FF0046EAF1 /* UIExtensionDescriptor.swift */,
 			);
 			path = ExtensionHost;
 			sourceTree = "<group>";
@@ -1796,10 +1796,10 @@
 			isa = PBXGroup;
 			children = (
 				C9891AF62AFE994C00C8F393 /* AppKit */,
+				C941F0A02B6C4DE00003B640 /* AsyncStream+Pair.swift */,
 				C941F09E2B6C4CD90003B640 /* Dictionary+Fill.swift */,
 				C9FE53FE2A7A5F1600CACA1A /* Logger+init.swift */,
 				C9F79DD62A87E3FA005ED8E9 /* URL+Contents.swift */,
-				C941F0A02B6C4DE00003B640 /* AsyncStream+Pair.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -3726,7 +3726,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C92931722B822BFF00C64DDE /* EditKit.xcconfig */;
 			buildSettings = {
-				OTHER_LDFLAGS = "-all_load";
 			};
 			name = Debug;
 		};
@@ -3734,7 +3733,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C92931722B822BFF00C64DDE /* EditKit.xcconfig */;
 			buildSettings = {
-				OTHER_LDFLAGS = "-all_load";
 			};
 			name = Release;
 		};
@@ -3910,7 +3908,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C92673282B04046700B3CE2F /* Edit-Debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 			};
 			name = Debug;
 		};
@@ -3918,7 +3915,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C9FE52CC2A752B4D00CACA1A /* Edit.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 			};
 			name = Release;
 		};
