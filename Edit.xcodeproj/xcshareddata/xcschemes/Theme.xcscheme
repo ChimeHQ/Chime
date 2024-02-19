@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1510"
+   LastUpgradeVersion = "1530"
    version = "1.7">
    <BuildAction
       parallelizeBuildables = "YES"
-      buildImplicitDependencies = "NO">
+      buildImplicitDependencies = "NO"
+      buildArchitectures = "Automatic">
       <BuildActionEntries>
          <BuildActionEntry
             buildForTesting = "YES"
@@ -14,9 +15,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C9FE52D32A7532C700CACA1A"
-               BuildableName = "libDocument.a"
-               BlueprintName = "Document"
+               BlueprintIdentifier = "C9FE53C72A77CC1E00CACA1A"
+               BuildableName = "libTheme.a"
+               BlueprintName = "Theme"
                ReferencedContainer = "container:Edit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -49,9 +50,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C9FE52D32A7532C700CACA1A"
-            BuildableName = "libDocument.a"
-            BlueprintName = "Document"
+            BlueprintIdentifier = "C9FE53C72A77CC1E00CACA1A"
+            BuildableName = "libTheme.a"
+            BlueprintName = "Theme"
             ReferencedContainer = "container:Edit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

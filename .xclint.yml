@@ -5,3 +5,4 @@ opt_in_rules:
   - targets_use_xcconfig
   - projects_use_xcconfig
   - shared_scheme_skips_tests
+  - shared_schemes
