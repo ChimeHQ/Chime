@@ -8,31 +8,23 @@ on:
       - 'README.md'
       - 'CODE_OF_CONDUCT.md'
       - '.editorconfig'
+      - '.spi.yml'
   pull_request:
     branches:
       - main
 
-jobs:
-  test:
-    name: Test
-    runs-on: macOS-latest
-    strategy:
-      matrix:
-        destination:
-          - "platform=macOS"
-          - "platform=iOS Simulator,name=iPhone 11"
+env:
+  DEVELOPER_DIR: /Applications/Xcode_15.2.app/Contents/Developer
 
+jobs:
+  lint:
+    name: Lint
+    runs-on: macos-14
     steps:
-      - uses: actions/checkout@v3
-      - name: Test platform ${{ matrix.destination }}
-        run: set -o pipefail && xcodebuild -scheme EditorConfig -destination "${{ matrix.destination }}" test | xcpretty
-  linux-test:
-    name: Test Linux
-    runs-on: ubuntu-latest
-    container:
-      image: swift:latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Test
-        run: swift test
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      - name: Install XCLint
+        run: brew tap mattmassicotte/XCLint https://github.com/mattmassicotte/XCLint.git && brew install xclint
+      - name: Run XCLint
+        run: xclint
