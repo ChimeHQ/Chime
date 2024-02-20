@@ -44,8 +44,8 @@ extension TextViewSystemNeonInterface: TextSystemInterface {
 		}
 	}
 
-	public var visibleRange: NSRange {
-		textSystem.textLayout.visibleRange()
+	public var visibleSet: IndexSet {
+		textSystem.textLayout.visibleSet()
 	}
 
 	public var content: some VersionedContent {

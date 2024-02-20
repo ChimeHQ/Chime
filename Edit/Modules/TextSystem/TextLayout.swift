@@ -10,7 +10,7 @@ public struct TextLayout {
 	}
 
 	public let visibleRect: () -> NSRect
-	public let visibleRange: () -> NSRange
+	public let visibleSet: () -> IndexSet
 	public let lineFragmentsInRect: (NSRect) -> [LineFragment]
 	public let lineFragmentsInRange: (NSRange) -> [LineFragment]
 }
@@ -108,15 +108,15 @@ extension TextLayout {
 			visibleRect: {
 				textLayoutManager.textViewportLayoutController.viewportBounds
 			},
-			visibleRange: {
+			visibleSet: {
 				guard
 					let contentManager = textLayoutManager.textContentManager,
 					let textRange = textLayoutManager.textViewportLayoutController.viewportRange
 				else {
-					return .zero
+					return IndexSet()
 				}
 
-				return NSRange(textRange, provider: contentManager)
+				return IndexSet(NSRange(textRange, provider: contentManager))
 			},
 			lineFragmentsInRect: { rect in
 				guard let contentManager = textLayoutManager.textContentManager else { return [] }
@@ -166,7 +166,7 @@ extension TextLayout {
 			visibleRect: {
 				container.textView!.visibleRect
 			},
-			visibleRange: {
+			visibleSet: {
 				let view = container.textView!
 
 				let origin = view.textContainerOrigin
@@ -174,8 +174,9 @@ extension TextLayout {
 
 				let glyphRange = layoutManager.glyphRange(forBoundingRect: offsetRect, in: container)
 
-				return layoutManager.characterRange(forGlyphRange: glyphRange, actualGlyphRange: nil)
+				let range = layoutManager.characterRange(forGlyphRange: glyphRange, actualGlyphRange: nil)
 
+				return IndexSet(range)
 			},
 			lineFragmentsInRect: { rect in
 				return []
