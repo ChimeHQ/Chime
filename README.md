@@ -1,3 +1,11 @@
+<div align="center">
+
+[![Build Status][build status badge]][build status]
+[![Documentation][documentation badge]][documentation]
+[![Discord][discord badge]][discord]
+
+</div>
+
 # Chime
 An editor for macOS
 
@@ -31,7 +39,7 @@ Chime used to be commercial, but is now free. It built up some pretty significan
 
 It is always a good idea to **discuss** before taking on a significant task. That said, I have a strong bias towards enthusiasm. If you are excited about doing something, I'll do my best to get out of your way.
 
-The project is [internally documented](Edit/Chime.docc) with [DocC](https://www.swift.org/documentation/docc/#). The docs contains details about getting started, structure, and internal systems/behaviors.
+The project is [internally documented][documentation] with [DocC](https://www.swift.org/documentation/docc/#). The docs contains details about getting started, structure, and internal systems/behaviors. A [Discord server][discord] is also available for live help, but GitHub issues/discussions is preferred.
 
 There are a few areas that would make for excellent targets though, if you really feel so inclined.
 
@@ -89,3 +97,9 @@ Chime is a reasonably complex project. It's bound to run into bugs in Apple fram
 
 [download]: https://www.chimehq.com/download
 [chimekit]: https://github.com/ChimeHQ/ChimeKit
+[build status]: https://github.com/ChimeHQ/Chime/actions
+[build status badge]: https://github.com/ChimeHQ/Chime/workflows/CI/badge.svg
+[documentation]: Edit/Chime.docc
+[documentation badge]: https://img.shields.io/badge/Documentation-DocC-blue
+[discord]: https://discord.gg/esFpX6sErJ
+[discord badge]: https://img.shields.io/badge/Discord-purple?logo=Discord&label=Chat&color=%235A64EC
