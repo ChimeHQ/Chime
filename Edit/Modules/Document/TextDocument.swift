@@ -108,7 +108,7 @@ public final class TextDocument: ContainedDocument<Project> {
 	}
 
 	public override func read(from url: URL, ofType typeName: String) throws {
-		try MainActor.assumeIsolated {
+		try MainActor.runUnsafely {
 			let config = state.context.configuration
 			let theme = projectWindowController.theme
 			let context = Theme.Context(window: projectWindowController.window)
@@ -147,10 +147,8 @@ public final class TextDocument: ContainedDocument<Project> {
 	public override var fileURL: URL? {
 		didSet {
 			// this can be set on a non-main thread
-			DispatchQueue.main.asyncUnsafe {
-				MainActor.assumeIsolated {
-					self.state.update(url: self.fileURL)
-				}
+			DispatchQueue.main.async {
+				self.state.update(url: self.fileURL)
 			}
 		}
 	}
