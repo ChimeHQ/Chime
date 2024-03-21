@@ -1,0 +1,48 @@
+name: DocC
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - 'README.md'
+      - 'CODE_OF_CONDUCT.md'
+      - '.editorconfig'
+      - '.spi.yml'
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: $
+    env:
+      DEVELOPER_DIR: /Applications/Xcode_15.2.app/Contents/Developer
+    runs-on: macos-14
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+        id: pages
+      - name: Build DocC
+        run: xcodebuild docbuild -scheme Edit -derivedDataPath /tmp/docbuild -destination 'generic/platform=macOS'
+      - name: Process Archive
+        run: xcrun docc process-archive transform-for-static-hosting /tmp/docbuild/Build/Products/Debug/Chime.doccarchive --output-path docs --hosting-base-path 'Chime'
+      - name: Add Redirect
+        run: echo "<script>window.location.href += \"/documentation/chime\"</script>" > docs/index.html
+      - name: Upload Docs
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: 'docs'
+      - name: Deploy
+        uses: actions/deploy-pages@v4
+        id: deployment
