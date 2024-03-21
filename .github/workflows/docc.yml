@@ -33,8 +33,15 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v4
         id: pages
+      - name: Setup Signing
+        env:
+          DEVELOPMENT_TEAM: ${{ secrets.DEVELOPMENTTEAM }}
+        run: |
+          touch User.xcconfig
+          echo "DEVELOPMENT_TEAM = $SUPER_SECRET" > User.xcconfig
+          echo "BUNDLE_ID_PREFIX = com.chimehq" > User.xcconfig
       - name: Build DocC
-        run: xcodebuild docbuild -scheme Edit -derivedDataPath /tmp/docbuild -destination 'generic/platform=macOS'
+        run: xcodebuild docbuild -scheme Edit -derivedDataPath /tmp/docbuild -destination 'generic/platform=macOS' | xcbeautify
       - name: Process Archive
         run: xcrun docc process-archive transform-for-static-hosting /tmp/docbuild/Build/Products/Debug/Chime.doccarchive --output-path docs --hosting-base-path 'Chime'
       - name: Add Redirect
