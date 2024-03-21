@@ -38,7 +38,7 @@ jobs:
           DEVELOPMENT_TEAM: ${{ secrets.DEVELOPMENTTEAM }}
         run: |
           touch User.xcconfig
-          echo "DEVELOPMENT_TEAM = $SUPER_SECRET" > User.xcconfig
+          echo "DEVELOPMENT_TEAM = $DEVELOPMENT_TEAM" > User.xcconfig
           echo "BUNDLE_ID_PREFIX = com.chimehq" > User.xcconfig
       - name: Build DocC
         run: xcodebuild docbuild -scheme Edit -derivedDataPath /tmp/docbuild -destination 'generic/platform=macOS' | xcbeautify
