@@ -1,5 +1,4 @@
 import AppKit
-import MainOffender
 
 final class OpenPanelAccessoryViewController: NSViewController {
 	private let hiddenFilesButton: NSButton
@@ -51,7 +50,7 @@ final class OpenPanelAccessoryViewController: NSViewController {
 		hiddenFilesButton.state = panel.showsHiddenFiles ? .on : .off
 
 		kvoObservation = panel.observe(\.showsHiddenFiles, changeHandler: { [unowned self] (obj, _) in
-			MainActor.runUnsafely {
+			MainActor.assumeIsolated {
 				self.hiddenFilesButton.state = obj.showsHiddenFiles ? .on : .off
 			}
 		})
