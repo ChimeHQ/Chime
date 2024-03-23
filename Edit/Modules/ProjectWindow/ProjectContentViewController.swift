@@ -29,6 +29,9 @@ final class ProjectContentViewController: NSViewController {
 		let navigatorHost = NSHostingController(rootView: Navigator())
 		let navigatorItem = NSSplitViewItem(sidebarWithViewController: navigatorHost)
 
+		// temporarily hide the navigator by default, until it gets a little more attention
+		navigatorItem.isCollapsed = true
+
 		inspectorItem.minimumThickness = 140
 		inspectorItem.canCollapse = true
 		inspectorItem.isCollapsed = true
