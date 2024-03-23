@@ -5,15 +5,19 @@ import Inspector
 import Navigator
 
 final class ProjectContentViewController: NSViewController {
-	private let controller = NSSplitViewController()
+	private let splitViewController = NSSplitViewController()
 	private let contentViewController: NSViewController
+	private let inspectorItem: NSSplitViewItem
 
 	init(contentViewController: NSViewController) {
 		self.contentViewController = contentViewController
 
+		let inspectorHost = NSHostingController(rootView: Inspector())
+		self.inspectorItem = NSSplitViewItem(viewController: inspectorHost)
+
 		super.init(nibName: nil, bundle: nil)
 
-		addChild(controller)
+		addChild(splitViewController)
 	}
 
 	@available(*, unavailable)
@@ -25,26 +29,34 @@ final class ProjectContentViewController: NSViewController {
 		let navigatorHost = NSHostingController(rootView: Navigator())
 		let navigatorItem = NSSplitViewItem(sidebarWithViewController: navigatorHost)
 
-		let inspectorHost = NSHostingController(rootView: Inspector())
-		let inspectorItem = NSSplitViewItem(viewController: inspectorHost)
 		inspectorItem.minimumThickness = 140
 		inspectorItem.canCollapse = true
+		inspectorItem.isCollapsed = true
 
 		let editorItem = NSSplitViewItem(viewController: contentViewController)
 		editorItem.minimumThickness = 200
 
-		controller.splitViewItems = [navigatorItem, editorItem, inspectorItem]
+		splitViewController.splitViewItems = [navigatorItem, editorItem, inspectorItem]
 
 		self.view = NSView()
 
-		view.subviews = [controller.view]
+		view.subviews = [splitViewController.view]
 
-		controller.view.translatesAutoresizingMaskIntoConstraints = false
+		splitViewController.view.translatesAutoresizingMaskIntoConstraints = false
 		NSLayoutConstraint.activate([
-			controller.view.topAnchor.constraint(equalTo: view.topAnchor),
-			controller.view.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-			controller.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-			controller.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+			splitViewController.view.topAnchor.constraint(equalTo: view.topAnchor),
+			splitViewController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+			splitViewController.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+			splitViewController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
 		])
+	}
+}
+
+extension ProjectContentViewController {
+	@IBAction
+	func toggleExtensionInspector(_ sender: Any?) {
+		let collaspe = inspectorItem.isCollapsed == false
+
+		inspectorItem.animator().isCollapsed = collaspe
 	}
 }
