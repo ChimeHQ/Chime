@@ -2,7 +2,6 @@
 
 [![Build Status][build status badge]][build status]
 [![Documentation][documentation badge]][documentation]
-[![Discord][discord badge]][discord]
 
 </div>
 
@@ -99,7 +98,7 @@ Chime is a reasonably complex project. It's bound to run into bugs in Apple fram
 [chimekit]: https://github.com/ChimeHQ/ChimeKit
 [build status]: https://github.com/ChimeHQ/Chime/actions
 [build status badge]: https://github.com/ChimeHQ/Chime/workflows/CI/badge.svg
-[documentation]: Edit/Chime.docc
+[documentation]: https://chimehq.github.io/Chime/documentation/chime/
 [documentation badge]: https://img.shields.io/badge/Documentation-DocC-blue
 [discord]: https://discord.gg/esFpX6sErJ
 [discord badge]: https://img.shields.io/badge/Discord-purple?logo=Discord&label=Chat&color=%235A64EC
