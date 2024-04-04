@@ -4363,7 +4363,7 @@
 			repositoryURL = "https://github.com/ChimeHQ/Neon.git";
 			requirement = {
 				kind = revision;
-				revision = 7b6651b781e7079c31c107fc8f75a0be935dbbba;
+				revision = 834fed55c04bab1e3894070b9b5939700284e4c8;
 			};
 		};
 		C9409C642A98CC9800B5D898 /* XCRemoteSwiftPackageReference "Outline" */ = {
