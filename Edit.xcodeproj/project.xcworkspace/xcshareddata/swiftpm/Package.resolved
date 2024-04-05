@@ -41,7 +41,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ChimeHQ/Extendable.git",
       "state" : {
-        "revision" : "82378e10a4b2f0c07b1d6619419831d8bee5088b"
+        "revision" : "0feac3efd49320132f7c98ce85e254e439f1e835",
+        "version" : "0.4.0"
       }
     },
     {

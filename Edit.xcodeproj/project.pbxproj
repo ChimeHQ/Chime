@@ -4547,8 +4547,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ChimeHQ/Extendable.git";
 			requirement = {
-				kind = revision;
-				revision = 82378e10a4b2f0c07b1d6619419831d8bee5088b;
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.4.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
