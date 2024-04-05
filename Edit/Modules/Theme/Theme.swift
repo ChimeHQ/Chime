@@ -135,7 +135,7 @@ extension Theme {
 	public func typingAttributes(tabWidth: Int, context: Context) -> [NSAttributedString.Key : Any] {
 		let baseFont = font(for: .source, context: context)
 
-		let charWidth = baseFont.advancementForSpaceGlyph.width
+		let charWidth = baseFont.advancementForSpaceGlyph
 		let indentationWidth = charWidth * CGFloat(tabWidth)
 
 		let style = NSParagraphStyle.with { style in

@@ -145,6 +145,7 @@
 		C9BDB54B2B00FD89009225FB /* SwiftStandaloneExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BDB54A2B00FD89009225FB /* SwiftStandaloneExtension.swift */; };
 		C9BDB5502B00FD89009225FB /* SwiftExtension.appex in Copy Extensions */ = {isa = PBXBuildFile; fileRef = C9BDB5482B00FD89009225FB /* SwiftExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C9BDB5572B010094009225FB /* ChimeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE52F42A7539B100CACA1A /* ChimeKit.framework */; };
+		C9BFA1A32BBF4FA200E86487 /* NSUI in Frameworks */ = {isa = PBXBuildFile; productRef = C9BFA1A22BBF4FA200E86487 /* NSUI */; };
 		C9C568582B7418B60093C068 /* Lowlight in Frameworks */ = {isa = PBXBuildFile; productRef = C9C568572B7418B60093C068 /* Lowlight */; };
 		C9CDEB552B504485009E252A /* TextSystem+SwiftTreeSitterLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CDEB542B504485009E252A /* TextSystem+SwiftTreeSitterLayer.swift */; };
 		C9CDEB572B508C3C009E252A /* Theme+Highlighting.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CDEB562B508C3C009E252A /* Theme+Highlighting.swift */; };
@@ -1139,6 +1140,7 @@
 				C9FE53A92A76713900CACA1A /* libStatus.a in Frameworks */,
 				C9FE53942A766AB300CACA1A /* libSearch.a in Frameworks */,
 				C9FE53932A766AAD00CACA1A /* libInspector.a in Frameworks */,
+				C9BFA1A32BBF4FA200E86487 /* NSUI in Frameworks */,
 				C9FE53B22A7677E100CACA1A /* ScrollViewPlus in Frameworks */,
 				C9409C662A98CC9800B5D898 /* Outline in Frameworks */,
 				C97918DA2A9E080C0046EAF1 /* ViewPlus in Frameworks */,
@@ -2285,6 +2287,7 @@
 				C9B8AA5C2B370A1800C79606 /* SwiftTreeSitter */,
 				C9CDEB8E2B56ACA3009E252A /* MainOffender */,
 				C9C568572B7418B60093C068 /* Lowlight */,
+				C9BFA1A22BBF4FA200E86487 /* NSUI */,
 			);
 			productName = Edit;
 			productReference = C9FE52992A7525D000CACA1A /* Chime.app */;
@@ -2563,6 +2566,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				C9BFA1A52BBF4FD600E86487 /* PBXTargetDependency */,
 			);
 			name = Utility;
 			productName = Utility;
@@ -2701,6 +2705,7 @@
 				C9CDEB8D2B56ACA3009E252A /* XCRemoteSwiftPackageReference "MainOffender" */,
 				C941F0AF2B7102630003B640 /* XCRemoteSwiftPackageReference "tree-sitter-go" */,
 				C9C568562B7418B60093C068 /* XCRemoteSwiftPackageReference "Lowlight" */,
+				C9BFA1A12BBF4FA200E86487 /* XCRemoteSwiftPackageReference "nsui" */,
 			);
 			productRefGroup = C9FE529A2A7525D000CACA1A /* Products */;
 			projectDirPath = "";
@@ -3529,6 +3534,10 @@
 			isa = PBXTargetDependency;
 			target = C9FE52F32A7539B100CACA1A /* ChimeKit */;
 			targetProxy = C9BDB5552B010088009225FB /* PBXContainerItemProxy */;
+		};
+		C9BFA1A52BBF4FD600E86487 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = C9BFA1A42BBF4FD600E86487 /* NSUI */;
 		};
 		C9CDEB5C2B51621C009E252A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -4462,6 +4471,14 @@
 				minimumVersion = 0.7.2;
 			};
 		};
+		C9BFA1A12BBF4FA200E86487 /* XCRemoteSwiftPackageReference "nsui" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mattmassicotte/nsui.git";
+			requirement = {
+				kind = revision;
+				revision = d7c7aedb5b6b69cc5561f25c5bb02214cd6101b5;
+			};
+		};
 		C9C568562B7418B60093C068 /* XCRemoteSwiftPackageReference "Lowlight" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ChimeHQ/Lowlight";
@@ -4748,6 +4765,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C9B8A9B52B235EF100C79606 /* XCRemoteSwiftPackageReference "Rearrange" */;
 			productName = Rearrange;
+		};
+		C9BFA1A22BBF4FA200E86487 /* NSUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C9BFA1A12BBF4FA200E86487 /* XCRemoteSwiftPackageReference "nsui" */;
+			productName = NSUI;
+		};
+		C9BFA1A42BBF4FD600E86487 /* NSUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C9BFA1A12BBF4FA200E86487 /* XCRemoteSwiftPackageReference "nsui" */;
+			productName = NSUI;
 		};
 		C9C568572B7418B60093C068 /* Lowlight */ = {
 			isa = XCSwiftPackageProductDependency;

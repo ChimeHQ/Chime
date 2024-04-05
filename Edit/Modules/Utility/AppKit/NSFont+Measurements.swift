@@ -1,6 +1,6 @@
-import AppKit
+import NSUI
 
-public extension NSFont {
+public extension NSUIFont {
 	var lineHeight: CGFloat {
 		return heightAboveBaseline + heightBelowBaseline
 	}
@@ -13,11 +13,11 @@ public extension NSFont {
 		return ascender
 	}
 
-	var advancementForSpaceGlyph: NSSize {
-		return advancement(forGlyph: NSGlyph(" "))
+	var advancementForSpaceGlyph: CGFloat {
+		NSAttributedString(string: " ", attributes: [.font: self]).size().width
 	}
 }
 
-public extension NSFont {
+public extension NSUIFont {
 	static let defaultSystemFont = systemFont(ofSize: systemFontSize)
 }

@@ -2,3 +2,5 @@ ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO
 EXECUTABLE_PREFIX = lib
 PRODUCT_NAME = $(TARGET_NAME)
 SKIP_INSTALL = YES
+SUPPORTED_PLATFORMS = macosx iphonesimulator iphoneos appletvsimulator appletvos xrsimulator xros
+TARGETED_DEVICE_FAMILY = 1,2,3,4,6,7

@@ -7,9 +7,11 @@ DOCUMENT_MODULE_NAME = Document
 INFOPLIST_FILE = Edit/Resources/Info.plist
 INFOPLIST_KEY_NSMainNibFile = MainMenu
 INFOPLIST_KEY_NSPrincipalClass = NSApplication
-LD_RUNPATH_SEARCH_PATHS = $(inherited) @executable_path/../Frameworks
+LD_RUNPATH_SEARCH_PATHS = $(inherited) @executable_path/Frameworks
+LD_RUNPATH_SEARCH_PATHS[sdk=macosx*] = $(inherited) @executable_path/../Frameworks
 OTHER_LDFLAGS[config=Debug] = -ObjC -fprofile-instr-generate
 OTHER_LDFLAGS[config=Release] = -ObjC
 PRODUCT_MODULE_NAME = Chime
 PRODUCT_NAME = Chime
 SKIP_INSTALL = NO
+SUPPORTED_PLATFORMS = macosx

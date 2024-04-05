@@ -1,4 +1,4 @@
-import AppKit
+import NSUI
 
 extension NSParagraphStyle {
 	public static let rightAligned = NSParagraphStyle.with(block: { $0.alignment = .right })

@@ -1,5 +1,5 @@
 {
-  "originHash" : "f4663614d88fb73a29978bc6785d29ba6e19a30ee8e384cc1dedd1a60e8be2e8",
+  "originHash" : "6a46234fd40b23ebe8c139195f63abc4f1b1fbe89026db8f889b8fe4ac9966c9",
   "pins" : [
     {
       "identity" : "asyncxpcconnection",
@@ -119,6 +119,14 @@
       "location" : "https://github.com/ChimeHQ/Neon.git",
       "state" : {
         "revision" : "834fed55c04bab1e3894070b9b5939700284e4c8"
+      }
+    },
+    {
+      "identity" : "nsui",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/mattmassicotte/nsui.git",
+      "state" : {
+        "revision" : "d7c7aedb5b6b69cc5561f25c5bb02214cd6101b5"
       }
     },
     {
