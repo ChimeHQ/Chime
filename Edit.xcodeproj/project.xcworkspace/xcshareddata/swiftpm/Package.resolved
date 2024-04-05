@@ -1,5 +1,5 @@
 {
-  "originHash" : "6a46234fd40b23ebe8c139195f63abc4f1b1fbe89026db8f889b8fe4ac9966c9",
+  "originHash" : "a18832f6f4b2ecdb4982a6946458da0a688f5e9539c5bec95566af78f39c9d23",
   "pins" : [
     {
       "identity" : "asyncxpcconnection",
@@ -69,6 +69,14 @@
       "state" : {
         "revision" : "4ebb9e89e07cc475efa74f87dc6d21f4a9e060f8",
         "version" : "0.1.1"
+      }
+    },
+    {
+      "identity" : "glyph",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ChimeHQ/Glyph",
+      "state" : {
+        "revision" : "d81d88886b04f7cc712fb24a47bfb7ad81099e5b"
       }
     },
     {

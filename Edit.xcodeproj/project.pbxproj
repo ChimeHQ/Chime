@@ -146,6 +146,7 @@
 		C9BDB5502B00FD89009225FB /* SwiftExtension.appex in Copy Extensions */ = {isa = PBXBuildFile; fileRef = C9BDB5482B00FD89009225FB /* SwiftExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C9BDB5572B010094009225FB /* ChimeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE52F42A7539B100CACA1A /* ChimeKit.framework */; };
 		C9BFA1A32BBF4FA200E86487 /* NSUI in Frameworks */ = {isa = PBXBuildFile; productRef = C9BFA1A22BBF4FA200E86487 /* NSUI */; };
+		C9BFA1B02BC0927A00E86487 /* Glyph in Frameworks */ = {isa = PBXBuildFile; productRef = C9BFA1AF2BC0927A00E86487 /* Glyph */; };
 		C9C568582B7418B60093C068 /* Lowlight in Frameworks */ = {isa = PBXBuildFile; productRef = C9C568572B7418B60093C068 /* Lowlight */; };
 		C9CDEB552B504485009E252A /* TextSystem+SwiftTreeSitterLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CDEB542B504485009E252A /* TextSystem+SwiftTreeSitterLayer.swift */; };
 		C9CDEB572B508C3C009E252A /* Theme+Highlighting.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CDEB562B508C3C009E252A /* Theme+Highlighting.swift */; };
@@ -1020,6 +1021,7 @@
 				C929316D2B822BB300C64DDE /* TreeSitterGo in Frameworks */,
 				C92931712B822BBD00C64DDE /* TreeSitterMarkdown in Frameworks */,
 				C929316F2B822BB800C64DDE /* TreeSitterSwift in Frameworks */,
+				C9BFA1B02BC0927A00E86487 /* Glyph in Frameworks */,
 				C929316A2B822BA700C64DDE /* libTheme.a in Frameworks */,
 				C92931692B822B7B00C64DDE /* ColorToolbox in Frameworks */,
 			);
@@ -1994,6 +1996,7 @@
 				C929316C2B822BB300C64DDE /* TreeSitterGo */,
 				C929316E2B822BB800C64DDE /* TreeSitterSwift */,
 				C92931702B822BBD00C64DDE /* TreeSitterMarkdown */,
+				C9BFA1AF2BC0927A00E86487 /* Glyph */,
 			);
 			productName = EditKit;
 			productReference = C92931422B80CC6700C64DDE /* EditKit.framework */;
@@ -2121,6 +2124,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				C9BFA1A92BC072E300E86487 /* PBXTargetDependency */,
 				C9B8A9F22B31E8EE00C79606 /* PBXTargetDependency */,
 				C9B8A9F02B31E8EB00C79606 /* PBXTargetDependency */,
 				C9B8A9EE2B31E83800C79606 /* PBXTargetDependency */,
@@ -2706,6 +2710,7 @@
 				C941F0AF2B7102630003B640 /* XCRemoteSwiftPackageReference "tree-sitter-go" */,
 				C9C568562B7418B60093C068 /* XCRemoteSwiftPackageReference "Lowlight" */,
 				C9BFA1A12BBF4FA200E86487 /* XCRemoteSwiftPackageReference "nsui" */,
+				C9BFA1AE2BC0927A00E86487 /* XCRemoteSwiftPackageReference "Glyph" */,
 			);
 			productRefGroup = C9FE529A2A7525D000CACA1A /* Products */;
 			projectDirPath = "";
@@ -3538,6 +3543,10 @@
 		C9BFA1A52BBF4FD600E86487 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			productRef = C9BFA1A42BBF4FD600E86487 /* NSUI */;
+		};
+		C9BFA1A92BC072E300E86487 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = C9BFA1A82BC072E300E86487 /* Glyph */;
 		};
 		C9CDEB5C2B51621C009E252A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -4479,6 +4488,14 @@
 				revision = d7c7aedb5b6b69cc5561f25c5bb02214cd6101b5;
 			};
 		};
+		C9BFA1AE2BC0927A00E86487 /* XCRemoteSwiftPackageReference "Glyph" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ChimeHQ/Glyph";
+			requirement = {
+				kind = revision;
+				revision = d81d88886b04f7cc712fb24a47bfb7ad81099e5b;
+			};
+		};
 		C9C568562B7418B60093C068 /* XCRemoteSwiftPackageReference "Lowlight" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ChimeHQ/Lowlight";
@@ -4775,6 +4792,15 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C9BFA1A12BBF4FA200E86487 /* XCRemoteSwiftPackageReference "nsui" */;
 			productName = NSUI;
+		};
+		C9BFA1A82BC072E300E86487 /* Glyph */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Glyph;
+		};
+		C9BFA1AF2BC0927A00E86487 /* Glyph */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C9BFA1AE2BC0927A00E86487 /* XCRemoteSwiftPackageReference "Glyph" */;
+			productName = Glyph;
 		};
 		C9C568572B7418B60093C068 /* Lowlight */ = {
 			isa = XCSwiftPackageProductDependency;

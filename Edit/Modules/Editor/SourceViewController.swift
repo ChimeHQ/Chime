@@ -32,7 +32,10 @@ public final class SourceViewController: NSViewController {
 		sourceView.isHorizontallyResizable = true
 		sourceView.autoresizingMask = [.width, .height]
 
-		sourceView.layoutManager?.allowsNonContiguousLayout = true
+		// make sure to do this on
+		if sourceView.textLayoutManager == nil {
+			sourceView.layoutManager?.allowsNonContiguousLayout = true
+		}
 
 		// end temp stuff
 

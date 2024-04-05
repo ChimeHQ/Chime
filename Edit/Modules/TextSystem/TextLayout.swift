@@ -1,6 +1,7 @@
 import AppKit
 import Foundation
 
+import Glyph
 import Rearrange
 
 public struct TextLayout {
@@ -95,11 +96,12 @@ extension NSTextLayoutFragment {
 extension TextLayout {
 	@MainActor
 	public init(textView: NSTextView) {
-		if let textLayoutManager = textView.textLayoutManager {
-			self.init(textLayoutManager: textLayoutManager)
-		} else {
-			self.init(layoutManager: textView.layoutManager!, container: textView.textContainer!)
-		}
+//		if let textLayoutManager = textView.textLayoutManager {
+//			self.init(textLayoutManager: textLayoutManager)
+//		} else {
+//			self.init(layoutManager: textView.layoutManager!, container: textView.textContainer!)
+//		}
+		self.init(container: textView.textContainer!)
 	}
 
 	@MainActor
@@ -167,22 +169,55 @@ extension TextLayout {
 				container.textView!.visibleRect
 			},
 			visibleSet: {
-				let view = container.textView!
-
-				let origin = view.textContainerOrigin
-				let offsetRect = view.visibleRect.offsetBy(dx: -origin.x, dy: -origin.y)
-
-				let glyphRange = layoutManager.glyphRange(forBoundingRect: offsetRect, in: container)
-
-				let range = layoutManager.characterRange(forGlyphRange: glyphRange, actualGlyphRange: nil)
-
-				return IndexSet(range)
+				container.textSet(for: container.textView!.visibleRect)
 			},
 			lineFragmentsInRect: { rect in
-				return []
+				var fragments = [LineFragment]()
+
+				container.enumerateLineFragments(for: rect, strictIntersection: true) { fragmentRect, fragmentRange, _ in
+					fragments.append(.init(range: fragmentRange, bounds: fragmentRect))
+				}
+
+				return fragments
 			},
 			lineFragmentsInRange: { range in
-				return []
+				var fragments = [LineFragment]()
+
+				container.enumerateLineFragments(in: range) { fragmentRect, fragmentRange, _ in
+					fragments.append(.init(range: fragmentRange, bounds: fragmentRect))
+				}
+
+				return fragments
+			}
+		)
+	}
+
+	@MainActor
+	public init(container: NSTextContainer) {
+		self.init(
+			visibleRect: {
+				container.textView!.visibleRect
+			},
+			visibleSet: {
+				container.textSet(for: container.textView!.visibleRect)
+			},
+			lineFragmentsInRect: { rect in
+				var fragments = [LineFragment]()
+
+				container.enumerateLineFragments(for: rect, strictIntersection: true) { fragmentRect, fragmentRange, _ in
+					fragments.append(.init(range: fragmentRange, bounds: fragmentRect))
+				}
+
+				return fragments
+			},
+			lineFragmentsInRange: { range in
+				var fragments = [LineFragment]()
+
+				container.enumerateLineFragments(in: range) { fragmentRect, fragmentRange, _ in
+					fragments.append(.init(range: fragmentRange, bounds: fragmentRect))
+				}
+
+				return fragments
 			}
 		)
 	}
