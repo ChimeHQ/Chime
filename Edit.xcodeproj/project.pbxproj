@@ -146,6 +146,7 @@
 		C9BDB5502B00FD89009225FB /* SwiftExtension.appex in Copy Extensions */ = {isa = PBXBuildFile; fileRef = C9BDB5482B00FD89009225FB /* SwiftExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C9BDB5572B010094009225FB /* ChimeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE52F42A7539B100CACA1A /* ChimeKit.framework */; };
 		C9BFA1B02BC0927A00E86487 /* Glyph in Frameworks */ = {isa = PBXBuildFile; productRef = C9BFA1AF2BC0927A00E86487 /* Glyph */; };
+		C9BFA1B72BC162EF00E86487 /* NSUI in Frameworks */ = {isa = PBXBuildFile; productRef = C9BFA1B62BC162EF00E86487 /* NSUI */; };
 		C9C568582B7418B60093C068 /* Lowlight in Frameworks */ = {isa = PBXBuildFile; productRef = C9C568572B7418B60093C068 /* Lowlight */; };
 		C9CDEB552B504485009E252A /* TextSystem+SwiftTreeSitterLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CDEB542B504485009E252A /* TextSystem+SwiftTreeSitterLayer.swift */; };
 		C9CDEB572B508C3C009E252A /* Theme+Highlighting.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CDEB562B508C3C009E252A /* Theme+Highlighting.swift */; };
@@ -1019,6 +1020,7 @@
 				C929316B2B822BAD00C64DDE /* libUtility.a in Frameworks */,
 				C929316D2B822BB300C64DDE /* TreeSitterGo in Frameworks */,
 				C92931712B822BBD00C64DDE /* TreeSitterMarkdown in Frameworks */,
+				C9BFA1B72BC162EF00E86487 /* NSUI in Frameworks */,
 				C929316F2B822BB800C64DDE /* TreeSitterSwift in Frameworks */,
 				C9BFA1B02BC0927A00E86487 /* Glyph in Frameworks */,
 				C929316A2B822BA700C64DDE /* libTheme.a in Frameworks */,
@@ -1995,6 +1997,7 @@
 				C929316E2B822BB800C64DDE /* TreeSitterSwift */,
 				C92931702B822BBD00C64DDE /* TreeSitterMarkdown */,
 				C9BFA1AF2BC0927A00E86487 /* Glyph */,
+				C9BFA1B62BC162EF00E86487 /* NSUI */,
 			);
 			productName = EditKit;
 			productReference = C92931422B80CC6700C64DDE /* EditKit.framework */;
@@ -4793,6 +4796,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C9BFA1AE2BC0927A00E86487 /* XCRemoteSwiftPackageReference "Glyph" */;
 			productName = Glyph;
+		};
+		C9BFA1B62BC162EF00E86487 /* NSUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C9BFA1A12BBF4FA200E86487 /* XCRemoteSwiftPackageReference "nsui" */;
+			productName = NSUI;
 		};
 		C9C568572B7418B60093C068 /* Lowlight */ = {
 			isa = XCSwiftPackageProductDependency;
