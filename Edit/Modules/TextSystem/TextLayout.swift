@@ -169,7 +169,7 @@ extension TextLayout {
 				container.textView!.visibleRect
 			},
 			visibleSet: {
-				container.textSet(for: container.textView!.visibleRect)
+				container.textView!.visibleCharacterIndexes
 			},
 			lineFragmentsInRect: { rect in
 				var fragments = [LineFragment]()
@@ -199,7 +199,7 @@ extension TextLayout {
 				container.textView!.visibleRect
 			},
 			visibleSet: {
-				container.textSet(for: container.textView!.visibleRect)
+				container.textView!.visibleCharacterIndexes
 			},
 			lineFragmentsInRect: { rect in
 				var fragments = [LineFragment]()

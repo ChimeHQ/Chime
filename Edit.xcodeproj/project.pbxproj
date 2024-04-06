@@ -4493,7 +4493,7 @@
 			repositoryURL = "https://github.com/ChimeHQ/Glyph";
 			requirement = {
 				kind = revision;
-				revision = d81d88886b04f7cc712fb24a47bfb7ad81099e5b;
+				revision = 28adcfc8585d119fac720dcb0c9123ee2148efec;
 			};
 		};
 		C9C568562B7418B60093C068 /* XCRemoteSwiftPackageReference "Lowlight" */ = {
