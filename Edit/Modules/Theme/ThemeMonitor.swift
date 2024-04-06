@@ -4,7 +4,7 @@ struct ThemeMonitor<Content: View>: View {
 	typealias ThemeUpdateHandler = (Theme, Theme.Context) -> Void
 
 	@Environment(\.theme) private var theme
-	@Environment(\.controlActiveState) private var controlActiveState
+	@Environment(\.nsuiControlActiveState) private var controlActiveState
 	@Environment(\.colorScheme) private var colorScheme
 	let content: Content
 	let themeUpdateAction: ThemeUpdateHandler

@@ -1,5 +1,6 @@
 import Foundation
 import SwiftUI
+import NSUI
 
 import ColorToolbox
 import Utility
@@ -32,6 +33,7 @@ public struct Theme: Hashable, Sendable {
 		case inactive
 		case hover
 
+		#if os(macOS)
 		init(controlActiveState: ControlActiveState) {
 			switch controlActiveState {
 			case .active, .key:
@@ -42,14 +44,15 @@ public struct Theme: Hashable, Sendable {
 				self = .active
 			}
 		}
+		#endif
 	}
 
 	public struct Context {
-		public var controlActiveState: ControlActiveState
+		public var controlActiveState: NSUIControlActiveState
 		public var hover: Bool
 		public var colorScheme: ColorScheme
 
-		public init(controlActiveState: ControlActiveState = .active, hover: Bool = false, colorScheme: ColorScheme) {
+		public init(controlActiveState: NSUIControlActiveState = .active, hover: Bool = false, colorScheme: ColorScheme) {
 			self.controlActiveState = controlActiveState
 			self.hover = hover
 			self.colorScheme = colorScheme
@@ -61,51 +64,51 @@ public struct Theme: Hashable, Sendable {
 }
 
 extension Theme {
-	public func color(for target: Target, context: Context) -> NSColor {
+	public func color(for target: Target, context: Context) -> NSUIColor {
 		switch target {
 		case .source:
-			NSColor.textColor
+			NSUIColor.label
 		case .insertionPoint:
-			NSColor.textColor
+			NSUIColor.label
 		case .background:
-			NSColor.windowBackgroundColor
+			NSUIColor.systemBackground
 		case .statusBackground:
-			NSColor.green
+			NSUIColor.green
 		case .statusLabel:
-			NSColor.white
+			NSUIColor.white
 		case let .syntaxSpecifier(name):
 			resolveSyntaxColor(for: name)
 		}
 	}
 
-	private func resolveSyntaxColor(for specifier: String) -> NSColor {
-		syntaxColor(for: specifier) ?? NSColor.textColor
+	private func resolveSyntaxColor(for specifier: String) -> NSUIColor {
+		syntaxColor(for: specifier) ?? NSUIColor.label
 	}
 
-	private func syntaxColor(for name: String) -> NSColor? {
+	private func syntaxColor(for name: String) -> NSUIColor? {
 		switch name {
 		case "type":
-			NSColor(hex: "#8FBCBB")
+			NSUIColor(hex: "#8FBCBB")
 		case "member.constructor", "invocation.function", "member.method":
-			NSColor(hex: "#88C0D0")
+			NSUIColor(hex: "#88C0D0")
 		case "parameter", "member.property":
-			NSColor(hex: "#D8DEE9")
+			NSUIColor(hex: "#D8DEE9")
 		case "invocation.macro":
-			NSColor(hex: "#526B9E")
+			NSUIColor(hex: "#526B9E")
 		case "keyword.return", "keyword.function", "keyword", "keyword.loop", "keyword.include", "keyword.conditional":
-			NSColor(hex: "#81A1C1")
+			NSUIColor(hex: "#81A1C1")
 		case "keyword.operator.text", "keyword.operator":
-			NSColor(hex: "#81A1C1")
+			NSUIColor(hex: "#81A1C1")
 		case "label":
-			NSColor(hex: "#526B9E")
+			NSUIColor(hex: "#526B9E")
 		case "comment":
-			NSColor(hex: "#4C566A")
+			NSUIColor(hex: "#4C566A")
 		case "literal.string", "literal.regex":
-			NSColor(hex: "#A3BE8C")
+			NSUIColor(hex: "#A3BE8C")
 		case "literal.boolean", "literal.float", "literal.number":
-			NSColor(hex: "#B48EAD")
+			NSUIColor(hex: "#B48EAD")
 		case "variable", "variable.builtin":
-			NSColor(hex: "#D8DEE9")
+			NSUIColor(hex: "#D8DEE9")
 		default:
 			nil
 		}
@@ -113,21 +116,19 @@ extension Theme {
 }
 
 extension Theme {
-	private var defaultFont: NSFont {
-		NSFont(name: "SF Mono", size: 12.0) ?? .monospacedSystemFont(ofSize: 12.0, weight: .regular)
+	private var defaultFont: NSUIFont {
+		NSUIFont(name: "SF Mono", size: 12.0) ?? .monospacedSystemFont(ofSize: 12.0, weight: .regular)
 	}
 
-	public func font(for target: Target, context: Context) -> NSFont {
+	public func font(for target: Target, context: Context) -> NSUIFont {
 		defaultFont
 	}
 }
 
 extension Theme {
 	public var isDark: Bool {
-		// TODO: this is not correct...
-		guard let color = NSColor.windowBackgroundColor.usingColorSpace(.deviceRGB) else { return false }
-
-		return color.brightnessComponent < 0.5
+		// TODO: this is not a great way to calculate the theme being dark
+		NSUIColor.systemBackground.relativeLuminance > 0.5
 	}
 }
 
@@ -152,6 +153,7 @@ extension Theme {
 }
 
 extension Theme.Context {
+#if os(macOS)
 	@MainActor
 	public init(window: NSWindow?) {
 		self.init(appearance: window?.appearance)
@@ -163,4 +165,5 @@ extension Theme.Context {
 
 		self.init(controlActiveState: .inactive, hover: false, colorScheme: dark ? .dark : .light)
 	}
+#endif
 }
