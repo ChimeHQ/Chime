@@ -15,7 +15,7 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ChimeHQ/ChimeKit.git",
       "state" : {
-        "revision" : "aa0eaf2b79d913e173be072456214246fb4d7b29"
+        "revision" : "8a2ce02136bff9849dfa76a7017aad791cfcf4f6"
       }
     },
     {
@@ -135,7 +135,7 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/mattmassicotte/nsui.git",
       "state" : {
-        "revision" : "928c88c141b8e8cf82b67a965812eca9d235139f"
+        "revision" : "ad4cb093c70c731b4a036d30a2a39f8db6afe2c6"
       }
     },
     {

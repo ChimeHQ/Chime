@@ -1,5 +1,6 @@
-import AppKit
 import Foundation
+
+import NSUI
 
 public final class TextStorageDispatcher<Version: Sendable> {
 	public typealias Storage = TextStorage<Version>
@@ -64,8 +65,8 @@ extension TextStorageDispatcher {
 
 extension TextStorageDispatcher {
 	@MainActor
-	public func textView(_ textView: NSTextView, shouldChangeTextIn affectedCharRange: NSRange, replacementString: String?) -> Bool {
-		let cursor = Cursor(index: 0, selection: textView.selectedRange())
+	public func textView(_ textView: NSUITextView, shouldChangeTextIn affectedCharRange: NSRange, replacementString: String?) -> Bool {
+		let cursor = Cursor(index: 0, selection: textView.nsuiSelectedRange)
 
 		return shouldChangeText(in: affectedCharRange, replacementString: replacementString, cursor: cursor)
 	}

@@ -595,6 +595,13 @@
 			remoteGlobalIDString = C9FE52F32A7539B100CACA1A;
 			remoteInfo = ChimeKit;
 		};
+		C9BFA1B82BC2C19C00E86487 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C92931412B80CC6700C64DDE;
+			remoteInfo = EditKit;
+		};
 		C9E878072A9F53530018340C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
@@ -2079,8 +2086,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				C973E01B2B62BF3A000998F7 /* PBXTargetDependency */,
-				C973E0192B62BF24000998F7 /* PBXTargetDependency */,
+				C9BFA1B92BC2C19C00E86487 /* PBXTargetDependency */,
 				C99491CC2B153914002DC2AC /* PBXTargetDependency */,
 				C926737F2B0782C500B3CE2F /* PBXTargetDependency */,
 				C9891B2C2AFEC88300C8F393 /* PBXTargetDependency */,
@@ -3305,14 +3311,6 @@
 			target = C9891B122AFEC11A00C8F393 /* DocumentContent */;
 			targetProxy = C973E00F2B62BDF5000998F7 /* PBXContainerItemProxy */;
 		};
-		C973E0192B62BF24000998F7 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			productRef = C973E0182B62BF24000998F7 /* TreeSitterSwift */;
-		};
-		C973E01B2B62BF3A000998F7 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			productRef = C973E01A2B62BF3A000998F7 /* TreeSitterMarkdown */;
-		};
 		C973E01D2B62BF4C000998F7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C9B8AA492B37055800C79606 /* SyntaxService */;
@@ -3547,6 +3545,11 @@
 		C9BFA1A92BC072E300E86487 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			productRef = C9BFA1A82BC072E300E86487 /* Glyph */;
+		};
+		C9BFA1B92BC2C19C00E86487 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C92931412B80CC6700C64DDE /* EditKit */;
+			targetProxy = C9BFA1B82BC2C19C00E86487 /* PBXContainerItemProxy */;
 		};
 		C9CDEB5C2B51621C009E252A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -4485,7 +4488,7 @@
 			repositoryURL = "https://github.com/mattmassicotte/nsui.git";
 			requirement = {
 				kind = revision;
-				revision = 928c88c141b8e8cf82b67a965812eca9d235139f;
+				revision = ad4cb093c70c731b4a036d30a2a39f8db6afe2c6;
 			};
 		};
 		C9BFA1AE2BC0927A00E86487 /* XCRemoteSwiftPackageReference "Glyph" */ = {
@@ -4541,7 +4544,7 @@
 			repositoryURL = "https://github.com/ChimeHQ/ChimeKit.git";
 			requirement = {
 				kind = revision;
-				revision = aa0eaf2b79d913e173be072456214246fb4d7b29;
+				revision = 8a2ce02136bff9849dfa76a7017aad791cfcf4f6;
 			};
 		};
 		C9FE53372A75A75400CACA1A /* XCRemoteSwiftPackageReference "WindowTreatment" */ = {
@@ -4657,16 +4660,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C926738F2B078D3200B3CE2F /* XCRemoteSwiftPackageReference "Neon" */;
 			productName = Neon;
-		};
-		C973E0182B62BF24000998F7 /* TreeSitterSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C940A3752B4C7544007BE120 /* XCRemoteSwiftPackageReference "tree-sitter-swift" */;
-			productName = TreeSitterSwift;
-		};
-		C973E01A2B62BF3A000998F7 /* TreeSitterMarkdown */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C9CDEB5F2B5193B1009E252A /* XCRemoteSwiftPackageReference "tree-sitter-markdown" */;
-			productName = TreeSitterMarkdown;
 		};
 		C97918C62A9D4A6A0046EAF1 /* FuzzyFind */ = {
 			isa = XCSwiftPackageProductDependency;
