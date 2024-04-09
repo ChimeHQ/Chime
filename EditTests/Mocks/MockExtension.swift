@@ -21,7 +21,7 @@ final class MockExtension: ExtensionProtocol {
 		}
 	}
 
-	var applicationService: ApplicationService {
+	var applicationService: some ApplicationService {
 		return self
 	}
 }
@@ -47,12 +47,12 @@ extension MockExtension: ApplicationService {
 		try willCloseDocumentHandler?(context)
 	}
 
-	func documentService(for context: DocumentContext) throws -> DocumentService? {
-		return nil
+	func documentService(for context: DocumentContext) throws -> (some DocumentService)? {
+		DocumentServicePlaceholder()
 	}
 
-	func symbolService(for context: ProjectContext) throws -> SymbolQueryService? {
-		return nil
+	func symbolService(for context: ProjectContext) throws -> (some SymbolQueryService)? {
+		SymbolQueryServicePlaceholder()
 	}
 }
 

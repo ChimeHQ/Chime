@@ -51,4 +51,4 @@ jobs:
           echo "DEVELOPMENT_TEAM = $DEVELOPMENT_TEAM" >> User.xcconfig
           echo "BUNDLE_ID_PREFIX = com.chimehq" >> User.xcconfig
       - name: xcodebuild
-        run: set -o pipefail && xcodebuild -scheme Edit -destination "platform=macOS" build | xcbeautify
+        run: set -o pipefail && xcodebuild -scheme Edit -destination "platform=macOS" test | xcbeautify

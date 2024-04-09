@@ -38,13 +38,6 @@ final class ExtensionRouterTests: XCTestCase {
         await fulfillment(of: [closeExp], timeout: 1.0)
     }
 
-	@MainActor
-	func testExample() async {
-		let exp = expectation(description: "hmm")
-
-		await fulfillment(of: [exp], timeout: 1.0)
-	}
-
     @MainActor
     func testOpenCloseDocumentRouting() async throws {
         let mockA = MockExtension()

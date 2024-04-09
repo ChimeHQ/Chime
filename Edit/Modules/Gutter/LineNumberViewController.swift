@@ -49,7 +49,6 @@ final class LineNumberViewController: NSViewController {
 		let observingView = Text("")
 			.hidden()
 			.onThemeChange { [weak self] in self?.updateTheme($0, context: $1) }
-//			.onDocumentContentChange { [weak self] in self?.contentChanged($0) }
 			.onDocumentCursorsChange { [weak self] in self?.cursorsChanged($0) }
 			.onTextMetricsInvalidation { [weak self] in self?.invalidate($0.nsRangeView) }
 
@@ -102,10 +101,6 @@ extension LineNumberViewController {
 		self.selectedRanges = cursors.map { $0.selection }
 
 		invalidate(oldRanges + selectedRanges)
-	}
-
-	private func contentChanged(_ content: DocumentContent?) {
-		self.representedObject = content
 	}
 
 	private func updateThickness() {
