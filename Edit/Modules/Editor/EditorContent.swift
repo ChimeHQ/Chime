@@ -29,5 +29,6 @@ struct EditorContent<Content: View>: View {
 		}
 		.background(Color(theme.color(for: .background, context: context)))
 		.environment(\.documentCursors, model.cursors)
+		.environment(\.editorVisibleRect, model.visibleFrame)
 	}
 }

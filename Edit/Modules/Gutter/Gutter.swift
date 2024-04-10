@@ -12,9 +12,8 @@ public struct Gutter: View {
 	
     public var body: some View {
 		ZStack {
-			Color.yellow
-			RepresentableViewController({ LineNumberViewController(textSystem: textSystem) })
-				.padding(EdgeInsets(top: 0.0, leading: 2.0, bottom: 0.0, trailing: 2.0))
+			LineNumberView(textSystem: textSystem)
+				.padding(EdgeInsets(top: 0.0, leading: 4.0, bottom: 0.0, trailing: 2.0))
 		}
 		.ignoresSafeArea()
     }

@@ -82,11 +82,9 @@ final class LineNumberViewController: NSViewController {
 			height: height
 		)
 
-//		print("invaliding: \(invalidRect), \(regionView.visibleRect)")
-
 		updateThickness()
 
-		regionView.setNeedsDisplay(invalidRect)
+		invalidate(invalidRect)
 	}
 }
 
@@ -107,6 +105,10 @@ extension LineNumberViewController {
 		widthCalculator.maximumNumber = textSystem.textMetrics.lastLine.index
 
 		regionView.thickness = widthCalculator.requiredWidth
+	}
+
+	func invalidate(_ invalidRect: CGRect) {
+		regionView.setNeedsDisplay(invalidRect)
 	}
 }
 
@@ -143,6 +145,11 @@ extension LineNumberViewController {
 		}
 
 		return attrs
+	}
+
+	private func backgroundForLine(_ line: Line) -> NSColor {
+//		line.index % 2 == 0 ? .red : .blue
+		.clear
 	}
 
 	private func labelledRegions(for region: Region) -> [LabelledRegion] {
@@ -187,6 +194,7 @@ extension LineNumberViewController {
 			let last = textMetrics.lastLine.index == lineIndex
 
 			let style = styleForLine(line, in: range, lastLine: last)
+			let background = backgroundForLine(line)
 			let firstFragment = range.location == lines[lineIndex].location
 
 			let labelString = firstFragment ? "\(line.index)" : "•"
@@ -195,7 +203,7 @@ extension LineNumberViewController {
 			let fragmentRegion = Region(position: fragment.bounds.minY, size: fragment.bounds.height)
 			let labelledRegion = LabelledRegion(
 				label: label,
-				background: line.index % 2 == 0 ? .red : .blue,
+				background: background,
 				region: fragmentRegion
 			)
 

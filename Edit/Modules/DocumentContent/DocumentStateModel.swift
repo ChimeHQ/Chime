@@ -4,6 +4,7 @@ import SwiftUI
 @Observable
 public final class EditorStateModel {
 	public var cursors: [Cursor] = []
+	public var visibleFrame = CGRect.zero
 
 	public init() {
 	}

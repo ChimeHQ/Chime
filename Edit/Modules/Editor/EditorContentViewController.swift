@@ -14,7 +14,7 @@ import UIUtility
 public final class EditorContentViewController: NSViewController {
 	public typealias ShouldChangeTextHandler = (NSRange, String?) -> Bool
 
-	private let editorScrollView = NSScrollView()
+	private let editorScrollView = OverlayOnlyScrollView()
 	let sourceViewController: SourceViewController
 	let editorState: EditorStateModel
 	let textSystem: TextViewSystem
@@ -30,8 +30,8 @@ public final class EditorContentViewController: NSViewController {
 
 		addChild(sourceViewController)
 
-		observer.contentBoundsChangedHandler = { [weak self] in self?.contentVisibleRectChanged($0.documentVisibleRect) }
-		observer.frameChangedHandler = { [weak self] in self?.contentVisibleRectChanged($0.documentVisibleRect) }
+		observer.contentBoundsChangedHandler = { [weak self] in self?.handleScrollChange($0.documentVisibleRect) }
+		observer.frameChangedHandler = { [weak self] in self?.handleScrollChange($0.documentVisibleRect) }
 	}
 
 	@available(*, unavailable)
@@ -71,5 +71,10 @@ public final class EditorContentViewController: NSViewController {
 	public var selectedRanges: [NSRange] {
 		get { editorState.selectedRanges }
 		set { editorState.selectedRanges = newValue }
+	}
+
+	private func handleScrollChange(_ rect: CGRect) {
+		contentVisibleRectChanged(rect)
+		editorState.visibleFrame = rect
 	}
 }
