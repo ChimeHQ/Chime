@@ -22,6 +22,7 @@ final class EditUITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
+	@MainActor
     func testExample() throws {
 		throw XCTSkip()
 
@@ -32,6 +33,7 @@ final class EditUITests: XCTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
 
+	@MainActor
     func testLaunchPerformance() throws {
 		throw XCTSkip()
 		
