@@ -1581,11 +1581,11 @@
 		C9FE52B12A7525D300CACA1A /* EditTests */ = {
 			isa = PBXGroup;
 			children = (
-				C9B8A9802B1B836C00C79606 /* TextMetricsTests.swift */,
+				C958C7802BC5A82900EC95F8 /* ConfigurationTests.swift */,
 				C97918FD2A9E5F3D0046EAF1 /* ExtensionRouterTests.swift */,
 				C9FE52B22A7525D300CACA1A /* FilteringExtensionTests.swift */,
 				C96A85372A7A83FA005ED222 /* Mocks */,
-				C958C7802BC5A82900EC95F8 /* ConfigurationTests.swift */,
+				C9B8A9802B1B836C00C79606 /* TextMetricsTests.swift */,
 			);
 			path = EditTests;
 			sourceTree = "<group>";
