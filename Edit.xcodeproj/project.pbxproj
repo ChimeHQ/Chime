@@ -4560,7 +4560,7 @@
 			repositoryURL = "https://github.com/ChimeHQ/ScrollViewPlus.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 0.1.2;
+				minimumVersion = 0.2.0;
 			};
 		};
 		C9FE53EB2A7A5D9700CACA1A /* XCRemoteSwiftPackageReference "Extendable" */ = {

@@ -186,8 +186,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ChimeHQ/ScrollViewPlus.git",
       "state" : {
-        "revision" : "cd9fa490c4b20ee841ce9230ab19057c02905062",
-        "version" : "0.1.2"
+        "revision" : "ce2af321d379e3b05c1541850d509ae61d3380db",
+        "version" : "0.2.0"
       }
     },
     {
