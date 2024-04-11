@@ -14,7 +14,7 @@ import UIUtility
 public final class EditorContentViewController: NSViewController {
 	public typealias ShouldChangeTextHandler = (NSRange, String?) -> Bool
 
-	private let editorScrollView = OverlayOnlyScrollView()
+	private let editorScrollView = EditorScrollView()
 	let sourceViewController: SourceViewController
 	let editorState: EditorStateModel
 	let textSystem: TextViewSystem
@@ -30,8 +30,14 @@ public final class EditorContentViewController: NSViewController {
 
 		addChild(sourceViewController)
 
-		observer.contentBoundsChangedHandler = { [weak self] in self?.handleScrollChange($0.documentVisibleRect) }
-		observer.frameChangedHandler = { [weak self] in self?.handleScrollChange($0.documentVisibleRect) }
+		// these all have to be weak, because even though we own the scroll view, it gets injected into the view heirarchy, and can outlive this object.
+
+		observer.contentBoundsChangedHandler = { [weak self] in self?.handleVisibleRectChanged($0.documentVisibleRect) }
+		observer.frameChangedHandler = { [weak self] in self?.handleVisibleRectChanged($0.documentVisibleRect) }
+
+		editorScrollView.scrollerThicknessChangedHandler = { [weak self] in
+			self?.handleLayoutChanged()
+		}
 	}
 
 	@available(*, unavailable)
@@ -40,10 +46,12 @@ public final class EditorContentViewController: NSViewController {
 	}
 	
 	public override func loadView() {
-		editorScrollView.hasVerticalScroller = true
-		editorScrollView.hasHorizontalScroller = true
 		editorScrollView.drawsBackground = true
 		editorScrollView.backgroundColor = .black
+		editorScrollView.hasVerticalScroller = true
+		editorScrollView.hasHorizontalScroller = true
+		editorScrollView.verticalScroller = ObservableScroller()
+		editorScrollView.horizontalScroller = ObservableScroller()
 
 		// allow the scroll view to use the entire height of a full-content windows
 		editorScrollView.automaticallyAdjustsContentInsets = false
@@ -73,8 +81,19 @@ public final class EditorContentViewController: NSViewController {
 		set { editorState.selectedRanges = newValue }
 	}
 
-	private func handleScrollChange(_ rect: CGRect) {
+	private func handleVisibleRectChanged(_ rect: CGRect) {
 		contentVisibleRectChanged(rect)
 		editorState.visibleFrame = rect
+	}
+
+	private func handleLayoutChanged() {
+		let margins = EdgeInsets(
+			top: 0.0,
+			leading: 0.0,
+			bottom: editorScrollView.horizontalMargin,
+			trailing: editorScrollView.verticalMargin
+		)
+
+		editorState.contentInsets = margins
 	}
 }

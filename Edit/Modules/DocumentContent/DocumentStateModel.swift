@@ -5,6 +5,7 @@ import SwiftUI
 public final class EditorStateModel {
 	public var cursors: [Cursor] = []
 	public var visibleFrame = CGRect.zero
+	public var contentInsets = EdgeInsets()
 
 	public init() {
 	}

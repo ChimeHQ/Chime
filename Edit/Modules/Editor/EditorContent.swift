@@ -6,6 +6,7 @@ import Status
 import Theme
 import UIUtility
 
+@MainActor
 struct EditorContent<Content: View>: View {
 	@Environment(EditorStateModel.self) private var model
 	@Environment(\.theme) private var theme
@@ -30,5 +31,6 @@ struct EditorContent<Content: View>: View {
 		.background(Color(theme.color(for: .background, context: context)))
 		.environment(\.documentCursors, model.cursors)
 		.environment(\.editorVisibleRect, model.visibleFrame)
+		.environment(\.statusBarPadding, model.contentInsets)
 	}
 }
