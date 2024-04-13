@@ -435,6 +435,13 @@
 			remoteGlobalIDString = C9FE53DC2A7A5A2A00CACA1A;
 			remoteInfo = ExtensionHost;
 		};
+		C97C1FF22BCAA49200D133A7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9891B122AFEC11A00C8F393;
+			remoteInfo = DocumentContent;
+		};
 		C9891AFE2AFEA3E400C8F393 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
@@ -2522,6 +2529,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				C97C1FF32BCAA49200D133A7 /* PBXTargetDependency */,
 				C97918852A9CC5AC0046EAF1 /* PBXTargetDependency */,
 				C97918832A9CC5A80046EAF1 /* PBXTargetDependency */,
 			);
@@ -3390,6 +3398,11 @@
 			isa = PBXTargetDependency;
 			target = C9FE53DC2A7A5A2A00CACA1A /* ExtensionHost */;
 			targetProxy = C97919232A9E8C260046EAF1 /* PBXContainerItemProxy */;
+		};
+		C97C1FF32BCAA49200D133A7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9891B122AFEC11A00C8F393 /* DocumentContent */;
+			targetProxy = C97C1FF22BCAA49200D133A7 /* PBXContainerItemProxy */;
 		};
 		C9891AFF2AFEA3E400C8F393 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;

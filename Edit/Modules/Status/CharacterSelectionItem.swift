@@ -1,15 +1,16 @@
 import SwiftUI
 
+import DocumentContent
 import Theme
 
 struct CharacterSelectionItem: View {
 	@Environment(\.theme) private var theme
 	@Environment(\.controlActiveState) private var controlActiveState
 	@Environment(\.colorScheme) private var colorScheme
+	@Environment(\.documentCursors) private var cursors
 
 	private var selection: [NSRange] {
-//		editorModel.textSelection
-		[]
+		cursors.map({ $0.selection })
 	}
 
 	private var context: Theme.Context {
