@@ -1776,13 +1776,13 @@
 				C97918862A9CC9140046EAF1 /* CharacterSelectionItem.swift */,
 				C9E878182A9FC9CF0018340C /* ExtensionSelectorItem.swift */,
 				C97918772A9CBF330046EAF1 /* ItemBackground.swift */,
+				C97C1FF42BCAA75200D133A7 /* LabelledSpanCount.swift */,
 				C979188B2A9CCA5C0046EAF1 /* LineSelectionItem.swift */,
 				C97918752A9CBEF20046EAF1 /* SearchItem.swift */,
 				C9FE53A52A7670BB00CACA1A /* StatusBar.swift */,
 				C97918732A9CBEBA0046EAF1 /* StatusBarContent.swift */,
 				C9E8781A2A9FCF3E0018340C /* StatusBarPadding.swift */,
 				C979187F2A9CC23F0046EAF1 /* StatusItem.swift */,
-				C97C1FF42BCAA75200D133A7 /* LabelledSpanCount.swift */,
 			);
 			path = Status;
 			sourceTree = "<group>";
