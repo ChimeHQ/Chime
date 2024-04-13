@@ -4,17 +4,10 @@ import DocumentContent
 import Theme
 
 struct CharacterSelectionItem: View {
-	@Environment(\.theme) private var theme
-	@Environment(\.controlActiveState) private var controlActiveState
-	@Environment(\.colorScheme) private var colorScheme
 	@Environment(\.documentCursors) private var cursors
 
 	private var selection: [NSRange] {
 		cursors.map({ $0.selection })
-	}
-
-	private var context: Theme.Context {
-		.init(controlActiveState: controlActiveState, hover: false, colorScheme: colorScheme)
 	}
 
 	private var count: String {
@@ -70,26 +63,11 @@ struct CharacterSelectionItem: View {
 	}
 
 	var body: some View {
-		HStack(spacing: 1.0) {
-			StatusItem(style: .leading) {
-				Text("Character")
-			}
-			StatusItem(style: .middle) {
-				ZStack {
-					Text(span)
-					Text(longestRepresentedSpan)
-						.hidden()
-				}
-			}
-			StatusItem(style: .trailing) {
-				ZStack {
-					Text(count)
-					Text(longestRepresentedCount)
-						.hidden()
-				}
-			}
-		}
-		.font(Font(theme.font(for: .statusLabel, context: context)))
+		LabelledSpanCount(
+			"Character",
+			spanPair: (span, longestRepresentedSpan),
+			countPair: (count, longestRepresentedCount)
+		)
 	}
 }
 
