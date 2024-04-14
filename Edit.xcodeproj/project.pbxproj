@@ -443,6 +443,13 @@
 			remoteGlobalIDString = C9891B122AFEC11A00C8F393;
 			remoteInfo = DocumentContent;
 		};
+		C97C1FF62BCBE60500D133A7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9B8A9DC2B31E43800C79606;
+			remoteInfo = TextSystem;
+		};
 		C9891AFE2AFEA3E400C8F393 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
@@ -2532,6 +2539,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				C97C1FF72BCBE60500D133A7 /* PBXTargetDependency */,
 				C97C1FF32BCAA49200D133A7 /* PBXTargetDependency */,
 				C97918852A9CC5AC0046EAF1 /* PBXTargetDependency */,
 				C97918832A9CC5A80046EAF1 /* PBXTargetDependency */,
@@ -3408,6 +3416,11 @@
 			target = C9891B122AFEC11A00C8F393 /* DocumentContent */;
 			targetProxy = C97C1FF22BCAA49200D133A7 /* PBXContainerItemProxy */;
 		};
+		C97C1FF72BCBE60500D133A7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9B8A9DC2B31E43800C79606 /* TextSystem */;
+			targetProxy = C97C1FF62BCBE60500D133A7 /* PBXContainerItemProxy */;
+		};
 		C9891AFF2AFEA3E400C8F393 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C9FE53C72A77CC1E00CACA1A /* Theme */;
@@ -4046,14 +4059,14 @@
 		};
 		C9FE53592A7660DF00CACA1A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C9FE531A2A759BC400CACA1A /* Module.xcconfig */;
+			baseConfigurationReference = C926738A2B078B0200B3CE2F /* WorkaroundModule.xcconfig */;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		C9FE535A2A7660DF00CACA1A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C9FE531A2A759BC400CACA1A /* Module.xcconfig */;
+			baseConfigurationReference = C926738A2B078B0200B3CE2F /* WorkaroundModule.xcconfig */;
 			buildSettings = {
 			};
 			name = Release;
@@ -4088,14 +4101,14 @@
 		};
 		C9FE53A22A76709D00CACA1A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C9FE531A2A759BC400CACA1A /* Module.xcconfig */;
+			baseConfigurationReference = C926738A2B078B0200B3CE2F /* WorkaroundModule.xcconfig */;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		C9FE53A32A76709D00CACA1A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C9FE531A2A759BC400CACA1A /* Module.xcconfig */;
+			baseConfigurationReference = C926738A2B078B0200B3CE2F /* WorkaroundModule.xcconfig */;
 			buildSettings = {
 			};
 			name = Release;

@@ -242,3 +242,27 @@ extension TextMetrics {
 		return lineList.index(before: descIdx.base)
 	}
 }
+
+extension TextMetrics {
+	public func lineSpan(for set: IndexSet, mode: RangeFillMode = .none) -> (Line, Line)? {
+		guard
+			let max = set.max(),
+			let min = set.min()
+		else {
+			return nil
+		}
+
+		guard rangeProcessor.processLocation(max, mode: mode) else {
+			return nil
+		}
+
+		guard
+			let start = line(for: min),
+			let end = line(for: max)
+		else {
+			return nil
+		}
+
+		return (start, end)
+	}
+}
