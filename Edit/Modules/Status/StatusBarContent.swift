@@ -1,6 +1,14 @@
 import SwiftUI
 
+import DocumentContent
+import TextSystem
+
+@MainActor
 struct StatusBarContent: View {
+	@Environment(\.documentCursors) private var cursors
+	@Environment(\.textViewSystem) private var textViewSystem
+	@State private var model = SelectionViewModel()
+
 	let searchCount: Int?
 
 	var body: some View {
@@ -22,6 +30,13 @@ struct StatusBarContent: View {
 					.transition(.move(edge: .trailing))
 
 			}
+		}
+		.environment(model)
+		.onChange(of: cursors) {
+			model.cursorsChanged(cursors)
+		}
+		.onChange(of: textViewSystem, initial: true) {
+			model.textViewSystem = textViewSystem
 		}
 	}
 }

@@ -98,6 +98,7 @@
 		C97919022A9E72FF0046EAF1 /* UIExtensionDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97919012A9E72FF0046EAF1 /* UIExtensionDescriptor.swift */; };
 		C97919042A9E74620046EAF1 /* AppExtensionIdentity+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97919032A9E74620046EAF1 /* AppExtensionIdentity+UI.swift */; };
 		C97C1FF52BCAA75200D133A7 /* LabelledSpanCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97C1FF42BCAA75200D133A7 /* LabelledSpanCount.swift */; };
+		C97C1FF92BCBF78500D133A7 /* SelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97C1FF82BCBF78500D133A7 /* SelectionViewModel.swift */; };
 		C9891AF82AFE996300C8F393 /* NSParagraphStyle+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9891AF72AFE996300C8F393 /* NSParagraphStyle+Helpers.swift */; };
 		C9891AFA2AFE9A3900C8F393 /* NSFont+Measurements.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9891AF92AFE9A3900C8F393 /* NSFont+Measurements.swift */; };
 		C9891B002AFEA3F100C8F393 /* NSAppearance+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9891AFC2AFEA35F00C8F393 /* NSAppearance+Style.swift */; };
@@ -910,6 +911,7 @@
 		C97919072A9E7BA90046EAF1 /* Process+Pipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Process+Pipes.swift"; sourceTree = "<group>"; };
 		C979191A2A9E83950046EAF1 /* AppHost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHost.swift; sourceTree = "<group>"; };
 		C97C1FF42BCAA75200D133A7 /* LabelledSpanCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelledSpanCount.swift; sourceTree = "<group>"; };
+		C97C1FF82BCBF78500D133A7 /* SelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionViewModel.swift; sourceTree = "<group>"; };
 		C9891AF72AFE996300C8F393 /* NSParagraphStyle+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSParagraphStyle+Helpers.swift"; sourceTree = "<group>"; };
 		C9891AF92AFE9A3900C8F393 /* NSFont+Measurements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSFont+Measurements.swift"; sourceTree = "<group>"; };
 		C9891AFC2AFEA35F00C8F393 /* NSAppearance+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAppearance+Style.swift"; sourceTree = "<group>"; };
@@ -1790,6 +1792,7 @@
 				C97918732A9CBEBA0046EAF1 /* StatusBarContent.swift */,
 				C9E8781A2A9FCF3E0018340C /* StatusBarPadding.swift */,
 				C979187F2A9CC23F0046EAF1 /* StatusItem.swift */,
+				C97C1FF82BCBF78500D133A7 /* SelectionViewModel.swift */,
 			);
 			path = Status;
 			sourceTree = "<group>";
@@ -3150,6 +3153,7 @@
 				C979187E2A9CC1270046EAF1 /* StatusBarContent.swift in Sources */,
 				C9E878192A9FC9CF0018340C /* ExtensionSelectorItem.swift in Sources */,
 				C9E8781C2A9FD0390018340C /* StatusBarPadding.swift in Sources */,
+				C97C1FF92BCBF78500D133A7 /* SelectionViewModel.swift in Sources */,
 				C97918812A9CC2B00046EAF1 /* StatusItem.swift in Sources */,
 				C979187B2A9CC1110046EAF1 /* SearchItem.swift in Sources */,
 				C97C1FF52BCAA75200D133A7 /* LabelledSpanCount.swift in Sources */,
