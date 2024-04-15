@@ -97,7 +97,7 @@
 		C97919002A9E728F0046EAF1 /* ExtensionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97918FF2A9E728F0046EAF1 /* ExtensionManager.swift */; };
 		C97919022A9E72FF0046EAF1 /* UIExtensionDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97919012A9E72FF0046EAF1 /* UIExtensionDescriptor.swift */; };
 		C97919042A9E74620046EAF1 /* AppExtensionIdentity+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97919032A9E74620046EAF1 /* AppExtensionIdentity+UI.swift */; };
-		C97C1FF52BCAA75200D133A7 /* LabelledSpanCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97C1FF42BCAA75200D133A7 /* LabelledSpanCount.swift */; };
+		C97C1FF52BCAA75200D133A7 /* LabelledTwoPartItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97C1FF42BCAA75200D133A7 /* LabelledTwoPartItem.swift */; };
 		C97C1FF92BCBF78500D133A7 /* SelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97C1FF82BCBF78500D133A7 /* SelectionViewModel.swift */; };
 		C9891AF82AFE996300C8F393 /* NSParagraphStyle+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9891AF72AFE996300C8F393 /* NSParagraphStyle+Helpers.swift */; };
 		C9891AFA2AFE9A3900C8F393 /* NSFont+Measurements.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9891AF92AFE9A3900C8F393 /* NSFont+Measurements.swift */; };
@@ -910,7 +910,7 @@
 		C97919032A9E74620046EAF1 /* AppExtensionIdentity+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppExtensionIdentity+UI.swift"; sourceTree = "<group>"; };
 		C97919072A9E7BA90046EAF1 /* Process+Pipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Process+Pipes.swift"; sourceTree = "<group>"; };
 		C979191A2A9E83950046EAF1 /* AppHost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHost.swift; sourceTree = "<group>"; };
-		C97C1FF42BCAA75200D133A7 /* LabelledSpanCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelledSpanCount.swift; sourceTree = "<group>"; };
+		C97C1FF42BCAA75200D133A7 /* LabelledTwoPartItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelledTwoPartItem.swift; sourceTree = "<group>"; };
 		C97C1FF82BCBF78500D133A7 /* SelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionViewModel.swift; sourceTree = "<group>"; };
 		C9891AF72AFE996300C8F393 /* NSParagraphStyle+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSParagraphStyle+Helpers.swift"; sourceTree = "<group>"; };
 		C9891AF92AFE9A3900C8F393 /* NSFont+Measurements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSFont+Measurements.swift"; sourceTree = "<group>"; };
@@ -1785,7 +1785,7 @@
 				C97918862A9CC9140046EAF1 /* CharacterSelectionItem.swift */,
 				C9E878182A9FC9CF0018340C /* ExtensionSelectorItem.swift */,
 				C97918772A9CBF330046EAF1 /* ItemBackground.swift */,
-				C97C1FF42BCAA75200D133A7 /* LabelledSpanCount.swift */,
+				C97C1FF42BCAA75200D133A7 /* LabelledTwoPartItem.swift */,
 				C979188B2A9CCA5C0046EAF1 /* LineSelectionItem.swift */,
 				C97918752A9CBEF20046EAF1 /* SearchItem.swift */,
 				C9FE53A52A7670BB00CACA1A /* StatusBar.swift */,
@@ -3156,7 +3156,7 @@
 				C97C1FF92BCBF78500D133A7 /* SelectionViewModel.swift in Sources */,
 				C97918812A9CC2B00046EAF1 /* StatusItem.swift in Sources */,
 				C979187B2A9CC1110046EAF1 /* SearchItem.swift in Sources */,
-				C97C1FF52BCAA75200D133A7 /* LabelledSpanCount.swift in Sources */,
+				C97C1FF52BCAA75200D133A7 /* LabelledTwoPartItem.swift in Sources */,
 				C9FE53A62A7670BB00CACA1A /* StatusBar.swift in Sources */,
 				C979188C2A9CCA5C0046EAF1 /* LineSelectionItem.swift in Sources */,
 			);

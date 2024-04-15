@@ -32,10 +32,10 @@ struct LineSelectionItem: View {
 	}
 
 	var body: some View {
-		LabelledSpanCount(
+		LabelledTwoPartItem(
 			"Line",
-			spanPair: (span, "0"),
-			countPair: (count, "0")
+			spanPair: (span, span),
+			countPair: (count, count)
 		)
 	}
 }

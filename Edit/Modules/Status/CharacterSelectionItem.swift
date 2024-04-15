@@ -63,7 +63,7 @@ struct CharacterSelectionItem: View {
 	}
 
 	var body: some View {
-		LabelledSpanCount(
+		LabelledTwoPartItem(
 			"Character",
 			spanPair: (span, longestRepresentedSpan),
 			countPair: (count, longestRepresentedCount)
