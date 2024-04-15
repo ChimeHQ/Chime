@@ -15,6 +15,7 @@ final class SelectionViewModel {
 	var textViewSystem: TextViewSystem?
 
 	var lineSelection: LineSelection = .single(index: 0, column: 0)
+	var characterRange: Range<Int> = 0..<0
 
 	func cursorsChanged(_ cursors: [Cursor]) {
 		guard let cursor = cursors.first else { return }
@@ -33,5 +34,10 @@ final class SelectionViewModel {
 		} else {
 			self.lineSelection = .multiple(start: span.0.index, end: span.1.index)
 		}
+
+		let startChar = cursor.selection.location
+		let endChar = cursors.last!.selection.max
+
+		self.characterRange = startChar..<endChar
 	}
 }
