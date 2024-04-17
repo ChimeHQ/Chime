@@ -96,4 +96,9 @@ public final class EditorContentViewController: NSViewController {
 
 		editorState.contentInsets = margins
 	}
+
+	@IBAction
+	func toggleStatusBarVisibility(_ sender: Any?) {
+		editorState.statusBarVisible.toggle()
+	}
 }

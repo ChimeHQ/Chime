@@ -635,6 +635,12 @@
                                     <action selector="toggleSidebar:" target="-1" id="iwa-gc-5KM"/>
                                 </connections>
                             </menuItem>
+                            <menuItem title="Show Status Bar" id="QVc-qq-eZU">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="toggleStatusBarVisibility:" target="-1" id="Ovx-dj-kLD"/>
+                                </connections>
+                            </menuItem>
                             <menuItem title="Show Extension Inspector" id="8bA-rx-IR5">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
