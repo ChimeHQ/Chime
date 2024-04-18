@@ -2,33 +2,34 @@ import SwiftUI
 
 import DocumentContent
 import TextSystem
+import UIUtility
 
 @MainActor
 struct StatusBarContent: View {
 	@Environment(\.documentCursors) private var cursors
 	@Environment(\.textViewSystem) private var textViewSystem
+	@Environment(EditorStateModel.self) private var editorModel
 	@State private var model = SelectionViewModel()
 
-	let searchCount: Int?
+	private let padding = 8.0
 
 	var body: some View {
 		HStack(spacing: 0) {
-//			StatusItem {
-//				ProgressView(message: progressMessage)
-//			}
-//			.modifier(BottomPushAndSlideEffect(visible: progressMessage != nil))
-//			.padding(.trailing, progressMessage != nil ? 8.0 : 0.0)
-
 			LineSelectionItem()
-				.padding(.trailing, 8.0)
+				.padding(.trailing, padding)
 
 			CharacterSelectionItem()
 
-			if let count = searchCount {
-				SearchItem(count: count)
-					.padding(.leading, 8.0)
-					.transition(.move(edge: .trailing))
+			if editorModel.hasDiagnostics {
+				DiagnosticsStatusBarItem(infoCount: 3, warnCount: 5, errorCount: 6)
+					.modifier(BottomPushAndSlideEffect(visible: editorModel.hasDiagnostics))
+					.padding(.leading, padding)
+			}
 
+			if editorModel.searchCount > 0 {
+				SearchItem(count: editorModel.searchCount)
+					.padding(.leading, padding)
+					.transition(.move(edge: .trailing))
 			}
 		}
 		.environment(model)
@@ -42,5 +43,5 @@ struct StatusBarContent: View {
 }
 
 #Preview {
-    StatusBarContent(searchCount: 1)
+    StatusBarContent()
 }

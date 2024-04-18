@@ -7,7 +7,7 @@ public struct StatusBar: View {
 	}
 	
 	public var body: some View {
-		StatusBarContent(searchCount: 1)
+		StatusBarContent()
             .padding(padding)
 	}
 }

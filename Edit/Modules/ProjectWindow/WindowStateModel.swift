@@ -55,6 +55,10 @@ final class WindowStateModel {
 	var projectContext: ProjectContext? {
 		projectState?.context
 	}
+
+	var searchActive: Bool {
+		false
+	}
 }
 
 extension WindowStateModel {

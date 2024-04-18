@@ -7,6 +7,7 @@ public final class EditorStateModel {
 	public var visibleFrame = CGRect.zero
 	public var contentInsets = EdgeInsets()
 	public var statusBarVisible = true
+	public var searchCount = 0
 
 	public init() {
 	}
@@ -18,5 +19,9 @@ public final class EditorStateModel {
 		set {
 			self.cursors = zip(newValue, newValue.indices).map { Cursor(index: $0.1, selection: $0.0) }
 		}
+	}
+
+	public var hasDiagnostics: Bool {
+		false
 	}
 }

@@ -19,7 +19,9 @@ struct ProjectWindowRoot<Content: View>: View {
 	var body: some View {
 		VStack(spacing: 0) {
 			content
-			SearchBar()
+			if model.searchActive {
+				SearchBar()
+			}
 		}
 		.frame(minWidth: 450, minHeight: 300)
 		.environment(\.theme, model.currentTheme)

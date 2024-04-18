@@ -73,7 +73,7 @@ extension Theme {
 		case .background:
 			NSUIColor.systemBackground
 		case .statusBackground:
-			NSUIColor.green
+			NSUIColor.gray
 		case .statusLabel:
 			NSUIColor.white
 		case let .syntaxSpecifier(name):
