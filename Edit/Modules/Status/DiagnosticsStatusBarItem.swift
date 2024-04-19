@@ -28,17 +28,22 @@ struct DiagnosticsStatusBarItem: View {
     var body: some View {
 		StatusItem(style: .single) {
 			HStack(spacing: 0.0) {
-				Image(systemName: "octagon.fill")
-					.modifier(BottomPushAndSlideEffect(visible: errorCount > 0))
-					.padding(.trailing, warnCount > 0 ? spacing : 0.0)
-				Image(systemName: "triangle.fill")
-					.modifier(BottomPushAndSlideEffect(visible: warnCount > 0))
-					.padding(.trailing, infoCount > 0 ? spacing : 0.0)
-				Image(systemName: "circle.fill")
-					.modifier(BottomPushAndSlideEffect(visible: infoCount > 0))
+				if errorCount > 0 {
+					Image(systemName: "octagon.fill")
+						.padding(.trailing, (warnCount > 0 || infoCount > 0) ? spacing : 0.0)
+				}
+				if warnCount > 0 {
+					Image(systemName: "triangle.fill")
+						.padding(.trailing, infoCount > 0 ? spacing : 0.0)
+				}
+				if infoCount > 0 {
+					Image(systemName: "circle.fill")
+				}
 			}
-
 		}
+		.animation(.default, value: errorCount)
+		.animation(.default, value: warnCount)
+		.animation(.default, value: infoCount)
     }
 }
 

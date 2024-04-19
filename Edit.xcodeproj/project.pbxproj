@@ -157,6 +157,9 @@
 		C9CDEB882B55B889009E252A /* LanguageData in Resources */ = {isa = PBXBuildFile; fileRef = C9CDEB872B55B889009E252A /* LanguageData */; };
 		C9CDEB8F2B56ACA3009E252A /* MainOffender in Frameworks */ = {isa = PBXBuildFile; productRef = C9CDEB8E2B56ACA3009E252A /* MainOffender */; };
 		C9E0B9F72BD1A3CE007AF034 /* DiagnosticsStatusBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E0B9F62BD1A3CE007AF034 /* DiagnosticsStatusBarItem.swift */; };
+		C9E0BA062BD27F3D007AF034 /* DiagnosticsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E0BA052BD27F3D007AF034 /* DiagnosticsModel.swift */; };
+		C9E0BA0E2BD2807B007AF034 /* libDiagnostics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9E0B9FC2BD27F0F007AF034 /* libDiagnostics.a */; };
+		C9E0BA0F2BD280C4007AF034 /* ChimeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE52F42A7539B100CACA1A /* ChimeKit.framework */; };
 		C9E877FC2A9F4B820018340C /* TrailingSidebar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E877FB2A9F4B820018340C /* TrailingSidebar.swift */; };
 		C9E878042A9F53530018340C /* UIPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E878032A9F53530018340C /* UIPlaceholder.swift */; };
 		C9E878092A9F53530018340C /* UIPlaceholderExtension.appex in Copy Extensions */ = {isa = PBXBuildFile; fileRef = C9E878012A9F53530018340C /* UIPlaceholderExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -620,6 +623,41 @@
 			remoteGlobalIDString = C92931412B80CC6700C64DDE;
 			remoteInfo = EditKit;
 		};
+		C9E0BA072BD27FD2007AF034 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9FE52F32A7539B100CACA1A;
+			remoteInfo = ChimeKit;
+		};
+		C9E0BA0A2BD27FEE007AF034 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9E0B9FB2BD27F0F007AF034;
+			remoteInfo = Diagnostics;
+		};
+		C9E0BA0C2BD28060007AF034 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9E0B9FB2BD27F0F007AF034;
+			remoteInfo = Diagnostics;
+		};
+		C9E0BA102BD28369007AF034 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9E0B9FB2BD27F0F007AF034;
+			remoteInfo = Diagnostics;
+		};
+		C9E0BA122BD28513007AF034 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9E0B9FB2BD27F0F007AF034;
+			remoteInfo = Diagnostics;
+		};
 		C9E878072A9F53530018340C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
@@ -956,6 +994,8 @@
 		C9CDEB562B508C3C009E252A /* Theme+Highlighting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Theme+Highlighting.swift"; sourceTree = "<group>"; };
 		C9CDEB872B55B889009E252A /* LanguageData */ = {isa = PBXFileReference; lastKnownFileType = folder; path = LanguageData; sourceTree = "<group>"; };
 		C9E0B9F62BD1A3CE007AF034 /* DiagnosticsStatusBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnosticsStatusBarItem.swift; sourceTree = "<group>"; };
+		C9E0B9FC2BD27F0F007AF034 /* libDiagnostics.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDiagnostics.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9E0BA052BD27F3D007AF034 /* DiagnosticsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnosticsModel.swift; sourceTree = "<group>"; };
 		C9E877FB2A9F4B820018340C /* TrailingSidebar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailingSidebar.swift; sourceTree = "<group>"; };
 		C9E878012A9F53530018340C /* UIPlaceholderExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.extensionkit-extension"; includeInIndex = 0; path = UIPlaceholderExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9E878032A9F53530018340C /* UIPlaceholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPlaceholder.swift; sourceTree = "<group>"; };
@@ -1046,6 +1086,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9E0BA0F2BD280C4007AF034 /* ChimeKit.framework in Frameworks */,
+				C9E0BA0E2BD2807B007AF034 /* libDiagnostics.a in Frameworks */,
 				C929316B2B822BAD00C64DDE /* libUtility.a in Frameworks */,
 				C929316D2B822BB300C64DDE /* TreeSitterGo in Frameworks */,
 				C92931712B822BBD00C64DDE /* TreeSitterMarkdown in Frameworks */,
@@ -1133,6 +1175,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9BDB5572B010094009225FB /* ChimeKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9E0B9FA2BD27F0F007AF034 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1500,6 +1549,14 @@
 			path = Swift;
 			sourceTree = "<group>";
 		};
+		C9E0B9FD2BD27F0F007AF034 /* Diagnostics */ = {
+			isa = PBXGroup;
+			children = (
+				C9E0BA052BD27F3D007AF034 /* DiagnosticsModel.swift */,
+			);
+			path = Diagnostics;
+			sourceTree = "<group>";
+		};
 		C9E878022A9F53530018340C /* UIPlaceholder */ = {
 			isa = PBXGroup;
 			children = (
@@ -1585,6 +1642,7 @@
 				C973E0002B62BDB3000998F7 /* libHighlighting.a */,
 				C942E6762B67B78E00792DD4 /* UserScriptExtension.appex */,
 				C92931422B80CC6700C64DDE /* EditKit.framework */,
+				C9E0B9FC2BD27F0F007AF034 /* libDiagnostics.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1638,6 +1696,7 @@
 		C9FE52CF2A75323800CACA1A /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				C9E0B9FD2BD27F0F007AF034 /* Diagnostics */,
 				C9FE52DD2A7532D500CACA1A /* Document */,
 				C9891B142AFEC11A00C8F393 /* DocumentContent */,
 				C9FE53832A7662F800CACA1A /* Editor */,
@@ -1900,6 +1959,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C9E0B9F82BD27F0F007AF034 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C9F79DE92A8FF065005ED8E9 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -2017,6 +2083,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				C9E0BA132BD28513007AF034 /* PBXTargetDependency */,
 				C929315C2B80D9F900C64DDE /* PBXTargetDependency */,
 				C929315A2B80D84800C64DDE /* PBXTargetDependency */,
 				C92931582B80D84300C64DDE /* PBXTargetDependency */,
@@ -2243,6 +2310,24 @@
 			productReference = C9BDB5482B00FD89009225FB /* SwiftExtension.appex */;
 			productType = "com.apple.product-type.extensionkit-extension";
 		};
+		C9E0B9FB2BD27F0F007AF034 /* Diagnostics */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C9E0BA022BD27F0F007AF034 /* Build configuration list for PBXNativeTarget "Diagnostics" */;
+			buildPhases = (
+				C9E0B9F82BD27F0F007AF034 /* Headers */,
+				C9E0B9F92BD27F0F007AF034 /* Sources */,
+				C9E0B9FA2BD27F0F007AF034 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C9E0BA082BD27FD2007AF034 /* PBXTargetDependency */,
+			);
+			name = Diagnostics;
+			productName = Diagnostics;
+			productReference = C9E0B9FC2BD27F0F007AF034 /* libDiagnostics.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 		C9E878002A9F53530018340C /* UIPlaceholder */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C9E8780A2A9F53530018340C /* Build configuration list for PBXNativeTarget "UIPlaceholder" */;
@@ -2431,6 +2516,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				C9E0BA0B2BD27FEE007AF034 /* PBXTargetDependency */,
 				C92673722B06C28200B3CE2F /* PBXTargetDependency */,
 				C97918EA2A9E41CB0046EAF1 /* PBXTargetDependency */,
 				C97918E82A9E41B90046EAF1 /* PBXTargetDependency */,
@@ -2545,6 +2631,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				C9E0BA112BD28369007AF034 /* PBXTargetDependency */,
 				C97C1FF72BCBE60500D133A7 /* PBXTargetDependency */,
 				C97C1FF32BCAA49200D133A7 /* PBXTargetDependency */,
 				C97918852A9CC5AC0046EAF1 /* PBXTargetDependency */,
@@ -2585,6 +2672,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				C9E0BA0D2BD28060007AF034 /* PBXTargetDependency */,
 				C9FE54012A7A606100CACA1A /* PBXTargetDependency */,
 				C9FE53EA2A7A5D4000CACA1A /* PBXTargetDependency */,
 			);
@@ -2657,6 +2745,10 @@
 					};
 					C9BDB5472B00FD89009225FB = {
 						CreatedOnToolsVersion = 15.1;
+					};
+					C9E0B9FB2BD27F0F007AF034 = {
+						CreatedOnToolsVersion = 15.3;
+						LastSwiftMigration = 1530;
 					};
 					C9E878002A9F53530018340C = {
 						CreatedOnToolsVersion = 15.0;
@@ -2777,6 +2869,7 @@
 				C973DFFF2B62BDB3000998F7 /* Highlighting */,
 				C942E6752B67B78E00792DD4 /* UserScript */,
 				C92931412B80CC6700C64DDE /* EditKit */,
+				C9E0B9FB2BD27F0F007AF034 /* Diagnostics */,
 			);
 		};
 /* End PBXProject section */
@@ -2999,6 +3092,14 @@
 			files = (
 				C9BDB54B2B00FD89009225FB /* SwiftStandaloneExtension.swift in Sources */,
 				C92672F82B0399D800B3CE2F /* SwiftExtension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9E0B9F92BD27F0F007AF034 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9E0BA062BD27F3D007AF034 /* DiagnosticsModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3605,6 +3706,31 @@
 			isa = PBXTargetDependency;
 			productRef = C9CDEB902B56ACBB009E252A /* MainOffender */;
 		};
+		C9E0BA082BD27FD2007AF034 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9FE52F32A7539B100CACA1A /* ChimeKit */;
+			targetProxy = C9E0BA072BD27FD2007AF034 /* PBXContainerItemProxy */;
+		};
+		C9E0BA0B2BD27FEE007AF034 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9E0B9FB2BD27F0F007AF034 /* Diagnostics */;
+			targetProxy = C9E0BA0A2BD27FEE007AF034 /* PBXContainerItemProxy */;
+		};
+		C9E0BA0D2BD28060007AF034 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9E0B9FB2BD27F0F007AF034 /* Diagnostics */;
+			targetProxy = C9E0BA0C2BD28060007AF034 /* PBXContainerItemProxy */;
+		};
+		C9E0BA112BD28369007AF034 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9E0B9FB2BD27F0F007AF034 /* Diagnostics */;
+			targetProxy = C9E0BA102BD28369007AF034 /* PBXContainerItemProxy */;
+		};
+		C9E0BA132BD28513007AF034 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9E0B9FB2BD27F0F007AF034 /* Diagnostics */;
+			targetProxy = C9E0BA122BD28513007AF034 /* PBXContainerItemProxy */;
+		};
 		C9E878082A9F53530018340C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C9E878002A9F53530018340C /* UIPlaceholder */;
@@ -3921,6 +4047,20 @@
 		C9BDB5532B00FD89009225FB /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C942E6822B67B93B00792DD4 /* InfoPlistExtension.xcconfig */;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		C9E0BA032BD27F0F007AF034 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9FE531A2A759BC400CACA1A /* Module.xcconfig */;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		C9E0BA042BD27F0F007AF034 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9FE531A2A759BC400CACA1A /* Module.xcconfig */;
 			buildSettings = {
 			};
 			name = Release;
@@ -4261,6 +4401,15 @@
 			buildConfigurations = (
 				C9BDB5522B00FD89009225FB /* Debug */,
 				C9BDB5532B00FD89009225FB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C9E0BA022BD27F0F007AF034 /* Build configuration list for PBXNativeTarget "Diagnostics" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9E0BA032BD27F0F007AF034 /* Debug */,
+				C9E0BA042BD27F0F007AF034 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

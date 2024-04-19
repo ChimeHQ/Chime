@@ -3,6 +3,7 @@ import Foundation
 import OSLog
 
 import ChimeKit
+import Diagnostics
 import Document
 import ExtensionHost
 import Utility
@@ -14,6 +15,7 @@ final class ApplicationServiceEventRouter {
 	private let host: AppHost
 	private let documentController: ProjectDocumentController
 	private var tokenInvalidationTasks = [DocumentIdentity: Task<Void, Never>]()
+	private var diagnosticsTask: Task<Void, Never>?
 
 	init(documentController: ProjectDocumentController, extensionInterface: ExtensionRouter, host: AppHost) {
 		self.extensionInterface = extensionInterface
@@ -24,6 +26,20 @@ final class ApplicationServiceEventRouter {
 		documentController.projectRemovedHandler = { [weak self] in self?.projectRemoved($0) }
 		documentController.documentDidOpenHandler = { [weak self] in self?.documentOpened($0) }
 		documentController.documentWillCloseHandler = { [weak self] in self?.documentClosed($0) }
+
+		self.monitorHost()
+	}
+
+	deinit {
+		self.diagnosticsTask?.cancel()
+	}
+
+	func monitorHost() {
+		self.diagnosticsTask = Task {
+			for await docDiagnostics in host.diagnosticsSequence {
+				self.routeDiagnostics(docDiagnostics)
+			}
+		}
 	}
 }
 
@@ -125,5 +141,16 @@ extension ApplicationServiceEventRouter {
 	private func endMonitoring(for documentId: DocumentIdentity) {
 		tokenInvalidationTasks[documentId]?.cancel()
 		tokenInvalidationTasks[documentId] = nil
+	}
+
+	private func routeDiagnostics(_ docDiagnostics: DocumentDiagnostics) {
+		let url = docDiagnostics.url
+		guard let project = documentController.getProject(for: url) else {
+			logger.warning("Unable to find matching project for diagnostics with url \(url, privacy: .public)")
+			return
+		}
+
+		project.state.updateDiagnostics(docDiagnostics)
+
 	}
 }

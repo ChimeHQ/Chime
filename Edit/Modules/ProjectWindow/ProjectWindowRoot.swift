@@ -28,6 +28,7 @@ struct ProjectWindowRoot<Content: View>: View {
 		.environment(\.projectContext, model.projectContext)
 		.environment(\.documentContext, model.documentContext)
 		.environment(model.navigatorModel)
+		.environment(model.diagnosticsModel)
 		.ignoresSafeArea()
 		.onChange(of: windowState) { model.windowStateChanged($0, $1) }
 	}

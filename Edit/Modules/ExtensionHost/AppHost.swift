@@ -2,14 +2,9 @@ import Foundation
 import OSLog
 
 import ChimeKit
+import Diagnostics
 import ProcessEnv
 import Utility
-
-public struct DocumentDiagnostics: Hashable, Sendable {
-    public let version: Int?
-    public let url: URL
-    public let diagnostics: [Diagnostic]
-}
 
 @MainActor
 public final class AppHost {
@@ -17,6 +12,7 @@ public final class AppHost {
     public typealias ContentProvider = (UUID) throws -> (String, Int)
     public typealias CombinedContentProvider = (UUID, ChimeKit.TextRange) throws -> CombinedTextContent
 	public typealias InvalidationSequence = AsyncStream<TextTarget>
+	public typealias DiagnosticsSequence = AsyncStream<DocumentDiagnostics>
 
     public struct Configuration {
         public let contentProvider: ContentProvider
@@ -33,14 +29,13 @@ public final class AppHost {
 
     private let config: Configuration
     private let logger = Logger(type: AppHost.self)
-//    private var diagnosticsSubject: CurrentValueSubject<[URL: DocumentDiagnostics], Never>
+	private var diagnosticsSequencePair = DiagnosticsSequence.makeStream()
 	private var tokenInvalidationSequences: [DocumentIdentity: InvalidationSequence.Pair]
     private var serviceConfigurationHandlers = [DocumentIdentity: ServiceConfigurationHandler]()
     private var hostedProcesses = [UUID: Process]()
 
     public init(config: Configuration) {
         self.config = config
-//        self.diagnosticsSubject = CurrentValueSubject([:])
         self.tokenInvalidationSequences = [:]
     }
 
@@ -85,13 +80,9 @@ extension AppHost: HostProtocol {
     }
 
     public func publishDiagnostics(_ diagnostics: [Diagnostic], for documentURL: URL, version: Int?) {
-//        DispatchQueue.main.async {
-//            var newValue = self.diagnosticsSubject.value
-//
-//            newValue[documentURL] = DocumentDiagnostics(version: version, url: documentURL, diagnostics: diagnostics)
-//
-//            self.diagnosticsSubject.send(newValue)
-//        }
+		let docDiagnostics = DocumentDiagnostics(version: version, url: documentURL, diagnostics: diagnostics)
+
+		diagnosticsSequencePair.continuation.yield(docDiagnostics)
     }
 
     public func invalidateTokens(for documentId: DocumentIdentity, in target: TextTarget) {
@@ -160,9 +151,9 @@ extension AppHost {
 }
 
 extension AppHost {
-//    public var diagnosticsPublisher: some Publisher<[URL: DocumentDiagnostics], Never> {
-//        return diagnosticsSubject
-//    }
+    public var diagnosticsSequence: DiagnosticsSequence {
+		diagnosticsSequencePair.stream
+    }
 
     public func tokenInvalidateSequence(for documentId: DocumentIdentity) -> InvalidationSequence {
 		tokenInvalidationSequence(for: documentId).0

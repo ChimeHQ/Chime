@@ -1,6 +1,7 @@
 import SwiftUI
 
 import ChimeKit
+import Diagnostics
 import DocumentContent
 import Navigator
 import Theme
@@ -52,6 +53,10 @@ final class WindowStateModel {
 		projectState?.navigatorModel ?? FileNavigatorModel()
 	}
 
+	var diagnosticsModel: DiagnosticsModel {
+		projectState?.diagnosticsModel ?? DiagnosticsModel()
+	}
+
 	var projectContext: ProjectContext? {
 		projectState?.context
 	}
@@ -65,10 +70,6 @@ extension WindowStateModel {
 	private func stateUpdated() {
 		print("project state updated")
 		projectContextUpdated()
-
-		let value = Unmanaged.passUnretained(navigatorModel).toOpaque()
-
-		print("nav model: ", value)
 	}
 
 	private func projectContextUpdated() {

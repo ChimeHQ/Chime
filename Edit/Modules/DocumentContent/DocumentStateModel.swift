@@ -20,8 +20,4 @@ public final class EditorStateModel {
 			self.cursors = zip(newValue, newValue.indices).map { Cursor(index: $0.1, selection: $0.0) }
 		}
 	}
-
-	public var hasDiagnostics: Bool {
-		false
-	}
 }

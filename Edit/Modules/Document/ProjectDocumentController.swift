@@ -255,7 +255,7 @@ extension ProjectDocumentController {
 		}
 	}
 
-	private func getProject(for url: URL) -> Project? {
+	public func getProject(for url: URL) -> Project? {
 		return projects.values.first(where: { url.path.hasPrefix($0.url.path) })
 	}
 

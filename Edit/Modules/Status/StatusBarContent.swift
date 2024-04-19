@@ -1,6 +1,7 @@
 import SwiftUI
 
 import DocumentContent
+import Diagnostics
 import TextSystem
 import UIUtility
 
@@ -9,6 +10,7 @@ struct StatusBarContent: View {
 	@Environment(\.documentCursors) private var cursors
 	@Environment(\.textViewSystem) private var textViewSystem
 	@Environment(EditorStateModel.self) private var editorModel
+	@Environment(DiagnosticsModel.self) private var diagnosticsModel
 	@State private var model = SelectionViewModel()
 
 	private let padding = 8.0
@@ -20,9 +22,12 @@ struct StatusBarContent: View {
 
 			CharacterSelectionItem()
 
-			if editorModel.hasDiagnostics {
-				DiagnosticsStatusBarItem(infoCount: 3, warnCount: 5, errorCount: 6)
-					.modifier(BottomPushAndSlideEffect(visible: editorModel.hasDiagnostics))
+			if diagnosticsModel.hasDiagnostics {
+				DiagnosticsStatusBarItem(
+					infoCount: diagnosticsModel.infoCount,
+					warnCount: diagnosticsModel.warningCount,
+					errorCount: diagnosticsModel.errorCount
+				)
 					.padding(.leading, padding)
 			}
 
@@ -39,6 +44,12 @@ struct StatusBarContent: View {
 		.onChange(of: textViewSystem, initial: true) {
 			model.textViewSystem = textViewSystem
 		}
+		.animation(.default, value: diagnosticsModel.hasDiagnostics)
+//		.onChange(of: diagnosticsModel.hasDiagnostics, initial: true) {
+//			withAnimation {
+//				self.diagnosticsVisible = diagnosticsModel.hasDiagnostics
+//			}
+//		}
 	}
 }
 
