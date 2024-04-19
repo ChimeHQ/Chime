@@ -39,8 +39,6 @@ public final class DiagnosticsModel {
 		let url = docDiagnostics.url
 
 		self.documentDiagnostics[url] = docDiagnostics
-
-		print(docDiagnostics)
 	}
 
 	public var hasDiagnostics: Bool {
