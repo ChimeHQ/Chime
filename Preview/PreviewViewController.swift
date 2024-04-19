@@ -13,7 +13,11 @@ final class PreviewViewController: NSViewController, QLPreviewingController {
 
 	override init(nibName nibNameOrNil: NSNib.Name?, bundle nibBundleOrNil: Bundle?) {
 		self.textSystem = TextViewSystem(textView: sourceViewController.textView)
-		self.editorContentController = EditorContentViewController(textSystem: textSystem, sourceViewController: sourceViewController)
+		self.editorContentController = EditorContentViewController(
+			textSystem: textSystem,
+			sourceViewController: sourceViewController,
+			statusBarVisible: false
+		)
 
 		super.init(nibName: nil, bundle: nil)
 	}

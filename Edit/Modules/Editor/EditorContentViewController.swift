@@ -21,8 +21,8 @@ public final class EditorContentViewController: NSViewController {
 	public var contentVisibleRectChanged: (NSRect) -> Void = { _ in }
 	private lazy var observer = ScrollViewVisibleRectObserver(scrollView: editorScrollView)
 
-	public init(textSystem: TextViewSystem, sourceViewController: SourceViewController) {
-		self.editorState = EditorStateModel()
+	public init(textSystem: TextViewSystem, sourceViewController: SourceViewController, statusBarVisible: Bool) {
+		self.editorState = EditorStateModel(statusBarVisible: statusBarVisible)
 		self.sourceViewController = sourceViewController
 		self.textSystem = textSystem
 

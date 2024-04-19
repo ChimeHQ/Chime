@@ -46,7 +46,11 @@ public final class TextDocument: ContainedDocument<Project> {
 		self.syntaxService = SyntaxService(textSystem: textSystem, languageDataStore: LanguageDataStore.global)
 		self.highlighter = Highlighter(textSystem: textSystem, syntaxService: syntaxService)
 		self.state = DocumentState(contentId: textSystem.contentIdentity)
-		self.editorContentController = EditorContentViewController(textSystem: textSystem, sourceViewController: sourceViewController)
+		self.editorContentController = EditorContentViewController(
+			textSystem: textSystem,
+			sourceViewController: sourceViewController,
+			statusBarVisible: true
+		)
 		let dispatcher = StorageDispatcher(storage: textSystem.storage, monitors: [
 			textSystem.storageMonitor,
 			syntaxService.storageMonitor,

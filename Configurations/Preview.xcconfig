@@ -5,5 +5,5 @@ INFOPLIST_FILE = ${TARGET_NAME}/Info.plist
 INFOPLIST_KEY_CFBundleDisplayName = ${TARGET_NAME}
 LD_RUNPATH_SEARCH_PATHS = $(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks
 PRODUCT_BUNDLE_IDENTIFIER = $(BUNDLE_ID_PREFIX).Edit.${TARGET_NAME}
-PRODUCT_NAME = ${TARGET_NAME}
+PRODUCT_NAME = ChimePreview
 SKIP_INSTALL = YES

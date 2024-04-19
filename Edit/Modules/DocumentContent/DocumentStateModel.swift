@@ -6,10 +6,11 @@ public final class EditorStateModel {
 	public var cursors: [Cursor] = []
 	public var visibleFrame = CGRect.zero
 	public var contentInsets = EdgeInsets()
-	public var statusBarVisible = true
+	public var statusBarVisible: Bool
 	public var searchCount = 0
 
-	public init() {
+	public init(statusBarVisible: Bool) {
+		self.statusBarVisible = statusBarVisible
 	}
 
 	public var selectedRanges: [NSRange] {

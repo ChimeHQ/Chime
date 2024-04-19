@@ -131,7 +131,7 @@
 		C9B8AA092B320D8B00C79606 /* libTextSystem.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9B8A9DD2B31E43800C79606 /* libTextSystem.a */; };
 		C9B8AA1A2B362DDE00C79606 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9B8AA192B362DDE00C79606 /* Quartz.framework */; };
 		C9B8AA1D2B362DDE00C79606 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B8AA1C2B362DDE00C79606 /* PreviewViewController.swift */; };
-		C9B8AA282B362DDE00C79606 /* Preview.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = C9B8AA182B362DDE00C79606 /* Preview.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C9B8AA282B362DDE00C79606 /* ChimePreview.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = C9B8AA182B362DDE00C79606 /* ChimePreview.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C9B8AA352B3636A100C79606 /* ChimeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE52F42A7539B100CACA1A /* ChimeKit.framework */; };
 		C9B8AA362B3636A800C79606 /* libEditor.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE537A2A7662DC00CACA1A /* libEditor.a */; };
 		C9B8AA372B3636AC00C79606 /* libTextSystem.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9B8A9DD2B31E43800C79606 /* libTextSystem.a */; };
@@ -849,7 +849,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				C9B8AA282B362DDE00C79606 /* Preview.appex in Embed Foundation Extensions */,
+				C9B8AA282B362DDE00C79606 /* ChimePreview.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -977,7 +977,7 @@
 		C9B8A9F32B31F09E00C79606 /* TextStorageMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextStorageMonitor.swift; sourceTree = "<group>"; };
 		C9B8A9FF2B31F93800C79606 /* RangeProcessor+Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RangeProcessor+Storage.swift"; sourceTree = "<group>"; };
 		C9B8AA072B32005400C79606 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
-		C9B8AA182B362DDE00C79606 /* Preview.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Preview.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9B8AA182B362DDE00C79606 /* ChimePreview.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ChimePreview.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9B8AA192B362DDE00C79606 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
 		C9B8AA1C2B362DDE00C79606 /* PreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
 		C9B8AA232B362DDE00C79606 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1637,7 +1637,7 @@
 				C9891B352AFFF1F700C8F393 /* libGutter.a */,
 				C9BDB5482B00FD89009225FB /* SwiftExtension.appex */,
 				C9B8A9DD2B31E43800C79606 /* libTextSystem.a */,
-				C9B8AA182B362DDE00C79606 /* Preview.appex */,
+				C9B8AA182B362DDE00C79606 /* ChimePreview.appex */,
 				C9B8AA4A2B37055900C79606 /* libSyntaxService.a */,
 				C973E0002B62BDB3000998F7 /* libHighlighting.a */,
 				C942E6762B67B78E00792DD4 /* UserScriptExtension.appex */,
@@ -2260,7 +2260,7 @@
 				C9CDEB682B530088009E252A /* ScrollViewPlus */,
 			);
 			productName = Preview;
-			productReference = C9B8AA182B362DDE00C79606 /* Preview.appex */;
+			productReference = C9B8AA182B362DDE00C79606 /* ChimePreview.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 		C9B8AA492B37055800C79606 /* SyntaxService */ = {
