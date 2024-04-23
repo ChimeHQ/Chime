@@ -5,6 +5,7 @@ import DocumentContent
 import TextSystem
 import Neon
 import Theme
+import ThemePark
 
 final class LineNumberViewController: NSViewController {
 	private var didChangeObserver: NSObjectProtocol?
@@ -19,6 +20,9 @@ final class LineNumberViewController: NSViewController {
 
 	private let textSystem: TextViewSystem
 	private var selectedRanges = [NSRange]()
+	private var normalLineAttributes: [NSAttributedString.Key: Any] = [:]
+	private var selectedLineAttributes: [NSAttributedString.Key: Any] = [:]
+	private var emptyLineAttributes: [NSAttributedString.Key: Any] = [:]
 
 	init(textSystem: TextViewSystem) {
 		self.textSystem = textSystem
@@ -89,7 +93,29 @@ final class LineNumberViewController: NSViewController {
 }
 
 extension LineNumberViewController {
-	private func updateTheme(_ theme: Theme, context: Theme.Context) {
+	private func updateTheme(_ theme: Theme, context: Query.Context) {
+		let baseStyle = theme.style(for: .gutter(.label), context: context)
+		let baseColor = baseStyle.color
+		let baseFont = baseStyle.font ?? Theme.fallbackFont
+
+		normalLineAttributes = [
+			NSAttributedString.Key.foregroundColor: baseColor.emphasize(by: -0.5),
+			NSAttributedString.Key.font: baseFont,
+			NSAttributedString.Key.paragraphStyle: NSParagraphStyle.rightAligned
+		]
+
+		selectedLineAttributes = [
+			.foregroundColor: baseColor,
+			.font: baseFont,
+			.paragraphStyle: NSParagraphStyle.rightAligned
+		]
+
+		emptyLineAttributes = [
+			.foregroundColor: baseColor.emphasize(by: -0.75),
+			.font: baseFont,
+			.paragraphStyle: NSParagraphStyle.rightAligned
+		]
+
 		let fullRange = NSRange(0..<storage.currentLength)
 		invalidate([fullRange])
 	}
@@ -128,23 +154,22 @@ extension LineNumberViewController {
 	}
 
 	private func styleForLine(_ line: Line, in range: NSRange, lastLine: Bool) -> [NSAttributedString.Key : Any] {
-		var attrs = [
-			NSAttributedString.Key.foregroundColor: NSColor.white,
-			NSAttributedString.Key.font: NSFont.systemFont(ofSize: 10.0),
-			NSAttributedString.Key.paragraphStyle: NSParagraphStyle.rightAligned
-		]
-
 		let lastPositionSelected = selectedRanges == [NSRange(location: line.max, length: 0)]
 		let cursorAtEndOfText = lastLine && lastPositionSelected
-		let selected = isRangeSelected(range)
 
-		if cursorAtEndOfText || selected {
-			attrs[.foregroundColor] = NSColor.white
-		} else if line.whitespaceOnly {
-			attrs[.foregroundColor] = NSColor.lightGray
+		if cursorAtEndOfText {
+			return selectedLineAttributes
 		}
 
-		return attrs
+		if isRangeSelected(range) {
+			return selectedLineAttributes
+		}
+
+		if line.whitespaceOnly {
+			return emptyLineAttributes
+		}
+
+		return normalLineAttributes
 	}
 
 	private func backgroundForLine(_ line: Line) -> NSColor {

@@ -35,6 +35,7 @@ extension TextViewSystemNeonInterface: TextSystemInterface {
 
 	public func applyStyles(for application: TokenApplication) {
 		if application.action == .replace, let range = application.range {
+//			print("removing: ", range)
 			setAttributes([:], in: range)
 		}
 

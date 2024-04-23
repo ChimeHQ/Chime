@@ -17,7 +17,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C9B8AA172B362DDD00C79606"
-               BuildableName = "Preview.appex"
+               BuildableName = "ChimePreview.appex"
                BlueprintName = "Preview"
                ReferencedContainer = "container:Edit.xcodeproj">
             </BuildableReference>

@@ -7,92 +7,51 @@ import ContainedDocument
 import DocumentContent
 import Editor
 import ExtensionHost
-import Highlighting
 import ProcessEnv
 import ProjectWindow
-import SyntaxService
 import TextStory
 import TextSystem
 import Theme
-import Utility
 
 @MainActor
 public final class TextDocument: ContainedDocument<Project> {
 	typealias StorageDispatcher = TextStorageDispatcher<TextViewSystem.Version>
 
-	private let editorContentController: EditorContentViewController
-	private let sourceViewController: SourceViewController
 	private lazy var projectWindowController = makeProjectWindowController(
-		contentViewController: editorContentController,
-		context: state.context
+		contentViewController: coordinator.editorContentController,
+		model: windowModel
 	)
 
-	private let syntaxService: SyntaxService
-	private let storageDispatcher: StorageDispatcher
 	private var isClosing = false
 	private let logger = Logger(type: TextDocument.self)
-	private let highlighter: Highlighter<ExtensionRouter.TokenService>
-	public let textSystem: TextViewSystem
 	public var stateChangedHandler: (DocumentState, DocumentState) -> Void = { _, _ in }
-	public let layoutBuffer = LayoutInvalidationBuffer()
+	private let windowModel: WindowStateModel
+	private let coordinator: DocumentCoordinator<ExtensionRouter.TokenService>
 
 	private var state: DocumentState {
 		didSet { stateUpdated(oldValue) }
 	}
 
 	override init() {
-		self.sourceViewController = SourceViewController()
-		self.textSystem = TextViewSystem(textView: sourceViewController.textView)
-		self.syntaxService = SyntaxService(textSystem: textSystem, languageDataStore: LanguageDataStore.global)
-		self.highlighter = Highlighter(textSystem: textSystem, syntaxService: syntaxService)
-		self.state = DocumentState(contentId: textSystem.contentIdentity)
-		self.editorContentController = EditorContentViewController(
-			textSystem: textSystem,
-			sourceViewController: sourceViewController,
-			statusBarVisible: true
-		)
-		let dispatcher = StorageDispatcher(storage: textSystem.storage, monitors: [
-			textSystem.storageMonitor,
-			syntaxService.storageMonitor,
-			highlighter.storageMonitor
-		])
+		self.coordinator = DocumentCoordinator(statusBarVisible: true)
+		self.state = DocumentState(contentId: coordinator.textSystem.contentIdentity)
 
-		self.storageDispatcher = dispatcher
+		self.windowModel = WindowStateModel(context: state.context, themeStore: ProjectDocumentController.sharedController.themeStore)
 
 	    super.init()
 
-		let textView = sourceViewController.textView
-
-		sourceViewController.shouldChangeTextHandler = {
-			dispatcher.textView(textView, shouldChangeTextIn: $0, replacementString: $1)
-		}
-
-		sourceViewController.selectionChangedHandler = { [editorContentController] in
-			editorContentController.selectedRanges = $0
-		}
-
-		sourceViewController.willLayoutHandler = { [layoutBuffer] in layoutBuffer.willLayout() }
-		sourceViewController.didLayoutHandler = { [layoutBuffer] in layoutBuffer.didLayout() }
-
-		syntaxService.invalidationHandler = { [highlighter] in
-			highlighter.invalidate(textTarget: $0)
-		}
-
-		layoutBuffer.handler = { [highlighter] in
-			highlighter.visibleContentDidChange()
-		}
-
-		editorContentController.contentVisibleRectChanged = { [layoutBuffer] _ in
-			layoutBuffer.contentVisibleRectChanged()
-		}
-
-		LanguageDataStore.global.configurationLoaded = { [weak syntaxService] in
-			syntaxService?.languageConfigurationChanged(for: $0)
+		// everything about this isn't great
+		windowModel.themeUpdated = { [weak self] in
+			self?.updateTheme($0)
 		}
 	}
 
 	public var context: DocumentContext {
 		state.context
+	}
+
+	public var textSystem: TextViewSystem {
+		coordinator.textSystem
 	}
 
 	public override class var autosavesInPlace: Bool {
@@ -114,8 +73,8 @@ public final class TextDocument: ContainedDocument<Project> {
 	public override func read(from url: URL, ofType typeName: String) throws {
 		try MainActor.assumeIsolated {
 			let config = state.context.configuration
-			let theme = projectWindowController.theme
-			let context = Theme.Context(window: projectWindowController.window)
+			let theme = windowModel.currentTheme
+			let context = Query.Context(window: projectWindowController.window)
 			let attrs = theme.typingAttributes(tabWidth: config.tabWidth, context: context)
 
 			try textSystem.reload(from: url, attributes: attrs)
@@ -168,8 +127,7 @@ extension TextDocument {
 
 		logger.debug("document state changed")
 
-		syntaxService.documentContextChanged(from: oldValue.context, to: state.context)
-		highlighter.documentContextChanged(from: oldValue.context, to: state.context)
+		coordinator.documentContextChanged(from: oldValue.context, to: state.context)
 
 		stateChangedHandler(oldValue, state)
 	}
@@ -211,22 +169,26 @@ extension TextDocument {
 		do {
 			let docService = try service.documentService(for: context)
 
-			self.highlighter.tokenService = try docService?.tokenService
+			coordinator.highlighter.tokenService = try docService?.tokenService
 		} catch {
 			logger.error("Failed to create new document service connection: \(error, privacy: .public)")
 		}
 	}
 
 	public func invalidateTokens(_ target: TextTarget) {
-		highlighter.invalidate(textTarget: target)
+		coordinator.highlighter.invalidate(textTarget: target)
 	}
 }
 
 extension TextDocument {
-	private func tokenStyle(for name: String) -> [NSAttributedString.Key : Any] {
-		let theme = projectWindowController.theme
-		let context = Theme.Context(window: projectWindowController.window)
+	private func updateTheme(_ theme: Theme) {
+		// touching projectWindowController here seems to cause problems...
 
-		return theme.syntaxStyle(for: name, context: context)
+		let config = state.context.configuration
+		let context = Query.Context(window: nil)
+		let attrs = theme.typingAttributes(tabWidth: config.tabWidth, context: context)
+
+		textSystem.themeChanged(attributes: attrs)
+		coordinator.highlighter.updateTheme(theme, context: context)
 	}
 }

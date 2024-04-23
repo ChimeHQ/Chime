@@ -1,11 +1,12 @@
 import SwiftUI
 
+import ThemePark
+
 struct ThemeMonitor<Content: View>: View {
-	typealias ThemeUpdateHandler = (Theme, Theme.Context) -> Void
+	typealias ThemeUpdateHandler = (Theme, Query.Context) -> Void
 
 	@Environment(\.theme) private var theme
-	@Environment(\.nsuiControlActiveState) private var controlActiveState
-	@Environment(\.colorScheme) private var colorScheme
+	@Environment(\.styleQueryContext) private var context
 	let content: Content
 	let themeUpdateAction: ThemeUpdateHandler
 
@@ -18,20 +19,15 @@ struct ThemeMonitor<Content: View>: View {
 		themeUpdateAction(theme, context)
 	}
 
-	private var context: Theme.Context {
-		.init(controlActiveState: controlActiveState, hover: false, colorScheme: colorScheme)
-	}
-
 	var body: some View {
 		content
-		.onChange(of: theme) { _, _ in themeUpdated() }
-		.onChange(of: colorScheme) { _, _ in themeUpdated() }
-		.onChange(of: controlActiveState) { _, _ in themeUpdated() }
+			.themeSensitive()
+			.onChange(of: theme.identity, initial: true) { _, _ in themeUpdated() }
 	}
 }
 
 struct ThemeMonitorModifier: ViewModifier {
-	typealias ThemeUpdateHandler = (Theme, Theme.Context) -> Void
+	typealias ThemeUpdateHandler = (Theme, Query.Context) -> Void
 
 	let action: ThemeUpdateHandler
 
@@ -45,7 +41,7 @@ struct ThemeMonitorModifier: ViewModifier {
 }
 
 extension View {
-	public func onThemeChange(_ action: @escaping (Theme, Theme.Context) -> Void) -> some View {
+	public func onThemeChange(_ action: @escaping (Theme, Query.Context) -> Void) -> some View {
 		modifier(ThemeMonitorModifier(action))
 	}
 }

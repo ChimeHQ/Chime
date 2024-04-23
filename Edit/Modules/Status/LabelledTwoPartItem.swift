@@ -5,8 +5,6 @@ import Theme
 @MainActor
 struct LabelledTwoPartItem: View {
 	@Environment(\.theme) private var theme
-	@Environment(\.colorScheme) private var colorScheme
-	@Environment(\.controlActiveState) private var controlActiveState
 
 	let label: String
 	let primaryPair: (String, String)
@@ -16,10 +14,6 @@ struct LabelledTwoPartItem: View {
 		self.label = label
 		self.primaryPair = spanPair
 		self.secondaryPair = countPair
-	}
-
-	private var context: Theme.Context {
-		.init(controlActiveState: controlActiveState, hover: false, colorScheme: colorScheme)
 	}
 
 	var body: some View {
@@ -42,7 +36,7 @@ struct LabelledTwoPartItem: View {
 				}
 			}
 		}
-		.font(Font(theme.font(for: .statusLabel, context: context)))
+		.themeFont(.editor(.accessoryForeground))
 	}
 }
 

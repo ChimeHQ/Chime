@@ -5,10 +5,13 @@ import Navigator
 import WindowTreatment
 import Search
 import Status
+import ThemePark
+import Utility
 
 struct ProjectWindowRoot<Content: View>: View {
 	@Environment(WindowStateModel.self) private var model
 	@Environment(\.windowState) private var windowState
+	@AppStorage("theme-identifier") private var themeId: String = ""
 
 	let content: Content
 
@@ -29,7 +32,9 @@ struct ProjectWindowRoot<Content: View>: View {
 		.environment(\.documentContext, model.documentContext)
 		.environment(model.navigatorModel)
 		.environment(model.diagnosticsModel)
+		.themeSensitive()
 		.ignoresSafeArea()
 		.onChange(of: windowState) { model.windowStateChanged($0, $1) }
+		.onChange(of: themeId, initial: true) { _, newId in model.loadTheme(with: newId) }
 	}
 }

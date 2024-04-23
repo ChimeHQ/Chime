@@ -28,11 +28,10 @@ public final class ProjectWindowController: NSWindowController {
 
 	public init(
 		contentViewController: NSViewController,
-		context: DocumentContext,
+		model: WindowStateModel,
 		siblingProvider: @escaping SiblingProvider,
 		onOpen: @escaping OnOpen
 	) {
-		let syncModel = WindowStateModel(context: context)
 
 		let contentController = ProjectContentViewController(contentViewController: contentViewController)
 
@@ -41,7 +40,7 @@ public final class ProjectWindowController: NSWindowController {
 			ProjectWindowRoot {
 				view
 			}
-			.environment(syncModel)
+			.environment(model)
 			.environment(\.openURL, OpenURLAction { url in
 				onOpen(url)
 				
@@ -51,7 +50,7 @@ public final class ProjectWindowController: NSWindowController {
 		}
 
 		self.siblingProvider = siblingProvider
-		self.model = syncModel
+		self.model = model
 
 		let window = ProjectWindow(contentViewController: controller)
 
@@ -60,10 +59,11 @@ public final class ProjectWindowController: NSWindowController {
 
 		super.init(window: window)
 
+		model.window = window
 		window.tabbingMode = .preferred
 		window.tabbingIdentifier = "hello"
 
-		syncModel.siblingProvider = { [weak self] in self?.siblingModels ?? [] }
+		model.siblingProvider = { [weak self] in self?.siblingModels ?? [] }
 	}
 
 	@available(*, unavailable)
@@ -74,10 +74,6 @@ public final class ProjectWindowController: NSWindowController {
 	public var state: ProjectState? {
 		get { model.projectState }
 		set { model.projectState = newValue }
-	}
-
-	public var theme: Theme {
-		get { model.currentTheme }
 	}
 
 	public var symbolQueryService: SymbolQueryService? {

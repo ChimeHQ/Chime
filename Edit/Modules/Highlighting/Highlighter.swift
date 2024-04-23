@@ -11,6 +11,7 @@ import Rearrange
 import SyntaxService
 import TextSystem
 import Theme
+import ThemePark
 
 @MainActor
 final class LowlightTokenProvider {
@@ -37,8 +38,6 @@ final class LowlightTokenProvider {
 			return Neon.Token(name: $0.name, range: shiftedRange)
 		}
 
-		print("fallback")
-
 		return .init(tokens: neonTokens)
 	}
 
@@ -58,6 +57,10 @@ final class LowlightTokenProvider {
 	private func language(for utType: UTType) -> Language? {
 		if utType.conforms(to: .goSource) {
 			return Language(keywords: ["import", "func", "const", "for", "var", "if", "return"], symbols: [])
+		}
+
+		if utType.conforms(to: .swiftSource) {
+			return Language(keywords: ["import", "func", "let", "for", "var", "if", "return"], symbols: [])
 		}
 
 		if utType.conforms(to: .markdown) {
@@ -89,12 +92,13 @@ public final class Highlighter<Service: TokenService> {
 		self.textSystem = textSystem
 		self.tokenServiceWrapper = TokenServiceWrapper(textSystem: textSystem)
 		self.lowlightTokenProvider = LowlightTokenProvider(textSystem: textSystem)
+
+		// this is using the same style source for all tyoes of providers and I don't think that makes sense
 		self.styleSource = TokenStyleSource()
 
 		let interface = TextViewSystemNeonInterface(textSystem: textSystem, styleProvider: styleSource.tokenStyle)
 
 		let secondary: Styler.SecondaryValidationProvider = { [tokenServiceWrapper] in
-			print("secondary")
 			return await tokenServiceWrapper.tokens(for: $0)
 		}
 
@@ -151,7 +155,6 @@ public final class Highlighter<Service: TokenService> {
 
 	private func relayInvalidation(_ target: RangeTarget) {
 		styler.invalidate(target)
-
 		styler.validate()
 	}
 
@@ -159,9 +162,17 @@ public final class Highlighter<Service: TokenService> {
 		styler.validate()
 	}
 
-	public func updateTheme(_ theme: Theme, context: Theme.Context) {
+	public func updateTheme(_ theme: Theme, context: Query.Context) {
 		styleSource.updateTheme(theme, context: context)
-		invalidate(RangeTarget.all)
+
+		print("about to do something inefficient")
+		let fullRange = NSRange(0..<textSystem.storage.currentLength)
+		textSystem.textPresentation.applyRenderingStyle([:], fullRange)
+
+		DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
+			self.styler.invalidate(.all)
+			self.styler.validate()
+		}
 	}
 
 	public var tokenService: Service? {
