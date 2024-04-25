@@ -1,4 +1,4 @@
-import AppKit
+import NSUI
 
 public struct RoundedRectRadii: Sendable, Hashable {
     public let topLeading: CGFloat
@@ -13,7 +13,7 @@ public struct RoundedRectRadii: Sendable, Hashable {
         self.bottomTrailing = bottomTrailing
     }
 
-    public init(_ radii: NSBezierPath.Radii) {
+    public init(_ radii: NSUIBezierPath.Radii) {
         self.topLeading = radii.0
         self.topTrailing = radii.1
         self.bottomTrailing = radii.2
@@ -32,7 +32,7 @@ public struct RoundedRectRadii: Sendable, Hashable {
         return max(topLeading, bottomLeading, topTrailing, bottomTrailing)
     }
 
-    public var radiiTuple: NSBezierPath.Radii {
+    public var radiiTuple: NSUIBezierPath.Radii {
         (topLeading, topTrailing, bottomTrailing, bottomLeading)
     }
 
@@ -59,11 +59,11 @@ public struct RoundedRectRadii: Sendable, Hashable {
     public static let zero = RoundedRectRadii(topLeading: 0.0, bottomLeading: 0.0, topTrailing: 0.0, bottomTrailing: 0.0)
 }
 
-public extension NSBezierPath {
+public extension NSUIBezierPath {
     typealias Radii = (CGFloat, CGFloat, CGFloat, CGFloat)
 
-    static func roundedPath(rect: NSRect, radii: Radii) -> NSBezierPath {
-        let path = NSBezierPath()
+    static func roundedPath(rect: CGRect, radii: Radii) -> NSUIBezierPath {
+        let path = NSUIBezierPath()
 
         // A -> B
         // |    |
@@ -74,21 +74,21 @@ public extension NSBezierPath {
         let bottomRight = rect.maxXMinYPoint
         let bottomLeft = rect.minXMinYPoint
 
-        path.move(to: NSPoint(x: topLeft.x, y: topLeft.y - radii.0))
-        path.curve(to: NSPoint(x: topLeft.x + radii.0, y: topLeft.y), controlPoint1: topLeft, controlPoint2: topLeft)
-        path.line(to: NSPoint(x: topRight.x - radii.1, y: topRight.y))
-        path.curve(to: NSPoint(x: topRight.x, y: topRight.y - radii.1), controlPoint1: topRight, controlPoint2: topRight)
-        path.line(to: NSPoint(x: bottomRight.x, y: bottomRight.y + radii.2))
-        path.curve(to: NSPoint(x: bottomRight.x - radii.2, y: bottomRight.y), controlPoint1: bottomRight, controlPoint2: bottomRight)
-        path.line(to: NSPoint(x: bottomLeft.x + radii.3, y: bottomLeft.y))
-        path.curve(to: NSPoint(x: bottomLeft.x, y: bottomLeft.y + radii.3), controlPoint1: bottomLeft, controlPoint2: bottomLeft)
+        path.move(to: CGPoint(x: topLeft.x, y: topLeft.y - radii.0))
+        path.addCurve(to: CGPoint(x: topLeft.x + radii.0, y: topLeft.y), controlPoint1: topLeft, controlPoint2: topLeft)
+		path.addLine(to: CGPoint(x: topRight.x - radii.1, y: topRight.y))
+        path.addCurve(to: CGPoint(x: topRight.x, y: topRight.y - radii.1), controlPoint1: topRight, controlPoint2: topRight)
+        path.addLine(to: CGPoint(x: bottomRight.x, y: bottomRight.y + radii.2))
+        path.addCurve(to: CGPoint(x: bottomRight.x - radii.2, y: bottomRight.y), controlPoint1: bottomRight, controlPoint2: bottomRight)
+        path.addLine(to: CGPoint(x: bottomLeft.x + radii.3, y: bottomLeft.y))
+        path.addCurve(to: CGPoint(x: bottomLeft.x, y: bottomLeft.y + radii.3), controlPoint1: bottomLeft, controlPoint2: bottomLeft)
 
         path.close()
 
         return path
     }
 
-    static func roundedPath(rect: NSRect, radii: RoundedRectRadii) -> NSBezierPath {
+    static func roundedPath(rect: CGRect, radii: RoundedRectRadii) -> NSUIBezierPath {
         return roundedPath(rect: rect, radii: (radii.topLeading, radii.topTrailing, radii.bottomTrailing, radii.bottomLeading))
     }
 }

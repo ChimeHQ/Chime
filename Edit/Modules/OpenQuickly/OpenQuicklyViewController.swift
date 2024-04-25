@@ -61,7 +61,7 @@ final class OpenQuicklyViewController: XiblessViewController<NSView> {
     }
 
     override func loadView() {
-        self.view = ColorView.roundedRect(color: NSColor.windowBackgroundColor, radii: (15.0, 15.0, 15.0, 15.0))
+		self.view = NSView() // NSHostingView(rootView: RoundedRectangle(cornerRadius: 15.0))
 
         inputView.placeholderString = "Open Quickly"
         inputView.font = NSFont.systemFont(ofSize: 18.0)

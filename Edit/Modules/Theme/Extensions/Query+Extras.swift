@@ -1,11 +1,12 @@
-import AppKit
 
 import ThemePark
 
 public typealias Query = ThemePark.Query
 
+#if canImport(AppKit) && !targetEnvironment(macCatalyst)
+import AppKit
+
 extension Query.Context {
-#if os(macOS)
 	@MainActor
 	public init(window: NSWindow?) {
 		self.init(appearance: window?.appearance)
@@ -17,5 +18,5 @@ extension Query.Context {
 
 		self.init(controlState: .inactive, colorScheme: dark ? .dark : .light)
 	}
-#endif
 }
+#endif

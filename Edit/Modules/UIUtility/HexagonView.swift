@@ -1,16 +1,16 @@
-import AppKit
+import NSUI
 
-public class HexagonView: NSView {
+public class HexagonView: NSUIView {
 
-    public var strokeColor: NSColor = NSColor.black
-    public var fillColor: NSColor = NSColor.white
+    public var strokeColor: NSUIColor = .black
+    public var fillColor: NSUIColor = .white
 
     public static let sinComponent = sin(CGFloat.pi / 3.0)
     public static let cosComponent = cos(CGFloat.pi / 3.0)
 
-    public override func draw(_ dirtyRect: NSRect) {
+    public override func draw(_ dirtyRect: CGRect) {
         let length = self.bounds.width / 2.0
-        let center = NSPoint(x: length, y: self.bounds.height / 2.0)
+        let center = CGPoint(x: length, y: self.bounds.height / 2.0)
 
         let path = HexagonView.hexagonPath(at: center, sideLength: length)
 
@@ -21,24 +21,24 @@ public class HexagonView: NSView {
         path.stroke()
     }
 
-    public static func hexagonPath(at center: NSPoint, sideLength length: CGFloat) -> NSBezierPath {
+    public static func hexagonPath(at center: CGPoint, sideLength length: CGFloat) -> NSUIBezierPath {
         let cosValue = HexagonView.cosComponent * length
         let sinValue = HexagonView.sinComponent * length
 
-        let path = NSBezierPath()
+        let path = NSUIBezierPath()
 
-        path.move(to: NSPoint(x: center.x - cosValue, y: center.y + sinValue))
-        path.line(to: NSPoint(x: center.x + cosValue, y: center.y + sinValue))
-        path.line(to: NSPoint(x: center.x + length, y: center.y))
-        path.line(to: NSPoint(x: center.x + cosValue, y: center.y - sinValue))
-        path.line(to: NSPoint(x: center.x - cosValue, y: center.y - sinValue))
-        path.line(to: NSPoint(x: center.x - length, y: center.y))
+        path.move(to: CGPoint(x: center.x - cosValue, y: center.y + sinValue))
+        path.addLine(to: CGPoint(x: center.x + cosValue, y: center.y + sinValue))
+        path.addLine(to: CGPoint(x: center.x + length, y: center.y))
+        path.addLine(to: CGPoint(x: center.x + cosValue, y: center.y - sinValue))
+        path.addLine(to: CGPoint(x: center.x - cosValue, y: center.y - sinValue))
+        path.addLine(to: CGPoint(x: center.x - length, y: center.y))
         path.close()
 
         return path
     }
 
-    public static func hexagonPath(within rect: NSRect) -> NSBezierPath {
+    public static func hexagonPath(within rect: CGRect) -> NSUIBezierPath {
         // defend against nonsense rectangles
         precondition(!rect.isEmpty && !rect.isInfinite)
 
@@ -54,17 +54,16 @@ public class HexagonView: NSView {
         return hexagonPath(at: center, sideLength: length)
     }
 
-    public static func hexagonImage(length: CGFloat, fillColor: NSColor, strokeColor: NSColor) -> NSImage {
-        return NSImage(size: NSSize(width: length * 2.0, height: length * 2.0), flipped: false, drawingHandler: { (rect) -> Bool in
-            let path = HexagonView.hexagonPath(at: NSPoint(x: length, y: length), sideLength: length)
-            fillColor.setFill()
-            path.fill()
-
-            strokeColor.setStroke()
-            path.stroke()
-
-            return true
-        })
-    }
-
+//    public static func hexagonImage(length: CGFloat, fillColor: NSUIColor, strokeColor: NSUIColor) -> NSUIImage {
+//        return NSUIImage(size: CGSize(width: length * 2.0, height: length * 2.0), flipped: false, drawingHandler: { (rect) -> Bool in
+//            let path = HexagonView.hexagonPath(at: CGPoint(x: length, y: length), sideLength: length)
+//            fillColor.setFill()
+//            path.fill()
+//
+//            strokeColor.setStroke()
+//            path.stroke()
+//
+//            return true
+//        })
+//    }
 }

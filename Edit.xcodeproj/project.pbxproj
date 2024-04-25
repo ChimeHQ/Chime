@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C900A7C52A9E9468000556A6 /* PreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C900A7C42A9E9468000556A6 /* PreferencesWindowController.swift */; };
 		C900A7C82A9E94AE000556A6 /* libPreferencesWindow.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C900A7BA2A9E93FC000556A6 /* libPreferencesWindow.a */; };
 		C900A7CA2A9E94B4000556A6 /* ExtendableHost in Frameworks */ = {isa = PBXBuildFile; productRef = C900A7C92A9E94B4000556A6 /* ExtendableHost */; };
 		C900A7D12A9F472E000556A6 /* Chime.appextensionpoint in Copy Extensions */ = {isa = PBXBuildFile; fileRef = C900A7CF2A9F46EF000556A6 /* Chime.appextensionpoint */; };
@@ -71,7 +70,7 @@
 		C96B61F12BDA707200561DE8 /* DocumentCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96B61EC2BDA6F5900561DE8 /* DocumentCoordinator.swift */; };
 		C96B61F22BDA708A00561DE8 /* libDocument.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE52D42A7532C700CACA1A /* libDocument.a */; };
 		C96B61F32BDA70DA00561DE8 /* libEditor.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE537A2A7662DC00CACA1A /* libEditor.a */; };
-		C96B61FD2BDA714700561DE8 /* ScrollViewPlus in Frameworks */ = {isa = PBXBuildFile; productRef = C96B61FC2BDA714700561DE8 /* ScrollViewPlus */; };
+		C96B61FD2BDA714700561DE8 /* ScrollViewPlus in Frameworks */ = {isa = PBXBuildFile; platformFilters = (macos, ); productRef = C96B61FC2BDA714700561DE8 /* ScrollViewPlus */; };
 		C96B61FE2BDA719100561DE8 /* libGutter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9891B352AFFF1F700C8F393 /* libGutter.a */; };
 		C96B61FF2BDA71B200561DE8 /* libUIUtility.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE53232A75A17700CACA1A /* libUIUtility.a */; };
 		C96B62002BDA71E400561DE8 /* libStatus.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE539B2A76709D00CACA1A /* libStatus.a */; };
@@ -105,8 +104,6 @@
 		C97918DA2A9E080C0046EAF1 /* ViewPlus in Frameworks */ = {isa = PBXBuildFile; productRef = C97918D92A9E080C0046EAF1 /* ViewPlus */; };
 		C97918DE2A9E39030046EAF1 /* OpenQuicklyWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97918DD2A9E39030046EAF1 /* OpenQuicklyWindowController.swift */; };
 		C97918E02A9E39D80046EAF1 /* NSRect+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97918DF2A9E39D80046EAF1 /* NSRect+Helpers.swift */; };
-		C97918EC2A9E49130046EAF1 /* ShapeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97918EB2A9E49130046EAF1 /* ShapeView.swift */; };
-		C97918EE2A9E49330046EAF1 /* ShapeLayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97918ED2A9E49330046EAF1 /* ShapeLayerController.swift */; };
 		C97918F22A9E49EE0046EAF1 /* BinaryFloatingPoint+AngleUnits.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97918F12A9E49EE0046EAF1 /* BinaryFloatingPoint+AngleUnits.swift */; };
 		C97918F52A9E4A3B0046EAF1 /* HexagonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97918F32A9E4A1C0046EAF1 /* HexagonView.swift */; };
 		C97918F62A9E4A4D0046EAF1 /* NSBezierPath+Paths.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97918EF2A9E49AD0046EAF1 /* NSBezierPath+Paths.swift */; };
@@ -215,7 +212,6 @@
 		C9FE53AD2A7677A700CACA1A /* EditorScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE53AC2A7677A700CACA1A /* EditorScrollView.swift */; };
 		C9FE53B92A77334E00CACA1A /* SourceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE53B82A77334E00CACA1A /* SourceViewController.swift */; };
 		C9FE53BF2A77C02400CACA1A /* BoundingBorders.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE53BE2A77C02400CACA1A /* BoundingBorders.swift */; };
-		C9FE53C12A77C06800CACA1A /* ColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE53C02A77C06700CACA1A /* ColorView.swift */; };
 		C9FE53D82A77D98A00CACA1A /* EditorContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE53D72A77D98A00CACA1A /* EditorContent.swift */; };
 		C9FE53E82A7A5B2000CACA1A /* LazyRemoteExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE53E72A7A5B2000CACA1A /* LazyRemoteExtension.swift */; };
 		C9FE53FF2A7A5F1600CACA1A /* Logger+init.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE53FE2A7A5F1600CACA1A /* Logger+init.swift */; };
@@ -867,7 +863,6 @@
 
 /* Begin PBXFileReference section */
 		C900A7BA2A9E93FC000556A6 /* libPreferencesWindow.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPreferencesWindow.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		C900A7C42A9E9468000556A6 /* PreferencesWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesWindowController.swift; sourceTree = "<group>"; };
 		C900A7CF2A9F46EF000556A6 /* Chime.appextensionpoint */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Chime.appextensionpoint; sourceTree = "<group>"; };
 		C92672F72B0399D800B3CE2F /* SwiftExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftExtension.swift; path = "submodules/chime-swift/Sources/ChimeSwift/SwiftExtension.swift"; sourceTree = SOURCE_ROOT; };
 		C92673282B04046700B3CE2F /* Edit-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Edit-Debug.xcconfig"; sourceTree = "<group>"; };
@@ -935,8 +930,6 @@
 		C97918D22A9E04470046EAF1 /* NSTableView+Reuse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSTableView+Reuse.swift"; sourceTree = "<group>"; };
 		C97918DD2A9E39030046EAF1 /* OpenQuicklyWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenQuicklyWindowController.swift; sourceTree = "<group>"; };
 		C97918DF2A9E39D80046EAF1 /* NSRect+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSRect+Helpers.swift"; sourceTree = "<group>"; };
-		C97918EB2A9E49130046EAF1 /* ShapeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeView.swift; sourceTree = "<group>"; };
-		C97918ED2A9E49330046EAF1 /* ShapeLayerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeLayerController.swift; sourceTree = "<group>"; };
 		C97918EF2A9E49AD0046EAF1 /* NSBezierPath+Paths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSBezierPath+Paths.swift"; sourceTree = "<group>"; };
 		C97918F12A9E49EE0046EAF1 /* BinaryFloatingPoint+AngleUnits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BinaryFloatingPoint+AngleUnits.swift"; sourceTree = "<group>"; };
 		C97918F32A9E4A1C0046EAF1 /* HexagonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexagonView.swift; sourceTree = "<group>"; };
@@ -1064,7 +1057,6 @@
 		C9FE53AC2A7677A700CACA1A /* EditorScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorScrollView.swift; sourceTree = "<group>"; };
 		C9FE53B82A77334E00CACA1A /* SourceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SourceViewController.swift; sourceTree = "<group>"; };
 		C9FE53BE2A77C02400CACA1A /* BoundingBorders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoundingBorders.swift; sourceTree = "<group>"; };
-		C9FE53C02A77C06700CACA1A /* ColorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorView.swift; sourceTree = "<group>"; };
 		C9FE53C82A77CC1E00CACA1A /* libTheme.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTheme.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9FE53D72A77D98A00CACA1A /* EditorContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorContent.swift; sourceTree = "<group>"; };
 		C9FE53DD2A7A5A2A00CACA1A /* libExtensionHost.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libExtensionHost.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1335,7 +1327,6 @@
 		C900A7C32A9E9417000556A6 /* PreferencesWindow */ = {
 			isa = PBXGroup;
 			children = (
-				C900A7C42A9E9468000556A6 /* PreferencesWindowController.swift */,
 				C9E0BA2F2BD2C1EF007AF034 /* SettingsView.swift */,
 				C9E0BA362BD2C96D007AF034 /* ThemeTile.swift */,
 				C9E0BA342BD2C7F2007AF034 /* ThemeView.swift */,
@@ -1767,7 +1758,6 @@
 				C97918B72A9D49190046EAF1 /* AttributedText.swift */,
 				C97918F12A9E49EE0046EAF1 /* BinaryFloatingPoint+AngleUnits.swift */,
 				C9FE53BE2A77C02400CACA1A /* BoundingBorders.swift */,
-				C9FE53C02A77C06700CACA1A /* ColorView.swift */,
 				C97918F32A9E4A1C0046EAF1 /* HexagonView.swift */,
 				C97918942A9CCC980046EAF1 /* Modifiers */,
 				C97918DF2A9E39D80046EAF1 /* NSRect+Helpers.swift */,
@@ -1775,8 +1765,6 @@
 				C9FE532D2A75A1C100CACA1A /* RepresentableView.swift */,
 				C9FE532E2A75A1C100CACA1A /* RepresentableViewController.swift */,
 				C97918792A9CBF8C0046EAF1 /* RoundedCorners.swift */,
-				C97918ED2A9E49330046EAF1 /* ShapeLayerController.swift */,
-				C97918EB2A9E49130046EAF1 /* ShapeView.swift */,
 			);
 			path = UIUtility;
 			sourceTree = "<group>";
@@ -2066,7 +2054,6 @@
 			dependencies = (
 				C9E0BA392BD2C98A007AF034 /* PBXTargetDependency */,
 				C9E0BA332BD2C2BE007AF034 /* PBXTargetDependency */,
-				C900A7CC2A9E956B000556A6 /* PBXTargetDependency */,
 			);
 			name = PreferencesWindow;
 			productName = PreferencesWindow;
@@ -2552,6 +2539,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				C9CDC24D2BDABFE000183752 /* PBXTargetDependency */,
 			);
 			name = UIUtility;
 			productName = UIUtility;
@@ -2569,6 +2557,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				C9CDC24A2BDAB56400183752 /* PBXTargetDependency */,
 				C999C7862ABDA97500D49939 /* PBXTargetDependency */,
 				C9E8781E2A9FD0B70018340C /* PBXTargetDependency */,
 				C9FE53962A766D2F00CACA1A /* PBXTargetDependency */,
@@ -2850,7 +2839,9 @@
 			projectRoot = "";
 			targets = (
 				C9FE52982A7525D000CACA1A /* Edit */,
+				C9B8AA172B362DDD00C79606 /* Preview */,
 				C9FE52F32A7539B100CACA1A /* ChimeKit */,
+				C92931412B80CC6700C64DDE /* EditKit */,
 				C9FE52AD2A7525D300CACA1A /* EditTests */,
 				C9FE52B72A7525D300CACA1A /* EditUITests */,
 				C9FE52D32A7532C700CACA1A /* Document */,
@@ -2871,11 +2862,9 @@
 				C9891B342AFFF1F700C8F393 /* Gutter */,
 				C9BDB5472B00FD89009225FB /* SwiftExtension */,
 				C9B8A9DC2B31E43800C79606 /* TextSystem */,
-				C9B8AA172B362DDD00C79606 /* Preview */,
 				C9B8AA492B37055800C79606 /* SyntaxService */,
 				C973DFFF2B62BDB3000998F7 /* Highlighting */,
 				C942E6752B67B78E00792DD4 /* UserScript */,
-				C92931412B80CC6700C64DDE /* EditKit */,
 				C9E0B9FB2BD27F0F007AF034 /* Diagnostics */,
 			);
 		};
@@ -2979,7 +2968,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C900A7C52A9E9468000556A6 /* PreferencesWindowController.swift in Sources */,
 				C9E0BA352BD2C7F2007AF034 /* ThemeView.swift in Sources */,
 				C9E0BA312BD2C1FA007AF034 /* SettingsView.swift in Sources */,
 				C9E0BA372BD2C96D007AF034 /* ThemeTile.swift in Sources */,
@@ -3205,12 +3193,9 @@
 				C97918972A9CCCF60046EAF1 /* BottomSlideEffect.swift in Sources */,
 				C97918D32A9E04470046EAF1 /* NSTableView+Reuse.swift in Sources */,
 				C979187C2A9CC1190046EAF1 /* RoundedCorners.swift in Sources */,
-				C9FE53C12A77C06800CACA1A /* ColorView.swift in Sources */,
 				C9FE532F2A75A1C100CACA1A /* RepresentableView.swift in Sources */,
-				C97918EE2A9E49330046EAF1 /* ShapeLayerController.swift in Sources */,
 				C97918982A9CCCFD0046EAF1 /* TrailingSlideEffect.swift in Sources */,
 				C97918F22A9E49EE0046EAF1 /* BinaryFloatingPoint+AngleUnits.swift in Sources */,
-				C97918EC2A9E49130046EAF1 /* ShapeView.swift in Sources */,
 				C9FE53302A75A1C100CACA1A /* RepresentableViewController.swift in Sources */,
 				C97918D12A9E03C00046EAF1 /* NSImageView+Symbol.swift in Sources */,
 				C97918F62A9E4A4D0046EAF1 /* NSBezierPath+Paths.swift in Sources */,
@@ -3327,10 +3312,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		C900A7CC2A9E956B000556A6 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			productRef = C900A7CB2A9E956B000556A6 /* ViewPlus */;
-		};
 		C900A7CE2A9E9600000556A6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C900A7B92A9E93FC000556A6 /* PreferencesWindow */;
@@ -3480,6 +3461,9 @@
 		};
 		C96B61FB2BDA714000561DE8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilters = (
+				macos,
+			);
 			productRef = C96B61FA2BDA714000561DE8 /* ScrollViewPlus */;
 		};
 		C96B62022BDA71FE00561DE8 /* PBXTargetDependency */ = {
@@ -3734,6 +3718,14 @@
 		C9BFA1A92BC072E300E86487 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			productRef = C9BFA1A82BC072E300E86487 /* Glyph */;
+		};
+		C9CDC24A2BDAB56400183752 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = C9CDC2492BDAB56400183752 /* ViewPlus */;
+		};
+		C9CDC24D2BDABFE000183752 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = C9CDC24C2BDABFE000183752 /* NSUI */;
 		};
 		C9CDEB5C2B51621C009E252A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -4728,7 +4720,7 @@
 			repositoryURL = "https://github.com/mattmassicotte/nsui.git";
 			requirement = {
 				kind = revision;
-				revision = ad4cb093c70c731b4a036d30a2a39f8db6afe2c6;
+				revision = b6c32973b2a9dc16c465f3e3bc44e9abb27d1683;
 			};
 		};
 		C9BFA1AE2BC0927A00E86487 /* XCRemoteSwiftPackageReference "Glyph" */ = {
@@ -4826,11 +4818,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C9FE53EB2A7A5D9700CACA1A /* XCRemoteSwiftPackageReference "Extendable" */;
 			productName = ExtendableHost;
-		};
-		C900A7CB2A9E956B000556A6 /* ViewPlus */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C97918D42A9E07F00046EAF1 /* XCRemoteSwiftPackageReference "ViewPlus" */;
-			productName = ViewPlus;
 		};
 		C926734F2B06719C00B3CE2F /* Neon */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -5069,6 +5056,16 @@
 			productName = Glyph;
 		};
 		C9BFA1B62BC162EF00E86487 /* NSUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C9BFA1A12BBF4FA200E86487 /* XCRemoteSwiftPackageReference "nsui" */;
+			productName = NSUI;
+		};
+		C9CDC2492BDAB56400183752 /* ViewPlus */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C97918D42A9E07F00046EAF1 /* XCRemoteSwiftPackageReference "ViewPlus" */;
+			productName = ViewPlus;
+		};
+		C9CDC24C2BDABFE000183752 /* NSUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C9BFA1A12BBF4FA200E86487 /* XCRemoteSwiftPackageReference "nsui" */;
 			productName = NSUI;

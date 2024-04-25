@@ -1,3 +1,4 @@
+#if os(macOS)
 import AppKit
 
 extension NSTableView {
@@ -14,3 +15,4 @@ extension NSTableView {
         return generator()
     }
 }
+#endif

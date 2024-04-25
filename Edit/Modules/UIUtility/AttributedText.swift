@@ -1,7 +1,9 @@
 import SwiftUI
+import NSUI
 
-public struct AttributedText: NSViewRepresentable {
-	public typealias NSViewType = NSTextField
+@MainActor
+public struct AttributedText: NSUIViewRepresentable {
+	public typealias NSUIViewType = NSUILabel
 
 	private let text: NSAttributedString
 
@@ -9,9 +11,16 @@ public struct AttributedText: NSViewRepresentable {
 		text = attributedString
 	}
 
-	public func makeNSView(context: Self.Context) -> NSTextField {
-		let textField = NSTextField(labelWithAttributedString: text)
+	public func makeNSUIView(context: Self.Context) -> NSUIViewType {
+#if os(macOS)
+		let textField = NSUIViewType(labelWithAttributedString: text)
+
 		textField.isSelectable = true
+#else
+		let textField = NSUIViewType()
+
+		textField.attributedText = text
+#endif
 //        textField.allowsEditingTextAttributes = true // Fix of clear of styles on click
 
 		textField.preferredMaxLayoutWidth = textField.frame.width
@@ -19,8 +28,8 @@ public struct AttributedText: NSViewRepresentable {
 		return textField
 	}
 
-	public func updateNSView(_ nsView: NSTextField, context: Self.Context) {
-		nsView.attributedStringValue = text
+	public func updateNSUIView(_ view: NSUIViewType, context: Self.Context) {
+		view.attributedText = text
 	}
 }
 

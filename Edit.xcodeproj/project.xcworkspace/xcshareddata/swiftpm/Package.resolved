@@ -135,7 +135,7 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/mattmassicotte/nsui.git",
       "state" : {
-        "revision" : "ad4cb093c70c731b4a036d30a2a39f8db6afe2c6"
+        "revision" : "b6c32973b2a9dc16c465f3e3bc44e9abb27d1683"
       }
     },
     {
