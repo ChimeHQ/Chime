@@ -15,12 +15,14 @@ extension DocumentContext {
 }
 
 public final class DirectoryDocument: ContainedDocument<Project> {
-	private lazy var projectWindowController: ProjectWindowController = {
+	private lazy var projectWindowController: ProjectWindowController = { @MainActor in
 		let placeholderController = NSHostingController(rootView: Color.orange)
+		let store = ProjectDocumentController.sharedController.themeStore
+		let model = WindowStateModel(context: .nonDocumentContext, themeStore: store)
 
 		return makeProjectWindowController(
 			contentViewController: placeholderController,
-			context: .nonDocumentContext
+			model: model
 		)
 	}()
 

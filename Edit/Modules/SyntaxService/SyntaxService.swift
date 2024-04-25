@@ -185,7 +185,7 @@ extension SyntaxService {
 		TokenProvider(
 			syncValue: { range in
 				guard let client = self.treeSitterClient else {
-					return TokenApplication.noChange
+					return nil
 				}
 
 				do {
@@ -194,9 +194,7 @@ extension SyntaxService {
 						return nil
 					}
 
-					print("primary sync")
-
-					return TokenApplication(namedRanges: namedRanges, nameMap: Self.highlightsMap, range: range)
+					return TokenApplication(namedRanges: namedRanges, nameMap: [:], range: range)
 				} catch {
 					self.logger.warning("Failed to get highlighting: \(error)")
 
@@ -212,9 +210,7 @@ extension SyntaxService {
 					let queryParams = try self.highlightsQueryParams(for: range)
 					let namedRanges = try await client.highlightsProvider.mainActorAsync(queryParams)
 
-					print("primary async")
-
-					return TokenApplication(namedRanges: namedRanges, nameMap: Self.highlightsMap, range: range)
+					return TokenApplication(namedRanges: namedRanges, nameMap: [:], range: range)
 				} catch {
 					self.logger.warning("Failed to get highlighting: \(error)")
 

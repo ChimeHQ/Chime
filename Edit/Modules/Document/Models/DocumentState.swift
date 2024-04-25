@@ -44,7 +44,7 @@ extension DocumentState {
 		let uti: UTType
 
 		if let url = url {
-			uti = UTType.resolveType(with: typeName, url: url) ?? .plainText
+			uti = (try? url.resolvedContentType) ?? .plainText
 		} else {
 			uti = context.uti
 		}

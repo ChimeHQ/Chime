@@ -66,10 +66,10 @@ extension ProjectDocument {
 			.compactMap { $0 as? ProjectWindowController }
 	}
 
-	func makeProjectWindowController(contentViewController: NSViewController, context: DocumentContext) -> ProjectWindowController {
+	func makeProjectWindowController(contentViewController: NSViewController, model: WindowStateModel) -> ProjectWindowController {
 		ProjectWindowController(
 			contentViewController: contentViewController,
-			context: context,
+			model: model,
 			siblingProvider: { [weak self] in self?.siblingWindowControllers ?? [] },
 			onOpen: { [weak self] in self?.openURL($0) }
 		)

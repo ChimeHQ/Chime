@@ -74,7 +74,7 @@ extension LanguageDataStore {
 		}
 
 		Task {
-			_ = try await loadLanguageConfiguration(with: utType, identifier: identifier)
+			_ = try! await loadLanguageConfiguration(with: utType, identifier: identifier)
 		}
 
 		return nil

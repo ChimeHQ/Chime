@@ -184,6 +184,16 @@ extension TextViewSystem {
 
 		replaceTextStorage(storage)
 	}
+
+	public func themeChanged(attributes: [NSAttributedString.Key: Any]) {
+		guard let storage = textView.textStorage else {
+			fatalError("")
+		}
+
+		storage.beginEditing()
+		storage.setAttributes(attributes, range: storage.fullRange)
+		storage.endEditing()
+	}
 }
 
 //extension TextViewSystem: NSTextViewDelegate {

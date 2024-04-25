@@ -50,7 +50,7 @@ extension LanguageProfile {
 	}
 
 	private static func languageQueryDirectory(for name: String, bundleName: String) throws -> URL {
-		guard let resourceURL = Bundle.main.resourceURL else {
+		guard let resourceURL = Bundle(for: SyntaxService.self).resourceURL else {
 			throw LanguageProfileError.resourceURLMissing
 		}
 
@@ -66,7 +66,11 @@ extension LanguageProfile {
 
 		let bundleComponent = bundleName + ".bundle"
 		
-		return resourceURL
+		guard let mainResourceURL = Bundle.main.resourceURL else {
+			throw LanguageProfileError.resourceURLMissing
+		}
+
+		return mainResourceURL
 			.appending(component: bundleComponent, directoryHint: .isDirectory)
 			.appending(component: "Contents/Resources/queries", directoryHint: .isDirectory)
 	}

@@ -17,7 +17,7 @@ public final class PreferencesWindowController: NSWindowController {
         let height: CGFloat = 406
 
         let rect = NSRect(x: 0, y: 0, width: height * 16.0/9.0, height: height)
-        let w = NSWindow(contentRect: rect, styleMask: [.closable, .titled], backing: .buffered, defer: true)
+		let w = NSWindow(contentRect: .zero, styleMask: [.closable, .titled, .unifiedTitleAndToolbar], backing: .buffered, defer: true)
         w.center()
 
         super.init(window: w)

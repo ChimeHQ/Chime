@@ -4,6 +4,7 @@ import SwiftUI
 import SourceView
 //import TextViewPlus
 import Theme
+import ThemePark
 
 public final class SourceViewController: NSViewController {
 //	private let sourceView = SourceView()
@@ -65,13 +66,17 @@ public final class SourceViewController: NSViewController {
 }
 
 extension SourceViewController {
-	public func updateTheme(_ theme: Theme, context: Theme.Context) {
+	public func updateTheme(_ theme: Theme, context: Query.Context) {
+		let syntaxStyle = theme.style(for: .init(key: .syntax(.text), context: context))
+
 		sourceView.typingAttributes = [
-			.font: theme.font(for: .source, context: context),
-			.foregroundColor: theme.color(for: .source, context: context),
+			.font: syntaxStyle.font ?? Theme.fallbackFont,
+			.foregroundColor: syntaxStyle.color,
 		]
 
-		sourceView.insertionPointColor = theme.color(for: .insertionPoint, context: context)
+		let cursorColor = theme.color(for: .init(key: .editor(.cursor), context: context))
+
+		sourceView.insertionPointColor = cursorColor
 	}
 }
 
