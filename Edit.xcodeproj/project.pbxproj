@@ -76,6 +76,7 @@
 		C96B61FF2BDA71B200561DE8 /* libUIUtility.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE53232A75A17700CACA1A /* libUIUtility.a */; };
 		C96B62002BDA71E400561DE8 /* libStatus.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE539B2A76709D00CACA1A /* libStatus.a */; };
 		C96B62062BDA721100561DE8 /* SourceView in Frameworks */ = {isa = PBXBuildFile; productRef = C96B62052BDA721100561DE8 /* SourceView */; };
+		C96B62262BDA9F4100561DE8 /* EditKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C92931422B80CC6700C64DDE /* EditKit.framework */; };
 		C973E0112B62BE0C000998F7 /* Highlighter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C973DFF62B62808D000998F7 /* Highlighter.swift */; };
 		C973E0132B62BE9F000998F7 /* TextViewSystemNeonInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99D76112B5EFA050028E3B0 /* TextViewSystemNeonInterface.swift */; };
 		C973E01F2B62C007000998F7 /* TokenServiceWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C973E01E2B62C007000998F7 /* TokenServiceWrapper.swift */; };
@@ -129,7 +130,6 @@
 		C99491C52B153051002DC2AC /* TextMetrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99491C42B153051002DC2AC /* TextMetrics.swift */; };
 		C99D75F42B5DB42E0028E3B0 /* TextMetrics+ChimeKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99D75F32B5DB42E0028E3B0 /* TextMetrics+ChimeKit.swift */; };
 		C9B8A9812B1B836C00C79606 /* TextMetricsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B8A9802B1B836C00C79606 /* TextMetricsTests.swift */; };
-		C9B8A9842B1B839B00C79606 /* libDocumentContent.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9891B132AFEC11A00C8F393 /* libDocumentContent.a */; };
 		C9B8A9D62B30613300C79606 /* DocumentCursorsMonitorModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B8A9D52B30613300C79606 /* DocumentCursorsMonitorModifier.swift */; };
 		C9B8A9E72B31E47300C79606 /* TextViewSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B8A9E62B31E47300C79606 /* TextViewSystem.swift */; };
 		C9B8A9E82B31E62D00C79606 /* TextLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B8A9B32B23446400C79606 /* TextLayout.swift */; };
@@ -361,6 +361,13 @@
 			remoteGlobalIDString = C9FE52D32A7532C700CACA1A;
 			remoteInfo = Document;
 		};
+		C96B62272BDA9F4500561DE8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C92931412B80CC6700C64DDE;
+			remoteInfo = EditKit;
+		};
 		C973E0092B62BDDD000998F7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
@@ -528,13 +535,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = C9FE53DC2A7A5A2A00CACA1A;
 			remoteInfo = ExtensionHost;
-		};
-		C9B8A9822B1B838F00C79606 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C9891B122AFEC11A00C8F393;
-			remoteInfo = DocumentContent;
 		};
 		C9B8A9EB2B31E83400C79606 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -1238,7 +1238,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9B8A9842B1B839B00C79606 /* libDocumentContent.a in Frameworks */,
+				C96B62262BDA9F4100561DE8 /* EditKit.framework in Frameworks */,
 				C9FE54102A7A642A00CACA1A /* ChimeKit.framework in Frameworks */,
 				C9FE540D2A7A630200CACA1A /* libExtensionHost.a in Frameworks */,
 			);
@@ -2430,7 +2430,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				C9B8A9832B1B838F00C79606 /* PBXTargetDependency */,
+				C96B62282BDA9F4500561DE8 /* PBXTargetDependency */,
 				C9FE540F2A7A642500CACA1A /* PBXTargetDependency */,
 				C9FE540C2A7A62FB00CACA1A /* PBXTargetDependency */,
 				C9FE52B02A7525D300CACA1A /* PBXTargetDependency */,
@@ -3486,6 +3486,11 @@
 			isa = PBXTargetDependency;
 			productRef = C96B62012BDA71FE00561DE8 /* SourceView */;
 		};
+		C96B62282BDA9F4500561DE8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C92931412B80CC6700C64DDE /* EditKit */;
+			targetProxy = C96B62272BDA9F4500561DE8 /* PBXContainerItemProxy */;
+		};
 		C973E00A2B62BDDD000998F7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C9FE52F32A7539B100CACA1A /* ChimeKit */;
@@ -3641,11 +3646,6 @@
 			isa = PBXTargetDependency;
 			target = C9FE53DC2A7A5A2A00CACA1A /* ExtensionHost */;
 			targetProxy = C99D76162B5FE1530028E3B0 /* PBXContainerItemProxy */;
-		};
-		C9B8A9832B1B838F00C79606 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = C9891B122AFEC11A00C8F393 /* DocumentContent */;
-			targetProxy = C9B8A9822B1B838F00C79606 /* PBXContainerItemProxy */;
 		};
 		C9B8A9B92B235EFC00C79606 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
