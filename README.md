@@ -42,7 +42,6 @@ The project is [internally documented][documentation] with [DocC](https://www.sw
 
 There are a few areas that would make for excellent targets though, if you really feel so inclined.
 
-- I'd love to expand on more [universal theme support](https://github.com/chimeHQ/ThemePark)
 - The text search system is bad and I'd love to build something better
 - The view-based [extension system][chimekit] could really use some more attention
 - I'd like to finish migrating the preferences to SwiftUI
