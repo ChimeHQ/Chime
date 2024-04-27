@@ -6,6 +6,7 @@ import Document
 import ExtensionHost
 import PreferencesWindow
 import Theme
+import Utility
 
 @main
 @MainActor
