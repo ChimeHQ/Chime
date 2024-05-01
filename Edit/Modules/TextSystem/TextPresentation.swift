@@ -1,6 +1,6 @@
-import AppKit
 import Foundation
 
+import NSUI
 import Rearrange
 
 public struct TextPresentation {
@@ -9,16 +9,16 @@ public struct TextPresentation {
 
 extension TextPresentation {
 	@MainActor
-	public init(textView: NSTextView) {
+	public init(textView: NSUITextView) {
 		if let textLayoutManager = textView.textLayoutManager {
-			self.init(textLayoutManager: textLayoutManager)
+			self.init(textLayoutManager: textLayoutManager, textView: textView)
 		} else {
-			self.init(layoutManager: textView.layoutManager!)
+			self.init(layoutManager: textView.nsuiLayoutManager!)
 		}
 	}
 	
 	@MainActor
-	public init(textLayoutManager: NSTextLayoutManager) {
+	public init(textLayoutManager: NSTextLayoutManager, textView: NSUITextView) {
 		self.init(
 			applyRenderingStyle: { attrs, range in
 				guard
@@ -28,17 +28,13 @@ extension TextPresentation {
 					return
 				}
 
-				let textView = textLayoutManager.textContainer?.textView
-
-				let selection = textView?.selectedRanges
+				let selection = textView.selectedRanges
 
 				textLayoutManager.setRenderingAttributes(attrs, for: textRange)
 
-				textView?.selectedRanges = [NSValue(range: range)]
+				textView.selectedRanges = [NSValue(range: range)]
 
-				if let selection {
-					textView?.selectedRanges = selection
-				}
+				textView.selectedRanges = selection
 			}
 		)
 	}
@@ -47,7 +43,11 @@ extension TextPresentation {
 	public init(layoutManager: NSLayoutManager) {
 		self.init(
 			applyRenderingStyle: { attrs, range in
+#if os(macOS)
 				layoutManager.setTemporaryAttributes(attrs, forCharacterRange: range)
+#else
+				print("unsupported rendering style")
+#endif
 			}
 		)
 	}

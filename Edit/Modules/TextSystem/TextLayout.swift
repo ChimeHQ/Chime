@@ -7,29 +7,29 @@ import Rearrange
 public struct TextLayout {
 	public struct LineFragment {
 		public let range: NSRange
-		public let bounds: NSRect
+		public let bounds: CGRect
 	}
 
-	public let visibleRect: () -> NSRect
+	public let visibleRect: () -> CGRect
 	public let visibleSet: () -> IndexSet
-	public let lineFragmentsInRect: (NSRect) -> [LineFragment]
+	public let lineFragmentsInRect: (CGRect) -> [LineFragment]
 	public let lineFragmentsInRange: (NSRange) -> [LineFragment]
 }
 
 extension TextLayout {
 	@MainActor
 	public init(textView: NSUITextView) {
-		self.init(container: textView.textContainer!)
+		self.init(container: textView.nsuiTextContainer!, textView: textView)
 	}
 
 	@MainActor
-	public init(container: NSTextContainer) {
+	public init(container: NSTextContainer, textView: NSUITextView) {
 		self.init(
 			visibleRect: {
-				container.textView!.visibleRect
+				textView.visibleRect
 			},
 			visibleSet: {
-				container.textView!.visibleCharacterIndexes
+				textView.visibleCharacterIndexes
 			},
 			lineFragmentsInRect: { rect in
 				var fragments = [LineFragment]()

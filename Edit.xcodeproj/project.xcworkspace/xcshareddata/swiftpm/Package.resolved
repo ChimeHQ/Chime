@@ -135,7 +135,7 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/mattmassicotte/nsui.git",
       "state" : {
-        "revision" : "b6c32973b2a9dc16c465f3e3bc44e9abb27d1683"
+        "revision" : "8792b2f789bf03be1be9ecb4df43d2bfe0e5d361"
       }
     },
     {
@@ -228,7 +228,7 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ChimeHQ/ThemePark",
       "state" : {
-        "revision" : "0843e25fdcfc9e6e197b39d668c29d8892240f1b"
+        "revision" : "11b195dd9771226a6be2b032381b1a7fa3569621"
       }
     },
     {

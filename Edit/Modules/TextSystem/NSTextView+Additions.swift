@@ -1,13 +1,13 @@
-import AppKit
+import NSUI
 
-extension NSTextView {
+extension NSUITextView {
 	func replaceTextStorage(_ newStorage: NSTextStorage) {
-		if let contentStorage = textContentStorage {
+		if let contentStorage = nsuiTextContentStorage {
 			contentStorage.textStorage = newStorage
 			return
 		}
 
-		if let layoutManager = layoutManager {
+		if let layoutManager = nsuiLayoutManager {
 			layoutManager.replaceTextStorage(newStorage)
 			return
 		}

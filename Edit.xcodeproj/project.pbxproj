@@ -3901,6 +3901,9 @@
 		};
 		C9FE53B42A7677E800CACA1A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilters = (
+				macos,
+			);
 			productRef = C9FE53B32A7677E800CACA1A /* ScrollViewPlus */;
 		};
 		C9FE53BB2A77353900CACA1A /* PBXTargetDependency */ = {
@@ -4738,7 +4741,7 @@
 			repositoryURL = "https://github.com/mattmassicotte/nsui.git";
 			requirement = {
 				kind = revision;
-				revision = b6c32973b2a9dc16c465f3e3bc44e9abb27d1683;
+				revision = 8792b2f789bf03be1be9ecb4df43d2bfe0e5d361;
 			};
 		};
 		C9BFA1AE2BC0927A00E86487 /* XCRemoteSwiftPackageReference "Glyph" */ = {
@@ -4786,7 +4789,7 @@
 			repositoryURL = "https://github.com/ChimeHQ/ThemePark";
 			requirement = {
 				kind = revision;
-				revision = 0843e25fdcfc9e6e197b39d668c29d8892240f1b;
+				revision = 11b195dd9771226a6be2b032381b1a7fa3569621;
 			};
 		};
 		C9FE52E62A75375300CACA1A /* XCRemoteSwiftPackageReference "ContainedDocument" */ = {

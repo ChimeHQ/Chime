@@ -67,5 +67,3 @@ extension View {
 		clipShape(RoundedCornersShape(radius: radius, corners: corners) )
 	}
 }
-
-

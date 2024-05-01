@@ -1,12 +1,14 @@
-import AppKit
+import NSUI
 
 import DocumentContent
 
-extension NSTextView {
+extension NSUITextView {
 	func applyMutations(_ mutations: [TextStorageMutation]) {
+		guard let storage = nsuiTextStorage else { fatalError() }
+
 		for mutation in mutations {
 			for rangedString in mutation.stringMutations {
-				replaceCharacters(in: rangedString.range, with: rangedString.string)
+				storage.replaceCharacters(in: rangedString.range, with: rangedString.string)
 			}
 		}
 	}

@@ -46,19 +46,23 @@ public final class ThemeStore {
 	}
 
 	private func loadXcodeThemes() {
+#if os(macOS)
 		for (name, theme) in XcodeTheme.all {
 			let identity = Theme.Identity(source: .xcode, name: name)
 
 			cacheStyler(theme, with: identity)
 		}
+#endif
 	}
 
 	private func loadTextMateThemes() {
+#if os(macOS)
 		for theme in TextMateTheme.all {
 			let identity = Theme.Identity(source: .textmate, name: theme.name)
 
 			cacheStyler(theme, with: identity)
 		}
+#endif
 	}
 
 	private func cacheStyler(_ styler: any Styling, with identity: Theme.Identity) {

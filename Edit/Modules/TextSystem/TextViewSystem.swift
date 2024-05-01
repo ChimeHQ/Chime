@@ -1,8 +1,8 @@
-import AppKit
 import Foundation
 
 import ChimeKit
 import DocumentContent
+import NSUI
 import TextStory
 import Theme
 
@@ -17,10 +17,10 @@ public final class TextViewSystem: NSObject {
 	private var contentVersion = 0
 	public private(set) var contentIdentity = DocumentContentIdentity()
 
-	let textView: NSTextView
+	let textView: NSUITextView
 	public private(set) var textMetrics: TextMetrics
 
-	public init(textView: NSTextView) {
+	public init(textView: NSUITextView) {
 		self.textView = textView
 		self.textMetrics = TextMetrics(storage: Storage.null())
 
@@ -67,15 +67,17 @@ extension TextViewSystem {
 	}
 
 	private func beginEditing() {
-		textView.textStorage?.beginEditing()
+		textView.nsuiTextStorage?.beginEditing()
 	}
 
 	private func endEditing() {
-		textView.textStorage?.endEditing()
+		textView.nsuiTextStorage?.endEditing()
 
 		contentVersion += 1
 
+#if os(macOS)
 		textView.didChangeText()
+#endif
 	}
 
 	private func length(for version: Version) -> Int? {
@@ -83,11 +85,11 @@ extension TextViewSystem {
 			return nil
 		}
 
-		return textView.textStorage?.length
+		return textView.nsuiTextStorage?.length
 	}
 
 	private func substring(range: NSRange, version: Version) throws -> String {
-		guard let storage = textView.textStorage else {
+		guard let storage = textView.nsuiTextStorage else {
 			throw TextStorageError.underlyingStorageInvalid
 		}
 
@@ -186,7 +188,7 @@ extension TextViewSystem {
 	}
 
 	public func themeChanged(attributes: [NSAttributedString.Key: Any]) {
-		guard let storage = textView.textStorage else {
+		guard let storage = textView.nsuiTextStorage else {
 			fatalError("")
 		}
 
@@ -209,6 +211,7 @@ extension TextViewSystem {
 //}
 
 extension TextViewSystem: TSYTextStorageDelegate {
+#if os(macOS)
 	public nonisolated func textStorage(_ textStorage: TSYTextStorage, doubleClickRangeForLocation location: UInt) -> NSRange {
 		textStorage.internalStorage.doubleClick(at: Int(location))
 	}
@@ -216,4 +219,5 @@ extension TextViewSystem: TSYTextStorageDelegate {
 	public nonisolated func textStorage(_ textStorage: TSYTextStorage, nextWordIndexFromLocation location: UInt, direction forward: Bool) -> UInt {
 		UInt(textStorage.internalStorage.nextWord(from: Int(location), forward: forward))
 	}
+#endif
 }
