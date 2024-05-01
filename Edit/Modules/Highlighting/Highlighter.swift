@@ -34,8 +34,8 @@ final class LowlightTokenProvider {
 		let start = range.location
 		let neonTokens = output.tokens.map {
 			let shiftedRange = $0.range.shifted(by: start)!
-
-			return Neon.Token(name: $0.name, range: shiftedRange)
+			
+			return Neon.Token(name: $0.element.treeSitterHighlightName, range: shiftedRange)
 		}
 
 		return .init(tokens: neonTokens)
@@ -56,15 +56,19 @@ final class LowlightTokenProvider {
 
 	private func language(for utType: UTType) -> Language? {
 		if utType.conforms(to: .goSource) {
-			return Language(keywords: ["import", "func", "const", "for", "var", "if", "return"], symbols: [])
+			return Language(patterns: [])
 		}
 
 		if utType.conforms(to: .swiftSource) {
-			return Language(keywords: ["import", "func", "let", "for", "var", "if", "return"], symbols: [])
+			return Language(
+				keywords: ["import", "for", "final", "class", "let", "func", "return", "private", "public", "guard", "actor"],
+				lineComment: "//"
+			)
 		}
 
 		if utType.conforms(to: .markdown) {
-			return Language(keywords: [], symbols: ["#"])
+//			return Language(keywords: [], symbols: ["#"])
+			return Language(patterns: [])
 		}
 
 		return nil

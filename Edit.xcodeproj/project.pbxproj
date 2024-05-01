@@ -4754,7 +4754,7 @@
 			repositoryURL = "https://github.com/ChimeHQ/Lowlight";
 			requirement = {
 				kind = revision;
-				revision = 51f98f2d252d1346d76a032f02a4a9b2add63084;
+				revision = 1687136e033f3f73494f228d83c80702933616a5;
 			};
 		};
 		C9CDEB582B51620E009E252A /* XCRemoteSwiftPackageReference "ColorToolbox" */ = {
