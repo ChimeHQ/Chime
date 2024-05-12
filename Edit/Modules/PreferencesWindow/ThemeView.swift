@@ -21,6 +21,10 @@ final class ThemeModel {
 	func theme(with identity: Theme.Identity) -> Theme {
 		store.theme(with: identity)
 	}
+
+	func themeChanged(_ identity: Theme.Identity) {
+		store.updateCurrentTheme(with: identity)
+	}
 }
 
 @MainActor
@@ -43,12 +47,18 @@ struct ThemeView: View {
 					ThemeTile(theme: model.theme(with: identity), isSelected: identity.storageString == themeId)
 						.frame(alignment: .center)
 						.onTapGesture {
-							self.themeId = identity.storageString
+							updateTheme(identity)
 						}
 				}
 			}
 		}
 		.padding()
+	}
+
+	private func updateTheme(_ identity: Theme.Identity) {
+		self.themeId = identity.storageString
+		model.themeChanged(identity)
+
 	}
 }
 

@@ -15,8 +15,7 @@ final class PreviewViewController: NSViewController, QLPreviewingController {
 	override init(nibName nibNameOrNil: NSNib.Name?, bundle nibBundleOrNil: Bundle?) {
 		self.coordinator = DocumentCoordinator(statusBarVisible: false)
 
-		let themeId = UserDefaults.standard.string(forKey: "theme-identifier") ?? "Midnight.xcode"
-		self.theme = ThemeStore().theme(with: themeId)
+		self.theme = ThemeStore.currentTheme ?? Theme.fallback
 
 		super.init(nibName: nil, bundle: nil)
 	}
@@ -30,6 +29,12 @@ final class PreviewViewController: NSViewController, QLPreviewingController {
 			.environment(\.theme, theme)
 
 		self.view = NSHostingView(rootView: hostingView)
+
+		let effectiveAppearance = view.effectiveAppearance
+
+		if theme.supportedVariants.contains(.init(appearance: effectiveAppearance)) == false {
+			view.appearance = theme.supportedVariants.first?.appearance
+		}
 
 		coordinator.highlighter.updateTheme(theme, context: .init(window: nil))
     }

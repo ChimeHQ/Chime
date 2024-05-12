@@ -45,6 +45,7 @@
 		C942E6852B67B9A700792DD4 /* ChimeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE52F42A7539B100CACA1A /* ChimeKit.framework */; };
 		C942E6AC2B69747E00792DD4 /* UserScriptStandaloneExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C942E6AB2B69747E00792DD4 /* UserScriptStandaloneExtension.swift */; };
 		C942E6AE2B69889F00792DD4 /* UserScriptExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C942E6782B67B78F00792DD4 /* UserScriptExtension.swift */; };
+		C94450572BE561FA004E244E /* CodableTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94450562BE561FA004E244E /* CodableTheme.swift */; };
 		C94F7EC12A7D8C1900E0361A /* ProjectContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94F7EC02A7D8C1900E0361A /* ProjectContentViewController.swift */; };
 		C958C7812BC5A82900EC95F8 /* ConfigurationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C958C7802BC5A82900EC95F8 /* ConfigurationTests.swift */; };
 		C958C7842BC7019100EC95F8 /* LineNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C958C7832BC7019100EC95F8 /* LineNumberView.swift */; };
@@ -895,6 +896,7 @@
 		C942E6782B67B78F00792DD4 /* UserScriptExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserScriptExtension.swift; sourceTree = "<group>"; };
 		C942E6822B67B93B00792DD4 /* InfoPlistExtension.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = InfoPlistExtension.xcconfig; sourceTree = "<group>"; };
 		C942E6AB2B69747E00792DD4 /* UserScriptStandaloneExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserScriptStandaloneExtension.swift; sourceTree = "<group>"; };
+		C94450562BE561FA004E244E /* CodableTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableTheme.swift; sourceTree = "<group>"; };
 		C94F7EC02A7D8C1900E0361A /* ProjectContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectContentViewController.swift; sourceTree = "<group>"; };
 		C958C7802BC5A82900EC95F8 /* ConfigurationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationTests.swift; sourceTree = "<group>"; };
 		C958C7832BC7019100EC95F8 /* LineNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineNumberView.swift; sourceTree = "<group>"; };
@@ -1861,6 +1863,7 @@
 				C95B91032BD825EE006FDD00 /* ThemeModifiers.swift */,
 				C926736A2B06B90900B3CE2F /* ThemeMonitor.swift */,
 				C9DCE14F2BD7BFF30067D354 /* ThemeStore.swift */,
+				C94450562BE561FA004E244E /* CodableTheme.swift */,
 			);
 			path = Theme;
 			sourceTree = "<group>";
@@ -3281,6 +3284,7 @@
 				C9891B002AFEA3F100C8F393 /* NSAppearance+Style.swift in Sources */,
 				C95B91062BD82772006FDD00 /* Query+Extras.swift in Sources */,
 				C9DCE1502BD7BFF30067D354 /* ThemeStore.swift in Sources */,
+				C94450572BE561FA004E244E /* CodableTheme.swift in Sources */,
 				C926736B2B06B90900B3CE2F /* ThemeMonitor.swift in Sources */,
 				C95B91052BD8275E006FDD00 /* ThemeModifiers.swift in Sources */,
 				C9E0BA422BD52732007AF034 /* Theme.swift in Sources */,
@@ -4789,7 +4793,7 @@
 			repositoryURL = "https://github.com/ChimeHQ/ThemePark";
 			requirement = {
 				kind = revision;
-				revision = 11b195dd9771226a6be2b032381b1a7fa3569621;
+				revision = 2c9c5562a6b6392265baee120a184f1f1c37a6ab;
 			};
 		};
 		C9FE52E62A75375300CACA1A /* XCRemoteSwiftPackageReference "ContainedDocument" */ = {

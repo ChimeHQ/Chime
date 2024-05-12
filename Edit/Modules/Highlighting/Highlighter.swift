@@ -173,10 +173,8 @@ public final class Highlighter<Service: TokenService> {
 		let fullRange = NSRange(0..<textSystem.storage.currentLength)
 		textSystem.textPresentation.applyRenderingStyle([:], fullRange)
 
-		DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
-			self.styler.invalidate(.all)
-			self.styler.validate()
-		}
+		styler.invalidate(.all)
+		styler.validate()
 	}
 
 	public var tokenService: Service? {

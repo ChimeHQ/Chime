@@ -11,7 +11,6 @@ public final class ThemeStore {
 
 	/// Expects "Theme Name.source"
 	public func theme(with identifier: String) -> Theme {
-		print("looking up theme: ", identifier)
 		let components = identifier.components(separatedBy: ".")
 		guard components.count == 2 else {
 			return .fallback
@@ -78,5 +77,47 @@ public final class ThemeStore {
 //		}
 
 		return themeCache
+	}
+}
+
+extension ThemeStore {
+	public static var currentThemeURL: URL? {
+		FileManager.default.appGroupContainerURL?.appending(path: "CurrentTheme.json")
+	}
+
+	public static var currentTheme: Theme? {
+		guard let url = ThemeStore.currentThemeURL else {
+			return nil
+		}
+
+		do {
+			let data = try Data(contentsOf: url)
+
+			let codableTheme = try JSONDecoder().decode(CodableTheme.self, from: data)
+
+			return Theme(identity: codableTheme.identity, styler: codableTheme.styler)
+		} catch {
+			print("failed to load current theme: ", error)
+
+			return nil
+		}
+	}
+
+	public func updateCurrentTheme(with identity: Theme.Identity) {
+		guard let url = ThemeStore.currentThemeURL else {
+			return
+		}
+
+		let theme = theme(with: identity)
+
+		let codableTheme = CodableTheme(styler: CodableStyler(theme), identity: identity)
+
+		do {
+			let data = try JSONEncoder().encode(codableTheme)
+
+			try data.write(to: url)
+		} catch {
+			print("failed to write out current theme: ", error)
+		}
 	}
 }
