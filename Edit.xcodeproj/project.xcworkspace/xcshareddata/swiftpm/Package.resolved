@@ -1,5 +1,5 @@
 {
-  "originHash" : "e47bbfe67e141f3d63da0aa136990875f57fad0ee48affe6b39c948f30de42c0",
+  "originHash" : "bd19efcfc07bbe866e787909e54f1c2855bcfd99b9737e4272ebbf41ec8dcbe1",
   "pins" : [
     {
       "identity" : "asyncxpcconnection",
@@ -205,6 +205,15 @@
       "location" : "https://github.com/ChimeHQ/SourceView",
       "state" : {
         "revision" : "d563ef0ba6c1c91aa6bcee406577b8826baa1f69"
+      }
+    },
+    {
+      "identity" : "sparkle",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/sparkle-project/Sparkle",
+      "state" : {
+        "revision" : "41847a58cdef7506b257591fcca6f9495df591d4",
+        "version" : "2.6.2"
       }
     },
     {

@@ -5,12 +5,14 @@ import SwiftUI
 import Document
 import ExtensionHost
 import PreferencesWindow
+import Sparkle
 import Theme
 import Utility
 
 @main
 @MainActor
 final class AppDelegate: NSObject, NSApplicationDelegate {
+	private lazy var updaterController = SPUStandardUpdaterController(updaterDelegate: self, userDriverDelegate: nil)
     private let documentController: ProjectDocumentController
 	private lazy var preferencesController: NSWindowController = {
 		let window = NSWindow(contentRect: .zero, styleMask: [.closable, .titled], backing: .buffered, defer: true)
@@ -53,4 +55,14 @@ extension AppDelegate {
 		preferencesController.window?.center()
 		preferencesController.showWindow(self)
     }
+
+	@IBAction func checkForUpdates(_ sender: Any?) {
+		updaterController.checkForUpdates(sender)
+	}
+}
+
+extension AppDelegate: SPUUpdaterDelegate {
+	nonisolated func allowedChannels(for updater: SPUUpdater) -> Set<String> {
+		["beta"]
+	}
 }

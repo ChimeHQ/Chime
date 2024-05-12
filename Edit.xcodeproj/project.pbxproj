@@ -27,6 +27,7 @@
 		C929316D2B822BB300C64DDE /* TreeSitterGo in Frameworks */ = {isa = PBXBuildFile; productRef = C929316C2B822BB300C64DDE /* TreeSitterGo */; };
 		C929316F2B822BB800C64DDE /* TreeSitterSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C929316E2B822BB800C64DDE /* TreeSitterSwift */; };
 		C92931712B822BBD00C64DDE /* TreeSitterMarkdown in Frameworks */ = {isa = PBXBuildFile; productRef = C92931702B822BBD00C64DDE /* TreeSitterMarkdown */; };
+		C93F72272BF0F9290021ACF3 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = C93F72262BF0F9290021ACF3 /* Sparkle */; };
 		C9409C662A98CC9800B5D898 /* Outline in Frameworks */ = {isa = PBXBuildFile; productRef = C9409C652A98CC9800B5D898 /* Outline */; };
 		C9409C6C2A99059C00B5D898 /* ProjectState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9409C6A2A99047000B5D898 /* ProjectState.swift */; };
 		C941F09C2B6AD4AF0003B640 /* DocumentContentAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C941F09B2B6AD4AF0003B640 /* DocumentContentAdapter.swift */; };
@@ -1223,6 +1224,7 @@
 				C9FE53942A766AB300CACA1A /* libSearch.a in Frameworks */,
 				C9FE53932A766AAD00CACA1A /* libInspector.a in Frameworks */,
 				C9409C662A98CC9800B5D898 /* Outline in Frameworks */,
+				C93F72272BF0F9290021ACF3 /* Sparkle in Frameworks */,
 				C97918DA2A9E080C0046EAF1 /* ViewPlus in Frameworks */,
 				C900A7CA2A9E94B4000556A6 /* ExtendableHost in Frameworks */,
 				C97918CB2A9D4C740046EAF1 /* FuzzyFind in Frameworks */,
@@ -2414,6 +2416,7 @@
 				C97918D92A9E080C0046EAF1 /* ViewPlus */,
 				C900A7C92A9E94B4000556A6 /* ExtendableHost */,
 				C9CDEB8E2B56ACA3009E252A /* MainOffender */,
+				C93F72262BF0F9290021ACF3 /* Sparkle */,
 			);
 			productName = Edit;
 			productReference = C9FE52992A7525D000CACA1A /* Chime.app */;
@@ -2847,6 +2850,7 @@
 				C9BFA1A12BBF4FA200E86487 /* XCRemoteSwiftPackageReference "nsui" */,
 				C9BFA1AE2BC0927A00E86487 /* XCRemoteSwiftPackageReference "Glyph" */,
 				C9E0BA3A2BD2EB05007AF034 /* XCRemoteSwiftPackageReference "ThemePark" */,
+				C93F72252BF0F9290021ACF3 /* XCRemoteSwiftPackageReference "Sparkle" */,
 			);
 			productRefGroup = C9FE529A2A7525D000CACA1A /* Products */;
 			projectDirPath = "";
@@ -4644,6 +4648,14 @@
 				revision = 834fed55c04bab1e3894070b9b5939700284e4c8;
 			};
 		};
+		C93F72252BF0F9290021ACF3 /* XCRemoteSwiftPackageReference "Sparkle" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sparkle-project/Sparkle";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.6.2;
+			};
+		};
 		C9409C642A98CC9800B5D898 /* XCRemoteSwiftPackageReference "Outline" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/chimeHQ/Outline";
@@ -4895,6 +4907,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C9CDEB5F2B5193B1009E252A /* XCRemoteSwiftPackageReference "tree-sitter-markdown" */;
 			productName = TreeSitterMarkdown;
+		};
+		C93F72262BF0F9290021ACF3 /* Sparkle */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C93F72252BF0F9290021ACF3 /* XCRemoteSwiftPackageReference "Sparkle" */;
+			productName = Sparkle;
 		};
 		C9409C652A98CC9800B5D898 /* Outline */ = {
 			isa = XCSwiftPackageProductDependency;
