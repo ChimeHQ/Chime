@@ -1832,8 +1832,8 @@
 				C9FE52CB2A7526C000CACA1A /* Project.xcconfig */,
 				C9BDB5542B00FF5A009225FB /* SwiftExtension.xcconfig */,
 				C9EA094D2B4D5F6D00732203 /* TreeSitterParsers.xcconfig */,
-				C926738A2B078B0200B3CE2F /* WorkaroundModule.xcconfig */,
 				C95BBE3D2BDD075300C9E1B9 /* Utility.xcconfig */,
+				C926738A2B078B0200B3CE2F /* WorkaroundModule.xcconfig */,
 			);
 			path = Configurations;
 			sourceTree = "<group>";
@@ -1860,12 +1860,12 @@
 		C9FE53D32A77CC8300CACA1A /* Theme */ = {
 			isa = PBXGroup;
 			children = (
+				C94450562BE561FA004E244E /* CodableTheme.swift */,
 				C9891B012AFEAA1100C8F393 /* Extensions */,
 				C9E0BA412BD52732007AF034 /* Theme.swift */,
 				C95B91032BD825EE006FDD00 /* ThemeModifiers.swift */,
 				C926736A2B06B90900B3CE2F /* ThemeMonitor.swift */,
 				C9DCE14F2BD7BFF30067D354 /* ThemeStore.swift */,
-				C94450562BE561FA004E244E /* CodableTheme.swift */,
 			);
 			path = Theme;
 			sourceTree = "<group>";
@@ -1893,12 +1893,12 @@
 			children = (
 				C9891AF62AFE994C00C8F393 /* AppKit */,
 				C941F0A02B6C4DE00003B640 /* AsyncStream+Pair.swift */,
+				C95BBE3E2BDD110700C9E1B9 /* Constants.m */,
 				C941F09E2B6C4CD90003B640 /* Dictionary+Fill.swift */,
+				C95BBE362BDD03F200C9E1B9 /* FileManager+AppGroup.swift */,
 				C9FE53FE2A7A5F1600CACA1A /* Logger+init.swift */,
 				C9F79DD62A87E3FA005ED8E9 /* URL+Contents.swift */,
-				C95BBE362BDD03F200C9E1B9 /* FileManager+AppGroup.swift */,
 				C95BBE382BDD058800C9E1B9 /* Utility-Bridging-Header.h */,
-				C95BBE3E2BDD110700C9E1B9 /* Constants.m */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -4358,9 +4358,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C95BBE3D2BDD075300C9E1B9 /* Utility.xcconfig */;
 			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -4368,8 +4365,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C95BBE3D2BDD075300C9E1B9 /* Utility.xcconfig */;
 			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
