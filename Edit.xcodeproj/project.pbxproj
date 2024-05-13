@@ -4111,7 +4111,7 @@
 		};
 		C9BDB5532B00FD89009225FB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C942E6822B67B93B00792DD4 /* InfoPlistExtension.xcconfig */;
+			baseConfigurationReference = C9BDB5542B00FF5A009225FB /* SwiftExtension.xcconfig */;
 			buildSettings = {
 			};
 			name = Release;
@@ -4139,7 +4139,7 @@
 		};
 		C9E8780C2A9F53530018340C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C9E878112A9F53BB0018340C /* Extension.xcconfig */;
+			baseConfigurationReference = C942E6822B67B93B00792DD4 /* InfoPlistExtension.xcconfig */;
 			buildSettings = {
 			};
 			name = Release;
@@ -4805,7 +4805,7 @@
 			repositoryURL = "https://github.com/ChimeHQ/ThemePark";
 			requirement = {
 				kind = revision;
-				revision = 2c9c5562a6b6392265baee120a184f1f1c37a6ab;
+				revision = 0838bd1db8be40aa87233f8351955bf84876f83d;
 			};
 		};
 		C9FE52E62A75375300CACA1A /* XCRemoteSwiftPackageReference "ContainedDocument" */ = {

@@ -48,7 +48,7 @@ extension Theme {
 	@MainActor
 	public static let fallback = Theme(
 		identity: .init(source: .chime, name: "Fallback"),
-		styler: ConstantStyler(foregroundColor: .green, backgroundColor: .black)
+		styler: ConstantStyler(foregroundColor: .label, backgroundColor: .windowBackgroundColor)
 	)
 
 	@MainActor
