@@ -22,7 +22,7 @@ Features:
 - [editorconfig](https://editorconfig.org)
 - [extensions][chimekit]
 - file navigator
-- Spotlight Preview extension
+- QuickLook Preview extension
 - syntax highlighting (driven by tree-sitter and LSP)
 - structure highlighting
 - semantic symbol information
@@ -31,7 +31,7 @@ Features:
 
 ## Project State
 
-The code in this repo should be considered mostly **non-functional** right now. If you want to use Chime, you can [download][download] the currently released version. However, the Spotlight Preview extension exists to help expose real, useful features of this version. You can check that out via releases.
+The code in this repo should be considered mostly **non-functional** right now. If you want to use Chime, you can [download][download] the currently released version. However, the QuickLook Preview extension exists to help expose real, useful features of this version. You can check that out via releases.
 
 Chime used to be commercial, but is now free. It built up some pretty significant cruft over time. In particular, the core UI application architecture is just in a bad state. It is also quite complex to build. So, I've opted to re-implement that core and pull in parts as appropriate. I'll be putting an emphasis on extracting components into packages as I go. A fitting rebirth, I would say.
 
