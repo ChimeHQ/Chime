@@ -29,6 +29,16 @@ public struct LanguageProfile: Sendable {
 
 extension LanguageProfile {
 	public func loadLanguageConfiguration() async throws -> LanguageConfiguration {
+		try await withUnsafeThrowingContinuation { continuation in
+			DispatchQueue.global().async {
+				let result = Result(catching: { try load() })
+
+				continuation.resume(with: result)
+			}
+		}
+	}
+
+	public func load() throws -> LanguageConfiguration {
 		guard
 			let language = language,
 			let bundleName = bundleName
@@ -36,17 +46,9 @@ extension LanguageProfile {
 			throw LanguageProfileError.treeSitterUnsupported
 		}
 
-		return try await withUnsafeThrowingContinuation { [language, name, bundleName] continuation in
-			DispatchQueue.global().async {
-				let result = Result(catching: {
-					let queryURL = try LanguageProfile.languageQueryDirectory(for: name, bundleName: bundleName)
+		let queryURL = try LanguageProfile.languageQueryDirectory(for: name, bundleName: bundleName)
 
-					return try LanguageConfiguration(language, name: name, queriesURL: queryURL)
-				})
-
-				continuation.resume(with: result)
-			}
-		}
+		return try LanguageConfiguration(language, name: name, queriesURL: queryURL)
 	}
 
 	private static func languageQueryDirectory(for name: String, bundleName: String) throws -> URL {

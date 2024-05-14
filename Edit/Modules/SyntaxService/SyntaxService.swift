@@ -69,7 +69,7 @@ public final class SyntaxService {
 		guard profile.language != nil else { return }
 
 		let config = TreeSitterClient.Configuration(
-			languageProvider: languageDataStore.languageConfiguration(with:),
+			languageProvider: { [languageDataStore] in languageDataStore.languageConfiguration(with: $0) },
 			contentProvider: { [textSystem] in textSystem.storage.layerContent(for: $0) },
 			lengthProvider: { [textSystem] in textSystem.storage.currentLength },
 			invalidationHandler: { [unowned self] in self.invalidationHandler(.set($0)) },

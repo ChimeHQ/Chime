@@ -16,9 +16,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C9BDB5472B00FD89009225FB"
-               BuildableName = "SwiftExtension.appex"
-               BlueprintName = "SwiftExtension"
+               BlueprintIdentifier = "C93F72472BF26BDC0021ACF3"
+               BuildableName = "EditIntents.appex"
+               BlueprintName = "EditIntents"
                ReferencedContainer = "container:Edit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

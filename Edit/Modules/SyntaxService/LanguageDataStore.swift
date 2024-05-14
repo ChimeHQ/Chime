@@ -61,7 +61,7 @@ extension LanguageDataStore {
 		return profile(for: utType)
 	}
 
-	public func languageConfiguration(with identifier: String) -> LanguageConfiguration? {
+	public func languageConfiguration(with identifier: String, background: Bool = true) -> LanguageConfiguration? {
 		let utType = LanguageDataStore.languageDocumentType(from: identifier)
 
 		// shortcut this
@@ -71,6 +71,20 @@ extension LanguageDataStore {
 
 		if let value = configurationCache[utType] {
 			return value
+		}
+
+		if background == false {
+			if let value = configurationCache[utType] {
+				return value
+			}
+
+			let profile = profile(for: utType)
+
+			let config = try? profile.load()
+
+			self.configurationCache[utType] = config
+
+			return config
 		}
 
 		Task {
@@ -94,5 +108,11 @@ extension LanguageDataStore {
 		configurationLoaded(identifier)
 
 		return config
+	}
+
+	public func loadLanguageConfiguration(with utType: UTType) async throws -> LanguageConfiguration? {
+		let profile = profile(for: utType)
+
+		return try await loadLanguageConfiguration(with: utType, identifier: profile.name)
 	}
 }

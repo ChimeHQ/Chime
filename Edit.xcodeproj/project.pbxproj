@@ -28,6 +28,9 @@
 		C929316F2B822BB800C64DDE /* TreeSitterSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C929316E2B822BB800C64DDE /* TreeSitterSwift */; };
 		C92931712B822BBD00C64DDE /* TreeSitterMarkdown in Frameworks */ = {isa = PBXBuildFile; productRef = C92931702B822BBD00C64DDE /* TreeSitterMarkdown */; };
 		C93F72272BF0F9290021ACF3 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = C93F72262BF0F9290021ACF3 /* Sparkle */; };
+		C93F724B2BF26BDC0021ACF3 /* EditIntentsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93F724A2BF26BDC0021ACF3 /* EditIntentsExtension.swift */; };
+		C93F724D2BF26BDC0021ACF3 /* HighlightIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93F724C2BF26BDC0021ACF3 /* HighlightIntent.swift */; };
+		C93F72582BF26E9C0021ACF3 /* EditIntents.appex in Copy Extensions */ = {isa = PBXBuildFile; fileRef = C93F72482BF26BDC0021ACF3 /* EditIntents.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C9409C662A98CC9800B5D898 /* Outline in Frameworks */ = {isa = PBXBuildFile; productRef = C9409C652A98CC9800B5D898 /* Outline */; };
 		C9409C6C2A99059C00B5D898 /* ProjectState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9409C6A2A99047000B5D898 /* ProjectState.swift */; };
 		C941F09C2B6AD4AF0003B640 /* DocumentContentAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C941F09B2B6AD4AF0003B640 /* DocumentContentAdapter.swift */; };
@@ -48,6 +51,8 @@
 		C942E6AE2B69889F00792DD4 /* UserScriptExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C942E6782B67B78F00792DD4 /* UserScriptExtension.swift */; };
 		C94450572BE561FA004E244E /* CodableTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94450562BE561FA004E244E /* CodableTheme.swift */; };
 		C94F7EC12A7D8C1900E0361A /* ProjectContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94F7EC02A7D8C1900E0361A /* ProjectContentViewController.swift */; };
+		C95248C82BF3AFD400F55E71 /* EditKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C92931422B80CC6700C64DDE /* EditKit.framework */; };
+		C95248C92BF3AFD700F55E71 /* ChimeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE52F42A7539B100CACA1A /* ChimeKit.framework */; };
 		C958C7812BC5A82900EC95F8 /* ConfigurationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C958C7802BC5A82900EC95F8 /* ConfigurationTests.swift */; };
 		C958C7842BC7019100EC95F8 /* LineNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C958C7832BC7019100EC95F8 /* LineNumberView.swift */; };
 		C95B91052BD8275E006FDD00 /* ThemeModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95B91032BD825EE006FDD00 /* ThemeModifiers.swift */; };
@@ -298,6 +303,13 @@
 			remoteGlobalIDString = C92931412B80CC6700C64DDE;
 			remoteInfo = EditKit;
 		};
+		C93F72502BF26BDC0021ACF3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C93F72472BF26BDC0021ACF3;
+			remoteInfo = EditIntents;
+		};
 		C942E67C2B67B78F00792DD4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
@@ -306,6 +318,20 @@
 			remoteInfo = UserScriptExtension;
 		};
 		C942E6832B67B9A100792DD4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9FE52F32A7539B100CACA1A;
+			remoteInfo = ChimeKit;
+		};
+		C95248C42BF3AFC600F55E71 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C92931412B80CC6700C64DDE;
+			remoteInfo = EditKit;
+		};
+		C95248C62BF3AFCE00F55E71 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
 			proxyType = 1;
@@ -832,6 +858,7 @@
 			dstPath = "$(EXTENSIONS_FOLDER_PATH)";
 			dstSubfolderSpec = 16;
 			files = (
+				C93F72582BF26E9C0021ACF3 /* EditIntents.appex in Copy Extensions */,
 				C9E878092A9F53530018340C /* UIPlaceholderExtension.appex in Copy Extensions */,
 				C9BDB5502B00FD89009225FB /* SwiftExtension.appex in Copy Extensions */,
 				C942E67E2B67B78F00792DD4 /* UserScriptExtension.appex in Copy Extensions */,
@@ -883,6 +910,12 @@
 		C92931422B80CC6700C64DDE /* EditKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EditKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C92931722B822BFF00C64DDE /* EditKit.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = EditKit.xcconfig; sourceTree = "<group>"; };
 		C93791A32AD5E02C00665F50 /* Project-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Project-Debug.xcconfig"; sourceTree = "<group>"; };
+		C93F72482BF26BDC0021ACF3 /* EditIntents.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.extensionkit-extension"; includeInIndex = 0; path = EditIntents.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		C93F724A2BF26BDC0021ACF3 /* EditIntentsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditIntentsExtension.swift; sourceTree = "<group>"; };
+		C93F724C2BF26BDC0021ACF3 /* HighlightIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightIntent.swift; sourceTree = "<group>"; };
+		C93F724E2BF26BDC0021ACF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C93F724F2BF26BDC0021ACF3 /* EditIntents.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EditIntents.entitlements; sourceTree = "<group>"; };
+		C93F72562BF26CB80021ACF3 /* EditIntents.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = EditIntents.xcconfig; sourceTree = "<group>"; };
 		C9409C6A2A99047000B5D898 /* ProjectState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectState.swift; sourceTree = "<group>"; };
 		C941F09B2B6AD4AF0003B640 /* DocumentContentAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentContentAdapter.swift; sourceTree = "<group>"; };
 		C941F09E2B6C4CD90003B640 /* Dictionary+Fill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Fill.swift"; sourceTree = "<group>"; };
@@ -1121,6 +1154,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C93F72452BF26BDC0021ACF3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C95248C92BF3AFD700F55E71 /* ChimeKit.framework in Frameworks */,
+				C95248C82BF3AFD400F55E71 /* EditKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C942E6732B67B78E00792DD4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -1342,6 +1384,17 @@
 				C9E0BA342BD2C7F2007AF034 /* ThemeView.swift */,
 			);
 			path = PreferencesWindow;
+			sourceTree = "<group>";
+		};
+		C93F72492BF26BDC0021ACF3 /* EditIntents */ = {
+			isa = PBXGroup;
+			children = (
+				C93F724F2BF26BDC0021ACF3 /* EditIntents.entitlements */,
+				C93F724A2BF26BDC0021ACF3 /* EditIntentsExtension.swift */,
+				C93F724C2BF26BDC0021ACF3 /* HighlightIntent.swift */,
+				C93F724E2BF26BDC0021ACF3 /* Info.plist */,
+			);
+			path = EditIntents;
 			sourceTree = "<group>";
 		};
 		C941F0AE2B6E67AC0003B640 /* Sources */ = {
@@ -1600,6 +1653,7 @@
 			children = (
 				C9FE538E2A76674600CACA1A /* Configurations */,
 				C9FE529B2A7525D000CACA1A /* Edit */,
+				C93F72492BF26BDC0021ACF3 /* EditIntents */,
 				C9FE52B12A7525D300CACA1A /* EditTests */,
 				C9FE52BB2A7525D300CACA1A /* EditUITests */,
 				C9E8780D2A9F535C0018340C /* Extensions */,
@@ -1641,6 +1695,7 @@
 				C942E6762B67B78E00792DD4 /* UserScriptExtension.appex */,
 				C92931422B80CC6700C64DDE /* EditKit.framework */,
 				C9E0B9FC2BD27F0F007AF034 /* libDiagnostics.a */,
+				C93F72482BF26BDC0021ACF3 /* EditIntents.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1819,6 +1874,7 @@
 			children = (
 				C92673282B04046700B3CE2F /* Edit-Debug.xcconfig */,
 				C9FE52CC2A752B4D00CACA1A /* Edit.xcconfig */,
+				C93F72562BF26CB80021ACF3 /* EditIntents.xcconfig */,
 				C92931722B822BFF00C64DDE /* EditKit.xcconfig */,
 				C9FE54082A7A625300CACA1A /* EditTests.xcconfig */,
 				C92673432B05244600B3CE2F /* EditUITests.xcconfig */,
@@ -2126,6 +2182,25 @@
 			productReference = C92931422B80CC6700C64DDE /* EditKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		C93F72472BF26BDC0021ACF3 /* EditIntents */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C93F72552BF26BDC0021ACF3 /* Build configuration list for PBXNativeTarget "EditIntents" */;
+			buildPhases = (
+				C93F72442BF26BDC0021ACF3 /* Sources */,
+				C93F72452BF26BDC0021ACF3 /* Frameworks */,
+				C93F72462BF26BDC0021ACF3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C95248C72BF3AFCE00F55E71 /* PBXTargetDependency */,
+				C95248C52BF3AFC600F55E71 /* PBXTargetDependency */,
+			);
+			name = EditIntents;
+			productName = EditIntents;
+			productReference = C93F72482BF26BDC0021ACF3 /* EditIntents.appex */;
+			productType = "com.apple.product-type.extensionkit-extension";
+		};
 		C942E6752B67B78E00792DD4 /* UserScript */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C942E67F2B67B78F00792DD4 /* Build configuration list for PBXNativeTarget "UserScript" */;
@@ -2406,6 +2481,7 @@
 				C9B8AA262B362DDE00C79606 /* PBXTargetDependency */,
 				C942E67D2B67B78F00792DD4 /* PBXTargetDependency */,
 				C92931472B80CC6700C64DDE /* PBXTargetDependency */,
+				C93F72512BF26BDC0021ACF3 /* PBXTargetDependency */,
 			);
 			name = Edit;
 			packageProductDependencies = (
@@ -2727,6 +2803,9 @@
 					C92931412B80CC6700C64DDE = {
 						CreatedOnToolsVersion = 15.3;
 					};
+					C93F72472BF26BDC0021ACF3 = {
+						CreatedOnToolsVersion = 15.3;
+					};
 					C942E6752B67B78E00792DD4 = {
 						CreatedOnToolsVersion = 15.3;
 					};
@@ -2884,6 +2963,7 @@
 				C973DFFF2B62BDB3000998F7 /* Highlighting */,
 				C942E6752B67B78E00792DD4 /* UserScript */,
 				C9E0B9FB2BD27F0F007AF034 /* Diagnostics */,
+				C93F72472BF26BDC0021ACF3 /* EditIntents */,
 			);
 		};
 /* End PBXProject section */
@@ -2894,6 +2974,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				C95B913F2BD99328006FDD00 /* LanguageData in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C93F72462BF26BDC0021ACF3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2996,6 +3083,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C93F72442BF26BDC0021ACF3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C93F724B2BF26BDC0021ACF3 /* EditIntentsExtension.swift in Sources */,
+				C93F724D2BF26BDC0021ACF3 /* HighlightIntent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3411,6 +3507,11 @@
 			target = C92931412B80CC6700C64DDE /* EditKit */;
 			targetProxy = C929315E2B80DA1000C64DDE /* PBXContainerItemProxy */;
 		};
+		C93F72512BF26BDC0021ACF3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C93F72472BF26BDC0021ACF3 /* EditIntents */;
+			targetProxy = C93F72502BF26BDC0021ACF3 /* PBXContainerItemProxy */;
+		};
 		C941F0B32B7102E80003B640 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			productRef = C941F0B22B7102E80003B640 /* TreeSitterGo */;
@@ -3424,6 +3525,16 @@
 			isa = PBXTargetDependency;
 			target = C9FE52F32A7539B100CACA1A /* ChimeKit */;
 			targetProxy = C942E6832B67B9A100792DD4 /* PBXContainerItemProxy */;
+		};
+		C95248C52BF3AFC600F55E71 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C92931412B80CC6700C64DDE /* EditKit */;
+			targetProxy = C95248C42BF3AFC600F55E71 /* PBXContainerItemProxy */;
+		};
+		C95248C72BF3AFCE00F55E71 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9FE52F32A7539B100CACA1A /* ChimeKit */;
+			targetProxy = C95248C62BF3AFCE00F55E71 /* PBXContainerItemProxy */;
 		};
 		C95B90FD2BD80C71006FDD00 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -3990,6 +4101,20 @@
 			};
 			name = Release;
 		};
+		C93F72532BF26BDC0021ACF3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C93F72562BF26CB80021ACF3 /* EditIntents.xcconfig */;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		C93F72542BF26BDC0021ACF3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C93F72562BF26CB80021ACF3 /* EditIntents.xcconfig */;
+			buildSettings = {
+			};
+			name = Release;
+		};
 		C942E6802B67B78F00792DD4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C9E878112A9F53BB0018340C /* Extension.xcconfig */;
@@ -4389,6 +4514,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		C93F72552BF26BDC0021ACF3 /* Build configuration list for PBXNativeTarget "EditIntents" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C93F72532BF26BDC0021ACF3 /* Debug */,
+				C93F72542BF26BDC0021ACF3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		C942E67F2B67B78F00792DD4 /* Build configuration list for PBXNativeTarget "UserScript" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -4640,7 +4774,7 @@
 			repositoryURL = "https://github.com/ChimeHQ/Neon.git";
 			requirement = {
 				kind = revision;
-				revision = 834fed55c04bab1e3894070b9b5939700284e4c8;
+				revision = 709683a2e2f3a2e502e8383f9aa5c725bf7d85e6;
 			};
 		};
 		C93F72252BF0F9290021ACF3 /* XCRemoteSwiftPackageReference "Sparkle" */ = {
@@ -4800,7 +4934,7 @@
 			repositoryURL = "https://github.com/ChimeHQ/ThemePark";
 			requirement = {
 				kind = revision;
-				revision = 0838bd1db8be40aa87233f8351955bf84876f83d;
+				revision = fff8ae0521d76e81acd5c72ad39144ad10f1d489;
 			};
 		};
 		C9FE52E62A75375300CACA1A /* XCRemoteSwiftPackageReference "ContainedDocument" */ = {
