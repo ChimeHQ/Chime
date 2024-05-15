@@ -8,7 +8,6 @@ import TreeSitterMarkdown
 import TreeSitterMarkdownInline
 import TreeSitterSwift
 
-
 extension LanguageProfile {
 	static func profile(for utType: UTType) -> LanguageProfile {
 		if utType.conforms(to: .markdown) {

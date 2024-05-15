@@ -6,22 +6,32 @@ import Theme
 import TreeSitterClient
 import UniformTypeIdentifiers
 
-enum Language: String, Hashable, CaseIterable {
+/// All types that are supported by EditIntents.
+///
+/// This must be defined within the same module as any AppIntent that uses it.
+public enum RootLanguage: String, Hashable, CaseIterable, Sendable {
 	case swift = "Swift"
+	case go = "Go"
+	case markdown = "Markdown"
 
 	var typeIdentifier: UTType {
 		switch self {
-		case .swift:
-			.swiftSource
+		case .swift: .swiftSource
+		case .go: .goSource
+		case .markdown: .markdown
 		}
 	}
 }
 
-extension Language: AppEnum {
-	static let typeDisplayRepresentation: TypeDisplayRepresentation = "Language"
-	static let caseDisplayRepresentations: [Language: DisplayRepresentation] = [
-		.swift: "Swift",
-	]
+extension RootLanguage: AppEnum {
+	public static var typeDisplayRepresentation: TypeDisplayRepresentation { "Language" }
+	public static var caseDisplayRepresentations: [RootLanguage: DisplayRepresentation] {
+		[
+			.swift: "Swift",
+			.go: "Go",
+			.markdown: "Markdown",
+		]
+	}
 }
 
 enum HighlightIntentError: Error {
@@ -30,14 +40,14 @@ enum HighlightIntentError: Error {
 
 struct HighlightIntent: AppIntent {
 	nonisolated static let title: LocalizedStringResource = "Highlight Source Code"
-	static let description: IntentDescription = "Applies syntax highlighting to the input."
+	static var description: IntentDescription { "Applies syntax highlighting to the input." }
 	nonisolated static let openAppWhenRun = false
 
 	@Parameter(title: "Source", description: "The source code to be highlighted", inputConnectionBehavior: .connectToPreviousIntentResult)
 	var source: String
 
 	@Parameter(title: "Language")
-	var language: Language
+	var language: RootLanguage
 
 	nonisolated static var parameterSummary: some ParameterSummary {
 		Summary("Highlight \(\.$language) source code.")

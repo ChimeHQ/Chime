@@ -82,3 +82,12 @@ extension EditorScrollView {
 		super.scroll(clipView, to: point)
 	}
 }
+
+import SwiftUI
+
+class NonSendable {
+}
+
+struct MyKey: EnvironmentKey {
+	static var defaultValue: NonSendable { NonSendable() }
+}
