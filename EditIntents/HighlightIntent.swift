@@ -6,25 +6,6 @@ import Theme
 import TreeSitterClient
 import UniformTypeIdentifiers
 
-/// All types that are supported by EditIntents.
-///
-/// This must be defined within the same module as any AppIntent that uses it.
-public enum RootLanguage: String, Hashable, CaseIterable, Sendable {
-	case go = "Go"
-	case markdown = "Markdown"
-	case ocaml = "OCaml"
-	case swift = "Swift"
-
-	var typeIdentifier: UTType {
-		switch self {
-		case .go: .goSource
-		case .markdown: .markdown
-		case .ocaml: .ocamlSource
-		case .swift: .swiftSource
-		}
-	}
-}
-
 extension RootLanguage: AppEnum {
 	public static var typeDisplayRepresentation: TypeDisplayRepresentation { "Language" }
 	public static var caseDisplayRepresentations: [RootLanguage: DisplayRepresentation] {

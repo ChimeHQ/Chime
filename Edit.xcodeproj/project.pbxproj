@@ -161,6 +161,8 @@
 		C9CDEB552B504485009E252A /* TextSystem+SwiftTreeSitterLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CDEB542B504485009E252A /* TextSystem+SwiftTreeSitterLayer.swift */; };
 		C9CDEB8F2B56ACA3009E252A /* MainOffender in Frameworks */ = {isa = PBXBuildFile; productRef = C9CDEB8E2B56ACA3009E252A /* MainOffender */; };
 		C9CFCF752BF4CBE80053C9A6 /* TreeSitterOCaml in Frameworks */ = {isa = PBXBuildFile; productRef = C9CFCF742BF4CBE80053C9A6 /* TreeSitterOCaml */; };
+		C9CFCF7B2BF4D0890053C9A6 /* RootLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CFCF7A2BF4D0890053C9A6 /* RootLanguage.swift */; };
+		C9CFCF7C2BF4D19B0053C9A6 /* RootLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CFCF7A2BF4D0890053C9A6 /* RootLanguage.swift */; };
 		C9DCE1502BD7BFF30067D354 /* ThemeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DCE14F2BD7BFF30067D354 /* ThemeStore.swift */; };
 		C9DCE1562BD8049F0067D354 /* ObservableState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DCE1552BD8049F0067D354 /* ObservableState.swift */; };
 		C9E0B9F72BD1A3CE007AF034 /* DiagnosticsStatusBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E0B9F62BD1A3CE007AF034 /* DiagnosticsStatusBarItem.swift */; };
@@ -1028,6 +1030,7 @@
 		C9C2133A2AD1FD6F00C60282 /* Framework.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Framework.xcconfig; sourceTree = "<group>"; };
 		C9CDEB542B504485009E252A /* TextSystem+SwiftTreeSitterLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextSystem+SwiftTreeSitterLayer.swift"; sourceTree = "<group>"; };
 		C9CDEB872B55B889009E252A /* LanguageData */ = {isa = PBXFileReference; lastKnownFileType = folder; path = LanguageData; sourceTree = "<group>"; };
+		C9CFCF7A2BF4D0890053C9A6 /* RootLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootLanguage.swift; sourceTree = "<group>"; };
 		C9DCE14F2BD7BFF30067D354 /* ThemeStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeStore.swift; sourceTree = "<group>"; };
 		C9DCE1552BD8049F0067D354 /* ObservableState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableState.swift; sourceTree = "<group>"; };
 		C9E0B9F62BD1A3CE007AF034 /* DiagnosticsStatusBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnosticsStatusBarItem.swift; sourceTree = "<group>"; };
@@ -1587,6 +1590,7 @@
 				C9EA095C2B4D695400732203 /* LanguageDataStore.swift */,
 				C9EA09562B4D62B800732203 /* LanguageProfile.swift */,
 				C9EA095A2B4D645F00732203 /* LanguageProfile+Profiles.swift */,
+				C9CFCF7A2BF4D0890053C9A6 /* RootLanguage.swift */,
 				C9B8AA532B37057C00C79606 /* SyntaxService.swift */,
 				C9CDEB542B504485009E252A /* TextSystem+SwiftTreeSitterLayer.swift */,
 			);
@@ -3098,6 +3102,7 @@
 			files = (
 				C93F724B2BF26BDC0021ACF3 /* EditIntentsExtension.swift in Sources */,
 				C93F724D2BF26BDC0021ACF3 /* HighlightIntent.swift in Sources */,
+				C9CFCF7C2BF4D19B0053C9A6 /* RootLanguage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3200,6 +3205,7 @@
 				C9EA09572B4D62B800732203 /* LanguageProfile.swift in Sources */,
 				C9EA095D2B4D695400732203 /* LanguageDataStore.swift in Sources */,
 				C9CDEB552B504485009E252A /* TextSystem+SwiftTreeSitterLayer.swift in Sources */,
+				C9CFCF7B2BF4D0890053C9A6 /* RootLanguage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

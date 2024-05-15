@@ -36,18 +36,15 @@ public final class LanguageDataStore {
 }
 
 extension LanguageDataStore {
-	private static func normalizeLanguageName(_ identifier: String) -> String {
-		identifier.lowercased().replacingOccurrences(of: "-", with: "_")
-	}
-
 	private static func languageDocumentType(from identifier: String) -> UTType {
-		let name = Self.normalizeLanguageName(identifier)
+		if let lang = RootLanguage(rawValue: identifier) {
+			return lang.typeIdentifier
+		}
+
+		// use the same normalization rules, but check for non-root languages
+		let name = RootLanguage.normalizeLanguageName(identifier)
 
 		switch name {
-		case "swift":
-			return .swiftSource
-		case "markdown":
-			return .markdown
 		case "markdown_inline":
 			return .markdownInline
 		default:

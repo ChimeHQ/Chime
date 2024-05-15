@@ -37,12 +37,12 @@ extension LanguageProfile {
 
 extension LanguageProfile {
 	static let goProfile = LanguageProfile(
-		name: "Go",
+		RootLanguage.go,
 		language: Language(tree_sitter_go())
 	)
 
 	static let markdownProfile = LanguageProfile(
-		name: "Markdown",
+		RootLanguage.markdown,
 		language: Language(tree_sitter_markdown())
 	)
 
@@ -53,17 +53,17 @@ extension LanguageProfile {
 	)
 
 	static let ocamlProfile = LanguageProfile(
-		name: "OCaml",
+		RootLanguage.ocaml,
 		language: Language(tree_sitter_ocaml())
 	)
 
 	static let ocamlInterfaceProfile = LanguageProfile(
-		name: "OCaml",
+		RootLanguage.ocaml,
 		language: Language(tree_sitter_ocaml_interface())
 	)
 
 	static let swiftProfile = LanguageProfile(
-		name: "Swift",
+		RootLanguage.swift,
 		language: Language(tree_sitter_swift())
 	)
 

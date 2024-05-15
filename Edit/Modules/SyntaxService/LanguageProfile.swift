@@ -25,6 +25,15 @@ public struct LanguageProfile: Sendable {
 		self.language = language
 		self.bundleName = bundleName
 	}
+
+	public init(_ rootLanguage: RootLanguage, language: SwiftTreeSitter.Language?) {
+		let name = rootLanguage.rawValue
+		let bundleName = "TreeSitter\(name)_TreeSitter\(name)"
+
+		self.name = name
+		self.language = language
+		self.bundleName = bundleName
+	}
 }
 
 extension LanguageProfile {
