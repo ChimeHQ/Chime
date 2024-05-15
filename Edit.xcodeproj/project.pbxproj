@@ -160,6 +160,7 @@
 		C9BFA1B72BC162EF00E86487 /* NSUI in Frameworks */ = {isa = PBXBuildFile; productRef = C9BFA1B62BC162EF00E86487 /* NSUI */; };
 		C9CDEB552B504485009E252A /* TextSystem+SwiftTreeSitterLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CDEB542B504485009E252A /* TextSystem+SwiftTreeSitterLayer.swift */; };
 		C9CDEB8F2B56ACA3009E252A /* MainOffender in Frameworks */ = {isa = PBXBuildFile; productRef = C9CDEB8E2B56ACA3009E252A /* MainOffender */; };
+		C9CFCF752BF4CBE80053C9A6 /* TreeSitterOCaml in Frameworks */ = {isa = PBXBuildFile; productRef = C9CFCF742BF4CBE80053C9A6 /* TreeSitterOCaml */; };
 		C9DCE1502BD7BFF30067D354 /* ThemeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DCE14F2BD7BFF30067D354 /* ThemeStore.swift */; };
 		C9DCE1562BD8049F0067D354 /* ObservableState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DCE1552BD8049F0067D354 /* ObservableState.swift */; };
 		C9E0B9F72BD1A3CE007AF034 /* DiagnosticsStatusBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E0B9F62BD1A3CE007AF034 /* DiagnosticsStatusBarItem.swift */; };
@@ -1129,6 +1130,7 @@
 				C96B61F32BDA70DA00561DE8 /* libEditor.a in Frameworks */,
 				C95B91302BD98C76006FDD00 /* libDocumentContent.a in Frameworks */,
 				C95B91232BD98B64006FDD00 /* libTextSystem.a in Frameworks */,
+				C9CFCF752BF4CBE80053C9A6 /* TreeSitterOCaml in Frameworks */,
 				C95B91222BD98B4D006FDD00 /* libSyntaxService.a in Frameworks */,
 				C96B61FD2BDA714700561DE8 /* ScrollViewPlus in Frameworks */,
 				C95B91342BD98CA1006FDD00 /* SwiftTreeSitter in Frameworks */,
@@ -2143,6 +2145,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				C9CFCF772BF4CC1E0053C9A6 /* PBXTargetDependency */,
 				C96B62022BDA71FE00561DE8 /* PBXTargetDependency */,
 				C96B61FB2BDA714000561DE8 /* PBXTargetDependency */,
 				C96B61F92BDA711B00561DE8 /* PBXTargetDependency */,
@@ -2177,6 +2180,7 @@
 				C95B913D2BD98D01006FDD00 /* SwiftTreeSitterLayer */,
 				C96B61FC2BDA714700561DE8 /* ScrollViewPlus */,
 				C96B62052BDA721100561DE8 /* SourceView */,
+				C9CFCF742BF4CBE80053C9A6 /* TreeSitterOCaml */,
 			);
 			productName = EditKit;
 			productReference = C92931422B80CC6700C64DDE /* EditKit.framework */;
@@ -2364,6 +2368,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				C9CFCF792BF4CC960053C9A6 /* PBXTargetDependency */,
 				C941F0B32B7102E80003B640 /* PBXTargetDependency */,
 				C9CDEB912B56ACBB009E252A /* PBXTargetDependency */,
 				C9CDEB632B51942E009E252A /* PBXTargetDependency */,
@@ -2930,6 +2935,7 @@
 				C9BFA1AE2BC0927A00E86487 /* XCRemoteSwiftPackageReference "Glyph" */,
 				C9E0BA3A2BD2EB05007AF034 /* XCRemoteSwiftPackageReference "ThemePark" */,
 				C93F72252BF0F9290021ACF3 /* XCRemoteSwiftPackageReference "Sparkle" */,
+				C9CFCF732BF4CBE80053C9A6 /* XCRemoteSwiftPackageReference "tree-sitter-ocaml" */,
 			);
 			productRefGroup = C9FE529A2A7525D000CACA1A /* Products */;
 			projectDirPath = "";
@@ -3870,6 +3876,14 @@
 		C9CDEB912B56ACBB009E252A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			productRef = C9CDEB902B56ACBB009E252A /* MainOffender */;
+		};
+		C9CFCF772BF4CC1E0053C9A6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = C9CFCF762BF4CC1E0053C9A6 /* TreeSitterOCaml */;
+		};
+		C9CFCF792BF4CC960053C9A6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = C9CFCF782BF4CC960053C9A6 /* TreeSitterOCaml */;
 		};
 		C9DCE14E2BD7BC500067D354 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -4929,6 +4943,14 @@
 				minimumVersion = 0.1.0;
 			};
 		};
+		C9CFCF732BF4CBE80053C9A6 /* XCRemoteSwiftPackageReference "tree-sitter-ocaml" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/tree-sitter/tree-sitter-ocaml";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		C9E0BA3A2BD2EB05007AF034 /* XCRemoteSwiftPackageReference "ThemePark" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ChimeHQ/ThemePark";
@@ -5260,6 +5282,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C9CDEB8D2B56ACA3009E252A /* XCRemoteSwiftPackageReference "MainOffender" */;
 			productName = MainOffender;
+		};
+		C9CFCF742BF4CBE80053C9A6 /* TreeSitterOCaml */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C9CFCF732BF4CBE80053C9A6 /* XCRemoteSwiftPackageReference "tree-sitter-ocaml" */;
+			productName = TreeSitterOCaml;
+		};
+		C9CFCF762BF4CC1E0053C9A6 /* TreeSitterOCaml */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C9CFCF732BF4CBE80053C9A6 /* XCRemoteSwiftPackageReference "tree-sitter-ocaml" */;
+			productName = TreeSitterOCaml;
+		};
+		C9CFCF782BF4CC960053C9A6 /* TreeSitterOCaml */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C9CFCF732BF4CBE80053C9A6 /* XCRemoteSwiftPackageReference "tree-sitter-ocaml" */;
+			productName = TreeSitterOCaml;
 		};
 		C9DCE14D2BD7BC500067D354 /* ThemePark */ = {
 			isa = XCSwiftPackageProductDependency;

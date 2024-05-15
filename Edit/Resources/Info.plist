@@ -73,6 +73,23 @@
 				<string>public.source-code</string>
 			</array>
 			<key>UTTypeDescription</key>
+			<string>OCaml Source</string>
+			<key>UTTypeIdentifier</key>
+			<string>org.ocaml.ocaml</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>ml</string>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.source-code</string>
+			</array>
+			<key>UTTypeDescription</key>
 			<string>Go Source</string>
 			<key>UTTypeIdentifier</key>
 			<string>dev.go.go-source</string>

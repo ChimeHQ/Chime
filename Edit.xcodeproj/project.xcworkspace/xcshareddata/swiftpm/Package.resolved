@@ -1,5 +1,5 @@
 {
-  "originHash" : "78a8897458ae353ab1f4fd14e2c55be0dba3fe7c46fb08bf337134a46b1e4ea1",
+  "originHash" : "5a57c719e79b0a39e32c853b3d8e18f925cbf132ebb27828399c403312eb262e",
   "pins" : [
     {
       "identity" : "asyncxpcconnection",
@@ -256,6 +256,15 @@
       "state" : {
         "branch" : "split_parser",
         "revision" : "f9820b2db958228f9be339b67d2de874d065866e"
+      }
+    },
+    {
+      "identity" : "tree-sitter-ocaml",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/tree-sitter/tree-sitter-ocaml",
+      "state" : {
+        "branch" : "master",
+        "revision" : "0b12614ded3ec7ed7ab7933a9ba4f695ba4c342e"
       }
     },
     {

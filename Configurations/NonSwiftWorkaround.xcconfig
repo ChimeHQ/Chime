@@ -1,5 +1,6 @@
 // This is a workaround for a ridiculous problem related to non-Swift SPM dependencies. However, the linker will be unhappy if these modulemap files don't exist. So dependency management can get a little tricky.
 // - "Internal" is for TextStory
 // - "tree-sitter" is for SwiftTreeSitter
-OTHER_SWIFT_FLAGS = $(inherited) -Xcc -fmodule-map-file=$(GENERATED_MODULEMAP_DIR)/Internal.modulemap -Xcc -fmodule-map-file=$(GENERATED_MODULEMAP_DIR)/tree-sitter.modulemap -Xcc -fmodule-map-file=$(GENERATED_MODULEMAP_DIR)/TreeSitterSwift.modulemap -Xcc -fmodule-map-file=$(GENERATED_MODULEMAP_DIR)/TreeSitterMarkdown.modulemap -Xcc -fmodule-map-file=$(GENERATED_MODULEMAP_DIR)/TreeSitterMarkdownInline.modulemap -Xcc -fmodule-map-file=$(GENERATED_MODULEMAP_DIR)/TreeSitterGo.modulemap
+OTHER_SWIFT_FLAGS = $(inherited) -Xcc -fmodule-map-file=$(GENERATED_MODULEMAP_DIR)/Internal.modulemap -Xcc -fmodule-map-file=$(GENERATED_MODULEMAP_DIR)/tree-sitter.modulemap -Xcc -fmodule-map-file=$(GENERATED_MODULEMAP_DIR)/TreeSitterGo.modulemap -Xcc -fmodule-map-file=$(GENERATED_MODULEMAP_DIR)/TreeSitterMarkdown.modulemap -Xcc -fmodule-map-file=$(GENERATED_MODULEMAP_DIR)/TreeSitterMarkdownInline.modulemap -Xcc -fmodule-map-file=$(GENERATED_MODULEMAP_DIR)/TreeSitterOCaml.modulemap -Xcc -fmodule-map-file=$(GENERATED_MODULEMAP_DIR)/TreeSitterSwift.modulemap 
+
 

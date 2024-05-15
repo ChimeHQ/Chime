@@ -4,6 +4,7 @@ import SwiftTreeSitter
 import UniformTypeIdentifiers
 
 import TreeSitterGo
+import TreeSitterOCaml
 import TreeSitterMarkdown
 import TreeSitterMarkdownInline
 import TreeSitterSwift
@@ -16,6 +17,10 @@ extension LanguageProfile {
 
 		if utType.conforms(to: .markdownInline) {
 			return LanguageProfile.markdownInlineProfile
+		}
+
+		if utType.conforms(to: .ocamlSource) {
+			return LanguageProfile.ocamlProfile
 		}
 
 		if utType.conforms(to: .swiftSource) {
@@ -45,6 +50,16 @@ extension LanguageProfile {
 		name: "MarkdownInline",
 		language: Language(tree_sitter_markdown_inline()),
 		bundleName: "TreeSitterMarkdown_TreeSitterMarkdownInline"
+	)
+
+	static let ocamlProfile = LanguageProfile(
+		name: "OCaml",
+		language: Language(tree_sitter_ocaml())
+	)
+
+	static let ocamlInterfaceProfile = LanguageProfile(
+		name: "OCaml",
+		language: Language(tree_sitter_ocaml_interface())
 	)
 
 	static let swiftProfile = LanguageProfile(
