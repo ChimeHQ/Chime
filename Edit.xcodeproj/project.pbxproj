@@ -4969,10 +4969,10 @@
 		};
 		C9FE53372A75A75400CACA1A /* XCRemoteSwiftPackageReference "WindowTreatment" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ChimeHQ/WindowTreatment.git";
+			repositoryURL = "https://github.com/McNight/WindowTreatment";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.3.0;
+				branch = main;
+				kind = branch;
 			};
 		};
 		C9FE53AE2A7677D100CACA1A /* XCRemoteSwiftPackageReference "ScrollViewPlus" */ = {
