@@ -1,5 +1,5 @@
 {
-  "originHash" : "5a57c719e79b0a39e32c853b3d8e18f925cbf132ebb27828399c403312eb262e",
+  "originHash" : "61cb567e32cf9c67b9f29b2c794cd7443e88bbe043909522ca1a34fd574197ad",
   "pins" : [
     {
       "identity" : "asyncxpcconnection",
@@ -288,10 +288,10 @@
     {
       "identity" : "windowtreatment",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/ChimeHQ/WindowTreatment.git",
+      "location" : "https://github.com/McNight/WindowTreatment",
       "state" : {
-        "revision" : "3ab18f6df0a69b63cef1d158c47da3992e89b733",
-        "version" : "2.3.0"
+        "branch" : "main",
+        "revision" : "d1ae68ccf3ad488bccd9deab679d88c67d41cb7d"
       }
     }
   ],
