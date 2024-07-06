@@ -11,16 +11,9 @@ public final class ThemeStore {
 
 	/// Expects "Theme Name.source"
 	public func theme(with identifier: String) -> Theme {
-		let components = identifier.components(separatedBy: ".")
-		guard components.count == 2 else {
+		guard let identity = Theme.Identity(storageString: identifier) else {
 			return .fallback
 		}
-
-		guard let source = Theme.Source(rawValue: components[1]) else {
-			return .fallback
-		}
-
-		let identity = Theme.Identity(source: source, name: components[0])
 
 		return theme(with: identity)
 	}
@@ -70,11 +63,37 @@ public final class ThemeStore {
 		themeCache[identity] = Theme(identity: identity, styler: cachingStyler)
 	}
 
+	private func loadThemes() {
+		loadXcodeThemes()
+		loadTextMateThemes()
+
+		guard let containerURL = FileManager.default.appGroupContainerURL else { return }
+
+		let themeCacheDir = containerURL.appending(path: "Library/Caches/Themes", directoryHint: .isDirectory)
+
+		try? FileManager.default.createDirectory(at: themeCacheDir, withIntermediateDirectories: true)
+
+		for (identity, theme) in themeCache {
+			let codableTheme = CodableTheme(styler: CodableStyler(theme), identity: identity)
+			let url = themeCacheDir.appending(path: identity.storageString, directoryHint: .notDirectory)
+
+			do {
+				let data = try JSONEncoder().encode(codableTheme)
+
+				try data.write(to: url)
+			} catch {
+				print("failed to write out current theme: ", error)
+			}
+		}
+
+		let names = themeCache.keys.map { $0.storageString }
+		UserDefaults.sharedSuite?.setValue(names, forKey: "ThemeIdentities")
+
+		print(Self.availableIdentities)
+	}
+
 	public var all: [Theme.Identity: Theme] {
-//		if themeCache.isEmpty {
-			loadXcodeThemes()
-			loadTextMateThemes()
-//		}
+		loadThemes()
 
 		return themeCache
 	}
@@ -83,6 +102,14 @@ public final class ThemeStore {
 extension ThemeStore {
 	public static var currentThemeURL: URL? {
 		FileManager.default.appGroupContainerURL?.appending(path: "CurrentTheme.json")
+	}
+
+	public static var availableIdentities: Set<Theme.Identity> {
+		guard let names = UserDefaults.sharedSuite?.array(forKey: "ThemeIdentities") as? [String] else {
+			return []
+		}
+
+		return Set(names.compactMap { Theme.Identity(storageString: $0) })
 	}
 
 	public static var currentTheme: Theme? {

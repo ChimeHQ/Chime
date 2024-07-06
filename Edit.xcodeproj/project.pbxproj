@@ -125,6 +125,7 @@
 		C97919042A9E74620046EAF1 /* AppExtensionIdentity+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97919032A9E74620046EAF1 /* AppExtensionIdentity+UI.swift */; };
 		C97C1FF52BCAA75200D133A7 /* LabelledTwoPartItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97C1FF42BCAA75200D133A7 /* LabelledTwoPartItem.swift */; };
 		C97C1FF92BCBF78500D133A7 /* SelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97C1FF82BCBF78500D133A7 /* SelectionViewModel.swift */; };
+		C97E86422BFA13700054BAB6 /* UserDefaults+Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97E86412BFA13700054BAB6 /* UserDefaults+Shared.swift */; };
 		C9891AF82AFE996300C8F393 /* NSParagraphStyle+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9891AF72AFE996300C8F393 /* NSParagraphStyle+Helpers.swift */; };
 		C9891AFA2AFE9A3900C8F393 /* NSFont+Measurements.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9891AF92AFE9A3900C8F393 /* NSFont+Measurements.swift */; };
 		C9891B002AFEA3F100C8F393 /* NSAppearance+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9891AFC2AFEA35F00C8F393 /* NSAppearance+Style.swift */; };
@@ -163,6 +164,7 @@
 		C9CFCF752BF4CBE80053C9A6 /* TreeSitterOCaml in Frameworks */ = {isa = PBXBuildFile; productRef = C9CFCF742BF4CBE80053C9A6 /* TreeSitterOCaml */; };
 		C9CFCF7B2BF4D0890053C9A6 /* RootLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CFCF7A2BF4D0890053C9A6 /* RootLanguage.swift */; };
 		C9CFCF7C2BF4D19B0053C9A6 /* RootLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CFCF7A2BF4D0890053C9A6 /* RootLanguage.swift */; };
+		C9CFCF7E2BF92BB70053C9A6 /* EditFocusFilterIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CFCF7D2BF92BB70053C9A6 /* EditFocusFilterIntent.swift */; };
 		C9DCE1502BD7BFF30067D354 /* ThemeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DCE14F2BD7BFF30067D354 /* ThemeStore.swift */; };
 		C9DCE1562BD8049F0067D354 /* ObservableState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DCE1552BD8049F0067D354 /* ObservableState.swift */; };
 		C9E0B9F72BD1A3CE007AF034 /* DiagnosticsStatusBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E0B9F62BD1A3CE007AF034 /* DiagnosticsStatusBarItem.swift */; };
@@ -989,6 +991,7 @@
 		C979191A2A9E83950046EAF1 /* AppHost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHost.swift; sourceTree = "<group>"; };
 		C97C1FF42BCAA75200D133A7 /* LabelledTwoPartItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelledTwoPartItem.swift; sourceTree = "<group>"; };
 		C97C1FF82BCBF78500D133A7 /* SelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionViewModel.swift; sourceTree = "<group>"; };
+		C97E86412BFA13700054BAB6 /* UserDefaults+Shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Shared.swift"; sourceTree = "<group>"; };
 		C9891AF72AFE996300C8F393 /* NSParagraphStyle+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSParagraphStyle+Helpers.swift"; sourceTree = "<group>"; };
 		C9891AF92AFE9A3900C8F393 /* NSFont+Measurements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSFont+Measurements.swift"; sourceTree = "<group>"; };
 		C9891AFC2AFEA35F00C8F393 /* NSAppearance+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAppearance+Style.swift"; sourceTree = "<group>"; };
@@ -1031,6 +1034,7 @@
 		C9CDEB542B504485009E252A /* TextSystem+SwiftTreeSitterLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextSystem+SwiftTreeSitterLayer.swift"; sourceTree = "<group>"; };
 		C9CDEB872B55B889009E252A /* LanguageData */ = {isa = PBXFileReference; lastKnownFileType = folder; path = LanguageData; sourceTree = "<group>"; };
 		C9CFCF7A2BF4D0890053C9A6 /* RootLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootLanguage.swift; sourceTree = "<group>"; };
+		C9CFCF7D2BF92BB70053C9A6 /* EditFocusFilterIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFocusFilterIntent.swift; sourceTree = "<group>"; };
 		C9DCE14F2BD7BFF30067D354 /* ThemeStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeStore.swift; sourceTree = "<group>"; };
 		C9DCE1552BD8049F0067D354 /* ObservableState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableState.swift; sourceTree = "<group>"; };
 		C9E0B9F62BD1A3CE007AF034 /* DiagnosticsStatusBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnosticsStatusBarItem.swift; sourceTree = "<group>"; };
@@ -1398,6 +1402,7 @@
 				C93F724A2BF26BDC0021ACF3 /* EditIntentsExtension.swift */,
 				C93F724C2BF26BDC0021ACF3 /* HighlightIntent.swift */,
 				C93F724E2BF26BDC0021ACF3 /* Info.plist */,
+				C9CFCF7D2BF92BB70053C9A6 /* EditFocusFilterIntent.swift */,
 			);
 			path = EditIntents;
 			sourceTree = "<group>";
@@ -1961,6 +1966,7 @@
 				C9FE53FE2A7A5F1600CACA1A /* Logger+init.swift */,
 				C9F79DD62A87E3FA005ED8E9 /* URL+Contents.swift */,
 				C95BBE382BDD058800C9E1B9 /* Utility-Bridging-Header.h */,
+				C97E86412BFA13700054BAB6 /* UserDefaults+Shared.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -3102,6 +3108,7 @@
 			files = (
 				C93F724B2BF26BDC0021ACF3 /* EditIntentsExtension.swift in Sources */,
 				C93F724D2BF26BDC0021ACF3 /* HighlightIntent.swift in Sources */,
+				C9CFCF7E2BF92BB70053C9A6 /* EditFocusFilterIntent.swift in Sources */,
 				C9CFCF7C2BF4D19B0053C9A6 /* RootLanguage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -3431,6 +3438,7 @@
 				C9891AFA2AFE9A3900C8F393 /* NSFont+Measurements.swift in Sources */,
 				C95BBE372BDD03F200C9E1B9 /* FileManager+AppGroup.swift in Sources */,
 				C95BBE3F2BDD110700C9E1B9 /* Constants.m in Sources */,
+				C97E86422BFA13700054BAB6 /* UserDefaults+Shared.swift in Sources */,
 				C9891AF82AFE996300C8F393 /* NSParagraphStyle+Helpers.swift in Sources */,
 				C9FE53FF2A7A5F1600CACA1A /* Logger+init.swift in Sources */,
 				C941F0A12B6C4DE00003B640 /* AsyncStream+Pair.swift in Sources */,

@@ -10,14 +10,40 @@ public struct Theme {
 		case xcode
 		case bbedit
 		case textmate
+
+		public var name: String {
+			switch self {
+			case .chime: "Chime"
+			case .xcode: "Xcode"
+			case .bbedit: "BBEdit"
+			case .textmate: "TextMate"
+			}
+		}
 	}
 
-	public struct Identity: Hashable, Codable {
+	public struct Identity: Hashable, Codable, Sendable {
 		public let source: Source
 		public let name: String
 
 		public var storageString: String {
 			"\(name).\(source)"
+		}
+
+		public init(source: Source, name: String) {
+			self.source = source
+			self.name = name
+		}
+		public init?(storageString: String) {
+			let components = storageString.components(separatedBy: ".")
+			guard components.count == 2 else {
+				return nil
+			}
+
+			guard let source = Theme.Source(rawValue: components[1]) else {
+				return nil
+			}
+
+			self.init(source: source, name: components[0])
 		}
 	}
 
