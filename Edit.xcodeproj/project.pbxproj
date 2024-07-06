@@ -110,7 +110,6 @@
 		C97918CD2A9D4CD50046EAF1 /* OpenQuicklyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97918CC2A9D4CD50046EAF1 /* OpenQuicklyViewController.swift */; };
 		C97918D12A9E03C00046EAF1 /* NSImageView+Symbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97918CE2A9D56810046EAF1 /* NSImageView+Symbol.swift */; };
 		C97918D32A9E04470046EAF1 /* NSTableView+Reuse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97918D22A9E04470046EAF1 /* NSTableView+Reuse.swift */; };
-		C97918DA2A9E080C0046EAF1 /* ViewPlus in Frameworks */ = {isa = PBXBuildFile; productRef = C97918D92A9E080C0046EAF1 /* ViewPlus */; };
 		C97918DE2A9E39030046EAF1 /* OpenQuicklyWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97918DD2A9E39030046EAF1 /* OpenQuicklyWindowController.swift */; };
 		C97918E02A9E39D80046EAF1 /* NSRect+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97918DF2A9E39D80046EAF1 /* NSRect+Helpers.swift */; };
 		C97918F22A9E49EE0046EAF1 /* BinaryFloatingPoint+AngleUnits.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97918F12A9E49EE0046EAF1 /* BinaryFloatingPoint+AngleUnits.swift */; };
@@ -1276,7 +1275,6 @@
 				C9FE53932A766AAD00CACA1A /* libInspector.a in Frameworks */,
 				C9409C662A98CC9800B5D898 /* Outline in Frameworks */,
 				C93F72272BF0F9290021ACF3 /* Sparkle in Frameworks */,
-				C97918DA2A9E080C0046EAF1 /* ViewPlus in Frameworks */,
 				C900A7CA2A9E94B4000556A6 /* ExtendableHost in Frameworks */,
 				C97918CB2A9D4C740046EAF1 /* FuzzyFind in Frameworks */,
 				C9FE53362A75A40400CACA1A /* libProjectWindow.a in Frameworks */,
@@ -2270,7 +2268,6 @@
 				C926738C2B078B6D00B3CE2F /* PBXTargetDependency */,
 				C97918E42A9E40FF0046EAF1 /* PBXTargetDependency */,
 				C97918DC2A9E08490046EAF1 /* PBXTargetDependency */,
-				C97918D82A9E07FE0046EAF1 /* PBXTargetDependency */,
 				C97918D62A9E07F90046EAF1 /* PBXTargetDependency */,
 				C97918C72A9D4A6A0046EAF1 /* PBXTargetDependency */,
 				C97918C02A9D49A90046EAF1 /* PBXTargetDependency */,
@@ -2504,7 +2501,6 @@
 				C9FE533A2A75A76000CACA1A /* WindowTreatment */,
 				C9409C652A98CC9800B5D898 /* Outline */,
 				C97918CA2A9D4C740046EAF1 /* FuzzyFind */,
-				C97918D92A9E080C0046EAF1 /* ViewPlus */,
 				C900A7C92A9E94B4000556A6 /* ExtendableHost */,
 				C9CDEB8E2B56ACA3009E252A /* MainOffender */,
 				C93F72262BF0F9290021ACF3 /* Sparkle */,
@@ -2928,7 +2924,6 @@
 				C9409C642A98CC9800B5D898 /* XCRemoteSwiftPackageReference "Outline" */,
 				C9409C672A98CCCB00B5D898 /* XCRemoteSwiftPackageReference "SourceView" */,
 				C97918C92A9D4C600046EAF1 /* XCRemoteSwiftPackageReference "FuzzyFind" */,
-				C97918D42A9E07F00046EAF1 /* XCRemoteSwiftPackageReference "ViewPlus" */,
 				C9891B262AFEC24100C8F393 /* XCRemoteSwiftPackageReference "TextStory" */,
 				C926738F2B078D3200B3CE2F /* XCRemoteSwiftPackageReference "Neon" */,
 				C99491C82B1538FD002DC2AC /* XCRemoteSwiftPackageReference "RelativeCollections" */,
@@ -3677,10 +3672,6 @@
 		C97918D62A9E07F90046EAF1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			productRef = C97918D52A9E07F90046EAF1 /* ScrollViewPlus */;
-		};
-		C97918D82A9E07FE0046EAF1 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			productRef = C97918D72A9E07FE0046EAF1 /* ViewPlus */;
 		};
 		C97918DC2A9E08490046EAF1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -4856,14 +4847,6 @@
 				revision = 1e66ecbb80de85d5ecefacbcc0702fafaf67c1d8;
 			};
 		};
-		C97918D42A9E07F00046EAF1 /* XCRemoteSwiftPackageReference "ViewPlus" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ChimeHQ/ViewPlus.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.2.0;
-			};
-		};
 		C9891B262AFEC24100C8F393 /* XCRemoteSwiftPackageReference "TextStory" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ChimeHQ/TextStory.git";
@@ -5182,16 +5165,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C9FE53AE2A7677D100CACA1A /* XCRemoteSwiftPackageReference "ScrollViewPlus" */;
 			productName = ScrollViewPlus;
-		};
-		C97918D72A9E07FE0046EAF1 /* ViewPlus */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C97918D42A9E07F00046EAF1 /* XCRemoteSwiftPackageReference "ViewPlus" */;
-			productName = ViewPlus;
-		};
-		C97918D92A9E080C0046EAF1 /* ViewPlus */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C97918D42A9E07F00046EAF1 /* XCRemoteSwiftPackageReference "ViewPlus" */;
-			productName = ViewPlus;
 		};
 		C97918DB2A9E08490046EAF1 /* WindowTreatment */ = {
 			isa = XCSwiftPackageProductDependency;

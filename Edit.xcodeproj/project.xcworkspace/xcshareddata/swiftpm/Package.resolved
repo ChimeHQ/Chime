@@ -1,5 +1,5 @@
 {
-  "originHash" : "5a57c719e79b0a39e32c853b3d8e18f925cbf132ebb27828399c403312eb262e",
+  "originHash" : "d16a627413306447b1e365dc0c5086b9f725436a765f8f75389a2464c9adb210",
   "pins" : [
     {
       "identity" : "asyncxpcconnection",
@@ -274,15 +274,6 @@
       "state" : {
         "branch" : "with-generated-files",
         "revision" : "eda05af7ac41adb4eb19c346883c0fa32fe3bdd8"
-      }
-    },
-    {
-      "identity" : "viewplus",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/ChimeHQ/ViewPlus.git",
-      "state" : {
-        "revision" : "a769b565c125fea01e68a37c2c81af1850d87252",
-        "version" : "1.2.0"
       }
     },
     {

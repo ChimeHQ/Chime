@@ -5,7 +5,7 @@ import SwiftUI
 import ChimeKit
 import ScrollViewPlus
 import UIUtility
-import ViewPlus
+//import ViewPlus
 import WindowTreatment
 
 extension NSUserInterfaceItemIdentifier {
@@ -18,7 +18,7 @@ final class KeyboardlessTableView: NSTableView {
     }
 }
 
-final class OpenQuicklyViewController: XiblessViewController<NSView> {
+final class OpenQuicklyViewController: NSViewController {
     let inputView: NSTextField
     let tableView: NSTableView
     let viewModel: OpenQuicklyViewModel
@@ -33,7 +33,7 @@ final class OpenQuicklyViewController: XiblessViewController<NSView> {
         self.tableView = KeyboardlessTableView()
         self.viewModel = OpenQuicklyViewModel(context: context, symbolQueryService: symbolQueryService)
 
-        super.init()
+		super.init(nibName: nil, bundle: nil)
 
         tableView.delegate = self
         tableView.dataSource = self
@@ -59,7 +59,11 @@ final class OpenQuicklyViewController: XiblessViewController<NSView> {
                 self.viewModel.performSearch(with: query)
             }.store(in: &subscriptions)
     }
-
+	
+	required init?(coder: NSCoder) {
+		fatalError("init(coder:) has not been implemented")
+	}
+	
     override func loadView() {
 		self.view = NSView() // NSHostingView(rootView: RoundedRectangle(cornerRadius: 15.0))
 
@@ -101,7 +105,9 @@ final class OpenQuicklyViewController: XiblessViewController<NSView> {
         scrollView.documentView = tableView
 
         view.subviews = [searchImage, inputView, scrollView]
-        view.subviewsUseAutoLayout = true
+		searchImage.translatesAutoresizingMaskIntoConstraints = false
+		inputView.translatesAutoresizingMaskIntoConstraints = false
+		scrollView.translatesAutoresizingMaskIntoConstraints = false
 
         let scrollViewHeightConstraint = scrollView.heightAnchor.constraint(equalToConstant: 0.0)
 
