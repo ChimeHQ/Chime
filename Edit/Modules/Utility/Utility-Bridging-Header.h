@@ -5,3 +5,4 @@
 @import Foundation;
 
 extern NSString* const CHMAppGroupIdentifier;
+extern NSString* const CHMUserDefaultsSharedSuite;

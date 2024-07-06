@@ -8,3 +8,8 @@ NSString* const CHMAppGroupIdentifier = @OS_STRINGIFY(APP_GROUP);
 #error Undefined
 #endif
 
+#ifdef SHARED_SUITE
+NSString* const CHMUserDefaultsSharedSuite = @OS_STRINGIFY(SHARED_SUITE);
+#else
+#error Undefined
+#endif
