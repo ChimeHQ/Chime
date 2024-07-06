@@ -57,8 +57,7 @@ extension AppDelegate {
     }
 
 	@IBAction func checkForUpdates(_ sender: Any?) {
-//		updaterController.checkForUpdates(sender)
-		tryThing()
+		updaterController.checkForUpdates(sender)
 	}
 }
 
@@ -75,41 +74,4 @@ import ThemePark
 
 enum HighlightIntentError: Error {
 	case languageConfigurationUnavailable
-}
-
-extension AppDelegate {
-	func tryThing() {
-		Task {
-			let source = "let value = \"hello\" "
-			let theme = ThemeStore.currentTheme ?? Theme.fallback
-			let store = LanguageDataStore.global
-			guard let rootConfig = try await store.loadLanguageConfiguration(with: .swiftSource) else {
-				throw HighlightIntentError.languageConfigurationUnavailable
-			}
-
-			let variant = theme.supportedVariants.first!
-
-			for value in theme.supportedVariants {
-				print("variant:", variant)
-			}
-			let context = Query.Context(controlState: .active, variant: variant)
-
-			let attrProvider: TokenAttributeProvider = { token in
-				let style = theme.highlightsQueryCaptureStyle(for: token.name, context: context)
-
-				print(token.name, "=>", style.color)
-
-				return [.foregroundColor: style.color]
-			}
-
-			let highlightedSource = try await TreeSitterClient.highlight(
-				string: source,
-				attributeProvider: attrProvider,
-				rootLanguageConfig: rootConfig,
-				languageProvider: { store.languageConfiguration(with: $0, background: false) }
-			)
-
-			print(highlightedSource)
-		}
-	}
 }
