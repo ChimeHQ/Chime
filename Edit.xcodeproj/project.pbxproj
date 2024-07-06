@@ -1396,11 +1396,11 @@
 		C93F72492BF26BDC0021ACF3 /* EditIntents */ = {
 			isa = PBXGroup;
 			children = (
+				C9CFCF7D2BF92BB70053C9A6 /* EditFocusFilterIntent.swift */,
 				C93F724F2BF26BDC0021ACF3 /* EditIntents.entitlements */,
 				C93F724A2BF26BDC0021ACF3 /* EditIntentsExtension.swift */,
 				C93F724C2BF26BDC0021ACF3 /* HighlightIntent.swift */,
 				C93F724E2BF26BDC0021ACF3 /* Info.plist */,
-				C9CFCF7D2BF92BB70053C9A6 /* EditFocusFilterIntent.swift */,
 			);
 			path = EditIntents;
 			sourceTree = "<group>";
@@ -1963,8 +1963,8 @@
 				C95BBE362BDD03F200C9E1B9 /* FileManager+AppGroup.swift */,
 				C9FE53FE2A7A5F1600CACA1A /* Logger+init.swift */,
 				C9F79DD62A87E3FA005ED8E9 /* URL+Contents.swift */,
-				C95BBE382BDD058800C9E1B9 /* Utility-Bridging-Header.h */,
 				C97E86412BFA13700054BAB6 /* UserDefaults+Shared.swift */,
+				C95BBE382BDD058800C9E1B9 /* Utility-Bridging-Header.h */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
