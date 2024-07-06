@@ -2664,7 +2664,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				C9CDC24A2BDAB56400183752 /* PBXTargetDependency */,
 				C999C7862ABDA97500D49939 /* PBXTargetDependency */,
 				C9E8781E2A9FD0B70018340C /* PBXTargetDependency */,
 				C9FE53962A766D2F00CACA1A /* PBXTargetDependency */,
@@ -3870,10 +3869,6 @@
 		C9BFA1A92BC072E300E86487 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			productRef = C9BFA1A82BC072E300E86487 /* Glyph */;
-		};
-		C9CDC24A2BDAB56400183752 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			productRef = C9CDC2492BDAB56400183752 /* ViewPlus */;
 		};
 		C9CDC24D2BDABFE000183752 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -5266,11 +5261,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C9BFA1A12BBF4FA200E86487 /* XCRemoteSwiftPackageReference "nsui" */;
 			productName = NSUI;
-		};
-		C9CDC2492BDAB56400183752 /* ViewPlus */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C97918D42A9E07F00046EAF1 /* XCRemoteSwiftPackageReference "ViewPlus" */;
-			productName = ViewPlus;
 		};
 		C9CDC24C2BDABFE000183752 /* NSUI */ = {
 			isa = XCSwiftPackageProductDependency;

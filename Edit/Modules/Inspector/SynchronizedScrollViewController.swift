@@ -1,8 +1,6 @@
 import AppKit
 import Combine
 
-import ViewPlus
-
 /// Keeps two independent scroll views synchronized.
 public final class SynchronizedScrollViewController: NSViewController {
     private let primaryScrollView: NSScrollView
@@ -62,7 +60,7 @@ public final class SynchronizedScrollViewController: NSViewController {
 
             guard let docView = newValue else { return }
 
-            docView.useAutoLayout = true
+			docView.translatesAutoresizingMaskIntoConstraints = false
             let contentView = secondaryScrollView.contentView
 
             let constraint = docView.heightAnchor.constraint(equalToConstant: height)
