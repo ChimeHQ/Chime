@@ -4972,7 +4972,7 @@
 			repositoryURL = "https://github.com/ChimeHQ/WindowTreatment.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 2.3.0;
+				minimumVersion = 2.4.0;
 			};
 		};
 		C9FE53AE2A7677D100CACA1A /* XCRemoteSwiftPackageReference "ScrollViewPlus" */ = {
