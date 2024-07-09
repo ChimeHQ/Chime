@@ -13,6 +13,7 @@ extension RootLanguage: AppEnum {
 			.go: "Go",
 			.markdown: "Markdown",
 			.ocaml: "OCaml",
+			.ocamlInterface: "OCaml Interface",
 			.swift: "Swift",
 		]
 	}

@@ -15,7 +15,7 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ChimeHQ/ChimeKit.git",
       "state" : {
-        "revision" : "f83f4a9a84eeed1ecc494028f649e7584d9caa6f"
+        "revision" : "97be09c0e424226e4a50d73a5dd1ce1ca698d258"
       }
     },
     {

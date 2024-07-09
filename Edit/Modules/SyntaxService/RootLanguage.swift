@@ -1,6 +1,8 @@
 import Foundation
 import UniformTypeIdentifiers
 
+import ChimeKit
+
 /// Describes a document root language.
 ///
 /// This type must also be compiled into EditIntents, because the AppIntent infrastructure depends on having the type visible within the module.
@@ -8,6 +10,7 @@ public enum RootLanguage: Hashable, CaseIterable, Sendable {
 	case go
 	case markdown
 	case ocaml
+	case ocamlInterface
 	case swift
 
 	var typeIdentifier: UTType {
@@ -15,6 +18,7 @@ public enum RootLanguage: Hashable, CaseIterable, Sendable {
 		case .go: .goSource
 		case .markdown: .markdown
 		case .ocaml: .ocamlSource
+		case .ocamlInterface: .ocamlInterface
 		case .swift: .swiftSource
 		}
 	}
@@ -33,6 +37,8 @@ extension RootLanguage: RawRepresentable {
 			self = .markdown
 		case "ocaml":
 			self = .ocaml
+		case "ocaml-interface":
+			self = .ocamlInterface
 		case "swift":
 			self = .swift
 		default:
@@ -48,6 +54,8 @@ extension RootLanguage: RawRepresentable {
 			"Markdown"
 		case .ocaml:
 			"OCaml"
+		case .ocamlInterface:
+			"OCaml Interface"
 		case .swift:
 			"Swift"
 		}

@@ -23,6 +23,10 @@ extension LanguageProfile {
 			return LanguageProfile.ocamlProfile
 		}
 
+		if utType.conforms(to: .ocamlInterface) {
+			return LanguageProfile.ocamlInterfaceProfile
+		}
+
 		if utType.conforms(to: .swiftSource) {
 			return LanguageProfile.swiftProfile
 		}
@@ -58,8 +62,10 @@ extension LanguageProfile {
 	)
 
 	static let ocamlInterfaceProfile = LanguageProfile(
-		RootLanguage.ocaml,
-		language: Language(tree_sitter_ocaml_interface())
+		name: "OCaml Interface",
+		language: Language(tree_sitter_ocaml_interface()),
+		bundleName: "TreeSitterOCaml_TreeSitterOCaml"
+
 	)
 
 	static let swiftProfile = LanguageProfile(

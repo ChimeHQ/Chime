@@ -70,19 +70,25 @@
 		<dict>
 			<key>UTTypeConformsTo</key>
 			<array>
-				<string>public.source-code</string>
+				<string>public.plain-text</string>
 			</array>
-			<key>UTTypeDescription</key>
-			<string>OCaml Source</string>
 			<key>UTTypeIdentifier</key>
-			<string>org.ocaml.ocaml</string>
+			<string>net.daringfireball.markdown</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>public.filename-extension</key>
 				<array>
-					<string>ml</string>
+					<string>md</string>
 				</array>
 			</dict>
+		</dict>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.plain-text</string>
+			</array>
+			<key>UTTypeIdentifier</key>
+			<string>net.daringfireball.markdown.inline</string>
 		</dict>
 		<dict>
 			<key>UTTypeConformsTo</key>
@@ -104,40 +110,34 @@
 		<dict>
 			<key>UTTypeConformsTo</key>
 			<array>
-				<string>public.plain-text</string>
+				<string>public.source-code</string>
 			</array>
+			<key>UTTypeDescription</key>
+			<string>OCaml Source</string>
 			<key>UTTypeIdentifier</key>
-			<string>net.daringfireball.markdown.inline</string>
-		</dict>
-		<dict>
-			<key>UTTypeConformsTo</key>
-			<array>
-				<string>public.plain-text</string>
-			</array>
-			<key>UTTypeIdentifier</key>
-			<string>net.daringfireball.markdown</string>
+			<string>org.ocaml.ocaml</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>public.filename-extension</key>
 				<array>
-					<string>md</string>
+					<string>ml</string>
 				</array>
 			</dict>
 		</dict>
 		<dict>
 			<key>UTTypeConformsTo</key>
 			<array>
-				<string>public.plain-text</string>
+				<string>public.source-code</string>
 			</array>
 			<key>UTTypeDescription</key>
-			<string>Example Text</string>
+			<string>OCaml Interface</string>
 			<key>UTTypeIdentifier</key>
-			<string>com.example.plain-text</string>
+			<string>org.ocaml.ocaml-interface</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>public.filename-extension</key>
 				<array>
-					<string>exampletext</string>
+					<string>mli</string>
 				</array>
 			</dict>
 		</dict>
