@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle"  xmlns:dc="http://purl.org/dc/elements/1.1/">
+	<channel>
+		<title>Chime Changelog</title>
+		<link>https://updates.chimehq.com/com.chimehq.Edit/appcast.xml</link>
+		<description>Most recent changes with links to updates.</description>
+		<item>
+			<title>Version 3.0.0</title>
+			<description sparkle:format="plain-text">
+Features:
+- Initial 3.0.0 alpha release
+
+Improvments:
+
+Fixes:
+			</description>
+			<sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+			<sparkle:channel>beta</sparkle:channel>
+			<sparkle:version>200</sparkle:version>
+			<sparkle:shortVersionString>3.0.0</sparkle:shortVersionString>
+			<pubDate>Sun, 12 May 2024 14:57:51 -0400</pubDate>
+			<enclosure url="https://github.com/ChimeHQ/Chime/releases/download/200/Chime.zip"
+				sparkle:edSignature="ODm8dAt9G0q3huLy1HXLd1ZNdJK/3mRhiNJzmU0y5tYQJqUJOs+F8x6Xlp8Jyiq8qW7EPaufc+d1iUMyx+5DCQ=="
+				length="7371742"
+				type="application/octet-stream" />
+		</item>
+		<item>
+			<title>Version 3.0.0</title>
+			<description sparkle:format="plain-text">
+Features:
+- Shortcuts support for text highlighting
+
+Improvments:
+
+Fixes:
+- Themes that do not support the current system color scheme could potentially mis-color text in the Preview and Intents extensions
+			</description>
+			<sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+			<sparkle:channel>beta</sparkle:channel>
+			<sparkle:version>201</sparkle:version>
+			<sparkle:shortVersionString>3.0.0</sparkle:shortVersionString>
+			<pubDate>Wed, 15 May 2024 08:57:31 -0400</pubDate>
+			<enclosure url="https://github.com/ChimeHQ/Chime/releases/download/201/Chime.zip"
+				sparkle:edSignature="m6T4DmzSkFVuuGG2djfLPXeXW2q6myVA9yirSIrCUHodtuwUrKNcgzseLT6km4Zsgt1gvLBjiuICqB5A4lDdDg=="
+				length="7452070"
+				type="application/octet-stream" />
+		</item>
+	</channel>
+</rss>
