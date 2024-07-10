@@ -1,4 +1,5 @@
 @_exported import TreeSitterClojure
+@_exported import TreeSitterElixir
 @_exported import TreeSitterGo
 @_exported import TreeSitterMarkdown
 @_exported import TreeSitterMarkdownInline

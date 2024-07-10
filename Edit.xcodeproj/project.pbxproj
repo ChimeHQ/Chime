@@ -124,6 +124,10 @@
 		C97C1FF52BCAA75200D133A7 /* LabelledTwoPartItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97C1FF42BCAA75200D133A7 /* LabelledTwoPartItem.swift */; };
 		C97C1FF92BCBF78500D133A7 /* SelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97C1FF82BCBF78500D133A7 /* SelectionViewModel.swift */; };
 		C97E86422BFA13700054BAB6 /* UserDefaults+Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97E86412BFA13700054BAB6 /* UserDefaults+Shared.swift */; };
+		C9818AB22C3EF5ED0032899D /* ElixirExtension.appex in Copy Extensions */ = {isa = PBXBuildFile; fileRef = C9818AAA2C3EF5ED0032899D /* ElixirExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C9818AB92C3EF6E80032899D /* ElixirExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9818AB82C3EF6E80032899D /* ElixirExtension.swift */; };
+		C9818ABA2C3EF6E80032899D /* ElixirExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9818AB82C3EF6E80032899D /* ElixirExtension.swift */; };
+		C9818ABB2C3EF7000032899D /* ChimeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE52F42A7539B100CACA1A /* ChimeKit.framework */; };
 		C986F2492C3ED60800A62879 /* ClojureExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C986F2472C3ED60800A62879 /* ClojureExtension.swift */; };
 		C986F24A2C3ED67900A62879 /* ClojureExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C986F2472C3ED60800A62879 /* ClojureExtension.swift */; };
 		C9891AF82AFE996300C8F393 /* NSParagraphStyle+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9891AF72AFE996300C8F393 /* NSParagraphStyle+Helpers.swift */; };
@@ -512,6 +516,20 @@
 			remoteGlobalIDString = C9B8A9DC2B31E43800C79606;
 			remoteInfo = TextSystem;
 		};
+		C9818AB02C3EF5ED0032899D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9818AA92C3EF5ED0032899D;
+			remoteInfo = Elixir;
+		};
+		C9818ABC2C3EF7030032899D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9FE52F32A7539B100CACA1A;
+			remoteInfo = ChimeKit;
+		};
 		C9891AFE2AFEA3E400C8F393 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
@@ -874,6 +892,7 @@
 				C93F72582BF26E9C0021ACF3 /* EditIntents.appex in Copy Extensions */,
 				C9E878092A9F53530018340C /* UIPlaceholderExtension.appex in Copy Extensions */,
 				C9BDB5502B00FD89009225FB /* SwiftExtension.appex in Copy Extensions */,
+				C9818AB22C3EF5ED0032899D /* ElixirExtension.appex in Copy Extensions */,
 				C9439A812C3EC4220020DDF5 /* ClojureExtension.appex in Copy Extensions */,
 				C942E67E2B67B78F00792DD4 /* UserScriptExtension.appex in Copy Extensions */,
 				C900A7D12A9F472E000556A6 /* Chime.appextensionpoint in Copy Extensions */,
@@ -1003,6 +1022,9 @@
 		C97C1FF42BCAA75200D133A7 /* LabelledTwoPartItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelledTwoPartItem.swift; sourceTree = "<group>"; };
 		C97C1FF82BCBF78500D133A7 /* SelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionViewModel.swift; sourceTree = "<group>"; };
 		C97E86412BFA13700054BAB6 /* UserDefaults+Shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Shared.swift"; sourceTree = "<group>"; };
+		C9818AAA2C3EF5ED0032899D /* ElixirExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.extensionkit-extension"; includeInIndex = 0; path = ElixirExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9818AB62C3EF68B0032899D /* ElixirStandaloneExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElixirStandaloneExtension.swift; sourceTree = "<group>"; };
+		C9818AB82C3EF6E80032899D /* ElixirExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ElixirExtension.swift; path = "submodules/chime-elixir/Sources/ChimeElixir/ElixirExtension.swift"; sourceTree = SOURCE_ROOT; };
 		C986F2472C3ED60800A62879 /* ClojureExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClojureExtension.swift; path = "submodules/chime-clojure/Sources/ChimeClojure/ClojureExtension.swift"; sourceTree = SOURCE_ROOT; };
 		C9891AF72AFE996300C8F393 /* NSParagraphStyle+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSParagraphStyle+Helpers.swift"; sourceTree = "<group>"; };
 		C9891AF92AFE9A3900C8F393 /* NSFont+Measurements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSFont+Measurements.swift"; sourceTree = "<group>"; };
@@ -1208,6 +1230,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9818AA72C3EF5ED0032899D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9818ABB2C3EF7000032899D /* ChimeKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1523,6 +1553,15 @@
 			path = AppKit;
 			sourceTree = "<group>";
 		};
+		C9818AAB2C3EF5ED0032899D /* Elixir */ = {
+			isa = PBXGroup;
+			children = (
+				C9818AB82C3EF6E80032899D /* ElixirExtension.swift */,
+				C9818AB62C3EF68B0032899D /* ElixirStandaloneExtension.swift */,
+			);
+			path = Elixir;
+			sourceTree = "<group>";
+		};
 		C9891AF62AFE994C00C8F393 /* AppKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -1657,6 +1696,7 @@
 			isa = PBXGroup;
 			children = (
 				C9439A862C3EC4470020DDF5 /* Clojure */,
+				C9818AAB2C3EF5ED0032899D /* Elixir */,
 				C9E878062A9F53530018340C /* Extension.entitlements */,
 				C9BDB54C2B00FD89009225FB /* Info.plist */,
 				C9BDB5492B00FD89009225FB /* Swift */,
@@ -1735,6 +1775,7 @@
 				C9E0B9FC2BD27F0F007AF034 /* libDiagnostics.a */,
 				C93F72482BF26BDC0021ACF3 /* EditIntents.appex */,
 				C9439A792C3EC4220020DDF5 /* ClojureExtension.appex */,
+				C9818AAA2C3EF5ED0032899D /* ElixirExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -2318,6 +2359,24 @@
 			productReference = C979189E2A9D1D6D0046EAF1 /* libOpenQuickly.a */;
 			productType = "com.apple.product-type.library.static";
 		};
+		C9818AA92C3EF5ED0032899D /* Elixir */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C9818AB52C3EF5ED0032899D /* Build configuration list for PBXNativeTarget "Elixir" */;
+			buildPhases = (
+				C9818AA62C3EF5ED0032899D /* Sources */,
+				C9818AA72C3EF5ED0032899D /* Frameworks */,
+				C9818AA82C3EF5ED0032899D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C9818ABD2C3EF7030032899D /* PBXTargetDependency */,
+			);
+			name = Elixir;
+			productName = Elixir;
+			productReference = C9818AAA2C3EF5ED0032899D /* ElixirExtension.appex */;
+			productType = "com.apple.product-type.extensionkit-extension";
+		};
 		C9891B122AFEC11A00C8F393 /* DocumentContent */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C9891B192AFEC11A00C8F393 /* Build configuration list for PBXNativeTarget "DocumentContent" */;
@@ -2533,6 +2592,7 @@
 				C92931472B80CC6700C64DDE /* PBXTargetDependency */,
 				C93F72512BF26BDC0021ACF3 /* PBXTargetDependency */,
 				C9439A802C3EC4220020DDF5 /* PBXTargetDependency */,
+				C9818AB12C3EF5ED0032899D /* PBXTargetDependency */,
 			);
 			name = Edit;
 			packageProductDependencies = (
@@ -2842,7 +2902,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1600;
+				LastSwiftUpdateCheck = 1540;
 				LastUpgradeCheck = 1510;
 				TargetAttributes = {
 					C900A7B92A9E93FC000556A6 = {
@@ -2867,6 +2927,10 @@
 					};
 					C979189D2A9D1D6D0046EAF1 = {
 						CreatedOnToolsVersion = 15.0;
+					};
+					C9818AA92C3EF5ED0032899D = {
+						CreatedOnToolsVersion = 15.4;
+						LastSwiftMigration = 1540;
 					};
 					C9891B122AFEC11A00C8F393 = {
 						CreatedOnToolsVersion = 15.1;
@@ -3014,6 +3078,7 @@
 				C942E6752B67B78E00792DD4 /* UserScript */,
 				C9BDB5472B00FD89009225FB /* SwiftExtension */,
 				C9439A782C3EC4220020DDF5 /* Clojure */,
+				C9818AA92C3EF5ED0032899D /* Elixir */,
 			);
 		};
 /* End PBXProject section */
@@ -3042,6 +3107,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		C9439A772C3EC4220020DDF5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9818AA82C3EF5ED0032899D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -3195,6 +3267,14 @@
 				C97918BC2A9D49600046EAF1 /* IgnoringFocusRowView.swift in Sources */,
 				C97918BB2A9D49550046EAF1 /* ItemView.swift in Sources */,
 				C97918DE2A9E39030046EAF1 /* OpenQuicklyWindowController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9818AA62C3EF5ED0032899D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9818ABA2C3EF6E80032899D /* ElixirExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3472,6 +3552,7 @@
 				C92672FA2B039AA300B3CE2F /* SwiftExtension.swift in Sources */,
 				C9FE53E82A7A5B2000CACA1A /* LazyRemoteExtension.swift in Sources */,
 				C97919002A9E728F0046EAF1 /* ExtensionManager.swift in Sources */,
+				C9818AB92C3EF6E80032899D /* ElixirExtension.swift in Sources */,
 				C97918F82A9E5E520046EAF1 /* ExtensionRouter.swift in Sources */,
 				C97918FA2A9E5EAF0046EAF1 /* CompositeDocumentService.swift in Sources */,
 				C942E6AE2B69889F00792DD4 /* UserScriptExtension.swift in Sources */,
@@ -3761,6 +3842,16 @@
 			isa = PBXTargetDependency;
 			target = C9B8A9DC2B31E43800C79606 /* TextSystem */;
 			targetProxy = C97C1FF62BCBE60500D133A7 /* PBXContainerItemProxy */;
+		};
+		C9818AB12C3EF5ED0032899D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9818AA92C3EF5ED0032899D /* Elixir */;
+			targetProxy = C9818AB02C3EF5ED0032899D /* PBXContainerItemProxy */;
+		};
+		C9818ABD2C3EF7030032899D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9FE52F32A7539B100CACA1A /* ChimeKit */;
+			targetProxy = C9818ABC2C3EF7030032899D /* PBXContainerItemProxy */;
 		};
 		C9891AFF2AFEA3E400C8F393 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -4219,6 +4310,20 @@
 			};
 			name = Release;
 		};
+		C9818AB32C3EF5ED0032899D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9E878112A9F53BB0018340C /* Extension.xcconfig */;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		C9818AB42C3EF5ED0032899D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9E878112A9F53BB0018340C /* Extension.xcconfig */;
+			buildSettings = {
+			};
+			name = Release;
+		};
 		C9891B1A2AFEC11A00C8F393 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C926738A2B078B0200B3CE2F /* WorkaroundModule.xcconfig */;
@@ -4363,6 +4468,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C92673282B04046700B3CE2F /* Edit-Debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 			};
 			name = Debug;
 		};
@@ -4370,6 +4476,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C9FE52CC2A752B4D00CACA1A /* Edit.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 			};
 			name = Release;
 		};
@@ -4617,6 +4724,15 @@
 			buildConfigurations = (
 				C97918A52A9D1D6D0046EAF1 /* Debug */,
 				C97918A62A9D1D6D0046EAF1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C9818AB52C3EF5ED0032899D /* Build configuration list for PBXNativeTarget "Elixir" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9818AB32C3EF5ED0032899D /* Debug */,
+				C9818AB42C3EF5ED0032899D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -12,6 +12,10 @@ extension LanguageProfile {
 			return LanguageProfile.clojureProfile
 		}
 
+		if utType.conforms(to: .elixirSource) {
+			return LanguageProfile.elixirProfile
+		}
+
 		if utType.conforms(to: .markdown) {
 			return LanguageProfile.markdownProfile
 		}
@@ -44,6 +48,11 @@ extension LanguageProfile {
 	static let clojureProfile = LanguageProfile(
 		RootLanguage.clojure,
 		language: Language(tree_sitter_clojure())
+	)
+
+	static let elixirProfile = LanguageProfile(
+		RootLanguage.elixir,
+		language: Language(tree_sitter_elixir())
 	)
 
 	static let goProfile = LanguageProfile(

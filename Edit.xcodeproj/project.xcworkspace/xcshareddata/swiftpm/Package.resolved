@@ -1,5 +1,5 @@
 {
-  "originHash" : "ba844ec96bfdebc797744fae63b828fb6112a2d64a3f80033172abc0ed97bcd6",
+  "originHash" : "e7e174512a4cbf5c900b9b47cfbcd7730e05f04d11057492b2b5cb1750586fe9",
   "pins" : [
     {
       "identity" : "asyncxpcconnection",
@@ -247,6 +247,15 @@
       "state" : {
         "branch" : "feature/spm",
         "revision" : "0a3d6ce7b48bae5e5d96af6bda9f47ec28e055bd"
+      }
+    },
+    {
+      "identity" : "tree-sitter-elixir",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/elixir-lang/tree-sitter-elixir",
+      "state" : {
+        "branch" : "main",
+        "revision" : "c7ae8b77e2749826dcf23df6514f08fdd68c66a3"
       }
     },
     {
