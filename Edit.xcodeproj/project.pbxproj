@@ -24,9 +24,6 @@
 		C92931692B822B7B00C64DDE /* ColorToolbox in Frameworks */ = {isa = PBXBuildFile; productRef = C92931682B822B7B00C64DDE /* ColorToolbox */; };
 		C929316A2B822BA700C64DDE /* libTheme.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE53C82A77CC1E00CACA1A /* libTheme.a */; };
 		C929316B2B822BAD00C64DDE /* libUtility.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE53F42A7A5EF900CACA1A /* libUtility.a */; };
-		C929316D2B822BB300C64DDE /* TreeSitterGo in Frameworks */ = {isa = PBXBuildFile; productRef = C929316C2B822BB300C64DDE /* TreeSitterGo */; };
-		C929316F2B822BB800C64DDE /* TreeSitterSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C929316E2B822BB800C64DDE /* TreeSitterSwift */; };
-		C92931712B822BBD00C64DDE /* TreeSitterMarkdown in Frameworks */ = {isa = PBXBuildFile; productRef = C92931702B822BBD00C64DDE /* TreeSitterMarkdown */; };
 		C93F72272BF0F9290021ACF3 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = C93F72262BF0F9290021ACF3 /* Sparkle */; };
 		C93F724B2BF26BDC0021ACF3 /* EditIntentsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93F724A2BF26BDC0021ACF3 /* EditIntentsExtension.swift */; };
 		C93F724D2BF26BDC0021ACF3 /* HighlightIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93F724C2BF26BDC0021ACF3 /* HighlightIntent.swift */; };
@@ -49,6 +46,9 @@
 		C942E6852B67B9A700792DD4 /* ChimeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE52F42A7539B100CACA1A /* ChimeKit.framework */; };
 		C942E6AC2B69747E00792DD4 /* UserScriptStandaloneExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C942E6AB2B69747E00792DD4 /* UserScriptStandaloneExtension.swift */; };
 		C942E6AE2B69889F00792DD4 /* UserScriptExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C942E6782B67B78F00792DD4 /* UserScriptExtension.swift */; };
+		C9439A712C3EB4410020DDF5 /* TreeSitterParsers in Frameworks */ = {isa = PBXBuildFile; productRef = C9439A702C3EB4410020DDF5 /* TreeSitterParsers */; };
+		C9439A722C3EB5140020DDF5 /* libHighlighting.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C973E0002B62BDB3000998F7 /* libHighlighting.a */; };
+		C9439A732C3EB5260020DDF5 /* libSyntaxService.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9B8AA4A2B37055900C79606 /* libSyntaxService.a */; };
 		C94450572BE561FA004E244E /* CodableTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94450562BE561FA004E244E /* CodableTheme.swift */; };
 		C94F7EC12A7D8C1900E0361A /* ProjectContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94F7EC02A7D8C1900E0361A /* ProjectContentViewController.swift */; };
 		C95248C82BF3AFD400F55E71 /* EditKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C92931422B80CC6700C64DDE /* EditKit.framework */; };
@@ -57,8 +57,6 @@
 		C958C7842BC7019100EC95F8 /* LineNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C958C7832BC7019100EC95F8 /* LineNumberView.swift */; };
 		C95B91052BD8275E006FDD00 /* ThemeModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95B91032BD825EE006FDD00 /* ThemeModifiers.swift */; };
 		C95B91062BD82772006FDD00 /* Query+Extras.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95B91012BD825B6006FDD00 /* Query+Extras.swift */; };
-		C95B911F2BD98B42006FDD00 /* libHighlighting.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C973E0002B62BDB3000998F7 /* libHighlighting.a */; };
-		C95B91222BD98B4D006FDD00 /* libSyntaxService.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9B8AA4A2B37055900C79606 /* libSyntaxService.a */; };
 		C95B91232BD98B64006FDD00 /* libTextSystem.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9B8A9DD2B31E43800C79606 /* libTextSystem.a */; };
 		C95B91292BD98C3B006FDD00 /* Rearrange in Frameworks */ = {isa = PBXBuildFile; productRef = C95B91282BD98C3B006FDD00 /* Rearrange */; };
 		C95B912D2BD98C50006FDD00 /* Neon in Frameworks */ = {isa = PBXBuildFile; productRef = C95B912C2BD98C50006FDD00 /* Neon */; };
@@ -160,7 +158,6 @@
 		C9BFA1B72BC162EF00E86487 /* NSUI in Frameworks */ = {isa = PBXBuildFile; productRef = C9BFA1B62BC162EF00E86487 /* NSUI */; };
 		C9CDEB552B504485009E252A /* TextSystem+SwiftTreeSitterLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CDEB542B504485009E252A /* TextSystem+SwiftTreeSitterLayer.swift */; };
 		C9CDEB8F2B56ACA3009E252A /* MainOffender in Frameworks */ = {isa = PBXBuildFile; productRef = C9CDEB8E2B56ACA3009E252A /* MainOffender */; };
-		C9CFCF752BF4CBE80053C9A6 /* TreeSitterOCaml in Frameworks */ = {isa = PBXBuildFile; productRef = C9CFCF742BF4CBE80053C9A6 /* TreeSitterOCaml */; };
 		C9CFCF7B2BF4D0890053C9A6 /* RootLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CFCF7A2BF4D0890053C9A6 /* RootLanguage.swift */; };
 		C9CFCF7C2BF4D19B0053C9A6 /* RootLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CFCF7A2BF4D0890053C9A6 /* RootLanguage.swift */; };
 		C9CFCF7E2BF92BB70053C9A6 /* EditFocusFilterIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CFCF7D2BF92BB70053C9A6 /* EditFocusFilterIntent.swift */; };
@@ -328,14 +325,14 @@
 			remoteGlobalIDString = C9FE52F32A7539B100CACA1A;
 			remoteInfo = ChimeKit;
 		};
-		C95248C42BF3AFC600F55E71 /* PBXContainerItemProxy */ = {
+		C9439A6C2C3EB3F00020DDF5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = C92931412B80CC6700C64DDE;
 			remoteInfo = EditKit;
 		};
-		C95248C62BF3AFCE00F55E71 /* PBXContainerItemProxy */ = {
+		C9439A6E2C3EB41F0020DDF5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
 			proxyType = 1;
@@ -383,13 +380,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = C973DFFF2B62BDB3000998F7;
 			remoteInfo = Highlighting;
-		};
-		C96B61F82BDA711B00561DE8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C9FE52D32A7532C700CACA1A;
-			remoteInfo = Document;
 		};
 		C96B62272BDA9F4500561DE8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -934,6 +924,7 @@
 		C942E6782B67B78F00792DD4 /* UserScriptExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserScriptExtension.swift; sourceTree = "<group>"; };
 		C942E6822B67B93B00792DD4 /* InfoPlistExtension.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = InfoPlistExtension.xcconfig; sourceTree = "<group>"; };
 		C942E6AB2B69747E00792DD4 /* UserScriptStandaloneExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserScriptStandaloneExtension.swift; sourceTree = "<group>"; };
+		C9439A742C3EC13A0020DDF5 /* Dependencies */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Dependencies; sourceTree = "<group>"; };
 		C94450562BE561FA004E244E /* CodableTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableTheme.swift; sourceTree = "<group>"; };
 		C94F7EC02A7D8C1900E0361A /* ProjectContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectContentViewController.swift; sourceTree = "<group>"; };
 		C958C7802BC5A82900EC95F8 /* ConfigurationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationTests.swift; sourceTree = "<group>"; };
@@ -1058,7 +1049,6 @@
 		C9E878212A9FD3F10018340C /* InspectorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspectorModel.swift; sourceTree = "<group>"; };
 		C9E878242A9FDDCA0018340C /* ExtensionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionList.swift; sourceTree = "<group>"; };
 		C9E878272A9FDE160018340C /* UIExtensionDescriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtensionDescriptor.swift; sourceTree = "<group>"; };
-		C9EA094D2B4D5F6D00732203 /* TreeSitterParsers.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = TreeSitterParsers.xcconfig; sourceTree = "<group>"; };
 		C9EA09562B4D62B800732203 /* LanguageProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageProfile.swift; sourceTree = "<group>"; };
 		C9EA095A2B4D645F00732203 /* LanguageProfile+Profiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LanguageProfile+Profiles.swift"; sourceTree = "<group>"; };
 		C9EA095C2B4D695400732203 /* LanguageDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageDataStore.swift; sourceTree = "<group>"; };
@@ -1130,17 +1120,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9439A732C3EB5260020DDF5 /* libSyntaxService.a in Frameworks */,
+				C9439A722C3EB5140020DDF5 /* libHighlighting.a in Frameworks */,
 				C96B62002BDA71E400561DE8 /* libStatus.a in Frameworks */,
 				C96B61FF2BDA71B200561DE8 /* libUIUtility.a in Frameworks */,
 				C96B61FE2BDA719100561DE8 /* libGutter.a in Frameworks */,
 				C96B61F32BDA70DA00561DE8 /* libEditor.a in Frameworks */,
 				C95B91302BD98C76006FDD00 /* libDocumentContent.a in Frameworks */,
 				C95B91232BD98B64006FDD00 /* libTextSystem.a in Frameworks */,
-				C9CFCF752BF4CBE80053C9A6 /* TreeSitterOCaml in Frameworks */,
-				C95B91222BD98B4D006FDD00 /* libSyntaxService.a in Frameworks */,
 				C96B61FD2BDA714700561DE8 /* ScrollViewPlus in Frameworks */,
 				C95B91342BD98CA1006FDD00 /* SwiftTreeSitter in Frameworks */,
-				C95B911F2BD98B42006FDD00 /* libHighlighting.a in Frameworks */,
 				C96B62062BDA721100561DE8 /* SourceView in Frameworks */,
 				C9E0BA0F2BD280C4007AF034 /* ChimeKit.framework in Frameworks */,
 				C95B913C2BD98CF1006FDD00 /* TextStory in Frameworks */,
@@ -1148,16 +1137,14 @@
 				C95B912D2BD98C50006FDD00 /* Neon in Frameworks */,
 				C9E0BA0E2BD2807B007AF034 /* libDiagnostics.a in Frameworks */,
 				C929316B2B822BAD00C64DDE /* libUtility.a in Frameworks */,
-				C929316D2B822BB300C64DDE /* TreeSitterGo in Frameworks */,
-				C92931712B822BBD00C64DDE /* TreeSitterMarkdown in Frameworks */,
 				C9BFA1B72BC162EF00E86487 /* NSUI in Frameworks */,
-				C929316F2B822BB800C64DDE /* TreeSitterSwift in Frameworks */,
 				C9BFA1B02BC0927A00E86487 /* Glyph in Frameworks */,
 				C95B91362BD98CBD006FDD00 /* RelativeCollections in Frameworks */,
 				C9E0BA3E2BD2EB54007AF034 /* ThemePark in Frameworks */,
 				C929316A2B822BA700C64DDE /* libTheme.a in Frameworks */,
 				C95B913E2BD98D01006FDD00 /* SwiftTreeSitterLayer in Frameworks */,
 				C92931692B822B7B00C64DDE /* ColorToolbox in Frameworks */,
+				C9439A712C3EB4410020DDF5 /* TreeSitterParsers in Frameworks */,
 				C95B91292BD98C3B006FDD00 /* Rearrange in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1660,6 +1647,7 @@
 		C9FE52902A7525D000CACA1A = {
 			isa = PBXGroup;
 			children = (
+				C9439A742C3EC13A0020DDF5 /* Dependencies */,
 				C9FE538E2A76674600CACA1A /* Configurations */,
 				C9FE529B2A7525D000CACA1A /* Edit */,
 				C93F72492BF26BDC0021ACF3 /* EditIntents */,
@@ -1896,7 +1884,6 @@
 				C93791A32AD5E02C00665F50 /* Project-Debug.xcconfig */,
 				C9FE52CB2A7526C000CACA1A /* Project.xcconfig */,
 				C9BDB5542B00FF5A009225FB /* SwiftExtension.xcconfig */,
-				C9EA094D2B4D5F6D00732203 /* TreeSitterParsers.xcconfig */,
 				C95BBE3D2BDD075300C9E1B9 /* Utility.xcconfig */,
 				C926738A2B078B0200B3CE2F /* WorkaroundModule.xcconfig */,
 			);
@@ -2153,10 +2140,8 @@
 			buildRules = (
 			);
 			dependencies = (
-				C9CFCF772BF4CC1E0053C9A6 /* PBXTargetDependency */,
 				C96B62022BDA71FE00561DE8 /* PBXTargetDependency */,
 				C96B61FB2BDA714000561DE8 /* PBXTargetDependency */,
-				C96B61F92BDA711B00561DE8 /* PBXTargetDependency */,
 				C96B61F52BDA70E000561DE8 /* PBXTargetDependency */,
 				C95B91382BD98CCF006FDD00 /* PBXTargetDependency */,
 				C95B91322BD98C98006FDD00 /* PBXTargetDependency */,
@@ -2165,17 +2150,11 @@
 				C95B911E2BD98B2E006FDD00 /* PBXTargetDependency */,
 				C9E0BA132BD28513007AF034 /* PBXTargetDependency */,
 				C929315C2B80D9F900C64DDE /* PBXTargetDependency */,
-				C929315A2B80D84800C64DDE /* PBXTargetDependency */,
-				C92931582B80D84300C64DDE /* PBXTargetDependency */,
-				C92931562B80D83C00C64DDE /* PBXTargetDependency */,
 				C929314E2B80CDF800C64DDE /* PBXTargetDependency */,
 			);
 			name = EditKit;
 			packageProductDependencies = (
 				C92931682B822B7B00C64DDE /* ColorToolbox */,
-				C929316C2B822BB300C64DDE /* TreeSitterGo */,
-				C929316E2B822BB800C64DDE /* TreeSitterSwift */,
-				C92931702B822BBD00C64DDE /* TreeSitterMarkdown */,
 				C9BFA1AF2BC0927A00E86487 /* Glyph */,
 				C9BFA1B62BC162EF00E86487 /* NSUI */,
 				C9E0BA3D2BD2EB54007AF034 /* ThemePark */,
@@ -2188,7 +2167,7 @@
 				C95B913D2BD98D01006FDD00 /* SwiftTreeSitterLayer */,
 				C96B61FC2BDA714700561DE8 /* ScrollViewPlus */,
 				C96B62052BDA721100561DE8 /* SourceView */,
-				C9CFCF742BF4CBE80053C9A6 /* TreeSitterOCaml */,
+				C9439A702C3EB4410020DDF5 /* TreeSitterParsers */,
 			);
 			productName = EditKit;
 			productReference = C92931422B80CC6700C64DDE /* EditKit.framework */;
@@ -2205,8 +2184,8 @@
 			buildRules = (
 			);
 			dependencies = (
-				C95248C72BF3AFCE00F55E71 /* PBXTargetDependency */,
-				C95248C52BF3AFC600F55E71 /* PBXTargetDependency */,
+				C9439A6F2C3EB41F0020DDF5 /* PBXTargetDependency */,
+				C9439A6D2C3EB3F00020DDF5 /* PBXTargetDependency */,
 			);
 			name = EditIntents;
 			productName = EditIntents;
@@ -2375,12 +2354,9 @@
 			buildRules = (
 			);
 			dependencies = (
-				C9CFCF792BF4CC960053C9A6 /* PBXTargetDependency */,
-				C941F0B32B7102E80003B640 /* PBXTargetDependency */,
+				C9439A652C3EA9930020DDF5 /* PBXTargetDependency */,
 				C9CDEB912B56ACBB009E252A /* PBXTargetDependency */,
-				C9CDEB632B51942E009E252A /* PBXTargetDependency */,
 				C9EA095F2B4D708000732203 /* PBXTargetDependency */,
-				C9EA09592B4D644500732203 /* PBXTargetDependency */,
 				C9B8AA672B373A6200C79606 /* PBXTargetDependency */,
 				C9B8AA652B3722CC00C79606 /* PBXTargetDependency */,
 				C9B8AA5A2B37098E00C79606 /* PBXTargetDependency */,
@@ -2929,17 +2905,13 @@
 				C99491C82B1538FD002DC2AC /* XCRemoteSwiftPackageReference "RelativeCollections" */,
 				C9B8A9B52B235EF100C79606 /* XCRemoteSwiftPackageReference "Rearrange" */,
 				C9B8AA5B2B370A1800C79606 /* XCRemoteSwiftPackageReference "SwiftTreeSitter" */,
-				C940A3752B4C7544007BE120 /* XCRemoteSwiftPackageReference "tree-sitter-swift" */,
 				C9CDEB582B51620E009E252A /* XCRemoteSwiftPackageReference "ColorToolbox" */,
-				C9CDEB5F2B5193B1009E252A /* XCRemoteSwiftPackageReference "tree-sitter-markdown" */,
 				C9CDEB8D2B56ACA3009E252A /* XCRemoteSwiftPackageReference "MainOffender" */,
-				C941F0AF2B7102630003B640 /* XCRemoteSwiftPackageReference "tree-sitter-go" */,
 				C9C568562B7418B60093C068 /* XCRemoteSwiftPackageReference "Lowlight" */,
 				C9BFA1A12BBF4FA200E86487 /* XCRemoteSwiftPackageReference "nsui" */,
 				C9BFA1AE2BC0927A00E86487 /* XCRemoteSwiftPackageReference "Glyph" */,
 				C9E0BA3A2BD2EB05007AF034 /* XCRemoteSwiftPackageReference "ThemePark" */,
 				C93F72252BF0F9290021ACF3 /* XCRemoteSwiftPackageReference "Sparkle" */,
-				C9CFCF732BF4CBE80053C9A6 /* XCRemoteSwiftPackageReference "tree-sitter-ocaml" */,
 			);
 			productRefGroup = C9FE529A2A7525D000CACA1A /* Products */;
 			projectDirPath = "";
@@ -3499,18 +3471,6 @@
 			target = C9FE52F32A7539B100CACA1A /* ChimeKit */;
 			targetProxy = C929314D2B80CDF800C64DDE /* PBXContainerItemProxy */;
 		};
-		C92931562B80D83C00C64DDE /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			productRef = C92931552B80D83C00C64DDE /* TreeSitterGo */;
-		};
-		C92931582B80D84300C64DDE /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			productRef = C92931572B80D84300C64DDE /* TreeSitterSwift */;
-		};
-		C929315A2B80D84800C64DDE /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			productRef = C92931592B80D84800C64DDE /* TreeSitterMarkdown */;
-		};
 		C929315C2B80D9F900C64DDE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C9FE53C72A77CC1E00CACA1A /* Theme */;
@@ -3526,10 +3486,6 @@
 			target = C93F72472BF26BDC0021ACF3 /* EditIntents */;
 			targetProxy = C93F72502BF26BDC0021ACF3 /* PBXContainerItemProxy */;
 		};
-		C941F0B32B7102E80003B640 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			productRef = C941F0B22B7102E80003B640 /* TreeSitterGo */;
-		};
 		C942E67D2B67B78F00792DD4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C942E6752B67B78E00792DD4 /* UserScript */;
@@ -3540,15 +3496,19 @@
 			target = C9FE52F32A7539B100CACA1A /* ChimeKit */;
 			targetProxy = C942E6832B67B9A100792DD4 /* PBXContainerItemProxy */;
 		};
-		C95248C52BF3AFC600F55E71 /* PBXTargetDependency */ = {
+		C9439A652C3EA9930020DDF5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = C9439A642C3EA9930020DDF5 /* TreeSitterParsers */;
+		};
+		C9439A6D2C3EB3F00020DDF5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C92931412B80CC6700C64DDE /* EditKit */;
-			targetProxy = C95248C42BF3AFC600F55E71 /* PBXContainerItemProxy */;
+			targetProxy = C9439A6C2C3EB3F00020DDF5 /* PBXContainerItemProxy */;
 		};
-		C95248C72BF3AFCE00F55E71 /* PBXTargetDependency */ = {
+		C9439A6F2C3EB41F0020DDF5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C9FE52F32A7539B100CACA1A /* ChimeKit */;
-			targetProxy = C95248C62BF3AFCE00F55E71 /* PBXContainerItemProxy */;
+			targetProxy = C9439A6E2C3EB41F0020DDF5 /* PBXContainerItemProxy */;
 		};
 		C95B90FD2BD80C71006FDD00 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -3599,11 +3559,6 @@
 			isa = PBXTargetDependency;
 			target = C973DFFF2B62BDB3000998F7 /* Highlighting */;
 			targetProxy = C96B61F62BDA710A00561DE8 /* PBXContainerItemProxy */;
-		};
-		C96B61F92BDA711B00561DE8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = C9FE52D32A7532C700CACA1A /* Document */;
-			targetProxy = C96B61F82BDA711B00561DE8 /* PBXContainerItemProxy */;
 		};
 		C96B61FB2BDA714000561DE8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -3869,21 +3824,9 @@
 			isa = PBXTargetDependency;
 			productRef = C9CDEB5B2B51621C009E252A /* ColorToolbox */;
 		};
-		C9CDEB632B51942E009E252A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			productRef = C9CDEB622B51942E009E252A /* TreeSitterMarkdown */;
-		};
 		C9CDEB912B56ACBB009E252A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			productRef = C9CDEB902B56ACBB009E252A /* MainOffender */;
-		};
-		C9CFCF772BF4CC1E0053C9A6 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			productRef = C9CFCF762BF4CC1E0053C9A6 /* TreeSitterOCaml */;
-		};
-		C9CFCF792BF4CC960053C9A6 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			productRef = C9CFCF782BF4CC960053C9A6 /* TreeSitterOCaml */;
 		};
 		C9DCE14E2BD7BC500067D354 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -3937,10 +3880,6 @@
 			isa = PBXTargetDependency;
 			target = C9FE539A2A76709D00CACA1A /* Status */;
 			targetProxy = C9E8781D2A9FD0B70018340C /* PBXContainerItemProxy */;
-		};
-		C9EA09592B4D644500732203 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			productRef = C9EA09582B4D644500732203 /* TreeSitterSwift */;
 		};
 		C9EA095F2B4D708000732203 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -4815,22 +4754,6 @@
 				revision = d563ef0ba6c1c91aa6bcee406577b8826baa1f69;
 			};
 		};
-		C940A3752B4C7544007BE120 /* XCRemoteSwiftPackageReference "tree-sitter-swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/alex-pinkus/tree-sitter-swift/";
-			requirement = {
-				branch = "with-generated-files";
-				kind = branch;
-			};
-		};
-		C941F0AF2B7102630003B640 /* XCRemoteSwiftPackageReference "tree-sitter-go" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/tree-sitter/tree-sitter-go";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.20.0;
-			};
-		};
 		C97918C32A9D4A510046EAF1 /* XCRemoteSwiftPackageReference "FuzzyFind" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/truizlop/FuzzyFind";
@@ -4919,28 +4842,12 @@
 				minimumVersion = 1.0.1;
 			};
 		};
-		C9CDEB5F2B5193B1009E252A /* XCRemoteSwiftPackageReference "tree-sitter-markdown" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/MDeiml/tree-sitter-markdown";
-			requirement = {
-				branch = split_parser;
-				kind = branch;
-			};
-		};
 		C9CDEB8D2B56ACA3009E252A /* XCRemoteSwiftPackageReference "MainOffender" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/mattmassicotte/MainOffender.git";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 0.1.0;
-			};
-		};
-		C9CFCF732BF4CBE80053C9A6 /* XCRemoteSwiftPackageReference "tree-sitter-ocaml" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/tree-sitter/tree-sitter-ocaml";
-			requirement = {
-				branch = master;
-				kind = branch;
 			};
 		};
 		C9E0BA3A2BD2EB05007AF034 /* XCRemoteSwiftPackageReference "ThemePark" */ = {
@@ -5016,40 +4923,10 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = Lowlight;
 		};
-		C92931552B80D83C00C64DDE /* TreeSitterGo */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C941F0AF2B7102630003B640 /* XCRemoteSwiftPackageReference "tree-sitter-go" */;
-			productName = TreeSitterGo;
-		};
-		C92931572B80D84300C64DDE /* TreeSitterSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C940A3752B4C7544007BE120 /* XCRemoteSwiftPackageReference "tree-sitter-swift" */;
-			productName = TreeSitterSwift;
-		};
-		C92931592B80D84800C64DDE /* TreeSitterMarkdown */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C9CDEB5F2B5193B1009E252A /* XCRemoteSwiftPackageReference "tree-sitter-markdown" */;
-			productName = TreeSitterMarkdown;
-		};
 		C92931682B822B7B00C64DDE /* ColorToolbox */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C9CDEB582B51620E009E252A /* XCRemoteSwiftPackageReference "ColorToolbox" */;
 			productName = ColorToolbox;
-		};
-		C929316C2B822BB300C64DDE /* TreeSitterGo */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C941F0AF2B7102630003B640 /* XCRemoteSwiftPackageReference "tree-sitter-go" */;
-			productName = TreeSitterGo;
-		};
-		C929316E2B822BB800C64DDE /* TreeSitterSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C940A3752B4C7544007BE120 /* XCRemoteSwiftPackageReference "tree-sitter-swift" */;
-			productName = TreeSitterSwift;
-		};
-		C92931702B822BBD00C64DDE /* TreeSitterMarkdown */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C9CDEB5F2B5193B1009E252A /* XCRemoteSwiftPackageReference "tree-sitter-markdown" */;
-			productName = TreeSitterMarkdown;
 		};
 		C93F72262BF0F9290021ACF3 /* Sparkle */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -5061,10 +4938,13 @@
 			package = C9409C642A98CC9800B5D898 /* XCRemoteSwiftPackageReference "Outline" */;
 			productName = Outline;
 		};
-		C941F0B22B7102E80003B640 /* TreeSitterGo */ = {
+		C9439A642C3EA9930020DDF5 /* TreeSitterParsers */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C941F0AF2B7102630003B640 /* XCRemoteSwiftPackageReference "tree-sitter-go" */;
-			productName = TreeSitterGo;
+			productName = TreeSitterParsers;
+		};
+		C9439A702C3EB4410020DDF5 /* TreeSitterParsers */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = TreeSitterParsers;
 		};
 		C95B90FC2BD80C71006FDD00 /* ThemePark */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -5245,11 +5125,6 @@
 			package = C9CDEB582B51620E009E252A /* XCRemoteSwiftPackageReference "ColorToolbox" */;
 			productName = ColorToolbox;
 		};
-		C9CDEB622B51942E009E252A /* TreeSitterMarkdown */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C9CDEB5F2B5193B1009E252A /* XCRemoteSwiftPackageReference "tree-sitter-markdown" */;
-			productName = TreeSitterMarkdown;
-		};
 		C9CDEB8E2B56ACA3009E252A /* MainOffender */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C9CDEB8D2B56ACA3009E252A /* XCRemoteSwiftPackageReference "MainOffender" */;
@@ -5259,21 +5134,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C9CDEB8D2B56ACA3009E252A /* XCRemoteSwiftPackageReference "MainOffender" */;
 			productName = MainOffender;
-		};
-		C9CFCF742BF4CBE80053C9A6 /* TreeSitterOCaml */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C9CFCF732BF4CBE80053C9A6 /* XCRemoteSwiftPackageReference "tree-sitter-ocaml" */;
-			productName = TreeSitterOCaml;
-		};
-		C9CFCF762BF4CC1E0053C9A6 /* TreeSitterOCaml */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C9CFCF732BF4CBE80053C9A6 /* XCRemoteSwiftPackageReference "tree-sitter-ocaml" */;
-			productName = TreeSitterOCaml;
-		};
-		C9CFCF782BF4CC960053C9A6 /* TreeSitterOCaml */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C9CFCF732BF4CBE80053C9A6 /* XCRemoteSwiftPackageReference "tree-sitter-ocaml" */;
-			productName = TreeSitterOCaml;
 		};
 		C9DCE14D2BD7BC500067D354 /* ThemePark */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -5289,11 +5149,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C9E0BA3A2BD2EB05007AF034 /* XCRemoteSwiftPackageReference "ThemePark" */;
 			productName = ThemePark;
-		};
-		C9EA09582B4D644500732203 /* TreeSitterSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C940A3752B4C7544007BE120 /* XCRemoteSwiftPackageReference "tree-sitter-swift" */;
-			productName = TreeSitterSwift;
 		};
 		C9F79DDD2A87E656005ED8E9 /* Outline */ = {
 			isa = XCSwiftPackageProductDependency;

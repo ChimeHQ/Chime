@@ -1,5 +1,5 @@
 {
-  "originHash" : "d16a627413306447b1e365dc0c5086b9f725436a765f8f75389a2464c9adb210",
+  "originHash" : "ba844ec96bfdebc797744fae63b828fb6112a2d64a3f80033172abc0ed97bcd6",
   "pins" : [
     {
       "identity" : "asyncxpcconnection",
@@ -241,18 +241,27 @@
       }
     },
     {
+      "identity" : "tree-sitter-clojure",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/mattmassicotte/tree-sitter-clojure.git",
+      "state" : {
+        "branch" : "feature/spm",
+        "revision" : "0a3d6ce7b48bae5e5d96af6bda9f47ec28e055bd"
+      }
+    },
+    {
       "identity" : "tree-sitter-go",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/tree-sitter/tree-sitter-go",
+      "location" : "https://github.com/tree-sitter/tree-sitter-go.git",
       "state" : {
-        "revision" : "bbaa67a180cfe0c943e50c55130918be8efb20bd",
-        "version" : "0.20.0"
+        "branch" : "master",
+        "revision" : "7ee8d928db5202f6831a78f8112fd693bf69f98b"
       }
     },
     {
       "identity" : "tree-sitter-markdown",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/MDeiml/tree-sitter-markdown",
+      "location" : "https://github.com/tree-sitter-grammars/tree-sitter-markdown.git",
       "state" : {
         "branch" : "split_parser",
         "revision" : "f9820b2db958228f9be339b67d2de874d065866e"

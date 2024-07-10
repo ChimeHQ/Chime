@@ -2,15 +2,16 @@ import Foundation
 
 import SwiftTreeSitter
 import UniformTypeIdentifiers
+import TreeSitterParsers
 
-import TreeSitterGo
-import TreeSitterOCaml
-import TreeSitterMarkdown
-import TreeSitterMarkdownInline
 import TreeSitterSwift
 
 extension LanguageProfile {
 	static func profile(for utType: UTType) -> LanguageProfile {
+		if utType.conforms(to: .clojureSource) {
+			return LanguageProfile.clojureProfile
+		}
+
 		if utType.conforms(to: .markdown) {
 			return LanguageProfile.markdownProfile
 		}
@@ -40,6 +41,11 @@ extension LanguageProfile {
 }
 
 extension LanguageProfile {
+	static let clojureProfile = LanguageProfile(
+		RootLanguage.clojure,
+		language: Language(tree_sitter_clojure())
+	)
+
 	static let goProfile = LanguageProfile(
 		RootLanguage.go,
 		language: Language(tree_sitter_go())

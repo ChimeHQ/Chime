@@ -70,6 +70,22 @@
 		<dict>
 			<key>UTTypeConformsTo</key>
 			<array>
+				<string>public.source-code</string>
+			</array>
+			<key>UTTypeIdentifier</key>
+			<string>org.clojure.source</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>clj</string>
+					<string>cljc</string>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
 				<string>public.plain-text</string>
 			</array>
 			<key>UTTypeIdentifier</key>

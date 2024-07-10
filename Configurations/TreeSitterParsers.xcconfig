@@ -1,3 +1,0 @@
-#include "Configurations/Module.xcconfig"
-
-OTHER_SWIFT_FLAGS = $(inherited) -Xcc -fmodule-map-file=$(GENERATED_MODULEMAP_DIR)/TreeSitterSwift.modulemap -Xcc -fmodule-map-file=$(GENERATED_MODULEMAP_DIR)/TreeSitterMarkdown.modulemap

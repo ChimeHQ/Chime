@@ -7,6 +7,7 @@ import ChimeKit
 ///
 /// This type must also be compiled into EditIntents, because the AppIntent infrastructure depends on having the type visible within the module.
 public enum RootLanguage: Hashable, CaseIterable, Sendable {
+	case clojure
 	case go
 	case markdown
 	case ocaml
@@ -15,6 +16,7 @@ public enum RootLanguage: Hashable, CaseIterable, Sendable {
 
 	var typeIdentifier: UTType {
 		switch self {
+		case .clojure: .clojureSource
 		case .go: .goSource
 		case .markdown: .markdown
 		case .ocaml: .ocamlSource
@@ -31,6 +33,8 @@ extension RootLanguage: RawRepresentable {
 
 	public init?(rawValue: String) {
 		switch Self.normalizeLanguageName(rawValue) {
+		case "clojure":
+			self = .clojure
 		case "go":
 			self = .go
 		case "markdown":
@@ -48,6 +52,8 @@ extension RootLanguage: RawRepresentable {
 
 	public var rawValue: String {
 		switch self {
+		case .clojure:
+			"Clojure"
 		case .go:
 			"Go"
 		case .markdown:
