@@ -128,6 +128,14 @@
 		C9818AB92C3EF6E80032899D /* ElixirExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9818AB82C3EF6E80032899D /* ElixirExtension.swift */; };
 		C9818ABA2C3EF6E80032899D /* ElixirExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9818AB82C3EF6E80032899D /* ElixirExtension.swift */; };
 		C9818ABB2C3EF7000032899D /* ChimeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE52F42A7539B100CACA1A /* ChimeKit.framework */; };
+		C9818ACA2C3F2C2F0032899D /* GoExtension.appex in Copy Extensions */ = {isa = PBXBuildFile; fileRef = C9818AC22C3F2C2F0032899D /* GoExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C9818ACF2C3F2C870032899D /* GoStandaloneExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9818ACE2C3F2C7F0032899D /* GoStandaloneExtension.swift */; };
+		C9818AD22C3F2CA70032899D /* GoExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9818AD02C3F2CA70032899D /* GoExtension.swift */; };
+		C9818AD32C3F2CA70032899D /* GoExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9818AD02C3F2CA70032899D /* GoExtension.swift */; };
+		C9818AD42C3F2CA70032899D /* Gopls.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9818AD12C3F2CA70032899D /* Gopls.swift */; };
+		C9818AD52C3F2CA70032899D /* Gopls.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9818AD12C3F2CA70032899D /* Gopls.swift */; };
+		C9818AD82C3F2D350032899D /* ChimeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE52F42A7539B100CACA1A /* ChimeKit.framework */; };
+		C9818AD92C3F2DB90032899D /* Gopls.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9818AD12C3F2CA70032899D /* Gopls.swift */; };
 		C986F2492C3ED60800A62879 /* ClojureExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C986F2472C3ED60800A62879 /* ClojureExtension.swift */; };
 		C986F24A2C3ED67900A62879 /* ClojureExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C986F2472C3ED60800A62879 /* ClojureExtension.swift */; };
 		C9891AF82AFE996300C8F393 /* NSParagraphStyle+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9891AF72AFE996300C8F393 /* NSParagraphStyle+Helpers.swift */; };
@@ -530,6 +538,20 @@
 			remoteGlobalIDString = C9FE52F32A7539B100CACA1A;
 			remoteInfo = ChimeKit;
 		};
+		C9818AC82C3F2C2F0032899D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9818AC12C3F2C2F0032899D;
+			remoteInfo = Go;
+		};
+		C9818AD62C3F2D2F0032899D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9FE52F32A7539B100CACA1A;
+			remoteInfo = ChimeKit;
+		};
 		C9891AFE2AFEA3E400C8F393 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
@@ -891,6 +913,7 @@
 			files = (
 				C93F72582BF26E9C0021ACF3 /* EditIntents.appex in Copy Extensions */,
 				C9E878092A9F53530018340C /* UIPlaceholderExtension.appex in Copy Extensions */,
+				C9818ACA2C3F2C2F0032899D /* GoExtension.appex in Copy Extensions */,
 				C9BDB5502B00FD89009225FB /* SwiftExtension.appex in Copy Extensions */,
 				C9818AB22C3EF5ED0032899D /* ElixirExtension.appex in Copy Extensions */,
 				C9439A812C3EC4220020DDF5 /* ClojureExtension.appex in Copy Extensions */,
@@ -1025,6 +1048,10 @@
 		C9818AAA2C3EF5ED0032899D /* ElixirExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.extensionkit-extension"; includeInIndex = 0; path = ElixirExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9818AB62C3EF68B0032899D /* ElixirStandaloneExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElixirStandaloneExtension.swift; sourceTree = "<group>"; };
 		C9818AB82C3EF6E80032899D /* ElixirExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ElixirExtension.swift; path = "submodules/chime-elixir/Sources/ChimeElixir/ElixirExtension.swift"; sourceTree = SOURCE_ROOT; };
+		C9818AC22C3F2C2F0032899D /* GoExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.extensionkit-extension"; includeInIndex = 0; path = GoExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9818ACE2C3F2C7F0032899D /* GoStandaloneExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoStandaloneExtension.swift; sourceTree = "<group>"; };
+		C9818AD02C3F2CA70032899D /* GoExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GoExtension.swift; path = "submodules/chime-go/Sources/ChimeGo/GoExtension.swift"; sourceTree = SOURCE_ROOT; };
+		C9818AD12C3F2CA70032899D /* Gopls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Gopls.swift; path = "submodules/chime-go/Sources/ChimeGo/Gopls.swift"; sourceTree = SOURCE_ROOT; };
 		C986F2472C3ED60800A62879 /* ClojureExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClojureExtension.swift; path = "submodules/chime-clojure/Sources/ChimeClojure/ClojureExtension.swift"; sourceTree = SOURCE_ROOT; };
 		C9891AF72AFE996300C8F393 /* NSParagraphStyle+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSParagraphStyle+Helpers.swift"; sourceTree = "<group>"; };
 		C9891AF92AFE9A3900C8F393 /* NSFont+Measurements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSFont+Measurements.swift"; sourceTree = "<group>"; };
@@ -1238,6 +1265,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9818ABB2C3EF7000032899D /* ChimeKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9818ABF2C3F2C2F0032899D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9818AD82C3F2D350032899D /* ChimeKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1562,6 +1597,16 @@
 			path = Elixir;
 			sourceTree = "<group>";
 		};
+		C9818AC32C3F2C2F0032899D /* Go */ = {
+			isa = PBXGroup;
+			children = (
+				C9818AD02C3F2CA70032899D /* GoExtension.swift */,
+				C9818AD12C3F2CA70032899D /* Gopls.swift */,
+				C9818ACE2C3F2C7F0032899D /* GoStandaloneExtension.swift */,
+			);
+			path = Go;
+			sourceTree = "<group>";
+		};
 		C9891AF62AFE994C00C8F393 /* AppKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -1698,6 +1743,7 @@
 				C9439A862C3EC4470020DDF5 /* Clojure */,
 				C9818AAB2C3EF5ED0032899D /* Elixir */,
 				C9E878062A9F53530018340C /* Extension.entitlements */,
+				C9818AC32C3F2C2F0032899D /* Go */,
 				C9BDB54C2B00FD89009225FB /* Info.plist */,
 				C9BDB5492B00FD89009225FB /* Swift */,
 				C9E878022A9F53530018340C /* UIPlaceholder */,
@@ -1776,6 +1822,7 @@
 				C93F72482BF26BDC0021ACF3 /* EditIntents.appex */,
 				C9439A792C3EC4220020DDF5 /* ClojureExtension.appex */,
 				C9818AAA2C3EF5ED0032899D /* ElixirExtension.appex */,
+				C9818AC22C3F2C2F0032899D /* GoExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -2377,6 +2424,24 @@
 			productReference = C9818AAA2C3EF5ED0032899D /* ElixirExtension.appex */;
 			productType = "com.apple.product-type.extensionkit-extension";
 		};
+		C9818AC12C3F2C2F0032899D /* Go */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C9818ACD2C3F2C2F0032899D /* Build configuration list for PBXNativeTarget "Go" */;
+			buildPhases = (
+				C9818ABE2C3F2C2F0032899D /* Sources */,
+				C9818ABF2C3F2C2F0032899D /* Frameworks */,
+				C9818AC02C3F2C2F0032899D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C9818AD72C3F2D2F0032899D /* PBXTargetDependency */,
+			);
+			name = Go;
+			productName = Go;
+			productReference = C9818AC22C3F2C2F0032899D /* GoExtension.appex */;
+			productType = "com.apple.product-type.extensionkit-extension";
+		};
 		C9891B122AFEC11A00C8F393 /* DocumentContent */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C9891B192AFEC11A00C8F393 /* Build configuration list for PBXNativeTarget "DocumentContent" */;
@@ -2593,6 +2658,7 @@
 				C93F72512BF26BDC0021ACF3 /* PBXTargetDependency */,
 				C9439A802C3EC4220020DDF5 /* PBXTargetDependency */,
 				C9818AB12C3EF5ED0032899D /* PBXTargetDependency */,
+				C9818AC92C3F2C2F0032899D /* PBXTargetDependency */,
 			);
 			name = Edit;
 			packageProductDependencies = (
@@ -2932,6 +2998,9 @@
 						CreatedOnToolsVersion = 15.4;
 						LastSwiftMigration = 1540;
 					};
+					C9818AC12C3F2C2F0032899D = {
+						CreatedOnToolsVersion = 15.4;
+					};
 					C9891B122AFEC11A00C8F393 = {
 						CreatedOnToolsVersion = 15.1;
 					};
@@ -3079,6 +3148,7 @@
 				C9BDB5472B00FD89009225FB /* SwiftExtension */,
 				C9439A782C3EC4220020DDF5 /* Clojure */,
 				C9818AA92C3EF5ED0032899D /* Elixir */,
+				C9818AC12C3F2C2F0032899D /* Go */,
 			);
 		};
 /* End PBXProject section */
@@ -3114,6 +3184,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		C9818AA82C3EF5ED0032899D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9818AC02C3F2C2F0032899D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -3230,6 +3307,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9818AD92C3F2DB90032899D /* Gopls.swift in Sources */,
 				C942E6AC2B69747E00792DD4 /* UserScriptStandaloneExtension.swift in Sources */,
 				C942E6792B67B78F00792DD4 /* UserScriptExtension.swift in Sources */,
 			);
@@ -3275,6 +3353,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9818ABA2C3EF6E80032899D /* ElixirExtension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9818ABE2C3F2C2F0032899D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9818AD52C3F2CA70032899D /* Gopls.swift in Sources */,
+				C9818ACF2C3F2C870032899D /* GoStandaloneExtension.swift in Sources */,
+				C9818AD32C3F2CA70032899D /* GoExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3549,6 +3637,7 @@
 				C97918FC2A9E5EFC0046EAF1 /* CompositeProjectService.swift in Sources */,
 				C941F0AC2B6E5A760003B640 /* AppHost.swift in Sources */,
 				C986F24A2C3ED67900A62879 /* ClojureExtension.swift in Sources */,
+				C9818AD42C3F2CA70032899D /* Gopls.swift in Sources */,
 				C92672FA2B039AA300B3CE2F /* SwiftExtension.swift in Sources */,
 				C9FE53E82A7A5B2000CACA1A /* LazyRemoteExtension.swift in Sources */,
 				C97919002A9E728F0046EAF1 /* ExtensionManager.swift in Sources */,
@@ -3559,6 +3648,7 @@
 				C9FE54072A7A617000CACA1A /* ExtensionDocumentState.swift in Sources */,
 				C941F0AD2B6E65110003B640 /* Process+Pipes.swift in Sources */,
 				C97919042A9E74620046EAF1 /* AppExtensionIdentity+UI.swift in Sources */,
+				C9818AD22C3F2CA70032899D /* GoExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3852,6 +3942,16 @@
 			isa = PBXTargetDependency;
 			target = C9FE52F32A7539B100CACA1A /* ChimeKit */;
 			targetProxy = C9818ABC2C3EF7030032899D /* PBXContainerItemProxy */;
+		};
+		C9818AC92C3F2C2F0032899D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9818AC12C3F2C2F0032899D /* Go */;
+			targetProxy = C9818AC82C3F2C2F0032899D /* PBXContainerItemProxy */;
+		};
+		C9818AD72C3F2D2F0032899D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9FE52F32A7539B100CACA1A /* ChimeKit */;
+			targetProxy = C9818AD62C3F2D2F0032899D /* PBXContainerItemProxy */;
 		};
 		C9891AFF2AFEA3E400C8F393 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -4324,6 +4424,20 @@
 			};
 			name = Release;
 		};
+		C9818ACB2C3F2C2F0032899D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9E878112A9F53BB0018340C /* Extension.xcconfig */;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		C9818ACC2C3F2C2F0032899D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9E878112A9F53BB0018340C /* Extension.xcconfig */;
+			buildSettings = {
+			};
+			name = Release;
+		};
 		C9891B1A2AFEC11A00C8F393 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C926738A2B078B0200B3CE2F /* WorkaroundModule.xcconfig */;
@@ -4733,6 +4847,15 @@
 			buildConfigurations = (
 				C9818AB32C3EF5ED0032899D /* Debug */,
 				C9818AB42C3EF5ED0032899D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C9818ACD2C3F2C2F0032899D /* Build configuration list for PBXNativeTarget "Go" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9818ACB2C3F2C2F0032899D /* Debug */,
+				C9818ACC2C3F2C2F0032899D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

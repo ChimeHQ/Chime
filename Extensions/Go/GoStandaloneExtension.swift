@@ -5,13 +5,13 @@ import ChimeKit
 import Extendable
 
 @main
-final class ElixirStandaloneExtension: ChimeExtension {
-	@InitializerTransferred private var localExtension: StandaloneExtension<ElixirExtension>
+final class GoStandaloneExtension: ChimeExtension {
+	@InitializerTransferred private var localExtension: StandaloneExtension<GoExtension>
 
 	nonisolated init() {
 		self._localExtension = InitializerTransferred(mainActorProvider: {
 			StandaloneExtension(extensionProvider: { host in
-				ElixirExtension(host: host)
+				GoExtension(host: host)
 			})
 		})
 	}
@@ -21,7 +21,7 @@ final class ElixirStandaloneExtension: ChimeExtension {
 	}
 }
 
-extension ElixirStandaloneExtension {
+extension GoStandaloneExtension {
 	var configuration: ExtensionConfiguration {
 		get throws {
 			try localExtension.configuration

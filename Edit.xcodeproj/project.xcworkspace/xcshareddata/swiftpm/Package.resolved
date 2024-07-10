@@ -1,5 +1,5 @@
 {
-  "originHash" : "e7e174512a4cbf5c900b9b47cfbcd7730e05f04d11057492b2b5cb1750586fe9",
+  "originHash" : "64557960cc5ec5b4a9453f704db74eda7fe05f7d4409970dff0b26d5861a97ae",
   "pins" : [
     {
       "identity" : "asyncxpcconnection",
@@ -265,6 +265,33 @@
       "state" : {
         "branch" : "master",
         "revision" : "7ee8d928db5202f6831a78f8112fd693bf69f98b"
+      }
+    },
+    {
+      "identity" : "tree-sitter-go-mod",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/camdencheek/tree-sitter-go-mod",
+      "state" : {
+        "branch" : "main",
+        "revision" : "bbe2fe3be4b87e06a613e685250f473d2267f430"
+      }
+    },
+    {
+      "identity" : "tree-sitter-go-sum",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/tree-sitter-grammars/tree-sitter-go-sum",
+      "state" : {
+        "branch" : "master",
+        "revision" : "e2ac513b2240c7ff1069ae33b2df29ce90777c11"
+      }
+    },
+    {
+      "identity" : "tree-sitter-go-work",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/mattmassicotte/tree-sitter-go-work",
+      "state" : {
+        "branch" : "feature/spm",
+        "revision" : "177fb5a21eecd6709deeeaf7abcb6a13c7dd38f5"
       }
     },
     {

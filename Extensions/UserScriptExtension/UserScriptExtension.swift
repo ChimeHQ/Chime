@@ -60,39 +60,3 @@ extension UserScriptExtension: ExtensionProtocol {
 		return lspService
 	}
 }
-
-struct Gopls {
-}
-
-extension Gopls {
-	struct ServerOptions: Codable {
-		enum HoverKind: String, Codable {
-			case FullDocumentation
-			case NoDocumentation
-			case SingleLine
-			case Structured
-			case SynopsisDocumentation
-		}
-
-		let usePlaceholders: Bool
-		let completeUnimported: Bool
-		let deepCompletion: Bool
-		let hoverKind: HoverKind
-		let semanticTokens: Bool
-		let staticcheck: Bool
-		let gofumpt: Bool
-	}
-
-	static var serverOptions: some Codable {
-		let stackcheckEnabled = true
-		let gofumptEnabled = true
-
-		return ServerOptions(usePlaceholders: true,
-							 completeUnimported: true,
-							 deepCompletion: true,
-							 hoverKind: .Structured,
-							 semanticTokens: true,
-							 staticcheck: stackcheckEnabled,
-							 gofumpt: gofumptEnabled)
-	}
-}

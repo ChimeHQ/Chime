@@ -7,3 +7,6 @@
 [submodule "submodules/chime-elixir"]
 	path = submodules/chime-elixir
 	url = git@github.com:ChimeHQ/chime-elixir.git
+[submodule "submodules/chime-go"]
+	path = submodules/chime-go
+	url = git@github.com:ChimeHQ/chime-go.git

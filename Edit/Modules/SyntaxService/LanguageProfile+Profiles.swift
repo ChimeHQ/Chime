@@ -40,6 +40,10 @@ extension LanguageProfile {
 			return LanguageProfile.goProfile
 		}
 
+		if utType.conforms(to: .goSumFile) {
+			return LanguageProfile.goSumProfile
+		}
+
 		return LanguageProfile.genericProfile
 	}
 }
@@ -58,6 +62,21 @@ extension LanguageProfile {
 	static let goProfile = LanguageProfile(
 		RootLanguage.go,
 		language: Language(tree_sitter_go())
+	)
+
+	static let goModProfile = LanguageProfile(
+		RootLanguage.goMod,
+		language: Language(tree_sitter_gomod())
+	)
+
+	static let goSumProfile = LanguageProfile(
+		RootLanguage.goSum,
+		language: Language(tree_sitter_gosum())
+	)
+
+	static let goWorkProfile = LanguageProfile(
+		RootLanguage.goWork,
+		language: Language(tree_sitter_gowork())
 	)
 
 	static let markdownProfile = LanguageProfile(

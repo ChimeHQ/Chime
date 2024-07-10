@@ -1,6 +1,9 @@
 @_exported import TreeSitterClojure
 @_exported import TreeSitterElixir
 @_exported import TreeSitterGo
+@_exported import TreeSitterGoMod
+@_exported import TreeSitterGosum
+@_exported import TreeSitterGoWork
 @_exported import TreeSitterMarkdown
 @_exported import TreeSitterMarkdownInline
 @_exported import TreeSitterOCaml
