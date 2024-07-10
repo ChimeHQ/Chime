@@ -3121,7 +3121,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "$SRCROOT/Edit/Scripts/validate.sh\n";
+			shellScript = "\"$SRCROOT/Edit/Scripts/validate.sh\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
