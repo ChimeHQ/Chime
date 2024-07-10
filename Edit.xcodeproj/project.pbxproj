@@ -49,6 +49,7 @@
 		C9439A712C3EB4410020DDF5 /* TreeSitterParsers in Frameworks */ = {isa = PBXBuildFile; productRef = C9439A702C3EB4410020DDF5 /* TreeSitterParsers */; };
 		C9439A722C3EB5140020DDF5 /* libHighlighting.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C973E0002B62BDB3000998F7 /* libHighlighting.a */; };
 		C9439A732C3EB5260020DDF5 /* libSyntaxService.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9B8AA4A2B37055900C79606 /* libSyntaxService.a */; };
+		C9439A812C3EC4220020DDF5 /* ClojureExtension.appex in Copy Extensions */ = {isa = PBXBuildFile; fileRef = C9439A792C3EC4220020DDF5 /* ClojureExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C94450572BE561FA004E244E /* CodableTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94450562BE561FA004E244E /* CodableTheme.swift */; };
 		C94F7EC12A7D8C1900E0361A /* ProjectContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94F7EC02A7D8C1900E0361A /* ProjectContentViewController.swift */; };
 		C95248C82BF3AFD400F55E71 /* EditKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C92931422B80CC6700C64DDE /* EditKit.framework */; };
@@ -123,6 +124,8 @@
 		C97C1FF52BCAA75200D133A7 /* LabelledTwoPartItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97C1FF42BCAA75200D133A7 /* LabelledTwoPartItem.swift */; };
 		C97C1FF92BCBF78500D133A7 /* SelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97C1FF82BCBF78500D133A7 /* SelectionViewModel.swift */; };
 		C97E86422BFA13700054BAB6 /* UserDefaults+Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97E86412BFA13700054BAB6 /* UserDefaults+Shared.swift */; };
+		C986F2492C3ED60800A62879 /* ClojureExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C986F2472C3ED60800A62879 /* ClojureExtension.swift */; };
+		C986F24A2C3ED67900A62879 /* ClojureExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C986F2472C3ED60800A62879 /* ClojureExtension.swift */; };
 		C9891AF82AFE996300C8F393 /* NSParagraphStyle+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9891AF72AFE996300C8F393 /* NSParagraphStyle+Helpers.swift */; };
 		C9891AFA2AFE9A3900C8F393 /* NSFont+Measurements.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9891AF92AFE9A3900C8F393 /* NSFont+Measurements.swift */; };
 		C9891B002AFEA3F100C8F393 /* NSAppearance+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9891AFC2AFEA35F00C8F393 /* NSAppearance+Style.swift */; };
@@ -132,6 +135,8 @@
 		C99491B02B09573F002DC2AC /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99491AF2B09573F002DC2AC /* Line.swift */; };
 		C99491B12B0957C2002DC2AC /* LineParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99491AD2B09570A002DC2AC /* LineParser.swift */; };
 		C99491C52B153051002DC2AC /* TextMetrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99491C42B153051002DC2AC /* TextMetrics.swift */; };
+		C995EA6A2C3EC7A900D3ED4C /* ChimeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE52F42A7539B100CACA1A /* ChimeKit.framework */; };
+		C995EA752C3ED52900D3ED4C /* ClojureStandaloneExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C995EA742C3ED52900D3ED4C /* ClojureStandaloneExtension.swift */; };
 		C99D75F42B5DB42E0028E3B0 /* TextMetrics+ChimeKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99D75F32B5DB42E0028E3B0 /* TextMetrics+ChimeKit.swift */; };
 		C9B8A9812B1B836C00C79606 /* TextMetricsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B8A9802B1B836C00C79606 /* TextMetricsTests.swift */; };
 		C9B8A9D62B30613300C79606 /* DocumentCursorsMonitorModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B8A9D52B30613300C79606 /* DocumentCursorsMonitorModifier.swift */; };
@@ -339,6 +344,13 @@
 			remoteGlobalIDString = C9FE52F32A7539B100CACA1A;
 			remoteInfo = ChimeKit;
 		};
+		C9439A7F2C3EC4220020DDF5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9439A782C3EC4220020DDF5;
+			remoteInfo = ClojureExtension;
+		};
 		C95B911D2BD98B2E006FDD00 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
@@ -542,6 +554,27 @@
 			remoteGlobalIDString = C9891B342AFFF1F700C8F393;
 			remoteInfo = Gutter;
 		};
+		C995EA6B2C3EC90A00D3ED4C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9FE52F32A7539B100CACA1A;
+			remoteInfo = ChimeKit;
+		};
+		C995EA6D2C3EC91400D3ED4C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9FE52F32A7539B100CACA1A;
+			remoteInfo = ChimeKit;
+		};
+		C995EA6F2C3EC91A00D3ED4C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9FE52F32A7539B100CACA1A;
+			remoteInfo = ChimeKit;
+		};
 		C999C7852ABDA97500D49939 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
@@ -633,13 +666,6 @@
 			remoteGlobalIDString = C9BDB5472B00FD89009225FB;
 			remoteInfo = SwiftExtension;
 		};
-		C9BDB5552B010088009225FB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C9FE52F32A7539B100CACA1A;
-			remoteInfo = ChimeKit;
-		};
 		C9E0BA072BD27FD2007AF034 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
@@ -688,13 +714,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = C9E878002A9F53530018340C;
 			remoteInfo = UIPlaceholderExtension;
-		};
-		C9E8780E2A9F53770018340C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C9FE52F32A7539B100CACA1A;
-			remoteInfo = ChimeKit;
 		};
 		C9E8781D2A9FD0B70018340C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -855,6 +874,7 @@
 				C93F72582BF26E9C0021ACF3 /* EditIntents.appex in Copy Extensions */,
 				C9E878092A9F53530018340C /* UIPlaceholderExtension.appex in Copy Extensions */,
 				C9BDB5502B00FD89009225FB /* SwiftExtension.appex in Copy Extensions */,
+				C9439A812C3EC4220020DDF5 /* ClojureExtension.appex in Copy Extensions */,
 				C942E67E2B67B78F00792DD4 /* UserScriptExtension.appex in Copy Extensions */,
 				C900A7D12A9F472E000556A6 /* Chime.appextensionpoint in Copy Extensions */,
 			);
@@ -925,6 +945,7 @@
 		C942E6822B67B93B00792DD4 /* InfoPlistExtension.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = InfoPlistExtension.xcconfig; sourceTree = "<group>"; };
 		C942E6AB2B69747E00792DD4 /* UserScriptStandaloneExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserScriptStandaloneExtension.swift; sourceTree = "<group>"; };
 		C9439A742C3EC13A0020DDF5 /* Dependencies */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Dependencies; sourceTree = "<group>"; };
+		C9439A792C3EC4220020DDF5 /* ClojureExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.extensionkit-extension"; includeInIndex = 0; path = ClojureExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		C94450562BE561FA004E244E /* CodableTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableTheme.swift; sourceTree = "<group>"; };
 		C94F7EC02A7D8C1900E0361A /* ProjectContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectContentViewController.swift; sourceTree = "<group>"; };
 		C958C7802BC5A82900EC95F8 /* ConfigurationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationTests.swift; sourceTree = "<group>"; };
@@ -982,6 +1003,7 @@
 		C97C1FF42BCAA75200D133A7 /* LabelledTwoPartItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelledTwoPartItem.swift; sourceTree = "<group>"; };
 		C97C1FF82BCBF78500D133A7 /* SelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionViewModel.swift; sourceTree = "<group>"; };
 		C97E86412BFA13700054BAB6 /* UserDefaults+Shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Shared.swift"; sourceTree = "<group>"; };
+		C986F2472C3ED60800A62879 /* ClojureExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClojureExtension.swift; path = "submodules/chime-clojure/Sources/ChimeClojure/ClojureExtension.swift"; sourceTree = SOURCE_ROOT; };
 		C9891AF72AFE996300C8F393 /* NSParagraphStyle+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSParagraphStyle+Helpers.swift"; sourceTree = "<group>"; };
 		C9891AF92AFE9A3900C8F393 /* NSFont+Measurements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSFont+Measurements.swift"; sourceTree = "<group>"; };
 		C9891AFC2AFEA35F00C8F393 /* NSAppearance+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAppearance+Style.swift"; sourceTree = "<group>"; };
@@ -994,6 +1016,7 @@
 		C99491AF2B09573F002DC2AC /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
 		C99491C12B0D1660002DC2AC /* TextStorageDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextStorageDispatcher.swift; sourceTree = "<group>"; };
 		C99491C42B153051002DC2AC /* TextMetrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextMetrics.swift; sourceTree = "<group>"; };
+		C995EA742C3ED52900D3ED4C /* ClojureStandaloneExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClojureStandaloneExtension.swift; sourceTree = "<group>"; };
 		C99D75F32B5DB42E0028E3B0 /* TextMetrics+ChimeKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextMetrics+ChimeKit.swift"; sourceTree = "<group>"; };
 		C99D76112B5EFA050028E3B0 /* TextViewSystemNeonInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewSystemNeonInterface.swift; sourceTree = "<group>"; };
 		C9B8A9802B1B836C00C79606 /* TextMetricsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextMetricsTests.swift; sourceTree = "<group>"; };
@@ -1163,6 +1186,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				C942E6852B67B9A700792DD4 /* ChimeKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9439A762C3EC4220020DDF5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C995EA6A2C3EC7A900D3ED4C /* ChimeKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1413,6 +1444,15 @@
 			path = UserScriptExtension;
 			sourceTree = "<group>";
 		};
+		C9439A862C3EC4470020DDF5 /* Clojure */ = {
+			isa = PBXGroup;
+			children = (
+				C986F2472C3ED60800A62879 /* ClojureExtension.swift */,
+				C995EA742C3ED52900D3ED4C /* ClojureStandaloneExtension.swift */,
+			);
+			path = Clojure;
+			sourceTree = "<group>";
+		};
 		C96A85322A7A8322005ED222 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -1616,6 +1656,7 @@
 		C9E8780D2A9F535C0018340C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				C9439A862C3EC4470020DDF5 /* Clojure */,
 				C9E878062A9F53530018340C /* Extension.entitlements */,
 				C9BDB54C2B00FD89009225FB /* Info.plist */,
 				C9BDB5492B00FD89009225FB /* Swift */,
@@ -1693,6 +1734,7 @@
 				C92931422B80CC6700C64DDE /* EditKit.framework */,
 				C9E0B9FC2BD27F0F007AF034 /* libDiagnostics.a */,
 				C93F72482BF26BDC0021ACF3 /* EditIntents.appex */,
+				C9439A792C3EC4220020DDF5 /* ClojureExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -2210,6 +2252,26 @@
 			productReference = C942E6762B67B78E00792DD4 /* UserScriptExtension.appex */;
 			productType = "com.apple.product-type.extensionkit-extension";
 		};
+		C9439A782C3EC4220020DDF5 /* Clojure */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C9439A832C3EC4220020DDF5 /* Build configuration list for PBXNativeTarget "Clojure" */;
+			buildPhases = (
+				C9439A752C3EC4220020DDF5 /* Sources */,
+				C9439A762C3EC4220020DDF5 /* Frameworks */,
+				C9439A772C3EC4220020DDF5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C995EA702C3EC91A00D3ED4C /* PBXTargetDependency */,
+			);
+			name = Clojure;
+			packageProductDependencies = (
+			);
+			productName = ClojureExtension;
+			productReference = C9439A792C3EC4220020DDF5 /* ClojureExtension.appex */;
+			productType = "com.apple.product-type.extensionkit-extension";
+		};
 		C973DFFF2B62BDB3000998F7 /* Highlighting */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C973E0062B62BDB4000998F7 /* Build configuration list for PBXNativeTarget "Highlighting" */;
@@ -2381,7 +2443,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				C9BDB5562B010088009225FB /* PBXTargetDependency */,
+				C995EA6E2C3EC91400D3ED4C /* PBXTargetDependency */,
 			);
 			name = SwiftExtension;
 			productName = SwiftExtension;
@@ -2417,7 +2479,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				C9E8780F2A9F53770018340C /* PBXTargetDependency */,
+				C995EA6C2C3EC90A00D3ED4C /* PBXTargetDependency */,
 			);
 			name = UIPlaceholder;
 			productName = UIPlaceholderExtension;
@@ -2470,6 +2532,7 @@
 				C942E67D2B67B78F00792DD4 /* PBXTargetDependency */,
 				C92931472B80CC6700C64DDE /* PBXTargetDependency */,
 				C93F72512BF26BDC0021ACF3 /* PBXTargetDependency */,
+				C9439A802C3EC4220020DDF5 /* PBXTargetDependency */,
 			);
 			name = Edit;
 			packageProductDependencies = (
@@ -2779,7 +2842,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1530;
+				LastSwiftUpdateCheck = 1600;
 				LastUpgradeCheck = 1510;
 				TargetAttributes = {
 					C900A7B92A9E93FC000556A6 = {
@@ -2794,6 +2857,10 @@
 					};
 					C942E6752B67B78E00792DD4 = {
 						CreatedOnToolsVersion = 15.3;
+					};
+					C9439A782C3EC4220020DDF5 = {
+						CreatedOnToolsVersion = 16.0;
+						LastSwiftMigration = 1600;
 					};
 					C973DFFF2B62BDB3000998F7 = {
 						CreatedOnToolsVersion = 15.2;
@@ -2919,6 +2986,7 @@
 			targets = (
 				C9FE52982A7525D000CACA1A /* Edit */,
 				C9B8AA172B362DDD00C79606 /* Preview */,
+				C93F72472BF26BDC0021ACF3 /* EditIntents */,
 				C9FE52F32A7539B100CACA1A /* ChimeKit */,
 				C92931412B80CC6700C64DDE /* EditKit */,
 				C9FE52AD2A7525D300CACA1A /* EditTests */,
@@ -2936,16 +3004,16 @@
 				C9F79DEC2A8FF065005ED8E9 /* Navigator */,
 				C979189D2A9D1D6D0046EAF1 /* OpenQuickly */,
 				C900A7B92A9E93FC000556A6 /* PreferencesWindow */,
-				C9E878002A9F53530018340C /* UIPlaceholder */,
 				C9891B122AFEC11A00C8F393 /* DocumentContent */,
 				C9891B342AFFF1F700C8F393 /* Gutter */,
-				C9BDB5472B00FD89009225FB /* SwiftExtension */,
 				C9B8A9DC2B31E43800C79606 /* TextSystem */,
 				C9B8AA492B37055800C79606 /* SyntaxService */,
 				C973DFFF2B62BDB3000998F7 /* Highlighting */,
-				C942E6752B67B78E00792DD4 /* UserScript */,
 				C9E0B9FB2BD27F0F007AF034 /* Diagnostics */,
-				C93F72472BF26BDC0021ACF3 /* EditIntents */,
+				C9E878002A9F53530018340C /* UIPlaceholder */,
+				C942E6752B67B78E00792DD4 /* UserScript */,
+				C9BDB5472B00FD89009225FB /* SwiftExtension */,
+				C9439A782C3EC4220020DDF5 /* Clojure */,
 			);
 		};
 /* End PBXProject section */
@@ -2967,6 +3035,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		C942E6742B67B78E00792DD4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9439A772C3EC4220020DDF5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -3085,6 +3160,15 @@
 			files = (
 				C942E6AC2B69747E00792DD4 /* UserScriptStandaloneExtension.swift in Sources */,
 				C942E6792B67B78F00792DD4 /* UserScriptExtension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9439A752C3EC4220020DDF5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C986F2492C3ED60800A62879 /* ClojureExtension.swift in Sources */,
+				C995EA752C3ED52900D3ED4C /* ClojureStandaloneExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3384,6 +3468,7 @@
 				C9FE54052A7A613C00CACA1A /* FilteringExtension.swift in Sources */,
 				C97918FC2A9E5EFC0046EAF1 /* CompositeProjectService.swift in Sources */,
 				C941F0AC2B6E5A760003B640 /* AppHost.swift in Sources */,
+				C986F24A2C3ED67900A62879 /* ClojureExtension.swift in Sources */,
 				C92672FA2B039AA300B3CE2F /* SwiftExtension.swift in Sources */,
 				C9FE53E82A7A5B2000CACA1A /* LazyRemoteExtension.swift in Sources */,
 				C97919002A9E728F0046EAF1 /* ExtensionManager.swift in Sources */,
@@ -3509,6 +3594,11 @@
 			isa = PBXTargetDependency;
 			target = C9FE52F32A7539B100CACA1A /* ChimeKit */;
 			targetProxy = C9439A6E2C3EB41F0020DDF5 /* PBXContainerItemProxy */;
+		};
+		C9439A802C3EC4220020DDF5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9439A782C3EC4220020DDF5 /* Clojure */;
+			targetProxy = C9439A7F2C3EC4220020DDF5 /* PBXContainerItemProxy */;
 		};
 		C95B90FD2BD80C71006FDD00 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -3718,6 +3808,21 @@
 			isa = PBXTargetDependency;
 			productRef = C99491CB2B153914002DC2AC /* RelativeCollections */;
 		};
+		C995EA6C2C3EC90A00D3ED4C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9FE52F32A7539B100CACA1A /* ChimeKit */;
+			targetProxy = C995EA6B2C3EC90A00D3ED4C /* PBXContainerItemProxy */;
+		};
+		C995EA6E2C3EC91400D3ED4C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9FE52F32A7539B100CACA1A /* ChimeKit */;
+			targetProxy = C995EA6D2C3EC91400D3ED4C /* PBXContainerItemProxy */;
+		};
+		C995EA702C3EC91A00D3ED4C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9FE52F32A7539B100CACA1A /* ChimeKit */;
+			targetProxy = C995EA6F2C3EC91A00D3ED4C /* PBXContainerItemProxy */;
+		};
 		C999C7862ABDA97500D49939 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C9FE52F32A7539B100CACA1A /* ChimeKit */;
@@ -3803,11 +3908,6 @@
 			target = C9BDB5472B00FD89009225FB /* SwiftExtension */;
 			targetProxy = C9BDB54E2B00FD89009225FB /* PBXContainerItemProxy */;
 		};
-		C9BDB5562B010088009225FB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = C9FE52F32A7539B100CACA1A /* ChimeKit */;
-			targetProxy = C9BDB5552B010088009225FB /* PBXContainerItemProxy */;
-		};
 		C9BFA1A52BBF4FD600E86487 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			productRef = C9BFA1A42BBF4FD600E86487 /* NSUI */;
@@ -3870,11 +3970,6 @@
 			isa = PBXTargetDependency;
 			target = C9E878002A9F53530018340C /* UIPlaceholder */;
 			targetProxy = C9E878072A9F53530018340C /* PBXContainerItemProxy */;
-		};
-		C9E8780F2A9F53770018340C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = C9FE52F32A7539B100CACA1A /* ChimeKit */;
-			targetProxy = C9E8780E2A9F53770018340C /* PBXContainerItemProxy */;
 		};
 		C9E8781E2A9FD0B70018340C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -4076,6 +4171,20 @@
 			name = Debug;
 		};
 		C942E6812B67B78F00792DD4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9E878112A9F53BB0018340C /* Extension.xcconfig */;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		C9439A842C3EC4220020DDF5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9E878112A9F53BB0018340C /* Extension.xcconfig */;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		C9439A852C3EC4220020DDF5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C9E878112A9F53BB0018340C /* Extension.xcconfig */;
 			buildSettings = {
@@ -4481,6 +4590,15 @@
 			buildConfigurations = (
 				C942E6802B67B78F00792DD4 /* Debug */,
 				C942E6812B67B78F00792DD4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C9439A832C3EC4220020DDF5 /* Build configuration list for PBXNativeTarget "Clojure" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9439A842C3EC4220020DDF5 /* Debug */,
+				C9439A852C3EC4220020DDF5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

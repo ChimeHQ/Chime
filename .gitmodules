@@ -1,3 +1,6 @@
 [submodule "submodules/chime-swift"]
 	path = submodules/chime-swift
 	url = git@github.com:ChimeHQ/chime-swift.git
+[submodule "submodules/chime-clojure"]
+	path = submodules/chime-clojure
+	url = git@github.com:ChimeHQ/chime-clojure.git

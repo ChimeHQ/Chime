@@ -26,6 +26,7 @@ public final class ExtensionManager<Host: HostProtocol> {
 		} else {
 			// To use local extensions, you must uncomment one of these, *and also* make sure to add the extension sources to the ExtensionHost target.
 			self.localExtensions = [
+//				FilteringExtension(ext: ClojureExtension(host: host)),
 //				FilteringExtension(ext: SwiftExtension(host: host)),
 //				FilteringExtension(ext: UserScriptExtension(host: host))
 			]
