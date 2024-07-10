@@ -136,6 +136,7 @@
 		C9818AD52C3F2CA70032899D /* Gopls.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9818AD12C3F2CA70032899D /* Gopls.swift */; };
 		C9818AD82C3F2D350032899D /* ChimeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE52F42A7539B100CACA1A /* ChimeKit.framework */; };
 		C9818AD92C3F2DB90032899D /* Gopls.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9818AD12C3F2CA70032899D /* Gopls.swift */; };
+		C9818ADA2C3F40B00032899D /* ElixirStandaloneExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9818AB62C3EF68B0032899D /* ElixirStandaloneExtension.swift */; };
 		C986F2492C3ED60800A62879 /* ClojureExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C986F2472C3ED60800A62879 /* ClojureExtension.swift */; };
 		C986F24A2C3ED67900A62879 /* ClojureExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C986F2472C3ED60800A62879 /* ClojureExtension.swift */; };
 		C9891AF82AFE996300C8F393 /* NSParagraphStyle+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9891AF72AFE996300C8F393 /* NSParagraphStyle+Helpers.swift */; };
@@ -3353,6 +3354,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9818ABA2C3EF6E80032899D /* ElixirExtension.swift in Sources */,
+				C9818ADA2C3F40B00032899D /* ElixirStandaloneExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4582,7 +4584,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C92673282B04046700B3CE2F /* Edit-Debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 			};
 			name = Debug;
 		};
@@ -4590,7 +4591,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C9FE52CC2A752B4D00CACA1A /* Edit.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 			};
 			name = Release;
 		};
