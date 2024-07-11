@@ -17,4 +17,4 @@ Chime is an editor for macOS. The project is complex, and is undergoing major ch
 ### Core Functionality
 
 - ``<doc:Mutation>``
-
+- ``<doc:QuickLook>``

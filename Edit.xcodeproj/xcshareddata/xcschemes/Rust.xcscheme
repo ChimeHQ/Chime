@@ -17,7 +17,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C97640E52C40372C002C94BF"
-               BuildableName = "Rust.appex"
+               BuildableName = "RustExtension.appex"
                BlueprintName = "Rust"
                ReferencedContainer = "container:Edit.xcodeproj">
             </BuildableReference>
