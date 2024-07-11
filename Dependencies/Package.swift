@@ -22,6 +22,7 @@ let package = Package(
 		.package(url: "https://github.com/tree-sitter/tree-sitter-ocaml", branch: "master"),
 		.package(url: "https://github.com/tree-sitter/tree-sitter-python", branch: "master"),
 		.package(url: "https://github.com/tree-sitter/tree-sitter-ruby", branch: "master"),
+		.package(url: "https://github.com/tree-sitter/tree-sitter-rust", branch: "master"),
 		.package(url: "https://github.com/alex-pinkus/tree-sitter-swift", branch: "with-generated-files"),
 	],
 	targets: [
@@ -38,6 +39,7 @@ let package = Package(
 				.product(name: "TreeSitterOCaml", package: "tree-sitter-ocaml"),
 				.product(name: "TreeSitterPython", package: "tree-sitter-python"),
 				.product(name: "TreeSitterRuby", package: "tree-sitter-ruby"),
+				.product(name: "TreeSitterRust", package: "tree-sitter-rust"),
 				.product(name: "TreeSitterSwift", package: "tree-sitter-swift"),
 			]
 		),

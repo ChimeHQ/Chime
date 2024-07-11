@@ -9,4 +9,5 @@
 @_exported import TreeSitterOCaml
 @_exported import TreeSitterPython
 @_exported import TreeSitterRuby
+@_exported import TreeSitterRust
 @_exported import TreeSitterSwift

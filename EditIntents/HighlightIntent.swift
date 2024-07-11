@@ -21,6 +21,7 @@ extension RootLanguage: AppEnum {
 			.ocamlInterface: "OCaml Interface",
 			.python: "Python",
 			.ruby: "Ruby",
+			.rust: "Rust",
 			.swift: "Swift",
 		]
 	}

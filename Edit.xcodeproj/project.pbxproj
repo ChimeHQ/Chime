@@ -89,6 +89,10 @@
 		C973E0112B62BE0C000998F7 /* Highlighter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C973DFF62B62808D000998F7 /* Highlighter.swift */; };
 		C973E0132B62BE9F000998F7 /* TextViewSystemNeonInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99D76112B5EFA050028E3B0 /* TextViewSystemNeonInterface.swift */; };
 		C973E01F2B62C007000998F7 /* TokenServiceWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C973E01E2B62C007000998F7 /* TokenServiceWrapper.swift */; };
+		C97640EE2C40372C002C94BF /* RustExtension.appex in Copy Extensions */ = {isa = PBXBuildFile; fileRef = C97640E62C40372C002C94BF /* RustExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C97640F42C403777002C94BF /* RustExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97640F32C403777002C94BF /* RustExtension.swift */; };
+		C97640F52C40377D002C94BF /* RustExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97640F32C403777002C94BF /* RustExtension.swift */; };
+		C97640F82C403791002C94BF /* ChimeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE52F42A7539B100CACA1A /* ChimeKit.framework */; };
 		C979187B2A9CC1110046EAF1 /* SearchItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97918752A9CBEF20046EAF1 /* SearchItem.swift */; };
 		C979187C2A9CC1190046EAF1 /* RoundedCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97918792A9CBF8C0046EAF1 /* RoundedCorners.swift */; };
 		C979187D2A9CC1200046EAF1 /* ItemBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97918772A9CBF330046EAF1 /* ItemBackground.swift */; };
@@ -452,6 +456,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = C9B8AA492B37055800C79606;
 			remoteInfo = SyntaxService;
+		};
+		C97640EC2C40372C002C94BF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C97640E52C40372C002C94BF;
+			remoteInfo = Rust;
+		};
+		C97640F62C40378C002C94BF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9FE52F32A7539B100CACA1A;
+			remoteInfo = ChimeKit;
 		};
 		C97918712A9CBD6B0046EAF1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -938,6 +956,7 @@
 			dstPath = "$(EXTENSIONS_FOLDER_PATH)";
 			dstSubfolderSpec = 16;
 			files = (
+				C97640EE2C40372C002C94BF /* RustExtension.appex in Copy Extensions */,
 				C93F72582BF26E9C0021ACF3 /* EditIntents.appex in Copy Extensions */,
 				C9E878092A9F53530018340C /* UIPlaceholderExtension.appex in Copy Extensions */,
 				C9818ACA2C3F2C2F0032899D /* GoExtension.appex in Copy Extensions */,
@@ -1037,6 +1056,9 @@
 		C973DFF62B62808D000998F7 /* Highlighter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Highlighter.swift; sourceTree = "<group>"; };
 		C973E0002B62BDB3000998F7 /* libHighlighting.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libHighlighting.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C973E01E2B62C007000998F7 /* TokenServiceWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenServiceWrapper.swift; sourceTree = "<group>"; };
+		C97640E62C40372C002C94BF /* RustExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.extensionkit-extension"; includeInIndex = 0; path = RustExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		C97640F22C403744002C94BF /* RustStandaloneExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RustStandaloneExtension.swift; sourceTree = "<group>"; };
+		C97640F32C403777002C94BF /* RustExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RustExtension.swift; path = "submodules/chime-rust/Sources/ChimeRust/RustExtension.swift"; sourceTree = SOURCE_ROOT; };
 		C97918732A9CBEBA0046EAF1 /* StatusBarContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarContent.swift; sourceTree = "<group>"; };
 		C97918752A9CBEF20046EAF1 /* SearchItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItem.swift; sourceTree = "<group>"; };
 		C97918772A9CBF330046EAF1 /* ItemBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemBackground.swift; sourceTree = "<group>"; };
@@ -1289,6 +1311,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C97640E32C40372C002C94BF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C97640F82C403791002C94BF /* ChimeKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1594,6 +1624,15 @@
 			path = Highlighting;
 			sourceTree = "<group>";
 		};
+		C97640E72C40372C002C94BF /* Rust */ = {
+			isa = PBXGroup;
+			children = (
+				C97640F32C403777002C94BF /* RustExtension.swift */,
+				C97640F22C403744002C94BF /* RustStandaloneExtension.swift */,
+			);
+			path = Rust;
+			sourceTree = "<group>";
+		};
 		C979188F2A9CCC5E0046EAF1 /* Animations */ = {
 			isa = PBXGroup;
 			children = (
@@ -1794,6 +1833,7 @@
 				C9818AC32C3F2C2F0032899D /* Go */,
 				C9BDB54C2B00FD89009225FB /* Info.plist */,
 				C92631A62C40002F00C0AE07 /* Python */,
+				C97640E72C40372C002C94BF /* Rust */,
 				C9BDB5492B00FD89009225FB /* Swift */,
 				C9E878022A9F53530018340C /* UIPlaceholder */,
 				C942E6772B67B78F00792DD4 /* UserScriptExtension */,
@@ -1873,6 +1913,7 @@
 				C9818AAA2C3EF5ED0032899D /* ElixirExtension.appex */,
 				C9818AC22C3F2C2F0032899D /* GoExtension.appex */,
 				C92631A52C40002F00C0AE07 /* PythonExtension.appex */,
+				C97640E62C40372C002C94BF /* RustExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -2452,6 +2493,24 @@
 			productReference = C973E0002B62BDB3000998F7 /* libHighlighting.a */;
 			productType = "com.apple.product-type.library.static";
 		};
+		C97640E52C40372C002C94BF /* Rust */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C97640F12C40372C002C94BF /* Build configuration list for PBXNativeTarget "Rust" */;
+			buildPhases = (
+				C97640E22C40372C002C94BF /* Sources */,
+				C97640E32C40372C002C94BF /* Frameworks */,
+				C97640E42C40372C002C94BF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C97640F72C40378C002C94BF /* PBXTargetDependency */,
+			);
+			name = Rust;
+			productName = Rust;
+			productReference = C97640E62C40372C002C94BF /* RustExtension.appex */;
+			productType = "com.apple.product-type.extensionkit-extension";
+		};
 		C979189D2A9D1D6D0046EAF1 /* OpenQuickly */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C97918A42A9D1D6D0046EAF1 /* Build configuration list for PBXNativeTarget "OpenQuickly" */;
@@ -2729,6 +2788,7 @@
 				C9818AB12C3EF5ED0032899D /* PBXTargetDependency */,
 				C9818AC92C3F2C2F0032899D /* PBXTargetDependency */,
 				C92631AC2C40002F00C0AE07 /* PBXTargetDependency */,
+				C97640ED2C40372C002C94BF /* PBXTargetDependency */,
 			);
 			name = Edit;
 			packageProductDependencies = (
@@ -3064,6 +3124,10 @@
 					C973DFFF2B62BDB3000998F7 = {
 						CreatedOnToolsVersion = 15.2;
 					};
+					C97640E52C40372C002C94BF = {
+						CreatedOnToolsVersion = 15.4;
+						LastSwiftMigration = 1540;
+					};
 					C979189D2A9D1D6D0046EAF1 = {
 						CreatedOnToolsVersion = 15.0;
 					};
@@ -3223,6 +3287,7 @@
 				C9818AA92C3EF5ED0032899D /* Elixir */,
 				C9818AC12C3F2C2F0032899D /* Go */,
 				C92631A42C40002F00C0AE07 /* Python */,
+				C97640E52C40372C002C94BF /* Rust */,
 			);
 		};
 /* End PBXProject section */
@@ -3258,6 +3323,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		C9439A772C3EC4220020DDF5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C97640E42C40372C002C94BF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -3421,6 +3493,14 @@
 				C941F0A72B6C6FA00003B640 /* TextTarget+RangeTarget.swift in Sources */,
 				C973E0112B62BE0C000998F7 /* Highlighter.swift in Sources */,
 				C973E01F2B62C007000998F7 /* TokenServiceWrapper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C97640E22C40372C002C94BF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C97640F42C403777002C94BF /* RustExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3735,6 +3815,7 @@
 				C9818AB92C3EF6E80032899D /* ElixirExtension.swift in Sources */,
 				C97918F82A9E5E520046EAF1 /* ExtensionRouter.swift in Sources */,
 				C97918FA2A9E5EAF0046EAF1 /* CompositeDocumentService.swift in Sources */,
+				C97640F52C40377D002C94BF /* RustExtension.swift in Sources */,
 				C942E6AE2B69889F00792DD4 /* UserScriptExtension.swift in Sources */,
 				C9FE54072A7A617000CACA1A /* ExtensionDocumentState.swift in Sources */,
 				C941F0AD2B6E65110003B640 /* Process+Pipes.swift in Sources */,
@@ -3957,6 +4038,16 @@
 			isa = PBXTargetDependency;
 			target = C9B8AA492B37055800C79606 /* SyntaxService */;
 			targetProxy = C973E01C2B62BF4C000998F7 /* PBXContainerItemProxy */;
+		};
+		C97640ED2C40372C002C94BF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C97640E52C40372C002C94BF /* Rust */;
+			targetProxy = C97640EC2C40372C002C94BF /* PBXContainerItemProxy */;
+		};
+		C97640F72C40378C002C94BF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9FE52F32A7539B100CACA1A /* ChimeKit */;
+			targetProxy = C97640F62C40378C002C94BF /* PBXContainerItemProxy */;
 		};
 		C97918722A9CBD6B0046EAF1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -4517,6 +4608,20 @@
 			};
 			name = Release;
 		};
+		C97640EF2C40372C002C94BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9E878112A9F53BB0018340C /* Extension.xcconfig */;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		C97640F02C40372C002C94BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9E878112A9F53BB0018340C /* Extension.xcconfig */;
+			buildSettings = {
+			};
+			name = Release;
+		};
 		C97918A52A9D1D6D0046EAF1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C9FE531A2A759BC400CACA1A /* Module.xcconfig */;
@@ -4957,6 +5062,15 @@
 			buildConfigurations = (
 				C973E0072B62BDB4000998F7 /* Debug */,
 				C973E0082B62BDB4000998F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C97640F12C40372C002C94BF /* Build configuration list for PBXNativeTarget "Rust" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C97640EF2C40372C002C94BF /* Debug */,
+				C97640F02C40372C002C94BF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

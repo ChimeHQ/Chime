@@ -23,6 +23,7 @@
 				<string>public.python-script</string>
 				<string>public.ruby-script</string>
 				<string>org.rubygems.specification</string>
+				<string>org.rust-lang.rust-script</string>
 				<string>public.swift-source</string>
 			</array>
 			<key>QLSupportsSearchableItems</key>
