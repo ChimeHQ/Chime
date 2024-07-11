@@ -16,6 +16,14 @@ extension LanguageProfile {
 			return LanguageProfile.elixirProfile
 		}
 
+		if utType.conforms(to: .goSource) {
+			return LanguageProfile.goProfile
+		}
+
+		if utType.conforms(to: .goSumFile) {
+			return LanguageProfile.goSumProfile
+		}
+
 		if utType.conforms(to: .markdown) {
 			return LanguageProfile.markdownProfile
 		}
@@ -32,16 +40,12 @@ extension LanguageProfile {
 			return LanguageProfile.ocamlInterfaceProfile
 		}
 
+		if utType.conforms(to: .pythonScript) {
+			return LanguageProfile.pythonProfile
+		}
+
 		if utType.conforms(to: .swiftSource) {
 			return LanguageProfile.swiftProfile
-		}
-
-		if utType.conforms(to: .goSource) {
-			return LanguageProfile.goProfile
-		}
-
-		if utType.conforms(to: .goSumFile) {
-			return LanguageProfile.goSumProfile
 		}
 
 		return LanguageProfile.genericProfile
@@ -99,7 +103,11 @@ extension LanguageProfile {
 		name: "OCaml Interface",
 		language: Language(tree_sitter_ocaml_interface()),
 		bundleName: "TreeSitterOCaml_TreeSitterOCaml"
+	)
 
+	static let pythonProfile = LanguageProfile(
+		RootLanguage.python,
+		language: Language(tree_sitter_python())
 	)
 
 	static let swiftProfile = LanguageProfile(

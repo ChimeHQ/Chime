@@ -10,6 +10,8 @@
 		C900A7C82A9E94AE000556A6 /* libPreferencesWindow.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C900A7BA2A9E93FC000556A6 /* libPreferencesWindow.a */; };
 		C900A7CA2A9E94B4000556A6 /* ExtendableHost in Frameworks */ = {isa = PBXBuildFile; productRef = C900A7C92A9E94B4000556A6 /* ExtendableHost */; };
 		C900A7D12A9F472E000556A6 /* Chime.appextensionpoint in Copy Extensions */ = {isa = PBXBuildFile; fileRef = C900A7CF2A9F46EF000556A6 /* Chime.appextensionpoint */; };
+		C92631AD2C40002F00C0AE07 /* PythonExtension.appex in Copy Extensions */ = {isa = PBXBuildFile; fileRef = C92631A52C40002F00C0AE07 /* PythonExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C92631B22C40005800C0AE07 /* PythonStandaloneExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92631B12C40005200C0AE07 /* PythonStandaloneExtension.swift */; };
 		C92672F82B0399D800B3CE2F /* SwiftExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92672F72B0399D800B3CE2F /* SwiftExtension.swift */; };
 		C92672FA2B039AA300B3CE2F /* SwiftExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92672F72B0399D800B3CE2F /* SwiftExtension.swift */; };
 		C92673452B05500500B3CE2F /* RegionLabellingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92673442B05500500B3CE2F /* RegionLabellingView.swift */; };
@@ -150,6 +152,9 @@
 		C99491C52B153051002DC2AC /* TextMetrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99491C42B153051002DC2AC /* TextMetrics.swift */; };
 		C995EA6A2C3EC7A900D3ED4C /* ChimeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE52F42A7539B100CACA1A /* ChimeKit.framework */; };
 		C995EA752C3ED52900D3ED4C /* ClojureStandaloneExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C995EA742C3ED52900D3ED4C /* ClojureStandaloneExtension.swift */; };
+		C99A8DF92C40011100D8F599 /* PythonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99A8DF82C40011100D8F599 /* PythonExtension.swift */; };
+		C99A8DFA2C40011100D8F599 /* PythonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99A8DF82C40011100D8F599 /* PythonExtension.swift */; };
+		C99A8DFD2C40017200D8F599 /* ChimeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE52F42A7539B100CACA1A /* ChimeKit.framework */; };
 		C99D75F42B5DB42E0028E3B0 /* TextMetrics+ChimeKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99D75F32B5DB42E0028E3B0 /* TextMetrics+ChimeKit.swift */; };
 		C9B8A9812B1B836C00C79606 /* TextMetricsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B8A9802B1B836C00C79606 /* TextMetricsTests.swift */; };
 		C9B8A9D62B30613300C79606 /* DocumentCursorsMonitorModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B8A9D52B30613300C79606 /* DocumentCursorsMonitorModifier.swift */; };
@@ -258,6 +263,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = C900A7B92A9E93FC000556A6;
 			remoteInfo = PreferencesWindow;
+		};
+		C92631AB2C40002F00C0AE07 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C92631A42C40002F00C0AE07;
+			remoteInfo = Python;
 		};
 		C92673482B055DD700B3CE2F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -623,6 +635,13 @@
 			remoteGlobalIDString = C9FE52F32A7539B100CACA1A;
 			remoteInfo = ChimeKit;
 		};
+		C99A8DFB2C40016E00D8F599 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9FE52F32A7539B100CACA1A;
+			remoteInfo = ChimeKit;
+		};
 		C99D76162B5FE1530028E3B0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
@@ -918,6 +937,7 @@
 				C9BDB5502B00FD89009225FB /* SwiftExtension.appex in Copy Extensions */,
 				C9818AB22C3EF5ED0032899D /* ElixirExtension.appex in Copy Extensions */,
 				C9439A812C3EC4220020DDF5 /* ClojureExtension.appex in Copy Extensions */,
+				C92631AD2C40002F00C0AE07 /* PythonExtension.appex in Copy Extensions */,
 				C942E67E2B67B78F00792DD4 /* UserScriptExtension.appex in Copy Extensions */,
 				C900A7D12A9F472E000556A6 /* Chime.appextensionpoint in Copy Extensions */,
 			);
@@ -952,6 +972,8 @@
 /* Begin PBXFileReference section */
 		C900A7BA2A9E93FC000556A6 /* libPreferencesWindow.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPreferencesWindow.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C900A7CF2A9F46EF000556A6 /* Chime.appextensionpoint */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Chime.appextensionpoint; sourceTree = "<group>"; };
+		C92631A52C40002F00C0AE07 /* PythonExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.extensionkit-extension"; includeInIndex = 0; path = PythonExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		C92631B12C40005200C0AE07 /* PythonStandaloneExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PythonStandaloneExtension.swift; sourceTree = "<group>"; };
 		C92672F72B0399D800B3CE2F /* SwiftExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftExtension.swift; path = "submodules/chime-swift/Sources/ChimeSwift/SwiftExtension.swift"; sourceTree = SOURCE_ROOT; };
 		C92673282B04046700B3CE2F /* Edit-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Edit-Debug.xcconfig"; sourceTree = "<group>"; };
 		C92673432B05244600B3CE2F /* EditUITests.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = EditUITests.xcconfig; sourceTree = "<group>"; };
@@ -1067,6 +1089,7 @@
 		C99491C12B0D1660002DC2AC /* TextStorageDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextStorageDispatcher.swift; sourceTree = "<group>"; };
 		C99491C42B153051002DC2AC /* TextMetrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextMetrics.swift; sourceTree = "<group>"; };
 		C995EA742C3ED52900D3ED4C /* ClojureStandaloneExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClojureStandaloneExtension.swift; sourceTree = "<group>"; };
+		C99A8DF82C40011100D8F599 /* PythonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PythonExtension.swift; path = "submodules/chime-python/Sources/ChimePython/PythonExtension.swift"; sourceTree = SOURCE_ROOT; };
 		C99D75F32B5DB42E0028E3B0 /* TextMetrics+ChimeKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextMetrics+ChimeKit.swift"; sourceTree = "<group>"; };
 		C99D76112B5EFA050028E3B0 /* TextViewSystemNeonInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewSystemNeonInterface.swift; sourceTree = "<group>"; };
 		C9B8A9802B1B836C00C79606 /* TextMetricsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextMetricsTests.swift; sourceTree = "<group>"; };
@@ -1186,6 +1209,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C92631A22C40002F00C0AE07 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C99A8DFD2C40017200D8F599 /* ChimeKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1477,6 +1508,15 @@
 			path = PreferencesWindow;
 			sourceTree = "<group>";
 		};
+		C92631A62C40002F00C0AE07 /* Python */ = {
+			isa = PBXGroup;
+			children = (
+				C99A8DF82C40011100D8F599 /* PythonExtension.swift */,
+				C92631B12C40005200C0AE07 /* PythonStandaloneExtension.swift */,
+			);
+			path = Python;
+			sourceTree = "<group>";
+		};
 		C93F72492BF26BDC0021ACF3 /* EditIntents */ = {
 			isa = PBXGroup;
 			children = (
@@ -1746,6 +1786,7 @@
 				C9E878062A9F53530018340C /* Extension.entitlements */,
 				C9818AC32C3F2C2F0032899D /* Go */,
 				C9BDB54C2B00FD89009225FB /* Info.plist */,
+				C92631A62C40002F00C0AE07 /* Python */,
 				C9BDB5492B00FD89009225FB /* Swift */,
 				C9E878022A9F53530018340C /* UIPlaceholder */,
 				C942E6772B67B78F00792DD4 /* UserScriptExtension */,
@@ -1824,6 +1865,7 @@
 				C9439A792C3EC4220020DDF5 /* ClojureExtension.appex */,
 				C9818AAA2C3EF5ED0032899D /* ElixirExtension.appex */,
 				C9818AC22C3F2C2F0032899D /* GoExtension.appex */,
+				C92631A52C40002F00C0AE07 /* PythonExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -2259,6 +2301,24 @@
 			productReference = C900A7BA2A9E93FC000556A6 /* libPreferencesWindow.a */;
 			productType = "com.apple.product-type.library.static";
 		};
+		C92631A42C40002F00C0AE07 /* Python */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C92631B02C40002F00C0AE07 /* Build configuration list for PBXNativeTarget "Python" */;
+			buildPhases = (
+				C92631A12C40002F00C0AE07 /* Sources */,
+				C92631A22C40002F00C0AE07 /* Frameworks */,
+				C92631A32C40002F00C0AE07 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C99A8DFC2C40016E00D8F599 /* PBXTargetDependency */,
+			);
+			name = Python;
+			productName = Python;
+			productReference = C92631A52C40002F00C0AE07 /* PythonExtension.appex */;
+			productType = "com.apple.product-type.extensionkit-extension";
+		};
 		C92931412B80CC6700C64DDE /* EditKit */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C929314A2B80CC6700C64DDE /* Build configuration list for PBXNativeTarget "EditKit" */;
@@ -2660,6 +2720,7 @@
 				C9439A802C3EC4220020DDF5 /* PBXTargetDependency */,
 				C9818AB12C3EF5ED0032899D /* PBXTargetDependency */,
 				C9818AC92C3F2C2F0032899D /* PBXTargetDependency */,
+				C92631AC2C40002F00C0AE07 /* PBXTargetDependency */,
 			);
 			name = Edit;
 			packageProductDependencies = (
@@ -2976,6 +3037,9 @@
 						CreatedOnToolsVersion = 15.0;
 						LastSwiftMigration = 1500;
 					};
+					C92631A42C40002F00C0AE07 = {
+						CreatedOnToolsVersion = 15.4;
+					};
 					C92931412B80CC6700C64DDE = {
 						CreatedOnToolsVersion = 15.3;
 					};
@@ -3150,11 +3214,19 @@
 				C9439A782C3EC4220020DDF5 /* Clojure */,
 				C9818AA92C3EF5ED0032899D /* Elixir */,
 				C9818AC12C3F2C2F0032899D /* Go */,
+				C92631A42C40002F00C0AE07 /* Python */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		C92631A32C40002F00C0AE07 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C92931402B80CC6700C64DDE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -3283,6 +3355,15 @@
 				C9E0BA352BD2C7F2007AF034 /* ThemeView.swift in Sources */,
 				C9E0BA312BD2C1FA007AF034 /* SettingsView.swift in Sources */,
 				C9E0BA372BD2C96D007AF034 /* ThemeTile.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C92631A12C40002F00C0AE07 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C92631B22C40005800C0AE07 /* PythonStandaloneExtension.swift in Sources */,
+				C99A8DFA2C40011100D8F599 /* PythonExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3651,6 +3732,7 @@
 				C941F0AD2B6E65110003B640 /* Process+Pipes.swift in Sources */,
 				C97919042A9E74620046EAF1 /* AppExtensionIdentity+UI.swift in Sources */,
 				C9818AD22C3F2CA70032899D /* GoExtension.swift in Sources */,
+				C99A8DF92C40011100D8F599 /* PythonExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3677,6 +3759,11 @@
 			isa = PBXTargetDependency;
 			target = C900A7B92A9E93FC000556A6 /* PreferencesWindow */;
 			targetProxy = C900A7CD2A9E9600000556A6 /* PBXContainerItemProxy */;
+		};
+		C92631AC2C40002F00C0AE07 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C92631A42C40002F00C0AE07 /* Python */;
+			targetProxy = C92631AB2C40002F00C0AE07 /* PBXContainerItemProxy */;
 		};
 		C92673492B055DD700B3CE2F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -4021,6 +4108,11 @@
 			target = C9FE52F32A7539B100CACA1A /* ChimeKit */;
 			targetProxy = C999C7852ABDA97500D49939 /* PBXContainerItemProxy */;
 		};
+		C99A8DFC2C40016E00D8F599 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9FE52F32A7539B100CACA1A /* ChimeKit */;
+			targetProxy = C99A8DFB2C40016E00D8F599 /* PBXContainerItemProxy */;
+		};
 		C99D76172B5FE1530028E3B0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C9FE53DC2A7A5A2A00CACA1A /* ExtensionHost */;
@@ -4324,6 +4416,20 @@
 		C900A7C12A9E93FC000556A6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C9FE531A2A759BC400CACA1A /* Module.xcconfig */;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		C92631AE2C40002F00C0AE07 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9E878112A9F53BB0018340C /* Extension.xcconfig */;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		C92631AF2C40002F00C0AE07 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9E878112A9F53BB0018340C /* Extension.xcconfig */;
 			buildSettings = {
 			};
 			name = Release;
@@ -4784,6 +4890,15 @@
 			buildConfigurations = (
 				C900A7C02A9E93FC000556A6 /* Debug */,
 				C900A7C12A9E93FC000556A6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C92631B02C40002F00C0AE07 /* Build configuration list for PBXNativeTarget "Python" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C92631AE2C40002F00C0AE07 /* Debug */,
+				C92631AF2C40002F00C0AE07 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -16,6 +16,7 @@ public enum RootLanguage: Hashable, CaseIterable, Sendable {
 	case markdown
 	case ocaml
 	case ocamlInterface
+	case python
 	case swift
 
 	var typeIdentifier: UTType {
@@ -29,6 +30,7 @@ public enum RootLanguage: Hashable, CaseIterable, Sendable {
 		case .markdown: .markdown
 		case .ocaml: .ocamlSource
 		case .ocamlInterface: .ocamlInterface
+		case .python: .pythonScript
 		case .swift: .swiftSource
 		}
 	}
@@ -59,6 +61,8 @@ extension RootLanguage: RawRepresentable {
 			self = .ocaml
 		case "ocaml-interface":
 			self = .ocamlInterface
+		case "python":
+			self = .python
 		case "swift":
 			self = .swift
 		default:
@@ -86,6 +90,8 @@ extension RootLanguage: RawRepresentable {
 			"OCaml"
 		case .ocamlInterface:
 			"OCaml Interface"
+		case .python:
+			"Python"
 		case .swift:
 			"Swift"
 		}

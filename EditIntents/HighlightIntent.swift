@@ -19,6 +19,7 @@ extension RootLanguage: AppEnum {
 			.markdown: "Markdown",
 			.ocaml: "OCaml",
 			.ocamlInterface: "OCaml Interface",
+			.python: "Python",
 			.swift: "Swift",
 		]
 	}

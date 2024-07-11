@@ -7,4 +7,5 @@
 @_exported import TreeSitterMarkdown
 @_exported import TreeSitterMarkdownInline
 @_exported import TreeSitterOCaml
+@_exported import TreeSitterPython
 @_exported import TreeSitterSwift

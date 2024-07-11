@@ -13,6 +13,7 @@
 				<string>public.swift-source</string>
 				<string>dev.go.go-source</string>
 				<string>org.golang.go-script</string>
+				<string>public.python-script</string>
 			</array>
 			<key>QLSupportsSearchableItems</key>
 			<false/>
