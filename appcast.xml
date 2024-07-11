@@ -45,5 +45,26 @@ Fixes:
 				length="7452070"
 				type="application/octet-stream" />
 		</item>
+		<item>
+			<title>Version 3.0.0</title>
+			<description sparkle:format="plain-text">
+Features:
+- Encorporating language support/extensions for Clojure, Elixir, Go, Python, Rust
+
+Improvments:
+- Use TitlebarClickAwareWindow from WindowTreatment library by @McNight
+
+Fixes:
+			</description>
+			<sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+			<sparkle:channel>beta</sparkle:channel>
+			<sparkle:version>202</sparkle:version>
+			<sparkle:shortVersionString>3.0.0</sparkle:shortVersionString>
+			<pubDate>Thu, 11 Jul 2024 14:00:54 -0400</pubDate>
+			<enclosure url="https://github.com/ChimeHQ/Chime/releases/download/202/Chime.zip"
+				sparkle:edSignature="CumkTTEzjY4MxFF8D+/dqyFtXNWEpnSPAMPAOvPiaDhSX6nsWBrKgO2sDz7hb9kCgeR5gZ/DPjewh5iWTaqRBg=="
+				length="12112599"
+				type="application/octet-stream" />
+		</item>
 	</channel>
 </rss>
