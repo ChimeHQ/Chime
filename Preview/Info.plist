@@ -10,10 +10,17 @@
 			<false/>
 			<key>QLSupportedContentTypes</key>
 			<array>
-				<string>public.swift-source</string>
+				<string>org.clojure.source</string>
+				<string>org.elixir-lang.source</string>
 				<string>dev.go.go-source</string>
 				<string>org.golang.go-script</string>
+				<string>dev.go.go-module</string>
+				<string>dev.go.go-work</string>
+				<string>dev.go.go-sum</string>
+				<string>org.ocaml.ocaml</string>
+				<string>org.ocaml.ocaml-interface</string>
 				<string>public.python-script</string>
+				<string>public.swift-source</string>
 			</array>
 			<key>QLSupportsSearchableItems</key>
 			<false/>

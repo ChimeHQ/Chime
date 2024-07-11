@@ -27,6 +27,7 @@ The easiest path to supporting the language syntax is to use Chime's tree-sitter
 - Include the library module name in `NonSwiftWorkaround.xcconfig` to address an Xcode bug
 - Add new static property to `LanguageProfile` for the language
 - Match the language UTI and return it in `LanguageProfile.profile(for:)`
+- Add the language UTI to Preview > Info.plist > `NSExtension` > `NSExtensionAttributes` > `QLSupportedContentTypes`
 
 Chime also needs to locate the correct tree-sitter query definitions to perform highlighting and embedded language detection. This will be done automatically if the parser SPM package includes queries.
 
