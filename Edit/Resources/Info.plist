@@ -86,6 +86,23 @@
 			</dict>
 		</dict>
 		<dict>
+			<key>UTTypeReferenceURL</key>
+			<string>https://cocoapods.org</string>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.ruby-script</string>
+			</array>
+			<key>UTTypeIdentifier</key>
+			<string>org.cocoapods.specification</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>podspec</string>
+				</array>
+			</dict>
+		</dict>
+		<dict>
 			<key>UTTypeConformsTo</key>
 			<array>
 				<string>public.source-code</string>
@@ -223,6 +240,40 @@
 				<key>public.filename-extension</key>
 				<array>
 					<string>mli</string>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>UTTypeReferenceURL</key>
+			<string>https://rubygems.org</string>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.ruby-script</string>
+			</array>
+			<key>UTTypeIdentifier</key>
+			<string>org.rubygems.specification</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>gemspec</string>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>UTTypeReferenceURL</key>
+			<string>https://github.com/ruby/rake</string>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.ruby-script</string>
+			</array>
+			<key>UTTypeIdentifier</key>
+			<string>org.ruby-lang.rake</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>rake</string>
 				</array>
 			</dict>
 		</dict>

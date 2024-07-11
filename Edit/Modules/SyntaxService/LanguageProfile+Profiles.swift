@@ -44,6 +44,10 @@ extension LanguageProfile {
 			return LanguageProfile.pythonProfile
 		}
 
+		if utType.conforms(to: .rubyScript) {
+			return LanguageProfile.rubyProfile
+		}
+
 		if utType.conforms(to: .swiftSource) {
 			return LanguageProfile.swiftProfile
 		}
@@ -108,6 +112,11 @@ extension LanguageProfile {
 	static let pythonProfile = LanguageProfile(
 		RootLanguage.python,
 		language: Language(tree_sitter_python())
+	)
+
+	static let rubyProfile = LanguageProfile(
+		RootLanguage.ruby,
+		language: Language(tree_sitter_ruby())
 	)
 
 	static let swiftProfile = LanguageProfile(

@@ -1,5 +1,5 @@
 {
-  "originHash" : "a40fd49a16700338aabad67421f82fb686bfcd06da9dc2ea24be06be89094a14",
+  "originHash" : "547710c82c4ec23bd5902c9d500be3a3fc3c0a4a4837d5f28eda84b99ec91cc1",
   "pins" : [
     {
       "identity" : "asyncxpcconnection",
@@ -319,6 +319,15 @@
       "state" : {
         "branch" : "master",
         "revision" : "ccc2408e558029ad82b0dea63ff55ada495965da"
+      }
+    },
+    {
+      "identity" : "tree-sitter-ruby",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/tree-sitter/tree-sitter-ruby",
+      "state" : {
+        "branch" : "master",
+        "revision" : "0ffe457fb6aabf064f173fd30ea356845cef2513"
       }
     },
     {

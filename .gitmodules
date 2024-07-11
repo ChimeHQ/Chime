@@ -13,3 +13,6 @@
 [submodule "submodules/chime-python"]
 	path = submodules/chime-python
 	url = git@github.com:ChimeHQ/chime-python.git
+[submodule "submodules/chime-ruby"]
+	path = submodules/chime-ruby
+	url = git@github.com:ChimeHQ/chime-ruby.git

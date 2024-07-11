@@ -642,6 +642,13 @@
 			remoteGlobalIDString = C9FE52F32A7539B100CACA1A;
 			remoteInfo = ChimeKit;
 		};
+		C99A8DFE2C4013BC00D8F599 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9B8AA492B37055800C79606;
+			remoteInfo = SyntaxService;
+		};
 		C99D76162B5FE1530028E3B0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
@@ -2375,6 +2382,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				C99A8DFF2C4013BC00D8F599 /* PBXTargetDependency */,
 				C9439A6F2C3EB41F0020DDF5 /* PBXTargetDependency */,
 				C9439A6D2C3EB3F00020DDF5 /* PBXTargetDependency */,
 			);
@@ -4112,6 +4120,11 @@
 			isa = PBXTargetDependency;
 			target = C9FE52F32A7539B100CACA1A /* ChimeKit */;
 			targetProxy = C99A8DFB2C40016E00D8F599 /* PBXContainerItemProxy */;
+		};
+		C99A8DFF2C4013BC00D8F599 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9B8AA492B37055800C79606 /* SyntaxService */;
+			targetProxy = C99A8DFE2C4013BC00D8F599 /* PBXContainerItemProxy */;
 		};
 		C99D76172B5FE1530028E3B0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;

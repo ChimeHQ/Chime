@@ -11,6 +11,7 @@
 			<key>QLSupportedContentTypes</key>
 			<array>
 				<string>org.clojure.source</string>
+				<string>org.cocoapods.specification</string>
 				<string>org.elixir-lang.source</string>
 				<string>dev.go.go-source</string>
 				<string>org.golang.go-script</string>
@@ -20,6 +21,8 @@
 				<string>org.ocaml.ocaml</string>
 				<string>org.ocaml.ocaml-interface</string>
 				<string>public.python-script</string>
+				<string>public.ruby-script</string>
+				<string>org.rubygems.specification</string>
 				<string>public.swift-source</string>
 			</array>
 			<key>QLSupportsSearchableItems</key>
