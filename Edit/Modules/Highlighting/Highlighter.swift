@@ -61,7 +61,7 @@ final class LowlightTokenProvider {
 
 		if utType.conforms(to: .swiftSource) {
 			return Language(
-				keywords: ["import", "for", "final", "class", "let", "func", "return", "private", "public", "guard", "actor"],
+				keywords: ["async", "import", "for", "final", "class", "let", "func", "return", "private", "public", "guard", "actor"],
 				lineComment: "//"
 			)
 		}
