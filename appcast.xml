@@ -66,5 +66,26 @@ Fixes:
 				length="12112599"
 				type="application/octet-stream" />
 		</item>
+		<item>
+			<title>Version 3.0.0</title>
+			<description sparkle:format="plain-text">
+Features:
+
+Improvments:
+- Moves to a new version of ThemePark for big efficiency and correctness improvments to theme management
+- Stores current theme information in a shared suite
+
+Fixes:
+			</description>
+			<sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+			<sparkle:channel>beta</sparkle:channel>
+			<sparkle:version>203</sparkle:version>
+			<sparkle:shortVersionString>3.0.0</sparkle:shortVersionString>
+			<pubDate>Fri, 19 Jul 2024 08:08:09 -0400</pubDate>
+			<enclosure url="https://github.com/ChimeHQ/Chime/releases/download/203/Chime.zip"
+				sparkle:edSignature="QZUSLJ7W91HKGSkTHNQBagQVYvxuTIF4cpOmaKyQTTYE4dy6pmq6LjF45HHVauAPFuc2CrtM6sRv5mEbo7aDDQ=="
+				length="12094958"
+				type="application/octet-stream" />
+		</item>
 	</channel>
 </rss>
