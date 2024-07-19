@@ -31,6 +31,15 @@ Features:
 - textual/symbolic quick open
 - UI theming
 
+## Usage
+
+To install Chime's Quick Look Preview extension and Shortcuts, you must do two things:
+
+- Launch the app
+- Select a theme from Chime > Settings
+
+After that, you can quit and not touch it again. However, to get automatic updates, you must also re-launch the app from time to time. But that's, of course, totally optional.
+
 ## Project State
 
 Chime, as an editor, should be considered mostly **non-functional** right now. If you want to use it in that capacity, you can [download][download] the current stable version. However, the Quick Look Preview extension exists to help expose real, useful features of this project. You can check that out via [releases][releases].
@@ -85,7 +94,7 @@ Chime is a reasonably complex project. It's bound to run into bugs in Apple fram
 - FB12094161: System Settings extension approval system does not appear to work
 - FB11716027: EXAppExtensionBrowserViewController duplicate apps
 - FB11748287: Static metadata for extension available in AppExtensionIdentity
-- FB13384096: Package with non-Swift target fails to build unless explicitly linked
+- FB14262567: Dupilcate entries for static libraries that link against SPM modules
 
 ## Other Notable Projects
 
