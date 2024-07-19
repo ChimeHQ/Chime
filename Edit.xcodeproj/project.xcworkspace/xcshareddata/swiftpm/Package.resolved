@@ -1,5 +1,5 @@
 {
-  "originHash" : "7ec6ccb9bc276a295422e18b1a495ba45c60ca70b5912320b7f399276466ef72",
+  "originHash" : "149adbfbae957f76ac903a7309649365bc7a1ca5a075d5070b19f145bb016507",
   "pins" : [
     {
       "identity" : "asyncxpcconnection",
@@ -237,7 +237,7 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ChimeHQ/ThemePark",
       "state" : {
-        "revision" : "fff8ae0521d76e81acd5c72ad39144ad10f1d489"
+        "revision" : "2ccbf37a0c7e52c7b20aadabd8e8cbbb2b25b9a8"
       }
     },
     {

@@ -30,7 +30,7 @@ final class ThemeModel {
 @MainActor
 struct ThemeView: View {
 	@State private var model: ThemeModel
-	@AppStorage("theme-identifier") private var themeId: String = ""
+	@AppStorage("CurrentTheme", store: UserDefaults.sharedSuite) private var themeId: String = ""
 
 	private let adaptiveColumn = [
 		GridItem(.adaptive(minimum: 150))

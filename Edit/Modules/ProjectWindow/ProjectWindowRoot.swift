@@ -11,7 +11,7 @@ import Utility
 struct ProjectWindowRoot<Content: View>: View {
 	@Environment(WindowStateModel.self) private var model
 	@Environment(\.windowState) private var windowState
-	@AppStorage("theme-identifier") private var themeId: String = ""
+	@AppStorage("CurrentTheme", store: UserDefaults.sharedSuite) private var themeId: String = ""
 
 	let content: Content
 

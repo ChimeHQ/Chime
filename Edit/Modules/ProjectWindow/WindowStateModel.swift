@@ -50,11 +50,7 @@ public final class WindowStateModel {
 		self.documentContext = context
 		self.themeStore = themeStore
 
-		let theme = UserDefaults.standard
-			.string(forKey: "theme-identifier")
-			.map { themeStore.theme(with: $0) }
-
-		self.currentTheme = theme ?? Theme.fallback
+		self.currentTheme = ThemeStore.currentTheme ?? Theme.fallback
 	}
 
 	func windowStateChanged(_ old: WindowStateObserver.State, _ new: WindowStateObserver.State) {

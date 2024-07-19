@@ -5,6 +5,7 @@ import ThemePark
 @MainActor
 public final class ThemeStore {
 	private var themeCache = [Theme.Identity: Theme]()
+	private var themeURLs = [Theme.Identity: URL]()
 
 	public init() {
 	}
@@ -39,20 +40,41 @@ public final class ThemeStore {
 
 	private func loadXcodeThemes() {
 #if os(macOS)
-		for (name, theme) in XcodeTheme.all {
+		for url in XcodeTheme.all {
+			guard let theme = try? XcodeTheme(contentsOf: url) else { continue }
+
+			let name = url.deletingPathExtension().lastPathComponent
 			let identity = Theme.Identity(source: .xcode, name: name)
 
 			cacheStyler(theme, with: identity)
+			themeURLs[identity] = url
 		}
 #endif
 	}
 
 	private func loadTextMateThemes() {
 #if os(macOS)
-		for theme in TextMateTheme.all {
+		for url in TextMateTheme.all {
+			guard let theme = try? TextMateTheme(contentsOf: url) else { continue }
+
 			let identity = Theme.Identity(source: .textmate, name: theme.name)
 
 			cacheStyler(theme, with: identity)
+			themeURLs[identity] = url
+		}
+#endif
+	}
+
+	private func loadBBEditThemes() {
+#if os(macOS)
+		for url in BBEditTheme.all {
+			guard let theme = try? BBEditTheme(contentsOf: url) else { continue }
+
+			let name = url.deletingPathExtension().lastPathComponent
+			let identity = Theme.Identity(source: .bbedit, name: name)
+
+			cacheStyler(theme, with: identity)
+			themeURLs[identity] = url
 		}
 #endif
 	}
@@ -66,30 +88,7 @@ public final class ThemeStore {
 	private func loadThemes() {
 		loadXcodeThemes()
 		loadTextMateThemes()
-
-		guard let containerURL = FileManager.default.appGroupContainerURL else { return }
-
-		let themeCacheDir = containerURL.appending(path: "Library/Caches/Themes", directoryHint: .isDirectory)
-
-		try? FileManager.default.createDirectory(at: themeCacheDir, withIntermediateDirectories: true)
-
-		for (identity, theme) in themeCache {
-			let codableTheme = CodableTheme(styler: CodableStyler(theme), identity: identity)
-			let url = themeCacheDir.appending(path: identity.storageString, directoryHint: .notDirectory)
-
-			do {
-				let data = try JSONEncoder().encode(codableTheme)
-
-				try data.write(to: url)
-			} catch {
-				print("failed to write out current theme: ", error)
-			}
-		}
-
-		let names = themeCache.keys.map { $0.storageString }
-		UserDefaults.sharedSuite?.setValue(names, forKey: "ThemeIdentities")
-
-		print(Self.availableIdentities)
+		loadBBEditThemes()
 	}
 
 	public var all: [Theme.Identity: Theme] {
@@ -104,25 +103,51 @@ extension ThemeStore {
 		FileManager.default.appGroupContainerURL?.appending(path: "CurrentTheme.json")
 	}
 
-	public static var availableIdentities: Set<Theme.Identity> {
-		guard let names = UserDefaults.sharedSuite?.array(forKey: "ThemeIdentities") as? [String] else {
-			return []
-		}
-
-		return Set(names.compactMap { Theme.Identity(storageString: $0) })
+	public static var copiedThemesURL: URL? {
+		FileManager.default.appGroupContainerURL?.appending(path: "Themes")
 	}
 
+//	public static var availableIdentities: Set<Theme.Identity> {
+//		guard let names = UserDefaults.sharedSuite?.array(forKey: "ThemeIdentities") as? [String] else {
+//			return []
+//		}
+//
+//		return Set(names.compactMap { Theme.Identity(storageString: $0) })
+//	}
+
 	public static var currentTheme: Theme? {
-		guard let url = ThemeStore.currentThemeURL else {
+		guard let dirURL = Self.copiedThemesURL else {
 			return nil
 		}
 
+		guard let storageString = UserDefaults.sharedSuite?.string(forKey: "CurrentTheme") else {
+			return nil
+		}
+
+		guard let identity = Theme.Identity(storageString: storageString) else {
+			return nil
+		}
+
+		let themeURL = dirURL.appending(path: identity.storageString, directoryHint: .notDirectory)
+
 		do {
-			let data = try Data(contentsOf: url)
+			switch identity.source {
+			case .xcode:
+				let theme = try XcodeTheme(contentsOf: themeURL)
 
-			let codableTheme = try JSONDecoder().decode(CodableTheme.self, from: data)
+				return Theme(identity: identity, styler: theme)
+			case .textmate:
+				let theme = try TextMateTheme(contentsOf: themeURL)
 
-			return Theme(identity: codableTheme.identity, styler: codableTheme.styler)
+				return Theme(identity: identity, styler: theme)
+			case .bbedit:
+				let theme = try BBEditTheme(contentsOf: themeURL)
+
+				return Theme(identity: identity, styler: theme)
+			case .chime:
+				assertionFailure("What are we supposed to do here exactly?")
+				return Theme.fallback
+			}
 		} catch {
 			print("failed to load current theme: ", error)
 
@@ -131,18 +156,24 @@ extension ThemeStore {
 	}
 
 	public func updateCurrentTheme(with identity: Theme.Identity) {
-		guard let url = ThemeStore.currentThemeURL else {
+		UserDefaults.sharedSuite?.setValue(identity.storageString, forKey: "CurrentTheme")
+
+		guard let url = Self.copiedThemesURL else {
 			return
 		}
 
-		let theme = theme(with: identity)
-
-		let codableTheme = CodableTheme(styler: CodableStyler(theme), identity: identity)
+		guard let source = themeURLs[identity] else {
+			return
+		}
 
 		do {
-			let data = try JSONEncoder().encode(codableTheme)
 
-			try data.write(to: url)
+			let destination = url.appending(path: identity.storageString, directoryHint: .notDirectory)
+
+			try? FileManager.default.removeItem(at: destination)
+			try? FileManager.default.createDirectory(at: url, withIntermediateDirectories: true)
+			try FileManager.default.copyItem(at: source, to: destination)
+
 		} catch {
 			print("failed to write out current theme: ", error)
 		}

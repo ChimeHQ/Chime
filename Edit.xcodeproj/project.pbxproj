@@ -93,6 +93,7 @@
 		C97640F42C403777002C94BF /* RustExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97640F32C403777002C94BF /* RustExtension.swift */; };
 		C97640F52C40377D002C94BF /* RustExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97640F32C403777002C94BF /* RustExtension.swift */; };
 		C97640F82C403791002C94BF /* ChimeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE52F42A7539B100CACA1A /* ChimeKit.framework */; };
+		C976D7E62C4A86F900CC6EA6 /* ThemePark in Frameworks */ = {isa = PBXBuildFile; productRef = C976D7E52C4A86F900CC6EA6 /* ThemePark */; };
 		C979187B2A9CC1110046EAF1 /* SearchItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97918752A9CBEF20046EAF1 /* SearchItem.swift */; };
 		C979187C2A9CC1190046EAF1 /* RoundedCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97918792A9CBF8C0046EAF1 /* RoundedCorners.swift */; };
 		C979187D2A9CC1200046EAF1 /* ItemBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97918772A9CBF330046EAF1 /* ItemBackground.swift */; };
@@ -197,7 +198,6 @@
 		C9E0BA312BD2C1FA007AF034 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E0BA2F2BD2C1EF007AF034 /* SettingsView.swift */; };
 		C9E0BA352BD2C7F2007AF034 /* ThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E0BA342BD2C7F2007AF034 /* ThemeView.swift */; };
 		C9E0BA372BD2C96D007AF034 /* ThemeTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E0BA362BD2C96D007AF034 /* ThemeTile.swift */; };
-		C9E0BA3E2BD2EB54007AF034 /* ThemePark in Frameworks */ = {isa = PBXBuildFile; productRef = C9E0BA3D2BD2EB54007AF034 /* ThemePark */; };
 		C9E0BA422BD52732007AF034 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E0BA412BD52732007AF034 /* Theme.swift */; };
 		C9E877FC2A9F4B820018340C /* TrailingSidebar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E877FB2A9F4B820018340C /* TrailingSidebar.swift */; };
 		C9E878042A9F53530018340C /* UIPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E878032A9F53530018340C /* UIPlaceholder.swift */; };
@@ -1255,6 +1255,7 @@
 			files = (
 				C9439A732C3EB5260020DDF5 /* libSyntaxService.a in Frameworks */,
 				C9439A722C3EB5140020DDF5 /* libHighlighting.a in Frameworks */,
+				C976D7E62C4A86F900CC6EA6 /* ThemePark in Frameworks */,
 				C96B62002BDA71E400561DE8 /* libStatus.a in Frameworks */,
 				C96B61FF2BDA71B200561DE8 /* libUIUtility.a in Frameworks */,
 				C96B61FE2BDA719100561DE8 /* libGutter.a in Frameworks */,
@@ -1273,7 +1274,6 @@
 				C9BFA1B72BC162EF00E86487 /* NSUI in Frameworks */,
 				C9BFA1B02BC0927A00E86487 /* Glyph in Frameworks */,
 				C95B91362BD98CBD006FDD00 /* RelativeCollections in Frameworks */,
-				C9E0BA3E2BD2EB54007AF034 /* ThemePark in Frameworks */,
 				C929316A2B822BA700C64DDE /* libTheme.a in Frameworks */,
 				C95B913E2BD98D01006FDD00 /* SwiftTreeSitterLayer in Frameworks */,
 				C92931692B822B7B00C64DDE /* ColorToolbox in Frameworks */,
@@ -2379,6 +2379,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				C976D7E82C4A871400CC6EA6 /* PBXTargetDependency */,
 				C96B62022BDA71FE00561DE8 /* PBXTargetDependency */,
 				C96B61FB2BDA714000561DE8 /* PBXTargetDependency */,
 				C96B61F52BDA70E000561DE8 /* PBXTargetDependency */,
@@ -2396,7 +2397,6 @@
 				C92931682B822B7B00C64DDE /* ColorToolbox */,
 				C9BFA1AF2BC0927A00E86487 /* Glyph */,
 				C9BFA1B62BC162EF00E86487 /* NSUI */,
-				C9E0BA3D2BD2EB54007AF034 /* ThemePark */,
 				C95B91282BD98C3B006FDD00 /* Rearrange */,
 				C95B912C2BD98C50006FDD00 /* Neon */,
 				C95B91332BD98CA1006FDD00 /* SwiftTreeSitter */,
@@ -2407,6 +2407,7 @@
 				C96B61FC2BDA714700561DE8 /* ScrollViewPlus */,
 				C96B62052BDA721100561DE8 /* SourceView */,
 				C9439A702C3EB4410020DDF5 /* TreeSitterParsers */,
+				C976D7E52C4A86F900CC6EA6 /* ThemePark */,
 			);
 			productName = EditKit;
 			productReference = C92931422B80CC6700C64DDE /* EditKit.framework */;
@@ -3247,8 +3248,8 @@
 				C9C568562B7418B60093C068 /* XCRemoteSwiftPackageReference "Lowlight" */,
 				C9BFA1A12BBF4FA200E86487 /* XCRemoteSwiftPackageReference "nsui" */,
 				C9BFA1AE2BC0927A00E86487 /* XCRemoteSwiftPackageReference "Glyph" */,
-				C9E0BA3A2BD2EB05007AF034 /* XCRemoteSwiftPackageReference "ThemePark" */,
 				C93F72252BF0F9290021ACF3 /* XCRemoteSwiftPackageReference "Sparkle" */,
+				C976D7E42C4A86F800CC6EA6 /* XCRemoteSwiftPackageReference "ThemePark" */,
 			);
 			productRefGroup = C9FE529A2A7525D000CACA1A /* Products */;
 			projectDirPath = "";
@@ -4048,6 +4049,10 @@
 			isa = PBXTargetDependency;
 			target = C9FE52F32A7539B100CACA1A /* ChimeKit */;
 			targetProxy = C97640F62C40378C002C94BF /* PBXContainerItemProxy */;
+		};
+		C976D7E82C4A871400CC6EA6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = C976D7E72C4A871400CC6EA6 /* ThemePark */;
 		};
 		C97918722A9CBD6B0046EAF1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -5353,6 +5358,14 @@
 				revision = d563ef0ba6c1c91aa6bcee406577b8826baa1f69;
 			};
 		};
+		C976D7E42C4A86F800CC6EA6 /* XCRemoteSwiftPackageReference "ThemePark" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ChimeHQ/ThemePark";
+			requirement = {
+				kind = revision;
+				revision = 2ccbf37a0c7e52c7b20aadabd8e8cbbb2b25b9a8;
+			};
+		};
 		C97918C32A9D4A510046EAF1 /* XCRemoteSwiftPackageReference "FuzzyFind" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/truizlop/FuzzyFind";
@@ -5630,6 +5643,16 @@
 			package = C926738F2B078D3200B3CE2F /* XCRemoteSwiftPackageReference "Neon" */;
 			productName = Neon;
 		};
+		C976D7E52C4A86F900CC6EA6 /* ThemePark */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C976D7E42C4A86F800CC6EA6 /* XCRemoteSwiftPackageReference "ThemePark" */;
+			productName = ThemePark;
+		};
+		C976D7E72C4A871400CC6EA6 /* ThemePark */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C976D7E42C4A86F800CC6EA6 /* XCRemoteSwiftPackageReference "ThemePark" */;
+			productName = ThemePark;
+		};
 		C97918C62A9D4A6A0046EAF1 /* FuzzyFind */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C97918C32A9D4A510046EAF1 /* XCRemoteSwiftPackageReference "FuzzyFind" */;
@@ -5743,11 +5766,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C9FE53EB2A7A5D9700CACA1A /* XCRemoteSwiftPackageReference "Extendable" */;
 			productName = ExtendableHost;
-		};
-		C9E0BA3D2BD2EB54007AF034 /* ThemePark */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C9E0BA3A2BD2EB05007AF034 /* XCRemoteSwiftPackageReference "ThemePark" */;
-			productName = ThemePark;
 		};
 		C9F79DDD2A87E656005ED8E9 /* Outline */ = {
 			isa = XCSwiftPackageProductDependency;
