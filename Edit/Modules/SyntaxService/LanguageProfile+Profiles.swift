@@ -8,6 +8,10 @@ import TreeSitterSwift
 
 extension LanguageProfile {
 	static func profile(for utType: UTType) -> LanguageProfile {
+		if utType.conforms(to: .shellScript) {
+			return LanguageProfile.bashProfile
+		}
+
 		if utType.conforms(to: .clojureSource) {
 			return LanguageProfile.clojureProfile
 		}
@@ -57,6 +61,11 @@ extension LanguageProfile {
 }
 
 extension LanguageProfile {
+	static let bashProfile = LanguageProfile(
+		RootLanguage.bash,
+		language: Language(tree_sitter_bash())
+	)
+
 	static let clojureProfile = LanguageProfile(
 		RootLanguage.clojure,
 		language: Language(tree_sitter_clojure())

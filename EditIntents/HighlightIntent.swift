@@ -10,6 +10,7 @@ extension RootLanguage: AppEnum {
 	public static var typeDisplayRepresentation: TypeDisplayRepresentation { "Language" }
 	public static var caseDisplayRepresentations: [RootLanguage: DisplayRepresentation] {
 		[
+			.bash: "Bash",
 			.clojure: "Clojure",
 			.elixir: "Elixir",
 			.go: "Go",

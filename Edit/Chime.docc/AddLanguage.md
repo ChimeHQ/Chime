@@ -25,6 +25,7 @@ The easiest path to supporting the language syntax is to use Chime's tree-sitter
 - Add the SPM package to the `TreeSitterParsers` target of the `Dependencies` local package
 - Modify `Dependencies/Sources/TreeSitterParsers/TreeSitterParsers` to re-export the parser symbols
 - Include the library module name in `NonSwiftWorkaround.xcconfig` to address an Xcode bug
+- Add a new case to `RootLanguage` in `SyntaxService` for the language
 - Add new static property to `LanguageProfile` for the language
 - Match the language UTI and return it in `LanguageProfile.profile(for:)`
 - Add the language UTI to Preview > Info.plist > `NSExtension` > `NSExtensionAttributes` > `QLSupportedContentTypes`
