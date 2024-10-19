@@ -2379,6 +2379,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				C972C81F2C4BD96D00B8948A /* PBXTargetDependency */,
 				C976D7E82C4A871400CC6EA6 /* PBXTargetDependency */,
 				C96B62022BDA71FE00561DE8 /* PBXTargetDependency */,
 				C96B61FB2BDA714000561DE8 /* PBXTargetDependency */,
@@ -4016,6 +4017,10 @@
 			target = C92931412B80CC6700C64DDE /* EditKit */;
 			targetProxy = C96B62272BDA9F4500561DE8 /* PBXContainerItemProxy */;
 		};
+		C972C81F2C4BD96D00B8948A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = C972C81E2C4BD96D00B8948A /* TreeSitterParsers */;
+		};
 		C973E00A2B62BDDD000998F7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C9FE52F32A7539B100CACA1A /* ChimeKit */;
@@ -5637,6 +5642,10 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C9409C672A98CCCB00B5D898 /* XCRemoteSwiftPackageReference "SourceView" */;
 			productName = SourceView;
+		};
+		C972C81E2C4BD96D00B8948A /* TreeSitterParsers */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = TreeSitterParsers;
 		};
 		C973E00D2B62BDEE000998F7 /* Neon */ = {
 			isa = XCSwiftPackageProductDependency;

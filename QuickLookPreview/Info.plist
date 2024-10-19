@@ -10,6 +10,8 @@
 			<false/>
 			<key>QLSupportedContentTypes</key>
 			<array>
+				<string>public.c-header</string>
+				<string>public.c-source</string>
 				<string>org.clojure.source</string>
 				<string>org.cocoapods.specification</string>
 				<string>org.elixir-lang.source</string>

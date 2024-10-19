@@ -13,6 +13,7 @@ let package = Package(
 	],
 	dependencies: [
 		.package(url: "https://github.com/tree-sitter/tree-sitter-bash", branch: "master"),
+		.package(url: "https://github.com/tree-sitter/tree-sitter-c", branch: "master"),
 		.package(url: "https://github.com/mattmassicotte/tree-sitter-clojure", branch: "feature/spm"),
 		.package(url: "https://github.com/elixir-lang/tree-sitter-elixir", branch: "main"),
 		.package(url: "https://github.com/tree-sitter/tree-sitter-go", branch: "master"),
@@ -31,6 +32,7 @@ let package = Package(
 			name: "TreeSitterParsers",
 			dependencies: [
 				.product(name: "TreeSitterBash", package: "tree-sitter-bash"),
+				.product(name: "TreeSitterC", package: "tree-sitter-c"),
 				.product(name: "TreeSitterClojure", package: "tree-sitter-clojure"),
 				.product(name: "TreeSitterElixir", package: "tree-sitter-elixir"),
 				.product(name: "TreeSitterGo", package: "tree-sitter-go"),

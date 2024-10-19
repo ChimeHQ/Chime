@@ -12,6 +12,10 @@ extension LanguageProfile {
 			return LanguageProfile.bashProfile
 		}
 
+		if utType.conforms(to: .cSource) || utType.conforms(to: .cHeader) {
+			return LanguageProfile.cProfile
+		}
+
 		if utType.conforms(to: .clojureSource) {
 			return LanguageProfile.clojureProfile
 		}
@@ -64,6 +68,11 @@ extension LanguageProfile {
 	static let bashProfile = LanguageProfile(
 		RootLanguage.bash,
 		language: Language(tree_sitter_bash())
+	)
+
+	static let cProfile = LanguageProfile(
+		RootLanguage.c,
+		language: Language(tree_sitter_c())
 	)
 
 	static let clojureProfile = LanguageProfile(

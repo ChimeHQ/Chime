@@ -8,6 +8,7 @@ import ChimeKit
 /// This type must also be compiled into EditIntents, because the AppIntent infrastructure depends on having the type visible within the module.
 public enum RootLanguage: Hashable, CaseIterable, Sendable {
 	case bash
+	case c
 	case clojure
 	case elixir
 	case go
@@ -25,6 +26,7 @@ public enum RootLanguage: Hashable, CaseIterable, Sendable {
 	var typeIdentifier: UTType {
 		switch self {
 		case .bash: .shellScript
+		case .c: .cSource
 		case .clojure: .clojureSource
 		case .elixir: .elixirSource
 		case .go: .goSource
@@ -51,6 +53,8 @@ extension RootLanguage: RawRepresentable {
 		switch Self.normalizeLanguageName(rawValue) {
 		case "bash", "shell":
 			self = .bash
+		case "c":
+			self = .c
 		case "clojure":
 			self = .clojure
 		case "elixir":
@@ -86,6 +90,8 @@ extension RootLanguage: RawRepresentable {
 		switch self {
 		case .bash:
 			"Bash"
+		case .c:
+			"C"
 		case .clojure:
 			"Clojure"
 		case .elixir:
