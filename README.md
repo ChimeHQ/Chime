@@ -40,6 +40,18 @@ To install Chime's Quick Look Preview extension and Shortcuts, you must do two t
 
 After that, you can quit and not touch it again. However, to get automatic updates, you must also re-launch the app from time to time. But that's, of course, totally optional.
 
+## Extensions
+
+Chime has an extension system, backed by [ChimeKit][chimekit]. Because of limitations in how [ExtensionKit](https://developer.apple.com/documentation/extensionkit) can install extensions, these are also bundled into the application itself.
+
+- [Clojure](https://github.com/ChimeHQ/chime-clojure)
+- [Elixir](https://github.com/ChimeHQ/chime-elixir)
+- [Go](https://github.com/ChimeHQ/chime-go)
+- [Python](https://github.com/ChimeHQ/chime-python)
+- [Ruby](https://github.com/ChimeHQ/chime-ruby)
+- [Rust](https://github.com/ChimeHQ/chime-rust)
+- [Swift](https://github.com/ChimeHQ/chime-swift)
+
 ## Project State
 
 Chime, as an editor, should be considered mostly **non-functional** right now. If you want to use it in that capacity, you can [download][download] the current stable version. However, the Quick Look Preview extension exists to help expose real, useful features of this project. You can check that out via [releases][releases].
