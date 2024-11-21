@@ -20,6 +20,7 @@
 				<string>dev.go.go-module</string>
 				<string>dev.go.go-work</string>
 				<string>dev.go.go-sum</string>
+				<string>public.html</string>
 				<string>org.ocaml.ocaml</string>
 				<string>org.ocaml.ocaml-interface</string>
 				<string>public.python-script</string>

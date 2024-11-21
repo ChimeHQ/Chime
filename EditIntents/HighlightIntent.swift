@@ -18,6 +18,7 @@ extension RootLanguage: AppEnum {
 			.goMod: "Go Mod",
 			.goSum: "Go Sum",
 			.goWork: "Go Work",
+			.html: "HTML",
 			.markdown: "Markdown",
 			.ocaml: "OCaml",
 			.ocamlInterface: "OCaml Interface",
