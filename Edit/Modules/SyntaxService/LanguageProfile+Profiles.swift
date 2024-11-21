@@ -55,6 +55,10 @@ extension LanguageProfile {
 		if utType.conforms(to: .rubyScript) {
 			return LanguageProfile.rubyProfile
 		}
+		
+		if utType.conforms(to: .rustSource) {
+			return LanguageProfile.rustProfile
+		}
 
 		if utType.conforms(to: .swiftSource) {
 			return LanguageProfile.swiftProfile
@@ -140,6 +144,11 @@ extension LanguageProfile {
 	static let swiftProfile = LanguageProfile(
 		RootLanguage.swift,
 		language: Language(tree_sitter_swift())
+	)
+
+	static let rustProfile = LanguageProfile(
+		RootLanguage.rust,
+		language: Language(tree_sitter_rust())
 	)
 
 	static let genericProfile = LanguageProfile(
