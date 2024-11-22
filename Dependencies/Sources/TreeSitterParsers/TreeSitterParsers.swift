@@ -1,5 +1,6 @@
 @_exported import TreeSitterBash
 @_exported import TreeSitterC
+@_exported import TreeSitterCSS
 @_exported import TreeSitterClojure
 @_exported import TreeSitterElixir
 @_exported import TreeSitterGo

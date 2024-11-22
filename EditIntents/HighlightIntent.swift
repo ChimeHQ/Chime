@@ -12,6 +12,7 @@ extension RootLanguage: AppEnum {
 		[
 			.bash: "Bash",
 			.c: "C",
+			.css: "CSS",
 			.clojure: "Clojure",
 			.elixir: "Elixir",
 			.go: "Go",

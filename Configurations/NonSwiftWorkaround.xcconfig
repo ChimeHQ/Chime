@@ -9,6 +9,7 @@ OTHER_SWIFT_FLAGS = $(inherited) -Xcc -fmodule-map-file=$(GENERATED_MODULEMAP_DI
 // All the tree-sitter parsers
 OTHER_SWIFT_FLAGS = $(inherited) -Xcc -fmodule-map-file=$(GENERATED_MODULEMAP_DIR)/TreeSitterBash.modulemap
 OTHER_SWIFT_FLAGS = $(inherited) -Xcc -fmodule-map-file=$(GENERATED_MODULEMAP_DIR)/TreeSitterC.modulemap
+OTHER_SWIFT_FLAGS = $(inherited) -Xcc -fmodule-map-file=$(GENERATED_MODULEMAP_DIR)/TreeSitterCSS.modulemap
 OTHER_SWIFT_FLAGS = $(inherited) -Xcc -fmodule-map-file=$(GENERATED_MODULEMAP_DIR)/TreeSitterClojure.modulemap
 OTHER_SWIFT_FLAGS = $(inherited) -Xcc -fmodule-map-file=$(GENERATED_MODULEMAP_DIR)/TreeSitterElixir.modulemap
 OTHER_SWIFT_FLAGS = $(inherited) -Xcc -fmodule-map-file=$(GENERATED_MODULEMAP_DIR)/TreeSitterGo.modulemap
