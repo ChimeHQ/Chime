@@ -59,6 +59,8 @@ extension RootLanguage: RawRepresentable {
 			self = .bash
 		case "c":
 			self = .c
+		case "css":
+			self = .css
 		case "clojure":
 			self = .clojure
 		case "elixir":
