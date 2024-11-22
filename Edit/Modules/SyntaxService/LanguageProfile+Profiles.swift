@@ -40,6 +40,10 @@ extension LanguageProfile {
 			return LanguageProfile.htmlProfile
 		}
 
+		if utType.conforms(to: .json) {
+			return LanguageProfile.jsonProfile
+		}
+
 		if utType.conforms(to: .markdown) {
 			return LanguageProfile.markdownProfile
 		}
@@ -125,6 +129,11 @@ extension LanguageProfile {
 	static let htmlProfile = LanguageProfile(
 		RootLanguage.html,
 		language: Language(tree_sitter_html())
+	)
+
+	static let jsonProfile = LanguageProfile(
+		RootLanguage.json,
+		language: Language(tree_sitter_json())
 	)
 
 	static let markdownProfile = LanguageProfile(

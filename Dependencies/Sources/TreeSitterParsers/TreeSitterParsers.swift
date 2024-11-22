@@ -8,6 +8,7 @@
 @_exported import TreeSitterGosum
 @_exported import TreeSitterGoWork
 @_exported import TreeSitterHTML
+@_exported import TreeSitterJSON
 @_exported import TreeSitterMarkdown
 @_exported import TreeSitterMarkdownInline
 @_exported import TreeSitterOCaml
