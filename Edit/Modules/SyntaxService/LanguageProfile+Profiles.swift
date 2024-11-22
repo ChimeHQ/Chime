@@ -32,6 +32,10 @@ extension LanguageProfile {
 			return LanguageProfile.goSumProfile
 		}
 
+		if utType.conforms(to: .html) {
+			return LanguageProfile.htmlProfile
+		}
+
 		if utType.conforms(to: .markdown) {
 			return LanguageProfile.markdownProfile
 		}
@@ -107,6 +111,11 @@ extension LanguageProfile {
 	static let goWorkProfile = LanguageProfile(
 		RootLanguage.goWork,
 		language: Language(tree_sitter_gowork())
+	)
+
+	static let htmlProfile = LanguageProfile(
+		RootLanguage.html,
+		language: Language(tree_sitter_html())
 	)
 
 	static let markdownProfile = LanguageProfile(
