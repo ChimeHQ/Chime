@@ -215,24 +215,6 @@
 				<string>public.source-code</string>
 			</array>
 			<key>UTTypeDescription</key>
-			<string>HTML</string>
-			<key>UTTypeIdentifier</key>
-			<string>public.html</string>
-			<key>UTTypeTagSpecification</key>
-			<dict>
-				<key>public.filename-extension</key>
-				<array>
-					<string>html</string>
-					<string>htm</string>
-				</array>
-			</dict>
-		</dict>
-		<dict>
-			<key>UTTypeConformsTo</key>
-			<array>
-				<string>public.source-code</string>
-			</array>
-			<key>UTTypeDescription</key>
 			<string>OCaml Source</string>
 			<key>UTTypeIdentifier</key>
 			<string>org.ocaml.ocaml</string>
