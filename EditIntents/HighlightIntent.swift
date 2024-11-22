@@ -20,6 +20,7 @@ extension RootLanguage: AppEnum {
 			.goSum: "Go Sum",
 			.goWork: "Go Work",
 			.html: "HTML",
+			.javaScript: "JavaScript",
 			.json: "JSON",
 			.markdown: "Markdown",
 			.ocaml: "OCaml",
