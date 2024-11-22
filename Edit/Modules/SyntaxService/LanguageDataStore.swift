@@ -1,8 +1,10 @@
 import Foundation
+import OSLog
 import UniformTypeIdentifiers
 
 import RangeState
 import SwiftTreeSitter
+import Utility
 
 extension UTType {
 	static let markdownInline = UTType(importedAs: "net.daringfireball.markdown.inline", conformingTo: .markdown)
@@ -16,6 +18,7 @@ public final class LanguageDataStore {
 	private var configurationCache = [UTType : LanguageConfiguration]()
 	private var profileCache = [UTType : LanguageProfile]()
 	private var loadingSet = Set<String>()
+	private let logger = Logger(type: LanguageDataStore.self)
 
 	public var configurationLoaded: (String) -> Void = { _ in }
 
@@ -84,8 +87,16 @@ extension LanguageDataStore {
 			return config
 		}
 
-		Task {
-			_ = try? await loadLanguageConfiguration(with: utType, identifier: identifier)
+		Task<Void, Never> {
+			logger.info("Beginning background language config loading for \(identifier)")
+			
+			do {
+				_ = try await loadLanguageConfiguration(with: utType, identifier: identifier)
+				
+				logger.info("Load complete")
+			} catch {
+				logger.error("Failed to load config for \(identifier)")
+			}
 		}
 
 		return nil
