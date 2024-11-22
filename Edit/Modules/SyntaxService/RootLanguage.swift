@@ -17,6 +17,7 @@ public enum RootLanguage: Hashable, CaseIterable, Sendable {
 	case goSum
 	case goWork
 	case html
+	case json
 	case markdown
 	case ocaml
 	case ocamlInterface
@@ -37,6 +38,7 @@ public enum RootLanguage: Hashable, CaseIterable, Sendable {
 		case .goSum: .goSumFile
 		case .goWork: .goWorkFile
 		case .html: .html
+		case .json: .json
 		case .markdown: .markdown
 		case .ocaml: .ocamlSource
 		case .ocamlInterface: .ocamlInterface
@@ -75,6 +77,8 @@ extension RootLanguage: RawRepresentable {
 			self = .goWork
 		case "html":
 			self = .html
+		case "json":
+			self = .json
 		case "markdown":
 			self = .markdown
 		case "ocaml":
@@ -116,6 +120,8 @@ extension RootLanguage: RawRepresentable {
 			"Go Work"
 		case .html:
 			"HTML"
+		case .json:
+			"JSON"
 		case .markdown:
 			"Markdown"
 		case .ocaml:
