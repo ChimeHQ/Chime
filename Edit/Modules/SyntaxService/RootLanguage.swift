@@ -9,6 +9,7 @@ import ChimeKit
 public enum RootLanguage: Hashable, CaseIterable, Sendable {
 	case bash
 	case c
+	case css
 	case clojure
 	case elixir
 	case go
@@ -28,6 +29,7 @@ public enum RootLanguage: Hashable, CaseIterable, Sendable {
 		switch self {
 		case .bash: .shellScript
 		case .c: .cSource
+		case .css: .cssSource
 		case .clojure: .clojureSource
 		case .elixir: .elixirSource
 		case .go: .goSource
@@ -57,6 +59,8 @@ extension RootLanguage: RawRepresentable {
 			self = .bash
 		case "c":
 			self = .c
+		case "css":
+			self = .css
 		case "clojure":
 			self = .clojure
 		case "elixir":
@@ -96,6 +100,8 @@ extension RootLanguage: RawRepresentable {
 			"Bash"
 		case .c:
 			"C"
+		case .css:
+			"CSS"
 		case .clojure:
 			"Clojure"
 		case .elixir:
