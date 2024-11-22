@@ -180,6 +180,7 @@ extension TextViewSystem {
 	public func reload(from url: URL, attributes: [NSAttributedString.Key: Any]) throws {
 		let options: [NSAttributedString.DocumentReadingOptionKey: Any] = [
 			.defaultAttributes: attributes,
+			.documentType: NSAttributedString.DocumentType.plain,
 		]
 
 		let storage = try TSYTextStorage(url: url, options: options, documentAttributes: nil)
