@@ -1015,6 +1015,7 @@
 		C92931422B80CC6700C64DDE /* EditKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EditKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C92931722B822BFF00C64DDE /* EditKit.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = EditKit.xcconfig; sourceTree = "<group>"; };
 		C93791A32AD5E02C00665F50 /* Project-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Project-Debug.xcconfig"; sourceTree = "<group>"; };
+		C93A80492CC4052100B89FB4 /* Neon */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Neon; path = ../Neon; sourceTree = SOURCE_ROOT; };
 		C93F72482BF26BDC0021ACF3 /* EditIntents.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.extensionkit-extension"; includeInIndex = 0; path = EditIntents.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		C93F724A2BF26BDC0021ACF3 /* EditIntentsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditIntentsExtension.swift; sourceTree = "<group>"; };
 		C93F724C2BF26BDC0021ACF3 /* HighlightIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightIntent.swift; sourceTree = "<group>"; };
@@ -1863,6 +1864,7 @@
 		C9FE52902A7525D000CACA1A = {
 			isa = PBXGroup;
 			children = (
+				C93A80492CC4052100B89FB4 /* Neon */,
 				C9FE538E2A76674600CACA1A /* Configurations */,
 				C9439A742C3EC13A0020DDF5 /* Dependencies */,
 				C9FE529B2A7525D000CACA1A /* Edit */,
@@ -5336,7 +5338,7 @@
 			repositoryURL = "https://github.com/ChimeHQ/Neon.git";
 			requirement = {
 				kind = revision;
-				revision = 709683a2e2f3a2e502e8383f9aa5c725bf7d85e6;
+				revision = 9101469ff9ae2258e88099327969c350a953407d;
 			};
 		};
 		C93F72252BF0F9290021ACF3 /* XCRemoteSwiftPackageReference "Sparkle" */ = {

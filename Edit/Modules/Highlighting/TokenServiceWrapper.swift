@@ -30,7 +30,7 @@ extension TokenServiceWrapper {
 
 	public func tokens(for range: NSRange) async -> TokenApplication {
 		guard let service else { return .init(tokens: []) }
-		let textMetrics = await textSystem.textMetrics.valueProvider.mainActorAsync(.location(range.max, fill: .optional))
+		let textMetrics = await textSystem.textMetrics.valueProvider.async(.location(range.max, fill: .optional))
 
 		let combinedRange = CombinedTextRange(range: range, metrics: textMetrics)
 
@@ -41,10 +41,13 @@ extension TokenServiceWrapper {
 	}
 
 	public var tokenProvider: TokenProvider {
-		.init(
-			mainActorAsyncValue: { [textSystem] range in
+		TokenProvider.init(
+			// this is needed to work around a compiler crash
+			// https://github.com/swiftlang/swift/issues/77123
+			syncValue: { _ in nil },
+			mainActorAsyncValue: { @MainActor [textSystem] range in
 				guard let service = self.service else { return .init(tokens: []) }
-				let textMetrics = await textSystem.textMetrics.valueProvider.mainActorAsync(.location(range.max, fill: .optional))
+				let textMetrics = await textSystem.textMetrics.valueProvider.async(.location(range.max, fill: .optional))
 
 				let combinedRange = CombinedTextRange(range: range, metrics: textMetrics)
 

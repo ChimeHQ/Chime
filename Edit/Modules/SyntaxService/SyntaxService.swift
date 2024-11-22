@@ -208,7 +208,7 @@ extension SyntaxService {
 
 				do {
 					let queryParams = try self.highlightsQueryParams(for: range)
-					let namedRanges = try await client.highlightsProvider.mainActorAsync(queryParams)
+					let namedRanges = try await client.highlightsProvider.async(queryParams)
 
 					return TokenApplication(namedRanges: namedRanges, nameMap: [:], range: range)
 				} catch {

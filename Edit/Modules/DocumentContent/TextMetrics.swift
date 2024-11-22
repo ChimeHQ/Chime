@@ -36,7 +36,7 @@ extension Line {
 
 @MainActor
 public final class TextMetrics {
-	public typealias ValueProvider = HybridValueProvider<Query, TextMetrics>
+	public typealias ValueProvider = HybridSyncAsyncValueProvider<Query, TextMetrics, Never>
 
 	public nonisolated static let invalidationSetKey = "set"
 	public nonisolated static let textMetricsDidChangeNotification = Notification.Name("textMetricsDidChangeNotification")
