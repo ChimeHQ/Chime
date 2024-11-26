@@ -75,6 +75,7 @@ final class LowlightTokenProvider {
 	}
 }
 
+/// Manages syntax highlighting state.
 @MainActor
 public final class Highlighter<Service: TokenService> {
 	typealias Styler = ThreePhaseTextSystemStyler<TextViewSystemNeonInterface>
@@ -106,6 +107,7 @@ public final class Highlighter<Service: TokenService> {
 			return await tokenServiceWrapper.tokens(for: $0)
 		}
 
+		// Don't forget about `TokenProvider.none` and `asyncOnlyNone` when debugging here. They are handy!
 		self.styler = ThreePhaseTextSystemStyler(
 			textSystem: interface,
 			tokenProvider: syntaxService.tokenProvider,

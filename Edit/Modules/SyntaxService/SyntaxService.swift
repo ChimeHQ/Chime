@@ -26,7 +26,7 @@ extension TextTarget {
 	}
 }
 
-
+/// Provides semantic information about text.
 @MainActor
 public final class SyntaxService {
 	private enum State {
@@ -71,6 +71,7 @@ public final class SyntaxService {
 		let config = TreeSitterClient.Configuration(
 			languageProvider: { [languageDataStore] in languageDataStore.languageConfiguration(with: $0) },
 			contentProvider: { [textSystem] in textSystem.storage.layerContent(for: $0) },
+			contentSnapshopProvider: { [textSystem] in textSystem.storage.layerContentSnapshot(for: $0) },
 			lengthProvider: { [textSystem] in textSystem.storage.currentLength },
 			invalidationHandler: { [unowned self] in self.invalidationHandler(.set($0)) },
 			locationTransformer: { [textSystem] in textSystem.textMetrics.locationTransformer($0) }
@@ -141,46 +142,6 @@ extension SyntaxService {
 		return TreeSitterClient.ClientQueryParams(range: range, textProvider: textProvider, mode: .optional)
 	}
 
-	private static let highlightsMap: [String: String] = [
-		"keyword": "keyword",
-		"include": "keyword.include",
-		"keyword.return": "keyword.return",
-		"keyword.function": "keyword.function",
-		"keyword.operator": "keyword.operator.text",
-		"operator": "keyword.operator",
-		"conditional": "keyword.conditional",
-		"repeat": "keyword.loop",
-		"punctuation.special": "keyword.operator.text",
-		"punctuation.delimiter": "keyword.operator.text",
-
-		"type": "type",
-
-		"string": "literal.string",
-		"number": "literal.number",
-		"float": "literal.float",
-		"boolean": "literal.boolean",
-		"string.regex": "literal.regex",
-		"text.literal": "literal.string",
-		"string.escape": "literal.string.escape",
-		"text.uri": "literal.string.uri",
-		"string.uri": "literal.string.uri",
-
-		"variable": "variable",
-		"variable.builtin": "variable.built-in",
-
-		"method": "member.function",
-		"constructor": "member.constructor",
-		"property": "member.property",
-
-		"parameter": "parameter",
-		"function": "function",
-		"function.call": "invocation.function",
-		"function.macro": "invocation.macro",
-
-		"label": "label",
-		"text.reference": "label",
-	]
-
 	public var tokenProvider: TokenProvider {
 		TokenProvider(
 			syncValue: { range in
@@ -194,7 +155,7 @@ extension SyntaxService {
 						return nil
 					}
 
-					return TokenApplication(namedRanges: namedRanges, nameMap: [:], range: range)
+					return TokenApplication(namedRanges: namedRanges, range: range)
 				} catch {
 					self.logger.warning("Failed to get highlighting: \(error)")
 
@@ -210,7 +171,7 @@ extension SyntaxService {
 					let queryParams = try self.highlightsQueryParams(for: range)
 					let namedRanges = try await client.highlightsProvider.async(queryParams)
 
-					return TokenApplication(namedRanges: namedRanges, nameMap: [:], range: range)
+					return TokenApplication(namedRanges: namedRanges, range: range)
 				} catch {
 					self.logger.warning("Failed to get highlighting: \(error)")
 

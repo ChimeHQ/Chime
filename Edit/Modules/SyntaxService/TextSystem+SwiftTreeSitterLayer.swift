@@ -14,6 +14,16 @@ extension TextStorage {
 			textProvider: fullString.predicateTextProvider
 		)
 	}
+	
+	func layerContentSnapshot(for limit: Int) -> LanguageLayer.ContentSnapshot {
+		let fullString = string
+		let read = Parser.readFunction(for: fullString, limit: limit)
+
+		return LanguageLayer.ContentSnapshot(
+			readHandler: read,
+			textProvider: fullString.predicateTextSnapshotProvider
+		)
+	}
 }
 
 extension TextMetrics {

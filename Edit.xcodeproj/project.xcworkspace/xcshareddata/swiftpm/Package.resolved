@@ -1,5 +1,5 @@
 {
-  "originHash" : "ff7de96f98e01194f786ca218f32286d1e04cc1961dd2ec8e8d690d02ed4a344",
+  "originHash" : "e20cc55708e58da63ecb4be4feef028e6a48818a25bdcd1f961cf924b58e7a18",
   "pins" : [
     {
       "identity" : "asyncxpcconnection",
@@ -123,6 +123,14 @@
       }
     },
     {
+      "identity" : "neon",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ChimeHQ/Neon.git",
+      "state" : {
+        "revision" : "32ef005f7fc9d8358739ef2e6702c2c73cec6ca9"
+      }
+    },
+    {
       "identity" : "nsui",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/mattmassicotte/nsui.git",
@@ -161,8 +169,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ChimeHQ/Rearrange",
       "state" : {
-        "revision" : "5ff7f3363f7a08f77e0d761e38e6add31c2136e1",
-        "version" : "1.8.1"
+        "revision" : "f1d74e1642956f0300756ad8d1d64e9034857bc3",
+        "version" : "2.0.0"
       }
     },
     {
@@ -213,7 +221,7 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ChimeHQ/SwiftTreeSitter",
       "state" : {
-        "revision" : "f01316eaf3aae07e30478f8afa76192ab4a96420"
+        "revision" : "55f2c2fdaf859f86e4ea8513b9934badc7894019"
       }
     },
     {
@@ -221,7 +229,7 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ChimeHQ/TextStory.git",
       "state" : {
-        "revision" : "5cd0787b43f038051d42b39db3319cbf78c42861"
+        "revision" : "e23226da4a29a606b532d3f4d7d04102cd7826c5"
       }
     },
     {
