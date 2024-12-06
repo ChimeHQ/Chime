@@ -32,6 +32,7 @@
 				<string>public.shell-script</string>
 				<string>public.swift-source</string>
 				<string>com.netscape.javascript-source</string>
+				<string>org.typescriptlang.source</string>
 			</array>
 			<key>QLSupportsSearchableItems</key>
 			<false/>

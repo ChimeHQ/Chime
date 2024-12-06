@@ -26,6 +26,7 @@ public enum RootLanguage: Hashable, CaseIterable, Sendable {
 	case ruby
 	case rust
 	case swift
+	case typeScript
 
 	var typeIdentifier: UTType {
 		switch self {
@@ -47,6 +48,7 @@ public enum RootLanguage: Hashable, CaseIterable, Sendable {
 		case .python: .pythonScript
 		case .ruby: .rubyScript
 		case .rust: .rustSource
+		case .typeScript: .typescriptSource
 		case .swift: .swiftSource
 		}
 	}
@@ -97,6 +99,8 @@ extension RootLanguage: RawRepresentable {
 			self = .rust
 		case "swift":
 			self = .swift
+		case "typescript":
+			self = .typeScript
 		default:
 			return nil
 		}
@@ -142,6 +146,8 @@ extension RootLanguage: RawRepresentable {
 			"Rust"
 		case .swift:
 			"Swift"
+		case .typeScript:
+			"TypeScript"
 		}
 	}
 }

@@ -16,4 +16,5 @@
 @_exported import TreeSitterPython
 @_exported import TreeSitterRuby
 @_exported import TreeSitterRust
+@_exported import TreeSitterTypeScript
 @_exported import TreeSitterSwift

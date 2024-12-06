@@ -171,6 +171,7 @@ extension SyntaxService {
 					let queryParams = try self.highlightsQueryParams(for: range)
 					let namedRanges = try await client.highlightsProvider.async(queryParams)
 
+					print("names:", namedRanges)
 					return TokenApplication(namedRanges: namedRanges, range: range)
 				} catch {
 					self.logger.warning("Failed to get highlighting: \(error)")

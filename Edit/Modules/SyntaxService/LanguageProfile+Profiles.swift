@@ -80,6 +80,11 @@ extension LanguageProfile {
 			return LanguageProfile.swiftProfile
 		}
 
+		// special-case this type to allow the same extension to be used by default
+		if utType.conforms(to: .typescriptSource) || utType.conforms(to: .mpeg2TransportStream) {
+			return LanguageProfile.typeScriptProfile
+		}
+
 		return LanguageProfile.genericProfile
 	}
 }
@@ -177,14 +182,19 @@ extension LanguageProfile {
 		language: Language(tree_sitter_ruby())
 	)
 
+	static let rustProfile = LanguageProfile(
+		RootLanguage.rust,
+		language: Language(tree_sitter_rust())
+	)
+
 	static let swiftProfile = LanguageProfile(
 		RootLanguage.swift,
 		language: Language(tree_sitter_swift())
 	)
 
-	static let rustProfile = LanguageProfile(
-		RootLanguage.rust,
-		language: Language(tree_sitter_rust())
+	static let typeScriptProfile = LanguageProfile(
+		RootLanguage.typeScript,
+		language: Language(tree_sitter_typescript())
 	)
 
 	static let genericProfile = LanguageProfile(

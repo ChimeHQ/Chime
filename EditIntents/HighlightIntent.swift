@@ -29,6 +29,7 @@ extension RootLanguage: AppEnum {
 			.ruby: "Ruby",
 			.rust: "Rust",
 			.swift: "Swift",
+			.typeScript: "TypeScript",
 		]
 	}
 }
