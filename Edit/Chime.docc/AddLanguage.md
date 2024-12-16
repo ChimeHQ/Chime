@@ -14,7 +14,7 @@ Chime relies heavily internally on [UTIs](https://developer.apple.com/documentat
 mdls path/to/your/file
 ```
 
-These UTIs should first be incorporated into [ChimeKit](https://github.com/ChimeHQ/ChimeKit). From there, they can be added as "Imported Type Identifiers" in Chime's Info.plist. To do this, you'll need to know the file extensions used. ChimeKit also supports well-known file names, like `Makefile`, which the Uniform Type Identifier APIs do not currently support. 
+These UTIs should first be incorporated into [ChimeKit][]. From there, they can be added as "Imported Type Identifiers" in Chime's Info.plist. To do this, you'll need to know the file extensions used. ChimeKit also supports well-known file names, like `Makefile`, which the Uniform Type Identifier APIs do not currently support. 
 
 ## Tree-Sitter
 
@@ -40,4 +40,6 @@ You might also be tempted to adjust these queries. Try to resist this temptation
 
 ## Language Server
 
-After syntactic support is working, you can refer to ChimeKit's documentation on how to set up an extension for language server support.
+After syntactic support is working, you can refer to [ChimeKit]'s documentation on how to set up an extension for language server support.
+
+[ChimeKit]: https://github.com/ChimeHQ/ChimeKit
