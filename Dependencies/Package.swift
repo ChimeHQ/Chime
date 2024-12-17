@@ -7,9 +7,16 @@ import PackageDescription
 
 let package = Package(
 	name: "Dependencies",
+	platforms: [
+		.macOS(.v12),
+		.macCatalyst(.v15),
+		.iOS(.v15),
+		.visionOS(.v1),
+	],
 	products: [
 		// I don't think many dependencies will need to use this same approach.
 		.library(name: "TreeSitterParsers", targets: ["TreeSitterParsers"]),
+		.library(name: "Dependencies", targets: ["Dependencies"])
 	],
 	dependencies: [
 		.package(url: "https://github.com/tree-sitter/tree-sitter-bash", branch: "master"),
@@ -31,6 +38,11 @@ let package = Package(
 		.package(url: "https://github.com/tree-sitter/tree-sitter-rust", branch: "master"),
 		.package(url: "https://github.com/tree-sitter/tree-sitter-typescript", branch: "master"),
 		.package(url: "https://github.com/alex-pinkus/tree-sitter-swift", branch: "with-generated-files"),
+
+		// this has to match what is in Ligature, for now
+		.package(url: "https://github.com/ChimeHQ/Glyph", revision: "dce014c6ee2564c44e38c222a3fdc6eef76892d6"),
+		.package(url: "https://github.com/ChimeHQ/IBeam", branch: "main"),
+		.package(url: "https://github.com/ChimeHQ/Ligature", branch: "main"),
 	],
 	targets: [
 		.target(
@@ -55,6 +67,14 @@ let package = Package(
 				.product(name: "TreeSitterRust", package: "tree-sitter-rust"),
 				.product(name: "TreeSitterTypeScript", package: "tree-sitter-typescript"),
 				.product(name: "TreeSitterSwift", package: "tree-sitter-swift"),
+			]
+		),
+		.target(
+			name: "Dependencies",
+			dependencies: [
+				"Glyph",
+				"IBeam",
+				"Ligature",
 			]
 		),
 	]

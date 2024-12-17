@@ -72,6 +72,7 @@
 		C95B913F2BD99328006FDD00 /* LanguageData in Resources */ = {isa = PBXBuildFile; fileRef = C9CDEB872B55B889009E252A /* LanguageData */; };
 		C95BBE372BDD03F200C9E1B9 /* FileManager+AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95BBE362BDD03F200C9E1B9 /* FileManager+AppGroup.swift */; };
 		C95BBE3F2BDD110700C9E1B9 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = C95BBE3E2BDD110700C9E1B9 /* Constants.m */; };
+		C9655F872D11A7A70008AED1 /* Dependencies in Frameworks */ = {isa = PBXBuildFile; productRef = C9655F862D11A7A70008AED1 /* Dependencies */; };
 		C96A852D2A7A6E22005ED222 /* DirectoryDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96A852C2A7A6E22005ED222 /* DirectoryDocument.swift */; };
 		C96A852F2A7A703D005ED222 /* OpenPanelAccessoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96A852E2A7A703D005ED222 /* OpenPanelAccessoryViewController.swift */; };
 		C96A85342A7A8339005ED222 /* URL+Bookmarks.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96A85332A7A8339005ED222 /* URL+Bookmarks.swift */; };
@@ -182,7 +183,6 @@
 		C9BDB54B2B00FD89009225FB /* SwiftStandaloneExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BDB54A2B00FD89009225FB /* SwiftStandaloneExtension.swift */; };
 		C9BDB5502B00FD89009225FB /* SwiftExtension.appex in Copy Extensions */ = {isa = PBXBuildFile; fileRef = C9BDB5482B00FD89009225FB /* SwiftExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C9BDB5572B010094009225FB /* ChimeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE52F42A7539B100CACA1A /* ChimeKit.framework */; };
-		C9BFA1B02BC0927A00E86487 /* Glyph in Frameworks */ = {isa = PBXBuildFile; productRef = C9BFA1AF2BC0927A00E86487 /* Glyph */; };
 		C9BFA1B72BC162EF00E86487 /* NSUI in Frameworks */ = {isa = PBXBuildFile; productRef = C9BFA1B62BC162EF00E86487 /* NSUI */; };
 		C9CDEB552B504485009E252A /* TextSystem+SwiftTreeSitterLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CDEB542B504485009E252A /* TextSystem+SwiftTreeSitterLayer.swift */; };
 		C9CDEB8F2B56ACA3009E252A /* MainOffender in Frameworks */ = {isa = PBXBuildFile; productRef = C9CDEB8E2B56ACA3009E252A /* MainOffender */; };
@@ -1272,11 +1272,11 @@
 				C9E0BA0E2BD2807B007AF034 /* libDiagnostics.a in Frameworks */,
 				C929316B2B822BAD00C64DDE /* libUtility.a in Frameworks */,
 				C9BFA1B72BC162EF00E86487 /* NSUI in Frameworks */,
-				C9BFA1B02BC0927A00E86487 /* Glyph in Frameworks */,
 				C95B91362BD98CBD006FDD00 /* RelativeCollections in Frameworks */,
 				C929316A2B822BA700C64DDE /* libTheme.a in Frameworks */,
 				C95B913E2BD98D01006FDD00 /* SwiftTreeSitterLayer in Frameworks */,
 				C92931692B822B7B00C64DDE /* ColorToolbox in Frameworks */,
+				C9655F872D11A7A70008AED1 /* Dependencies in Frameworks */,
 				C9439A712C3EB4410020DDF5 /* TreeSitterParsers in Frameworks */,
 				C95B91292BD98C3B006FDD00 /* Rearrange in Frameworks */,
 			);
@@ -2396,7 +2396,6 @@
 			name = EditKit;
 			packageProductDependencies = (
 				C92931682B822B7B00C64DDE /* ColorToolbox */,
-				C9BFA1AF2BC0927A00E86487 /* Glyph */,
 				C9BFA1B62BC162EF00E86487 /* NSUI */,
 				C95B91282BD98C3B006FDD00 /* Rearrange */,
 				C95B912C2BD98C50006FDD00 /* Neon */,
@@ -2409,6 +2408,7 @@
 				C96B62052BDA721100561DE8 /* SourceView */,
 				C9439A702C3EB4410020DDF5 /* TreeSitterParsers */,
 				C976D7E52C4A86F900CC6EA6 /* ThemePark */,
+				C9655F862D11A7A70008AED1 /* Dependencies */,
 			);
 			productName = EditKit;
 			productReference = C92931422B80CC6700C64DDE /* EditKit.framework */;
@@ -3248,7 +3248,6 @@
 				C9CDEB8D2B56ACA3009E252A /* XCRemoteSwiftPackageReference "MainOffender" */,
 				C9C568562B7418B60093C068 /* XCRemoteSwiftPackageReference "Lowlight" */,
 				C9BFA1A12BBF4FA200E86487 /* XCRemoteSwiftPackageReference "nsui" */,
-				C9BFA1AE2BC0927A00E86487 /* XCRemoteSwiftPackageReference "Glyph" */,
 				C93F72252BF0F9290021ACF3 /* XCRemoteSwiftPackageReference "Sparkle" */,
 				C976D7E42C4A86F800CC6EA6 /* XCRemoteSwiftPackageReference "ThemePark" */,
 			);
@@ -5435,14 +5434,6 @@
 				revision = 8792b2f789bf03be1be9ecb4df43d2bfe0e5d361;
 			};
 		};
-		C9BFA1AE2BC0927A00E86487 /* XCRemoteSwiftPackageReference "Glyph" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ChimeHQ/Glyph";
-			requirement = {
-				kind = revision;
-				revision = 3c8095830e9b682f22bdaa866a1f2061998e40cc;
-			};
-		};
 		C9C568562B7418B60093C068 /* XCRemoteSwiftPackageReference "Lowlight" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ChimeHQ/Lowlight";
@@ -5623,6 +5614,10 @@
 			package = C9B8AA5B2B370A1800C79606 /* XCRemoteSwiftPackageReference "SwiftTreeSitter" */;
 			productName = SwiftTreeSitterLayer;
 		};
+		C9655F862D11A7A70008AED1 /* Dependencies */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Dependencies;
+		};
 		C96B61FA2BDA714000561DE8 /* ScrollViewPlus */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C9FE53AE2A7677D100CACA1A /* XCRemoteSwiftPackageReference "ScrollViewPlus" */;
@@ -5734,11 +5729,6 @@
 		};
 		C9BFA1A82BC072E300E86487 /* Glyph */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = Glyph;
-		};
-		C9BFA1AF2BC0927A00E86487 /* Glyph */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C9BFA1AE2BC0927A00E86487 /* XCRemoteSwiftPackageReference "Glyph" */;
 			productName = Glyph;
 		};
 		C9BFA1B62BC162EF00E86487 /* NSUI */ = {
