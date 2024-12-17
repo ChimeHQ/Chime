@@ -87,5 +87,32 @@ Fixes:
 				length="12094958"
 				type="application/octet-stream" />
 		</item>
+		<item>
+			<title>Version 3.0.0</title>
+			<description sparkle:format="plain-text">
+Features:
+- Add support to Rust by @unnamedd in #22
+- Add support to HTML by @unnamedd in #23
+- Add support for CSS by @unnamedd in #24
+- Add support to JSON by @unnamedd in #25
+- Add support for JavaScript by @unnamedd in #26
+- Add support for TypeScript
+
+Improvments:
+- Incorporate the newest version of Neon
+
+Fixes:
+- Address an issue where HTML was being rendered instead of displayed as text
+			</description>
+			<sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+			<sparkle:channel>beta</sparkle:channel>
+			<sparkle:version>204</sparkle:version>
+			<sparkle:shortVersionString>3.0.0</sparkle:shortVersionString>
+			<pubDate>Tue, 17 Dec 2024 07:03:42 -0500</pubDate>
+			<enclosure url="https://github.com/ChimeHQ/Chime/releases/download/204/Chime.zip"
+				sparkle:edSignature="qu01fg0f5l4hYaWyHoYwImxIX+6Rx8xaluj/p+P4EWeo+1ukIwuC0R64keTT5mQSfZCjMLGP/wXMOCiPoTGoBg=="
+				length="13161368"
+				type="application/octet-stream" />
+		</item>
 	</channel>
 </rss>
