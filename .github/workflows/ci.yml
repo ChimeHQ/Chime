@@ -11,6 +11,7 @@ on:
       - '.spi.yml'
       - '.github/workflows/docc.yml'
       - '.github/FUNDING.yml'
+      - 'appcast.xml'
   pull_request:
     branches:
       - main
