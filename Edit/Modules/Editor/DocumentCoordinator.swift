@@ -18,6 +18,7 @@ public final class DocumentCoordinator<Service: TokenService> {
 	private let dispatcher: StorageDispatcher
 	private let sourceViewController = SourceViewController()
 	public let editorContentController: EditorContentViewController
+	private let languageDataStore = LanguageDataStore.global
 
 	public init(statusBarVisible: Bool) {
 		self.textSystem = TextViewSystem(textView: sourceViewController.textView)
@@ -28,8 +29,7 @@ public final class DocumentCoordinator<Service: TokenService> {
 			statusBarVisible: statusBarVisible
 		)
 
-
-		self.syntaxService = SyntaxService(textSystem: textSystem, languageDataStore: LanguageDataStore.global)
+		self.syntaxService = SyntaxService(textSystem: textSystem, languageDataStore: languageDataStore)
 		self.highlighter = Highlighter(textSystem: textSystem, syntaxService: syntaxService)
 
 		self.dispatcher = StorageDispatcher(storage: textSystem.storage, monitors: [
@@ -40,6 +40,12 @@ public final class DocumentCoordinator<Service: TokenService> {
 
 		let textView = sourceViewController.textView
 
+		textSystem.willLayoutHandler = layoutBuffer.willLayout
+		textSystem.didLayoutHandler = layoutBuffer.didLayout
+
+		// default to something sensible
+		sourceViewController.mutationFilter = languageDataStore.profile(for: .plainText).mutationFilter
+		
 		sourceViewController.shouldChangeTextHandler = { [dispatcher] in
 			dispatcher.textView(textView, shouldChangeTextIn: $0, replacementString: $1)
 		}
@@ -47,9 +53,6 @@ public final class DocumentCoordinator<Service: TokenService> {
 		sourceViewController.selectionChangedHandler = { [editorContentController] in
 			editorContentController.selectedRanges = $0
 		}
-
-		sourceViewController.willLayoutHandler = { [layoutBuffer] in layoutBuffer.willLayout() }
-		sourceViewController.didLayoutHandler = { [layoutBuffer] in layoutBuffer.didLayout() }
 
 		syntaxService.invalidationHandler = { [highlighter] in
 			highlighter.invalidate(textTarget: $0)
@@ -63,7 +66,7 @@ public final class DocumentCoordinator<Service: TokenService> {
 			layoutBuffer.contentVisibleRectChanged()
 		}
 
-		LanguageDataStore.global.configurationLoaded = { [weak syntaxService] in
+		languageDataStore.configurationLoaded = { [weak syntaxService] in
 			syntaxService?.languageConfigurationChanged(for: $0)
 		}
 	}
@@ -71,5 +74,7 @@ public final class DocumentCoordinator<Service: TokenService> {
 	public func documentContextChanged(from oldContext: DocumentContext, to newContext: DocumentContext) {
 		syntaxService.documentContextChanged(from: oldContext, to: newContext)
 		highlighter.documentContextChanged(from: oldContext, to: newContext)
+
+		sourceViewController.mutationFilter = languageDataStore.profile(for: newContext.uti).mutationFilter
 	}
 }

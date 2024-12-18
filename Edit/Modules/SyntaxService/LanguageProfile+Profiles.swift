@@ -3,9 +3,11 @@ import Foundation
 import SwiftTreeSitter
 import UniformTypeIdentifiers
 import TreeSitterParsers
+import TextFormation
 
 import TreeSitterSwift
 
+@MainActor
 extension LanguageProfile {
 	static func profile(for utType: UTType) -> LanguageProfile {
 		if utType.conforms(to: .shellScript) {
@@ -87,119 +89,143 @@ extension LanguageProfile {
 
 		return LanguageProfile.genericProfile
 	}
-}
 
-extension LanguageProfile {
+	private static let genericFilter: NewFilter = {
+		NewDeleteCloseFilter(open: "(", close: ")")
+	}()
+
 	static let bashProfile = LanguageProfile(
 		RootLanguage.bash,
-		language: Language(tree_sitter_bash())
+		language: Language(tree_sitter_bash()),
+		mutationFilter: genericFilter
 	)
 
 	static let cProfile = LanguageProfile(
 		RootLanguage.c,
-		language: Language(tree_sitter_c())
+		language: Language(tree_sitter_c()),
+		mutationFilter: genericFilter
 	)
 
 	static let cssProfile = LanguageProfile(
 		RootLanguage.css,
-		language: Language(tree_sitter_css())
+		language: Language(tree_sitter_css()),
+		mutationFilter: genericFilter
 	)
 
 	static let clojureProfile = LanguageProfile(
 		RootLanguage.clojure,
-		language: Language(tree_sitter_clojure())
+		language: Language(tree_sitter_clojure()),
+		mutationFilter: genericFilter
 	)
 
 	static let elixirProfile = LanguageProfile(
 		RootLanguage.elixir,
-		language: Language(tree_sitter_elixir())
+		language: Language(tree_sitter_elixir()),
+		mutationFilter: genericFilter
 	)
 
 	static let goProfile = LanguageProfile(
 		RootLanguage.go,
-		language: Language(tree_sitter_go())
+		language: Language(tree_sitter_go()),
+		mutationFilter: genericFilter
 	)
 
 	static let goModProfile = LanguageProfile(
 		RootLanguage.goMod,
-		language: Language(tree_sitter_gomod())
+		language: Language(tree_sitter_gomod()),
+		mutationFilter: genericFilter
 	)
 
 	static let goSumProfile = LanguageProfile(
 		RootLanguage.goSum,
-		language: Language(tree_sitter_gosum())
+		language: Language(tree_sitter_gosum()),
+		mutationFilter: genericFilter
 	)
 
 	static let goWorkProfile = LanguageProfile(
 		RootLanguage.goWork,
-		language: Language(tree_sitter_gowork())
+		language: Language(tree_sitter_gowork()),
+		mutationFilter: genericFilter
 	)
 
 	static let htmlProfile = LanguageProfile(
 		RootLanguage.html,
-		language: Language(tree_sitter_html())
+		language: Language(tree_sitter_html()),
+		mutationFilter: genericFilter
 	)
 
 	static let javaScriptProfile = LanguageProfile(
 		RootLanguage.javaScript,
-		language: Language(tree_sitter_javascript())
+		language: Language(tree_sitter_javascript()),
+		mutationFilter: genericFilter
 	)
 
 	static let jsonProfile = LanguageProfile(
 		RootLanguage.json,
-		language: Language(tree_sitter_json())
+		language: Language(tree_sitter_json()),
+		mutationFilter: genericFilter
 	)
 
 	static let markdownProfile = LanguageProfile(
 		RootLanguage.markdown,
-		language: Language(tree_sitter_markdown())
+		language: Language(tree_sitter_markdown()),
+		mutationFilter: genericFilter
 	)
 
 	static let markdownInlineProfile = LanguageProfile(
 		name: "MarkdownInline",
 		language: Language(tree_sitter_markdown_inline()),
-		bundleName: "TreeSitterMarkdown_TreeSitterMarkdownInline"
+		bundleName: "TreeSitterMarkdown_TreeSitterMarkdownInline",
+		mutationFilter: genericFilter
 	)
 
 	static let ocamlProfile = LanguageProfile(
 		RootLanguage.ocaml,
-		language: Language(tree_sitter_ocaml())
+		language: Language(tree_sitter_ocaml()),
+		mutationFilter: genericFilter
 	)
 
 	static let ocamlInterfaceProfile = LanguageProfile(
 		name: "OCaml Interface",
 		language: Language(tree_sitter_ocaml_interface()),
-		bundleName: "TreeSitterOCaml_TreeSitterOCaml"
+		bundleName: "TreeSitterOCaml_TreeSitterOCaml",
+		mutationFilter: genericFilter
 	)
 
 	static let pythonProfile = LanguageProfile(
 		RootLanguage.python,
-		language: Language(tree_sitter_python())
+		language: Language(tree_sitter_python()),
+		mutationFilter: genericFilter
 	)
 
 	static let rubyProfile = LanguageProfile(
 		RootLanguage.ruby,
-		language: Language(tree_sitter_ruby())
+		language: Language(tree_sitter_ruby()),
+		mutationFilter: genericFilter
 	)
 
 	static let rustProfile = LanguageProfile(
 		RootLanguage.rust,
-		language: Language(tree_sitter_rust())
+		language: Language(tree_sitter_rust()),
+		mutationFilter: genericFilter
 	)
 
 	static let swiftProfile = LanguageProfile(
 		RootLanguage.swift,
-		language: Language(tree_sitter_swift())
+		language: Language(tree_sitter_swift()),
+		mutationFilter: genericFilter
 	)
 
 	static let typeScriptProfile = LanguageProfile(
 		RootLanguage.typeScript,
-		language: Language(tree_sitter_typescript())
+		language: Language(tree_sitter_typescript()),
+		mutationFilter: genericFilter
 	)
 
 	static let genericProfile = LanguageProfile(
 		name: "generic",
 		language: nil,
-		bundleName: nil
+		bundleName: nil,
+		mutationFilter: genericFilter
 	)
 }

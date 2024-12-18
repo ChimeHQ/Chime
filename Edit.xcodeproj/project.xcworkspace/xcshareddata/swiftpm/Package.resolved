@@ -1,5 +1,4 @@
 {
-  "originHash" : "7b35ec315c4590cd5cf882a94eb30b733e92eba73cbed76ea2a9cccd3063e69e",
   "pins" : [
     {
       "identity" : "asyncxpcconnection",
@@ -80,21 +79,21 @@
       }
     },
     {
-      "identity" : "ibeam",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/ChimeHQ/IBeam",
-      "state" : {
-        "branch" : "main",
-        "revision" : "aab054d6411ed4164ddf1fc7e61f15550ce207b0"
-      }
-    },
-    {
       "identity" : "jsonrpc",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ChimeHQ/JSONRPC",
       "state" : {
         "revision" : "c6ec759d41a76ac88fe7327c41a77d9033943374",
         "version" : "0.9.0"
+      }
+    },
+    {
+      "identity" : "keycodes",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ChimeHQ/KeyCodes",
+      "state" : {
+        "revision" : "93ba759d2bfd7b5233294188bc685fd09dce2729",
+        "version" : "1.0.3"
       }
     },
     {
@@ -119,7 +118,6 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ChimeHQ/Ligature",
       "state" : {
-        "branch" : "main",
         "revision" : "a80c9f1bb93c569d15dbee2cc15a9c8d6522512f"
       }
     },
@@ -218,14 +216,6 @@
       }
     },
     {
-      "identity" : "sourceview",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/ChimeHQ/SourceView",
-      "state" : {
-        "revision" : "d563ef0ba6c1c91aa6bcee406577b8826baa1f69"
-      }
-    },
-    {
       "identity" : "sparkle",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/sparkle-project/Sparkle",
@@ -240,6 +230,14 @@
       "location" : "https://github.com/ChimeHQ/SwiftTreeSitter",
       "state" : {
         "revision" : "55f2c2fdaf859f86e4ea8513b9934badc7894019"
+      }
+    },
+    {
+      "identity" : "textbook",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ChimeHQ/Textbook",
+      "state" : {
+        "revision" : "a70d9cd0b7da1878e1db448283b431834fd00376"
       }
     },
     {
@@ -448,5 +446,5 @@
       }
     }
   ],
-  "version" : 3
+  "version" : 2
 }

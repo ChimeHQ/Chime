@@ -16,13 +16,17 @@ public final class LanguageDataStore {
 	public static let global = LanguageDataStore()
 	
 	private var configurationCache = [UTType : LanguageConfiguration]()
-	private var profileCache = [UTType : LanguageProfile]()
+	private var profileCache: [UTType : LanguageProfile]
 	private var loadingSet = Set<String>()
 	private let logger = Logger(type: LanguageDataStore.self)
 
 	public var configurationLoaded: (String) -> Void = { _ in }
 
 	public init() {
+		// prime the cache for the common case
+		self.profileCache = [
+			.plainText: LanguageProfile.genericProfile
+		]
 	}
 
 	public func profile(for utType: UTType) -> LanguageProfile {

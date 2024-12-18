@@ -41,8 +41,8 @@ let package = Package(
 
 		// this has to match what is in Ligature, for now
 		.package(url: "https://github.com/ChimeHQ/Glyph", revision: "dce014c6ee2564c44e38c222a3fdc6eef76892d6"),
-		.package(url: "https://github.com/ChimeHQ/IBeam", branch: "main"),
-		.package(url: "https://github.com/ChimeHQ/Ligature", branch: "main"),
+		.package(url: "https://github.com/ChimeHQ/IBeam", revision: "aab054d6411ed4164ddf1fc7e61f15550ce207b0"),
+		.package(url: "https://github.com/ChimeHQ/Ligature", revision: "a80c9f1bb93c569d15dbee2cc15a9c8d6522512f"),
 	],
 	targets: [
 		.target(

@@ -19,6 +19,8 @@ public final class TextViewSystem: NSObject {
 
 	let textView: NSUITextView
 	public private(set) var textMetrics: TextMetrics
+	public var willLayoutHandler: () -> Void = { }
+	public var didLayoutHandler: () -> Void = { }
 
 	public init(textView: NSUITextView) {
 		self.textView = textView
@@ -116,7 +118,7 @@ extension TextViewSystem {
 		TextStorageMonitor(
 			monitors: [
 				notificationMonitor,
-				indirectMetricsMonitor
+//				indirectMetricsMonitor
 			]
 		)
 	}
@@ -221,4 +223,16 @@ extension TextViewSystem: TSYTextStorageDelegate {
 		UInt(textStorage.internalStorage.nextWord(from: Int(location), forward: forward))
 	}
 #endif
+
+	public nonisolated func textStorageWillCompleteProcessingEdit(_ textStorage: TSYTextStorage) {
+		MainActor.assumeIsolated {
+			willLayoutHandler()
+		}
+	}
+
+	public nonisolated func textStorageDidCompleteProcessingEdit(_ textStorage: TSYTextStorage) {
+		MainActor.assumeIsolated {
+			didLayoutHandler()
+		}
+	}
 }

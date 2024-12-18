@@ -73,6 +73,9 @@
 		C95BBE372BDD03F200C9E1B9 /* FileManager+AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95BBE362BDD03F200C9E1B9 /* FileManager+AppGroup.swift */; };
 		C95BBE3F2BDD110700C9E1B9 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = C95BBE3E2BDD110700C9E1B9 /* Constants.m */; };
 		C9655F872D11A7A70008AED1 /* Dependencies in Frameworks */ = {isa = PBXBuildFile; productRef = C9655F862D11A7A70008AED1 /* Dependencies */; };
+		C9655F8F2D1205210008AED1 /* TextFormation in Frameworks */ = {isa = PBXBuildFile; productRef = C9655F8E2D1205210008AED1 /* TextFormation */; };
+		C9655F912D12211E0008AED1 /* TextViewInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9655F902D1220FF0008AED1 /* TextViewInteraction.swift */; };
+		C9655F932D12218C0008AED1 /* TransformingTextSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9655F922D12218C0008AED1 /* TransformingTextSystem.swift */; };
 		C96A852D2A7A6E22005ED222 /* DirectoryDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96A852C2A7A6E22005ED222 /* DirectoryDocument.swift */; };
 		C96A852F2A7A703D005ED222 /* OpenPanelAccessoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96A852E2A7A703D005ED222 /* OpenPanelAccessoryViewController.swift */; };
 		C96A85342A7A8339005ED222 /* URL+Bookmarks.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96A85332A7A8339005ED222 /* URL+Bookmarks.swift */; };
@@ -1047,6 +1050,11 @@
 		C95BBE382BDD058800C9E1B9 /* Utility-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Utility-Bridging-Header.h"; sourceTree = "<group>"; };
 		C95BBE3D2BDD075300C9E1B9 /* Utility.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Utility.xcconfig; sourceTree = "<group>"; };
 		C95BBE3E2BDD110700C9E1B9 /* Constants.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		C9655F892D11ED700008AED1 /* TextFormation */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = TextFormation; path = ../TextFormation; sourceTree = SOURCE_ROOT; };
+		C9655F8A2D11F1A40008AED1 /* SourceView */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = SourceView; path = ../SourceView; sourceTree = SOURCE_ROOT; };
+		C9655F8B2D11F30C0008AED1 /* IBeam */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = IBeam; path = ../IBeam; sourceTree = SOURCE_ROOT; };
+		C9655F902D1220FF0008AED1 /* TextViewInteraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewInteraction.swift; sourceTree = "<group>"; };
+		C9655F922D12218C0008AED1 /* TransformingTextSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformingTextSystem.swift; sourceTree = "<group>"; };
 		C96A852C2A7A6E22005ED222 /* DirectoryDocument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectoryDocument.swift; sourceTree = "<group>"; };
 		C96A852E2A7A703D005ED222 /* OpenPanelAccessoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenPanelAccessoryViewController.swift; sourceTree = "<group>"; };
 		C96A85332A7A8339005ED222 /* URL+Bookmarks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+Bookmarks.swift"; sourceTree = "<group>"; };
@@ -1274,6 +1282,7 @@
 				C9BFA1B72BC162EF00E86487 /* NSUI in Frameworks */,
 				C95B91362BD98CBD006FDD00 /* RelativeCollections in Frameworks */,
 				C929316A2B822BA700C64DDE /* libTheme.a in Frameworks */,
+				C9655F8F2D1205210008AED1 /* TextFormation in Frameworks */,
 				C95B913E2BD98D01006FDD00 /* SwiftTreeSitterLayer in Frameworks */,
 				C92931692B822B7B00C64DDE /* ColorToolbox in Frameworks */,
 				C9655F872D11A7A70008AED1 /* Dependencies in Frameworks */,
@@ -1750,6 +1759,7 @@
 		C9B8A9DE2B31E43800C79606 /* TextSystem */ = {
 			isa = PBXGroup;
 			children = (
+				C9655F902D1220FF0008AED1 /* TextViewInteraction.swift */,
 				C926736F2B06BFCB00B3CE2F /* DocumentMutationMonitorModifier.swift */,
 				C9B8AA072B32005400C79606 /* Environment.swift */,
 				C941F0B62B71410B0003B640 /* LayoutInvalidationBuffer.swift */,
@@ -1863,6 +1873,9 @@
 		C9FE52902A7525D000CACA1A = {
 			isa = PBXGroup;
 			children = (
+				C9655F8B2D11F30C0008AED1 /* IBeam */,
+				C9655F8A2D11F1A40008AED1 /* SourceView */,
+				C9655F892D11ED700008AED1 /* TextFormation */,
 				C9FE538E2A76674600CACA1A /* Configurations */,
 				C9439A742C3EC13A0020DDF5 /* Dependencies */,
 				C9FE529B2A7525D000CACA1A /* Edit */,
@@ -2077,6 +2090,7 @@
 		C9FE53832A7662F800CACA1A /* Editor */ = {
 			isa = PBXGroup;
 			children = (
+				C9655F922D12218C0008AED1 /* TransformingTextSystem.swift */,
 				C96B61EC2BDA6F5900561DE8 /* DocumentCoordinator.swift */,
 				C9FE53D72A77D98A00CACA1A /* EditorContent.swift */,
 				C9FE53862A7663D200CACA1A /* EditorContentViewController.swift */,
@@ -2409,6 +2423,7 @@
 				C9439A702C3EB4410020DDF5 /* TreeSitterParsers */,
 				C976D7E52C4A86F900CC6EA6 /* ThemePark */,
 				C9655F862D11A7A70008AED1 /* Dependencies */,
+				C9655F8E2D1205210008AED1 /* TextFormation */,
 			);
 			productName = EditKit;
 			productReference = C92931422B80CC6700C64DDE /* EditKit.framework */;
@@ -2995,6 +3010,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				C9655F8D2D11F5A70008AED1 /* PBXTargetDependency */,
 				C96B61F72BDA710A00561DE8 /* PBXTargetDependency */,
 				C9B8AA022B31FB2D00C79606 /* PBXTargetDependency */,
 				C9B8A9B92B235EFC00C79606 /* PBXTargetDependency */,
@@ -3577,6 +3593,7 @@
 				C9B8A9E82B31E62D00C79606 /* TextLayout.swift in Sources */,
 				C9B8AA082B32005400C79606 /* Environment.swift in Sources */,
 				C941F0B82B7142890003B640 /* LayoutInvalidationBuffer.swift in Sources */,
+				C9655F912D12211E0008AED1 /* TextViewInteraction.swift in Sources */,
 				C9B8AA062B31FFB300C79606 /* TextMetricsMonitorModifier.swift in Sources */,
 				C9B8A9EA2B31E79500C79606 /* NSTextView+Mutations.swift in Sources */,
 				C941F0BA2B7171BA0003B640 /* NSTextView+Additions.swift in Sources */,
@@ -3764,6 +3781,7 @@
 				C9FE53AD2A7677A700CACA1A /* EditorScrollView.swift in Sources */,
 				C9FE53D82A77D98A00CACA1A /* EditorContent.swift in Sources */,
 				C9FE53AB2A76753D00CACA1A /* SourcePresentationViewController.swift in Sources */,
+				C9655F932D12218C0008AED1 /* TransformingTextSystem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3974,6 +3992,10 @@
 		C95B91382BD98CCF006FDD00 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			productRef = C95B91372BD98CCF006FDD00 /* Lowlight */;
+		};
+		C9655F8D2D11F5A70008AED1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = C9655F8C2D11F5A70008AED1 /* TextFormation */;
 		};
 		C96A85422A7BEB92005ED222 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -5617,6 +5639,14 @@
 		C9655F862D11A7A70008AED1 /* Dependencies */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Dependencies;
+		};
+		C9655F8C2D11F5A70008AED1 /* TextFormation */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = TextFormation;
+		};
+		C9655F8E2D1205210008AED1 /* TextFormation */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = TextFormation;
 		};
 		C96B61FA2BDA714000561DE8 /* ScrollViewPlus */ = {
 			isa = XCSwiftPackageProductDependency;
