@@ -12,10 +12,6 @@ extension TextFormationSystem: @preconcurrency TextFormation.TextSystem {
 	typealias TextRange = IBeamTextViewSystem.TextRange
 	typealias TextPosition = IBeamTextViewSystem.TextPosition
 
-	func length(of string: String) -> Int {
-		string.utf16.count
-	}
-
 	func offset(from: TextPosition, to toPosition: TextPosition) -> Int {
 		toPosition - from
 	}
@@ -36,9 +32,13 @@ extension TextFormationSystem: @preconcurrency TextFormation.TextSystem {
 		internalTextSystem.textView.substring(from: range)
 	}
 
-	func applyMutation(_ range: TextRange, string: String) -> TextFormation.MutationOutput<TextRange>? {
+	func applyMutation(_ range: TextRange, string: String) -> Output? {
 		internalTextSystem.applyMutation(range, string: AttributedString(string))
 			.map { TextFormation.MutationOutput(selection: $0.selection, delta: $0.delta) }
+	}
+
+	func applyWhitespace(for position: TextPosition, in direction: Direction) -> Output? {
+		nil
 	}
 }
 

@@ -91,7 +91,10 @@ extension LanguageProfile {
 	}
 
 	private static let genericFilter: NewFilter = {
-		NewDeleteCloseFilter(open: "(", close: ")")
+		let deleteCloseFilter = NewDeleteCloseFilter(open: "(", close: ")")
+		let newlineFilter = NewNewlineProcessingFilter()
+
+		return NewCompositeFilter(filters: [deleteCloseFilter, newlineFilter])
 	}()
 
 	static let bashProfile = LanguageProfile(

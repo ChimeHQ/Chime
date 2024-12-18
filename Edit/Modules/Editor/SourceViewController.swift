@@ -1,16 +1,14 @@
 import SwiftUI
 
-import IBeam
-import NSUI
 import SourceView
 import TextFormation
 import Theme
 import ThemePark
 
 public final class SourceViewController: NSViewController {
-	private let cursorCoordinator: TextSystemCursorCoordinator<TransformingTextSystem>
-	private let sourceView: SourceView
-	public var selectionChangedHandler: ([NSRange]) -> Void = { _ in }
+
+	public let sourceView: SourceView
+	public var selectionChangedHandler: () -> Void = {}
 	public var shouldChangeTextHandler: (NSRange, String?) -> Bool = { _, _ in true }
 
 	public init() {
@@ -24,15 +22,7 @@ public final class SourceViewController: NSViewController {
 
 		self.sourceView = SourceView(frame: .zero, textContainer: textContainer)
 
-		self.cursorCoordinator = TextSystemCursorCoordinator(
-			textView: sourceView,
-			system: TransformingTextSystem(textView: sourceView)
-		)
-
 		super.init(nibName: nil, bundle: nil)
-
-		sourceView.cursorOperationHandler = cursorCoordinator.mutateCursors(with:)
-		sourceView.operationProcessor = cursorCoordinator.processOperation
 
 		sourceView.delegate = self
 	}
@@ -54,18 +44,6 @@ public final class SourceViewController: NSViewController {
 		sourceView.addSubview(hiddenView)
 
 		self.view = sourceView
-	}
-
-	public var textView: NSTextView {
-		sourceView
-	}
-
-	public var mutationFilter: (any NewFilter)? {
-		get {
-			cursorCoordinator.cursorState.textSystem.filter
-		} set {
-			cursorCoordinator.cursorState.textSystem.filter = newValue
-		}
 	}
 }
 
@@ -90,8 +68,6 @@ extension SourceViewController: NSTextViewDelegate {
 	}
 
 	public func textViewDidChangeSelection(_ notification: Notification) {
-		let ranges = cursorCoordinator.cursorState.cursors.map { $0.textRange }
-
-		selectionChangedHandler(ranges)
+		selectionChangedHandler()
 	}
 }
