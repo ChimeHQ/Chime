@@ -4,7 +4,6 @@ import UniformTypeIdentifiers
 import ChimeKit
 import DocumentContent
 
-@MainActor
 public struct DocumentState {
 	public internal(set) var context: DocumentContext
 	public private(set) var contentId: DocumentContentIdentity

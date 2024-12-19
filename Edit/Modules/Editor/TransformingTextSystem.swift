@@ -1,3 +1,4 @@
+import DocumentContent
 import IBeam
 import NSUI
 import SourceView
@@ -43,12 +44,12 @@ extension TextFormationSystem: @preconcurrency TextFormation.TextSystem {
 }
 
 @MainActor
-final class TransformingTextSystem {
+final class TransformingTextSystem<Version> {
 	private let internalTextSystem: IBeamTextViewSystem
 	private let tfSystem: TextFormationSystem
 	public var filter: (any NewFilter)?
 
-	init(textView: NSUITextView) {
+	init(textView: NSUITextView, storage: TextStorage<Version>) {
 		self.internalTextSystem = IBeamTextViewSystem(textView: textView)
 		self.tfSystem = TextFormationSystem(internalTextSystem: internalTextSystem)
 	}

@@ -76,9 +76,9 @@ public final class EditorContentViewController: NSViewController {
 		self.view = NSHostingView(rootView: hostedView)
 	}
 
-	public var selectedRanges: [NSRange] {
-		get { editorState.selectedRanges }
-		set { editorState.selectedRanges = newValue }
+	public var cursors: CursorSet {
+		get { editorState.cursors }
+		set { editorState.cursors = newValue }
 	}
 
 	private func handleVisibleRectChanged(_ rect: CGRect) {

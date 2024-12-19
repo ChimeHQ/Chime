@@ -9,7 +9,6 @@ public final class SourceViewController: NSViewController {
 
 	public let sourceView: SourceView
 	public var selectionChangedHandler: () -> Void = {}
-	public var shouldChangeTextHandler: (NSRange, String?) -> Bool = { _, _ in true }
 
 	public init() {
 		let textContainer = NSTextContainer(size: CGSize(width: 0.0, height: 1.0e7))
@@ -63,10 +62,6 @@ extension SourceViewController {
 }
 
 extension SourceViewController: NSTextViewDelegate {
-	public func textView(_ textView: NSTextView, shouldChangeTextIn affectedCharRange: NSRange, replacementString: String?) -> Bool {
-		shouldChangeTextHandler(affectedCharRange, replacementString)
-	}
-
 	public func textViewDidChangeSelection(_ notification: Notification) {
 		selectionChangedHandler()
 	}

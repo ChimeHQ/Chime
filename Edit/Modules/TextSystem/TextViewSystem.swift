@@ -29,26 +29,8 @@ public final class TextViewSystem: NSObject {
 		super.init()
 
 		replaceTextStorage(TSYTextStorage())
-
-//		NotificationCenter.default.addObserver(
-//			self,
-//			selector: #selector(selectionChangedNotification),
-//			name: NSTextView.didChangeSelectionNotification,
-//			object: textView
-//		)
 	}
-
-//	deinit {
-//		NotificationCenter.default.removeObserver(self)
-//	}
 }
-
-//extension TextViewSystem {
-//	@objc
-//	private func selectionChangedNotification(_ notification: Notification) {
-//		// do a thing
-//	}
-//}
 
 extension TextViewSystem {
 	public var textLayout: TextLayout {
@@ -61,7 +43,7 @@ extension TextViewSystem {
 		Storage(
 			beginEditing: { [unowned self] in self.beginEditing() },
 			endEditing: { [unowned self] in self.endEditing() },
-			applyMutations: { [unowned self] in self.textView.applyMutations($0) },
+			applyMutation: { [unowned self] in self.textView.applyMutation($0) },
 			version: { [unowned self] in self.self.contentVersion },
 			length: { [unowned self] in self.self.length(for: $0) },
 			substring: { [unowned self] in try self.substring(range: $0, version: $1) }
@@ -135,23 +117,21 @@ extension TextViewSystem {
 extension TextViewSystem {
 	public nonisolated static let textStorageMutationsKey = "mutations"
 	public nonisolated static let willApplyMutationsNotification = Notification.Name("willApplyMutationsNotification")
-	/// This is very strongly recommended to restrict events only to the actual document content you are interested in. If it is not used, you will receive events from all open documents.
+	/// It is very strongly recommended to restrict events only to the actual document content you are interested in. If it is not used, you will receive events from all open documents.
 	public nonisolated static let didApplyMutationsNotification = Notification.Name("didApplyMutationsNotification")
-	public nonisolated static let didCompleteMutationsNotification = Notification.Name("didCompleteMutationsNotification")
 
-	private func postEvent(_ named: Notification.Name, _ mutations: [TextStorageMutation]) {
+	private func postEvent(_ named: Notification.Name, _ mutation: TextStorageMutation) {
 		NotificationCenter.default.post(
 			name: named,
 			object: self,
-			userInfo: [Self.textStorageMutationsKey: mutations]
+			userInfo: [Self.textStorageMutationsKey: mutation]
 		)
 	}
 
 	private var notificationMonitor: TextStorageMonitor {
 		.init(
-			willApplyMutations: { [weak self] in self?.postEvent(Self.willApplyMutationsNotification, $0) },
-			didApplyMutations: { [weak self] in self?.postEvent(Self.didApplyMutationsNotification, $0) },
-			didCompleteMutations: { [weak self] in self?.postEvent(Self.didCompleteMutationsNotification, $0) }
+			willApplyMutation: { [weak self] in self?.postEvent(Self.willApplyMutationsNotification, $0) },
+			didApplyMutation: { [weak self] in self?.postEvent(Self.didApplyMutationsNotification, $0) }
 		)
 	}
 }
@@ -200,18 +180,6 @@ extension TextViewSystem {
 		storage.endEditing()
 	}
 }
-
-//extension TextViewSystem: NSTextViewDelegate {
-//	public func textView(_ textView: NSTextView, shouldChangeTextIn affectedCharRange: NSRange, replacementString: String?) -> Bool {
-//		precondition(textView === self.textView)
-//
-//		return shouldChangeText(in: affectedCharRange, replacement: replacementString)
-//	}
-//
-//	public func shouldChangeText(in range: NSRange, replacement: String?) -> Bool {
-//		return true
-//	}
-//}
 
 extension TextViewSystem: TSYTextStorageDelegate {
 #if os(macOS)

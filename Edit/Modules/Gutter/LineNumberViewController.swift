@@ -120,9 +120,9 @@ extension LineNumberViewController {
 		invalidate([fullRange])
 	}
 
-	private func cursorsChanged(_ cursors: [Cursor]) {
+	private func cursorsChanged(_ cursors: CursorSet) {
 		let oldRanges = selectedRanges
-		self.selectedRanges = cursors.map { $0.selection }
+		self.selectedRanges = cursors.ranges
 
 		invalidate(oldRanges + selectedRanges)
 	}

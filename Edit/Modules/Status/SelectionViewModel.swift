@@ -17,10 +17,10 @@ final class SelectionViewModel {
 	var lineSelection: LineSelection = .single(index: 0, column: 0)
 	var characterRange: Range<Int> = 0..<0
 
-	func cursorsChanged(_ cursors: [Cursor]) {
-		guard let cursor = cursors.first else { return }
+	func cursorsChanged(_ cursors: CursorSet) {
+		guard let selectionRange = cursors.ranges.first else { return }
 
-		guard let span = textViewSystem?.textMetrics.lineSpan(for: cursor.selection) else {
+		guard let span = textViewSystem?.textMetrics.lineSpan(for: selectionRange) else {
 			return
 		}
 
@@ -28,15 +28,15 @@ final class SelectionViewModel {
 		precondition(delta >= 0)
 
 		if delta == 0 {
-			let column = cursor.selection.location - span.0.location
+			let column = selectionRange.location - span.0.location
 
 			self.lineSelection = .single(index: span.0.index, column: column)
 		} else {
 			self.lineSelection = .multiple(start: span.0.index, end: span.1.index)
 		}
 
-		let startChar = cursor.selection.location
-		let endChar = cursors.last!.selection.max
+		let startChar = selectionRange.location
+		let endChar = cursors.ranges.last!.max
 
 		self.characterRange = startChar..<endChar
 	}

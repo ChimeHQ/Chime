@@ -13,7 +13,6 @@ import TextStory
 import TextSystem
 import Theme
 
-@MainActor
 public final class TextDocument: ContainedDocument<Project> {
 	typealias StorageDispatcher = TextStorageDispatcher<TextViewSystem.Version>
 

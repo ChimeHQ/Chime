@@ -12,12 +12,13 @@ import Theme
 @MainActor
 public final class DocumentCoordinator<Service: TokenService> {
 	typealias StorageDispatcher = TextStorageDispatcher<TextViewSystem.Version>
+	typealias CursorTextSystem = TransformingTextSystem<TextViewSystem.Version>
 
 	private let syntaxService: SyntaxService
 	private let layoutBuffer = LayoutInvalidationBuffer()
 	private let dispatcher: StorageDispatcher
 	private let sourceViewController = SourceViewController()
-	private let cursorCoordinator: TextSystemCursorCoordinator<TransformingTextSystem>
+	private let cursorCoordinator: TextSystemCursorCoordinator<CursorTextSystem>
 	private let languageDataStore = LanguageDataStore.global
 
 	public let textSystem: TextViewSystem
@@ -36,6 +37,15 @@ public final class DocumentCoordinator<Service: TokenService> {
 		self.syntaxService = SyntaxService(textSystem: textSystem, languageDataStore: languageDataStore)
 		self.highlighter = Highlighter(textSystem: textSystem, syntaxService: syntaxService)
 
+		let monitors = [
+			textSystem.storageMonitor,
+			syntaxService.storageMonitor,
+			highlighter.storageMonitor
+		]
+
+		let storage = textSystem.storage
+			.relaying(to: monitors)
+
 		self.dispatcher = StorageDispatcher(storage: textSystem.storage, monitors: [
 			textSystem.storageMonitor,
 			syntaxService.storageMonitor,
@@ -43,27 +53,21 @@ public final class DocumentCoordinator<Service: TokenService> {
 		])
 
 		let sourceView = sourceViewController.sourceView
+		let cursorTextSystem = CursorTextSystem(textView: sourceView, storage: storage)
 
 		self.cursorCoordinator = TextSystemCursorCoordinator(
 			textView: sourceView,
-			system: TransformingTextSystem(textView: sourceView)
+			system: cursorTextSystem
 		)
 
 		textSystem.willLayoutHandler = layoutBuffer.willLayout
 		textSystem.didLayoutHandler = layoutBuffer.didLayout
-		
-		sourceViewController.shouldChangeTextHandler = { [dispatcher] in
-			dispatcher.textView(sourceView, shouldChangeTextIn: $0, replacementString: $1)
-		}
 
 		sourceView.cursorOperationHandler = cursorCoordinator.mutateCursors(with:)
 		sourceView.operationProcessor = cursorCoordinator.processOperation
 
 		sourceViewController.selectionChangedHandler = { [editorContentController, cursorCoordinator] in
-			// this is potentially very expensive
-			let ranges = cursorCoordinator.cursorState.cursors.map { $0.textRange }
-
-			editorContentController.selectedRanges = ranges
+			editorContentController.cursors = cursorCoordinator.cursorState.cursorSet
 		}
 
 		syntaxService.invalidationHandler = { [highlighter] in

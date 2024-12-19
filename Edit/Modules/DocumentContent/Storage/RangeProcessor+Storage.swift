@@ -3,19 +3,14 @@ import Foundation
 import RangeState
 
 extension RangeProcessor {
-	func didApplyMutations(_ mutations: [TextStorageMutation]) {
-		let stringMutations = mutations.flatMap({ $0.stringMutations })
-
-		for mutation in stringMutations {
-			didChangeContent(in: mutation.range, delta: mutation.delta)
-		}
+	func didApplyMutation(_ mutation: TextStorageMutation) {
+		didChangeContent(in: mutation.range, delta: mutation.delta)
 	}
 
 	var textStorageMonitor: TextStorageMonitor {
 		.init(
-			willApplyMutations: { _ in },
-			didApplyMutations: didApplyMutations,
-			didCompleteMutations: { _ in }
+			willApplyMutation: { _ in },
+			didApplyMutation: didApplyMutation
 		)
 	}
 }
@@ -23,14 +18,13 @@ extension RangeProcessor {
 extension TextStorageMonitor {
 	public func withInvalidationBuffer(_ invalidator: RangeInvalidationBuffer) -> TextStorageMonitor {
 		.init(
-			willApplyMutations: {
+			willApplyMutation: {
 				invalidator.beginBuffering()
 
-				self.willApplyMutations($0)
+				self.willApplyMutation($0)
 			},
-			didApplyMutations: didApplyMutations,
-			didCompleteMutations: {
-				self.didCompleteMutations($0)
+			didApplyMutation: {
+				self.didApplyMutation($0)
 
 				invalidator.endBuffering()
 			}

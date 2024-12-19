@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct DocumentCursorsMonitorModifier: ViewModifier {
-	typealias Action = ([Cursor]) -> Void
+	typealias Action = (CursorSet) -> Void
 
 	@Environment(\.documentCursors) private var cursors
 
@@ -19,7 +19,7 @@ struct DocumentCursorsMonitorModifier: ViewModifier {
 
 extension View {
 	/// Observe changes to the current selection within the open document.
-	public func onDocumentCursorsChange(_ action: @escaping ([Cursor]) -> Void) -> some View {
+	public func onDocumentCursorsChange(_ action: @escaping (CursorSet) -> Void) -> some View {
 		modifier(DocumentCursorsMonitorModifier(action))
 	}
 }

@@ -199,18 +199,13 @@ public final class Highlighter<Service: TokenService> {
 
 	public var storageMonitor: TextStorageMonitor {
 		.init(
-			willApplyMutations: { _ in },
-			didApplyMutations: { self.didApplyMutations($0) },
-			didCompleteMutations: { _ in }
+			willApplyMutation: { _ in },
+			didApplyMutation: { self.didApplyMutation($0) }
 		)
 		.withInvalidationBuffer(invalidatorBuffer)
 	}
 
-	private func didApplyMutations(_ mutations: [TextStorageMutation]) {
-		let stringMutations = mutations.flatMap({ $0.stringMutations })
-
-		for mutation in stringMutations {
-			styler.didChangeContent(in: mutation.range, delta: mutation.delta)
-		}
+	private func didApplyMutation(_ mutation: TextStorageMutation) {
+		styler.didChangeContent(in: mutation.range, delta: mutation.delta)
 	}
 }

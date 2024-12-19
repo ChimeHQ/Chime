@@ -94,9 +94,8 @@ public final class SyntaxService {
 
 	public var storageMonitor: TextStorageMonitor {
 		.init(
-			willApplyMutations: { self.willApplyMutations($0) },
-			didApplyMutations: { self.didApplyMutations($0) },
-			didCompleteMutations: { _ in }
+			willApplyMutation: { self.willApplyMutation($0) },
+			didApplyMutation: { self.didApplyMutation($0) }
 		)
 	}
 	
@@ -115,20 +114,16 @@ public final class SyntaxService {
 }
 
 extension SyntaxService {
-	private func willApplyMutations(_ mutations: [TextStorageMutation]) {
+	private func willApplyMutation(_ mutation: TextStorageMutation) {
 		guard let client = treeSitterClient else { return }
 
-		for mutation in mutations.flatMap({ $0.stringMutations}) {
-			client.willChangeContent(in: mutation.range)
-		}
+		client.willChangeContent(in: mutation.range)
 	}
 
-	private func didApplyMutations(_ mutations: [TextStorageMutation]) {
+	private func didApplyMutation(_ mutation: TextStorageMutation) {
 		guard let client = treeSitterClient else { return }
 
-		for mutation in mutations.flatMap({ $0.stringMutations}) {
-			client.didChangeContent(in: mutation.range, delta: mutation.delta)
-		}
+		client.didChangeContent(in: mutation.range, delta: mutation.delta)
 	}
 }
 
