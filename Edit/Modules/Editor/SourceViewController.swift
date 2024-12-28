@@ -48,7 +48,7 @@ public final class SourceViewController: NSViewController {
 
 extension SourceViewController {
 	public func updateTheme(_ theme: Theme, context: Query.Context) {
-		let syntaxStyle = theme.style(for: .init(key: .syntax(.text), context: context))
+		let syntaxStyle = theme.style(for: .init(key: .syntax(.text(nil)), context: context))
 
 		sourceView.typingAttributes = [
 			.font: syntaxStyle.font ?? Theme.fallbackFont,

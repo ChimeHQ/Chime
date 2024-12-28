@@ -43,7 +43,7 @@ public final class LanguageDataStore {
 }
 
 extension LanguageDataStore {
-	private static func languageDocumentType(from identifier: String) -> UTType {
+	private func languageDocumentType(from identifier: String) -> UTType {
 		if let lang = RootLanguage(rawValue: identifier) {
 			return lang.typeIdentifier
 		}
@@ -55,18 +55,19 @@ extension LanguageDataStore {
 		case "markdown_inline":
 			return .markdownInline
 		default:
+			logger.warning("Unhandled language name: \(identifier, privacy: .public)")
 			return .plainText
 		}
 	}
 
 	private func profile(for identifier: String) -> LanguageProfile {
-		let utType = Self.languageDocumentType(from: identifier)
+		let utType = languageDocumentType(from: identifier)
 
 		return profile(for: utType)
 	}
 
 	public func languageConfiguration(with identifier: String, background: Bool = true) -> LanguageConfiguration? {
-		let utType = LanguageDataStore.languageDocumentType(from: identifier)
+		let utType = languageDocumentType(from: identifier)
 
 		// shortcut this
 		if utType == .plainText {
@@ -92,14 +93,14 @@ extension LanguageDataStore {
 		}
 
 		Task<Void, Never> {
-			logger.info("Beginning background language config loading for \(identifier)")
-			
+			logger.info("Beginning background language config loading for \(identifier, privacy: .public)")
+
 			do {
 				_ = try await loadLanguageConfiguration(with: utType, identifier: identifier)
 				
-				logger.info("Load complete")
+				logger.info("Load complete for \(identifier, privacy: .public)")
 			} catch {
-				logger.error("Failed to load config for \(identifier)")
+				logger.error("Failed to load config for \(identifier, privacy: .public), \(error, privacy: .public)")
 			}
 		}
 

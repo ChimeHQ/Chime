@@ -178,7 +178,7 @@ extension LanguageProfile {
 	static let markdownInlineProfile = LanguageProfile(
 		name: "MarkdownInline",
 		language: Language(tree_sitter_markdown_inline()),
-		bundleName: "TreeSitterMarkdown_TreeSitterMarkdownInline",
+//		bundleName: "TreeSitterMarkdown_TreeSitterMarkdownInline",
 		mutationFilter: genericFilter
 	)
 

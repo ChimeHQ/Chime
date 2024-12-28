@@ -8,9 +8,9 @@ import PackageDescription
 let package = Package(
 	name: "Dependencies",
 	platforms: [
-		.macOS(.v12),
-		.macCatalyst(.v15),
-		.iOS(.v15),
+		.macOS(.v14),
+		.macCatalyst(.v16),
+		.iOS(.v16),
 		.visionOS(.v1),
 	],
 	products: [
@@ -40,9 +40,11 @@ let package = Package(
 		.package(url: "https://github.com/alex-pinkus/tree-sitter-swift", branch: "with-generated-files"),
 
 		// this has to match what is in Ligature, for now
-		.package(url: "https://github.com/ChimeHQ/Glyph", revision: "dce014c6ee2564c44e38c222a3fdc6eef76892d6"),
-		.package(url: "https://github.com/ChimeHQ/IBeam", revision: "aab054d6411ed4164ddf1fc7e61f15550ce207b0"),
-		.package(url: "https://github.com/ChimeHQ/Ligature", revision: "a80c9f1bb93c569d15dbee2cc15a9c8d6522512f"),
+		.package(url: "https://github.com/ChimeHQ/Glyph", revision: "63cc672cd1bcc408b3a5158816985c82308e5f83"),
+		.package(url: "https://github.com/ChimeHQ/IBeam", revision: "53e0ea98ce3fa299ebbd76bd7b17c561908c763c"),
+		.package(url: "https://github.com/ChimeHQ/Ligature", revision: "a43d576b2f453f91c8a55f73f4eecd5ec4425ea2"),
+		.package(url: "https://github.com/ChimeHQ/SourceView", revision: "3464fd06c2edf97d4df285039141fa4c6ce7eaf0"),
+		.package(url: "https://github.com/ChimeHQ/TextFormation", branch: "feature/process-mutation")
 	],
 	targets: [
 		.target(
@@ -75,6 +77,8 @@ let package = Package(
 				"Glyph",
 				"IBeam",
 				"Ligature",
+				"SourceView",
+				"TextFormation",
 			]
 		),
 	]

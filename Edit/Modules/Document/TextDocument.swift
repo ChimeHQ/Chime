@@ -14,8 +14,6 @@ import TextSystem
 import Theme
 
 public final class TextDocument: ContainedDocument<Project> {
-	typealias StorageDispatcher = TextStorageDispatcher<TextViewSystem.Version>
-
 	private lazy var projectWindowController = makeProjectWindowController(
 		contentViewController: coordinator.editorContentController,
 		model: windowModel
@@ -63,10 +61,10 @@ public final class TextDocument: ContainedDocument<Project> {
 		addWindowController(projectWindowController)
 	}
 
-	public override func data(ofType typeName: String) throws -> Data {
-		// Insert code here to write your document to data of the specified type, throwing an error in case of failure.
-		// Alternatively, you could remove this method and override fileWrapper(ofType:), write(to:ofType:), or write(to:ofType:for:originalContentsURL:) instead.
-		throw NSError(domain: NSOSStatusErrorDomain, code: unimpErr, userInfo: nil)
+	public override func write(to url: URL, ofType typeName: String) throws {
+		try MainActor.assumeIsolated {
+			try textSystem.write(to: url)
+		}
 	}
 
 	public override func read(from url: URL, ofType typeName: String) throws {

@@ -89,7 +89,6 @@
 		C96B61FE2BDA719100561DE8 /* libGutter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9891B352AFFF1F700C8F393 /* libGutter.a */; };
 		C96B61FF2BDA71B200561DE8 /* libUIUtility.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE53232A75A17700CACA1A /* libUIUtility.a */; };
 		C96B62002BDA71E400561DE8 /* libStatus.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE539B2A76709D00CACA1A /* libStatus.a */; };
-		C96B62062BDA721100561DE8 /* SourceView in Frameworks */ = {isa = PBXBuildFile; productRef = C96B62052BDA721100561DE8 /* SourceView */; };
 		C96B62262BDA9F4100561DE8 /* EditKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C92931422B80CC6700C64DDE /* EditKit.framework */; };
 		C973E0112B62BE0C000998F7 /* Highlighter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C973DFF62B62808D000998F7 /* Highlighter.swift */; };
 		C973E0132B62BE9F000998F7 /* TextViewSystemNeonInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99D76112B5EFA050028E3B0 /* TextViewSystemNeonInterface.swift */; };
@@ -172,7 +171,6 @@
 		C9B8A9E82B31E62D00C79606 /* TextLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B8A9B32B23446400C79606 /* TextLayout.swift */; };
 		C9B8A9EA2B31E79500C79606 /* NSTextView+Mutations.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B8A9E92B31E79500C79606 /* NSTextView+Mutations.swift */; };
 		C9B8A9F92B31F37000C79606 /* TextStorageMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B8A9F32B31F09E00C79606 /* TextStorageMonitor.swift */; };
-		C9B8A9FA2B31F37200C79606 /* TextStorageDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99491C12B0D1660002DC2AC /* TextStorageDispatcher.swift */; };
 		C9B8A9FB2B31F37500C79606 /* TextStorageMutation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B8A9872B209D7E00C79606 /* TextStorageMutation.swift */; };
 		C9B8A9FC2B31F37700C79606 /* TextStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B8A98B2B209F6900C79606 /* TextStorage.swift */; };
 		C9B8AA002B31F93800C79606 /* RangeProcessor+Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B8A9FF2B31F93800C79606 /* RangeProcessor+Storage.swift */; };
@@ -1058,9 +1056,6 @@
 		C95BBE382BDD058800C9E1B9 /* Utility-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Utility-Bridging-Header.h"; sourceTree = "<group>"; };
 		C95BBE3D2BDD075300C9E1B9 /* Utility.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Utility.xcconfig; sourceTree = "<group>"; };
 		C95BBE3E2BDD110700C9E1B9 /* Constants.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
-		C9655F892D11ED700008AED1 /* TextFormation */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = TextFormation; path = ../TextFormation; sourceTree = SOURCE_ROOT; };
-		C9655F8A2D11F1A40008AED1 /* SourceView */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = SourceView; path = ../SourceView; sourceTree = SOURCE_ROOT; };
-		C9655F8B2D11F30C0008AED1 /* IBeam */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = IBeam; path = ../IBeam; sourceTree = SOURCE_ROOT; };
 		C9655F902D1220FF0008AED1 /* TextViewInteraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewInteraction.swift; sourceTree = "<group>"; };
 		C9655F922D12218C0008AED1 /* TransformingTextSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformingTextSystem.swift; sourceTree = "<group>"; };
 		C9655F962D1455190008AED1 /* CursorSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CursorSet.swift; sourceTree = "<group>"; };
@@ -1132,7 +1127,6 @@
 		C99491A92B07FA8C002DC2AC /* DocumentStateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentStateModel.swift; sourceTree = "<group>"; };
 		C99491AD2B09570A002DC2AC /* LineParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineParser.swift; sourceTree = "<group>"; };
 		C99491AF2B09573F002DC2AC /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
-		C99491C12B0D1660002DC2AC /* TextStorageDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextStorageDispatcher.swift; sourceTree = "<group>"; };
 		C99491C42B153051002DC2AC /* TextMetrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextMetrics.swift; sourceTree = "<group>"; };
 		C995EA742C3ED52900D3ED4C /* ClojureStandaloneExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClojureStandaloneExtension.swift; sourceTree = "<group>"; };
 		C99A8DF82C40011100D8F599 /* PythonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PythonExtension.swift; path = "submodules/chime-python/Sources/ChimePython/PythonExtension.swift"; sourceTree = SOURCE_ROOT; };
@@ -1281,7 +1275,6 @@
 				C95B91232BD98B64006FDD00 /* libTextSystem.a in Frameworks */,
 				C96B61FD2BDA714700561DE8 /* ScrollViewPlus in Frameworks */,
 				C95B91342BD98CA1006FDD00 /* SwiftTreeSitter in Frameworks */,
-				C96B62062BDA721100561DE8 /* SourceView in Frameworks */,
 				C9E0BA0F2BD280C4007AF034 /* ChimeKit.framework in Frameworks */,
 				C95B913C2BD98CF1006FDD00 /* TextStory in Frameworks */,
 				C95B913A2BD98CDC006FDD00 /* Lowlight in Frameworks */,
@@ -1788,7 +1781,6 @@
 			children = (
 				C9B8A9FF2B31F93800C79606 /* RangeProcessor+Storage.swift */,
 				C9B8A98B2B209F6900C79606 /* TextStorage.swift */,
-				C99491C12B0D1660002DC2AC /* TextStorageDispatcher.swift */,
 				C9B8A9F32B31F09E00C79606 /* TextStorageMonitor.swift */,
 				C9B8A9872B209D7E00C79606 /* TextStorageMutation.swift */,
 			);
@@ -1883,9 +1875,6 @@
 		C9FE52902A7525D000CACA1A = {
 			isa = PBXGroup;
 			children = (
-				C9655F8B2D11F30C0008AED1 /* IBeam */,
-				C9655F8A2D11F1A40008AED1 /* SourceView */,
-				C9655F892D11ED700008AED1 /* TextFormation */,
 				C9FE538E2A76674600CACA1A /* Configurations */,
 				C9439A742C3EC13A0020DDF5 /* Dependencies */,
 				C9FE529B2A7525D000CACA1A /* Edit */,
@@ -2406,7 +2395,6 @@
 				C9655F992D1456B50008AED1 /* PBXTargetDependency */,
 				C972C81F2C4BD96D00B8948A /* PBXTargetDependency */,
 				C976D7E82C4A871400CC6EA6 /* PBXTargetDependency */,
-				C96B62022BDA71FE00561DE8 /* PBXTargetDependency */,
 				C96B61FB2BDA714000561DE8 /* PBXTargetDependency */,
 				C96B61F52BDA70E000561DE8 /* PBXTargetDependency */,
 				C95B91382BD98CCF006FDD00 /* PBXTargetDependency */,
@@ -2430,7 +2418,6 @@
 				C95B913B2BD98CF1006FDD00 /* TextStory */,
 				C95B913D2BD98D01006FDD00 /* SwiftTreeSitterLayer */,
 				C96B61FC2BDA714700561DE8 /* ScrollViewPlus */,
-				C96B62052BDA721100561DE8 /* SourceView */,
 				C9439A702C3EB4410020DDF5 /* TreeSitterParsers */,
 				C976D7E52C4A86F900CC6EA6 /* ThemePark */,
 				C9655F862D11A7A70008AED1 /* Dependencies */,
@@ -3265,7 +3252,6 @@
 				C9FE53EB2A7A5D9700CACA1A /* XCRemoteSwiftPackageReference "Extendable" */,
 				C98EA4162A90F17700B8815E /* XCRemoteSwiftPackageReference "ProcessEnv" */,
 				C9409C642A98CC9800B5D898 /* XCRemoteSwiftPackageReference "Outline" */,
-				C9409C672A98CCCB00B5D898 /* XCRemoteSwiftPackageReference "SourceView" */,
 				C97918C92A9D4C600046EAF1 /* XCRemoteSwiftPackageReference "FuzzyFind" */,
 				C9891B262AFEC24100C8F393 /* XCRemoteSwiftPackageReference "TextStory" */,
 				C926738F2B078D3200B3CE2F /* XCRemoteSwiftPackageReference "Neon" */,
@@ -3573,7 +3559,6 @@
 				C99491B12B0957C2002DC2AC /* LineParser.swift in Sources */,
 				C9655F972D1455220008AED1 /* CursorSet.swift in Sources */,
 				C9B8A9FB2B31F37500C79606 /* TextStorageMutation.swift in Sources */,
-				C9B8A9FA2B31F37200C79606 /* TextStorageDispatcher.swift in Sources */,
 				C99491AA2B07FA8C002DC2AC /* DocumentStateModel.swift in Sources */,
 				C9B8A9F92B31F37000C79606 /* TextStorageMonitor.swift in Sources */,
 				C9B8A9D62B30613300C79606 /* DocumentCursorsMonitorModifier.swift in Sources */,
@@ -4050,10 +4035,6 @@
 				macos,
 			);
 			productRef = C96B61FA2BDA714000561DE8 /* ScrollViewPlus */;
-		};
-		C96B62022BDA71FE00561DE8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			productRef = C96B62012BDA71FE00561DE8 /* SourceView */;
 		};
 		C96B62282BDA9F4500561DE8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -5379,7 +5360,7 @@
 			repositoryURL = "https://github.com/ChimeHQ/Neon.git";
 			requirement = {
 				kind = revision;
-				revision = 32ef005f7fc9d8358739ef2e6702c2c73cec6ca9;
+				revision = ca4a9de01072bed66a45d77654cf1f5ed9ef5059;
 			};
 		};
 		C93F72252BF0F9290021ACF3 /* XCRemoteSwiftPackageReference "Sparkle" */ = {
@@ -5398,20 +5379,12 @@
 				revision = 43a755ca50bc73a23ed1cb0c93362518ab27bd3b;
 			};
 		};
-		C9409C672A98CCCB00B5D898 /* XCRemoteSwiftPackageReference "SourceView" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ChimeHQ/SourceView";
-			requirement = {
-				kind = revision;
-				revision = d563ef0ba6c1c91aa6bcee406577b8826baa1f69;
-			};
-		};
 		C976D7E42C4A86F800CC6EA6 /* XCRemoteSwiftPackageReference "ThemePark" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ChimeHQ/ThemePark";
 			requirement = {
 				kind = revision;
-				revision = 2ccbf37a0c7e52c7b20aadabd8e8cbbb2b25b9a8;
+				revision = 7df5441647a176c2739435a7285f201ff1c90384;
 			};
 		};
 		C97918C32A9D4A510046EAF1 /* XCRemoteSwiftPackageReference "FuzzyFind" */ = {
@@ -5683,16 +5656,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C9FE53AE2A7677D100CACA1A /* XCRemoteSwiftPackageReference "ScrollViewPlus" */;
 			productName = ScrollViewPlus;
-		};
-		C96B62012BDA71FE00561DE8 /* SourceView */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C9409C672A98CCCB00B5D898 /* XCRemoteSwiftPackageReference "SourceView" */;
-			productName = SourceView;
-		};
-		C96B62052BDA721100561DE8 /* SourceView */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C9409C672A98CCCB00B5D898 /* XCRemoteSwiftPackageReference "SourceView" */;
-			productName = SourceView;
 		};
 		C972C81E2C4BD96D00B8948A /* TreeSitterParsers */ = {
 			isa = XCSwiftPackageProductDependency;

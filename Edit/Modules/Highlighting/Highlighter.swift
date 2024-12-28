@@ -127,10 +127,12 @@ public final class Highlighter<Service: TokenService> {
 	public func invalidate(textTarget target: TextTarget) {
 		let query = TextMetrics.Query(textTarget: target, fill: .optional, useEntireDocument: false)
 		guard let metrics = textSystem.textMetrics.valueProvider.sync(query) else {
+			invalidate(.all)
 			return
 		}
 
 		guard let rangeTarget = RangeTarget(textTarget: target, metrics: metrics) else {
+			invalidate(.all)
 			return
 		}
 
@@ -161,11 +163,21 @@ public final class Highlighter<Service: TokenService> {
 
 	private func relayInvalidation(_ target: RangeTarget) {
 		styler.invalidate(target)
-		styler.validate()
+
+		// only re-validate what is currently visible
+		visibleContentDidChange()
 	}
 
 	public func visibleContentDidChange() {
+		let visibleSet = textSystem.textLayout.visibleSet()
+
+//		styler.validate(RangeTarget.set(visibleSet))
 		styler.validate()
+	}
+
+	public var name: String? {
+		get { styler.name }
+		set { styler.name = newValue }
 	}
 
 	public func updateTheme(_ theme: Theme, context: Query.Context) {

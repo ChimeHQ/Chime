@@ -36,7 +36,7 @@ public final class SyntaxService {
 
 	private let logger = Logger(type: SyntaxService.self)
 	private var state = State.inactive {
-		didSet { invalidate() }
+		didSet { invalidate(.all) }
 	}
 
 	private let languageDataStore: LanguageDataStore
@@ -57,8 +57,17 @@ public final class SyntaxService {
 		setUpClient(with: to.uti)
 	}
 
-	private func invalidate() {
-		invalidationHandler(.all)
+	private func invalidate(_ target: TextTarget) {
+		switch target {
+		case .all:
+			print("invalidating all")
+		case let .set(value):
+			print("invalidating", value.nsRangeView)
+		case let .range(value):
+			print("invalidating", value)
+		}
+
+		invalidationHandler(target)
 	}
 
 	private func setUpClient(with utType: UTType) {
@@ -73,7 +82,7 @@ public final class SyntaxService {
 			contentProvider: { [textSystem] in textSystem.storage.layerContent(for: $0) },
 			contentSnapshopProvider: { [textSystem] in textSystem.storage.layerContentSnapshot(for: $0) },
 			lengthProvider: { [textSystem] in textSystem.storage.currentLength },
-			invalidationHandler: { [unowned self] in self.invalidationHandler(.set($0)) },
+			invalidationHandler: { [unowned self] in self.invalidate(.set($0)) },
 			locationTransformer: { [textSystem] in textSystem.textMetrics.locationTransformer($0) }
 		)
 
@@ -109,6 +118,8 @@ public final class SyntaxService {
 	}
 
 	public func languageConfigurationChanged(for name: String) {
+		logger.info("Language configuration changed for \(name, privacy: .public)")
+		
 		treeSitterClient?.languageConfigurationChanged(for: name)
 	}
 }
@@ -140,9 +151,12 @@ extension SyntaxService {
 	public var tokenProvider: TokenProvider {
 		TokenProvider(
 			syncValue: { range in
+				print("asking for", range)
+
 				guard let client = self.treeSitterClient else {
 					return nil
 				}
+
 
 				do {
 					let queryParams = try self.highlightsQueryParams(for: range)
@@ -158,6 +172,8 @@ extension SyntaxService {
 				}
 			},
 			mainActorAsyncValue: { range in
+				print("asking for", range, self.treeSitterClient == nil)
+
 				guard let client = self.treeSitterClient else {
 					return TokenApplication.noChange
 				}

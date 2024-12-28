@@ -11,12 +11,10 @@ import Theme
 
 @MainActor
 public final class DocumentCoordinator<Service: TokenService> {
-	typealias StorageDispatcher = TextStorageDispatcher<TextViewSystem.Version>
 	typealias CursorTextSystem = TransformingTextSystem<TextViewSystem.Version>
 
 	private let syntaxService: SyntaxService
 	private let layoutBuffer = LayoutInvalidationBuffer()
-	private let dispatcher: StorageDispatcher
 	private let sourceViewController = SourceViewController()
 	private let cursorCoordinator: TextSystemCursorCoordinator<CursorTextSystem>
 	private let languageDataStore = LanguageDataStore.global
@@ -45,12 +43,6 @@ public final class DocumentCoordinator<Service: TokenService> {
 
 		let storage = textSystem.storage
 			.relaying(to: monitors)
-
-		self.dispatcher = StorageDispatcher(storage: textSystem.storage, monitors: [
-			textSystem.storageMonitor,
-			syntaxService.storageMonitor,
-			highlighter.storageMonitor
-		])
 
 		let sourceView = sourceViewController.sourceView
 		let cursorTextSystem = CursorTextSystem(textView: sourceView, storage: storage)
@@ -82,8 +74,9 @@ public final class DocumentCoordinator<Service: TokenService> {
 			layoutBuffer.contentVisibleRectChanged()
 		}
 
-		languageDataStore.configurationLoaded = { [weak syntaxService] in
-			syntaxService?.languageConfigurationChanged(for: $0)
+		languageDataStore.configurationLoaded = { [weak syntaxService, weak highlighter] name in
+			syntaxService?.languageConfigurationChanged(for: name)
+			highlighter?.name = name
 		}
 
 		// default to something sensible

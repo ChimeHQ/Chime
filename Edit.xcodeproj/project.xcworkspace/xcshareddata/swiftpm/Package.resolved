@@ -1,4 +1,5 @@
 {
+  "originHash" : "94194eeb3685fbedfc1af2ee819a041c9a0e9c1b014357e14b58e640ab57393e",
   "pins" : [
     {
       "identity" : "asyncxpcconnection",
@@ -75,7 +76,15 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ChimeHQ/Glyph",
       "state" : {
-        "revision" : "dce014c6ee2564c44e38c222a3fdc6eef76892d6"
+        "revision" : "63cc672cd1bcc408b3a5158816985c82308e5f83"
+      }
+    },
+    {
+      "identity" : "ibeam",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ChimeHQ/IBeam",
+      "state" : {
+        "revision" : "53e0ea98ce3fa299ebbd76bd7b17c561908c763c"
       }
     },
     {
@@ -118,7 +127,7 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ChimeHQ/Ligature",
       "state" : {
-        "revision" : "a80c9f1bb93c569d15dbee2cc15a9c8d6522512f"
+        "revision" : "a43d576b2f453f91c8a55f73f4eecd5ec4425ea2"
       }
     },
     {
@@ -143,7 +152,7 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ChimeHQ/Neon.git",
       "state" : {
-        "revision" : "32ef005f7fc9d8358739ef2e6702c2c73cec6ca9"
+        "revision" : "ca4a9de01072bed66a45d77654cf1f5ed9ef5059"
       }
     },
     {
@@ -216,6 +225,14 @@
       }
     },
     {
+      "identity" : "sourceview",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ChimeHQ/SourceView",
+      "state" : {
+        "revision" : "3464fd06c2edf97d4df285039141fa4c6ce7eaf0"
+      }
+    },
+    {
       "identity" : "sparkle",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/sparkle-project/Sparkle",
@@ -241,6 +258,15 @@
       }
     },
     {
+      "identity" : "textformation",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ChimeHQ/TextFormation",
+      "state" : {
+        "branch" : "feature/process-mutation",
+        "revision" : "95df87b6d586629461f7cb0178bad79d37e95349"
+      }
+    },
+    {
       "identity" : "textstory",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ChimeHQ/TextStory.git",
@@ -253,7 +279,7 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ChimeHQ/ThemePark",
       "state" : {
-        "revision" : "2ccbf37a0c7e52c7b20aadabd8e8cbbb2b25b9a8"
+        "revision" : "7df5441647a176c2739435a7285f201ff1c90384"
       }
     },
     {
@@ -379,7 +405,7 @@
       "location" : "https://github.com/tree-sitter-grammars/tree-sitter-markdown",
       "state" : {
         "branch" : "split_parser",
-        "revision" : "f9820b2db958228f9be339b67d2de874d065866e"
+        "revision" : "192407ab5a24bfc24f13332979b5e7967518754a"
       }
     },
     {
@@ -446,5 +472,5 @@
       }
     }
   ],
-  "version" : 2
+  "version" : 3
 }

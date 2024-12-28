@@ -1,18 +1,38 @@
-import Foundation
+import AppKit
 
 import Theme
+import ThemePark
 
 @MainActor
 final class TokenStyleSource {
 	private var theme: Theme = Theme.fallback
+	private var context: Query.Context = Query.Context(window: nil)
 
 	func updateTheme(_ theme: Theme, context: Query.Context) {
 		self.theme = theme
+		self.context = context
+	}
+
+	private var fallbackFont: PlatformFont {
+		theme.font(for: Query(key: .syntax(.text(nil)), context: context)) ?? Theme.fallbackFont
 	}
 
 	func tokenStyle(for name: String) -> [NSAttributedString.Key : Any] {
-		let context = Query.Context(window: nil)
+		let style = theme.highlightsQueryCaptureStyle(for: name, context: context)
 
-		return theme.highlightsQueryCaptureStyle(for: name, context: context).attributes
+		// this is a hack to ensure we actually do this when necessary. It really is the responcibility of the theme.
+		switch name {
+		case "text.strong":
+			var attrs = style.attributes
+
+			let font = (attrs[.font] as? PlatformFont) ?? fallbackFont
+
+			attrs[.font] = NSFontManager.shared.convert(font, toHaveTrait: .boldFontMask)
+
+			return attrs
+		default:
+			break
+		}
+		return style.attributes
 	}
 }

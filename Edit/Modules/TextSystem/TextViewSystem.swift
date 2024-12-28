@@ -19,8 +19,9 @@ public final class TextViewSystem: NSObject {
 
 	let textView: NSUITextView
 	public private(set) var textMetrics: TextMetrics
-	public var willLayoutHandler: () -> Void = { }
-	public var didLayoutHandler: () -> Void = { }
+	public var willLayoutHandler: () -> Void = {}
+	public var didLayoutHandler: () -> Void = {}
+	public var contentReplaced: () -> Void = {}
 
 	public init(textView: NSUITextView) {
 		self.textView = textView
@@ -168,6 +169,10 @@ extension TextViewSystem {
 		let storage = try TSYTextStorage(url: url, options: options, documentAttributes: nil)
 
 		replaceTextStorage(storage)
+	}
+
+	public func write(to url: URL) throws {
+		try storage.string.write(to: url, atomically: true, encoding: .utf8)
 	}
 
 	public func themeChanged(attributes: [NSAttributedString.Key: Any]) {
