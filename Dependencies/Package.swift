@@ -40,10 +40,10 @@ let package = Package(
 		.package(url: "https://github.com/alex-pinkus/tree-sitter-swift", branch: "with-generated-files"),
 
 		// this has to match what is in Ligature, for now
-		.package(url: "https://github.com/ChimeHQ/Glyph", revision: "63cc672cd1bcc408b3a5158816985c82308e5f83"),
+		.package(url: "https://github.com/ChimeHQ/Glyph", branch: "main"),
 		.package(url: "https://github.com/ChimeHQ/IBeam", revision: "53e0ea98ce3fa299ebbd76bd7b17c561908c763c"),
-		.package(url: "https://github.com/ChimeHQ/Ligature", revision: "a43d576b2f453f91c8a55f73f4eecd5ec4425ea2"),
-		.package(url: "https://github.com/ChimeHQ/SourceView", revision: "3464fd06c2edf97d4df285039141fa4c6ce7eaf0"),
+		.package(url: "https://github.com/ChimeHQ/Ligature", branch: "main"),
+		.package(url: "https://github.com/ChimeHQ/SourceView", branch: "main"),
 		.package(url: "https://github.com/ChimeHQ/TextFormation", branch: "feature/process-mutation")
 	],
 	targets: [
