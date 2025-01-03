@@ -77,7 +77,7 @@
       "location" : "https://github.com/ChimeHQ/Glyph",
       "state" : {
         "branch" : "main",
-        "revision" : "1ad045842d04479c93a3eea3742ab79943313b79"
+        "revision" : "25ffb2917c773ef6b8e54695f54e0cc55862dda2"
       }
     },
     {
@@ -232,7 +232,7 @@
       "location" : "https://github.com/ChimeHQ/SourceView",
       "state" : {
         "branch" : "main",
-        "revision" : "65d13c052514c4d08ff86231bde51d23bef40696"
+        "revision" : "8aa3852c4ec52de5d278085d61fc5dbea9661947"
       }
     },
     {

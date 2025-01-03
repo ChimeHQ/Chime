@@ -41,7 +41,7 @@ let package = Package(
 
 		// this has to match what is in Ligature, for now
 		.package(url: "https://github.com/ChimeHQ/Glyph", branch: "main"),
-		.package(url: "https://github.com/ChimeHQ/IBeam", revision: "53e0ea98ce3fa299ebbd76bd7b17c561908c763c"),
+		.package(url: "https://github.com/ChimeHQ/IBeam", branch: "main"),
 		.package(url: "https://github.com/ChimeHQ/Ligature", branch: "main"),
 		.package(url: "https://github.com/ChimeHQ/SourceView", branch: "main"),
 		.package(url: "https://github.com/ChimeHQ/TextFormation", branch: "feature/process-mutation")
