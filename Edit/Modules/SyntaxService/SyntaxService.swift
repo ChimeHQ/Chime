@@ -58,15 +58,6 @@ public final class SyntaxService {
 	}
 
 	private func invalidate(_ target: TextTarget) {
-		switch target {
-		case .all:
-			print("invalidating all")
-		case let .set(value):
-			print("invalidating", value.nsRangeView)
-		case let .range(value):
-			print("invalidating", value)
-		}
-
 		invalidationHandler(target)
 	}
 
@@ -151,8 +142,6 @@ extension SyntaxService {
 	public var tokenProvider: TokenProvider {
 		TokenProvider(
 			syncValue: { range in
-				print("asking for", range)
-
 				guard let client = self.treeSitterClient else {
 					return nil
 				}
@@ -172,8 +161,6 @@ extension SyntaxService {
 				}
 			},
 			mainActorAsyncValue: { range in
-				print("asking for", range, self.treeSitterClient == nil)
-
 				guard let client = self.treeSitterClient else {
 					return TokenApplication.noChange
 				}
@@ -182,7 +169,6 @@ extension SyntaxService {
 					let queryParams = try self.highlightsQueryParams(for: range)
 					let namedRanges = try await client.highlightsProvider.async(queryParams)
 
-					print("names:", namedRanges)
 					return TokenApplication(namedRanges: namedRanges, range: range)
 				} catch {
 					self.logger.warning("Failed to get highlighting: \(error)")
