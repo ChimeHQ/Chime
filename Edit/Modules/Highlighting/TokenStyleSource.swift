@@ -30,6 +30,14 @@ final class TokenStyleSource {
 			attrs[.font] = NSFontManager.shared.convert(font, toHaveTrait: .boldFontMask)
 
 			return attrs
+		case "text.emphasis":
+			var attrs = style.attributes
+
+			let font = (attrs[.font] as? PlatformFont) ?? fallbackFont
+
+			attrs[.font] = NSFontManager.shared.convert(font, toHaveTrait: .italicFontMask)
+
+			return attrs
 		default:
 			break
 		}
