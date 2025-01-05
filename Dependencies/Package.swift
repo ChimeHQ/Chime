@@ -39,7 +39,6 @@ let package = Package(
 		.package(url: "https://github.com/tree-sitter/tree-sitter-typescript", branch: "master"),
 		.package(url: "https://github.com/alex-pinkus/tree-sitter-swift", branch: "with-generated-files"),
 
-		// this has to match what is in Ligature, for now
 		.package(url: "https://github.com/ChimeHQ/Glyph", branch: "main"),
 		.package(url: "https://github.com/ChimeHQ/IBeam", branch: "main"),
 		.package(url: "https://github.com/ChimeHQ/Ligature", branch: "main"),

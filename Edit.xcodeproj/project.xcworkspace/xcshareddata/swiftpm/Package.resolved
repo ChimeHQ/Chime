@@ -1,5 +1,5 @@
 {
-  "originHash" : "e15027060ac2e11c381333973cbae2e36401aa934483c0562fd0076f473dd4e2",
+  "originHash" : "c31de57db5e7cff4d78b9975a5697c3bfac3cbf39cd9487395130ab033bee3bc",
   "pins" : [
     {
       "identity" : "asyncxpcconnection",
@@ -85,7 +85,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ChimeHQ/IBeam",
       "state" : {
-        "revision" : "53e0ea98ce3fa299ebbd76bd7b17c561908c763c"
+        "branch" : "main",
+        "revision" : "74bb61faf04840f4e7ed26e4f5a965f0c8a6d326"
       }
     },
     {
@@ -154,7 +155,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ChimeHQ/Neon.git",
       "state" : {
-        "revision" : "ca4a9de01072bed66a45d77654cf1f5ed9ef5059"
+        "branch" : "main",
+        "revision" : "6db8225e9812695db48f1adb8d54648f07319998"
       }
     },
     {
@@ -232,7 +234,7 @@
       "location" : "https://github.com/ChimeHQ/SourceView",
       "state" : {
         "branch" : "main",
-        "revision" : "8aa3852c4ec52de5d278085d61fc5dbea9661947"
+        "revision" : "ef5866b015b9c67477065346c7633ae98411f18f"
       }
     },
     {
@@ -249,6 +251,7 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ChimeHQ/SwiftTreeSitter",
       "state" : {
+        "branch" : "main",
         "revision" : "55f2c2fdaf859f86e4ea8513b9934badc7894019"
       }
     },

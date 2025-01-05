@@ -5359,8 +5359,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ChimeHQ/Neon.git";
 			requirement = {
-				kind = revision;
-				revision = ca4a9de01072bed66a45d77654cf1f5ed9ef5059;
+				branch = main;
+				kind = branch;
 			};
 		};
 		C93F72252BF0F9290021ACF3 /* XCRemoteSwiftPackageReference "Sparkle" */ = {

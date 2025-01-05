@@ -55,7 +55,7 @@ final class TransformingTextSystem<Version> {
 	}
 }
 
-extension TransformingTextSystem: @preconcurrency IBeam.TextSystem {
+extension TransformingTextSystem: @preconcurrency IBeam.TextSystemInterface {
 	typealias TextRange = IBeamTextViewSystem.TextRange
 	typealias TextPosition = IBeamTextViewSystem.TextPosition
 
