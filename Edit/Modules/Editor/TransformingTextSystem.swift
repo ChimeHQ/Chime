@@ -4,12 +4,34 @@ import NSUI
 import SourceView
 import TextFormation
 
-@MainActor
-struct TextFormationSystem {
-	let internalTextSystem: IBeamTextViewSystem
+// Type adatpers
+extension TextFormation.MutationOutput {
+	init(_ value: IBeam.MutationOutput<TextRange>) {
+		self.init(selection: value.selection, delta: value.delta)
+	}
 }
 
-extension TextFormationSystem: @preconcurrency TextFormation.TextSystem {
+//extension AttributedString {
+//	var string: String {
+//		NSAttributedString(self).string
+//	}
+//}
+
+/// TextFormation in terms of IBeam.
+@MainActor
+struct TextFormationInterface<Interface: IBeam.TextSystemInterface>
+	where Interface.TextPosition == Int, Interface.TextRange == NSRange
+{
+	let ibeamInterface: Interface
+	let substringProvider: (TextRange) -> String?
+
+	init(ibeamInterface: Interface, substringProvider: @escaping (TextRange) -> String?) {
+		self.ibeamInterface = ibeamInterface
+		self.substringProvider = substringProvider
+	}
+}
+
+extension TextFormationInterface: @preconcurrency TextFormation.TextSystem {
 	typealias TextRange = IBeamTextViewSystem.TextRange
 	typealias TextPosition = IBeamTextViewSystem.TextPosition
 
@@ -18,24 +40,27 @@ extension TextFormationSystem: @preconcurrency TextFormation.TextSystem {
 	}
 
 	func positions(composing range: TextRange) -> (TextPosition, TextPosition) {
-		internalTextSystem.positions(composing: range)
+		ibeamInterface.positions(composing: range)
 	}
 
 	func position(from start: TextPosition, offset: Int) -> TextPosition? {
-		internalTextSystem.position(from: start, offset: offset)
+		ibeamInterface.position(from: start, offset: offset)
 	}
 
 	func textRange(from start: TextPosition, to end: TextPosition) -> TextRange? {
-		internalTextSystem.textRange(from: start, to: end)
+		ibeamInterface.textRange(from: start, to: end)
 	}
 
 	func substring(in range: TextRange) -> String? {
-		internalTextSystem.textView.substring(from: range)
+		substringProvider(range)
 	}
 
 	func applyMutation(_ range: TextRange, string: String) -> Output? {
-		internalTextSystem.applyMutation(range, string: AttributedString(string))
-			.map { TextFormation.MutationOutput(selection: $0.selection, delta: $0.delta) }
+		let attrString = AttributedString(string)
+
+		return ibeamInterface
+			.applyMutation(range, string: attrString)
+			.map { Output($0) }
 	}
 
 	func applyWhitespace(for position: TextPosition, in direction: Direction) -> Output? {
@@ -43,15 +68,105 @@ extension TextFormationSystem: @preconcurrency TextFormation.TextSystem {
 	}
 }
 
+/// IBeam in terms of TextStorage.
+@MainActor
+struct IbeamStorageInterface<Version> {
+	private let storage: TextStorage<Version>
+	private let ibeamViewSystem: IBeamTextViewSystem
+
+	init(textView: NSUITextView, storage: TextStorage<Version>) {
+		self.storage = storage
+		self.ibeamViewSystem = IBeamTextViewSystem(textView: textView)
+	}
+}
+
+extension IbeamStorageInterface: @preconcurrency IBeam.TextSystemInterface {
+	typealias TextRange = IBeamTextViewSystem.TextRange
+	typealias TextPosition = IBeamTextViewSystem.TextPosition
+
+	func beginEditing() {
+		storage.beginEditing()
+	}
+
+	func endEditing() {
+		storage.endEditing()
+	}
+
+	func boundingRect(for range: TextRange) -> CGRect? {
+		ibeamViewSystem.boundingRect(for: range)
+	}
+
+	func position(
+		from position: TextPosition,
+		moving direction: IBeam.TextDirection,
+		by granularity: IBeam.TextGranularity
+	) -> IBeamTextViewSystem.TextPosition? {
+		ibeamViewSystem.position(from: position, moving: direction, by: granularity)
+	}
+
+	func position(from start: TextPosition, offset: Int) -> TextPosition? {
+		ibeamViewSystem.position(from: start, offset: offset)
+	}
+
+	func layoutDirection(at position: TextPosition) -> IBeam.TextLayoutDirection? {
+		ibeamViewSystem.layoutDirection(at: position)
+	}
+
+	var beginningOfDocument: TextPosition {
+		ibeamViewSystem.beginningOfDocument
+	}
+
+	var endOfDocument: TextPosition {
+		ibeamViewSystem.endOfDocument
+	}
+
+	func compare(_ position: TextPosition, to other: TextPosition) -> ComparisonResult {
+		ibeamViewSystem.compare(position, to: other)
+	}
+
+	func positions(composing range: TextRange) -> (TextPosition, TextPosition) {
+		ibeamViewSystem.positions(composing: range)
+	}
+
+	func textRange(from start: TextPosition, to end: TextPosition) -> TextRange? {
+		ibeamViewSystem.textRange(from: start, to: end)
+	}
+
+	func applyMutation(_ range: TextRange, string: NSAttributedString) -> IBeam.MutationOutput<TextRange>? {
+		// ibeamViewSystem has an implementation of applyMutation, but we need to do in terms of our storage
+
+		let plainString = string.string
+		let length = plainString.utf16.count
+
+		let mutation = TextStorageMutation(range: range, string: plainString)
+
+		storage.applyMutation(mutation)
+
+		let delta = length - range.length
+		let position = min(range.lowerBound + length, storage.currentLength)
+
+		let newSelection = NSRange(position..<position)
+
+		return MutationOutput<NSRange>(selection: newSelection, delta: delta)
+	}
+
+	func applyMutation(_ range: TextRange, string: AttributedString) -> IBeam.MutationOutput<TextRange>? {
+		applyMutation(range, string: NSAttributedString(string))
+	}
+}
+
 @MainActor
 final class TransformingTextSystem<Version> {
-	private let internalTextSystem: IBeamTextViewSystem
-	private let tfSystem: TextFormationSystem
+	private let ibeamInterface: IbeamStorageInterface<Version>
+	private let textFormationInterface: TextFormationInterface<IbeamStorageInterface<Version>>
 	public var filter: (any NewFilter)?
 
 	init(textView: NSUITextView, storage: TextStorage<Version>) {
-		self.internalTextSystem = IBeamTextViewSystem(textView: textView)
-		self.tfSystem = TextFormationSystem(internalTextSystem: internalTextSystem)
+		self.ibeamInterface = IbeamStorageInterface(textView: textView, storage: storage)
+		self.textFormationInterface = TextFormationInterface(
+			ibeamInterface: ibeamInterface,
+			substringProvider: { [storage] in try? storage.substring(with: $0) }
+		)
 	}
 }
 
@@ -60,55 +175,57 @@ extension TransformingTextSystem: @preconcurrency IBeam.TextSystemInterface {
 	typealias TextPosition = IBeamTextViewSystem.TextPosition
 
 	func beginEditing() {
-		internalTextSystem.beginEditing()
+		ibeamInterface.beginEditing()
 	}
 
 	func endEditing() {
-		internalTextSystem.endEditing()
+		ibeamInterface.endEditing()
 	}
 
 	func boundingRect(for range: TextRange) -> CGRect? {
-		internalTextSystem.boundingRect(for: range)
+		ibeamInterface.boundingRect(for: range)
 	}
 
 	func position(from position: TextPosition, moving direction: IBeam.TextDirection, by granularity: IBeam.TextGranularity) -> IBeamTextViewSystem.TextPosition? {
-		internalTextSystem.position(from: position, moving: direction, by: granularity)
+		ibeamInterface.position(from: position, moving: direction, by: granularity)
 	}
 
 	func position(from start: TextPosition, offset: Int) -> TextPosition? {
-		internalTextSystem.position(from: start, offset: offset)
+		ibeamInterface.position(from: start, offset: offset)
 	}
 
 	func layoutDirection(at position: TextPosition) -> IBeam.TextLayoutDirection? {
-		internalTextSystem.layoutDirection(at: position)
+		ibeamInterface.layoutDirection(at: position)
 	}
 
 	var beginningOfDocument: TextPosition {
-		internalTextSystem.beginningOfDocument
+		ibeamInterface.beginningOfDocument
 	}
 
 	var endOfDocument: TextPosition {
-		internalTextSystem.endOfDocument
+		ibeamInterface.endOfDocument
 	}
 
 	func compare(_ position: TextPosition, to other: TextPosition) -> ComparisonResult {
-		internalTextSystem.compare(position, to: other)
+		ibeamInterface.compare(position, to: other)
 	}
 
 	func positions(composing range: TextRange) -> (TextPosition, TextPosition) {
-		internalTextSystem.positions(composing: range)
+		ibeamInterface.positions(composing: range)
 	}
 
 	func textRange(from start: TextPosition, to end: TextPosition) -> TextRange? {
-		internalTextSystem.textRange(from: start, to: end)
+		ibeamInterface.textRange(from: start, to: end)
 	}
 
 	func applyMutation(_ range: TextRange, string: AttributedString) -> IBeam.MutationOutput<TextRange>? {
-		if let output = filter?.processMutation(range, string: NSAttributedString(string).string, in: tfSystem) {
+		let attrString = NSAttributedString(string)
+
+		if let output = filter?.processMutation(range, string: attrString.string, in: textFormationInterface) {
 			return IBeam.MutationOutput(selection: output.selection, delta: output.delta)
 		}
 
 		// fall back to just applying the mutation
-		return internalTextSystem.applyMutation(range, string: string)
+		return ibeamInterface.applyMutation(range, string: attrString)
 	}
 }

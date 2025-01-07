@@ -86,7 +86,7 @@
       "location" : "https://github.com/ChimeHQ/IBeam",
       "state" : {
         "branch" : "main",
-        "revision" : "74bb61faf04840f4e7ed26e4f5a965f0c8a6d326"
+        "revision" : "ba2dc315a3b5c303f23459f90cc140987295ddd7"
       }
     },
     {
@@ -234,7 +234,7 @@
       "location" : "https://github.com/ChimeHQ/SourceView",
       "state" : {
         "branch" : "main",
-        "revision" : "ef5866b015b9c67477065346c7633ae98411f18f"
+        "revision" : "88d7766f24d89cf4a5787d6cdf3677859aeccabf"
       }
     },
     {

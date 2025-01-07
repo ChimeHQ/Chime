@@ -6,7 +6,7 @@ public enum TextStorageError: Error {
 	case stale
 }
 
-public struct TextStorage<Version: Sendable> {
+public struct TextStorage<Version> {
 	// mutation
 	public let beginEditing: () -> Void
 	public let endEditing: () -> Void
