@@ -5439,8 +5439,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ChimeHQ/SwiftTreeSitter.git";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.7.2;
+				branch = main;
+				kind = branch;
 			};
 		};
 		C9BFA1A12BBF4FA200E86487 /* XCRemoteSwiftPackageReference "nsui" */ = {
