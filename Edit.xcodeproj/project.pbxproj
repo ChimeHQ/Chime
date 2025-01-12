@@ -66,7 +66,6 @@
 		C95B91302BD98C76006FDD00 /* libDocumentContent.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9891B132AFEC11A00C8F393 /* libDocumentContent.a */; };
 		C95B91342BD98CA1006FDD00 /* SwiftTreeSitter in Frameworks */ = {isa = PBXBuildFile; productRef = C95B91332BD98CA1006FDD00 /* SwiftTreeSitter */; };
 		C95B91362BD98CBD006FDD00 /* RelativeCollections in Frameworks */ = {isa = PBXBuildFile; productRef = C95B91352BD98CBD006FDD00 /* RelativeCollections */; };
-		C95B913A2BD98CDC006FDD00 /* Lowlight in Frameworks */ = {isa = PBXBuildFile; productRef = C95B91392BD98CDC006FDD00 /* Lowlight */; };
 		C95B913C2BD98CF1006FDD00 /* TextStory in Frameworks */ = {isa = PBXBuildFile; productRef = C95B913B2BD98CF1006FDD00 /* TextStory */; };
 		C95B913E2BD98D01006FDD00 /* SwiftTreeSitterLayer in Frameworks */ = {isa = PBXBuildFile; productRef = C95B913D2BD98D01006FDD00 /* SwiftTreeSitterLayer */; };
 		C95B913F2BD99328006FDD00 /* LanguageData in Resources */ = {isa = PBXBuildFile; fileRef = C9CDEB872B55B889009E252A /* LanguageData */; };
@@ -1277,7 +1276,6 @@
 				C95B91342BD98CA1006FDD00 /* SwiftTreeSitter in Frameworks */,
 				C9E0BA0F2BD280C4007AF034 /* ChimeKit.framework in Frameworks */,
 				C95B913C2BD98CF1006FDD00 /* TextStory in Frameworks */,
-				C95B913A2BD98CDC006FDD00 /* Lowlight in Frameworks */,
 				C95B912D2BD98C50006FDD00 /* Neon in Frameworks */,
 				C9E0BA0E2BD2807B007AF034 /* libDiagnostics.a in Frameworks */,
 				C929316B2B822BAD00C64DDE /* libUtility.a in Frameworks */,
@@ -2397,7 +2395,6 @@
 				C976D7E82C4A871400CC6EA6 /* PBXTargetDependency */,
 				C96B61FB2BDA714000561DE8 /* PBXTargetDependency */,
 				C96B61F52BDA70E000561DE8 /* PBXTargetDependency */,
-				C95B91382BD98CCF006FDD00 /* PBXTargetDependency */,
 				C95B91322BD98C98006FDD00 /* PBXTargetDependency */,
 				C95B912B2BD98C4B006FDD00 /* PBXTargetDependency */,
 				C95B91272BD98C34006FDD00 /* PBXTargetDependency */,
@@ -2414,7 +2411,6 @@
 				C95B912C2BD98C50006FDD00 /* Neon */,
 				C95B91332BD98CA1006FDD00 /* SwiftTreeSitter */,
 				C95B91352BD98CBD006FDD00 /* RelativeCollections */,
-				C95B91392BD98CDC006FDD00 /* Lowlight */,
 				C95B913B2BD98CF1006FDD00 /* TextStory */,
 				C95B913D2BD98D01006FDD00 /* SwiftTreeSitterLayer */,
 				C96B61FC2BDA714700561DE8 /* ScrollViewPlus */,
@@ -3260,7 +3256,6 @@
 				C9B8AA5B2B370A1800C79606 /* XCRemoteSwiftPackageReference "SwiftTreeSitter" */,
 				C9CDEB582B51620E009E252A /* XCRemoteSwiftPackageReference "ColorToolbox" */,
 				C9CDEB8D2B56ACA3009E252A /* XCRemoteSwiftPackageReference "MainOffender" */,
-				C9C568562B7418B60093C068 /* XCRemoteSwiftPackageReference "Lowlight" */,
 				C9BFA1A12BBF4FA200E86487 /* XCRemoteSwiftPackageReference "nsui" */,
 				C93F72252BF0F9290021ACF3 /* XCRemoteSwiftPackageReference "Sparkle" */,
 				C976D7E42C4A86F800CC6EA6 /* XCRemoteSwiftPackageReference "ThemePark" */,
@@ -3986,10 +3981,6 @@
 		C95B91322BD98C98006FDD00 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			productRef = C95B91312BD98C98006FDD00 /* SwiftTreeSitter */;
-		};
-		C95B91382BD98CCF006FDD00 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			productRef = C95B91372BD98CCF006FDD00 /* Lowlight */;
 		};
 		C9655F8D2D11F5A70008AED1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -5451,14 +5442,6 @@
 				revision = 8792b2f789bf03be1be9ecb4df43d2bfe0e5d361;
 			};
 		};
-		C9C568562B7418B60093C068 /* XCRemoteSwiftPackageReference "Lowlight" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ChimeHQ/Lowlight";
-			requirement = {
-				kind = revision;
-				revision = 1687136e033f3f73494f228d83c80702933616a5;
-			};
-		};
 		C9CDEB582B51620E009E252A /* XCRemoteSwiftPackageReference "ColorToolbox" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/raymondjavaxx/ColorToolbox";
@@ -5610,16 +5593,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C99491C82B1538FD002DC2AC /* XCRemoteSwiftPackageReference "RelativeCollections" */;
 			productName = RelativeCollections;
-		};
-		C95B91372BD98CCF006FDD00 /* Lowlight */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C9C568562B7418B60093C068 /* XCRemoteSwiftPackageReference "Lowlight" */;
-			productName = Lowlight;
-		};
-		C95B91392BD98CDC006FDD00 /* Lowlight */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C9C568562B7418B60093C068 /* XCRemoteSwiftPackageReference "Lowlight" */;
-			productName = Lowlight;
 		};
 		C95B913B2BD98CF1006FDD00 /* TextStory */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -56,7 +56,16 @@ public final class DocumentCoordinator<Service: TokenService> {
 		textSystem.didLayoutHandler = layoutBuffer.didLayout
 
 		sourceView.cursorOperationHandler = cursorCoordinator.mutateCursors(with:)
-		sourceView.operationProcessor = cursorCoordinator.processOperation
+		sourceView.operationProcessor = { [cursorCoordinator] in
+			do {
+				try cursorCoordinator.processOperation($0)
+			} catch {
+				print("failed to process input operation: \(error)")
+				return false
+			}
+
+			return true
+		}
 
 		sourceViewController.selectionChangedHandler = { [editorContentController, cursorCoordinator] in
 			editorContentController.cursors = cursorCoordinator.cursorState.cursorSet
