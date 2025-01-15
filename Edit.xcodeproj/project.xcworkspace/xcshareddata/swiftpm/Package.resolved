@@ -1,5 +1,5 @@
 {
-  "originHash" : "d43adc44f1dcaeaeca68db8a97a31f9682965644c2ac523d3c042e6b0c14a080",
+  "originHash" : "61928f8d9ef35ba17e13c853ff06ab0c10ecb11a8ae166608155cdad4fdbad49",
   "pins" : [
     {
       "identity" : "asyncxpcconnection",
@@ -147,8 +147,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/mattmassicotte/MainOffender.git",
       "state" : {
-        "revision" : "8de872d9256ff7f9913cbc5dd560568ab164be45",
-        "version" : "0.2.1"
+        "branch" : "main",
+        "revision" : "2d80eba8286bc5aaff475ee134ffbc384463451f"
       }
     },
     {
@@ -227,15 +227,6 @@
       "state" : {
         "revision" : "f1c4a0acabeb591068dea6cffdd39660b86dec28",
         "version" : "0.0.8"
-      }
-    },
-    {
-      "identity" : "sourceview",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/ChimeHQ/SourceView",
-      "state" : {
-        "branch" : "main",
-        "revision" : "9262e00508b63d1da3b88056ff4e9409b6d45e14"
       }
     },
     {

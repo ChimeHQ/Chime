@@ -26,6 +26,7 @@
 		C92931692B822B7B00C64DDE /* ColorToolbox in Frameworks */ = {isa = PBXBuildFile; productRef = C92931682B822B7B00C64DDE /* ColorToolbox */; };
 		C929316A2B822BA700C64DDE /* libTheme.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE53C82A77CC1E00CACA1A /* libTheme.a */; };
 		C929316B2B822BAD00C64DDE /* libUtility.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE53F42A7A5EF900CACA1A /* libUtility.a */; };
+		C93C25AD2D381DE800B97DE8 /* MainOffender in Frameworks */ = {isa = PBXBuildFile; productRef = C93C25AC2D381DE800B97DE8 /* MainOffender */; };
 		C93F72272BF0F9290021ACF3 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = C93F72262BF0F9290021ACF3 /* Sparkle */; };
 		C93F724B2BF26BDC0021ACF3 /* EditIntentsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93F724A2BF26BDC0021ACF3 /* EditIntentsExtension.swift */; };
 		C93F724D2BF26BDC0021ACF3 /* HighlightIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93F724C2BF26BDC0021ACF3 /* HighlightIntent.swift */; };
@@ -1023,6 +1024,7 @@
 		C92931422B80CC6700C64DDE /* EditKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EditKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C92931722B822BFF00C64DDE /* EditKit.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = EditKit.xcconfig; sourceTree = "<group>"; };
 		C93791A32AD5E02C00665F50 /* Project-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Project-Debug.xcconfig"; sourceTree = "<group>"; };
+		C93C25AB2D380A7400B97DE8 /* SourceView */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = SourceView; path = ../SourceView; sourceTree = SOURCE_ROOT; };
 		C93F72482BF26BDC0021ACF3 /* EditIntents.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.extensionkit-extension"; includeInIndex = 0; path = EditIntents.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		C93F724A2BF26BDC0021ACF3 /* EditIntentsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditIntentsExtension.swift; sourceTree = "<group>"; };
 		C93F724C2BF26BDC0021ACF3 /* HighlightIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightIntent.swift; sourceTree = "<group>"; };
@@ -1273,6 +1275,7 @@
 				C95B91302BD98C76006FDD00 /* libDocumentContent.a in Frameworks */,
 				C95B91232BD98B64006FDD00 /* libTextSystem.a in Frameworks */,
 				C96B61FD2BDA714700561DE8 /* ScrollViewPlus in Frameworks */,
+				C93C25AD2D381DE800B97DE8 /* MainOffender in Frameworks */,
 				C95B91342BD98CA1006FDD00 /* SwiftTreeSitter in Frameworks */,
 				C9E0BA0F2BD280C4007AF034 /* ChimeKit.framework in Frameworks */,
 				C95B913C2BD98CF1006FDD00 /* TextStory in Frameworks */,
@@ -1873,6 +1876,7 @@
 		C9FE52902A7525D000CACA1A = {
 			isa = PBXGroup;
 			children = (
+				C93C25AB2D380A7400B97DE8 /* SourceView */,
 				C9FE538E2A76674600CACA1A /* Configurations */,
 				C9439A742C3EC13A0020DDF5 /* Dependencies */,
 				C9FE529B2A7525D000CACA1A /* Edit */,
@@ -2418,6 +2422,7 @@
 				C976D7E52C4A86F900CC6EA6 /* ThemePark */,
 				C9655F862D11A7A70008AED1 /* Dependencies */,
 				C9655F8E2D1205210008AED1 /* TextFormation */,
+				C93C25AC2D381DE800B97DE8 /* MainOffender */,
 			);
 			productName = EditKit;
 			productReference = C92931422B80CC6700C64DDE /* EditKit.framework */;
@@ -3005,6 +3010,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				C93C25AF2D381DF600B97DE8 /* PBXTargetDependency */,
 				C9655F8D2D11F5A70008AED1 /* PBXTargetDependency */,
 				C96B61F72BDA710A00561DE8 /* PBXTargetDependency */,
 				C9B8AA022B31FB2D00C79606 /* PBXTargetDependency */,
@@ -3926,6 +3932,10 @@
 			isa = PBXTargetDependency;
 			target = C92931412B80CC6700C64DDE /* EditKit */;
 			targetProxy = C929315E2B80DA1000C64DDE /* PBXContainerItemProxy */;
+		};
+		C93C25AF2D381DF600B97DE8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = C93C25AE2D381DF600B97DE8 /* MainOffender */;
 		};
 		C93F72512BF26BDC0021ACF3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -5454,8 +5464,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/mattmassicotte/MainOffender.git";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.1.0;
+				branch = main;
+				kind = branch;
 			};
 		};
 		C9E0BA3A2BD2EB05007AF034 /* XCRemoteSwiftPackageReference "ThemePark" */ = {
@@ -5535,6 +5545,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C9CDEB582B51620E009E252A /* XCRemoteSwiftPackageReference "ColorToolbox" */;
 			productName = ColorToolbox;
+		};
+		C93C25AC2D381DE800B97DE8 /* MainOffender */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C9CDEB8D2B56ACA3009E252A /* XCRemoteSwiftPackageReference "MainOffender" */;
+			productName = MainOffender;
+		};
+		C93C25AE2D381DF600B97DE8 /* MainOffender */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C9CDEB8D2B56ACA3009E252A /* XCRemoteSwiftPackageReference "MainOffender" */;
+			productName = MainOffender;
 		};
 		C93F72262BF0F9290021ACF3 /* Sparkle */ = {
 			isa = XCSwiftPackageProductDependency;

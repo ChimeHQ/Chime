@@ -3,6 +3,7 @@ import IBeam
 import NSUI
 import SourceView
 import TextFormation
+import MainOffender
 
 // Type adatpers
 extension TextFormation.MutationOutput {
@@ -70,7 +71,7 @@ extension TextFormationInterface: @preconcurrency TextFormation.TextSystem {
 
 /// IBeam in terms of TextStorage.
 @MainActor
-struct IbeamStorageInterface<Version> {
+final class IbeamStorageInterface<Version> {
 	private let storage: TextStorage<Version>
 	private let ibeamViewSystem: IBeamTextViewSystem
 
@@ -134,15 +135,26 @@ extension IbeamStorageInterface: @preconcurrency IBeam.TextSystemInterface {
 
 	func applyMutation(_ range: TextRange, string: NSAttributedString) -> IBeam.MutationOutput<TextRange>? {
 		// ibeamViewSystem has an implementation of applyMutation, but we need to do in terms of our storage
-
 		let plainString = string.string
 		let length = plainString.utf16.count
+		let delta = length - range.length
 
 		let mutation = TextStorageMutation(range: range, string: plainString)
 
+		let existingString = try! storage.substring(with: range)
+		let inverseRange = NSRange(
+			location: range.location,
+			length: range.length + delta
+		)
+
+		let view = ibeamViewSystem.textView
+
+		view.undoManager?.registerMainActorUndo(withTarget: self) { target in
+			_ = target.applyMutation(inverseRange, string: NSAttributedString(string: existingString))
+		}
+
 		storage.applyMutation(mutation)
 
-		let delta = length - range.length
 		let position = min(range.lowerBound + length, storage.currentLength)
 
 		let newSelection = NSRange(position..<position)
