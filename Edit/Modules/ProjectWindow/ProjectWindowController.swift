@@ -62,6 +62,7 @@ public final class ProjectWindowController: NSWindowController {
 		model.window = window
 		window.tabbingMode = .preferred
 		window.tabbingIdentifier = "hello"
+		window.delegate = self
 
 		model.siblingProvider = { [weak self] in self?.siblingModels ?? [] }
 	}
