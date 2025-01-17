@@ -79,6 +79,10 @@ final class IbeamStorageInterface<Version> {
 		self.storage = storage
 		self.ibeamViewSystem = IBeamTextViewSystem(textView: textView)
 	}
+
+	private var undoManager: UndoManager? {
+		ibeamViewSystem.textView.undoManager
+	}
 }
 
 extension IbeamStorageInterface: @preconcurrency IBeam.TextSystemInterface {
@@ -147,9 +151,8 @@ extension IbeamStorageInterface: @preconcurrency IBeam.TextSystemInterface {
 			length: range.length + delta
 		)
 
-		let view = ibeamViewSystem.textView
-
-		view.undoManager?.registerMainActorUndo(withTarget: self) { target in
+		undoManager?.registerMainActorUndo(withTarget: self) { target in
+			print("undoing text edit")
 			_ = target.applyMutation(inverseRange, string: NSAttributedString(string: existingString))
 		}
 
