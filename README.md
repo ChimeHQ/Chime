@@ -47,6 +47,7 @@ Chime has an extension system, backed by [ChimeKit][chimekit]. Because of limita
 - [Clojure](https://github.com/ChimeHQ/chime-clojure)
 - [Elixir](https://github.com/ChimeHQ/chime-elixir)
 - [Go](https://github.com/ChimeHQ/chime-go)
+- [Markdown](https://github.com/ChimeHQ/chime-markdown)
 - [Python](https://github.com/ChimeHQ/chime-python)
 - [Ruby](https://github.com/ChimeHQ/chime-ruby)
 - [Rust](https://github.com/ChimeHQ/chime-rust)
