@@ -4,6 +4,7 @@ import NSUI
 import SourceView
 import TextFormation
 import MainOffender
+import Rearrange
 
 // Type adatpers
 extension TextFormation.MutationOutput {
@@ -21,7 +22,7 @@ extension TextFormation.MutationOutput {
 /// TextFormation in terms of IBeam.
 @MainActor
 struct TextFormationInterface<Interface: IBeam.TextSystemInterface>
-	where Interface.TextPosition == Int, Interface.TextRange == NSRange
+	where Interface.TextRange == NSRange
 {
 	let ibeamInterface: Interface
 	let substringProvider: (TextRange) -> String?
@@ -41,7 +42,7 @@ extension TextFormationInterface: @preconcurrency TextFormation.TextSystem {
 	}
 
 	func positions(composing range: TextRange) -> (TextPosition, TextPosition) {
-		ibeamInterface.positions(composing: range)
+		(range.lowerBound, range.upperBound)
 	}
 
 	func position(from start: TextPosition, offset: Int) -> TextPosition? {
@@ -130,7 +131,7 @@ extension IbeamStorageInterface: @preconcurrency IBeam.TextSystemInterface {
 	}
 
 	func positions(composing range: TextRange) -> (TextPosition, TextPosition) {
-		ibeamViewSystem.positions(composing: range)
+		(range.lowerBound, range.upperBound)
 	}
 
 	func textRange(from start: TextPosition, to end: TextPosition) -> TextRange? {
@@ -152,7 +153,6 @@ extension IbeamStorageInterface: @preconcurrency IBeam.TextSystemInterface {
 		)
 
 		undoManager?.registerMainActorUndo(withTarget: self) { target in
-			print("undoing text edit")
 			_ = target.applyMutation(inverseRange, string: NSAttributedString(string: existingString))
 		}
 
