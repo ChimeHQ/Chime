@@ -86,7 +86,7 @@
       "location" : "https://github.com/ChimeHQ/IBeam",
       "state" : {
         "branch" : "main",
-        "revision" : "d50b2e13ac66d459b3327f23561bb66fe7dbbfda"
+        "revision" : "696f63fd1a310b61d5dda0b6c87d0eb1cdd74d9f"
       }
     },
     {
@@ -130,7 +130,7 @@
       "location" : "https://github.com/ChimeHQ/Ligature",
       "state" : {
         "branch" : "main",
-        "revision" : "324ca471b3d0a949eb8cb1107a6e89bc311651c7"
+        "revision" : "9e1c74907558cff5ce43615e24191f87baade69a"
       }
     },
     {
