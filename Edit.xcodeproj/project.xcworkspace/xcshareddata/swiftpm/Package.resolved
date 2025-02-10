@@ -86,7 +86,7 @@
       "location" : "https://github.com/ChimeHQ/IBeam",
       "state" : {
         "branch" : "main",
-        "revision" : "696f63fd1a310b61d5dda0b6c87d0eb1cdd74d9f"
+        "revision" : "863a7b4290b45bebb7fcfc63c6970fc4071829df"
       }
     },
     {
@@ -139,7 +139,7 @@
       "location" : "https://github.com/ChimeHQ/Lowlight",
       "state" : {
         "branch" : "main",
-        "revision" : "2601607fc5ce3247273d8f911d56d7efd54ff511"
+        "revision" : "35d9ffcf5577085c7376422469bd5f54b0eedacb"
       }
     },
     {

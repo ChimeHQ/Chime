@@ -117,7 +117,7 @@ public final class Highlighter<Service: TokenService> {
 		]
 
 		invalidatorBuffer.invalidationHandler = { [unowned self] target in
-			self.invalidate(target)
+			self.applyInvalidation(target)
 		}
 	}
 
@@ -136,7 +136,18 @@ public final class Highlighter<Service: TokenService> {
 		invalidate(rangeTarget)
 	}
 	
-	func invalidate(_ target: RangeTarget) {
+	public func invalidate(_ target: RangeTarget) {
+		invalidatorBuffer.invalidate(target)
+	}
+
+	private func relayInvalidation(_ target: RangeTarget) {
+		styler.invalidate(target)
+
+		// only re-validate what is currently visible
+		visibleContentDidChange()
+	}
+	
+	private func applyInvalidation(_ target: RangeTarget) {
 		guard visualizeInvalidations else {
 			relayInvalidation(target)
 			return
@@ -156,13 +167,6 @@ public final class Highlighter<Service: TokenService> {
 
 			self.relayInvalidation(target)
 		}
-	}
-
-	private func relayInvalidation(_ target: RangeTarget) {
-		styler.invalidate(target)
-
-		// only re-validate what is currently visible
-		visibleContentDidChange()
 	}
 
 	public func visibleContentDidChange() {

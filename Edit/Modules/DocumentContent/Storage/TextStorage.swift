@@ -73,19 +73,17 @@ extension TextStorage where Version : AdditiveArithmetic {
 	}
 
 	public func relaying(to monitors: [TextStorageMonitor]) -> Self {
-		.init(
-			beginEditing: beginEditing,
-			endEditing: endEditing,
+		let compositeMonitor = TextStorageMonitor(monitors: monitors)
+		
+		return .init(
+			beginEditing: compositeMonitor.willBeginEditing,
+			endEditing: compositeMonitor.didEndEditing,
 			applyMutation: {
-				for monitor in monitors {
-					monitor.willApplyMutation($0)
-				}
+				compositeMonitor.willApplyMutation($0)
 
 				self.applyMutation($0)
 
-				for monitor in monitors {
-					monitor.didApplyMutation($0)
-				}
+				compositeMonitor.didApplyMutation($0)
 			},
 			version: version,
 			length: length,

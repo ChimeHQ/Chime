@@ -18,7 +18,7 @@ public final class DocumentCoordinator<Service: TokenService> {
 	private let sourceViewController = SourceViewController()
 	private let cursorCoordinator: TextSystemCursorCoordinator<CursorTextSystem>
 	private let languageDataStore = LanguageDataStore.global
-
+	
 	public let textSystem: TextViewSystem
 	public let highlighter: Highlighter<Service>
 	public let editorContentController: EditorContentViewController
