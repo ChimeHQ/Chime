@@ -200,7 +200,7 @@
       "location" : "https://github.com/ChimeHQ/Rearrange",
       "state" : {
         "branch" : "main",
-        "revision" : "8e3b90208a7ed89f304e4daafd06b905f6657f6d"
+        "revision" : "eae38792ce4cc4c8ba74632d63109b35163f5877"
       }
     },
     {
@@ -250,7 +250,7 @@
     {
       "identity" : "swifttreesitter",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/ChimeHQ/SwiftTreeSitter",
+      "location" : "https://github.com/ChimeHQ/SwiftTreeSitter.git",
       "state" : {
         "branch" : "main",
         "revision" : "77a793c79fe6bf8b627f804f98b1ba6539dfe007"
@@ -270,7 +270,7 @@
       "location" : "https://github.com/ChimeHQ/TextFormation",
       "state" : {
         "branch" : "feature/process-mutation",
-        "revision" : "95df87b6d586629461f7cb0178bad79d37e95349"
+        "revision" : "80f869b3f7d137ea071a42468a812b050c3d6a53"
       }
     },
     {

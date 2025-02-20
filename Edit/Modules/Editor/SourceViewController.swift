@@ -1,7 +1,6 @@
 import SwiftUI
 
 import SourceView
-import TextFormation
 import Theme
 import ThemePark
 

@@ -13,48 +13,30 @@ extension TextFormation.MutationOutput {
 	}
 }
 
-//extension AttributedString {
-//	var string: String {
-//		NSAttributedString(self).string
-//	}
-//}
-
 /// TextFormation in terms of IBeam.
 @MainActor
 struct TextFormationInterface<Interface: IBeam.TextSystemInterface>
 	where Interface.TextRange == NSRange
 {
 	let ibeamInterface: Interface
-	let substringProvider: (TextRange) -> String?
+	let substringProvider: (TextRange) throws -> String
 
-	init(ibeamInterface: Interface, substringProvider: @escaping (TextRange) -> String?) {
+	init(ibeamInterface: Interface, substringProvider: @escaping (TextRange) throws -> String) {
 		self.ibeamInterface = ibeamInterface
 		self.substringProvider = substringProvider
 	}
 }
 
-extension TextFormationInterface: @preconcurrency TextFormation.TextSystem {
+extension TextFormationInterface: @preconcurrency TextFormation.TextSystemInterface {
 	typealias TextRange = IBeamTextViewSystem.TextRange
 	typealias TextPosition = IBeamTextViewSystem.TextPosition
 
-	func offset(from: TextPosition, to toPosition: TextPosition) -> Int {
-		toPosition - from
+	var endOfDocument: Position {
+		ibeamInterface.endOfDocument
 	}
-
-	func positions(composing range: TextRange) -> (TextPosition, TextPosition) {
-		(range.lowerBound, range.upperBound)
-	}
-
-	func position(from start: TextPosition, offset: Int) -> TextPosition? {
-		ibeamInterface.position(from: start, offset: offset)
-	}
-
-	func textRange(from start: TextPosition, to end: TextPosition) -> TextRange? {
-		ibeamInterface.textRange(from: start, to: end)
-	}
-
-	func substring(in range: TextRange) -> String? {
-		substringProvider(range)
+	
+	func substring(in range: TextRange) throws -> String {
+		try substringProvider(range)
 	}
 
 	func applyMutation(_ range: TextRange, string: String) -> Output? {
@@ -66,7 +48,8 @@ extension TextFormationInterface: @preconcurrency TextFormation.TextSystem {
 	}
 
 	func applyWhitespace(for position: TextPosition, in direction: Direction) -> Output? {
-		nil
+		// this is a no-op
+		Output(selection: NSRange(position..<position), delta: 0)
 	}
 }
 
@@ -130,10 +113,6 @@ extension IbeamStorageInterface: @preconcurrency IBeam.TextSystemInterface {
 		ibeamViewSystem.compare(position, to: other)
 	}
 
-	func positions(composing range: TextRange) -> (TextPosition, TextPosition) {
-		(range.lowerBound, range.upperBound)
-	}
-
 	func textRange(from start: TextPosition, to end: TextPosition) -> TextRange? {
 		ibeamViewSystem.textRange(from: start, to: end)
 	}
@@ -180,7 +159,7 @@ final class TransformingTextSystem<Version> {
 		self.ibeamInterface = IbeamStorageInterface(textView: textView, storage: storage)
 		self.textFormationInterface = TextFormationInterface(
 			ibeamInterface: ibeamInterface,
-			substringProvider: { [storage] in try? storage.substring(with: $0) }
+			substringProvider: { [storage] in try storage.substring(with: $0) }
 		)
 	}
 }
@@ -225,10 +204,6 @@ extension TransformingTextSystem: @preconcurrency IBeam.TextSystemInterface {
 		ibeamInterface.compare(position, to: other)
 	}
 
-	func positions(composing range: TextRange) -> (TextPosition, TextPosition) {
-		ibeamInterface.positions(composing: range)
-	}
-
 	func textRange(from start: TextPosition, to end: TextPosition) -> TextRange? {
 		ibeamInterface.textRange(from: start, to: end)
 	}
@@ -236,7 +211,7 @@ extension TransformingTextSystem: @preconcurrency IBeam.TextSystemInterface {
 	func applyMutation(_ range: TextRange, string: AttributedString) -> IBeam.MutationOutput<TextRange>? {
 		let attrString = NSAttributedString(string)
 
-		if let output = filter?.processMutation(range, string: attrString.string, in: textFormationInterface) {
+		if let output = try? filter?.processMutation(range, string: attrString.string, in: textFormationInterface) {
 			return IBeam.MutationOutput(selection: output.selection, delta: output.delta)
 		}
 
