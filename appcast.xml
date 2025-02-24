@@ -114,5 +114,25 @@ Fixes:
 				length="13161368"
 				type="application/octet-stream" />
 		</item>
+		<item>
+			<title>Version 3.0.0</title>
+			<description sparkle:format="plain-text">
+Features:
+- Editor component is now functional (but not good)
+- Multi-cursor support
+
+Improvments:
+- Highlighting behavior is significantly improved, especially when editing
+			</description>
+			<sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+			<sparkle:channel>beta</sparkle:channel>
+			<sparkle:version>205</sparkle:version>
+			<sparkle:shortVersionString>3.0.0</sparkle:shortVersionString>
+			<pubDate>Mon, 24 Feb 2025 15:03:14 -0500</pubDate>
+			<enclosure url="https://github.com/ChimeHQ/Chime/releases/download/205/Chime.zip"
+				sparkle:edSignature="d9WJ4ZqEVzKUHV/ob78SqaM+gZlVHToegmnHrEBOH2TZVIoIeZlQd8WhCgbOQ34dVEVzXSLDcg5kiNxSDxCgCg=="
+				length="13460016"
+				type="application/octet-stream" />
+		</item>
 	</channel>
 </rss>
