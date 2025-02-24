@@ -36,7 +36,7 @@ public final class SyntaxService {
 
 	private let logger = Logger(type: SyntaxService.self)
 	private var state = State.inactive {
-		didSet { invalidate() }
+		didSet { invalidate(.all) }
 	}
 
 	private let languageDataStore: LanguageDataStore
@@ -57,8 +57,8 @@ public final class SyntaxService {
 		setUpClient(with: to.uti)
 	}
 
-	private func invalidate() {
-		invalidationHandler(.all)
+	private func invalidate(_ target: TextTarget) {
+		invalidationHandler(target)
 	}
 
 	private func setUpClient(with utType: UTType) {
@@ -73,7 +73,7 @@ public final class SyntaxService {
 			contentProvider: { [textSystem] in textSystem.storage.layerContent(for: $0) },
 			contentSnapshopProvider: { [textSystem] in textSystem.storage.layerContentSnapshot(for: $0) },
 			lengthProvider: { [textSystem] in textSystem.storage.currentLength },
-			invalidationHandler: { [unowned self] in self.invalidationHandler(.set($0)) },
+			invalidationHandler: { [unowned self] in self.invalidate(.set($0)) },
 			locationTransformer: { [textSystem] in textSystem.textMetrics.locationTransformer($0) }
 		)
 
@@ -94,9 +94,8 @@ public final class SyntaxService {
 
 	public var storageMonitor: TextStorageMonitor {
 		.init(
-			willApplyMutations: { self.willApplyMutations($0) },
-			didApplyMutations: { self.didApplyMutations($0) },
-			didCompleteMutations: { _ in }
+			willApplyMutation: { self.willApplyMutation($0) },
+			didApplyMutation: { self.didApplyMutation($0) }
 		)
 	}
 	
@@ -110,25 +109,23 @@ public final class SyntaxService {
 	}
 
 	public func languageConfigurationChanged(for name: String) {
+		logger.info("Language configuration changed for \(name, privacy: .public)")
+		
 		treeSitterClient?.languageConfigurationChanged(for: name)
 	}
 }
 
 extension SyntaxService {
-	private func willApplyMutations(_ mutations: [TextStorageMutation]) {
+	private func willApplyMutation(_ mutation: TextStorageMutation) {
 		guard let client = treeSitterClient else { return }
 
-		for mutation in mutations.flatMap({ $0.stringMutations}) {
-			client.willChangeContent(in: mutation.range)
-		}
+		client.willChangeContent(in: mutation.range)
 	}
 
-	private func didApplyMutations(_ mutations: [TextStorageMutation]) {
+	private func didApplyMutation(_ mutation: TextStorageMutation) {
 		guard let client = treeSitterClient else { return }
 
-		for mutation in mutations.flatMap({ $0.stringMutations}) {
-			client.didChangeContent(in: mutation.range, delta: mutation.delta)
-		}
+		client.didChangeContent(in: mutation.range, delta: mutation.delta)
 	}
 }
 
@@ -148,6 +145,7 @@ extension SyntaxService {
 				guard let client = self.treeSitterClient else {
 					return nil
 				}
+
 
 				do {
 					let queryParams = try self.highlightsQueryParams(for: range)
@@ -171,7 +169,6 @@ extension SyntaxService {
 					let queryParams = try self.highlightsQueryParams(for: range)
 					let namedRanges = try await client.highlightsProvider.async(queryParams)
 
-					print("names:", namedRanges)
 					return TokenApplication(namedRanges: namedRanges, range: range)
 				} catch {
 					self.logger.warning("Failed to get highlighting: \(error)")

@@ -56,27 +56,26 @@ struct StatusItem<Content: View>: View {
 	}
 }
 
-#Preview {
-	Group {
-		StatusItem(style: .single) {
-			Text("hello")
-		}
-		.previewDisplayName("single")
-
-		StatusItem(style: .leading) {
-			Text("hello")
-		}
-		.previewDisplayName("leading")
-
-		StatusItem(style: .trailing) {
-			Text("hello")
-		}
-		.previewDisplayName("trailing")
-
-		StatusItem(style: .middle) {
-			Text("hello")
-		}
-		.previewDisplayName("middle")
+#Preview("single") {
+	StatusItem(style: .single) {
+		Text("hello")
 	}
-	.background(Rectangle().foregroundColor(.red))
+}
+
+#Preview("leading") {
+	StatusItem(style: .leading) {
+		Text("hello")
+	}
+}
+
+#Preview("trailing") {
+	StatusItem(style: .trailing) {
+		Text("hello")
+	}
+}
+
+#Preview("middle") {
+	StatusItem(style: .middle) {
+		Text("hello")
+	}
 }

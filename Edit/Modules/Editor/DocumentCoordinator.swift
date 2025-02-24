@@ -1,26 +1,30 @@
 import Foundation
+import UniformTypeIdentifiers
 
 import ChimeKit
 import DocumentContent
 import Highlighting
+import IBeam
 import SyntaxService
 import TextSystem
 import Theme
 
 @MainActor
 public final class DocumentCoordinator<Service: TokenService> {
-	typealias StorageDispatcher = TextStorageDispatcher<TextViewSystem.Version>
+	typealias CursorTextSystem = TransformingTextSystem<TextViewSystem.Version>
 
-	public let textSystem: TextViewSystem
-	public let highlighter: Highlighter<Service>
 	private let syntaxService: SyntaxService
 	private let layoutBuffer = LayoutInvalidationBuffer()
-	private let dispatcher: StorageDispatcher
 	private let sourceViewController = SourceViewController()
+	private let cursorCoordinator: TextSystemCursorCoordinator<CursorTextSystem>
+	private let languageDataStore = LanguageDataStore.global
+	
+	public let textSystem: TextViewSystem
+	public let highlighter: Highlighter<Service>
 	public let editorContentController: EditorContentViewController
 
 	public init(statusBarVisible: Bool) {
-		self.textSystem = TextViewSystem(textView: sourceViewController.textView)
+		self.textSystem = TextViewSystem(textView: sourceViewController.sourceView)
 
 		self.editorContentController = EditorContentViewController(
 			textSystem: textSystem,
@@ -28,28 +32,44 @@ public final class DocumentCoordinator<Service: TokenService> {
 			statusBarVisible: statusBarVisible
 		)
 
-
-		self.syntaxService = SyntaxService(textSystem: textSystem, languageDataStore: LanguageDataStore.global)
+		self.syntaxService = SyntaxService(textSystem: textSystem, languageDataStore: languageDataStore)
 		self.highlighter = Highlighter(textSystem: textSystem, syntaxService: syntaxService)
 
-		self.dispatcher = StorageDispatcher(storage: textSystem.storage, monitors: [
+		let monitors = [
 			textSystem.storageMonitor,
 			syntaxService.storageMonitor,
 			highlighter.storageMonitor
-		])
+		]
 
-		let textView = sourceViewController.textView
+		let storage = textSystem.storage
+			.relaying(to: monitors)
 
-		sourceViewController.shouldChangeTextHandler = { [dispatcher] in
-			dispatcher.textView(textView, shouldChangeTextIn: $0, replacementString: $1)
+		let sourceView = sourceViewController.sourceView
+		let cursorTextSystem = CursorTextSystem(textView: sourceView, storage: storage)
+
+		self.cursorCoordinator = TextSystemCursorCoordinator(
+			textView: sourceView,
+			system: cursorTextSystem
+		)
+
+		textSystem.willLayoutHandler = layoutBuffer.willLayout
+		textSystem.didLayoutHandler = layoutBuffer.didLayout
+
+		sourceView.cursorOperationHandler = cursorCoordinator.mutateCursors(with:)
+		sourceView.operationProcessor = { [cursorCoordinator] in
+			do {
+				try cursorCoordinator.processOperation($0)
+			} catch {
+				print("failed to process input operation: \(error)")
+				return false
+			}
+
+			return true
 		}
 
-		sourceViewController.selectionChangedHandler = { [editorContentController] in
-			editorContentController.selectedRanges = $0
+		sourceViewController.selectionChangedHandler = { [editorContentController, cursorCoordinator] in
+			editorContentController.cursors = cursorCoordinator.cursorState.cursorSet
 		}
-
-		sourceViewController.willLayoutHandler = { [layoutBuffer] in layoutBuffer.willLayout() }
-		sourceViewController.didLayoutHandler = { [layoutBuffer] in layoutBuffer.didLayout() }
 
 		syntaxService.invalidationHandler = { [highlighter] in
 			highlighter.invalidate(textTarget: $0)
@@ -63,13 +83,23 @@ public final class DocumentCoordinator<Service: TokenService> {
 			layoutBuffer.contentVisibleRectChanged()
 		}
 
-		LanguageDataStore.global.configurationLoaded = { [weak syntaxService] in
-			syntaxService?.languageConfigurationChanged(for: $0)
+		languageDataStore.configurationLoaded = { [weak syntaxService, weak highlighter] name in
+			syntaxService?.languageConfigurationChanged(for: name)
+			highlighter?.name = name
 		}
+
+		// default to something sensible
+		updateMutationFilter(with: .plainText)
 	}
 
 	public func documentContextChanged(from oldContext: DocumentContext, to newContext: DocumentContext) {
 		syntaxService.documentContextChanged(from: oldContext, to: newContext)
 		highlighter.documentContextChanged(from: oldContext, to: newContext)
+
+		updateMutationFilter(with: newContext.uti)
+	}
+
+	private func updateMutationFilter(with uti: UTType) {
+		cursorCoordinator.cursorState.textSystem.filter = languageDataStore.profile(for: uti).mutationFilter
 	}
 }

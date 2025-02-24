@@ -1,11 +1,11 @@
 import SwiftUI
 
 public struct DocumentCursorsKey: EnvironmentKey {
-	public static let defaultValue: [Cursor] = []
+	public static let defaultValue = CursorSet()
 }
 
 extension EnvironmentValues {
-	public var documentCursors: [Cursor] {
+	public var documentCursors: CursorSet {
 		get { self[DocumentCursorsKey.self] }
 		set { self[DocumentCursorsKey.self] = newValue }
 	}

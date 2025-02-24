@@ -7,9 +7,16 @@ import PackageDescription
 
 let package = Package(
 	name: "Dependencies",
+	platforms: [
+		.macOS(.v14),
+		.macCatalyst(.v16),
+		.iOS(.v16),
+		.visionOS(.v1),
+	],
 	products: [
 		// I don't think many dependencies will need to use this same approach.
 		.library(name: "TreeSitterParsers", targets: ["TreeSitterParsers"]),
+		.library(name: "Dependencies", targets: ["Dependencies"])
 	],
 	dependencies: [
 		.package(url: "https://github.com/tree-sitter/tree-sitter-bash", branch: "master"),
@@ -31,6 +38,13 @@ let package = Package(
 		.package(url: "https://github.com/tree-sitter/tree-sitter-rust", branch: "master"),
 		.package(url: "https://github.com/tree-sitter/tree-sitter-typescript", branch: "master"),
 		.package(url: "https://github.com/alex-pinkus/tree-sitter-swift", branch: "with-generated-files"),
+
+		.package(url: "https://github.com/ChimeHQ/Glyph", branch: "main"),
+		.package(url: "https://github.com/ChimeHQ/IBeam", branch: "main"),
+		.package(url: "https://github.com/ChimeHQ/Ligature", branch: "main"),
+		.package(url: "https://github.com/ChimeHQ/Lowlight", branch: "main"),
+		.package(url: "https://github.com/ChimeHQ/SourceView", branch: "main"),
+		.package(url: "https://github.com/ChimeHQ/TextFormation", branch: "feature/process-mutation")
 	],
 	targets: [
 		.target(
@@ -55,6 +69,17 @@ let package = Package(
 				.product(name: "TreeSitterRust", package: "tree-sitter-rust"),
 				.product(name: "TreeSitterTypeScript", package: "tree-sitter-typescript"),
 				.product(name: "TreeSitterSwift", package: "tree-sitter-swift"),
+			]
+		),
+		.target(
+			name: "Dependencies",
+			dependencies: [
+				"Glyph",
+				"IBeam",
+				"Ligature",
+				"Lowlight",
+				"SourceView",
+				"TextFormation",
 			]
 		),
 	]

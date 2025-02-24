@@ -1,42 +1,51 @@
 import Foundation
 
 public struct TextStorageMonitor {
-	public typealias Handler = ([TextStorageMutation]) -> Void
+	public typealias Handler = (TextStorageMutation) -> Void
 
-	public let willApplyMutations: Handler
-	public let didApplyMutations: Handler
-	public let didCompleteMutations: Handler
+	public let willBeginEditing: () -> Void
+	public let didEndEditing: () -> Void
+	public let willApplyMutation: Handler
+	public let didApplyMutation: Handler
 
 	public init(
-		willApplyMutations: @escaping Handler,
-		didApplyMutations: @escaping Handler,
-		didCompleteMutations: @escaping Handler
+		willBeginEditing: @escaping () -> Void = {},
+		didEndEditing: @escaping () -> Void = {},
+		willApplyMutation: @escaping Handler,
+		didApplyMutation: @escaping Handler
 	) {
-		self.willApplyMutations = willApplyMutations
-		self.didApplyMutations = didApplyMutations
-		self.didCompleteMutations = didCompleteMutations
+		self.willApplyMutation = willApplyMutation
+		self.didApplyMutation = didApplyMutation
+		
+		self.willBeginEditing = willBeginEditing
+		self.didEndEditing = didEndEditing
 	}
 }
 
 extension TextStorageMonitor {
 	@MainActor
-	public static let null = TextStorageMonitor(willApplyMutations: { _ in }, didApplyMutations: { _ in }, didCompleteMutations: { _ in })
+	public static let null = TextStorageMonitor(willApplyMutation: { _ in }, didApplyMutation: { _ in })
 
 	public init(monitors: [TextStorageMonitor]) {
 		self.init(
-			willApplyMutations: {
+			willBeginEditing: {
 				for monitor in monitors {
-					monitor.willApplyMutations($0)
+					monitor.willBeginEditing()
 				}
 			},
-			didApplyMutations: {
+			didEndEditing: {
 				for monitor in monitors {
-					monitor.didApplyMutations($0)
+					monitor.didEndEditing()
 				}
 			},
-			didCompleteMutations: {
+			willApplyMutation: {
 				for monitor in monitors {
-					monitor.didCompleteMutations($0)
+					monitor.willApplyMutation($0)
+				}
+			},
+			didApplyMutation: {
+				for monitor in monitors {
+					monitor.didApplyMutation($0)
 				}
 			}
 		)
@@ -44,14 +53,17 @@ extension TextStorageMonitor {
 
 	public init(monitorProvider: @escaping () -> TextStorageMonitor) {
 		self.init(
-			willApplyMutations: {
-				monitorProvider().willApplyMutations($0)
+			willBeginEditing: {
+				monitorProvider().willBeginEditing()
 			},
-			didApplyMutations: {
-				monitorProvider().didApplyMutations($0)
+			didEndEditing: {
+				monitorProvider().didEndEditing()
 			},
-			didCompleteMutations: {
-				monitorProvider().didCompleteMutations($0)
+			willApplyMutation: {
+				monitorProvider().willApplyMutation($0)
+			},
+			didApplyMutation: {
+				monitorProvider().didApplyMutation($0)
 			}
 		)
 	}

@@ -26,6 +26,7 @@
 		C92931692B822B7B00C64DDE /* ColorToolbox in Frameworks */ = {isa = PBXBuildFile; productRef = C92931682B822B7B00C64DDE /* ColorToolbox */; };
 		C929316A2B822BA700C64DDE /* libTheme.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE53C82A77CC1E00CACA1A /* libTheme.a */; };
 		C929316B2B822BAD00C64DDE /* libUtility.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE53F42A7A5EF900CACA1A /* libUtility.a */; };
+		C93C25AD2D381DE800B97DE8 /* MainOffender in Frameworks */ = {isa = PBXBuildFile; productRef = C93C25AC2D381DE800B97DE8 /* MainOffender */; };
 		C93F72272BF0F9290021ACF3 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = C93F72262BF0F9290021ACF3 /* Sparkle */; };
 		C93F724B2BF26BDC0021ACF3 /* EditIntentsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93F724A2BF26BDC0021ACF3 /* EditIntentsExtension.swift */; };
 		C93F724D2BF26BDC0021ACF3 /* HighlightIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93F724C2BF26BDC0021ACF3 /* HighlightIntent.swift */; };
@@ -66,12 +67,16 @@
 		C95B91302BD98C76006FDD00 /* libDocumentContent.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9891B132AFEC11A00C8F393 /* libDocumentContent.a */; };
 		C95B91342BD98CA1006FDD00 /* SwiftTreeSitter in Frameworks */ = {isa = PBXBuildFile; productRef = C95B91332BD98CA1006FDD00 /* SwiftTreeSitter */; };
 		C95B91362BD98CBD006FDD00 /* RelativeCollections in Frameworks */ = {isa = PBXBuildFile; productRef = C95B91352BD98CBD006FDD00 /* RelativeCollections */; };
-		C95B913A2BD98CDC006FDD00 /* Lowlight in Frameworks */ = {isa = PBXBuildFile; productRef = C95B91392BD98CDC006FDD00 /* Lowlight */; };
 		C95B913C2BD98CF1006FDD00 /* TextStory in Frameworks */ = {isa = PBXBuildFile; productRef = C95B913B2BD98CF1006FDD00 /* TextStory */; };
 		C95B913E2BD98D01006FDD00 /* SwiftTreeSitterLayer in Frameworks */ = {isa = PBXBuildFile; productRef = C95B913D2BD98D01006FDD00 /* SwiftTreeSitterLayer */; };
 		C95B913F2BD99328006FDD00 /* LanguageData in Resources */ = {isa = PBXBuildFile; fileRef = C9CDEB872B55B889009E252A /* LanguageData */; };
 		C95BBE372BDD03F200C9E1B9 /* FileManager+AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95BBE362BDD03F200C9E1B9 /* FileManager+AppGroup.swift */; };
 		C95BBE3F2BDD110700C9E1B9 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = C95BBE3E2BDD110700C9E1B9 /* Constants.m */; };
+		C9655F872D11A7A70008AED1 /* Dependencies in Frameworks */ = {isa = PBXBuildFile; productRef = C9655F862D11A7A70008AED1 /* Dependencies */; };
+		C9655F8F2D1205210008AED1 /* TextFormation in Frameworks */ = {isa = PBXBuildFile; productRef = C9655F8E2D1205210008AED1 /* TextFormation */; };
+		C9655F912D12211E0008AED1 /* TextViewInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9655F902D1220FF0008AED1 /* TextViewInteraction.swift */; };
+		C9655F932D12218C0008AED1 /* TransformingTextSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9655F922D12218C0008AED1 /* TransformingTextSystem.swift */; };
+		C9655F972D1455220008AED1 /* CursorSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9655F962D1455190008AED1 /* CursorSet.swift */; };
 		C96A852D2A7A6E22005ED222 /* DirectoryDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96A852C2A7A6E22005ED222 /* DirectoryDocument.swift */; };
 		C96A852F2A7A703D005ED222 /* OpenPanelAccessoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96A852E2A7A703D005ED222 /* OpenPanelAccessoryViewController.swift */; };
 		C96A85342A7A8339005ED222 /* URL+Bookmarks.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96A85332A7A8339005ED222 /* URL+Bookmarks.swift */; };
@@ -84,7 +89,6 @@
 		C96B61FE2BDA719100561DE8 /* libGutter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9891B352AFFF1F700C8F393 /* libGutter.a */; };
 		C96B61FF2BDA71B200561DE8 /* libUIUtility.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE53232A75A17700CACA1A /* libUIUtility.a */; };
 		C96B62002BDA71E400561DE8 /* libStatus.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE539B2A76709D00CACA1A /* libStatus.a */; };
-		C96B62062BDA721100561DE8 /* SourceView in Frameworks */ = {isa = PBXBuildFile; productRef = C96B62052BDA721100561DE8 /* SourceView */; };
 		C96B62262BDA9F4100561DE8 /* EditKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C92931422B80CC6700C64DDE /* EditKit.framework */; };
 		C973E0112B62BE0C000998F7 /* Highlighter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C973DFF62B62808D000998F7 /* Highlighter.swift */; };
 		C973E0132B62BE9F000998F7 /* TextViewSystemNeonInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99D76112B5EFA050028E3B0 /* TextViewSystemNeonInterface.swift */; };
@@ -167,7 +171,6 @@
 		C9B8A9E82B31E62D00C79606 /* TextLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B8A9B32B23446400C79606 /* TextLayout.swift */; };
 		C9B8A9EA2B31E79500C79606 /* NSTextView+Mutations.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B8A9E92B31E79500C79606 /* NSTextView+Mutations.swift */; };
 		C9B8A9F92B31F37000C79606 /* TextStorageMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B8A9F32B31F09E00C79606 /* TextStorageMonitor.swift */; };
-		C9B8A9FA2B31F37200C79606 /* TextStorageDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99491C12B0D1660002DC2AC /* TextStorageDispatcher.swift */; };
 		C9B8A9FB2B31F37500C79606 /* TextStorageMutation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B8A9872B209D7E00C79606 /* TextStorageMutation.swift */; };
 		C9B8A9FC2B31F37700C79606 /* TextStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B8A98B2B209F6900C79606 /* TextStorage.swift */; };
 		C9B8AA002B31F93800C79606 /* RangeProcessor+Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B8A9FF2B31F93800C79606 /* RangeProcessor+Storage.swift */; };
@@ -182,7 +185,6 @@
 		C9BDB54B2B00FD89009225FB /* SwiftStandaloneExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BDB54A2B00FD89009225FB /* SwiftStandaloneExtension.swift */; };
 		C9BDB5502B00FD89009225FB /* SwiftExtension.appex in Copy Extensions */ = {isa = PBXBuildFile; fileRef = C9BDB5482B00FD89009225FB /* SwiftExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C9BDB5572B010094009225FB /* ChimeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE52F42A7539B100CACA1A /* ChimeKit.framework */; };
-		C9BFA1B02BC0927A00E86487 /* Glyph in Frameworks */ = {isa = PBXBuildFile; productRef = C9BFA1AF2BC0927A00E86487 /* Glyph */; };
 		C9BFA1B72BC162EF00E86487 /* NSUI in Frameworks */ = {isa = PBXBuildFile; productRef = C9BFA1B62BC162EF00E86487 /* NSUI */; };
 		C9CDEB552B504485009E252A /* TextSystem+SwiftTreeSitterLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CDEB542B504485009E252A /* TextSystem+SwiftTreeSitterLayer.swift */; };
 		C9CDEB8F2B56ACA3009E252A /* MainOffender in Frameworks */ = {isa = PBXBuildFile; productRef = C9CDEB8E2B56ACA3009E252A /* MainOffender */; };
@@ -386,6 +388,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = C973DFFF2B62BDB3000998F7;
 			remoteInfo = Highlighting;
+		};
+		C9655F982D1456B50008AED1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9891B122AFEC11A00C8F393;
+			remoteInfo = DocumentContent;
 		};
 		C96A85412A7BEB92005ED222 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -1047,6 +1056,9 @@
 		C95BBE382BDD058800C9E1B9 /* Utility-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Utility-Bridging-Header.h"; sourceTree = "<group>"; };
 		C95BBE3D2BDD075300C9E1B9 /* Utility.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Utility.xcconfig; sourceTree = "<group>"; };
 		C95BBE3E2BDD110700C9E1B9 /* Constants.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		C9655F902D1220FF0008AED1 /* TextViewInteraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewInteraction.swift; sourceTree = "<group>"; };
+		C9655F922D12218C0008AED1 /* TransformingTextSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformingTextSystem.swift; sourceTree = "<group>"; };
+		C9655F962D1455190008AED1 /* CursorSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CursorSet.swift; sourceTree = "<group>"; };
 		C96A852C2A7A6E22005ED222 /* DirectoryDocument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectoryDocument.swift; sourceTree = "<group>"; };
 		C96A852E2A7A703D005ED222 /* OpenPanelAccessoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenPanelAccessoryViewController.swift; sourceTree = "<group>"; };
 		C96A85332A7A8339005ED222 /* URL+Bookmarks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+Bookmarks.swift"; sourceTree = "<group>"; };
@@ -1115,7 +1127,6 @@
 		C99491A92B07FA8C002DC2AC /* DocumentStateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentStateModel.swift; sourceTree = "<group>"; };
 		C99491AD2B09570A002DC2AC /* LineParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineParser.swift; sourceTree = "<group>"; };
 		C99491AF2B09573F002DC2AC /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
-		C99491C12B0D1660002DC2AC /* TextStorageDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextStorageDispatcher.swift; sourceTree = "<group>"; };
 		C99491C42B153051002DC2AC /* TextMetrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextMetrics.swift; sourceTree = "<group>"; };
 		C995EA742C3ED52900D3ED4C /* ClojureStandaloneExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClojureStandaloneExtension.swift; sourceTree = "<group>"; };
 		C99A8DF82C40011100D8F599 /* PythonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PythonExtension.swift; path = "submodules/chime-python/Sources/ChimePython/PythonExtension.swift"; sourceTree = SOURCE_ROOT; };
@@ -1263,20 +1274,20 @@
 				C95B91302BD98C76006FDD00 /* libDocumentContent.a in Frameworks */,
 				C95B91232BD98B64006FDD00 /* libTextSystem.a in Frameworks */,
 				C96B61FD2BDA714700561DE8 /* ScrollViewPlus in Frameworks */,
+				C93C25AD2D381DE800B97DE8 /* MainOffender in Frameworks */,
 				C95B91342BD98CA1006FDD00 /* SwiftTreeSitter in Frameworks */,
-				C96B62062BDA721100561DE8 /* SourceView in Frameworks */,
 				C9E0BA0F2BD280C4007AF034 /* ChimeKit.framework in Frameworks */,
 				C95B913C2BD98CF1006FDD00 /* TextStory in Frameworks */,
-				C95B913A2BD98CDC006FDD00 /* Lowlight in Frameworks */,
 				C95B912D2BD98C50006FDD00 /* Neon in Frameworks */,
 				C9E0BA0E2BD2807B007AF034 /* libDiagnostics.a in Frameworks */,
 				C929316B2B822BAD00C64DDE /* libUtility.a in Frameworks */,
 				C9BFA1B72BC162EF00E86487 /* NSUI in Frameworks */,
-				C9BFA1B02BC0927A00E86487 /* Glyph in Frameworks */,
 				C95B91362BD98CBD006FDD00 /* RelativeCollections in Frameworks */,
 				C929316A2B822BA700C64DDE /* libTheme.a in Frameworks */,
+				C9655F8F2D1205210008AED1 /* TextFormation in Frameworks */,
 				C95B913E2BD98D01006FDD00 /* SwiftTreeSitterLayer in Frameworks */,
 				C92931692B822B7B00C64DDE /* ColorToolbox in Frameworks */,
+				C9655F872D11A7A70008AED1 /* Dependencies in Frameworks */,
 				C9439A712C3EB4410020DDF5 /* TreeSitterParsers in Frameworks */,
 				C95B91292BD98C3B006FDD00 /* Rearrange in Frameworks */,
 			);
@@ -1715,6 +1726,7 @@
 		C9891B142AFEC11A00C8F393 /* DocumentContent */ = {
 			isa = PBXGroup;
 			children = (
+				C9655F962D1455190008AED1 /* CursorSet.swift */,
 				C99491A92B07FA8C002DC2AC /* DocumentStateModel.swift */,
 				C926736D2B06BE1200B3CE2F /* Environment.swift */,
 				C99491AF2B09573F002DC2AC /* Line.swift */,
@@ -1750,6 +1762,7 @@
 		C9B8A9DE2B31E43800C79606 /* TextSystem */ = {
 			isa = PBXGroup;
 			children = (
+				C9655F902D1220FF0008AED1 /* TextViewInteraction.swift */,
 				C926736F2B06BFCB00B3CE2F /* DocumentMutationMonitorModifier.swift */,
 				C9B8AA072B32005400C79606 /* Environment.swift */,
 				C941F0B62B71410B0003B640 /* LayoutInvalidationBuffer.swift */,
@@ -1768,7 +1781,6 @@
 			children = (
 				C9B8A9FF2B31F93800C79606 /* RangeProcessor+Storage.swift */,
 				C9B8A98B2B209F6900C79606 /* TextStorage.swift */,
-				C99491C12B0D1660002DC2AC /* TextStorageDispatcher.swift */,
 				C9B8A9F32B31F09E00C79606 /* TextStorageMonitor.swift */,
 				C9B8A9872B209D7E00C79606 /* TextStorageMutation.swift */,
 			);
@@ -2077,6 +2089,7 @@
 		C9FE53832A7662F800CACA1A /* Editor */ = {
 			isa = PBXGroup;
 			children = (
+				C9655F922D12218C0008AED1 /* TransformingTextSystem.swift */,
 				C96B61EC2BDA6F5900561DE8 /* DocumentCoordinator.swift */,
 				C9FE53D72A77D98A00CACA1A /* EditorContent.swift */,
 				C9FE53862A7663D200CACA1A /* EditorContentViewController.swift */,
@@ -2379,12 +2392,11 @@
 			buildRules = (
 			);
 			dependencies = (
+				C9655F992D1456B50008AED1 /* PBXTargetDependency */,
 				C972C81F2C4BD96D00B8948A /* PBXTargetDependency */,
 				C976D7E82C4A871400CC6EA6 /* PBXTargetDependency */,
-				C96B62022BDA71FE00561DE8 /* PBXTargetDependency */,
 				C96B61FB2BDA714000561DE8 /* PBXTargetDependency */,
 				C96B61F52BDA70E000561DE8 /* PBXTargetDependency */,
-				C95B91382BD98CCF006FDD00 /* PBXTargetDependency */,
 				C95B91322BD98C98006FDD00 /* PBXTargetDependency */,
 				C95B912B2BD98C4B006FDD00 /* PBXTargetDependency */,
 				C95B91272BD98C34006FDD00 /* PBXTargetDependency */,
@@ -2396,19 +2408,19 @@
 			name = EditKit;
 			packageProductDependencies = (
 				C92931682B822B7B00C64DDE /* ColorToolbox */,
-				C9BFA1AF2BC0927A00E86487 /* Glyph */,
 				C9BFA1B62BC162EF00E86487 /* NSUI */,
 				C95B91282BD98C3B006FDD00 /* Rearrange */,
 				C95B912C2BD98C50006FDD00 /* Neon */,
 				C95B91332BD98CA1006FDD00 /* SwiftTreeSitter */,
 				C95B91352BD98CBD006FDD00 /* RelativeCollections */,
-				C95B91392BD98CDC006FDD00 /* Lowlight */,
 				C95B913B2BD98CF1006FDD00 /* TextStory */,
 				C95B913D2BD98D01006FDD00 /* SwiftTreeSitterLayer */,
 				C96B61FC2BDA714700561DE8 /* ScrollViewPlus */,
-				C96B62052BDA721100561DE8 /* SourceView */,
 				C9439A702C3EB4410020DDF5 /* TreeSitterParsers */,
 				C976D7E52C4A86F900CC6EA6 /* ThemePark */,
+				C9655F862D11A7A70008AED1 /* Dependencies */,
+				C9655F8E2D1205210008AED1 /* TextFormation */,
+				C93C25AC2D381DE800B97DE8 /* MainOffender */,
 			);
 			productName = EditKit;
 			productReference = C92931422B80CC6700C64DDE /* EditKit.framework */;
@@ -2583,6 +2595,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				C9655F952D1454DA0008AED1 /* PBXTargetDependency */,
 				C99491CC2B153914002DC2AC /* PBXTargetDependency */,
 				C926737F2B0782C500B3CE2F /* PBXTargetDependency */,
 				C9891B2C2AFEC88300C8F393 /* PBXTargetDependency */,
@@ -2995,6 +3008,8 @@
 			buildRules = (
 			);
 			dependencies = (
+				C93C25AF2D381DF600B97DE8 /* PBXTargetDependency */,
+				C9655F8D2D11F5A70008AED1 /* PBXTargetDependency */,
 				C96B61F72BDA710A00561DE8 /* PBXTargetDependency */,
 				C9B8AA022B31FB2D00C79606 /* PBXTargetDependency */,
 				C9B8A9B92B235EFC00C79606 /* PBXTargetDependency */,
@@ -3237,7 +3252,6 @@
 				C9FE53EB2A7A5D9700CACA1A /* XCRemoteSwiftPackageReference "Extendable" */,
 				C98EA4162A90F17700B8815E /* XCRemoteSwiftPackageReference "ProcessEnv" */,
 				C9409C642A98CC9800B5D898 /* XCRemoteSwiftPackageReference "Outline" */,
-				C9409C672A98CCCB00B5D898 /* XCRemoteSwiftPackageReference "SourceView" */,
 				C97918C92A9D4C600046EAF1 /* XCRemoteSwiftPackageReference "FuzzyFind" */,
 				C9891B262AFEC24100C8F393 /* XCRemoteSwiftPackageReference "TextStory" */,
 				C926738F2B078D3200B3CE2F /* XCRemoteSwiftPackageReference "Neon" */,
@@ -3246,9 +3260,7 @@
 				C9B8AA5B2B370A1800C79606 /* XCRemoteSwiftPackageReference "SwiftTreeSitter" */,
 				C9CDEB582B51620E009E252A /* XCRemoteSwiftPackageReference "ColorToolbox" */,
 				C9CDEB8D2B56ACA3009E252A /* XCRemoteSwiftPackageReference "MainOffender" */,
-				C9C568562B7418B60093C068 /* XCRemoteSwiftPackageReference "Lowlight" */,
 				C9BFA1A12BBF4FA200E86487 /* XCRemoteSwiftPackageReference "nsui" */,
-				C9BFA1AE2BC0927A00E86487 /* XCRemoteSwiftPackageReference "Glyph" */,
 				C93F72252BF0F9290021ACF3 /* XCRemoteSwiftPackageReference "Sparkle" */,
 				C976D7E42C4A86F800CC6EA6 /* XCRemoteSwiftPackageReference "ThemePark" */,
 			);
@@ -3544,8 +3556,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C99491B12B0957C2002DC2AC /* LineParser.swift in Sources */,
+				C9655F972D1455220008AED1 /* CursorSet.swift in Sources */,
 				C9B8A9FB2B31F37500C79606 /* TextStorageMutation.swift in Sources */,
-				C9B8A9FA2B31F37200C79606 /* TextStorageDispatcher.swift in Sources */,
 				C99491AA2B07FA8C002DC2AC /* DocumentStateModel.swift in Sources */,
 				C9B8A9F92B31F37000C79606 /* TextStorageMonitor.swift in Sources */,
 				C9B8A9D62B30613300C79606 /* DocumentCursorsMonitorModifier.swift in Sources */,
@@ -3578,6 +3590,7 @@
 				C9B8A9E82B31E62D00C79606 /* TextLayout.swift in Sources */,
 				C9B8AA082B32005400C79606 /* Environment.swift in Sources */,
 				C941F0B82B7142890003B640 /* LayoutInvalidationBuffer.swift in Sources */,
+				C9655F912D12211E0008AED1 /* TextViewInteraction.swift in Sources */,
 				C9B8AA062B31FFB300C79606 /* TextMetricsMonitorModifier.swift in Sources */,
 				C9B8A9EA2B31E79500C79606 /* NSTextView+Mutations.swift in Sources */,
 				C941F0BA2B7171BA0003B640 /* NSTextView+Additions.swift in Sources */,
@@ -3765,6 +3778,7 @@
 				C9FE53AD2A7677A700CACA1A /* EditorScrollView.swift in Sources */,
 				C9FE53D82A77D98A00CACA1A /* EditorContent.swift in Sources */,
 				C9FE53AB2A76753D00CACA1A /* SourcePresentationViewController.swift in Sources */,
+				C9655F932D12218C0008AED1 /* TransformingTextSystem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3917,6 +3931,10 @@
 			target = C92931412B80CC6700C64DDE /* EditKit */;
 			targetProxy = C929315E2B80DA1000C64DDE /* PBXContainerItemProxy */;
 		};
+		C93C25AF2D381DF600B97DE8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = C93C25AE2D381DF600B97DE8 /* MainOffender */;
+		};
 		C93F72512BF26BDC0021ACF3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C93F72472BF26BDC0021ACF3 /* EditIntents */;
@@ -3972,9 +3990,18 @@
 			isa = PBXTargetDependency;
 			productRef = C95B91312BD98C98006FDD00 /* SwiftTreeSitter */;
 		};
-		C95B91382BD98CCF006FDD00 /* PBXTargetDependency */ = {
+		C9655F8D2D11F5A70008AED1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			productRef = C95B91372BD98CCF006FDD00 /* Lowlight */;
+			productRef = C9655F8C2D11F5A70008AED1 /* TextFormation */;
+		};
+		C9655F952D1454DA0008AED1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = C9655F942D1454DA0008AED1 /* IBeam */;
+		};
+		C9655F992D1456B50008AED1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9891B122AFEC11A00C8F393 /* DocumentContent */;
+			targetProxy = C9655F982D1456B50008AED1 /* PBXContainerItemProxy */;
 		};
 		C96A85422A7BEB92005ED222 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -4007,10 +4034,6 @@
 				macos,
 			);
 			productRef = C96B61FA2BDA714000561DE8 /* ScrollViewPlus */;
-		};
-		C96B62022BDA71FE00561DE8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			productRef = C96B62012BDA71FE00561DE8 /* SourceView */;
 		};
 		C96B62282BDA9F4500561DE8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -5335,8 +5358,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ChimeHQ/Neon.git";
 			requirement = {
-				kind = revision;
-				revision = 32ef005f7fc9d8358739ef2e6702c2c73cec6ca9;
+				branch = main;
+				kind = branch;
 			};
 		};
 		C93F72252BF0F9290021ACF3 /* XCRemoteSwiftPackageReference "Sparkle" */ = {
@@ -5355,20 +5378,12 @@
 				revision = 43a755ca50bc73a23ed1cb0c93362518ab27bd3b;
 			};
 		};
-		C9409C672A98CCCB00B5D898 /* XCRemoteSwiftPackageReference "SourceView" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ChimeHQ/SourceView";
-			requirement = {
-				kind = revision;
-				revision = d563ef0ba6c1c91aa6bcee406577b8826baa1f69;
-			};
-		};
 		C976D7E42C4A86F800CC6EA6 /* XCRemoteSwiftPackageReference "ThemePark" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ChimeHQ/ThemePark";
 			requirement = {
 				kind = revision;
-				revision = 2ccbf37a0c7e52c7b20aadabd8e8cbbb2b25b9a8;
+				revision = 7df5441647a176c2739435a7285f201ff1c90384;
 			};
 		};
 		C97918C32A9D4A510046EAF1 /* XCRemoteSwiftPackageReference "FuzzyFind" */ = {
@@ -5423,8 +5438,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ChimeHQ/SwiftTreeSitter.git";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.7.2;
+				branch = main;
+				kind = branch;
 			};
 		};
 		C9BFA1A12BBF4FA200E86487 /* XCRemoteSwiftPackageReference "nsui" */ = {
@@ -5433,22 +5448,6 @@
 			requirement = {
 				kind = revision;
 				revision = 8792b2f789bf03be1be9ecb4df43d2bfe0e5d361;
-			};
-		};
-		C9BFA1AE2BC0927A00E86487 /* XCRemoteSwiftPackageReference "Glyph" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ChimeHQ/Glyph";
-			requirement = {
-				kind = revision;
-				revision = 3c8095830e9b682f22bdaa866a1f2061998e40cc;
-			};
-		};
-		C9C568562B7418B60093C068 /* XCRemoteSwiftPackageReference "Lowlight" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ChimeHQ/Lowlight";
-			requirement = {
-				kind = revision;
-				revision = 1687136e033f3f73494f228d83c80702933616a5;
 			};
 		};
 		C9CDEB582B51620E009E252A /* XCRemoteSwiftPackageReference "ColorToolbox" */ = {
@@ -5463,8 +5462,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/mattmassicotte/MainOffender.git";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.1.0;
+				branch = main;
+				kind = branch;
 			};
 		};
 		C9E0BA3A2BD2EB05007AF034 /* XCRemoteSwiftPackageReference "ThemePark" */ = {
@@ -5545,6 +5544,16 @@
 			package = C9CDEB582B51620E009E252A /* XCRemoteSwiftPackageReference "ColorToolbox" */;
 			productName = ColorToolbox;
 		};
+		C93C25AC2D381DE800B97DE8 /* MainOffender */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C9CDEB8D2B56ACA3009E252A /* XCRemoteSwiftPackageReference "MainOffender" */;
+			productName = MainOffender;
+		};
+		C93C25AE2D381DF600B97DE8 /* MainOffender */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C9CDEB8D2B56ACA3009E252A /* XCRemoteSwiftPackageReference "MainOffender" */;
+			productName = MainOffender;
+		};
 		C93F72262BF0F9290021ACF3 /* Sparkle */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C93F72252BF0F9290021ACF3 /* XCRemoteSwiftPackageReference "Sparkle" */;
@@ -5603,16 +5612,6 @@
 			package = C99491C82B1538FD002DC2AC /* XCRemoteSwiftPackageReference "RelativeCollections" */;
 			productName = RelativeCollections;
 		};
-		C95B91372BD98CCF006FDD00 /* Lowlight */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C9C568562B7418B60093C068 /* XCRemoteSwiftPackageReference "Lowlight" */;
-			productName = Lowlight;
-		};
-		C95B91392BD98CDC006FDD00 /* Lowlight */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C9C568562B7418B60093C068 /* XCRemoteSwiftPackageReference "Lowlight" */;
-			productName = Lowlight;
-		};
 		C95B913B2BD98CF1006FDD00 /* TextStory */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C9891B262AFEC24100C8F393 /* XCRemoteSwiftPackageReference "TextStory" */;
@@ -5623,6 +5622,22 @@
 			package = C9B8AA5B2B370A1800C79606 /* XCRemoteSwiftPackageReference "SwiftTreeSitter" */;
 			productName = SwiftTreeSitterLayer;
 		};
+		C9655F862D11A7A70008AED1 /* Dependencies */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Dependencies;
+		};
+		C9655F8C2D11F5A70008AED1 /* TextFormation */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = TextFormation;
+		};
+		C9655F8E2D1205210008AED1 /* TextFormation */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = TextFormation;
+		};
+		C9655F942D1454DA0008AED1 /* IBeam */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = IBeam;
+		};
 		C96B61FA2BDA714000561DE8 /* ScrollViewPlus */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C9FE53AE2A7677D100CACA1A /* XCRemoteSwiftPackageReference "ScrollViewPlus" */;
@@ -5632,16 +5647,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C9FE53AE2A7677D100CACA1A /* XCRemoteSwiftPackageReference "ScrollViewPlus" */;
 			productName = ScrollViewPlus;
-		};
-		C96B62012BDA71FE00561DE8 /* SourceView */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C9409C672A98CCCB00B5D898 /* XCRemoteSwiftPackageReference "SourceView" */;
-			productName = SourceView;
-		};
-		C96B62052BDA721100561DE8 /* SourceView */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C9409C672A98CCCB00B5D898 /* XCRemoteSwiftPackageReference "SourceView" */;
-			productName = SourceView;
 		};
 		C972C81E2C4BD96D00B8948A /* TreeSitterParsers */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -5734,11 +5739,6 @@
 		};
 		C9BFA1A82BC072E300E86487 /* Glyph */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = Glyph;
-		};
-		C9BFA1AF2BC0927A00E86487 /* Glyph */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C9BFA1AE2BC0927A00E86487 /* XCRemoteSwiftPackageReference "Glyph" */;
 			productName = Glyph;
 		};
 		C9BFA1B62BC162EF00E86487 /* NSUI */ = {

@@ -7,7 +7,7 @@ import Utility
 
 @MainActor
 public final class ExtensionManager<Host: HostProtocol> {
-	private static var extensionsEnabled: Bool { true }
+	private static var extensionsEnabled: Bool { false }
 
     private let localExtensions: [any ExtensionProtocol]
     private var loadedExtensions = [AppExtensionIdentity: any ExtensionProtocol]()

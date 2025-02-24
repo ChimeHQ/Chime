@@ -7,12 +7,8 @@ extension TextStorage where Version == Int {
 		self.init(
 			beginEditing: { textStorage.beginEditing() },
 			endEditing: { textStorage.endEditing() },
-			applyMutations: { mutations in
-				for mutation in mutations {
-					for rangedString in mutation.stringMutations {
-						textStorage.replaceCharacters(in: rangedString.range, with: rangedString.string)
-					}
-				}
+			applyMutation: { mutation in
+				textStorage.replaceCharacters(in: mutation.range, with: mutation.string)
 			},
 			version: { textStorage.hashValue },
 			length: { version in

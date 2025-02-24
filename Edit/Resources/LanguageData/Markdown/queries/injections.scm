@@ -7,6 +7,6 @@
 
 (document . (section . (thematic_break) (_) @injection.content (thematic_break)) (#set! injection.language "yaml"))
 
-([(minus_metadata) (plus_metadata)] @injection.content (#set! injection.language "yml"))
+([(minus_metadata) (plus_metadata)] @injection.content (#set! injection.language "yaml"))
 
 ((inline) @injection.content (#set! injection.language "markdown_inline"))

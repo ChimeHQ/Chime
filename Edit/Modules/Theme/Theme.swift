@@ -85,7 +85,7 @@ extension Theme {
 extension Theme {
 	@MainActor
 	public func typingAttributes(tabWidth: Int, context: Query.Context) -> [NSAttributedString.Key : Any] {
-		let query = Query(key: .syntax(.text), context: context)
+		let query = Query(key: .syntax(.text(nil)), context: context)
 
 		let baseFont = font(for: query) ?? Self.fallbackFont
 

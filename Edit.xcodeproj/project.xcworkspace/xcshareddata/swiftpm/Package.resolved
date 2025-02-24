@@ -1,5 +1,5 @@
 {
-  "originHash" : "a425ffff3c05722e5d50ef8ce30dc82d4392cf636f759db35d39aac4e657e178",
+  "originHash" : "d43adc44f1dcaeaeca68db8a97a31f9682965644c2ac523d3c042e6b0c14a080",
   "pins" : [
     {
       "identity" : "asyncxpcconnection",
@@ -76,7 +76,17 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ChimeHQ/Glyph",
       "state" : {
-        "revision" : "3c8095830e9b682f22bdaa866a1f2061998e40cc"
+        "branch" : "main",
+        "revision" : "25ffb2917c773ef6b8e54695f54e0cc55862dda2"
+      }
+    },
+    {
+      "identity" : "ibeam",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ChimeHQ/IBeam",
+      "state" : {
+        "branch" : "main",
+        "revision" : "5ed3821bc6879cbaa995111378253d35e36d1b59"
       }
     },
     {
@@ -86,6 +96,15 @@
       "state" : {
         "revision" : "c6ec759d41a76ac88fe7327c41a77d9033943374",
         "version" : "0.9.0"
+      }
+    },
+    {
+      "identity" : "keycodes",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ChimeHQ/KeyCodes",
+      "state" : {
+        "revision" : "93ba759d2bfd7b5233294188bc685fd09dce2729",
+        "version" : "1.0.3"
       }
     },
     {
@@ -106,11 +125,21 @@
       }
     },
     {
+      "identity" : "ligature",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ChimeHQ/Ligature",
+      "state" : {
+        "branch" : "main",
+        "revision" : "c9407984c5e9185098cfef6b2bc8dd03a4bbd5bb"
+      }
+    },
+    {
       "identity" : "lowlight",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ChimeHQ/Lowlight",
       "state" : {
-        "revision" : "1687136e033f3f73494f228d83c80702933616a5"
+        "branch" : "main",
+        "revision" : "35d9ffcf5577085c7376422469bd5f54b0eedacb"
       }
     },
     {
@@ -118,8 +147,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/mattmassicotte/MainOffender.git",
       "state" : {
-        "revision" : "8de872d9256ff7f9913cbc5dd560568ab164be45",
-        "version" : "0.2.1"
+        "branch" : "main",
+        "revision" : "2d80eba8286bc5aaff475ee134ffbc384463451f"
       }
     },
     {
@@ -127,7 +156,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ChimeHQ/Neon.git",
       "state" : {
-        "revision" : "32ef005f7fc9d8358739ef2e6702c2c73cec6ca9"
+        "branch" : "main",
+        "revision" : "6db8225e9812695db48f1adb8d54648f07319998"
       }
     },
     {
@@ -169,8 +199,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ChimeHQ/Rearrange",
       "state" : {
-        "revision" : "f1d74e1642956f0300756ad8d1d64e9034857bc3",
-        "version" : "2.0.0"
+        "branch" : "main",
+        "revision" : "eae38792ce4cc4c8ba74632d63109b35163f5877"
       }
     },
     {
@@ -204,7 +234,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ChimeHQ/SourceView",
       "state" : {
-        "revision" : "d563ef0ba6c1c91aa6bcee406577b8826baa1f69"
+        "branch" : "main",
+        "revision" : "1247202d7f985789c5d7672b28223cf9e9f0df72"
       }
     },
     {
@@ -219,9 +250,27 @@
     {
       "identity" : "swifttreesitter",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/ChimeHQ/SwiftTreeSitter",
+      "location" : "https://github.com/ChimeHQ/SwiftTreeSitter.git",
       "state" : {
-        "revision" : "55f2c2fdaf859f86e4ea8513b9934badc7894019"
+        "branch" : "main",
+        "revision" : "77a793c79fe6bf8b627f804f98b1ba6539dfe007"
+      }
+    },
+    {
+      "identity" : "textbook",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ChimeHQ/Textbook",
+      "state" : {
+        "revision" : "a70d9cd0b7da1878e1db448283b431834fd00376"
+      }
+    },
+    {
+      "identity" : "textformation",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ChimeHQ/TextFormation",
+      "state" : {
+        "branch" : "feature/process-mutation",
+        "revision" : "80f869b3f7d137ea071a42468a812b050c3d6a53"
       }
     },
     {
@@ -237,7 +286,7 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ChimeHQ/ThemePark",
       "state" : {
-        "revision" : "2ccbf37a0c7e52c7b20aadabd8e8cbbb2b25b9a8"
+        "revision" : "7df5441647a176c2739435a7285f201ff1c90384"
       }
     },
     {
@@ -363,7 +412,7 @@
       "location" : "https://github.com/tree-sitter-grammars/tree-sitter-markdown",
       "state" : {
         "branch" : "split_parser",
-        "revision" : "f9820b2db958228f9be339b67d2de874d065866e"
+        "revision" : "192407ab5a24bfc24f13332979b5e7967518754a"
       }
     },
     {

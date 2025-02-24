@@ -6,11 +6,11 @@ public enum TextStorageError: Error {
 	case stale
 }
 
-public struct TextStorage<Version: Sendable> {
+public struct TextStorage<Version> {
 	// mutation
 	public let beginEditing: () -> Void
 	public let endEditing: () -> Void
-	public let applyMutations: ([TextStorageMutation]) -> Void
+	public let applyMutation: (TextStorageMutation) -> Void
 
 	// read-only
 	public let version: () -> Version
@@ -20,14 +20,14 @@ public struct TextStorage<Version: Sendable> {
 	public init(
 		beginEditing: @escaping () -> Void,
 		endEditing: @escaping () -> Void,
-		applyMutations: @escaping ([TextStorageMutation]) -> Void,
+		applyMutation: @escaping (TextStorageMutation) -> Void,
 		version: @escaping () -> Version,
 		length: @escaping (Version) -> Int?,
 		substring: @escaping (NSRange, Version) throws -> String
 	) {
 		self.beginEditing = beginEditing
 		self.endEditing = endEditing
-		self.applyMutations = applyMutations
+		self.applyMutation = applyMutation
 		self.version = version
 		self.length = length
 		self.substring = substring
@@ -63,12 +63,31 @@ extension TextStorage where Version : AdditiveArithmetic {
 		.init(
 			beginEditing: { },
 			endEditing: {},
-			applyMutations: { _ in },
+			applyMutation: { _ in },
 			version: { Version.zero },
 			length: { _ in 0},
 			substring: { range, _ in
 				throw TextStorageError.rangeInvalid(range, length: 0)
 			}
+		)
+	}
+
+	public func relaying(to monitors: [TextStorageMonitor]) -> Self {
+		let compositeMonitor = TextStorageMonitor(monitors: monitors)
+		
+		return .init(
+			beginEditing: compositeMonitor.willBeginEditing,
+			endEditing: compositeMonitor.didEndEditing,
+			applyMutation: {
+				compositeMonitor.willApplyMutation($0)
+
+				self.applyMutation($0)
+
+				compositeMonitor.didApplyMutation($0)
+			},
+			version: version,
+			length: length,
+			substring: substring
 		)
 	}
 }

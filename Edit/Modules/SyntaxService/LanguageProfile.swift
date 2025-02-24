@@ -1,50 +1,49 @@
 import Foundation
 
 import SwiftTreeSitter
+import TextFormation
 
 enum LanguageProfileError: Error {
 	case treeSitterUnsupported
 	case resourceURLMissing
 }
 
-public struct LanguageProfile: Sendable {
+public struct LanguageProfile {
 	public let name: String
 	public let language: SwiftTreeSitter.Language?
 	public let bundleName: String?
+	public let mutationFilter: NewFilter
 
-	public init(name: String, language: SwiftTreeSitter.Language?, bundleName: String?) {
+	public init(name: String, language: SwiftTreeSitter.Language?, bundleName: String?, mutationFilter: NewFilter) {
 		self.name = name
 		self.language = language
 		self.bundleName = bundleName
+		self.mutationFilter = mutationFilter
 	}
 
-	public init(name: String, language: SwiftTreeSitter.Language?) {
+	public init(name: String, language: SwiftTreeSitter.Language?, mutationFilter: NewFilter) {
 		let bundleName = "TreeSitter\(name)_TreeSitter\(name)"
 
 		self.name = name
 		self.language = language
 		self.bundleName = bundleName
+		self.mutationFilter = mutationFilter
 	}
 
-	public init(_ rootLanguage: RootLanguage, language: SwiftTreeSitter.Language?) {
+	public init(_ rootLanguage: RootLanguage, language: SwiftTreeSitter.Language?, mutationFilter: NewFilter) {
 		let name = rootLanguage.rawValue
 		let bundleName = "TreeSitter\(name)_TreeSitter\(name)"
 
 		self.name = name
 		self.language = language
 		self.bundleName = bundleName
+		self.mutationFilter = mutationFilter
 	}
 }
 
 extension LanguageProfile {
-	public func loadLanguageConfiguration() async throws -> LanguageConfiguration {
-		try await withUnsafeThrowingContinuation { continuation in
-			DispatchQueue.global().async {
-				let result = Result(catching: { try load() })
-
-				continuation.resume(with: result)
-			}
-		}
+	public nonisolated func loadLanguageConfiguration() async throws -> LanguageConfiguration {
+		try load()
 	}
 
 	public func load() throws -> LanguageConfiguration {
@@ -86,3 +85,4 @@ extension LanguageProfile {
 			.appending(component: "Contents/Resources/queries", directoryHint: .isDirectory)
 	}
 }
+
