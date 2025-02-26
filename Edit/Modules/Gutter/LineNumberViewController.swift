@@ -1,6 +1,7 @@
 import Cocoa
 import SwiftUI
 
+import Borderline
 import DocumentContent
 import TextSystem
 import Neon
@@ -130,7 +131,9 @@ extension LineNumberViewController {
 	private func updateThickness() {
 		widthCalculator.maximumNumber = textSystem.textMetrics.lastLine.index
 
-		regionView.thickness = widthCalculator.requiredWidth
+		let padding = 6.0
+		
+		regionView.thickness = widthCalculator.requiredWidth + padding
 	}
 
 	func invalidate(_ invalidRect: CGRect) {
@@ -153,7 +156,7 @@ extension LineNumberViewController {
 		})
 	}
 
-	private func styleForLine(_ line: Line, in range: NSRange, lastLine: Bool) -> [NSAttributedString.Key : Any] {
+	private func styleForLine(_ line: DocumentContent.Line, in range: NSRange, lastLine: Bool) -> [NSAttributedString.Key : Any] {
 		let lastPositionSelected = selectedRanges == [NSRange(location: line.max, length: 0)]
 		let cursorAtEndOfText = lastLine && lastPositionSelected
 
@@ -172,7 +175,7 @@ extension LineNumberViewController {
 		return normalLineAttributes
 	}
 
-	private func backgroundForLine(_ line: Line) -> NSColor {
+	private func backgroundForLine(_ line: DocumentContent.Line) -> NSColor {
 //		line.index % 2 == 0 ? .red : .blue
 		.clear
 	}

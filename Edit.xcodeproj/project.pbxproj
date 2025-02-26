@@ -16,7 +16,6 @@
 		C92672FA2B039AA300B3CE2F /* SwiftExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92672F72B0399D800B3CE2F /* SwiftExtension.swift */; };
 		C92673452B05500500B3CE2F /* RegionLabellingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92673442B05500500B3CE2F /* RegionLabellingView.swift */; };
 		C92673472B055AD300B3CE2F /* LineNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92673462B055AD300B3CE2F /* LineNumberViewController.swift */; };
-		C926734B2B0568EB00B3CE2F /* NumberWidthCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C926734A2B0568EB00B3CE2F /* NumberWidthCalculator.swift */; };
 		C926736B2B06B90900B3CE2F /* ThemeMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C926736A2B06B90900B3CE2F /* ThemeMonitor.swift */; };
 		C926736E2B06BE1200B3CE2F /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C926736D2B06BE1200B3CE2F /* Environment.swift */; };
 		C92673932B07924A00B3CE2F /* Chime.docc in Sources */ = {isa = PBXBuildFile; fileRef = C92673922B07924A00B3CE2F /* Chime.docc */; };
@@ -217,6 +216,7 @@
 		C9EA095D2B4D695400732203 /* LanguageDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EA095C2B4D695400732203 /* LanguageDataStore.swift */; };
 		C9EA09662B4DC57800732203 /* TextPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EA09652B4DC57800732203 /* TextPresentation.swift */; };
 		C9EFDFAF2AEEF15400568E15 /* ApplicationServiceEventRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EFDFAE2AEEF15400568E15 /* ApplicationServiceEventRouter.swift */; };
+		C9EFE30C2D6F6763009D201E /* Borderline in Frameworks */ = {isa = PBXBuildFile; productRef = C9EFE30B2D6F6763009D201E /* Borderline */; };
 		C9F79DD72A87E3FA005ED8E9 /* URL+Contents.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F79DD62A87E3FA005ED8E9 /* URL+Contents.swift */; };
 		C9F79DF72A8FFC65005ED8E9 /* NavigatorItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F79DD82A87E44A005ED8E9 /* NavigatorItem.swift */; };
 		C9F79DF82A8FFC6A005ED8E9 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F79DDA2A87E46A005ED8E9 /* Navigator.swift */; };
@@ -1014,7 +1014,6 @@
 		C92673432B05244600B3CE2F /* EditUITests.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = EditUITests.xcconfig; sourceTree = "<group>"; };
 		C92673442B05500500B3CE2F /* RegionLabellingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionLabellingView.swift; sourceTree = "<group>"; };
 		C92673462B055AD300B3CE2F /* LineNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineNumberViewController.swift; sourceTree = "<group>"; };
-		C926734A2B0568EB00B3CE2F /* NumberWidthCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberWidthCalculator.swift; sourceTree = "<group>"; };
 		C926736A2B06B90900B3CE2F /* ThemeMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeMonitor.swift; sourceTree = "<group>"; };
 		C926736D2B06BE1200B3CE2F /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		C926736F2B06BFCB00B3CE2F /* DocumentMutationMonitorModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentMutationMonitorModifier.swift; sourceTree = "<group>"; };
@@ -1190,6 +1189,7 @@
 		C9EA095C2B4D695400732203 /* LanguageDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageDataStore.swift; sourceTree = "<group>"; };
 		C9EA09652B4DC57800732203 /* TextPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextPresentation.swift; sourceTree = "<group>"; };
 		C9EFDFAE2AEEF15400568E15 /* ApplicationServiceEventRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationServiceEventRouter.swift; sourceTree = "<group>"; };
+		C9EFE30A2D6F66A3009D201E /* Borderline */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Borderline; path = ../Borderline; sourceTree = SOURCE_ROOT; };
 		C9F79DD62A87E3FA005ED8E9 /* URL+Contents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Contents.swift"; sourceTree = "<group>"; };
 		C9F79DD82A87E44A005ED8E9 /* NavigatorItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigatorItem.swift; sourceTree = "<group>"; };
 		C9F79DDA2A87E46A005ED8E9 /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
@@ -1280,6 +1280,7 @@
 				C95B913C2BD98CF1006FDD00 /* TextStory in Frameworks */,
 				C95B912D2BD98C50006FDD00 /* Neon in Frameworks */,
 				C9E0BA0E2BD2807B007AF034 /* libDiagnostics.a in Frameworks */,
+				C9EFE30C2D6F6763009D201E /* Borderline in Frameworks */,
 				C929316B2B822BAD00C64DDE /* libUtility.a in Frameworks */,
 				C9BFA1B72BC162EF00E86487 /* NSUI in Frameworks */,
 				C95B91362BD98CBD006FDD00 /* RelativeCollections in Frameworks */,
@@ -1745,7 +1746,6 @@
 				C9891B3F2AFFF23D00C8F393 /* Gutter.swift */,
 				C958C7832BC7019100EC95F8 /* LineNumberView.swift */,
 				C92673462B055AD300B3CE2F /* LineNumberViewController.swift */,
-				C926734A2B0568EB00B3CE2F /* NumberWidthCalculator.swift */,
 				C92673442B05500500B3CE2F /* RegionLabellingView.swift */,
 			);
 			path = Gutter;
@@ -1875,6 +1875,7 @@
 		C9FE52902A7525D000CACA1A = {
 			isa = PBXGroup;
 			children = (
+				C9EFE30A2D6F66A3009D201E /* Borderline */,
 				C9FE538E2A76674600CACA1A /* Configurations */,
 				C9439A742C3EC13A0020DDF5 /* Dependencies */,
 				C9FE529B2A7525D000CACA1A /* Edit */,
@@ -2421,6 +2422,7 @@
 				C9655F862D11A7A70008AED1 /* Dependencies */,
 				C9655F8E2D1205210008AED1 /* TextFormation */,
 				C93C25AC2D381DE800B97DE8 /* MainOffender */,
+				C9EFE30B2D6F6763009D201E /* Borderline */,
 			);
 			productName = EditKit;
 			productReference = C92931422B80CC6700C64DDE /* EditKit.framework */;
@@ -2618,6 +2620,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				C9EFE30E2D6F677B009D201E /* PBXTargetDependency */,
 				C9B8AA042B31FB5900C79606 /* PBXTargetDependency */,
 				C92673562B06885100B3CE2F /* PBXTargetDependency */,
 				C92673502B06719C00B3CE2F /* PBXTargetDependency */,
@@ -3576,7 +3579,6 @@
 			files = (
 				C92673472B055AD300B3CE2F /* LineNumberViewController.swift in Sources */,
 				C958C7842BC7019100EC95F8 /* LineNumberView.swift in Sources */,
-				C926734B2B0568EB00B3CE2F /* NumberWidthCalculator.swift in Sources */,
 				C92673452B05500500B3CE2F /* RegionLabellingView.swift in Sources */,
 				C9891B402AFFF23D00C8F393 /* Gutter.swift in Sources */,
 			);
@@ -4407,6 +4409,10 @@
 			isa = PBXTargetDependency;
 			target = C9FE53F32A7A5EF900CACA1A /* Utility */;
 			targetProxy = C9EFDFAC2AEEE9BC00568E15 /* PBXContainerItemProxy */;
+		};
+		C9EFE30E2D6F677B009D201E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = C9EFE30D2D6F677B009D201E /* Borderline */;
 		};
 		C9F79DDE2A87E656005ED8E9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -5775,6 +5781,14 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C9FE53EB2A7A5D9700CACA1A /* XCRemoteSwiftPackageReference "Extendable" */;
 			productName = ExtendableHost;
+		};
+		C9EFE30B2D6F6763009D201E /* Borderline */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Borderline;
+		};
+		C9EFE30D2D6F677B009D201E /* Borderline */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Borderline;
 		};
 		C9F79DDD2A87E656005ED8E9 /* Outline */ = {
 			isa = XCSwiftPackageProductDependency;
