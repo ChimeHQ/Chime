@@ -3,10 +3,12 @@ import Foundation
 import RangeState
 
 extension RangeProcessor {
+	@MainActor
 	func didApplyMutation(_ mutation: TextStorageMutation) {
 		didChangeContent(in: mutation.range, delta: mutation.delta)
 	}
 
+	@MainActor
 	var textStorageMonitor: TextStorageMonitor {
 		.init(
 			willApplyMutation: { _ in },

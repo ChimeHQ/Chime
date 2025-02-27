@@ -151,13 +151,17 @@ extension LineNumberViewController {
 			if range.contains(selectedRange.location) {
 				return true
 			}
+			
+			if range.location == selectedRange.location {
+				return true
+			}
 
 			return false
 		})
 	}
 
-	private func styleForLine(_ line: DocumentContent.Line, in range: NSRange, lastLine: Bool) -> [NSAttributedString.Key : Any] {
-		let lastPositionSelected = selectedRanges == [NSRange(location: line.max, length: 0)]
+	private func styleForLine(_ line: Line<Int>, in range: NSRange, lastLine: Bool) -> [NSAttributedString.Key : Any] {
+		let lastPositionSelected = selectedRanges == [NSRange(location: line.upperBound, length: 0)]
 		let cursorAtEndOfText = lastLine && lastPositionSelected
 
 		if cursorAtEndOfText {
@@ -168,14 +172,14 @@ extension LineNumberViewController {
 			return selectedLineAttributes
 		}
 
-		if line.whitespaceOnly {
+		if line.isWhitespaceOnly {
 			return emptyLineAttributes
 		}
 
 		return normalLineAttributes
 	}
 
-	private func backgroundForLine(_ line: DocumentContent.Line) -> NSColor {
+	private func backgroundForLine(_ line: Line<Int>) -> NSColor {
 //		line.index % 2 == 0 ? .red : .blue
 		.clear
 	}
@@ -223,7 +227,7 @@ extension LineNumberViewController {
 
 			let style = styleForLine(line, in: range, lastLine: last)
 			let background = backgroundForLine(line)
-			let firstFragment = range.location == lines[lineIndex].location
+			let firstFragment = range.lowerBound == lines[lineIndex].lowerBound
 
 			let labelString = firstFragment ? "\(line.index)" : "•"
 
@@ -238,7 +242,7 @@ extension LineNumberViewController {
 			labelledRegions.append(labelledRegion)
 
 			// check if we need to advance
-			if range.max >= line.range.max {
+			if range.max >= line.upperBound {
 				lineIndex = lines.index(after: lineIndex)
 			}
 

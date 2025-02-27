@@ -1,5 +1,5 @@
 {
-  "originHash" : "d43adc44f1dcaeaeca68db8a97a31f9682965644c2ac523d3c042e6b0c14a080",
+  "originHash" : "614b87b9c89e0756412a24db0656e56dce10319e24c41fc31c17ae0a6f02cadd",
   "pins" : [
     {
       "identity" : "asyncxpcconnection",
@@ -8,6 +8,15 @@
       "state" : {
         "revision" : "d7f6ec40d9f050fef87c25ab67ba5f626e4d4dee",
         "version" : "1.1.0"
+      }
+    },
+    {
+      "identity" : "borderline",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ChimeHQ/Borderline",
+      "state" : {
+        "branch" : "main",
+        "revision" : "2d5117e883a382c125feb34e962889035561f7a1"
       }
     },
     {
@@ -77,7 +86,7 @@
       "location" : "https://github.com/ChimeHQ/Glyph",
       "state" : {
         "branch" : "main",
-        "revision" : "25ffb2917c773ef6b8e54695f54e0cc55862dda2"
+        "revision" : "639ec587d8cfd14eacacf7cf1b649e096db2b137"
       }
     },
     {

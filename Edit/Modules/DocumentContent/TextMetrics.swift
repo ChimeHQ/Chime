@@ -1,5 +1,6 @@
 import Foundation
 
+import Borderline
 import Rearrange
 import RelativeCollections
 import RangeState
@@ -17,19 +18,19 @@ extension RelativeList {
 	}
 }
 
-extension Line {
+extension Line where TextPosition == Int {
 	init(record: TextMetrics.List.Record, index: Int) {
 		self.init(
 			index: index,
-			range: NSRange(location: record.dependency, length: record.weight),
-			whitespaceOnly: record.value.whitespaceOnly
+			start: record.dependency,
+			lengths: record.value
 		)
 	}
 
 	var weightedValue: TextMetrics.List.WeightedValue {
 		.init(
-			value: TextMetrics.LineValue(whitespaceOnly: whitespaceOnly),
-			weight: range.length
+			value: lengths,
+			weight: lengths.total
 		)
 	}
 }
@@ -42,14 +43,10 @@ public final class TextMetrics {
 	public nonisolated static let textMetricsDidChangeNotification = Notification.Name("textMetricsDidChangeNotification")
 
 	public typealias Version = Int
-	typealias List = RelativeArray<LineValue, Int>
+	typealias List = RelativeArray<LineComponentLengths, Int>
 //	typealias List = RelativeList<LineValue, Int>
 	public typealias Storage = TextStorage<Version>
 	typealias Processor = RangeProcessor
-
-	struct LineValue {
-		let whitespaceOnly: Bool
-	}
 
 	public enum Query: Sendable, Hashable {
 		case location(Int, fill: RangeFillMode)
@@ -62,12 +59,13 @@ public final class TextMetrics {
 	private lazy var rangeProcessor = Processor(
 		configuration: .init(
 			lengthProvider: { [storage] in storage.currentLength },
-			changeHandler: { self.didChange($0, completion: $1) }
+			changeHandler: {
+				self.didChange($0, completion: $1)
+			}
 		)
 	)
 
-	private let parser = LineParser()
-//	private let lineList = List()
+	private let parser = UTF16CodePointLineParser()
 	private var lineList = List()
 	let storage: Storage
 	private var thing: Int = 0
@@ -76,7 +74,11 @@ public final class TextMetrics {
 		self.storage = storage
 
 		// insert a single empty line as a starting point
-		let line = Line(index: 0, range: NSRange(0..<0), whitespaceOnly: true)
+		let line = Line<Int>(
+			index: 0,
+			start: 0,
+			lengths: .empty
+		)
 
 		lineList.append(line.weightedValue)
 //		lineList.insert(line.weightedValue, at: 0)
@@ -102,7 +104,7 @@ public final class TextMetrics {
 			return (location, fill)
 		case let .index(index, fill: fill):
 			// we have seen processed this location
-			if let location = line(at: index)?.max {
+			if let location = line(at: index)?.upperBound {
 				return (location, fill)
 			}
 
@@ -121,31 +123,30 @@ public final class TextMetrics {
 		}
 	}
 
-	public func lines(for range: NSRange) -> [Line] {
+	public func lines(for range: NSRange) -> [Line<Int>] {
 		ensureProcessed(range.max)
 
 		let lowerIndex = lastLineIndex(before: range.location) ?? lineList.startIndex
-		let passIndex = firstLineIndex(after: range.max) ?? lineList.endIndex
+		let upperIndex = firstLineIndex(after: range.max) ?? lineList.endIndex
 
-		// that upper is *past* the range, so we need to back up one
-		let upperIndex = lineList.index(before: passIndex)
+		// that upper is *past* the range we are interested in
 
 		return lineList[lowerIndex..<upperIndex].enumerated().map { index, record in
 			Line(record: record, index: index + lowerIndex)
 		}
 	}
 
-	public func line(for location: Int) -> Line? {
+	public func line(for location: Int) -> Line<Int>? {
 		guard let idx = lastLineIndex(before: location) else { return nil }
 
 		return Line(record: lineList[idx], index: idx)
 	}
 
-	public func line(at index: Int) -> Line? {
+	public func line(at index: Int) -> Line<Int>? {
 		lineList[safe: index].map { Line(record: $0, index: index) }
 	}
 
-	public var lastLine: Line {
+	public var lastLine: Line<Int> {
 		let idx = lineList.endIndex - 1
 
 		precondition(idx >= 0)
@@ -162,7 +163,7 @@ public final class TextMetrics {
 		set {
 			invalidator.invalidationHandler = { [rangeProcessor] in
 				let target = $0.apply(mutations: rangeProcessor.pendingMutations)
-
+				
 				newValue(target)
 			}
 		}
@@ -179,7 +180,7 @@ extension TextMetrics {
 	/// Apply an effective change.
 	///
 	/// This is invoked lazily by `rangeProcessor`.
-	private func didChange(_ mutation: RangeMutation, completion: @escaping @MainActor () -> Void) {
+	private func didChange(_ mutation: RangeMutation, completion: @escaping () -> Void) {
 		let limit = mutation.postApplyLimit
 		let range = mutation.range
 		let delta = mutation.delta
@@ -187,8 +188,8 @@ extension TextMetrics {
 		let lowerIndex = lastLineIndex(before: range.location)
 		let upperIndex = firstLineIndex(after: range.max)
 
-		let lowerReadLocation = lowerIndex.flatMap { line(at: $0)?.range.location } ?? 0
-		let upperReadLocation = upperIndex.flatMap { line(at: $0)?.range.location }.map { min($0 + delta, limit) } ?? limit
+		let lowerReadLocation = lowerIndex.flatMap { line(at: $0)?.lowerBound } ?? 0
+		let upperReadLocation = upperIndex.flatMap { line(at: $0)?.lowerBound }.map { min($0 + delta, limit) } ?? limit
 
 		let affectedRange = NSRange(lowerReadLocation..<upperReadLocation)
 
@@ -208,20 +209,32 @@ extension TextMetrics {
 		let indexOffset = lowerIndex ?? 0
 		let includeLastLine = affectedRange.max == limit
 
-		DispatchQueue.global().asyncUnsafe {
-			let newLines = self.parser.parseLines(in: substring, indexOffset: indexOffset, locationOffset: affectedRange.location, includeLastLine: includeLastLine)
-
+		// this is currently always async, but it could potentially be conditional on the size of edit
+		Task {
 			let replacementRange = replacementLower..<replacementUpper
-
-			let weightedValues = newLines.map { $0.weightedValue }
-
-			DispatchQueue.main.async {
-				self.lineList.replaceSubrange(replacementRange, with: weightedValues)
-
-				completion()
-				self.invalidator.invalidate(.range(affectedRange))
-			}
+			async let weightedValues = parseLines(
+				in: substring,
+				indexOffset: indexOffset,
+				locationOffset: affectedRange.location,
+				includeLastLine: includeLastLine
+			)
+			
+			self.lineList.replaceSubrange(replacementRange, with: await weightedValues)
+			completion()
+			print("invalidating:", affectedRange)
+			self.invalidator.invalidate(.range(affectedRange))
 		}
+	}
+	
+	nonisolated func parseLines(in substring: String, indexOffset: Int, locationOffset: Int, includeLastLine: Bool) -> [TextMetrics.List.WeightedValue] {
+		let newLines = parser.parseLines(
+			in: substring,
+			indexOffset: indexOffset,
+			locationOffset: locationOffset,
+			includeLastLine: includeLastLine
+		)
+		
+		return newLines.map { $0.weightedValue }
 	}
 }
 
@@ -245,7 +258,7 @@ extension TextMetrics {
 }
 
 extension TextMetrics {
-	public func lineSpan(for range: NSRange, mode: RangeFillMode = .none) -> (Line, Line)? {
+	public func lineSpan(for range: NSRange, mode: RangeFillMode = .none) -> (Line<Int>, Line<Int>)? {
 		let max = range.upperBound
 		let min = range.lowerBound
 
@@ -258,7 +271,7 @@ extension TextMetrics {
 		}
 
 		// just skip a lookup if we can
-		if start.range.contains(max) {
+		if start.range(of: .full).contains(max) {
 			return (start, start)
 		}
 

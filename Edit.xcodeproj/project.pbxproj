@@ -155,8 +155,6 @@
 		C9891B402AFFF23D00C8F393 /* Gutter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9891B3F2AFFF23D00C8F393 /* Gutter.swift */; };
 		C98EA41C2A912A5E00B8815E /* ProjectDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98EA4192A912A2900B8815E /* ProjectDocument.swift */; };
 		C99491AA2B07FA8C002DC2AC /* DocumentStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99491A92B07FA8C002DC2AC /* DocumentStateModel.swift */; };
-		C99491B02B09573F002DC2AC /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99491AF2B09573F002DC2AC /* Line.swift */; };
-		C99491B12B0957C2002DC2AC /* LineParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99491AD2B09570A002DC2AC /* LineParser.swift */; };
 		C99491C52B153051002DC2AC /* TextMetrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99491C42B153051002DC2AC /* TextMetrics.swift */; };
 		C995EA6A2C3EC7A900D3ED4C /* ChimeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE52F42A7539B100CACA1A /* ChimeKit.framework */; };
 		C995EA752C3ED52900D3ED4C /* ClojureStandaloneExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C995EA742C3ED52900D3ED4C /* ClojureStandaloneExtension.swift */; };
@@ -1124,8 +1122,6 @@
 		C9891B3F2AFFF23D00C8F393 /* Gutter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gutter.swift; sourceTree = "<group>"; };
 		C98EA4192A912A2900B8815E /* ProjectDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDocument.swift; sourceTree = "<group>"; };
 		C99491A92B07FA8C002DC2AC /* DocumentStateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentStateModel.swift; sourceTree = "<group>"; };
-		C99491AD2B09570A002DC2AC /* LineParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineParser.swift; sourceTree = "<group>"; };
-		C99491AF2B09573F002DC2AC /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
 		C99491C42B153051002DC2AC /* TextMetrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextMetrics.swift; sourceTree = "<group>"; };
 		C995EA742C3ED52900D3ED4C /* ClojureStandaloneExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClojureStandaloneExtension.swift; sourceTree = "<group>"; };
 		C99A8DF82C40011100D8F599 /* PythonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PythonExtension.swift; path = "submodules/chime-python/Sources/ChimePython/PythonExtension.swift"; sourceTree = SOURCE_ROOT; };
@@ -1189,7 +1185,6 @@
 		C9EA095C2B4D695400732203 /* LanguageDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageDataStore.swift; sourceTree = "<group>"; };
 		C9EA09652B4DC57800732203 /* TextPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextPresentation.swift; sourceTree = "<group>"; };
 		C9EFDFAE2AEEF15400568E15 /* ApplicationServiceEventRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationServiceEventRouter.swift; sourceTree = "<group>"; };
-		C9EFE30A2D6F66A3009D201E /* Borderline */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Borderline; path = ../Borderline; sourceTree = SOURCE_ROOT; };
 		C9F79DD62A87E3FA005ED8E9 /* URL+Contents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Contents.swift"; sourceTree = "<group>"; };
 		C9F79DD82A87E44A005ED8E9 /* NavigatorItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigatorItem.swift; sourceTree = "<group>"; };
 		C9F79DDA2A87E46A005ED8E9 /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
@@ -1730,8 +1725,6 @@
 				C9655F962D1455190008AED1 /* CursorSet.swift */,
 				C99491A92B07FA8C002DC2AC /* DocumentStateModel.swift */,
 				C926736D2B06BE1200B3CE2F /* Environment.swift */,
-				C99491AF2B09573F002DC2AC /* Line.swift */,
-				C99491AD2B09570A002DC2AC /* LineParser.swift */,
 				C9B8A9D22B3060F400C79606 /* Modifiers */,
 				C9B8A9F82B31F34C00C79606 /* Storage */,
 				C99491C42B153051002DC2AC /* TextMetrics.swift */,
@@ -1875,7 +1868,6 @@
 		C9FE52902A7525D000CACA1A = {
 			isa = PBXGroup;
 			children = (
-				C9EFE30A2D6F66A3009D201E /* Borderline */,
 				C9FE538E2A76674600CACA1A /* Configurations */,
 				C9439A742C3EC13A0020DDF5 /* Dependencies */,
 				C9FE529B2A7525D000CACA1A /* Edit */,
@@ -2597,6 +2589,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				C9EFE3102D6F692F009D201E /* PBXTargetDependency */,
 				C9655F952D1454DA0008AED1 /* PBXTargetDependency */,
 				C99491CC2B153914002DC2AC /* PBXTargetDependency */,
 				C926737F2B0782C500B3CE2F /* PBXTargetDependency */,
@@ -3558,7 +3551,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C99491B12B0957C2002DC2AC /* LineParser.swift in Sources */,
 				C9655F972D1455220008AED1 /* CursorSet.swift in Sources */,
 				C9B8A9FB2B31F37500C79606 /* TextStorageMutation.swift in Sources */,
 				C99491AA2B07FA8C002DC2AC /* DocumentStateModel.swift in Sources */,
@@ -3566,7 +3558,6 @@
 				C9B8A9D62B30613300C79606 /* DocumentCursorsMonitorModifier.swift in Sources */,
 				C926736E2B06BE1200B3CE2F /* Environment.swift in Sources */,
 				C99491C52B153051002DC2AC /* TextMetrics.swift in Sources */,
-				C99491B02B09573F002DC2AC /* Line.swift in Sources */,
 				C99D75F42B5DB42E0028E3B0 /* TextMetrics+ChimeKit.swift in Sources */,
 				C9B8A9FC2B31F37700C79606 /* TextStorage.swift in Sources */,
 				C9B8AA002B31F93800C79606 /* RangeProcessor+Storage.swift in Sources */,
@@ -4413,6 +4404,10 @@
 		C9EFE30E2D6F677B009D201E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			productRef = C9EFE30D2D6F677B009D201E /* Borderline */;
+		};
+		C9EFE3102D6F692F009D201E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = C9EFE30F2D6F692F009D201E /* Borderline */;
 		};
 		C9F79DDE2A87E656005ED8E9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -5787,6 +5782,10 @@
 			productName = Borderline;
 		};
 		C9EFE30D2D6F677B009D201E /* Borderline */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Borderline;
+		};
+		C9EFE30F2D6F692F009D201E /* Borderline */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Borderline;
 		};

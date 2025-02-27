@@ -39,6 +39,7 @@ let package = Package(
 		.package(url: "https://github.com/tree-sitter/tree-sitter-typescript", branch: "master"),
 		.package(url: "https://github.com/alex-pinkus/tree-sitter-swift", branch: "with-generated-files"),
 
+		.package(url: "https://github.com/ChimeHQ/Borderline", branch: "main"),
 		.package(url: "https://github.com/ChimeHQ/Glyph", branch: "main"),
 		.package(url: "https://github.com/ChimeHQ/IBeam", branch: "main"),
 		.package(url: "https://github.com/ChimeHQ/Ligature", branch: "main"),
@@ -74,6 +75,7 @@ let package = Package(
 		.target(
 			name: "Dependencies",
 			dependencies: [
+				"Borderline",
 				"Glyph",
 				"IBeam",
 				"Ligature",

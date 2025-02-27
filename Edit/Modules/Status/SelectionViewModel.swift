@@ -28,7 +28,7 @@ final class SelectionViewModel {
 		precondition(delta >= 0)
 
 		if delta == 0 {
-			let column = selectionRange.location - span.0.location
+			let column = selectionRange.location - span.0.lowerBound
 
 			self.lineSelection = .single(index: span.0.index, column: column)
 		} else {

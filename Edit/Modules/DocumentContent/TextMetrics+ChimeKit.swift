@@ -1,5 +1,6 @@
 import Foundation
 
+import Borderline
 import ChimeKit
 
 // Initialization
@@ -10,9 +11,9 @@ extension LineRelativeTextPosition {
 			return nil
 		}
 
-		precondition(line.location <= location)
+		precondition(line.lowerBound <= location)
 
-		let utf16Offset = location - line.location
+		let utf16Offset = location - line.lowerBound
 
 		self = LineRelativeTextPosition(line: line.index, offset: utf16Offset)
 	}
@@ -78,7 +79,7 @@ extension LineRelativeTextPosition {
 		}
 
 		if clampOutOfBounds {
-			return line.location + min(offset, line.length)
+			return line.lowerBound + min(offset, line.length)
 		}
 
 		if offset > line.length {
@@ -86,7 +87,7 @@ extension LineRelativeTextPosition {
 			return nil
 		}
 
-		return line.location + offset
+		return line.lowerBound + offset
 	}
 }
 

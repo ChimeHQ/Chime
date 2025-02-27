@@ -101,7 +101,7 @@ extension TextViewSystem {
 		TextStorageMonitor(
 			monitors: [
 				notificationMonitor,
-//				indirectMetricsMonitor
+				indirectMetricsMonitor,
 			]
 		)
 	}
