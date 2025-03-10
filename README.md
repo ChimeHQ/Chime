@@ -23,11 +23,12 @@ Features:
 - [editorconfig](https://editorconfig.org)
 - [extensions][chimekit]
 - file navigator
+- multiple cursors
 - Quick Look Preview extension
 - semantic symbol information
 - Shortcuts extension (text highlighting)
 - structure highlighting
-- syntax highlighting (driven by tree-sitter and LSP)
+- syntax highlighting (three-phase: patterns, tree-sitter, and LSP)
 - textual/symbolic quick open
 - UI theming
 
