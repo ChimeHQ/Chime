@@ -113,14 +113,23 @@ extension LanguageDataStore {
 		}
 
 		let profile = profile(for: utType)
+		let lang = profile.language
+		let name = profile.name
+		let bundleName = profile.bundleName
 
-		let config = try await profile.loadLanguageConfiguration()
+		async let config = LanguageProfile.loadConfiguration(
+			language: lang,
+			name: name,
+			bundleName: bundleName
+		)
 
-		self.configurationCache[utType] = config
+		let loadedConfig = try await config
+		
+		self.configurationCache[utType] = loadedConfig
 
 		configurationLoaded(identifier)
 
-		return config
+		return loadedConfig
 	}
 
 	public func loadLanguageConfiguration(with utType: UTType) async throws -> LanguageConfiguration? {

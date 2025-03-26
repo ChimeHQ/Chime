@@ -42,11 +42,15 @@ public struct LanguageProfile {
 }
 
 extension LanguageProfile {
-	public nonisolated func loadLanguageConfiguration() async throws -> LanguageConfiguration {
-		try load()
-	}
-
 	public func load() throws -> LanguageConfiguration {
+		try Self.loadConfiguration(language: language, name: name, bundleName: bundleName)
+	}
+	
+	public static nonisolated func loadConfiguration(
+		language: SwiftTreeSitter.Language?,
+		name: String,
+		bundleName: String?
+	) throws -> LanguageConfiguration {
 		guard
 			let language = language,
 			let bundleName = bundleName
