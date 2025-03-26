@@ -221,8 +221,8 @@ extension TextMetrics {
 			
 			self.lineList.replaceSubrange(replacementRange, with: await weightedValues)
 			completion()
-			print("invalidating:", affectedRange)
-			self.invalidator.invalidate(.range(affectedRange))
+			
+			publishAffectedRange(affectedRange)
 		}
 	}
 	
@@ -235,6 +235,26 @@ extension TextMetrics {
 		)
 		
 		return newLines.map { $0.weightedValue }
+	}
+	
+	private func publishAffectedRange(_ range: NSRange) {
+		let effectiveRange: NSRange
+		
+		if range.length > 0 {
+			effectiveRange = range
+		} else {
+			// we cannot invalidate an empty range, so we have to make it non-empty. We can try two possible expansions. But if neither work, there's nothing we can do.
+			let expandedRange = range.shifted(startBy: -1) ?? range.shifted(startBy: 1)
+			
+			guard let expandedRange else {
+				print("Failed to expand \(range)")
+				return
+			}
+			
+			effectiveRange = expandedRange
+		}
+		
+		self.invalidator.invalidate(.range(effectiveRange))
 	}
 }
 
