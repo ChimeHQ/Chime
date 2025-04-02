@@ -52,10 +52,10 @@ extension CombinedTextRange {
 		}
 
 		self.init(
-			version: metrics.storage.currentVersion,
+			version: metrics.storageVersion,
 			range: range,
 			lineRelativeRange: relativeRange,
-			limit: metrics.storage.currentLength
+			limit: metrics.storageLength
 		)
 	}
 }

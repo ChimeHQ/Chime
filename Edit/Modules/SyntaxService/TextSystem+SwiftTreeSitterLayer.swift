@@ -26,20 +26,19 @@ extension TextStorage {
 	}
 }
 
-extension TextMetrics {
+extension TextMetricsCalculator {
 	func locationTransformer(_ location: Int) -> Point? {
-		return nil
-//		guard let metrics = valueProvider.sync(.location(location, fill: .optional)) else {
-//			return nil
-//		}
-//
-//		guard let line = metrics.line(for: location) else {
-//			return nil
-//		}
-//
-//		let column = location - line.location
-//		precondition(column >= 0)
-//
-//		return Point(row: line.index, column: column)
+		guard let metrics = valueProvider.sync(.location(location, fill: .optional)) else {
+			return nil
+		}
+
+		guard let line = metrics.line(for: location) else {
+			return nil
+		}
+
+		let column = location - line.lowerBound
+		precondition(column >= 0)
+
+		return Point(row: line.index, column: column)
 	}
 }

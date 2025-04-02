@@ -44,6 +44,8 @@ let package = Package(
 		.package(url: "https://github.com/ChimeHQ/IBeam", branch: "main"),
 		.package(url: "https://github.com/ChimeHQ/Ligature", branch: "main"),
 		.package(url: "https://github.com/ChimeHQ/Lowlight", branch: "main"),
+		.package(url: "https://github.com/ChimeHQ/Neon", branch: "main"),
+		.package(url: "https://github.com/ChimeHQ/RelativeCollections", branch: "main"),
 		.package(url: "https://github.com/ChimeHQ/SourceView", branch: "main"),
 		.package(url: "https://github.com/ChimeHQ/TextFormation", branch: "feature/process-mutation")
 	],
@@ -80,6 +82,8 @@ let package = Package(
 				"IBeam",
 				"Ligature",
 				"Lowlight",
+				"Neon",
+				"RelativeCollections",
 				"SourceView",
 				"TextFormation",
 			]

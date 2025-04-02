@@ -18,14 +18,14 @@ public final class TextViewSystem: NSObject {
 	public private(set) var contentIdentity = DocumentContentIdentity()
 
 	let textView: NSUITextView
-	public private(set) var textMetrics: TextMetrics
+	public private(set) var textMetricsCalculator: TextMetricsCalculator
 	public var willLayoutHandler: () -> Void = {}
 	public var didLayoutHandler: () -> Void = {}
 	public var contentReplaced: () -> Void = {}
 
 	public init(textView: NSUITextView) {
 		self.textView = textView
-		self.textMetrics = TextMetrics(storage: Storage.null())
+		self.textMetricsCalculator = TextMetricsCalculator(storage: Storage.null())
 
 		super.init()
 
@@ -109,7 +109,7 @@ extension TextViewSystem {
 	private var indirectMetricsMonitor: TextStorageMonitor {
 		TextStorageMonitor(
 			monitorProvider: {
-				self.textMetrics.textStorageMonitor
+				self.textMetricsCalculator.textStorageMonitor
 			}
 		)
 	}
@@ -142,15 +142,15 @@ extension TextViewSystem {
 		textView.replaceTextStorage(textStorage)
 
 		// create a fresh copy here because everything has changed
-		self.textMetrics = TextMetrics(storage: storage)
+		self.textMetricsCalculator = TextMetricsCalculator(storage: storage)
 
-		textMetrics.invalidationHandler = {
+		textMetricsCalculator.invalidationHandler = {
 			let set = $0.indexSet(with: textStorage.length)
 
 			NotificationCenter.default.post(
-				name: TextMetrics.textMetricsDidChangeNotification,
+				name: TextMetricsCalculator.textMetricsDidChangeNotification,
 				object: self,
-				userInfo: [TextMetrics.invalidationSetKey: set]
+				userInfo: [TextMetricsCalculator.invalidationSetKey: set]
 			)
 		}
 

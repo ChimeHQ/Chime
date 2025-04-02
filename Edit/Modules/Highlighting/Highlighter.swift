@@ -122,8 +122,8 @@ public final class Highlighter<Service: TokenService> {
 	}
 
 	public func invalidate(textTarget target: TextTarget) {
-		let query = TextMetrics.Query(textTarget: target, fill: .optional, useEntireDocument: false)
-		guard let metrics = textSystem.textMetrics.valueProvider.sync(query) else {
+		let query = TextMetricsCalculator.Query(textTarget: target, fill: .optional, useEntireDocument: false)
+		guard let metrics = textSystem.textMetricsCalculator.valueProvider.sync(query) else {
 			invalidate(.all)
 			return
 		}

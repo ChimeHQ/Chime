@@ -20,7 +20,12 @@ final class SelectionViewModel {
 	func cursorsChanged(_ cursors: CursorSet) {
 		guard let selectionRange = cursors.ranges.first else { return }
 
-		guard let span = textViewSystem?.textMetrics.lineSpan(for: selectionRange) else {
+		let metrics = textViewSystem?
+			.textMetricsCalculator
+			.valueProvider
+			.sync(.location(selectionRange.upperBound, fill: .optional))
+		
+		guard let span = metrics?.lineSpan(for: selectionRange) else {
 			return
 		}
 

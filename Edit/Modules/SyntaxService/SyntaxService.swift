@@ -74,7 +74,7 @@ public final class SyntaxService {
 			contentSnapshopProvider: { [textSystem] in textSystem.storage.layerContentSnapshot(for: $0) },
 			lengthProvider: { [textSystem] in textSystem.storage.currentLength },
 			invalidationHandler: { [unowned self] in self.invalidate(.set($0)) },
-			locationTransformer: { [textSystem] in textSystem.textMetrics.locationTransformer($0) }
+			locationTransformer: { [textSystem] in textSystem.textMetricsCalculator.locationTransformer($0) }
 		)
 
 		Task {

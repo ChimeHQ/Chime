@@ -1,5 +1,5 @@
 {
-  "originHash" : "614b87b9c89e0756412a24db0656e56dce10319e24c41fc31c17ae0a6f02cadd",
+  "originHash" : "b646f4c9fe9caf022040889f4e0419cc6055864ba802e8dce49b85ecad2a0833",
   "pins" : [
     {
       "identity" : "asyncxpcconnection",
@@ -163,10 +163,10 @@
     {
       "identity" : "neon",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/ChimeHQ/Neon.git",
+      "location" : "https://github.com/ChimeHQ/Neon",
       "state" : {
         "branch" : "main",
-        "revision" : "6db8225e9812695db48f1adb8d54648f07319998"
+        "revision" : "5c85ab1274e949bb6f3710b04b7c6d9186539f30"
       }
     },
     {
@@ -217,7 +217,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ChimeHQ/RelativeCollections",
       "state" : {
-        "revision" : "20fbdb0c5948a205f4341c6a26d3bc84258cf56b"
+        "branch" : "main",
+        "revision" : "1823a416259c481f68accd4bc7f6a781cc888662"
       }
     },
     {
@@ -236,15 +237,6 @@
       "state" : {
         "revision" : "f1c4a0acabeb591068dea6cffdd39660b86dec28",
         "version" : "0.0.8"
-      }
-    },
-    {
-      "identity" : "sourceview",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/ChimeHQ/SourceView",
-      "state" : {
-        "branch" : "main",
-        "revision" : "1247202d7f985789c5d7672b28223cf9e9f0df72"
       }
     },
     {

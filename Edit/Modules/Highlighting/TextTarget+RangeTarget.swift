@@ -23,7 +23,7 @@ extension RangeTarget {
 	}
 }
 
-extension TextMetrics.Query {
+extension TextMetricsCalculator.Query {
 	init(textRange: ChimeExtensionInterface.TextRange, fill: RangeFillMode) {
 		switch textRange {
 		case let .range(range):

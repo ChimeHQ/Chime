@@ -44,8 +44,8 @@ final class LineNumberViewController: NSViewController {
 		textSystem.storage
 	}
 
-	private var metricsProvider: TextMetrics.ValueProvider {
-		textSystem.textMetrics.valueProvider
+	private var metricsProvider: TextMetricsCalculator.ValueProvider {
+		textSystem.textMetricsCalculator.valueProvider
 	}
 
 	override func loadView() {
@@ -129,7 +129,9 @@ extension LineNumberViewController {
 	}
 
 	private func updateThickness() {
-		widthCalculator.maximumNumber = textSystem.textMetrics.lastLine.index
+		let metrics = metricsProvider.sync(.processed)
+			
+		widthCalculator.maximumNumber = metrics?.lastLine.index ?? 0
 
 		let padding = 6.0
 		

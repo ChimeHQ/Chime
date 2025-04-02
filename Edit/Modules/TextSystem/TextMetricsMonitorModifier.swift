@@ -46,8 +46,8 @@ struct InvalidationNotificationMonitorModifier: ViewModifier {
 	@Environment(\.textViewSystem) private var system
 
 	@State private var handler = ContentInvalidationHandler(
-		notificationName: TextMetrics.textMetricsDidChangeNotification,
-		setKey: TextMetrics.invalidationSetKey
+		notificationName: TextMetricsCalculator.textMetricsDidChangeNotification,
+		setKey: TextMetricsCalculator.invalidationSetKey
 	)
 
 	init(action: @escaping ContentInvalidationHandler.Action) {

@@ -1,4 +1,5 @@
-import XCTest
+import AppKit
+import Testing
 
 @testable import DocumentContent
 
@@ -25,20 +26,22 @@ extension TextStorage where Version == Int {
 	}
 }
 
-final class TextMetricsTests: XCTestCase {
+struct TextMetricsTests {
 	@MainActor
-	func makeMetrics(with string: String) -> (TextMetrics, TextStorage<Int>) {
+	func makeMetrics(with string: String) -> (TextMetricsCalculator, TextStorage<Int>) {
 		let textStorage = NSTextStorage(string: string)
 		let storage = TextStorage<Int>(textStorage: textStorage)
-		let metrics = TextMetrics(storage: storage)
+		let metrics = TextMetricsCalculator(storage: storage)
 
 		return (metrics, storage)
 	}
 
 	@MainActor
-	func testLineCountAfterInitialization() {
-		let (metrics, _) = makeMetrics(with: "")
+	@Test func testLineCountAfterInitialization() {
+		let (calculator, _) = makeMetrics(with: " ")
 
-		XCTAssertEqual(1, metrics.lineCount)
+		let metrics = calculator.valueProvider.sync(.entireDocument(fill: .required))
+		
+		#expect(metrics?.lineCount == 1)
 	}
 }
