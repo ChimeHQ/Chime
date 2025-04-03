@@ -1052,7 +1052,6 @@
 		C95BBE382BDD058800C9E1B9 /* Utility-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Utility-Bridging-Header.h"; sourceTree = "<group>"; };
 		C95BBE3D2BDD075300C9E1B9 /* Utility.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Utility.xcconfig; sourceTree = "<group>"; };
 		C95BBE3E2BDD110700C9E1B9 /* Constants.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
-		C9638ABA2D9C2710007662D9 /* SourceView */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = SourceView; path = ../SourceView; sourceTree = SOURCE_ROOT; };
 		C9655F902D1220FF0008AED1 /* TextViewInteraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewInteraction.swift; sourceTree = "<group>"; };
 		C9655F922D12218C0008AED1 /* TransformingTextSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformingTextSystem.swift; sourceTree = "<group>"; };
 		C9655F962D1455190008AED1 /* CursorSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CursorSet.swift; sourceTree = "<group>"; };
@@ -1868,7 +1867,6 @@
 		C9FE52902A7525D000CACA1A = {
 			isa = PBXGroup;
 			children = (
-				C9638ABA2D9C2710007662D9 /* SourceView */,
 				C9FE538E2A76674600CACA1A /* Configurations */,
 				C9439A742C3EC13A0020DDF5 /* Dependencies */,
 				C9FE529B2A7525D000CACA1A /* Edit */,

@@ -1,5 +1,5 @@
 {
-  "originHash" : "b646f4c9fe9caf022040889f4e0419cc6055864ba802e8dce49b85ecad2a0833",
+  "originHash" : "c850bd5d8a24cdc6f3937c1e7ef4ded41af3a9c1c1978790a7ddede2b3fdc930",
   "pins" : [
     {
       "identity" : "asyncxpcconnection",
@@ -237,6 +237,15 @@
       "state" : {
         "revision" : "f1c4a0acabeb591068dea6cffdd39660b86dec28",
         "version" : "0.0.8"
+      }
+    },
+    {
+      "identity" : "sourceview",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ChimeHQ/SourceView",
+      "state" : {
+        "branch" : "main",
+        "revision" : "78c55ea5bb444d3937530bca2c04c320c00ade5e"
       }
     },
     {

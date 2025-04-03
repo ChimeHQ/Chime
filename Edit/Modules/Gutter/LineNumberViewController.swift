@@ -199,6 +199,7 @@ extension LineNumberViewController {
 		let fragments = layout.lineFragmentsInRect(rect)
 
 		guard fragments.isEmpty == false else {
+			print("no fragments")
 			return []
 		}
 
@@ -208,12 +209,14 @@ extension LineNumberViewController {
 		let regionRange = NSRange(regionRangeStart..<regionRangeEnd)
 
 		guard let textMetrics = metricsProvider.sync(.location(regionRangeEnd, fill: .optional)) else {
+			print("no metrics")
 			return []
 		}
 
 		let lines = textMetrics.lines(for: regionRange)
 
 		guard lines.isEmpty == false else {
+			print("no lines")
 			return []
 		}
 

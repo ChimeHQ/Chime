@@ -86,13 +86,17 @@ public final class TextMetricsCalculator {
 //	}
 
 	private func transformQuery(_ query: Query) -> (Int, RangeFillMode) {
+		let value: (Int, RangeFillMode)
+		let length = storage.currentLength
+		
 		switch query {
 		case let .location(location, fill: fill):
-			return (location, fill)
+			value = (location, fill)
 		case let .index(index, fill: fill):
 			// we have seen processed this location
 			if let location = metrics.line(at: index)?.upperBound {
-				return (location, fill)
+				value = (location, fill)
+				break
 			}
 
 			// We have not yet processed this location. We can do potentially smarter things here.
@@ -100,14 +104,17 @@ public final class TextMetricsCalculator {
 				print("TextMetrics: taking a shortcut that could be slow")
 			}
 
-			let target = storage.currentLength
-
-			return (target, fill)
+			value = (length, fill)
 		case let .entireDocument(fill: fill):
-			return (max(storage.currentLength - 1, 0), fill)
+			value = (length, fill)
 		case .processed:
-			return (rangeProcessor.processedUpperBound, .none)
+			value = (rangeProcessor.processedUpperBound - 1, .none)
 		}
+		
+		// we really want to allow queries that equal the length here, because that last position is frequently encountered. But the RangeProcessor isn't expecting that, so we have to clamp
+		let clampedLocation = max(min(length - 1, value.0), 0)
+		
+		return (clampedLocation, value.1)
 	}
 
 	public var valueProvider: ValueProvider {
