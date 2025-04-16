@@ -15,7 +15,7 @@ extension TextPresentation {
 				// rendering attributes are less powerful but much less expensive
 //				textView.setRenderingAttributes(attrs, for: range)
 
-				guard let storage = textView.textStorage else {
+				guard let storage = textView.nsuiTextStorage else {
 					fatalError("A few without storage is unsupported")
 				}
 

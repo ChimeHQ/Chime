@@ -1,5 +1,5 @@
 {
-  "originHash" : "c850bd5d8a24cdc6f3937c1e7ef4ded41af3a9c1c1978790a7ddede2b3fdc930",
+  "originHash" : "d7f0c52aa02097b70f029eb1b0bc3c31164810f97a0153a9d186fbc2d21e2bf1",
   "pins" : [
     {
       "identity" : "asyncxpcconnection",
@@ -280,7 +280,7 @@
       "location" : "https://github.com/ChimeHQ/TextFormation",
       "state" : {
         "branch" : "feature/process-mutation",
-        "revision" : "80f869b3f7d137ea071a42468a812b050c3d6a53"
+        "revision" : "7b9add7d16e538ca5bd4b599e20347e9025fd440"
       }
     },
     {

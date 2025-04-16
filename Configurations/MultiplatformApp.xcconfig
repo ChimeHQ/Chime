@@ -1,0 +1,10 @@
+#include "Configurations/Edit.xcconfig"
+
+PRODUCT_MODULE_NAME = ChimeMultiplaform
+PRODUCT_NAME = ChimeMultiplaform
+IPHONEOS_DEPLOYMENT_TARGET = 17.0
+XROS_DEPLOYMENT_TARGET = 1.0
+SUPPORTED_PLATFORMS = macosx iphonesimulator iphoneos appletvsimulator appletvos xrsimulator xros
+TARGETED_DEVICE_FAMILY = 1,2,3,4,6,7
+INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight
+INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight

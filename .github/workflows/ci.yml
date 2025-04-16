@@ -33,7 +33,7 @@ jobs:
         run: xclint
 
   build:
-    name: macOS Build
+    name: Build
     runs-on: macOS-15
     timeout-minutes: 60
     steps:
@@ -61,3 +61,34 @@ jobs:
             ${{ runner.os }}-spm-
       - name: xcodebuild
         run: set -o pipefail && xcodebuild -scheme Edit -destination "platform=macOS" test | xcbeautify
+
+  build:
+    name: iOS Build
+    runs-on: macOS-15
+    timeout-minutes: 60
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      - name: Import Certs
+        uses: apple-actions/import-codesign-certs@v3
+        with: 
+          p12-file-base64: ${{ secrets.CERTIFICATES_P12 }}
+          p12-password: ${{ secrets.CERTIFICATES_P12_PASSWORD }}
+      - name: Setup Signing
+        env:
+          DEVELOPMENT_TEAM: ${{ secrets.DEVELOPMENT_TEAM }}
+        run: |
+          echo "DEVELOPMENT_TEAM = $DEVELOPMENT_TEAM" >> User.xcconfig
+          echo "BUNDLE_ID_PREFIX = com.chimehq" >> User.xcconfig
+      - name: "SPM Cache"
+        uses: actions/cache@v4
+        with:
+          path: /Users/runner/Library/Developer/Xcode/DerivedData/**/SourcePackages/checkouts
+          key: ${{ runner.os }}-spm-${{ hashFiles('**/Package.resolved') }}
+          restore-keys: |
+            ${{ runner.os }}-spm-
+      - name: xcodebuild
+        run: set -o pipefail && xcodebuild -scheme MultiplatformApp -destination "platform=iOS Simulator,name=iPhone 16" build | xcbeautify
+

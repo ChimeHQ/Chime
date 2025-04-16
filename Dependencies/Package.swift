@@ -84,7 +84,7 @@ let package = Package(
 				"Lowlight",
 				"Neon",
 				"RelativeCollections",
-				"SourceView",
+				.product(name: "SourceView", package: "SourceView", condition: .when(platforms: [.macOS])),
 				"TextFormation",
 			]
 		),
