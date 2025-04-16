@@ -24,6 +24,7 @@ final class LineNumberViewController: NSViewController {
 	private var normalLineAttributes: [NSAttributedString.Key: Any] = [:]
 	private var selectedLineAttributes: [NSAttributedString.Key: Any] = [:]
 	private var emptyLineAttributes: [NSAttributedString.Key: Any] = [:]
+	private var labellingAttemptFailed = false
 
 	init(textSystem: TextViewSystem) {
 		self.textSystem = textSystem
@@ -71,25 +72,36 @@ final class LineNumberViewController: NSViewController {
 		}
 	}
 
-	private func invalidate(_ ranges: [NSRange]) {
-		guard let location = ranges.map({ $0.location }).min() else { return }
-
+	private func computeInvalidationRect(for ranges: [NSRange]) -> CGRect? {
+		guard let location = ranges.map({ $0.location }).min() else { return nil }
+		
 		let startRange = NSRange(location: location, length: 1)
 
-		guard let firstFragment = layout.lineFragmentsInRange(startRange).first else { return }
+		guard let firstFragment = layout.lineFragmentsInRange(startRange).first else { return nil }
 
 		let height = regionView.visibleRect.maxY - firstFragment.bounds.minY
 
-		let invalidRect = CGRect(
+		return CGRect(
 			x: regionView.bounds.minX,
 			y: firstFragment.bounds.minY,
 			width: regionView.bounds.width,
 			height: height
 		)
+	}
+	
+	private func invalidate(_ ranges: [NSRange]) {
+		let rect: CGRect
+		
+		// if a previous attempt as failed, we cannot know if the invalidated ranges will cover the region we need to redraw
+		if labellingAttemptFailed {
+			rect = layout.visibleRect()
+		} else {
+			rect = computeInvalidationRect(for: ranges) ?? layout.visibleRect()
+		}
 
 		updateThickness()
 
-		invalidate(invalidRect)
+		invalidate(rect)
 	}
 }
 
@@ -187,7 +199,7 @@ extension LineNumberViewController {
 	}
 
 	private func labelledRegions(for region: Region) -> [LabelledRegion] {
-		// Use the visible rect to provide an x and width. The value can still be outside the visible rect.
+		// Use the visible rect to provide an x and width. The region could still be outside the visible rect.
 		let visibleRect = layout.visibleRect()
 		let rect = NSRect(
 			x: visibleRect.minX,
@@ -200,6 +212,7 @@ extension LineNumberViewController {
 
 		guard fragments.isEmpty == false else {
 			print("no fragments")
+			self.labellingAttemptFailed = true
 			return []
 		}
 
@@ -210,6 +223,7 @@ extension LineNumberViewController {
 
 		guard let textMetrics = metricsProvider.sync(.location(regionRangeEnd, fill: .optional)) else {
 			print("no metrics")
+			self.labellingAttemptFailed = true
 			return []
 		}
 
@@ -217,11 +231,14 @@ extension LineNumberViewController {
 
 		guard lines.isEmpty == false else {
 			print("no lines")
+			self.labellingAttemptFailed = true
 			return []
 		}
 
 		var labelledRegions = [LabelledRegion]()
 		var lineIndex = lines.startIndex
+		
+		self.labellingAttemptFailed = false
 
 		for fragment in fragments {
 			let line = lines[lineIndex]
