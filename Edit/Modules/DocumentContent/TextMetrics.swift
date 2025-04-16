@@ -5,36 +5,6 @@ import Rearrange
 import RelativeCollections
 import RangeState
 
-//extension RelativeList {
-//	func replaceSubrange<Elements>(_ range: Range<Index>, with newElements: Elements) where WeightedValue == Elements.Element, Elements : Sequence {
-//		// this is a naive implemenation and it is very suboptimal
-//		for i in range.reversed() {
-//			remove(at: i)
-//		}
-//
-//		for element in newElements.reversed() {
-//			insert(element, at: range.lowerBound)
-//		}
-//	}
-//}
-//
-//extension Line where TextPosition == Int {
-//	init(record: TextMetrics.List.Record, index: Int) {
-//		self.init(
-//			index: index,
-//			start: record.dependency,
-//			lengths: record.value
-//		)
-//	}
-//
-//	var weightedValue: TextMetrics.List.WeightedValue {
-//		.init(
-//			value: lengths,
-//			weight: lengths.total
-//		)
-//	}
-//}
-
 public struct TextMetrics : Sendable {
 	typealias List = RelativeArray<LineComponentLengths, Int>
 //	typealias List = RelativeList<LineValue, Int>
