@@ -16,6 +16,7 @@ struct LineNumberView: NSViewControllerRepresentable {
 	}
 
 	public func updateNSViewController(_ nsViewController: LineNumberViewController, context: Context) {
-		nsViewController.invalidate(editorVisibleRect)
+		// I can no longer recall why this was put here, or why the visible rect is even needed in the envrionment
+//		nsViewController.invalidate(editorVisibleRect)
 	}
 }
