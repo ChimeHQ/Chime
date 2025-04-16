@@ -1720,7 +1720,6 @@
 		C9891B142AFEC11A00C8F393 /* DocumentContent */ = {
 			isa = PBXGroup;
 			children = (
-				C9D3D68C2D956BCB00090913 /* TextMetricsCalculator.swift */,
 				C9655F962D1455190008AED1 /* CursorSet.swift */,
 				C99491A92B07FA8C002DC2AC /* DocumentStateModel.swift */,
 				C926736D2B06BE1200B3CE2F /* Environment.swift */,
@@ -1728,6 +1727,7 @@
 				C9B8A9F82B31F34C00C79606 /* Storage */,
 				C99491C42B153051002DC2AC /* TextMetrics.swift */,
 				C99D75F32B5DB42E0028E3B0 /* TextMetrics+ChimeKit.swift */,
+				C9D3D68C2D956BCB00090913 /* TextMetricsCalculator.swift */,
 			);
 			path = DocumentContent;
 			sourceTree = "<group>";
@@ -1754,7 +1754,6 @@
 		C9B8A9DE2B31E43800C79606 /* TextSystem */ = {
 			isa = PBXGroup;
 			children = (
-				C9655F902D1220FF0008AED1 /* TextViewInteraction.swift */,
 				C926736F2B06BFCB00B3CE2F /* DocumentMutationMonitorModifier.swift */,
 				C9B8AA072B32005400C79606 /* Environment.swift */,
 				C941F0B62B71410B0003B640 /* LayoutInvalidationBuffer.swift */,
@@ -1763,6 +1762,7 @@
 				C9B8A9B32B23446400C79606 /* TextLayout.swift */,
 				C9B8A9D72B30617400C79606 /* TextMetricsMonitorModifier.swift */,
 				C9EA09652B4DC57800732203 /* TextPresentation.swift */,
+				C9655F902D1220FF0008AED1 /* TextViewInteraction.swift */,
 				C9B8A9E62B31E47300C79606 /* TextViewSystem.swift */,
 			);
 			path = TextSystem;
@@ -2081,13 +2081,13 @@
 		C9FE53832A7662F800CACA1A /* Editor */ = {
 			isa = PBXGroup;
 			children = (
-				C9655F922D12218C0008AED1 /* TransformingTextSystem.swift */,
 				C96B61EC2BDA6F5900561DE8 /* DocumentCoordinator.swift */,
 				C9FE53D72A77D98A00CACA1A /* EditorContent.swift */,
 				C9FE53862A7663D200CACA1A /* EditorContentViewController.swift */,
 				C9FE53AC2A7677A700CACA1A /* EditorScrollView.swift */,
 				C9FE53AA2A76753D00CACA1A /* SourcePresentationViewController.swift */,
 				C9FE53B82A77334E00CACA1A /* SourceViewController.swift */,
+				C9655F922D12218C0008AED1 /* TransformingTextSystem.swift */,
 			);
 			path = Editor;
 			sourceTree = "<group>";
