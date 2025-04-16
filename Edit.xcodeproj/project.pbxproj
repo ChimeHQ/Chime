@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 71;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -33,8 +33,6 @@
 		C9409C662A98CC9800B5D898 /* Outline in Frameworks */ = {isa = PBXBuildFile; productRef = C9409C652A98CC9800B5D898 /* Outline */; };
 		C9409C6C2A99059C00B5D898 /* ProjectState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9409C6A2A99047000B5D898 /* ProjectState.swift */; };
 		C941F09C2B6AD4AF0003B640 /* DocumentContentAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C941F09B2B6AD4AF0003B640 /* DocumentContentAdapter.swift */; };
-		C941F09F2B6C4CD90003B640 /* Dictionary+Fill.swift in Sources */ = {isa = PBXBuildFile; fileRef = C941F09E2B6C4CD90003B640 /* Dictionary+Fill.swift */; };
-		C941F0A12B6C4DE00003B640 /* AsyncStream+Pair.swift in Sources */ = {isa = PBXBuildFile; fileRef = C941F0A02B6C4DE00003B640 /* AsyncStream+Pair.swift */; };
 		C941F0A52B6C585D0003B640 /* ProjectDocumentController+TextDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = C941F0A42B6C585D0003B640 /* ProjectDocumentController+TextDocument.swift */; };
 		C941F0A72B6C6FA00003B640 /* TextTarget+RangeTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = C941F0A62B6C6FA00003B640 /* TextTarget+RangeTarget.swift */; };
 		C941F0AA2B6E5A1C0003B640 /* ExtensionSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C941F0A82B6E59550003B640 /* ExtensionSystem.swift */; };
@@ -67,8 +65,6 @@
 		C95B913C2BD98CF1006FDD00 /* TextStory in Frameworks */ = {isa = PBXBuildFile; productRef = C95B913B2BD98CF1006FDD00 /* TextStory */; };
 		C95B913E2BD98D01006FDD00 /* SwiftTreeSitterLayer in Frameworks */ = {isa = PBXBuildFile; productRef = C95B913D2BD98D01006FDD00 /* SwiftTreeSitterLayer */; };
 		C95B913F2BD99328006FDD00 /* LanguageData in Resources */ = {isa = PBXBuildFile; fileRef = C9CDEB872B55B889009E252A /* LanguageData */; };
-		C95BBE372BDD03F200C9E1B9 /* FileManager+AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95BBE362BDD03F200C9E1B9 /* FileManager+AppGroup.swift */; };
-		C95BBE3F2BDD110700C9E1B9 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = C95BBE3E2BDD110700C9E1B9 /* Constants.m */; };
 		C9655F872D11A7A70008AED1 /* Dependencies in Frameworks */ = {isa = PBXBuildFile; productRef = C9655F862D11A7A70008AED1 /* Dependencies */; };
 		C9655F8F2D1205210008AED1 /* TextFormation in Frameworks */ = {isa = PBXBuildFile; productRef = C9655F8E2D1205210008AED1 /* TextFormation */; };
 		C9655F912D12211E0008AED1 /* TextViewInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9655F902D1220FF0008AED1 /* TextViewInteraction.swift */; };
@@ -96,32 +92,20 @@
 		C97640F82C403791002C94BF /* ChimeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE52F42A7539B100CACA1A /* ChimeKit.framework */; };
 		C976D7E62C4A86F900CC6EA6 /* ThemePark in Frameworks */ = {isa = PBXBuildFile; productRef = C976D7E52C4A86F900CC6EA6 /* ThemePark */; };
 		C979187B2A9CC1110046EAF1 /* SearchItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97918752A9CBEF20046EAF1 /* SearchItem.swift */; };
-		C979187C2A9CC1190046EAF1 /* RoundedCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97918792A9CBF8C0046EAF1 /* RoundedCorners.swift */; };
 		C979187D2A9CC1200046EAF1 /* ItemBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97918772A9CBF330046EAF1 /* ItemBackground.swift */; };
 		C979187E2A9CC1270046EAF1 /* StatusBarContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97918732A9CBEBA0046EAF1 /* StatusBarContent.swift */; };
 		C97918812A9CC2B00046EAF1 /* StatusItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C979187F2A9CC23F0046EAF1 /* StatusItem.swift */; };
 		C97918872A9CC9140046EAF1 /* CharacterSelectionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97918862A9CC9140046EAF1 /* CharacterSelectionItem.swift */; };
 		C979188C2A9CCA5C0046EAF1 /* LineSelectionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C979188B2A9CCA5C0046EAF1 /* LineSelectionItem.swift */; };
-		C979188E2A9CCC500046EAF1 /* BottomPushAndSlideEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = C979188D2A9CCC500046EAF1 /* BottomPushAndSlideEffect.swift */; };
-		C97918972A9CCCF60046EAF1 /* BottomSlideEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97918922A9CCC8B0046EAF1 /* BottomSlideEffect.swift */; };
-		C97918982A9CCCFD0046EAF1 /* TrailingSlideEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97918902A9CCC730046EAF1 /* TrailingSlideEffect.swift */; };
-		C97918992A9CCD060046EAF1 /* OnSizeChangeModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97918952A9CCCA90046EAF1 /* OnSizeChangeModifier.swift */; };
 		C97918AA2A9D1DE30046EAF1 /* Breadcrumb.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97918A82A9D1D9B0046EAF1 /* Breadcrumb.swift */; };
 		C97918AB2A9D1DFE0046EAF1 /* libOpenQuickly.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C979189E2A9D1D6D0046EAF1 /* libOpenQuickly.a */; };
 		C97918BB2A9D49550046EAF1 /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97918B92A9D49460046EAF1 /* ItemView.swift */; };
 		C97918BC2A9D49600046EAF1 /* IgnoringFocusRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97918B22A9D48750046EAF1 /* IgnoringFocusRowView.swift */; };
 		C97918BD2A9D49700046EAF1 /* OpenQuicklyItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97918B52A9D48980046EAF1 /* OpenQuicklyItem.swift */; };
-		C97918BE2A9D498B0046EAF1 /* AttributedText.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97918B72A9D49190046EAF1 /* AttributedText.swift */; };
 		C97918C82A9D4A830046EAF1 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97918C12A9D49F20046EAF1 /* ViewModel.swift */; };
 		C97918CB2A9D4C740046EAF1 /* FuzzyFind in Frameworks */ = {isa = PBXBuildFile; productRef = C97918CA2A9D4C740046EAF1 /* FuzzyFind */; };
 		C97918CD2A9D4CD50046EAF1 /* OpenQuicklyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97918CC2A9D4CD50046EAF1 /* OpenQuicklyViewController.swift */; };
-		C97918D12A9E03C00046EAF1 /* NSImageView+Symbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97918CE2A9D56810046EAF1 /* NSImageView+Symbol.swift */; };
-		C97918D32A9E04470046EAF1 /* NSTableView+Reuse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97918D22A9E04470046EAF1 /* NSTableView+Reuse.swift */; };
 		C97918DE2A9E39030046EAF1 /* OpenQuicklyWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97918DD2A9E39030046EAF1 /* OpenQuicklyWindowController.swift */; };
-		C97918E02A9E39D80046EAF1 /* NSRect+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97918DF2A9E39D80046EAF1 /* NSRect+Helpers.swift */; };
-		C97918F22A9E49EE0046EAF1 /* BinaryFloatingPoint+AngleUnits.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97918F12A9E49EE0046EAF1 /* BinaryFloatingPoint+AngleUnits.swift */; };
-		C97918F52A9E4A3B0046EAF1 /* HexagonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97918F32A9E4A1C0046EAF1 /* HexagonView.swift */; };
-		C97918F62A9E4A4D0046EAF1 /* NSBezierPath+Paths.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97918EF2A9E49AD0046EAF1 /* NSBezierPath+Paths.swift */; };
 		C97918F82A9E5E520046EAF1 /* ExtensionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97918F72A9E5E520046EAF1 /* ExtensionRouter.swift */; };
 		C97918FA2A9E5EAF0046EAF1 /* CompositeDocumentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97918F92A9E5EAF0046EAF1 /* CompositeDocumentService.swift */; };
 		C97918FC2A9E5EFC0046EAF1 /* CompositeProjectService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97918FB2A9E5EFC0046EAF1 /* CompositeProjectService.swift */; };
@@ -131,7 +115,6 @@
 		C97919042A9E74620046EAF1 /* AppExtensionIdentity+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97919032A9E74620046EAF1 /* AppExtensionIdentity+UI.swift */; };
 		C97C1FF52BCAA75200D133A7 /* LabelledTwoPartItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97C1FF42BCAA75200D133A7 /* LabelledTwoPartItem.swift */; };
 		C97C1FF92BCBF78500D133A7 /* SelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97C1FF82BCBF78500D133A7 /* SelectionViewModel.swift */; };
-		C97E86422BFA13700054BAB6 /* UserDefaults+Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97E86412BFA13700054BAB6 /* UserDefaults+Shared.swift */; };
 		C9818AB22C3EF5ED0032899D /* ElixirExtension.appex in Copy Extensions */ = {isa = PBXBuildFile; fileRef = C9818AAA2C3EF5ED0032899D /* ElixirExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C9818AB92C3EF6E80032899D /* ElixirExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9818AB82C3EF6E80032899D /* ElixirExtension.swift */; };
 		C9818ABA2C3EF6E80032899D /* ElixirExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9818AB82C3EF6E80032899D /* ElixirExtension.swift */; };
@@ -147,8 +130,6 @@
 		C9818ADA2C3F40B00032899D /* ElixirStandaloneExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9818AB62C3EF68B0032899D /* ElixirStandaloneExtension.swift */; };
 		C986F2492C3ED60800A62879 /* ClojureExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C986F2472C3ED60800A62879 /* ClojureExtension.swift */; };
 		C986F24A2C3ED67900A62879 /* ClojureExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C986F2472C3ED60800A62879 /* ClojureExtension.swift */; };
-		C9891AF82AFE996300C8F393 /* NSParagraphStyle+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9891AF72AFE996300C8F393 /* NSParagraphStyle+Helpers.swift */; };
-		C9891AFA2AFE9A3900C8F393 /* NSFont+Measurements.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9891AF92AFE9A3900C8F393 /* NSFont+Measurements.swift */; };
 		C9891B002AFEA3F100C8F393 /* NSAppearance+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9891AFC2AFEA35F00C8F393 /* NSAppearance+Style.swift */; };
 		C9891B402AFFF23D00C8F393 /* Gutter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9891B3F2AFFF23D00C8F393 /* Gutter.swift */; };
 		C98EA41C2A912A5E00B8815E /* ProjectDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98EA4192A912A2900B8815E /* ProjectDocument.swift */; };
@@ -188,33 +169,24 @@
 		C9CFCF7E2BF92BB70053C9A6 /* EditFocusFilterIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CFCF7D2BF92BB70053C9A6 /* EditFocusFilterIntent.swift */; };
 		C9D3D68D2D956BD800090913 /* TextMetricsCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D3D68C2D956BCB00090913 /* TextMetricsCalculator.swift */; };
 		C9DCE1502BD7BFF30067D354 /* ThemeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DCE14F2BD7BFF30067D354 /* ThemeStore.swift */; };
-		C9DCE1562BD8049F0067D354 /* ObservableState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DCE1552BD8049F0067D354 /* ObservableState.swift */; };
 		C9E0B9F72BD1A3CE007AF034 /* DiagnosticsStatusBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E0B9F62BD1A3CE007AF034 /* DiagnosticsStatusBarItem.swift */; };
-		C9E0BA062BD27F3D007AF034 /* DiagnosticsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E0BA052BD27F3D007AF034 /* DiagnosticsModel.swift */; };
 		C9E0BA0E2BD2807B007AF034 /* libDiagnostics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9E0B9FC2BD27F0F007AF034 /* libDiagnostics.a */; };
 		C9E0BA0F2BD280C4007AF034 /* ChimeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE52F42A7539B100CACA1A /* ChimeKit.framework */; };
 		C9E0BA312BD2C1FA007AF034 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E0BA2F2BD2C1EF007AF034 /* SettingsView.swift */; };
 		C9E0BA352BD2C7F2007AF034 /* ThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E0BA342BD2C7F2007AF034 /* ThemeView.swift */; };
 		C9E0BA372BD2C96D007AF034 /* ThemeTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E0BA362BD2C96D007AF034 /* ThemeTile.swift */; };
 		C9E0BA422BD52732007AF034 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E0BA412BD52732007AF034 /* Theme.swift */; };
-		C9E877FC2A9F4B820018340C /* TrailingSidebar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E877FB2A9F4B820018340C /* TrailingSidebar.swift */; };
 		C9E878042A9F53530018340C /* UIPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E878032A9F53530018340C /* UIPlaceholder.swift */; };
 		C9E878092A9F53530018340C /* UIPlaceholderExtension.appex in Copy Extensions */ = {isa = PBXBuildFile; fileRef = C9E878012A9F53530018340C /* UIPlaceholderExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C9E878102A9F53800018340C /* ChimeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE52F42A7539B100CACA1A /* ChimeKit.framework */; };
-		C9E878172A9F671B0018340C /* SynchronizedScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E878162A9F671B0018340C /* SynchronizedScrollViewController.swift */; };
 		C9E878192A9FC9CF0018340C /* ExtensionSelectorItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E878182A9FC9CF0018340C /* ExtensionSelectorItem.swift */; };
 		C9E8781C2A9FD0390018340C /* StatusBarPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E8781A2A9FCF3E0018340C /* StatusBarPadding.swift */; };
-		C9E878202A9FD3770018340C /* ExtensionContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E8781F2A9FD3770018340C /* ExtensionContent.swift */; };
-		C9E878232A9FDA210018340C /* InspectorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E878212A9FD3F10018340C /* InspectorModel.swift */; };
-		C9E878262A9FDDDA0018340C /* ExtensionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E878242A9FDDCA0018340C /* ExtensionList.swift */; };
-		C9E878282A9FDE160018340C /* UIExtensionDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E878272A9FDE160018340C /* UIExtensionDescriptor.swift */; };
 		C9EA09572B4D62B800732203 /* LanguageProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EA09562B4D62B800732203 /* LanguageProfile.swift */; };
 		C9EA095B2B4D645F00732203 /* LanguageProfile+Profiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EA095A2B4D645F00732203 /* LanguageProfile+Profiles.swift */; };
 		C9EA095D2B4D695400732203 /* LanguageDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EA095C2B4D695400732203 /* LanguageDataStore.swift */; };
 		C9EA09662B4DC57800732203 /* TextPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EA09652B4DC57800732203 /* TextPresentation.swift */; };
 		C9EFDFAF2AEEF15400568E15 /* ApplicationServiceEventRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EFDFAE2AEEF15400568E15 /* ApplicationServiceEventRouter.swift */; };
 		C9EFE30C2D6F6763009D201E /* Borderline in Frameworks */ = {isa = PBXBuildFile; productRef = C9EFE30B2D6F6763009D201E /* Borderline */; };
-		C9F79DD72A87E3FA005ED8E9 /* URL+Contents.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F79DD62A87E3FA005ED8E9 /* URL+Contents.swift */; };
 		C9F79DF72A8FFC65005ED8E9 /* NavigatorItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F79DD82A87E44A005ED8E9 /* NavigatorItem.swift */; };
 		C9F79DF82A8FFC6A005ED8E9 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F79DDA2A87E46A005ED8E9 /* Navigator.swift */; };
 		C9F79DF92A8FFC6D005ED8E9 /* NavigatorScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F79DE52A8B9C8A005ED8E9 /* NavigatorScrollView.swift */; };
@@ -234,11 +206,8 @@
 		C9FE53192A759AFE00CACA1A /* ProjectWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE53182A759AFE00CACA1A /* ProjectWindowController.swift */; };
 		C9FE531C2A759CE400CACA1A /* WindowStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE531B2A759CE400CACA1A /* WindowStateModel.swift */; };
 		C9FE531E2A759F4C00CACA1A /* ProjectWindowRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE531D2A759F4C00CACA1A /* ProjectWindowRoot.swift */; };
-		C9FE532F2A75A1C100CACA1A /* RepresentableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE532D2A75A1C100CACA1A /* RepresentableView.swift */; };
-		C9FE53302A75A1C100CACA1A /* RepresentableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE532E2A75A1C100CACA1A /* RepresentableViewController.swift */; };
 		C9FE53362A75A40400CACA1A /* libProjectWindow.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE530E2A759ADA00CACA1A /* libProjectWindow.a */; };
 		C9FE533B2A75A76000CACA1A /* WindowTreatment in Frameworks */ = {isa = PBXBuildFile; productRef = C9FE533A2A75A76000CACA1A /* WindowTreatment */; };
-		C9FE53622A76619800CACA1A /* Inspector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE53612A76619800CACA1A /* Inspector.swift */; };
 		C9FE53752A7661F100CACA1A /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE53742A7661F100CACA1A /* SearchBar.swift */; };
 		C9FE53872A7663D200CACA1A /* EditorContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE53862A7663D200CACA1A /* EditorContentViewController.swift */; };
 		C9FE53932A766AAD00CACA1A /* libInspector.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE53522A7660DF00CACA1A /* libInspector.a */; };
@@ -247,10 +216,8 @@
 		C9FE53AB2A76753D00CACA1A /* SourcePresentationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE53AA2A76753D00CACA1A /* SourcePresentationViewController.swift */; };
 		C9FE53AD2A7677A700CACA1A /* EditorScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE53AC2A7677A700CACA1A /* EditorScrollView.swift */; };
 		C9FE53B92A77334E00CACA1A /* SourceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE53B82A77334E00CACA1A /* SourceViewController.swift */; };
-		C9FE53BF2A77C02400CACA1A /* BoundingBorders.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE53BE2A77C02400CACA1A /* BoundingBorders.swift */; };
 		C9FE53D82A77D98A00CACA1A /* EditorContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE53D72A77D98A00CACA1A /* EditorContent.swift */; };
 		C9FE53E82A7A5B2000CACA1A /* LazyRemoteExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE53E72A7A5B2000CACA1A /* LazyRemoteExtension.swift */; };
-		C9FE53FF2A7A5F1600CACA1A /* Logger+init.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE53FE2A7A5F1600CACA1A /* Logger+init.swift */; };
 		C9FE54032A7A607D00CACA1A /* libExtensionHost.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE53DD2A7A5A2A00CACA1A /* libExtensionHost.a */; };
 		C9FE54052A7A613C00CACA1A /* FilteringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE54042A7A613C00CACA1A /* FilteringExtension.swift */; };
 		C9FE54072A7A617000CACA1A /* ExtensionDocumentState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE54062A7A617000CACA1A /* ExtensionDocumentState.swift */; };
@@ -1007,29 +974,20 @@
 		C92631A52C40002F00C0AE07 /* PythonExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.extensionkit-extension"; includeInIndex = 0; path = PythonExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		C92631B12C40005200C0AE07 /* PythonStandaloneExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PythonStandaloneExtension.swift; sourceTree = "<group>"; };
 		C92672F72B0399D800B3CE2F /* SwiftExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftExtension.swift; path = "submodules/chime-swift/Sources/ChimeSwift/SwiftExtension.swift"; sourceTree = SOURCE_ROOT; };
-		C92673282B04046700B3CE2F /* Edit-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Edit-Debug.xcconfig"; sourceTree = "<group>"; };
-		C92673432B05244600B3CE2F /* EditUITests.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = EditUITests.xcconfig; sourceTree = "<group>"; };
 		C92673442B05500500B3CE2F /* RegionLabellingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionLabellingView.swift; sourceTree = "<group>"; };
 		C92673462B055AD300B3CE2F /* LineNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineNumberViewController.swift; sourceTree = "<group>"; };
 		C926736A2B06B90900B3CE2F /* ThemeMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeMonitor.swift; sourceTree = "<group>"; };
 		C926736D2B06BE1200B3CE2F /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		C926736F2B06BFCB00B3CE2F /* DocumentMutationMonitorModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentMutationMonitorModifier.swift; sourceTree = "<group>"; };
-		C926737D2B07827800B3CE2F /* NonSwiftWorkaround.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = NonSwiftWorkaround.xcconfig; sourceTree = "<group>"; };
-		C926738A2B078B0200B3CE2F /* WorkaroundModule.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = WorkaroundModule.xcconfig; sourceTree = "<group>"; };
 		C92673922B07924A00B3CE2F /* Chime.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Chime.docc; sourceTree = "<group>"; };
 		C92931422B80CC6700C64DDE /* EditKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EditKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C92931722B822BFF00C64DDE /* EditKit.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = EditKit.xcconfig; sourceTree = "<group>"; };
-		C93791A32AD5E02C00665F50 /* Project-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Project-Debug.xcconfig"; sourceTree = "<group>"; };
 		C93F72482BF26BDC0021ACF3 /* EditIntents.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.extensionkit-extension"; includeInIndex = 0; path = EditIntents.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		C93F724A2BF26BDC0021ACF3 /* EditIntentsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditIntentsExtension.swift; sourceTree = "<group>"; };
 		C93F724C2BF26BDC0021ACF3 /* HighlightIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightIntent.swift; sourceTree = "<group>"; };
 		C93F724E2BF26BDC0021ACF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C93F724F2BF26BDC0021ACF3 /* EditIntents.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EditIntents.entitlements; sourceTree = "<group>"; };
-		C93F72562BF26CB80021ACF3 /* EditIntents.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = EditIntents.xcconfig; sourceTree = "<group>"; };
 		C9409C6A2A99047000B5D898 /* ProjectState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectState.swift; sourceTree = "<group>"; };
 		C941F09B2B6AD4AF0003B640 /* DocumentContentAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentContentAdapter.swift; sourceTree = "<group>"; };
-		C941F09E2B6C4CD90003B640 /* Dictionary+Fill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Fill.swift"; sourceTree = "<group>"; };
-		C941F0A02B6C4DE00003B640 /* AsyncStream+Pair.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AsyncStream+Pair.swift"; sourceTree = "<group>"; };
 		C941F0A42B6C585D0003B640 /* ProjectDocumentController+TextDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProjectDocumentController+TextDocument.swift"; sourceTree = "<group>"; };
 		C941F0A62B6C6FA00003B640 /* TextTarget+RangeTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextTarget+RangeTarget.swift"; sourceTree = "<group>"; };
 		C941F0A82B6E59550003B640 /* ExtensionSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionSystem.swift; sourceTree = "<group>"; };
@@ -1038,7 +996,6 @@
 		C942E6702B65248F00792DD4 /* TokenStyleSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenStyleSource.swift; sourceTree = "<group>"; };
 		C942E6762B67B78E00792DD4 /* UserScriptExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.extensionkit-extension"; includeInIndex = 0; path = UserScriptExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		C942E6782B67B78F00792DD4 /* UserScriptExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserScriptExtension.swift; sourceTree = "<group>"; };
-		C942E6822B67B93B00792DD4 /* InfoPlistExtension.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = InfoPlistExtension.xcconfig; sourceTree = "<group>"; };
 		C942E6AB2B69747E00792DD4 /* UserScriptStandaloneExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserScriptStandaloneExtension.swift; sourceTree = "<group>"; };
 		C9439A742C3EC13A0020DDF5 /* Dependencies */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Dependencies; sourceTree = "<group>"; };
 		C9439A792C3EC4220020DDF5 /* ClojureExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.extensionkit-extension"; includeInIndex = 0; path = ClojureExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1048,10 +1005,6 @@
 		C958C7832BC7019100EC95F8 /* LineNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineNumberView.swift; sourceTree = "<group>"; };
 		C95B91012BD825B6006FDD00 /* Query+Extras.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Query+Extras.swift"; sourceTree = "<group>"; };
 		C95B91032BD825EE006FDD00 /* ThemeModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeModifiers.swift; sourceTree = "<group>"; };
-		C95BBE362BDD03F200C9E1B9 /* FileManager+AppGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+AppGroup.swift"; sourceTree = "<group>"; };
-		C95BBE382BDD058800C9E1B9 /* Utility-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Utility-Bridging-Header.h"; sourceTree = "<group>"; };
-		C95BBE3D2BDD075300C9E1B9 /* Utility.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Utility.xcconfig; sourceTree = "<group>"; };
-		C95BBE3E2BDD110700C9E1B9 /* Constants.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		C9655F902D1220FF0008AED1 /* TextViewInteraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewInteraction.swift; sourceTree = "<group>"; };
 		C9655F922D12218C0008AED1 /* TransformingTextSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformingTextSystem.swift; sourceTree = "<group>"; };
 		C9655F962D1455190008AED1 /* CursorSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CursorSet.swift; sourceTree = "<group>"; };
@@ -1070,29 +1023,17 @@
 		C97918732A9CBEBA0046EAF1 /* StatusBarContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarContent.swift; sourceTree = "<group>"; };
 		C97918752A9CBEF20046EAF1 /* SearchItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItem.swift; sourceTree = "<group>"; };
 		C97918772A9CBF330046EAF1 /* ItemBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemBackground.swift; sourceTree = "<group>"; };
-		C97918792A9CBF8C0046EAF1 /* RoundedCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorners.swift; sourceTree = "<group>"; };
 		C979187F2A9CC23F0046EAF1 /* StatusItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusItem.swift; sourceTree = "<group>"; };
 		C97918862A9CC9140046EAF1 /* CharacterSelectionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterSelectionItem.swift; sourceTree = "<group>"; };
 		C979188B2A9CCA5C0046EAF1 /* LineSelectionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineSelectionItem.swift; sourceTree = "<group>"; };
-		C979188D2A9CCC500046EAF1 /* BottomPushAndSlideEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomPushAndSlideEffect.swift; sourceTree = "<group>"; };
-		C97918902A9CCC730046EAF1 /* TrailingSlideEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailingSlideEffect.swift; sourceTree = "<group>"; };
-		C97918922A9CCC8B0046EAF1 /* BottomSlideEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSlideEffect.swift; sourceTree = "<group>"; };
-		C97918952A9CCCA90046EAF1 /* OnSizeChangeModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnSizeChangeModifier.swift; sourceTree = "<group>"; };
 		C979189E2A9D1D6D0046EAF1 /* libOpenQuickly.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libOpenQuickly.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C97918A82A9D1D9B0046EAF1 /* Breadcrumb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Breadcrumb.swift; sourceTree = "<group>"; };
 		C97918B22A9D48750046EAF1 /* IgnoringFocusRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IgnoringFocusRowView.swift; sourceTree = "<group>"; };
 		C97918B52A9D48980046EAF1 /* OpenQuicklyItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenQuicklyItem.swift; sourceTree = "<group>"; };
-		C97918B72A9D49190046EAF1 /* AttributedText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributedText.swift; sourceTree = "<group>"; };
 		C97918B92A9D49460046EAF1 /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
 		C97918C12A9D49F20046EAF1 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		C97918CC2A9D4CD50046EAF1 /* OpenQuicklyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenQuicklyViewController.swift; sourceTree = "<group>"; };
-		C97918CE2A9D56810046EAF1 /* NSImageView+Symbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSImageView+Symbol.swift"; sourceTree = "<group>"; };
-		C97918D22A9E04470046EAF1 /* NSTableView+Reuse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSTableView+Reuse.swift"; sourceTree = "<group>"; };
 		C97918DD2A9E39030046EAF1 /* OpenQuicklyWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenQuicklyWindowController.swift; sourceTree = "<group>"; };
-		C97918DF2A9E39D80046EAF1 /* NSRect+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSRect+Helpers.swift"; sourceTree = "<group>"; };
-		C97918EF2A9E49AD0046EAF1 /* NSBezierPath+Paths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSBezierPath+Paths.swift"; sourceTree = "<group>"; };
-		C97918F12A9E49EE0046EAF1 /* BinaryFloatingPoint+AngleUnits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BinaryFloatingPoint+AngleUnits.swift"; sourceTree = "<group>"; };
-		C97918F32A9E4A1C0046EAF1 /* HexagonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexagonView.swift; sourceTree = "<group>"; };
 		C97918F72A9E5E520046EAF1 /* ExtensionRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionRouter.swift; sourceTree = "<group>"; };
 		C97918F92A9E5EAF0046EAF1 /* CompositeDocumentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositeDocumentService.swift; sourceTree = "<group>"; };
 		C97918FB2A9E5EFC0046EAF1 /* CompositeProjectService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositeProjectService.swift; sourceTree = "<group>"; };
@@ -1104,7 +1045,6 @@
 		C979191A2A9E83950046EAF1 /* AppHost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHost.swift; sourceTree = "<group>"; };
 		C97C1FF42BCAA75200D133A7 /* LabelledTwoPartItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelledTwoPartItem.swift; sourceTree = "<group>"; };
 		C97C1FF82BCBF78500D133A7 /* SelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionViewModel.swift; sourceTree = "<group>"; };
-		C97E86412BFA13700054BAB6 /* UserDefaults+Shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Shared.swift"; sourceTree = "<group>"; };
 		C9818AAA2C3EF5ED0032899D /* ElixirExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.extensionkit-extension"; includeInIndex = 0; path = ElixirExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9818AB62C3EF68B0032899D /* ElixirStandaloneExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElixirStandaloneExtension.swift; sourceTree = "<group>"; };
 		C9818AB82C3EF6E80032899D /* ElixirExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ElixirExtension.swift; path = "submodules/chime-elixir/Sources/ChimeElixir/ElixirExtension.swift"; sourceTree = SOURCE_ROOT; };
@@ -1113,8 +1053,6 @@
 		C9818AD02C3F2CA70032899D /* GoExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GoExtension.swift; path = "submodules/chime-go/Sources/ChimeGo/GoExtension.swift"; sourceTree = SOURCE_ROOT; };
 		C9818AD12C3F2CA70032899D /* Gopls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Gopls.swift; path = "submodules/chime-go/Sources/ChimeGo/Gopls.swift"; sourceTree = SOURCE_ROOT; };
 		C986F2472C3ED60800A62879 /* ClojureExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClojureExtension.swift; path = "submodules/chime-clojure/Sources/ChimeClojure/ClojureExtension.swift"; sourceTree = SOURCE_ROOT; };
-		C9891AF72AFE996300C8F393 /* NSParagraphStyle+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSParagraphStyle+Helpers.swift"; sourceTree = "<group>"; };
-		C9891AF92AFE9A3900C8F393 /* NSFont+Measurements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSFont+Measurements.swift"; sourceTree = "<group>"; };
 		C9891AFC2AFEA35F00C8F393 /* NSAppearance+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAppearance+Style.swift"; sourceTree = "<group>"; };
 		C9891B132AFEC11A00C8F393 /* libDocumentContent.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDocumentContent.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9891B352AFFF1F700C8F393 /* libGutter.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libGutter.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1143,49 +1081,36 @@
 		C9B8AA1C2B362DDE00C79606 /* PreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
 		C9B8AA232B362DDE00C79606 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9B8AA242B362DDE00C79606 /* QuickLookPreview.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QuickLookPreview.entitlements; sourceTree = "<group>"; };
-		C9B8AA2C2B36326D00C79606 /* QuickLookPreview.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = QuickLookPreview.xcconfig; sourceTree = "<group>"; };
 		C9B8AA4A2B37055900C79606 /* libSyntaxService.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSyntaxService.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9B8AA532B37057C00C79606 /* SyntaxService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyntaxService.swift; sourceTree = "<group>"; };
 		C9BDB5482B00FD89009225FB /* SwiftExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.extensionkit-extension"; includeInIndex = 0; path = SwiftExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9BDB54A2B00FD89009225FB /* SwiftStandaloneExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftStandaloneExtension.swift; sourceTree = "<group>"; };
 		C9BDB54C2B00FD89009225FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C9BDB5542B00FF5A009225FB /* SwiftExtension.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = SwiftExtension.xcconfig; sourceTree = "<group>"; };
-		C9C2133A2AD1FD6F00C60282 /* Framework.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Framework.xcconfig; sourceTree = "<group>"; };
 		C9CDEB542B504485009E252A /* TextSystem+SwiftTreeSitterLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextSystem+SwiftTreeSitterLayer.swift"; sourceTree = "<group>"; };
 		C9CDEB872B55B889009E252A /* LanguageData */ = {isa = PBXFileReference; lastKnownFileType = folder; path = LanguageData; sourceTree = "<group>"; };
 		C9CFCF7A2BF4D0890053C9A6 /* RootLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootLanguage.swift; sourceTree = "<group>"; };
 		C9CFCF7D2BF92BB70053C9A6 /* EditFocusFilterIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFocusFilterIntent.swift; sourceTree = "<group>"; };
 		C9D3D68C2D956BCB00090913 /* TextMetricsCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextMetricsCalculator.swift; sourceTree = "<group>"; };
 		C9DCE14F2BD7BFF30067D354 /* ThemeStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeStore.swift; sourceTree = "<group>"; };
-		C9DCE1552BD8049F0067D354 /* ObservableState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableState.swift; sourceTree = "<group>"; };
 		C9E0B9F62BD1A3CE007AF034 /* DiagnosticsStatusBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnosticsStatusBarItem.swift; sourceTree = "<group>"; };
 		C9E0B9FC2BD27F0F007AF034 /* libDiagnostics.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDiagnostics.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		C9E0BA052BD27F3D007AF034 /* DiagnosticsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnosticsModel.swift; sourceTree = "<group>"; };
 		C9E0BA2F2BD2C1EF007AF034 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		C9E0BA342BD2C7F2007AF034 /* ThemeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeView.swift; sourceTree = "<group>"; };
 		C9E0BA362BD2C96D007AF034 /* ThemeTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeTile.swift; sourceTree = "<group>"; };
 		C9E0BA412BD52732007AF034 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
-		C9E877FB2A9F4B820018340C /* TrailingSidebar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailingSidebar.swift; sourceTree = "<group>"; };
 		C9E878012A9F53530018340C /* UIPlaceholderExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.extensionkit-extension"; includeInIndex = 0; path = UIPlaceholderExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9E878032A9F53530018340C /* UIPlaceholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPlaceholder.swift; sourceTree = "<group>"; };
 		C9E878052A9F53530018340C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9E878062A9F53530018340C /* Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Extension.entitlements; sourceTree = "<group>"; };
-		C9E878112A9F53BB0018340C /* Extension.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Extension.xcconfig; sourceTree = "<group>"; };
 		C9E878142A9F56A80018340C /* validate.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = validate.sh; sourceTree = "<group>"; };
 		C9E878152A9F5B2B0018340C /* validate.xcfilelist */ = {isa = PBXFileReference; lastKnownFileType = text.xcfilelist; path = validate.xcfilelist; sourceTree = "<group>"; };
-		C9E878162A9F671B0018340C /* SynchronizedScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynchronizedScrollViewController.swift; sourceTree = "<group>"; };
 		C9E878182A9FC9CF0018340C /* ExtensionSelectorItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionSelectorItem.swift; sourceTree = "<group>"; };
 		C9E8781A2A9FCF3E0018340C /* StatusBarPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarPadding.swift; sourceTree = "<group>"; };
-		C9E8781F2A9FD3770018340C /* ExtensionContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionContent.swift; sourceTree = "<group>"; };
-		C9E878212A9FD3F10018340C /* InspectorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspectorModel.swift; sourceTree = "<group>"; };
-		C9E878242A9FDDCA0018340C /* ExtensionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionList.swift; sourceTree = "<group>"; };
-		C9E878272A9FDE160018340C /* UIExtensionDescriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtensionDescriptor.swift; sourceTree = "<group>"; };
 		C9EA09562B4D62B800732203 /* LanguageProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageProfile.swift; sourceTree = "<group>"; };
 		C9EA095A2B4D645F00732203 /* LanguageProfile+Profiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LanguageProfile+Profiles.swift"; sourceTree = "<group>"; };
 		C9EA095C2B4D695400732203 /* LanguageDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageDataStore.swift; sourceTree = "<group>"; };
 		C9EA09652B4DC57800732203 /* TextPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextPresentation.swift; sourceTree = "<group>"; };
 		C9EFDFAE2AEEF15400568E15 /* ApplicationServiceEventRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationServiceEventRouter.swift; sourceTree = "<group>"; };
-		C9F79DD62A87E3FA005ED8E9 /* URL+Contents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Contents.swift"; sourceTree = "<group>"; };
 		C9F79DD82A87E44A005ED8E9 /* NavigatorItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigatorItem.swift; sourceTree = "<group>"; };
 		C9F79DDA2A87E46A005ED8E9 /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
 		C9F79DE52A8B9C8A005ED8E9 /* NavigatorScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigatorScrollView.swift; sourceTree = "<group>"; };
@@ -1202,21 +1127,15 @@
 		C9FE52B82A7525D300CACA1A /* EditUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EditUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9FE52BC2A7525D300CACA1A /* EditUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUITests.swift; sourceTree = "<group>"; };
 		C9FE52BE2A7525D300CACA1A /* EditUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		C9FE52CB2A7526C000CACA1A /* Project.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Project.xcconfig; sourceTree = "<group>"; };
-		C9FE52CC2A752B4D00CACA1A /* Edit.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Edit.xcconfig; sourceTree = "<group>"; };
 		C9FE52D42A7532C700CACA1A /* libDocument.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDocument.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9FE52ED2A7537AC00CACA1A /* ProjectDocumentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectDocumentController.swift; sourceTree = "<group>"; };
 		C9FE52F42A7539B100CACA1A /* ChimeKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ChimeKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9FE530E2A759ADA00CACA1A /* libProjectWindow.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libProjectWindow.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9FE53182A759AFE00CACA1A /* ProjectWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectWindowController.swift; sourceTree = "<group>"; };
-		C9FE531A2A759BC400CACA1A /* Module.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Module.xcconfig; sourceTree = "<group>"; };
 		C9FE531B2A759CE400CACA1A /* WindowStateModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowStateModel.swift; sourceTree = "<group>"; };
 		C9FE531D2A759F4C00CACA1A /* ProjectWindowRoot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectWindowRoot.swift; sourceTree = "<group>"; };
 		C9FE53232A75A17700CACA1A /* libUIUtility.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libUIUtility.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		C9FE532D2A75A1C100CACA1A /* RepresentableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepresentableView.swift; sourceTree = "<group>"; };
-		C9FE532E2A75A1C100CACA1A /* RepresentableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepresentableViewController.swift; sourceTree = "<group>"; };
 		C9FE53522A7660DF00CACA1A /* libInspector.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libInspector.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		C9FE53612A76619800CACA1A /* Inspector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Inspector.swift; sourceTree = "<group>"; };
 		C9FE536A2A7661D400CACA1A /* libSearch.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSearch.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9FE53742A7661F100CACA1A /* SearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		C9FE537A2A7662DC00CACA1A /* libEditor.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libEditor.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1226,18 +1145,23 @@
 		C9FE53AA2A76753D00CACA1A /* SourcePresentationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SourcePresentationViewController.swift; sourceTree = "<group>"; };
 		C9FE53AC2A7677A700CACA1A /* EditorScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorScrollView.swift; sourceTree = "<group>"; };
 		C9FE53B82A77334E00CACA1A /* SourceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SourceViewController.swift; sourceTree = "<group>"; };
-		C9FE53BE2A77C02400CACA1A /* BoundingBorders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoundingBorders.swift; sourceTree = "<group>"; };
 		C9FE53C82A77CC1E00CACA1A /* libTheme.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTheme.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9FE53D72A77D98A00CACA1A /* EditorContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorContent.swift; sourceTree = "<group>"; };
 		C9FE53DD2A7A5A2A00CACA1A /* libExtensionHost.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libExtensionHost.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9FE53E72A7A5B2000CACA1A /* LazyRemoteExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LazyRemoteExtension.swift; sourceTree = "<group>"; };
 		C9FE53F42A7A5EF900CACA1A /* libUtility.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libUtility.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		C9FE53FE2A7A5F1600CACA1A /* Logger+init.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Logger+init.swift"; sourceTree = "<group>"; };
 		C9FE54042A7A613C00CACA1A /* FilteringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilteringExtension.swift; sourceTree = "<group>"; };
 		C9FE54062A7A617000CACA1A /* ExtensionDocumentState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionDocumentState.swift; sourceTree = "<group>"; };
-		C9FE54082A7A625300CACA1A /* EditTests.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = EditTests.xcconfig; sourceTree = "<group>"; };
 		C9FE54092A7A62DB00CACA1A /* MockExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		C9D8C1FF2DAFF38A0037FE3C /* Configurations */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Configurations; sourceTree = "<group>"; };
+		C9D8C2B62DAFF4D60037FE3C /* UIUtility */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = UIUtility; sourceTree = "<group>"; };
+		C9D8C2D22DAFF5CE0037FE3C /* Utility */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Utility; sourceTree = "<group>"; };
+		C9D8C2DE2DAFF94D0037FE3C /* Diagnostics */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Diagnostics; sourceTree = "<group>"; };
+		C9D8C2E72DAFF98B0037FE3C /* Inspector */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Inspector; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		C900A7B82A9E93FC000556A6 /* Frameworks */ = {
@@ -1638,24 +1562,6 @@
 			path = Rust;
 			sourceTree = "<group>";
 		};
-		C979188F2A9CCC5E0046EAF1 /* Animations */ = {
-			isa = PBXGroup;
-			children = (
-				C979188D2A9CCC500046EAF1 /* BottomPushAndSlideEffect.swift */,
-				C97918922A9CCC8B0046EAF1 /* BottomSlideEffect.swift */,
-				C97918902A9CCC730046EAF1 /* TrailingSlideEffect.swift */,
-			);
-			path = Animations;
-			sourceTree = "<group>";
-		};
-		C97918942A9CCC980046EAF1 /* Modifiers */ = {
-			isa = PBXGroup;
-			children = (
-				C97918952A9CCCA90046EAF1 /* OnSizeChangeModifier.swift */,
-			);
-			path = Modifiers;
-			sourceTree = "<group>";
-		};
 		C97918A72A9D1D760046EAF1 /* OpenQuickly */ = {
 			isa = PBXGroup;
 			children = (
@@ -1668,16 +1574,6 @@
 				C97918C12A9D49F20046EAF1 /* ViewModel.swift */,
 			);
 			path = OpenQuickly;
-			sourceTree = "<group>";
-		};
-		C97918D02A9D56930046EAF1 /* AppKit */ = {
-			isa = PBXGroup;
-			children = (
-				C97918EF2A9E49AD0046EAF1 /* NSBezierPath+Paths.swift */,
-				C97918CE2A9D56810046EAF1 /* NSImageView+Symbol.swift */,
-				C97918D22A9E04470046EAF1 /* NSTableView+Reuse.swift */,
-			);
-			path = AppKit;
 			sourceTree = "<group>";
 		};
 		C9818AAB2C3EF5ED0032899D /* Elixir */ = {
@@ -1697,15 +1593,6 @@
 				C9818ACE2C3F2C7F0032899D /* GoStandaloneExtension.swift */,
 			);
 			path = Go;
-			sourceTree = "<group>";
-		};
-		C9891AF62AFE994C00C8F393 /* AppKit */ = {
-			isa = PBXGroup;
-			children = (
-				C9891AF92AFE9A3900C8F393 /* NSFont+Measurements.swift */,
-				C9891AF72AFE996300C8F393 /* NSParagraphStyle+Helpers.swift */,
-			);
-			path = AppKit;
 			sourceTree = "<group>";
 		};
 		C9891B012AFEAA1100C8F393 /* Extensions */ = {
@@ -1811,12 +1698,15 @@
 			path = Swift;
 			sourceTree = "<group>";
 		};
-		C9E0B9FD2BD27F0F007AF034 /* Diagnostics */ = {
+		C9D8C2A22DAFF4D20037FE3C /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				C9E0BA052BD27F3D007AF034 /* DiagnosticsModel.swift */,
+				C9D8C2DE2DAFF94D0037FE3C /* Diagnostics */,
+				C9D8C2B62DAFF4D60037FE3C /* UIUtility */,
+				C9D8C2D22DAFF5CE0037FE3C /* Utility */,
+				C9D8C2E72DAFF98B0037FE3C /* Inspector */,
 			);
-			path = Diagnostics;
+			path = Modules;
 			sourceTree = "<group>";
 		};
 		C9E878022A9F53530018340C /* UIPlaceholder */ = {
@@ -1867,7 +1757,7 @@
 		C9FE52902A7525D000CACA1A = {
 			isa = PBXGroup;
 			children = (
-				C9FE538E2A76674600CACA1A /* Configurations */,
+				C9D8C1FF2DAFF38A0037FE3C /* Configurations */,
 				C9439A742C3EC13A0020DDF5 /* Dependencies */,
 				C9FE529B2A7525D000CACA1A /* Edit */,
 				C93F72492BF26BDC0021ACF3 /* EditIntents */,
@@ -1875,6 +1765,7 @@
 				C9FE52BB2A7525D300CACA1A /* EditUITests */,
 				C9E8780D2A9F535C0018340C /* Extensions */,
 				C9FE52E22A7533FE00CACA1A /* Frameworks */,
+				C9D8C2A22DAFF4D20037FE3C /* Modules */,
 				C9FE529A2A7525D000CACA1A /* Products */,
 				C9B8AA1B2B362DDE00C79606 /* QuickLookPreview */,
 			);
@@ -1971,14 +1862,12 @@
 		C9FE52CF2A75323800CACA1A /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				C9E0B9FD2BD27F0F007AF034 /* Diagnostics */,
 				C9FE52DD2A7532D500CACA1A /* Document */,
 				C9891B142AFEC11A00C8F393 /* DocumentContent */,
 				C9FE53832A7662F800CACA1A /* Editor */,
 				C9FE53E62A7A5B2000CACA1A /* ExtensionHost */,
 				C9891B362AFFF1F700C8F393 /* Gutter */,
 				C973E0012B62BDB4000998F7 /* Highlighting */,
-				C9FE53602A76619800CACA1A /* Inspector */,
 				C9F79DF62A8FF06E005ED8E9 /* Navigator */,
 				C97918A72A9D1D760046EAF1 /* OpenQuickly */,
 				C900A7C32A9E9417000556A6 /* PreferencesWindow */,
@@ -1988,8 +1877,6 @@
 				C9B8AA4B2B37055900C79606 /* SyntaxService */,
 				C9B8A9DE2B31E43800C79606 /* TextSystem */,
 				C9FE53D32A77CC8300CACA1A /* Theme */,
-				C9FE532C2A75A18500CACA1A /* UIUtility */,
-				C9FE53FD2A7A5F1600CACA1A /* Utility */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -2037,39 +1924,6 @@
 			path = ProjectWindow;
 			sourceTree = "<group>";
 		};
-		C9FE532C2A75A18500CACA1A /* UIUtility */ = {
-			isa = PBXGroup;
-			children = (
-				C979188F2A9CCC5E0046EAF1 /* Animations */,
-				C97918D02A9D56930046EAF1 /* AppKit */,
-				C97918B72A9D49190046EAF1 /* AttributedText.swift */,
-				C97918F12A9E49EE0046EAF1 /* BinaryFloatingPoint+AngleUnits.swift */,
-				C9FE53BE2A77C02400CACA1A /* BoundingBorders.swift */,
-				C97918F32A9E4A1C0046EAF1 /* HexagonView.swift */,
-				C97918942A9CCC980046EAF1 /* Modifiers */,
-				C97918DF2A9E39D80046EAF1 /* NSRect+Helpers.swift */,
-				C9DCE1552BD8049F0067D354 /* ObservableState.swift */,
-				C9FE532D2A75A1C100CACA1A /* RepresentableView.swift */,
-				C9FE532E2A75A1C100CACA1A /* RepresentableViewController.swift */,
-				C97918792A9CBF8C0046EAF1 /* RoundedCorners.swift */,
-			);
-			path = UIUtility;
-			sourceTree = "<group>";
-		};
-		C9FE53602A76619800CACA1A /* Inspector */ = {
-			isa = PBXGroup;
-			children = (
-				C9E8781F2A9FD3770018340C /* ExtensionContent.swift */,
-				C9E878242A9FDDCA0018340C /* ExtensionList.swift */,
-				C9FE53612A76619800CACA1A /* Inspector.swift */,
-				C9E878212A9FD3F10018340C /* InspectorModel.swift */,
-				C9E878162A9F671B0018340C /* SynchronizedScrollViewController.swift */,
-				C9E877FB2A9F4B820018340C /* TrailingSidebar.swift */,
-				C9E878272A9FDE160018340C /* UIExtensionDescriptor.swift */,
-			);
-			path = Inspector;
-			sourceTree = "<group>";
-		};
 		C9FE53732A7661F100CACA1A /* Search */ = {
 			isa = PBXGroup;
 			children = (
@@ -2090,30 +1944,6 @@
 				C9655F922D12218C0008AED1 /* TransformingTextSystem.swift */,
 			);
 			path = Editor;
-			sourceTree = "<group>";
-		};
-		C9FE538E2A76674600CACA1A /* Configurations */ = {
-			isa = PBXGroup;
-			children = (
-				C92673282B04046700B3CE2F /* Edit-Debug.xcconfig */,
-				C9FE52CC2A752B4D00CACA1A /* Edit.xcconfig */,
-				C93F72562BF26CB80021ACF3 /* EditIntents.xcconfig */,
-				C92931722B822BFF00C64DDE /* EditKit.xcconfig */,
-				C9FE54082A7A625300CACA1A /* EditTests.xcconfig */,
-				C92673432B05244600B3CE2F /* EditUITests.xcconfig */,
-				C9E878112A9F53BB0018340C /* Extension.xcconfig */,
-				C9C2133A2AD1FD6F00C60282 /* Framework.xcconfig */,
-				C942E6822B67B93B00792DD4 /* InfoPlistExtension.xcconfig */,
-				C9FE531A2A759BC400CACA1A /* Module.xcconfig */,
-				C926737D2B07827800B3CE2F /* NonSwiftWorkaround.xcconfig */,
-				C93791A32AD5E02C00665F50 /* Project-Debug.xcconfig */,
-				C9FE52CB2A7526C000CACA1A /* Project.xcconfig */,
-				C9B8AA2C2B36326D00C79606 /* QuickLookPreview.xcconfig */,
-				C9BDB5542B00FF5A009225FB /* SwiftExtension.xcconfig */,
-				C95BBE3D2BDD075300C9E1B9 /* Utility.xcconfig */,
-				C926738A2B078B0200B3CE2F /* WorkaroundModule.xcconfig */,
-			);
-			path = Configurations;
 			sourceTree = "<group>";
 		};
 		C9FE53A42A7670BB00CACA1A /* Status */ = {
@@ -2164,22 +1994,6 @@
 				C97919012A9E72FF0046EAF1 /* UIExtensionDescriptor.swift */,
 			);
 			path = ExtensionHost;
-			sourceTree = "<group>";
-		};
-		C9FE53FD2A7A5F1600CACA1A /* Utility */ = {
-			isa = PBXGroup;
-			children = (
-				C9891AF62AFE994C00C8F393 /* AppKit */,
-				C941F0A02B6C4DE00003B640 /* AsyncStream+Pair.swift */,
-				C95BBE3E2BDD110700C9E1B9 /* Constants.m */,
-				C941F09E2B6C4CD90003B640 /* Dictionary+Fill.swift */,
-				C95BBE362BDD03F200C9E1B9 /* FileManager+AppGroup.swift */,
-				C9FE53FE2A7A5F1600CACA1A /* Logger+init.swift */,
-				C9F79DD62A87E3FA005ED8E9 /* URL+Contents.swift */,
-				C97E86412BFA13700054BAB6 /* UserDefaults+Shared.swift */,
-				C95BBE382BDD058800C9E1B9 /* Utility-Bridging-Header.h */,
-			);
-			path = Utility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -2719,6 +2533,9 @@
 			dependencies = (
 				C9E0BA082BD27FD2007AF034 /* PBXTargetDependency */,
 			);
+			fileSystemSynchronizedGroups = (
+				C9D8C2DE2DAFF94D0037FE3C /* Diagnostics */,
+			);
 			name = Diagnostics;
 			productName = Diagnostics;
 			productReference = C9E0B9FC2BD27F0F007AF034 /* libDiagnostics.a */;
@@ -2943,6 +2760,9 @@
 			dependencies = (
 				C9CDC24D2BDABFE000183752 /* PBXTargetDependency */,
 			);
+			fileSystemSynchronizedGroups = (
+				C9D8C2B62DAFF4D60037FE3C /* UIUtility */,
+			);
 			name = UIUtility;
 			productName = UIUtility;
 			productReference = C9FE53232A75A17700CACA1A /* libUIUtility.a */;
@@ -2962,6 +2782,9 @@
 				C999C7862ABDA97500D49939 /* PBXTargetDependency */,
 				C9E8781E2A9FD0B70018340C /* PBXTargetDependency */,
 				C9FE53962A766D2F00CACA1A /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				C9D8C2E72DAFF98B0037FE3C /* Inspector */,
 			);
 			name = Inspector;
 			productName = Inspector;
@@ -3091,6 +2914,9 @@
 			);
 			dependencies = (
 				C9BFA1A52BBF4FD600E86487 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				C9D8C2D22DAFF5CE0037FE3C /* Utility */,
 			);
 			name = Utility;
 			productName = Utility;
@@ -3618,7 +3444,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9E0BA062BD27F3D007AF034 /* DiagnosticsModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3712,22 +3537,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C97918972A9CCCF60046EAF1 /* BottomSlideEffect.swift in Sources */,
-				C97918D32A9E04470046EAF1 /* NSTableView+Reuse.swift in Sources */,
-				C979187C2A9CC1190046EAF1 /* RoundedCorners.swift in Sources */,
-				C9FE532F2A75A1C100CACA1A /* RepresentableView.swift in Sources */,
-				C97918982A9CCCFD0046EAF1 /* TrailingSlideEffect.swift in Sources */,
-				C97918F22A9E49EE0046EAF1 /* BinaryFloatingPoint+AngleUnits.swift in Sources */,
-				C9FE53302A75A1C100CACA1A /* RepresentableViewController.swift in Sources */,
-				C97918D12A9E03C00046EAF1 /* NSImageView+Symbol.swift in Sources */,
-				C97918F62A9E4A4D0046EAF1 /* NSBezierPath+Paths.swift in Sources */,
-				C9FE53BF2A77C02400CACA1A /* BoundingBorders.swift in Sources */,
-				C97918E02A9E39D80046EAF1 /* NSRect+Helpers.swift in Sources */,
-				C979188E2A9CCC500046EAF1 /* BottomPushAndSlideEffect.swift in Sources */,
-				C97918F52A9E4A3B0046EAF1 /* HexagonView.swift in Sources */,
-				C97918BE2A9D498B0046EAF1 /* AttributedText.swift in Sources */,
-				C97918992A9CCD060046EAF1 /* OnSizeChangeModifier.swift in Sources */,
-				C9DCE1562BD8049F0067D354 /* ObservableState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3735,13 +3544,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9E877FC2A9F4B820018340C /* TrailingSidebar.swift in Sources */,
-				C9E878262A9FDDDA0018340C /* ExtensionList.swift in Sources */,
-				C9E878202A9FD3770018340C /* ExtensionContent.swift in Sources */,
-				C9E878282A9FDE160018340C /* UIExtensionDescriptor.swift in Sources */,
-				C9E878232A9FDA210018340C /* InspectorModel.swift in Sources */,
-				C9E878172A9F671B0018340C /* SynchronizedScrollViewController.swift in Sources */,
-				C9FE53622A76619800CACA1A /* Inspector.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3830,15 +3632,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C941F09F2B6C4CD90003B640 /* Dictionary+Fill.swift in Sources */,
-				C9891AFA2AFE9A3900C8F393 /* NSFont+Measurements.swift in Sources */,
-				C95BBE372BDD03F200C9E1B9 /* FileManager+AppGroup.swift in Sources */,
-				C95BBE3F2BDD110700C9E1B9 /* Constants.m in Sources */,
-				C97E86422BFA13700054BAB6 /* UserDefaults+Shared.swift in Sources */,
-				C9891AF82AFE996300C8F393 /* NSParagraphStyle+Helpers.swift in Sources */,
-				C9FE53FF2A7A5F1600CACA1A /* Logger+init.swift in Sources */,
-				C941F0A12B6C4DE00003B640 /* AsyncStream+Pair.swift in Sources */,
-				C9F79DD72A87E3FA005ED8E9 /* URL+Contents.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4522,490 +4315,560 @@
 /* Begin XCBuildConfiguration section */
 		C900A7C02A9E93FC000556A6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C9FE531A2A759BC400CACA1A /* Module.xcconfig */;
+			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
+			baseConfigurationReferenceRelativePath = Module.xcconfig;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		C900A7C12A9E93FC000556A6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C9FE531A2A759BC400CACA1A /* Module.xcconfig */;
+			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
+			baseConfigurationReferenceRelativePath = Module.xcconfig;
 			buildSettings = {
 			};
 			name = Release;
 		};
 		C92631AE2C40002F00C0AE07 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C9E878112A9F53BB0018340C /* Extension.xcconfig */;
+			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
+			baseConfigurationReferenceRelativePath = Extension.xcconfig;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		C92631AF2C40002F00C0AE07 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C9E878112A9F53BB0018340C /* Extension.xcconfig */;
+			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
+			baseConfigurationReferenceRelativePath = Extension.xcconfig;
 			buildSettings = {
 			};
 			name = Release;
 		};
 		C929314B2B80CC6700C64DDE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C92931722B822BFF00C64DDE /* EditKit.xcconfig */;
+			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
+			baseConfigurationReferenceRelativePath = EditKit.xcconfig;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		C929314C2B80CC6700C64DDE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C92931722B822BFF00C64DDE /* EditKit.xcconfig */;
+			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
+			baseConfigurationReferenceRelativePath = EditKit.xcconfig;
 			buildSettings = {
 			};
 			name = Release;
 		};
 		C93F72532BF26BDC0021ACF3 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C93F72562BF26CB80021ACF3 /* EditIntents.xcconfig */;
+			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
+			baseConfigurationReferenceRelativePath = EditIntents.xcconfig;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		C93F72542BF26BDC0021ACF3 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C93F72562BF26CB80021ACF3 /* EditIntents.xcconfig */;
+			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
+			baseConfigurationReferenceRelativePath = EditIntents.xcconfig;
 			buildSettings = {
 			};
 			name = Release;
 		};
 		C942E6802B67B78F00792DD4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C9E878112A9F53BB0018340C /* Extension.xcconfig */;
+			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
+			baseConfigurationReferenceRelativePath = Extension.xcconfig;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		C942E6812B67B78F00792DD4 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C9E878112A9F53BB0018340C /* Extension.xcconfig */;
+			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
+			baseConfigurationReferenceRelativePath = Extension.xcconfig;
 			buildSettings = {
 			};
 			name = Release;
 		};
 		C9439A842C3EC4220020DDF5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C9E878112A9F53BB0018340C /* Extension.xcconfig */;
+			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
+			baseConfigurationReferenceRelativePath = Extension.xcconfig;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		C9439A852C3EC4220020DDF5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C9E878112A9F53BB0018340C /* Extension.xcconfig */;
+			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
+			baseConfigurationReferenceRelativePath = Extension.xcconfig;
 			buildSettings = {
 			};
 			name = Release;
 		};
 		C973E0072B62BDB4000998F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C926738A2B078B0200B3CE2F /* WorkaroundModule.xcconfig */;
+			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
+			baseConfigurationReferenceRelativePath = WorkaroundModule.xcconfig;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		C973E0082B62BDB4000998F7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C926738A2B078B0200B3CE2F /* WorkaroundModule.xcconfig */;
+			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
+			baseConfigurationReferenceRelativePath = WorkaroundModule.xcconfig;
 			buildSettings = {
 			};
 			name = Release;
 		};
 		C97640EF2C40372C002C94BF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C9E878112A9F53BB0018340C /* Extension.xcconfig */;
+			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
+			baseConfigurationReferenceRelativePath = Extension.xcconfig;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		C97640F02C40372C002C94BF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C9E878112A9F53BB0018340C /* Extension.xcconfig */;
+			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
+			baseConfigurationReferenceRelativePath = Extension.xcconfig;
 			buildSettings = {
 			};
 			name = Release;
 		};
 		C97918A52A9D1D6D0046EAF1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C9FE531A2A759BC400CACA1A /* Module.xcconfig */;
+			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
+			baseConfigurationReferenceRelativePath = Module.xcconfig;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		C97918A62A9D1D6D0046EAF1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C9FE531A2A759BC400CACA1A /* Module.xcconfig */;
+			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
+			baseConfigurationReferenceRelativePath = Module.xcconfig;
 			buildSettings = {
 			};
 			name = Release;
 		};
 		C9818AB32C3EF5ED0032899D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C9E878112A9F53BB0018340C /* Extension.xcconfig */;
+			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
+			baseConfigurationReferenceRelativePath = Extension.xcconfig;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		C9818AB42C3EF5ED0032899D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C9E878112A9F53BB0018340C /* Extension.xcconfig */;
+			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
+			baseConfigurationReferenceRelativePath = Extension.xcconfig;
 			buildSettings = {
 			};
 			name = Release;
 		};
 		C9818ACB2C3F2C2F0032899D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C9E878112A9F53BB0018340C /* Extension.xcconfig */;
+			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
+			baseConfigurationReferenceRelativePath = Extension.xcconfig;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		C9818ACC2C3F2C2F0032899D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C9E878112A9F53BB0018340C /* Extension.xcconfig */;
+			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
+			baseConfigurationReferenceRelativePath = Extension.xcconfig;
 			buildSettings = {
 			};
 			name = Release;
 		};
 		C9891B1A2AFEC11A00C8F393 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C926738A2B078B0200B3CE2F /* WorkaroundModule.xcconfig */;
+			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
+			baseConfigurationReferenceRelativePath = WorkaroundModule.xcconfig;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		C9891B1B2AFEC11A00C8F393 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C926738A2B078B0200B3CE2F /* WorkaroundModule.xcconfig */;
+			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
+			baseConfigurationReferenceRelativePath = WorkaroundModule.xcconfig;
 			buildSettings = {
 			};
 			name = Release;
 		};
 		C9891B3C2AFFF1F700C8F393 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C926738A2B078B0200B3CE2F /* WorkaroundModule.xcconfig */;
+			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
+			baseConfigurationReferenceRelativePath = WorkaroundModule.xcconfig;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		C9891B3D2AFFF1F700C8F393 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C926738A2B078B0200B3CE2F /* WorkaroundModule.xcconfig */;
+			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
+			baseConfigurationReferenceRelativePath = WorkaroundModule.xcconfig;
 			buildSettings = {
 			};
 			name = Release;
 		};
 		C9B8A9E42B31E43800C79606 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C926738A2B078B0200B3CE2F /* WorkaroundModule.xcconfig */;
+			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
+			baseConfigurationReferenceRelativePath = WorkaroundModule.xcconfig;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		C9B8A9E52B31E43800C79606 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C926738A2B078B0200B3CE2F /* WorkaroundModule.xcconfig */;
+			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
+			baseConfigurationReferenceRelativePath = WorkaroundModule.xcconfig;
 			buildSettings = {
 			};
 			name = Release;
 		};
 		C9B8AA292B362DDE00C79606 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C9B8AA2C2B36326D00C79606 /* QuickLookPreview.xcconfig */;
+			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
+			baseConfigurationReferenceRelativePath = QuickLookPreview.xcconfig;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		C9B8AA2A2B362DDE00C79606 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C9B8AA2C2B36326D00C79606 /* QuickLookPreview.xcconfig */;
+			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
+			baseConfigurationReferenceRelativePath = QuickLookPreview.xcconfig;
 			buildSettings = {
 			};
 			name = Release;
 		};
 		C9B8AA502B37055900C79606 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C926738A2B078B0200B3CE2F /* WorkaroundModule.xcconfig */;
+			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
+			baseConfigurationReferenceRelativePath = WorkaroundModule.xcconfig;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		C9B8AA512B37055900C79606 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C926738A2B078B0200B3CE2F /* WorkaroundModule.xcconfig */;
+			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
+			baseConfigurationReferenceRelativePath = WorkaroundModule.xcconfig;
 			buildSettings = {
 			};
 			name = Release;
 		};
 		C9BDB5522B00FD89009225FB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C9BDB5542B00FF5A009225FB /* SwiftExtension.xcconfig */;
+			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
+			baseConfigurationReferenceRelativePath = SwiftExtension.xcconfig;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		C9BDB5532B00FD89009225FB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C9BDB5542B00FF5A009225FB /* SwiftExtension.xcconfig */;
+			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
+			baseConfigurationReferenceRelativePath = SwiftExtension.xcconfig;
 			buildSettings = {
 			};
 			name = Release;
 		};
 		C9E0BA032BD27F0F007AF034 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C9FE531A2A759BC400CACA1A /* Module.xcconfig */;
+			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
+			baseConfigurationReferenceRelativePath = Module.xcconfig;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		C9E0BA042BD27F0F007AF034 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C9FE531A2A759BC400CACA1A /* Module.xcconfig */;
+			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
+			baseConfigurationReferenceRelativePath = Module.xcconfig;
 			buildSettings = {
 			};
 			name = Release;
 		};
 		C9E8780B2A9F53530018340C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C942E6822B67B93B00792DD4 /* InfoPlistExtension.xcconfig */;
+			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
+			baseConfigurationReferenceRelativePath = InfoPlistExtension.xcconfig;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		C9E8780C2A9F53530018340C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C942E6822B67B93B00792DD4 /* InfoPlistExtension.xcconfig */;
+			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
+			baseConfigurationReferenceRelativePath = InfoPlistExtension.xcconfig;
 			buildSettings = {
 			};
 			name = Release;
 		};
 		C9F79DF42A8FF065005ED8E9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C9FE531A2A759BC400CACA1A /* Module.xcconfig */;
+			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
+			baseConfigurationReferenceRelativePath = Module.xcconfig;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		C9F79DF52A8FF065005ED8E9 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C9FE531A2A759BC400CACA1A /* Module.xcconfig */;
+			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
+			baseConfigurationReferenceRelativePath = Module.xcconfig;
 			buildSettings = {
 			};
 			name = Release;
 		};
 		C9FE52C02A7525D300CACA1A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C93791A32AD5E02C00665F50 /* Project-Debug.xcconfig */;
+			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
+			baseConfigurationReferenceRelativePath = "Project-Debug.xcconfig";
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		C9FE52C12A7525D300CACA1A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C9FE52CB2A7526C000CACA1A /* Project.xcconfig */;
+			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
+			baseConfigurationReferenceRelativePath = Project.xcconfig;
 			buildSettings = {
 			};
 			name = Release;
 		};
 		C9FE52C32A7525D300CACA1A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C92673282B04046700B3CE2F /* Edit-Debug.xcconfig */;
+			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
+			baseConfigurationReferenceRelativePath = "Edit-Debug.xcconfig";
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		C9FE52C42A7525D300CACA1A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C9FE52CC2A752B4D00CACA1A /* Edit.xcconfig */;
+			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
+			baseConfigurationReferenceRelativePath = Edit.xcconfig;
 			buildSettings = {
 			};
 			name = Release;
 		};
 		C9FE52C62A7525D300CACA1A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C9FE54082A7A625300CACA1A /* EditTests.xcconfig */;
+			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
+			baseConfigurationReferenceRelativePath = EditTests.xcconfig;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		C9FE52C72A7525D300CACA1A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C9FE54082A7A625300CACA1A /* EditTests.xcconfig */;
+			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
+			baseConfigurationReferenceRelativePath = EditTests.xcconfig;
 			buildSettings = {
 			};
 			name = Release;
 		};
 		C9FE52C92A7525D300CACA1A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C92673432B05244600B3CE2F /* EditUITests.xcconfig */;
+			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
+			baseConfigurationReferenceRelativePath = EditUITests.xcconfig;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		C9FE52CA2A7525D300CACA1A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C92673432B05244600B3CE2F /* EditUITests.xcconfig */;
+			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
+			baseConfigurationReferenceRelativePath = EditUITests.xcconfig;
 			buildSettings = {
 			};
 			name = Release;
 		};
 		C9FE52DB2A7532C700CACA1A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C926738A2B078B0200B3CE2F /* WorkaroundModule.xcconfig */;
+			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
+			baseConfigurationReferenceRelativePath = WorkaroundModule.xcconfig;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		C9FE52DC2A7532C700CACA1A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C926738A2B078B0200B3CE2F /* WorkaroundModule.xcconfig */;
+			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
+			baseConfigurationReferenceRelativePath = WorkaroundModule.xcconfig;
 			buildSettings = {
 			};
 			name = Release;
 		};
 		C9FE52FE2A7539B100CACA1A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C9C2133A2AD1FD6F00C60282 /* Framework.xcconfig */;
+			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
+			baseConfigurationReferenceRelativePath = Framework.xcconfig;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		C9FE52FF2A7539B100CACA1A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C9C2133A2AD1FD6F00C60282 /* Framework.xcconfig */;
+			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
+			baseConfigurationReferenceRelativePath = Framework.xcconfig;
 			buildSettings = {
 			};
 			name = Release;
 		};
 		C9FE53152A759ADA00CACA1A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C926738A2B078B0200B3CE2F /* WorkaroundModule.xcconfig */;
+			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
+			baseConfigurationReferenceRelativePath = WorkaroundModule.xcconfig;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		C9FE53162A759ADA00CACA1A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C926738A2B078B0200B3CE2F /* WorkaroundModule.xcconfig */;
+			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
+			baseConfigurationReferenceRelativePath = WorkaroundModule.xcconfig;
 			buildSettings = {
 			};
 			name = Release;
 		};
 		C9FE532A2A75A17700CACA1A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C9FE531A2A759BC400CACA1A /* Module.xcconfig */;
+			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
+			baseConfigurationReferenceRelativePath = Module.xcconfig;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		C9FE532B2A75A17700CACA1A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C9FE531A2A759BC400CACA1A /* Module.xcconfig */;
+			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
+			baseConfigurationReferenceRelativePath = Module.xcconfig;
 			buildSettings = {
 			};
 			name = Release;
 		};
 		C9FE53592A7660DF00CACA1A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C926738A2B078B0200B3CE2F /* WorkaroundModule.xcconfig */;
+			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
+			baseConfigurationReferenceRelativePath = WorkaroundModule.xcconfig;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		C9FE535A2A7660DF00CACA1A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C926738A2B078B0200B3CE2F /* WorkaroundModule.xcconfig */;
+			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
+			baseConfigurationReferenceRelativePath = WorkaroundModule.xcconfig;
 			buildSettings = {
 			};
 			name = Release;
 		};
 		C9FE53712A7661D400CACA1A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C9FE531A2A759BC400CACA1A /* Module.xcconfig */;
+			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
+			baseConfigurationReferenceRelativePath = Module.xcconfig;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		C9FE53722A7661D400CACA1A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C9FE531A2A759BC400CACA1A /* Module.xcconfig */;
+			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
+			baseConfigurationReferenceRelativePath = Module.xcconfig;
 			buildSettings = {
 			};
 			name = Release;
 		};
 		C9FE53812A7662DD00CACA1A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C926738A2B078B0200B3CE2F /* WorkaroundModule.xcconfig */;
+			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
+			baseConfigurationReferenceRelativePath = WorkaroundModule.xcconfig;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		C9FE53822A7662DD00CACA1A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C926738A2B078B0200B3CE2F /* WorkaroundModule.xcconfig */;
+			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
+			baseConfigurationReferenceRelativePath = WorkaroundModule.xcconfig;
 			buildSettings = {
 			};
 			name = Release;
 		};
 		C9FE53A22A76709D00CACA1A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C926738A2B078B0200B3CE2F /* WorkaroundModule.xcconfig */;
+			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
+			baseConfigurationReferenceRelativePath = WorkaroundModule.xcconfig;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		C9FE53A32A76709D00CACA1A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C926738A2B078B0200B3CE2F /* WorkaroundModule.xcconfig */;
+			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
+			baseConfigurationReferenceRelativePath = WorkaroundModule.xcconfig;
 			buildSettings = {
 			};
 			name = Release;
 		};
 		C9FE53CF2A77CC1F00CACA1A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C9FE531A2A759BC400CACA1A /* Module.xcconfig */;
+			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
+			baseConfigurationReferenceRelativePath = Module.xcconfig;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		C9FE53D02A77CC1F00CACA1A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C9FE531A2A759BC400CACA1A /* Module.xcconfig */;
+			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
+			baseConfigurationReferenceRelativePath = Module.xcconfig;
 			buildSettings = {
 			};
 			name = Release;
 		};
 		C9FE53E42A7A5A2A00CACA1A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C9FE531A2A759BC400CACA1A /* Module.xcconfig */;
+			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
+			baseConfigurationReferenceRelativePath = Module.xcconfig;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		C9FE53E52A7A5A2A00CACA1A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C9FE531A2A759BC400CACA1A /* Module.xcconfig */;
+			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
+			baseConfigurationReferenceRelativePath = Module.xcconfig;
 			buildSettings = {
 			};
 			name = Release;
 		};
 		C9FE53FB2A7A5EF900CACA1A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C95BBE3D2BDD075300C9E1B9 /* Utility.xcconfig */;
+			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
+			baseConfigurationReferenceRelativePath = Utility.xcconfig;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		C9FE53FC2A7A5EF900CACA1A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C95BBE3D2BDD075300C9E1B9 /* Utility.xcconfig */;
+			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
+			baseConfigurationReferenceRelativePath = Utility.xcconfig;
 			buildSettings = {
 			};
 			name = Release;
