@@ -75,16 +75,6 @@ public final class TextMetricsCalculator {
 		rangeProcessor.processLocation(location, mode: .required)
 	}
 
-//	public var valueProvider: ValueProvider {
-//		.init(
-//			isolation: MainActor.shared,
-//			rangeProcessor: rangeProcessor,
-//			inputTransformer: transformQuery,
-//			syncValue: { _ in metrics },
-//			asyncValue: { _ in metrics },
-//		)
-//	}
-
 	private func transformQuery(_ query: Query) -> (Int, RangeFillMode) {
 		let value: (Int, RangeFillMode)
 		let length = storage.currentLength
