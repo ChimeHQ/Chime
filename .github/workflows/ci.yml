@@ -52,5 +52,12 @@ jobs:
         run: |
           echo "DEVELOPMENT_TEAM = $DEVELOPMENT_TEAM" >> User.xcconfig
           echo "BUNDLE_ID_PREFIX = com.chimehq" >> User.xcconfig
+       - name: "SPM Cache"
+         uses: actions/cache@v4
+         with:
+           path: /Users/runner/Library/Developer/Xcode/DerivedData/**/SourcePackages/checkouts 
+           key: ${{ runner.os }}-spm-${{ hashFiles('**/Package.resolved') }}
+           restore-keys: |
+             ${{ runner.os }}-spm-
       - name: xcodebuild
         run: set -o pipefail && xcodebuild -scheme Edit -destination "platform=macOS" test | xcbeautify
