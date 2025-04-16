@@ -62,7 +62,7 @@ jobs:
       - name: xcodebuild
         run: set -o pipefail && xcodebuild -scheme Edit -destination "platform=macOS" test | xcbeautify
 
-  build:
+  ios-build:
     name: iOS Build
     runs-on: macOS-15
     timeout-minutes: 60
