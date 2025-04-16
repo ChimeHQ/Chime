@@ -16,6 +16,12 @@ public struct TextLayout {
 	public let lineFragmentsInRange: (NSRange) -> [LineFragment]
 }
 
+extension TextLayout.LineFragment : CustomStringConvertible {
+	public var description: String {
+		"<LineFragment: \(range), \(bounds)>"
+	}
+}
+
 extension TextLayout {
 	@MainActor
 	public init(textView: NSUITextView) {
