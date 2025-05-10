@@ -8,3 +8,6 @@ SUPPORTED_PLATFORMS = macosx iphonesimulator iphoneos appletvsimulator appletvos
 TARGETED_DEVICE_FAMILY = 1,2,3,4,6,7
 INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight
 INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight
+SDKROOT = auto
+CODE_SIGN_ENTITLEMENTS = MultiplatformApp/MultiplatformApp.entitlements
+REGISTER_APP_GROUPS = YES

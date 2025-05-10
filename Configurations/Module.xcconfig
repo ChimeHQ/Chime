@@ -4,3 +4,7 @@ PRODUCT_NAME = $(TARGET_NAME)
 SKIP_INSTALL = YES
 SUPPORTED_PLATFORMS = macosx iphonesimulator iphoneos appletvsimulator appletvos xrsimulator xros
 TARGETED_DEVICE_FAMILY = 1,2,3,4,6,7
+
+CODE_SIGN_ENTITLEMENTS = MultiplatformApp/MultiplatformApp.entitlements
+PRODUCT_BUNDLE_IDENTIFIER = com.mycompany.MultiplatformApp
+REGISTER_APP_GROUPS = YES

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 71;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -926,7 +926,25 @@
 		C9BDB54C2B00FD89009225FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9CDEB872B55B889009E252A /* LanguageData */ = {isa = PBXFileReference; lastKnownFileType = folder; path = LanguageData; sourceTree = "<group>"; };
 		C9CFCF7D2BF92BB70053C9A6 /* EditFocusFilterIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFocusFilterIntent.swift; sourceTree = "<group>"; };
-		C9D8C7E82DAFFF590037FE3C /* MultiplatformApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MultiplatformApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9D8C7E82DAFFF590037FE3C /* ChimeMultiplaform.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChimeMultiplaform.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9D8C84E2DB014CE0037FE3C /* Edit.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Edit.xcconfig; sourceTree = "<group>"; };
+		C9D8C84F2DB014CE0037FE3C /* Edit-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Edit-Debug.xcconfig"; sourceTree = "<group>"; };
+		C9D8C8502DB014CE0037FE3C /* EditIntents.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = EditIntents.xcconfig; sourceTree = "<group>"; };
+		C9D8C8512DB014CE0037FE3C /* EditKit.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = EditKit.xcconfig; sourceTree = "<group>"; };
+		C9D8C8522DB014CE0037FE3C /* EditTests.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = EditTests.xcconfig; sourceTree = "<group>"; };
+		C9D8C8532DB014CE0037FE3C /* EditUITests.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = EditUITests.xcconfig; sourceTree = "<group>"; };
+		C9D8C8542DB014CE0037FE3C /* Extension.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Extension.xcconfig; sourceTree = "<group>"; };
+		C9D8C8552DB014CE0037FE3C /* Framework.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Framework.xcconfig; sourceTree = "<group>"; };
+		C9D8C8562DB014CE0037FE3C /* InfoPlistExtension.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = InfoPlistExtension.xcconfig; sourceTree = "<group>"; };
+		C9D8C8572DB014CE0037FE3C /* Module.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Module.xcconfig; sourceTree = "<group>"; };
+		C9D8C8582DB014CE0037FE3C /* MultiplatformApp.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = MultiplatformApp.xcconfig; sourceTree = "<group>"; };
+		C9D8C8592DB014CE0037FE3C /* NonSwiftWorkaround.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = NonSwiftWorkaround.xcconfig; sourceTree = "<group>"; };
+		C9D8C85A2DB014CE0037FE3C /* Project.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Project.xcconfig; sourceTree = "<group>"; };
+		C9D8C85B2DB014CE0037FE3C /* Project-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Project-Debug.xcconfig"; sourceTree = "<group>"; };
+		C9D8C85C2DB014CE0037FE3C /* QuickLookPreview.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = QuickLookPreview.xcconfig; sourceTree = "<group>"; };
+		C9D8C85D2DB014CE0037FE3C /* SwiftExtension.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = SwiftExtension.xcconfig; sourceTree = "<group>"; };
+		C9D8C85E2DB014CE0037FE3C /* Utility.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Utility.xcconfig; sourceTree = "<group>"; };
+		C9D8C85F2DB014CE0037FE3C /* WorkaroundModule.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = WorkaroundModule.xcconfig; sourceTree = "<group>"; };
 		C9E0B9FC2BD27F0F007AF034 /* libDiagnostics.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDiagnostics.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9E878012A9F53530018340C /* UIPlaceholderExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.extensionkit-extension"; includeInIndex = 0; path = UIPlaceholderExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9E878032A9F53530018340C /* UIPlaceholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPlaceholder.swift; sourceTree = "<group>"; };
@@ -972,7 +990,6 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		C9D8C1FF2DAFF38A0037FE3C /* Configurations */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Configurations; sourceTree = "<group>"; };
 		C9D8C2B62DAFF4D60037FE3C /* UIUtility */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = UIUtility; sourceTree = "<group>"; };
 		C9D8C2D22DAFF5CE0037FE3C /* Utility */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Utility; sourceTree = "<group>"; };
 		C9D8C2DE2DAFF94D0037FE3C /* Diagnostics */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Diagnostics; sourceTree = "<group>"; };
@@ -1441,6 +1458,31 @@
 			path = Modules;
 			sourceTree = "<group>";
 		};
+		C9D8C8602DB014CE0037FE3C /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				C9D8C84E2DB014CE0037FE3C /* Edit.xcconfig */,
+				C9D8C84F2DB014CE0037FE3C /* Edit-Debug.xcconfig */,
+				C9D8C8502DB014CE0037FE3C /* EditIntents.xcconfig */,
+				C9D8C8512DB014CE0037FE3C /* EditKit.xcconfig */,
+				C9D8C8522DB014CE0037FE3C /* EditTests.xcconfig */,
+				C9D8C8532DB014CE0037FE3C /* EditUITests.xcconfig */,
+				C9D8C8542DB014CE0037FE3C /* Extension.xcconfig */,
+				C9D8C8552DB014CE0037FE3C /* Framework.xcconfig */,
+				C9D8C8562DB014CE0037FE3C /* InfoPlistExtension.xcconfig */,
+				C9D8C8572DB014CE0037FE3C /* Module.xcconfig */,
+				C9D8C8582DB014CE0037FE3C /* MultiplatformApp.xcconfig */,
+				C9D8C8592DB014CE0037FE3C /* NonSwiftWorkaround.xcconfig */,
+				C9D8C85A2DB014CE0037FE3C /* Project.xcconfig */,
+				C9D8C85B2DB014CE0037FE3C /* Project-Debug.xcconfig */,
+				C9D8C85C2DB014CE0037FE3C /* QuickLookPreview.xcconfig */,
+				C9D8C85D2DB014CE0037FE3C /* SwiftExtension.xcconfig */,
+				C9D8C85E2DB014CE0037FE3C /* Utility.xcconfig */,
+				C9D8C85F2DB014CE0037FE3C /* WorkaroundModule.xcconfig */,
+			);
+			path = Configurations;
+			sourceTree = "<group>";
+		};
 		C9E878022A9F53530018340C /* UIPlaceholder */ = {
 			isa = PBXGroup;
 			children = (
@@ -1479,7 +1521,7 @@
 		C9FE52902A7525D000CACA1A = {
 			isa = PBXGroup;
 			children = (
-				C9D8C1FF2DAFF38A0037FE3C /* Configurations */,
+				C9D8C8602DB014CE0037FE3C /* Configurations */,
 				C9439A742C3EC13A0020DDF5 /* Dependencies */,
 				C9FE529B2A7525D000CACA1A /* Edit */,
 				C93F72492BF26BDC0021ACF3 /* EditIntents */,
@@ -1532,7 +1574,7 @@
 				C9818AC22C3F2C2F0032899D /* GoExtension.appex */,
 				C92631A52C40002F00C0AE07 /* PythonExtension.appex */,
 				C97640E62C40372C002C94BF /* RustExtension.appex */,
-				C9D8C7E82DAFFF590037FE3C /* MultiplatformApp.app */,
+				C9D8C7E82DAFFF590037FE3C /* ChimeMultiplaform.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -2156,7 +2198,7 @@
 				C9D8C8012DB006F80037FE3C /* Dependencies */,
 			);
 			productName = MultiplatformApp;
-			productReference = C9D8C7E82DAFFF590037FE3C /* MultiplatformApp.app */;
+			productReference = C9D8C7E82DAFFF590037FE3C /* ChimeMultiplaform.app */;
 			productType = "com.apple.product-type.application";
 		};
 		C9E0B9FB2BD27F0F007AF034 /* Diagnostics */ = {
@@ -3895,590 +3937,504 @@
 /* Begin XCBuildConfiguration section */
 		C900A7C02A9E93FC000556A6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
-			baseConfigurationReferenceRelativePath = Module.xcconfig;
+			baseConfigurationReference = C9D8C8572DB014CE0037FE3C /* Module.xcconfig */;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		C900A7C12A9E93FC000556A6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
-			baseConfigurationReferenceRelativePath = Module.xcconfig;
+			baseConfigurationReference = C9D8C8572DB014CE0037FE3C /* Module.xcconfig */;
 			buildSettings = {
 			};
 			name = Release;
 		};
 		C92631AE2C40002F00C0AE07 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
-			baseConfigurationReferenceRelativePath = Extension.xcconfig;
+			baseConfigurationReference = C9D8C8542DB014CE0037FE3C /* Extension.xcconfig */;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		C92631AF2C40002F00C0AE07 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
-			baseConfigurationReferenceRelativePath = Extension.xcconfig;
+			baseConfigurationReference = C9D8C8542DB014CE0037FE3C /* Extension.xcconfig */;
 			buildSettings = {
 			};
 			name = Release;
 		};
 		C929314B2B80CC6700C64DDE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
-			baseConfigurationReferenceRelativePath = EditKit.xcconfig;
+			baseConfigurationReference = C9D8C8512DB014CE0037FE3C /* EditKit.xcconfig */;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		C929314C2B80CC6700C64DDE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
-			baseConfigurationReferenceRelativePath = EditKit.xcconfig;
+			baseConfigurationReference = C9D8C8512DB014CE0037FE3C /* EditKit.xcconfig */;
 			buildSettings = {
 			};
 			name = Release;
 		};
 		C93F72532BF26BDC0021ACF3 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
-			baseConfigurationReferenceRelativePath = EditIntents.xcconfig;
+			baseConfigurationReference = C9D8C8502DB014CE0037FE3C /* EditIntents.xcconfig */;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		C93F72542BF26BDC0021ACF3 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
-			baseConfigurationReferenceRelativePath = EditIntents.xcconfig;
+			baseConfigurationReference = C9D8C8502DB014CE0037FE3C /* EditIntents.xcconfig */;
 			buildSettings = {
 			};
 			name = Release;
 		};
 		C942E6802B67B78F00792DD4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
-			baseConfigurationReferenceRelativePath = Extension.xcconfig;
+			baseConfigurationReference = C9D8C8542DB014CE0037FE3C /* Extension.xcconfig */;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		C942E6812B67B78F00792DD4 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
-			baseConfigurationReferenceRelativePath = Extension.xcconfig;
+			baseConfigurationReference = C9D8C8542DB014CE0037FE3C /* Extension.xcconfig */;
 			buildSettings = {
 			};
 			name = Release;
 		};
 		C9439A842C3EC4220020DDF5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
-			baseConfigurationReferenceRelativePath = Extension.xcconfig;
+			baseConfigurationReference = C9D8C8542DB014CE0037FE3C /* Extension.xcconfig */;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		C9439A852C3EC4220020DDF5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
-			baseConfigurationReferenceRelativePath = Extension.xcconfig;
+			baseConfigurationReference = C9D8C8542DB014CE0037FE3C /* Extension.xcconfig */;
 			buildSettings = {
 			};
 			name = Release;
 		};
 		C973E0072B62BDB4000998F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
-			baseConfigurationReferenceRelativePath = WorkaroundModule.xcconfig;
+			baseConfigurationReference = C9D8C85F2DB014CE0037FE3C /* WorkaroundModule.xcconfig */;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		C973E0082B62BDB4000998F7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
-			baseConfigurationReferenceRelativePath = WorkaroundModule.xcconfig;
+			baseConfigurationReference = C9D8C85F2DB014CE0037FE3C /* WorkaroundModule.xcconfig */;
 			buildSettings = {
 			};
 			name = Release;
 		};
 		C97640EF2C40372C002C94BF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
-			baseConfigurationReferenceRelativePath = Extension.xcconfig;
+			baseConfigurationReference = C9D8C8542DB014CE0037FE3C /* Extension.xcconfig */;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		C97640F02C40372C002C94BF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
-			baseConfigurationReferenceRelativePath = Extension.xcconfig;
+			baseConfigurationReference = C9D8C8542DB014CE0037FE3C /* Extension.xcconfig */;
 			buildSettings = {
 			};
 			name = Release;
 		};
 		C97918A52A9D1D6D0046EAF1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
-			baseConfigurationReferenceRelativePath = Module.xcconfig;
+			baseConfigurationReference = C9D8C8572DB014CE0037FE3C /* Module.xcconfig */;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		C97918A62A9D1D6D0046EAF1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
-			baseConfigurationReferenceRelativePath = Module.xcconfig;
+			baseConfigurationReference = C9D8C8572DB014CE0037FE3C /* Module.xcconfig */;
 			buildSettings = {
 			};
 			name = Release;
 		};
 		C9818AB32C3EF5ED0032899D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
-			baseConfigurationReferenceRelativePath = Extension.xcconfig;
+			baseConfigurationReference = C9D8C8542DB014CE0037FE3C /* Extension.xcconfig */;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		C9818AB42C3EF5ED0032899D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
-			baseConfigurationReferenceRelativePath = Extension.xcconfig;
+			baseConfigurationReference = C9D8C8542DB014CE0037FE3C /* Extension.xcconfig */;
 			buildSettings = {
 			};
 			name = Release;
 		};
 		C9818ACB2C3F2C2F0032899D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
-			baseConfigurationReferenceRelativePath = Extension.xcconfig;
+			baseConfigurationReference = C9D8C8542DB014CE0037FE3C /* Extension.xcconfig */;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		C9818ACC2C3F2C2F0032899D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
-			baseConfigurationReferenceRelativePath = Extension.xcconfig;
+			baseConfigurationReference = C9D8C8542DB014CE0037FE3C /* Extension.xcconfig */;
 			buildSettings = {
 			};
 			name = Release;
 		};
 		C9891B1A2AFEC11A00C8F393 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
-			baseConfigurationReferenceRelativePath = WorkaroundModule.xcconfig;
+			baseConfigurationReference = C9D8C85F2DB014CE0037FE3C /* WorkaroundModule.xcconfig */;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		C9891B1B2AFEC11A00C8F393 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
-			baseConfigurationReferenceRelativePath = WorkaroundModule.xcconfig;
+			baseConfigurationReference = C9D8C85F2DB014CE0037FE3C /* WorkaroundModule.xcconfig */;
 			buildSettings = {
 			};
 			name = Release;
 		};
 		C9891B3C2AFFF1F700C8F393 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
-			baseConfigurationReferenceRelativePath = WorkaroundModule.xcconfig;
+			baseConfigurationReference = C9D8C85F2DB014CE0037FE3C /* WorkaroundModule.xcconfig */;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		C9891B3D2AFFF1F700C8F393 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
-			baseConfigurationReferenceRelativePath = WorkaroundModule.xcconfig;
+			baseConfigurationReference = C9D8C85F2DB014CE0037FE3C /* WorkaroundModule.xcconfig */;
 			buildSettings = {
 			};
 			name = Release;
 		};
 		C9B8A9E42B31E43800C79606 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
-			baseConfigurationReferenceRelativePath = WorkaroundModule.xcconfig;
+			baseConfigurationReference = C9D8C85F2DB014CE0037FE3C /* WorkaroundModule.xcconfig */;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		C9B8A9E52B31E43800C79606 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
-			baseConfigurationReferenceRelativePath = WorkaroundModule.xcconfig;
+			baseConfigurationReference = C9D8C85F2DB014CE0037FE3C /* WorkaroundModule.xcconfig */;
 			buildSettings = {
 			};
 			name = Release;
 		};
 		C9B8AA292B362DDE00C79606 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
-			baseConfigurationReferenceRelativePath = QuickLookPreview.xcconfig;
+			baseConfigurationReference = C9D8C85C2DB014CE0037FE3C /* QuickLookPreview.xcconfig */;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		C9B8AA2A2B362DDE00C79606 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
-			baseConfigurationReferenceRelativePath = QuickLookPreview.xcconfig;
+			baseConfigurationReference = C9D8C85C2DB014CE0037FE3C /* QuickLookPreview.xcconfig */;
 			buildSettings = {
 			};
 			name = Release;
 		};
 		C9B8AA502B37055900C79606 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
-			baseConfigurationReferenceRelativePath = WorkaroundModule.xcconfig;
+			baseConfigurationReference = C9D8C85F2DB014CE0037FE3C /* WorkaroundModule.xcconfig */;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		C9B8AA512B37055900C79606 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
-			baseConfigurationReferenceRelativePath = WorkaroundModule.xcconfig;
+			baseConfigurationReference = C9D8C85F2DB014CE0037FE3C /* WorkaroundModule.xcconfig */;
 			buildSettings = {
 			};
 			name = Release;
 		};
 		C9BDB5522B00FD89009225FB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
-			baseConfigurationReferenceRelativePath = SwiftExtension.xcconfig;
+			baseConfigurationReference = C9D8C85D2DB014CE0037FE3C /* SwiftExtension.xcconfig */;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		C9BDB5532B00FD89009225FB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
-			baseConfigurationReferenceRelativePath = SwiftExtension.xcconfig;
+			baseConfigurationReference = C9D8C85D2DB014CE0037FE3C /* SwiftExtension.xcconfig */;
 			buildSettings = {
 			};
 			name = Release;
 		};
 		C9D8C7F12DAFFF5A0037FE3C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
-			baseConfigurationReferenceRelativePath = MultiplatformApp.xcconfig;
+			baseConfigurationReference = C9D8C8582DB014CE0037FE3C /* MultiplatformApp.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = MultiplatformApp/MultiplatformApp.entitlements;
-				GENERATE_INFOPLIST_FILE = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.mycompany.MultiplatformApp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				REGISTER_APP_GROUPS = YES;
-				SDKROOT = auto;
 			};
 			name = Debug;
 		};
 		C9D8C7F22DAFFF5A0037FE3C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
-			baseConfigurationReferenceRelativePath = MultiplatformApp.xcconfig;
+			baseConfigurationReference = C9D8C8582DB014CE0037FE3C /* MultiplatformApp.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = MultiplatformApp/MultiplatformApp.entitlements;
-				GENERATE_INFOPLIST_FILE = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.mycompany.MultiplatformApp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				REGISTER_APP_GROUPS = YES;
-				SDKROOT = auto;
 			};
 			name = Release;
 		};
 		C9E0BA032BD27F0F007AF034 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
-			baseConfigurationReferenceRelativePath = Module.xcconfig;
+			baseConfigurationReference = C9D8C8572DB014CE0037FE3C /* Module.xcconfig */;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		C9E0BA042BD27F0F007AF034 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
-			baseConfigurationReferenceRelativePath = Module.xcconfig;
+			baseConfigurationReference = C9D8C8572DB014CE0037FE3C /* Module.xcconfig */;
 			buildSettings = {
 			};
 			name = Release;
 		};
 		C9E8780B2A9F53530018340C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
-			baseConfigurationReferenceRelativePath = InfoPlistExtension.xcconfig;
+			baseConfigurationReference = C9D8C8562DB014CE0037FE3C /* InfoPlistExtension.xcconfig */;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		C9E8780C2A9F53530018340C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
-			baseConfigurationReferenceRelativePath = InfoPlistExtension.xcconfig;
+			baseConfigurationReference = C9D8C8562DB014CE0037FE3C /* InfoPlistExtension.xcconfig */;
 			buildSettings = {
 			};
 			name = Release;
 		};
 		C9F79DF42A8FF065005ED8E9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
-			baseConfigurationReferenceRelativePath = Module.xcconfig;
+			baseConfigurationReference = C9D8C8572DB014CE0037FE3C /* Module.xcconfig */;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		C9F79DF52A8FF065005ED8E9 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
-			baseConfigurationReferenceRelativePath = Module.xcconfig;
+			baseConfigurationReference = C9D8C8572DB014CE0037FE3C /* Module.xcconfig */;
 			buildSettings = {
 			};
 			name = Release;
 		};
 		C9FE52C02A7525D300CACA1A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
-			baseConfigurationReferenceRelativePath = "Project-Debug.xcconfig";
+			baseConfigurationReference = C9D8C85B2DB014CE0037FE3C /* Project-Debug.xcconfig */;
 			buildSettings = {
-				DEVELOPMENT_TEAM = 77X93NZ3G2;
 			};
 			name = Debug;
 		};
 		C9FE52C12A7525D300CACA1A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
-			baseConfigurationReferenceRelativePath = Project.xcconfig;
+			baseConfigurationReference = C9D8C85A2DB014CE0037FE3C /* Project.xcconfig */;
 			buildSettings = {
-				DEVELOPMENT_TEAM = 77X93NZ3G2;
 			};
 			name = Release;
 		};
 		C9FE52C32A7525D300CACA1A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
-			baseConfigurationReferenceRelativePath = "Edit-Debug.xcconfig";
+			baseConfigurationReference = C9D8C84F2DB014CE0037FE3C /* Edit-Debug.xcconfig */;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		C9FE52C42A7525D300CACA1A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
-			baseConfigurationReferenceRelativePath = Edit.xcconfig;
+			baseConfigurationReference = C9D8C84E2DB014CE0037FE3C /* Edit.xcconfig */;
 			buildSettings = {
 			};
 			name = Release;
 		};
 		C9FE52C62A7525D300CACA1A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
-			baseConfigurationReferenceRelativePath = EditTests.xcconfig;
+			baseConfigurationReference = C9D8C8522DB014CE0037FE3C /* EditTests.xcconfig */;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		C9FE52C72A7525D300CACA1A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
-			baseConfigurationReferenceRelativePath = EditTests.xcconfig;
+			baseConfigurationReference = C9D8C8522DB014CE0037FE3C /* EditTests.xcconfig */;
 			buildSettings = {
 			};
 			name = Release;
 		};
 		C9FE52C92A7525D300CACA1A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
-			baseConfigurationReferenceRelativePath = EditUITests.xcconfig;
+			baseConfigurationReference = C9D8C8532DB014CE0037FE3C /* EditUITests.xcconfig */;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		C9FE52CA2A7525D300CACA1A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
-			baseConfigurationReferenceRelativePath = EditUITests.xcconfig;
+			baseConfigurationReference = C9D8C8532DB014CE0037FE3C /* EditUITests.xcconfig */;
 			buildSettings = {
 			};
 			name = Release;
 		};
 		C9FE52DB2A7532C700CACA1A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
-			baseConfigurationReferenceRelativePath = WorkaroundModule.xcconfig;
+			baseConfigurationReference = C9D8C85F2DB014CE0037FE3C /* WorkaroundModule.xcconfig */;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		C9FE52DC2A7532C700CACA1A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
-			baseConfigurationReferenceRelativePath = WorkaroundModule.xcconfig;
+			baseConfigurationReference = C9D8C85F2DB014CE0037FE3C /* WorkaroundModule.xcconfig */;
 			buildSettings = {
 			};
 			name = Release;
 		};
 		C9FE52FE2A7539B100CACA1A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
-			baseConfigurationReferenceRelativePath = Framework.xcconfig;
+			baseConfigurationReference = C9D8C8552DB014CE0037FE3C /* Framework.xcconfig */;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		C9FE52FF2A7539B100CACA1A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
-			baseConfigurationReferenceRelativePath = Framework.xcconfig;
+			baseConfigurationReference = C9D8C8552DB014CE0037FE3C /* Framework.xcconfig */;
 			buildSettings = {
 			};
 			name = Release;
 		};
 		C9FE53152A759ADA00CACA1A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
-			baseConfigurationReferenceRelativePath = WorkaroundModule.xcconfig;
+			baseConfigurationReference = C9D8C85F2DB014CE0037FE3C /* WorkaroundModule.xcconfig */;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		C9FE53162A759ADA00CACA1A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
-			baseConfigurationReferenceRelativePath = WorkaroundModule.xcconfig;
+			baseConfigurationReference = C9D8C85F2DB014CE0037FE3C /* WorkaroundModule.xcconfig */;
 			buildSettings = {
 			};
 			name = Release;
 		};
 		C9FE532A2A75A17700CACA1A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
-			baseConfigurationReferenceRelativePath = Module.xcconfig;
+			baseConfigurationReference = C9D8C8572DB014CE0037FE3C /* Module.xcconfig */;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		C9FE532B2A75A17700CACA1A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
-			baseConfigurationReferenceRelativePath = Module.xcconfig;
+			baseConfigurationReference = C9D8C8572DB014CE0037FE3C /* Module.xcconfig */;
 			buildSettings = {
 			};
 			name = Release;
 		};
 		C9FE53592A7660DF00CACA1A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
-			baseConfigurationReferenceRelativePath = WorkaroundModule.xcconfig;
+			baseConfigurationReference = C9D8C85F2DB014CE0037FE3C /* WorkaroundModule.xcconfig */;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		C9FE535A2A7660DF00CACA1A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
-			baseConfigurationReferenceRelativePath = WorkaroundModule.xcconfig;
+			baseConfigurationReference = C9D8C85F2DB014CE0037FE3C /* WorkaroundModule.xcconfig */;
 			buildSettings = {
 			};
 			name = Release;
 		};
 		C9FE53712A7661D400CACA1A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
-			baseConfigurationReferenceRelativePath = Module.xcconfig;
+			baseConfigurationReference = C9D8C8572DB014CE0037FE3C /* Module.xcconfig */;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		C9FE53722A7661D400CACA1A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
-			baseConfigurationReferenceRelativePath = Module.xcconfig;
+			baseConfigurationReference = C9D8C8572DB014CE0037FE3C /* Module.xcconfig */;
 			buildSettings = {
 			};
 			name = Release;
 		};
 		C9FE53812A7662DD00CACA1A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
-			baseConfigurationReferenceRelativePath = WorkaroundModule.xcconfig;
+			baseConfigurationReference = C9D8C85F2DB014CE0037FE3C /* WorkaroundModule.xcconfig */;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		C9FE53822A7662DD00CACA1A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
-			baseConfigurationReferenceRelativePath = WorkaroundModule.xcconfig;
+			baseConfigurationReference = C9D8C85F2DB014CE0037FE3C /* WorkaroundModule.xcconfig */;
 			buildSettings = {
 			};
 			name = Release;
 		};
 		C9FE53A22A76709D00CACA1A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
-			baseConfigurationReferenceRelativePath = WorkaroundModule.xcconfig;
+			baseConfigurationReference = C9D8C85F2DB014CE0037FE3C /* WorkaroundModule.xcconfig */;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		C9FE53A32A76709D00CACA1A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
-			baseConfigurationReferenceRelativePath = WorkaroundModule.xcconfig;
+			baseConfigurationReference = C9D8C85F2DB014CE0037FE3C /* WorkaroundModule.xcconfig */;
 			buildSettings = {
 			};
 			name = Release;
 		};
 		C9FE53CF2A77CC1F00CACA1A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
-			baseConfigurationReferenceRelativePath = Module.xcconfig;
+			baseConfigurationReference = C9D8C8572DB014CE0037FE3C /* Module.xcconfig */;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		C9FE53D02A77CC1F00CACA1A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
-			baseConfigurationReferenceRelativePath = Module.xcconfig;
+			baseConfigurationReference = C9D8C8572DB014CE0037FE3C /* Module.xcconfig */;
 			buildSettings = {
 			};
 			name = Release;
 		};
 		C9FE53E42A7A5A2A00CACA1A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
-			baseConfigurationReferenceRelativePath = Module.xcconfig;
+			baseConfigurationReference = C9D8C8572DB014CE0037FE3C /* Module.xcconfig */;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		C9FE53E52A7A5A2A00CACA1A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
-			baseConfigurationReferenceRelativePath = Module.xcconfig;
+			baseConfigurationReference = C9D8C8572DB014CE0037FE3C /* Module.xcconfig */;
 			buildSettings = {
 			};
 			name = Release;
 		};
 		C9FE53FB2A7A5EF900CACA1A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
-			baseConfigurationReferenceRelativePath = Utility.xcconfig;
+			baseConfigurationReference = C9D8C85E2DB014CE0037FE3C /* Utility.xcconfig */;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		C9FE53FC2A7A5EF900CACA1A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = C9D8C1FF2DAFF38A0037FE3C /* Configurations */;
-			baseConfigurationReferenceRelativePath = Utility.xcconfig;
+			baseConfigurationReference = C9D8C85E2DB014CE0037FE3C /* Utility.xcconfig */;
 			buildSettings = {
 			};
 			name = Release;
