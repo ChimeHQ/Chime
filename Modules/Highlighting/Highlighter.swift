@@ -1,4 +1,3 @@
-import AppKit
 import Foundation
 import UniformTypeIdentifiers
 
@@ -113,7 +112,7 @@ public final class Highlighter<Service: TokenService> {
 		)
 
 		self.invalidVisualizationAttrs = [
-			.backgroundColor: NSColor(red: 1.0, green: 0.0, blue: 0.1, alpha: 0.7)
+			.backgroundColor: PlatformColor(red: 1.0, green: 0.0, blue: 0.1, alpha: 0.7)
 		]
 
 		invalidatorBuffer.invalidationHandler = { [unowned self] target in

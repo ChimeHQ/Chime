@@ -1,4 +1,3 @@
-
 import ThemePark
 
 public typealias Query = ThemePark.Query
@@ -19,4 +18,14 @@ extension Query.Context {
 		self.init(controlState: .inactive, colorScheme: dark ? .dark : .light)
 	}
 }
+#else
+import UIKit
+
+extension Query.Context {
+	@MainActor
+	public init(window: UIWindow?) {
+		self.init(controlState: .inactive, colorScheme: .dark)
+	}
+}
+
 #endif

@@ -49,6 +49,8 @@
 		C95B913C2BD98CF1006FDD00 /* TextStory in Frameworks */ = {isa = PBXBuildFile; productRef = C95B913B2BD98CF1006FDD00 /* TextStory */; };
 		C95B913E2BD98D01006FDD00 /* SwiftTreeSitterLayer in Frameworks */ = {isa = PBXBuildFile; productRef = C95B913D2BD98D01006FDD00 /* SwiftTreeSitterLayer */; };
 		C95B913F2BD99328006FDD00 /* LanguageData in Resources */ = {isa = PBXBuildFile; fileRef = C9CDEB872B55B889009E252A /* LanguageData */; };
+		C95E7C3B2DE114960098F248 /* libHighlighting.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C973E0002B62BDB3000998F7 /* libHighlighting.a */; };
+		C95E7C3C2DE1149C0098F248 /* libTheme.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE53C82A77CC1E00CACA1A /* libTheme.a */; };
 		C9655F872D11A7A70008AED1 /* Dependencies in Frameworks */ = {isa = PBXBuildFile; productRef = C9655F862D11A7A70008AED1 /* Dependencies */; };
 		C9655F8F2D1205210008AED1 /* TextFormation in Frameworks */ = {isa = PBXBuildFile; productRef = C9655F8E2D1205210008AED1 /* TextFormation */; };
 		C96B61F22BDA708A00561DE8 /* libDocument.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE52D42A7532C700CACA1A /* libDocument.a */; };
@@ -257,6 +259,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = C973DFFF2B62BDB3000998F7;
 			remoteInfo = Highlighting;
+		};
+		C95E7C302DE0F4510098F248 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9FE52F32A7539B100CACA1A;
+			remoteInfo = ChimeKit;
 		};
 		C9655F982D1456B50008AED1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -895,6 +904,8 @@
 		C9439A742C3EC13A0020DDF5 /* Dependencies */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Dependencies; sourceTree = "<group>"; };
 		C9439A792C3EC4220020DDF5 /* ClojureExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.extensionkit-extension"; includeInIndex = 0; path = ClojureExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		C958C7802BC5A82900EC95F8 /* ConfigurationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationTests.swift; sourceTree = "<group>"; };
+		C95E7C392DE0F5440098F248 /* SourceView */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = SourceView; path = ../SourceView; sourceTree = SOURCE_ROOT; };
+		C95E7C3A2DE0F8C90098F248 /* IBeam */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = IBeam; path = ../IBeam; sourceTree = SOURCE_ROOT; };
 		C973E0002B62BDB3000998F7 /* libHighlighting.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libHighlighting.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C97640E62C40372C002C94BF /* RustExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.extensionkit-extension"; includeInIndex = 0; path = RustExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		C97640F22C403744002C94BF /* RustStandaloneExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RustStandaloneExtension.swift; sourceTree = "<group>"; };
@@ -1173,6 +1184,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C95E7C3C2DE1149C0098F248 /* libTheme.a in Frameworks */,
+				C95E7C3B2DE114960098F248 /* libHighlighting.a in Frameworks */,
 				C9D8C8042DB00AF10037FE3C /* libTextSystem.a in Frameworks */,
 				C9D8C8032DB00AD30037FE3C /* libUIUtility.a in Frameworks */,
 				C9D8C8002DB0026F0037FE3C /* TreeSitterParsers in Frameworks */,
@@ -1521,6 +1534,8 @@
 		C9FE52902A7525D000CACA1A = {
 			isa = PBXGroup;
 			children = (
+				C95E7C3A2DE0F8C90098F248 /* IBeam */,
+				C95E7C392DE0F5440098F248 /* SourceView */,
 				C9D8C8602DB014CE0037FE3C /* Configurations */,
 				C9439A742C3EC13A0020DDF5 /* Dependencies */,
 				C9FE529B2A7525D000CACA1A /* Edit */,
@@ -2188,6 +2203,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				C95E7C312DE0F4510098F248 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				C9D8C7E92DAFFF590037FE3C /* MultiplatformApp */,
@@ -3385,6 +3401,11 @@
 		C95B91322BD98C98006FDD00 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			productRef = C95B91312BD98C98006FDD00 /* SwiftTreeSitter */;
+		};
+		C95E7C312DE0F4510098F248 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9FE52F32A7539B100CACA1A /* ChimeKit */;
+			targetProxy = C95E7C302DE0F4510098F248 /* PBXContainerItemProxy */;
 		};
 		C9655F8D2D11F5A70008AED1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;

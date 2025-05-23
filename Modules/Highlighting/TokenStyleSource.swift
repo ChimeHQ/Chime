@@ -1,4 +1,4 @@
-import AppKit
+import NSUI
 
 import Theme
 import ThemePark
@@ -20,6 +20,7 @@ final class TokenStyleSource {
 	func tokenStyle(for name: String) -> [NSAttributedString.Key : Any] {
 		let style = theme.highlightsQueryCaptureStyle(for: name, context: context)
 
+		#if os(macOS)
 		// this is a hack to ensure we actually do this when necessary. It really is the responcibility of the theme.
 		switch name {
 		case "text.strong":
@@ -41,6 +42,7 @@ final class TokenStyleSource {
 		default:
 			break
 		}
+		#endif
 		return style.attributes
 	}
 }
