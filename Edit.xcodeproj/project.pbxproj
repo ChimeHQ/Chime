@@ -268,6 +268,41 @@
 			remoteGlobalIDString = C9FE52F32A7539B100CACA1A;
 			remoteInfo = ChimeKit;
 		};
+		C95E7D5B2DE11FFF0098F248 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9B8AA492B37055800C79606;
+			remoteInfo = SyntaxService;
+		};
+		C95E7D5D2DE120190098F248 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C973DFFF2B62BDB3000998F7;
+			remoteInfo = Highlighting;
+		};
+		C95E7D5F2DE120200098F248 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9FE53C72A77CC1E00CACA1A;
+			remoteInfo = Theme;
+		};
+		C95E7D612DE1202E0098F248 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9FE53222A75A17700CACA1A;
+			remoteInfo = UIUtility;
+		};
+		C95E7D632DE120390098F248 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9B8A9DC2B31E43800C79606;
+			remoteInfo = TextSystem;
+		};
 		C9655F982D1456B50008AED1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C9FE52912A7525D000CACA1A /* Project object */;
@@ -2201,6 +2236,11 @@
 			buildRules = (
 			);
 			dependencies = (
+				C95E7D642DE120390098F248 /* PBXTargetDependency */,
+				C95E7D622DE1202E0098F248 /* PBXTargetDependency */,
+				C95E7D602DE120200098F248 /* PBXTargetDependency */,
+				C95E7D5E2DE120190098F248 /* PBXTargetDependency */,
+				C95E7D5C2DE11FFF0098F248 /* PBXTargetDependency */,
 				C95E7C312DE0F4510098F248 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
@@ -3404,6 +3444,31 @@
 			isa = PBXTargetDependency;
 			target = C9FE52F32A7539B100CACA1A /* ChimeKit */;
 			targetProxy = C95E7C302DE0F4510098F248 /* PBXContainerItemProxy */;
+		};
+		C95E7D5C2DE11FFF0098F248 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9B8AA492B37055800C79606 /* SyntaxService */;
+			targetProxy = C95E7D5B2DE11FFF0098F248 /* PBXContainerItemProxy */;
+		};
+		C95E7D5E2DE120190098F248 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C973DFFF2B62BDB3000998F7 /* Highlighting */;
+			targetProxy = C95E7D5D2DE120190098F248 /* PBXContainerItemProxy */;
+		};
+		C95E7D602DE120200098F248 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9FE53C72A77CC1E00CACA1A /* Theme */;
+			targetProxy = C95E7D5F2DE120200098F248 /* PBXContainerItemProxy */;
+		};
+		C95E7D622DE1202E0098F248 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9FE53222A75A17700CACA1A /* UIUtility */;
+			targetProxy = C95E7D612DE1202E0098F248 /* PBXContainerItemProxy */;
+		};
+		C95E7D642DE120390098F248 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9B8A9DC2B31E43800C79606 /* TextSystem */;
+			targetProxy = C95E7D632DE120390098F248 /* PBXContainerItemProxy */;
 		};
 		C9655F8D2D11F5A70008AED1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
