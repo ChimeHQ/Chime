@@ -7,7 +7,7 @@
 </div>
 
 # Chime
-An editor for macOS
+An editor for macOS (with in iOS and visionOS in the works)
 
 An alpha of 3.0 is available in [releases][releases]. The more stable, but closed-source 2.x version is available on the [website][download].
 
