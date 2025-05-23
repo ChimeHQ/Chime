@@ -33,7 +33,10 @@ public final class TextDocument: ContainedDocument<Project> {
 		self.coordinator = DocumentCoordinator(statusBarVisible: true)
 		self.state = DocumentState(contentId: coordinator.textSystem.contentIdentity)
 
-		self.windowModel = WindowStateModel(context: state.context, themeStore: ProjectDocumentController.sharedController.themeStore)
+		self.windowModel = WindowStateModel(
+			context: state.context,
+			themeStore: ProjectDocumentController.sharedController.themeStore
+		)
 
 	    super.init()
 

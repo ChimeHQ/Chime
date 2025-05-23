@@ -4,6 +4,7 @@ import Quartz
 
 import ChimeKit
 import Editor
+import SyntaxService
 import Theme
 import UIUtility
 

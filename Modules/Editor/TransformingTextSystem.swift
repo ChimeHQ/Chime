@@ -1,3 +1,4 @@
+import Borderline
 import DocumentContent
 import IBeam
 import NSUI
@@ -20,10 +21,16 @@ struct TextFormationInterface<Interface: IBeam.TextSystemInterface>
 {
 	let ibeamInterface: Interface
 	let substringProvider: (TextRange) throws -> String
+	let whitespaceCalculator: WhitespaceCalculator
 
-	init(ibeamInterface: Interface, substringProvider: @escaping (TextRange) throws -> String) {
+	init(
+		ibeamInterface: Interface,
+		substringProvider: @escaping (TextRange) throws -> String,
+		whitespaceCalculator: WhitespaceCalculator
+	) {
 		self.ibeamInterface = ibeamInterface
 		self.substringProvider = substringProvider
+		self.whitespaceCalculator = whitespaceCalculator
 	}
 }
 
@@ -35,7 +42,7 @@ extension TextFormationInterface: @preconcurrency TextFormation.TextSystemInterf
 		ibeamInterface.endOfDocument
 	}
 	
-	func substring(in range: TextRange) throws -> String {
+	func substring(in range: TextRange) throws -> String? {
 		try substringProvider(range)
 	}
 
@@ -48,8 +55,11 @@ extension TextFormationInterface: @preconcurrency TextFormation.TextSystemInterf
 	}
 
 	func applyWhitespace(for position: TextPosition, in direction: Direction) -> Output? {
-		// this is a no-op
-		Output(selection: NSRange(position..<position), delta: 0)
+		whitespaceCalculator.applyWhitespace(for: position, in: direction)
+	}
+	
+	func whitespaceTextRange(at position: Position, in direction: Direction) -> TextRange? {
+		whitespaceCalculator.whitespaceTextRange(at: position, in: direction)
 	}
 }
 
@@ -151,15 +161,22 @@ extension IbeamStorageInterface: @preconcurrency IBeam.TextSystemInterface {
 
 @MainActor
 final class TransformingTextSystem<Version> {
+	typealias TextFormationInterfaceType = TextFormationInterface<IbeamStorageInterface<Version>>
+	
 	private let ibeamInterface: IbeamStorageInterface<Version>
-	private let textFormationInterface: TextFormationInterface<IbeamStorageInterface<Version>>
-	public var filter: (any NewFilter)?
+	private let textFormationInterface: TextFormationInterfaceType
+	public var filter: (any Filter<TextFormationInterfaceType>)?
 
-	init(textView: NSUITextView, storage: TextStorage<Version>) {
+	init(
+		textView: NSUITextView,
+		storage: TextStorage<Version>,
+		whitespaceCalculator: WhitespaceCalculator
+	) {
 		self.ibeamInterface = IbeamStorageInterface(textView: textView, storage: storage)
-		self.textFormationInterface = TextFormationInterface(
+		self.textFormationInterface = TextFormationInterfaceType(
 			ibeamInterface: ibeamInterface,
-			substringProvider: { [storage] in try storage.substring(with: $0) }
+			substringProvider: { [storage] in try storage.substring(with: $0) },
+			whitespaceCalculator: whitespaceCalculator
 		)
 	}
 }
@@ -210,8 +227,9 @@ extension TransformingTextSystem: @preconcurrency IBeam.TextSystemInterface {
 
 	func applyMutation(_ range: TextRange, string: AttributedString) -> IBeam.MutationOutput<TextRange>? {
 		let attrString = NSAttributedString(string)
+		let mutation = TextMutation(range: range, interface: textFormationInterface, string: attrString.string)
 
-		if let output = try? filter?.processMutation(range, string: attrString.string, in: textFormationInterface) {
+		if let output = try? filter?.processMutation(mutation) {
 			return IBeam.MutationOutput(selection: output.selection, delta: output.delta)
 		}
 

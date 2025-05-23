@@ -112,8 +112,12 @@ public final class TextMetricsCalculator {
 			isolation: MainActor.shared,
 			rangeProcessor: rangeProcessor,
 			inputTransformer: transformQuery,
-			syncValue: { _ in
-				self.metrics
+			syncValue: { [rangeProcessor] _ in
+				if rangeProcessor.hasPendingChanges {
+					return nil
+				}
+				
+				return self.metrics
 			},
 			asyncValue: { _ in
 				self.metrics
@@ -173,10 +177,28 @@ extension TextMetricsCalculator {
 		let includeLastLine = affectedRange.max == limit
 		let version = storage.currentVersion
 		let length = storage.currentLength
+		let replacementRange = replacementLower..<replacementUpper
 		
-		// this is currently always async, but it could potentially be conditional on the size of edit
+		// do this synchronously if small enough (totally unscientific number here)
+		if affectedRange.length < 512 {
+			let weightedValues = parseLines(
+				in: substring,
+				indexOffset: indexOffset,
+				locationOffset: affectedRange.location,
+				includeLastLine: includeLastLine
+			)
+			
+			self.metrics.lineList.replaceSubrange(replacementRange, with: weightedValues)
+			completion()
+			self.metrics.storageLength = length
+			self.metrics.storageVersion = version
+			
+			publishAffectedRange(affectedRange, length: length)
+
+			return
+		}
+		
 		Task {
-			let replacementRange = replacementLower..<replacementUpper
 			async let weightedValues = parseLines(
 				in: substring,
 				indexOffset: indexOffset,

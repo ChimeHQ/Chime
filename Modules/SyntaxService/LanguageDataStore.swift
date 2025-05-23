@@ -13,8 +13,6 @@ extension UTType {
 /// A store for all language information.
 @MainActor
 public final class LanguageDataStore {
-	public static let global = LanguageDataStore()
-	
 	private var configurationCache = [UTType : LanguageConfiguration]()
 	private var profileCache: [UTType : LanguageProfile]
 	private var loadingSet = Set<String>()

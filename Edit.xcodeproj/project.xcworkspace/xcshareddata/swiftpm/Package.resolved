@@ -1,5 +1,5 @@
 {
-  "originHash" : "d7f0c52aa02097b70f029eb1b0bc3c31164810f97a0153a9d186fbc2d21e2bf1",
+  "originHash" : "c74104d194138fe9160ee05d5a775dc7001c71a7fe36e5c28a427078738dbd82",
   "pins" : [
     {
       "identity" : "asyncxpcconnection",
@@ -8,15 +8,6 @@
       "state" : {
         "revision" : "d7f6ec40d9f050fef87c25ab67ba5f626e4d4dee",
         "version" : "1.1.0"
-      }
-    },
-    {
-      "identity" : "borderline",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/ChimeHQ/Borderline",
-      "state" : {
-        "branch" : "main",
-        "revision" : "2d5117e883a382c125feb34e962889035561f7a1"
       }
     },
     {
@@ -272,15 +263,6 @@
       "location" : "https://github.com/ChimeHQ/Textbook",
       "state" : {
         "revision" : "a70d9cd0b7da1878e1db448283b431834fd00376"
-      }
-    },
-    {
-      "identity" : "textformation",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/ChimeHQ/TextFormation",
-      "state" : {
-        "branch" : "feature/process-mutation",
-        "revision" : "7b9add7d16e538ca5bd4b599e20347e9025fd440"
       }
     },
     {

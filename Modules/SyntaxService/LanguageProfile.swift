@@ -1,7 +1,6 @@
 import Foundation
 
 import SwiftTreeSitter
-import TextFormation
 
 enum LanguageProfileError: Error {
 	case treeSitterUnsupported
@@ -12,32 +11,28 @@ public struct LanguageProfile {
 	public let name: String
 	public let language: SwiftTreeSitter.Language?
 	public let bundleName: String?
-	public let mutationFilter: NewFilter
 
-	public init(name: String, language: SwiftTreeSitter.Language?, bundleName: String?, mutationFilter: NewFilter) {
+	public init(name: String, language: SwiftTreeSitter.Language?, bundleName: String?) {
 		self.name = name
 		self.language = language
 		self.bundleName = bundleName
-		self.mutationFilter = mutationFilter
 	}
 
-	public init(name: String, language: SwiftTreeSitter.Language?, mutationFilter: NewFilter) {
+	public init(name: String, language: SwiftTreeSitter.Language?) {
 		let bundleName = "TreeSitter\(name)_TreeSitter\(name)"
 
 		self.name = name
 		self.language = language
 		self.bundleName = bundleName
-		self.mutationFilter = mutationFilter
 	}
 
-	public init(_ rootLanguage: RootLanguage, language: SwiftTreeSitter.Language?, mutationFilter: NewFilter) {
+	public init(_ rootLanguage: RootLanguage, language: SwiftTreeSitter.Language?) {
 		let name = rootLanguage.rawValue
 		let bundleName = "TreeSitter\(name)_TreeSitter\(name)"
 
 		self.name = name
 		self.language = language
 		self.bundleName = bundleName
-		self.mutationFilter = mutationFilter
 	}
 }
 
@@ -89,4 +84,3 @@ extension LanguageProfile {
 			.appending(component: "Contents/Resources/queries", directoryHint: .isDirectory)
 	}
 }
-

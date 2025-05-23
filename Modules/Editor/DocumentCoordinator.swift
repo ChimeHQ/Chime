@@ -10,14 +10,20 @@ import TextSystem
 import Theme
 
 @MainActor
+public let sharedLanguageStore = LanguageDataStore()
+
+@MainActor
 public final class DocumentCoordinator<Service: TokenService> {
 	typealias CursorTextSystem = TransformingTextSystem<TextViewSystem.Version>
-
-	private let syntaxService: SyntaxService
-	private let layoutBuffer = LayoutInvalidationBuffer()
-	private let sourceViewController = SourceViewController()
+	typealias FilterTextSystem = CursorTextSystem.TextFormationInterfaceType
+	
 	private let cursorCoordinator: TextSystemCursorCoordinator<CursorTextSystem>
-	private let languageDataStore = LanguageDataStore.global
+	private let languageDataStore: LanguageDataStore = sharedLanguageStore
+	private let layoutBuffer = LayoutInvalidationBuffer()
+	private let mutationFilterStore = MutationFilterStore<FilterTextSystem>()
+	private let sourceViewController = SourceViewController()
+	private let syntaxService: SyntaxService
+	private let whitespaceCalculator: WhitespaceCalculator
 	
 	public let textSystem: TextViewSystem
 	public let highlighter: Highlighter<Service>
@@ -34,7 +40,8 @@ public final class DocumentCoordinator<Service: TokenService> {
 
 		self.syntaxService = SyntaxService(textSystem: textSystem, languageDataStore: languageDataStore)
 		self.highlighter = Highlighter(textSystem: textSystem, syntaxService: syntaxService)
-
+		self.whitespaceCalculator = WhitespaceCalculator(textSystem: textSystem)
+		
 		let monitors = [
 			textSystem.storageMonitor,
 			syntaxService.storageMonitor,
@@ -45,7 +52,11 @@ public final class DocumentCoordinator<Service: TokenService> {
 			.relaying(to: monitors)
 
 		let sourceView = sourceViewController.sourceView
-		let cursorTextSystem = CursorTextSystem(textView: sourceView, storage: storage)
+		let cursorTextSystem = CursorTextSystem(
+			textView: sourceView,
+			storage: storage,
+			whitespaceCalculator: whitespaceCalculator
+		)
 
 		self.cursorCoordinator = TextSystemCursorCoordinator(
 			textView: sourceView,
@@ -89,17 +100,18 @@ public final class DocumentCoordinator<Service: TokenService> {
 		}
 
 		// default to something sensible
-		updateMutationFilter(with: .plainText)
+		updateTextProcessing(with: .plainText)
 	}
 
 	public func documentContextChanged(from oldContext: DocumentContext, to newContext: DocumentContext) {
 		syntaxService.documentContextChanged(from: oldContext, to: newContext)
 		highlighter.documentContextChanged(from: oldContext, to: newContext)
 
-		updateMutationFilter(with: newContext.uti)
+		updateTextProcessing(with: newContext.uti)
 	}
 
-	private func updateMutationFilter(with uti: UTType) {
-		cursorCoordinator.cursorState.textSystem.filter = languageDataStore.profile(for: uti).mutationFilter
+	private func updateTextProcessing(with uti: UTType) {
+		cursorCoordinator.cursorState.textSystem.filter = mutationFilterStore.filter(for: uti)
+		whitespaceCalculator
 	}
 }

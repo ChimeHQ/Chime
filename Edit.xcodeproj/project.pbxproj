@@ -958,6 +958,8 @@
 		C9891B352AFFF1F700C8F393 /* libGutter.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libGutter.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C995EA742C3ED52900D3ED4C /* ClojureStandaloneExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClojureStandaloneExtension.swift; sourceTree = "<group>"; };
 		C99A8DF82C40011100D8F599 /* PythonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PythonExtension.swift; path = "submodules/chime-python/Sources/ChimePython/PythonExtension.swift"; sourceTree = SOURCE_ROOT; };
+		C9ACB61F2DCF902500E31CC3 /* TextFormation */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = TextFormation; path = ../TextFormation; sourceTree = SOURCE_ROOT; };
+		C9ACB6262DD107A400E31CC3 /* Borderline */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Borderline; path = ../Borderline; sourceTree = SOURCE_ROOT; };
 		C9B8A9802B1B836C00C79606 /* TextMetricsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextMetricsTests.swift; sourceTree = "<group>"; };
 		C9B8A9DD2B31E43800C79606 /* libTextSystem.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTextSystem.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9B8AA182B362DDE00C79606 /* ChimeQuickLookPreview.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ChimeQuickLookPreview.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1569,6 +1571,8 @@
 		C9FE52902A7525D000CACA1A = {
 			isa = PBXGroup;
 			children = (
+				C9ACB61F2DCF902500E31CC3 /* TextFormation */,
+				C9ACB6262DD107A400E31CC3 /* Borderline */,
 				C9D8C8602DB014CE0037FE3C /* Configurations */,
 				C9439A742C3EC13A0020DDF5 /* Dependencies */,
 				C9FE529B2A7525D000CACA1A /* Edit */,

@@ -35,8 +35,13 @@ extension RootLanguage: AppEnum {
 }
 
 enum HighlightIntentError: Error {
+
+	
+
+
 	case languageConfigurationUnavailable
 }
+
 
 struct HighlightIntent: AppIntent {
 	nonisolated static let title: LocalizedStringResource = "Highlight Source Code"
@@ -56,7 +61,7 @@ struct HighlightIntent: AppIntent {
 	@MainActor
 	func perform() async throws -> some IntentResult & ReturnsValue<AttributedString> {
 		let theme = ThemeStore.currentTheme ?? Theme.fallback
-		let store = LanguageDataStore.global
+		let store = LanguageDataStore()
 		guard let rootConfig = try await store.loadLanguageConfiguration(with: language.typeIdentifier) else {
 			throw HighlightIntentError.languageConfigurationUnavailable
 		}

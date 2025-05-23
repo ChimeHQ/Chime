@@ -17,4 +17,3 @@ final class ConfigurationTests: XCTestCase {
 		XCTAssert(string.contains(currentYear))
 	}
 }
-
