@@ -35,13 +35,8 @@ extension RootLanguage: AppEnum {
 }
 
 enum HighlightIntentError: Error {
-
-	
-
-
 	case languageConfigurationUnavailable
 }
-
 
 struct HighlightIntent: AppIntent {
 	nonisolated static let title: LocalizedStringResource = "Highlight Source Code"
