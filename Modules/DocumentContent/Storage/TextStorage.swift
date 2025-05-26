@@ -76,8 +76,14 @@ extension TextStorage where Version : AdditiveArithmetic {
 		let compositeMonitor = TextStorageMonitor(monitors: monitors)
 		
 		return .init(
-			beginEditing: compositeMonitor.willBeginEditing,
-			endEditing: compositeMonitor.didEndEditing,
+			beginEditing: {
+				compositeMonitor.willBeginEditing()
+				self.beginEditing()
+			},
+			endEditing: {
+				self.endEditing()
+				compositeMonitor.didEndEditing()
+			},
 			applyMutation: {
 				compositeMonitor.willApplyMutation($0)
 
