@@ -18,9 +18,8 @@ final class MutationFilterStore<Interface: TextFormation.TextSystemInterface> {
 
 extension MutationFilterStore {
 	private static func genericFilter() -> any Filter<Interface> {
-		let parenFilter = StandardOpenPairFilter<Interface>(open: "(", close: ")")
-		let newlineFilter = NewlineProcessingFilter<Interface>()
+		let filters: [any Filter<Interface>] = LanguageFilters.generic()
 
-		return CompositeFilter(filters: [parenFilter, newlineFilter])
+		return CompositeFilter(filters: filters)
 	}
 }

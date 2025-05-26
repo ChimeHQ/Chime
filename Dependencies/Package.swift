@@ -47,7 +47,7 @@ let package = Package(
 		.package(url: "https://github.com/ChimeHQ/Neon", branch: "main"),
 		.package(url: "https://github.com/ChimeHQ/RelativeCollections", branch: "main"),
 		.package(url: "https://github.com/ChimeHQ/SourceView", branch: "main"),
-		.package(url: "https://github.com/ChimeHQ/TextFormation", branch: "feature/process-mutation")
+		.package(url: "https://github.com/ChimeHQ/TextFormation", branch: "main")
 	],
 	targets: [
 		.target(

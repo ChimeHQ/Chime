@@ -57,14 +57,20 @@ extension WhitespaceCalculator {
 	
 	func applyWhitespace(for position: TextPosition, in direction: Direction) -> Output? {
 		guard
-			direction == .leading, // ignore trailing for now
 			let metrics = metrics(for: position),
 			let line = metrics.line(for: position),
 			let precedingLine = metrics.line(at: line.index - 1)
 		else {
 			return nil
 		}
-		
+
+		// no-op trialing whitespace
+		if direction == .trailing {
+			return Output(selection: line.range(of: .trailingWhitespace), delta: 0)
+		}
+
+		let indentationUnit = "\t"
+
 		do {
 			let currentContent = try textSystem.storage.substring(with: line.range(of: .content))
 			let precedingContent = try textSystem.storage.substring(with: precedingLine.range(of: .content))
@@ -80,7 +86,6 @@ extension WhitespaceCalculator {
 				context: context
 			)
 			
-			// TODO: the problem is this range corresponds to a whole line, not just whitespace
 			let range = indentation.range
 			let whitespace = try textSystem.storage.substring(with: range)
 			let leadingRange = line.range(of: .leadingWhitespace)
@@ -88,12 +93,17 @@ extension WhitespaceCalculator {
 			switch indentation {
 			case .relativeIncrease:
 				// very wrong
-				let newWhitespace = whitespace + "\t"
+				let newWhitespace = whitespace + indentationUnit
 				let mutation = TextStorageMutation(range: leadingRange, string: newWhitespace)
 				
 				textSystem.storage.applyMutation(mutation)
-				
-				return Output(selection: leadingRange, delta: mutation.delta)
+
+				// the line information is now stale
+				guard let selection = leadingRange.shifted(by: indentationUnit.utf8.count) else {
+					preconditionFailure()
+				}
+
+				return Output(selection: selection, delta: mutation.delta)
 			case .relativeDecrease:
 				// TODO: make this work
 				break
