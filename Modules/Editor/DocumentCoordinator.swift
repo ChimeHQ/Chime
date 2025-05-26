@@ -112,6 +112,9 @@ public final class DocumentCoordinator<Service: TokenService> {
 
 	private func updateTextProcessing(with uti: UTType) {
 		cursorCoordinator.cursorState.textSystem.filter = mutationFilterStore.filter(for: uti)
-		whitespaceCalculator
+	}
+
+	public func refresh() {
+		highlighter.invalidate(.all)
 	}
 }

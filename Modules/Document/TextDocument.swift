@@ -192,3 +192,9 @@ extension TextDocument {
 		coordinator.highlighter.updateTheme(theme, context: context)
 	}
 }
+
+extension TextDocument {
+	@IBAction func refresh(_ sender: Any?) {
+		coordinator.refresh()
+	}
+}
