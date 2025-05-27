@@ -46,20 +46,20 @@ extension TextFormationInterface: @preconcurrency TextFormation.TextSystemInterf
 		try substringProvider(range)
 	}
 
-	func applyMutation(_ range: TextRange, string: String) -> Output? {
+	func applyMutation(_ range: TextRange, string: String) throws -> Output {
 		let attrString = AttributedString(string)
 
-		return ibeamInterface
-			.applyMutation(range, string: attrString)
-			.map { Output($0) }
+		let output = try ibeamInterface.applyMutation(range, string: attrString)
+		
+		return Output(output)
 	}
 
-	func applyWhitespace(for position: TextPosition, in direction: Direction) -> Output? {
-		whitespaceCalculator.applyWhitespace(for: position, in: direction)
-	}
-	
 	func whitespaceTextRange(at position: Position, in direction: Direction) -> TextRange? {
 		whitespaceCalculator.whitespaceTextRange(at: position, in: direction)
+	}
+
+	func whitespaceMutation(for position: Position, in direction: Direction) throws -> RangedString<TextRange>? {
+		try whitespaceCalculator.whitespaceMutation(for: position, in: direction)
 	}
 }
 
@@ -127,7 +127,7 @@ extension IbeamStorageInterface: @preconcurrency IBeam.TextSystemInterface {
 		ibeamViewSystem.textRange(from: start, to: end)
 	}
 
-	func applyMutation(_ range: TextRange, string: NSAttributedString) -> IBeam.MutationOutput<TextRange>? {
+	func applyMutation(_ range: TextRange, string: NSAttributedString) throws -> IBeam.MutationOutput<TextRange> {
 		// ibeamViewSystem has an implementation of applyMutation, but we need to do in terms of our storage
 		let plainString = string.string
 		let length = plainString.utf16.count
@@ -142,7 +142,7 @@ extension IbeamStorageInterface: @preconcurrency IBeam.TextSystemInterface {
 		)
 
 		undoManager?.registerMainActorUndo(withTarget: self) { target in
-			_ = target.applyMutation(inverseRange, string: NSAttributedString(string: existingString))
+			_ = try! target.applyMutation(inverseRange, string: NSAttributedString(string: existingString))
 		}
 
 		storage.applyMutation(mutation)
@@ -154,8 +154,8 @@ extension IbeamStorageInterface: @preconcurrency IBeam.TextSystemInterface {
 		return MutationOutput<NSRange>(selection: newSelection, delta: delta)
 	}
 
-	func applyMutation(_ range: TextRange, string: AttributedString) -> IBeam.MutationOutput<TextRange>? {
-		applyMutation(range, string: NSAttributedString(string))
+	func applyMutation(_ range: TextRange, string: AttributedString) throws -> IBeam.MutationOutput<TextRange> {
+		try applyMutation(range, string: NSAttributedString(string))
 	}
 }
 
@@ -225,15 +225,15 @@ extension TransformingTextSystem: @preconcurrency IBeam.TextSystemInterface {
 		ibeamInterface.textRange(from: start, to: end)
 	}
 
-	func applyMutation(_ range: TextRange, string: AttributedString) -> IBeam.MutationOutput<TextRange>? {
+	func applyMutation(_ range: TextRange, string: AttributedString) throws -> IBeam.MutationOutput<TextRange> {
 		let attrString = NSAttributedString(string)
 		let mutation = TextMutation(range: range, interface: textFormationInterface, string: attrString.string)
 
-		if let output = try? filter?.processMutation(mutation) {
+		if let output = try filter?.processMutation(mutation) {
 			return IBeam.MutationOutput(selection: output.selection, delta: output.delta)
 		}
 
 		// fall back to just applying the mutation
-		return ibeamInterface.applyMutation(range, string: attrString)
+		return try ibeamInterface.applyMutation(range, string: attrString)
 	}
 }

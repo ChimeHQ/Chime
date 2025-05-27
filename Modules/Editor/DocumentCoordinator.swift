@@ -40,8 +40,7 @@ public final class DocumentCoordinator<Service: TokenService> {
 
 		self.syntaxService = SyntaxService(textSystem: textSystem, languageDataStore: languageDataStore)
 		self.highlighter = Highlighter(textSystem: textSystem, syntaxService: syntaxService)
-		self.whitespaceCalculator = WhitespaceCalculator(textSystem: textSystem)
-		
+
 		let monitors = [
 			textSystem.storageMonitor,
 			syntaxService.storageMonitor,
@@ -50,6 +49,8 @@ public final class DocumentCoordinator<Service: TokenService> {
 
 		let storage = textSystem.storage
 			.relaying(to: monitors)
+
+		self.whitespaceCalculator = WhitespaceCalculator(textSystem: textSystem, storage: storage)
 
 		let sourceView = sourceViewController.sourceView
 		let cursorTextSystem = CursorTextSystem(

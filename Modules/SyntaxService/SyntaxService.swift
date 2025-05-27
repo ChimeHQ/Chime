@@ -146,7 +146,6 @@ extension SyntaxService {
 					return nil
 				}
 
-
 				do {
 					let queryParams = try self.highlightsQueryParams(for: range)
 					guard let namedRanges = try client.highlightsProvider.sync(queryParams) else {

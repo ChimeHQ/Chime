@@ -2,6 +2,7 @@ import Foundation
 
 import Borderline
 import DocumentContent
+import Rearrange
 import TextFormation
 import TextSystem
 
@@ -16,16 +17,6 @@ extension Line where TextPosition == Int {
 	}
 }
 
-//extension TextualContext.Line where TextRange == NSRange {
-//	init(line: Line<Int>, storage: TextStorage<Int>) throws {
-//		let range = line.range(of: .full)
-//		let contentRange = line.range(of: .content)
-//		let content = try storage.substring(with: contentRange)
-//		
-//		self.init(range: range, nonwhitespaceContent: content)
-//	}
-//}
-
 @MainActor
 final class WhitespaceCalculator {
 	typealias TextPosition = Int
@@ -34,10 +25,12 @@ final class WhitespaceCalculator {
 	
 	let textSystem: TextViewSystem
 	let textualIndenter: TextualIndenter<TextRange>
-	
-	init(textSystem: TextViewSystem) {
+	let storage: TextStorage<TextViewSystem.Version>
+
+	init(textSystem: TextViewSystem, storage: TextStorage<TextViewSystem.Version>) {
 		self.textSystem = textSystem
 		self.textualIndenter = TextualIndenter()
+		self.storage = storage
 	}
 	
 	private func metrics(for position: TextPosition) -> TextMetrics? {
@@ -54,8 +47,8 @@ extension WhitespaceCalculator {
 			.line(for: position)?
 			.whitespaceRange(in: direction)
 	}
-	
-	func applyWhitespace(for position: TextPosition, in direction: Direction) -> Output? {
+
+	func whitespaceMutation(for position: TextPosition, in direction: Direction) throws -> RangedString<TextRange>? {
 		guard
 			let metrics = metrics(for: position),
 			let line = metrics.line(for: position),
@@ -64,60 +57,42 @@ extension WhitespaceCalculator {
 			return nil
 		}
 
-		// no-op trialing whitespace
+		// no-op trailing whitespace
 		if direction == .trailing {
-			return Output(selection: line.range(of: .trailingWhitespace), delta: 0)
+			let trailingRange = line.range(of: .trailingWhitespace)
+
+			return RangedString<TextRange>(
+				range: NSRange(trailingRange.upperBound..<trailingRange.upperBound),
+				string: ""
+			)
 		}
 
 		let indentationUnit = "\t"
+		let width = 4
 
-		do {
-			let currentContent = try textSystem.storage.substring(with: line.range(of: .content))
-			let precedingContent = try textSystem.storage.substring(with: precedingLine.range(of: .content))
-			
-			let context = TextualContext<TextRange>(
-				current: currentContent,
-				preceding: precedingContent,
-				precedingLeadingWhitespaceRange: precedingLine.range(of: .leadingWhitespace)
-			)
-			
-			let indentation = try textualIndenter.computeIndentation(
-				at: position,
-				context: context
-			)
-			
-			let range = indentation.range
-			let whitespace = try textSystem.storage.substring(with: range)
-			let leadingRange = line.range(of: .leadingWhitespace)
-			
-			switch indentation {
-			case .relativeIncrease:
-				// very wrong
-				let newWhitespace = whitespace + indentationUnit
-				let mutation = TextStorageMutation(range: leadingRange, string: newWhitespace)
-				
-				textSystem.storage.applyMutation(mutation)
+		let currentContent = try storage.substring(with: line.range(of: .content))
+		let precedingContent = try storage.substring(with: precedingLine.range(of: .content))
 
-				// the line information is now stale
-				guard let selection = leadingRange.shifted(by: indentationUnit.utf8.count) else {
-					preconditionFailure()
-				}
+		let context = TextualContext<TextRange>(
+			current: currentContent,
+			preceding: precedingContent,
+			precedingLeadingWhitespaceRange: precedingLine.range(of: .leadingWhitespace)
+		)
 
-				return Output(selection: selection, delta: mutation.delta)
-			case .relativeDecrease:
-				// TODO: make this work
-				break
-			case .equal:
-				let mutation = TextStorageMutation(range: leadingRange, string: whitespace)
-				
-				textSystem.storage.applyMutation(mutation)
-				
-				return Output(selection: leadingRange, delta: mutation.delta)
-			}
-		} catch {
-			print("failed to compute indentation:", error)
-		}
-		
-		return nil
+		let indentation = try textualIndenter.computeIndentation(
+			at: position,
+			context: context
+		)
+
+		let range = indentation.range
+		let whitespace = try storage.substring(with: range)
+		let leadingRange = line.range(of: .leadingWhitespace)
+
+		let newWhitespace = indentation.apply(to: whitespace, indentationUnit: indentationUnit, width: width)
+
+		return RangedString(
+			range: leadingRange,
+			string: newWhitespace
+		)
 	}
 }
