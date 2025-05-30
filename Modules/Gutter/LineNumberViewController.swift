@@ -251,7 +251,8 @@ extension LineNumberViewController {
 			let background = backgroundForLine(line)
 			let firstFragment = range.lowerBound == lines[lineIndex].lowerBound
 
-			let labelString = firstFragment ? "\(line.index)" : "•"
+			let number = line.index + 1
+			let labelString = firstFragment ? "\(number)" : "•"
 
 			let label = NSAttributedString(string: labelString, attributes: style)
 			let fragmentRegion = Region(position: fragment.bounds.minY, size: fragment.bounds.height)
