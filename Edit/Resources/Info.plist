@@ -68,6 +68,21 @@
 	<key>UTImportedTypeDeclarations</key>
 	<array>
 		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.text</string>
+			</array>
+			<key>UTTypeIdentifier</key>
+			<string>public.css</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>css</string>
+				</array>
+			</dict>
+		</dict>
+		<dict>
 			<key>UTTypeDescription</key>
 			<string>Elixir Source</string>
 			<key>UTTypeConformsTo</key>
