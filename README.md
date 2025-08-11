@@ -108,7 +108,7 @@ Chime is a reasonably complex project. It's bound to run into bugs in Apple fram
 - FB12094161: System Settings extension approval system does not appear to work
 - FB11716027: EXAppExtensionBrowserViewController duplicate apps
 - FB11748287: Static metadata for extension available in AppExtensionIdentity
-- FB14262567: Dupilcate entries for static libraries that link against SPM modules
+- FB14262567: Duplicate entries for static libraries that link against SPM modules
 
 ## Other Notable Projects
 
