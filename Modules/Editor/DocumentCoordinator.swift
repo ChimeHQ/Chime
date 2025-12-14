@@ -5,26 +5,37 @@ import ChimeKit
 import DocumentContent
 import Highlighting
 import IBeam
+import SourceView
 import SyntaxService
+import TextFormation
 import TextSystem
 import Theme
 
-@MainActor
-public let sharedLanguageStore = LanguageDataStore()
+final class DocumentFilterProvider {
+	let filterStore: MutationFilterStore<TextFormationInterfaceAdapter>
+	var uti: UTType
+
+	init(filterStore: MutationFilterStore<TextFormationInterfaceAdapter>, uti: UTType) {
+		self.filterStore = filterStore
+		self.uti = uti
+	}
+
+	func createFilter() -> any Filter<TextFormationInterfaceAdapter> {
+		return filterStore.filter(for: uti) ?? CompositeFilter(filters: [])
+	}
+}
 
 @MainActor
 public final class DocumentCoordinator<Service: TokenService> {
-	typealias CursorTextSystem = TransformingTextSystem<TextViewSystem.Version>
-	typealias FilterTextSystem = CursorTextSystem.TextFormationInterfaceType
-	
-	private let cursorCoordinator: TextSystemCursorCoordinator<CursorTextSystem>
-	private let languageDataStore: LanguageDataStore = sharedLanguageStore
+	private let cursorCoordinator: TextSystemCursorCoordinator<IBeamInterfaceAdapter>
+	private let languageDataStore: LanguageDataStore = LanguageDataStore()
 	private let layoutBuffer = LayoutInvalidationBuffer()
-	private let mutationFilterStore = MutationFilterStore<FilterTextSystem>()
+	private let mutationFilterStore = MutationFilterStore<TextFormationInterfaceAdapter>()
+	private let filterProvider: DocumentFilterProvider
 	private let sourceViewController = SourceViewController()
 	private let syntaxService: SyntaxService
 	private let whitespaceCalculator: WhitespaceCalculator
-	
+
 	public let textSystem: TextViewSystem
 	public let highlighter: Highlighter<Service>
 	public let editorContentController: EditorContentViewController
@@ -53,15 +64,21 @@ public final class DocumentCoordinator<Service: TokenService> {
 		self.whitespaceCalculator = WhitespaceCalculator(textSystem: textSystem, storage: storage)
 
 		let sourceView = sourceViewController.sourceView
-		let cursorTextSystem = CursorTextSystem(
+
+		let filterProvider = DocumentFilterProvider(filterStore: mutationFilterStore, uti: .plainText)
+
+		let adapter = IBeamInterfaceAdapter(
 			textView: sourceView,
 			storage: storage,
-			whitespaceCalculator: whitespaceCalculator
+			whitespaceCalculator: whitespaceCalculator,
+			filterProvider: { filterProvider.createFilter() }
 		)
+
+		self.filterProvider = filterProvider
 
 		self.cursorCoordinator = TextSystemCursorCoordinator(
 			textView: sourceView,
-			system: cursorTextSystem
+			system: adapter
 		)
 
 		textSystem.willLayoutHandler = layoutBuffer.willLayout
@@ -112,7 +129,7 @@ public final class DocumentCoordinator<Service: TokenService> {
 	}
 
 	private func updateTextProcessing(with uti: UTType) {
-		cursorCoordinator.cursorState.textSystem.filter = mutationFilterStore.filter(for: uti)
+		self.filterProvider.uti = uti
 	}
 
 	public func refresh() {

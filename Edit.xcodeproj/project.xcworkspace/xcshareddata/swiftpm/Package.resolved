@@ -95,7 +95,7 @@
       "location" : "https://github.com/ChimeHQ/IBeam",
       "state" : {
         "branch" : "main",
-        "revision" : "b0271ae37c14bc38def2459f8d803b1736a9a9cd"
+        "revision" : "349ae9079a914eea36fb9d856bd2c0ba6c07adfd"
       }
     },
     {
@@ -166,7 +166,7 @@
       "location" : "https://github.com/ChimeHQ/Neon",
       "state" : {
         "branch" : "main",
-        "revision" : "5c85ab1274e949bb6f3710b04b7c6d9186539f30"
+        "revision" : "56bd2b1febeab0e10e72e2491746eda6787165b6"
       }
     },
     {
@@ -245,7 +245,7 @@
       "location" : "https://github.com/ChimeHQ/SourceView",
       "state" : {
         "branch" : "main",
-        "revision" : "1cf7e9de80c4a0a5449e144d52631ea457b2d29e"
+        "revision" : "f7771214528d3d95de0ba771f409774c135fd208"
       }
     },
     {
@@ -271,7 +271,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ChimeHQ/Textbook",
       "state" : {
-        "revision" : "a70d9cd0b7da1878e1db448283b431834fd00376"
+        "branch" : "main",
+        "revision" : "bee65ad3b2bf4ccbb54e254ad00bfbe03156a456"
       }
     },
     {
@@ -280,7 +281,7 @@
       "location" : "https://github.com/ChimeHQ/TextFormation",
       "state" : {
         "branch" : "main",
-        "revision" : "96acd7062e1973f1cd5b44f602167b2ce0ba3eb3"
+        "revision" : "2dda10f8c206e23714900c0279f6020c3ebbd576"
       }
     },
     {
