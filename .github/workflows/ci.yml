@@ -16,8 +16,12 @@ on:
     branches:
       - main
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref || github.ref }}
+  cancel-in-progress: true
+  
 env:
-  DEVELOPER_DIR: /Applications/Xcode_16.3.app
+  DEVELOPER_DIR: /Applications/Xcode_26.0.app
 
 jobs:
   lint:
