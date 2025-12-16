@@ -5,7 +5,7 @@ import Rearrange
 import RelativeCollections
 import RangeState
 
-public struct TextMetrics : Sendable {
+public struct TextMetrics: Sendable {
 	typealias List = RelativeArray<LineComponentLengths, Int>
 //	typealias List = RelativeList<LineValue, Int>
 	var lineList = List()
