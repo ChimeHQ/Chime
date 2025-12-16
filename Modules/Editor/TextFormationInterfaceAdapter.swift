@@ -27,7 +27,7 @@ final class TextFormationInterfaceAdapter {
 	}
 }
 
-extension TextFormationInterfaceAdapter: @preconcurrency TextFormation.TextSystemInterface {
+extension TextFormationInterfaceAdapter: @MainActor TextFormation.TextSystemInterface {
 	typealias TextRange = NSRange
 
 	func applyMutation(_ range: NSRange, string: String) throws -> Output {
