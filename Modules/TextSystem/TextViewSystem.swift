@@ -45,8 +45,8 @@ extension TextViewSystem {
 			beginEditing: { [unowned self] in self.beginEditing() },
 			endEditing: { [unowned self] in self.endEditing() },
 			applyMutation: { [unowned self] in self.textView.applyMutation($0) },
-			version: { [unowned self] in self.self.contentVersion },
-			length: { [unowned self] in self.self.length(for: $0) },
+			version: { [unowned self] in self.contentVersion },
+			length: { [unowned self] in self.length(for: $0) },
 			substring: { [unowned self] in try self.substring(range: $0, version: $1) }
 		)
 	}
@@ -186,26 +186,22 @@ extension TextViewSystem {
 	}
 }
 
-extension TextViewSystem: TSYTextStorageDelegate {
+extension TextViewSystem: @MainActor TSYTextStorageDelegate {
 #if os(macOS)
-	public nonisolated func textStorage(_ textStorage: TSYTextStorage, doubleClickRangeForLocation location: UInt) -> NSRange {
+	public func textStorage(_ textStorage: TSYTextStorage, doubleClickRangeForLocation location: UInt) -> NSRange {
 		textStorage.internalStorage.doubleClick(at: Int(location))
 	}
 
-	public nonisolated func textStorage(_ textStorage: TSYTextStorage, nextWordIndexFromLocation location: UInt, direction forward: Bool) -> UInt {
+	public func textStorage(_ textStorage: TSYTextStorage, nextWordIndexFromLocation location: UInt, direction forward: Bool) -> UInt {
 		UInt(textStorage.internalStorage.nextWord(from: Int(location), forward: forward))
 	}
 #endif
 
-	public nonisolated func textStorageWillCompleteProcessingEdit(_ textStorage: TSYTextStorage) {
-		MainActor.assumeIsolated {
-			willLayoutHandler()
-		}
+	public func textStorageWillCompleteProcessingEdit(_ textStorage: TSYTextStorage) {
+		willLayoutHandler()
 	}
 
-	public nonisolated func textStorageDidCompleteProcessingEdit(_ textStorage: TSYTextStorage) {
-		MainActor.assumeIsolated {
-			didLayoutHandler()
-		}
+	public func textStorageDidCompleteProcessingEdit(_ textStorage: TSYTextStorage) {
+		didLayoutHandler()
 	}
 }
