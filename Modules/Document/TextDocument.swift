@@ -189,7 +189,7 @@ extension TextDocument {
 		let attrs = theme.typingAttributes(tabWidth: config.tabWidth, context: context)
 
 		textSystem.themeChanged(attributes: attrs)
-		coordinator.highlighter.updateTheme(theme, context: context)
+		coordinator.updateTheme(theme, context: context)
 	}
 }
 

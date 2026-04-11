@@ -10,7 +10,9 @@ import SyntaxService
 import TextFormation
 import TextSystem
 import Theme
+import ThemePark
 
+@MainActor
 final class DocumentFilterProvider {
 	let filterStore: MutationFilterStore<TextFormationInterfaceAdapter>
 	var uti: UTType
@@ -90,6 +92,8 @@ public final class DocumentCoordinator<Service: TokenService> {
 				try cursorCoordinator.processOperation($0)
 			} catch {
 				print("failed to process input operation: \(error)")
+				assertionFailure()
+
 				return false
 			}
 
@@ -134,5 +138,13 @@ public final class DocumentCoordinator<Service: TokenService> {
 
 	public func refresh() {
 		highlighter.invalidate(.all)
+	}
+
+	public func updateTheme(_ theme: Theme, context: Query.Context) {
+		highlighter.updateTheme(theme, context: context)
+
+		let cursorColor = theme.color(for: .init(key: .editor(.cursor), context: context))
+
+		cursorCoordinator.insertionPointColor = cursorColor
 	}
 }
