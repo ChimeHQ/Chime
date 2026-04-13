@@ -21,14 +21,14 @@ concurrency:
   cancel-in-progress: true
   
 env:
-  DEVELOPER_DIR: /Applications/Xcode_26.0.app
+  DEVELOPER_DIR: /Applications/Xcode_26.4.app
 
 jobs:
   lint:
     name: Lint
-    runs-on: macos-15
+    runs-on: macos-26
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           submodules: recursive
       - name: Install XCLint
@@ -38,11 +38,11 @@ jobs:
 
   build:
     name: Build
-    runs-on: macOS-15
+    runs-on: macos-26
     timeout-minutes: 60
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           submodules: recursive
       - name: Import Certs
@@ -68,11 +68,11 @@ jobs:
 
   ios-build:
     name: iOS Build
-    runs-on: macOS-15
+    runs-on: macOS-26
     timeout-minutes: 60
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           submodules: recursive
       - name: Import Certs
@@ -95,4 +95,3 @@ jobs:
             ${{ runner.os }}-spm-
       - name: xcodebuild
         run: set -o pipefail && xcodebuild -scheme MultiplatformApp -destination "platform=iOS Simulator,name=iPhone 16" build | xcbeautify
-

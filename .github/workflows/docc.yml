@@ -25,16 +25,16 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     env:
-      DEVELOPER_DIR: /Applications/Xcode_26.0.app
-    runs-on: macos-15
+      DEVELOPER_DIR: /Applications/Xcode_26.4.app
+    runs-on: macos-26
     timeout-minutes: 30
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           submodules: recursive
       - name: Setup Pages
-        uses: actions/configure-pages@v4
+        uses: actions/configure-pages@v6
         id: pages
       - name: Import Certs
         uses: apple-actions/import-codesign-certs@v3
@@ -58,5 +58,5 @@ jobs:
         with:
           path: 'docs'
       - name: Deploy
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
         id: deployment
