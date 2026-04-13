@@ -12,7 +12,6 @@
 @_exported import TreeSitterJSON
 @_exported import TreeSitterMarkdown
 @_exported import TreeSitterMarkdownInline
-@_exported import TreeSitterOCaml
 @_exported import TreeSitterPython
 @_exported import TreeSitterRuby
 @_exported import TreeSitterRust

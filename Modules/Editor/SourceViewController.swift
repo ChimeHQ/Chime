@@ -3,24 +3,23 @@ import SwiftUI
 import SourceView
 import Theme
 import ThemePark
+import IBeam
 
 public final class SourceViewController: NSViewController {
 
-	public let sourceView: SourceView
+	public let sourceView: MultiCursorTextView
 	public var selectionChangedHandler: () -> Void = {}
 
 	public init() {
-		let textContainer = NSTextContainer(size: CGSize(width: 0.0, height: 1.0e7))
-		textContainer.widthTracksTextView = true
-		textContainer.heightTracksTextView = false
-		let textContentManager = NSTextContentStorage()
-		let textLayoutManager = NSTextLayoutManager()
-		textLayoutManager.textContainer = textContainer
-		textContentManager.addTextLayoutManager(textLayoutManager)
+		let textContainer = NSTextContainer.defaultTextKit2Container
 
-		self.sourceView = SourceView(frame: .zero, textContainer: textContainer)
+		self.sourceView = MultiCursorTextView(frame: .zero, textContainer: textContainer)
 
 		super.init(nibName: nil, bundle: nil)
+
+		sourceView.configureForHorizontalScrolling()
+		sourceView.isRichText = false
+		sourceView.wrapsTextToHorizontalBounds = true
 
 		sourceView.delegate = self
 	}
@@ -53,10 +52,6 @@ extension SourceViewController {
 			.font: syntaxStyle.font ?? Theme.fallbackFont,
 			.foregroundColor: syntaxStyle.color,
 		]
-
-		let cursorColor = theme.color(for: .init(key: .editor(.cursor), context: context))
-
-		sourceView.insertionPointColor = cursorColor
 	}
 }
 

@@ -58,13 +58,13 @@ extension LanguageProfile {
 			return LanguageProfile.markdownInlineProfile
 		}
 
-		if utType.conforms(to: .ocamlSource) {
-			return LanguageProfile.ocamlProfile
-		}
-
-		if utType.conforms(to: .ocamlInterface) {
-			return LanguageProfile.ocamlInterfaceProfile
-		}
+//		if utType.conforms(to: .ocamlSource) {
+//			return LanguageProfile.ocamlProfile
+//		}
+//
+//		if utType.conforms(to: .ocamlInterface) {
+//			return LanguageProfile.ocamlInterfaceProfile
+//		}
 
 		if utType.conforms(to: .pythonScript) {
 			return LanguageProfile.pythonProfile
@@ -161,16 +161,18 @@ extension LanguageProfile {
 //		bundleName: "TreeSitterMarkdown_TreeSitterMarkdownInline",
 	)
 
-	static let ocamlProfile = LanguageProfile(
-		RootLanguage.ocaml,
-		language: Language(tree_sitter_ocaml())
-	)
-
-	static let ocamlInterfaceProfile = LanguageProfile(
-		name: "OCaml Interface",
-		language: Language(tree_sitter_ocaml_interface()),
-		bundleName: "TreeSitterOCaml_TreeSitterOCaml"
-	)
+	// The tree-sitter Ocaml parser is too large and
+	// takes an unreasonable amount of time to checkout and build...
+//	static let ocamlProfile = LanguageProfile(
+//		RootLanguage.ocaml,
+//		language: Language(tree_sitter_ocaml())
+//	)
+//
+//	static let ocamlInterfaceProfile = LanguageProfile(
+//		name: "OCaml Interface",
+//		language: Language(tree_sitter_ocaml_interface()),
+//		bundleName: "TreeSitterOCaml_TreeSitterOCaml"
+//	)
 
 	static let pythonProfile = LanguageProfile(
 		RootLanguage.python,

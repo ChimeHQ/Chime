@@ -1,5 +1,5 @@
 {
-  "originHash" : "06a5175b5fba52ba8e144742af7eb93a0aa182569af060bfb9401bb6b69d80be",
+  "originHash" : "baba7eb5290ac13fa0e9a58ab81fe43ff237bc012b591c03a1de118d18b62f73",
   "pins" : [
     {
       "identity" : "asyncxpcconnection",
@@ -90,15 +90,6 @@
       }
     },
     {
-      "identity" : "ibeam",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/ChimeHQ/IBeam",
-      "state" : {
-        "branch" : "main",
-        "revision" : "349ae9079a914eea36fb9d856bd2c0ba6c07adfd"
-      }
-    },
-    {
       "identity" : "jsonrpc",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ChimeHQ/JSONRPC",
@@ -165,8 +156,7 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ChimeHQ/Neon",
       "state" : {
-        "branch" : "main",
-        "revision" : "56bd2b1febeab0e10e72e2491746eda6787165b6"
+        "revision" : "c4498a839a80425ff1ba2c4b8f40f4855e58b09b"
       }
     },
     {
@@ -240,15 +230,6 @@
       }
     },
     {
-      "identity" : "sourceview",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/ChimeHQ/SourceView",
-      "state" : {
-        "branch" : "main",
-        "revision" : "f7771214528d3d95de0ba771f409774c135fd208"
-      }
-    },
-    {
       "identity" : "sparkle",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/sparkle-project/Sparkle",
@@ -272,7 +253,7 @@
       "location" : "https://github.com/ChimeHQ/Textbook",
       "state" : {
         "branch" : "main",
-        "revision" : "bee65ad3b2bf4ccbb54e254ad00bfbe03156a456"
+        "revision" : "d0e2a018a58c0d5009fd6dd3c8f7fc960ed01402"
       }
     },
     {
@@ -424,15 +405,6 @@
       "state" : {
         "branch" : "split_parser",
         "revision" : "192407ab5a24bfc24f13332979b5e7967518754a"
-      }
-    },
-    {
-      "identity" : "tree-sitter-ocaml",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/tree-sitter/tree-sitter-ocaml",
-      "state" : {
-        "branch" : "master",
-        "revision" : "0b12614ded3ec7ed7ab7933a9ba4f695ba4c342e"
       }
     },
     {
