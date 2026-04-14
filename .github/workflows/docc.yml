@@ -37,7 +37,7 @@ jobs:
         uses: actions/configure-pages@v6
         id: pages
       - name: Import Certs
-        uses: apple-actions/import-codesign-certs@v3
+        uses: apple-actions/import-codesign-certs@v6
         with: 
           p12-file-base64: ${{ secrets.CERTIFICATES_P12 }}
           p12-password: ${{ secrets.CERTIFICATES_P12_PASSWORD }}
