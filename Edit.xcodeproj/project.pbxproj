@@ -921,8 +921,6 @@
 /* Begin PBXFileReference section */
 		C900A7BA2A9E93FC000556A6 /* libPreferencesWindow.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPreferencesWindow.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C900A7CF2A9F46EF000556A6 /* Chime.appextensionpoint */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Chime.appextensionpoint; sourceTree = "<group>"; };
-		C90E2A952EEF69C5005E5F63 /* IBeam */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = IBeam; path = ../IBeam; sourceTree = SOURCE_ROOT; };
-		C90E2A962EF09412005E5F63 /* SourceView */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = SourceView; path = ../SourceView; sourceTree = SOURCE_ROOT; };
 		C92631A52C40002F00C0AE07 /* PythonExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.extensionkit-extension"; includeInIndex = 0; path = PythonExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		C92631B12C40005200C0AE07 /* PythonStandaloneExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PythonStandaloneExtension.swift; sourceTree = "<group>"; };
 		C92672F72B0399D800B3CE2F /* SwiftExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftExtension.swift; path = "submodules/chime-swift/Sources/ChimeSwift/SwiftExtension.swift"; sourceTree = SOURCE_ROOT; };
@@ -1571,8 +1569,6 @@
 		C9FE52902A7525D000CACA1A = {
 			isa = PBXGroup;
 			children = (
-				C90E2A962EF09412005E5F63 /* SourceView */,
-				C90E2A952EEF69C5005E5F63 /* IBeam */,
 				C9D8C8602DB014CE0037FE3C /* Configurations */,
 				C9439A742C3EC13A0020DDF5 /* Dependencies */,
 				C9FE529B2A7525D000CACA1A /* Edit */,

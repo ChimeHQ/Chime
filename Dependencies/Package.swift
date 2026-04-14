@@ -45,7 +45,7 @@ let package = Package(
 		.package(url: "https://github.com/ChimeHQ/Lowlight", branch: "main"),
 		.package(url: "https://github.com/ChimeHQ/Neon", revision: "c4498a839a80425ff1ba2c4b8f40f4855e58b09b"),
 		.package(url: "https://github.com/ChimeHQ/RelativeCollections", branch: "main"),
-		.package(url: "https://github.com/ChimeHQ/SourceView", branch: "main"),
+		.package(url: "https://github.com/ChimeHQ/SourceView", revision: "72c81b4dcad7f23540a28990836e629fcb6b5354"),
 		.package(url: "https://github.com/ChimeHQ/TextFormation", branch: "main")
 	],
 	targets: [

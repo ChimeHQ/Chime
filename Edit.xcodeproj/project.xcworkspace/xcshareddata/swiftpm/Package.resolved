@@ -1,5 +1,5 @@
 {
-  "originHash" : "baba7eb5290ac13fa0e9a58ab81fe43ff237bc012b591c03a1de118d18b62f73",
+  "originHash" : "5bdea16cba196cc61e85e77d3b1975df0b084777cc19db72869b5f046a3a5a28",
   "pins" : [
     {
       "identity" : "asyncxpcconnection",
@@ -87,6 +87,15 @@
       "state" : {
         "branch" : "main",
         "revision" : "639ec587d8cfd14eacacf7cf1b649e096db2b137"
+      }
+    },
+    {
+      "identity" : "ibeam",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ChimeHQ/IBeam",
+      "state" : {
+        "branch" : "main",
+        "revision" : "988129f8a0e13e717813342c6752342c5bfacfd3"
       }
     },
     {
@@ -227,6 +236,14 @@
       "state" : {
         "revision" : "f1c4a0acabeb591068dea6cffdd39660b86dec28",
         "version" : "0.0.8"
+      }
+    },
+    {
+      "identity" : "sourceview",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ChimeHQ/SourceView",
+      "state" : {
+        "revision" : "72c81b4dcad7f23540a28990836e629fcb6b5354"
       }
     },
     {
