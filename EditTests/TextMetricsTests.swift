@@ -49,10 +49,8 @@ struct TextMetricsTests {
 	@Test func testSyncLineCountAfterInitialization() {
 		let (calculator, _) = makeMetrics(with: " ")
 
-		withKnownIssue("The line processor currently does not support a fully synchronous path") {
-			let metrics = calculator.valueProvider.sync(.entireDocument(fill: .required))
+		let metrics = calculator.valueProvider.sync(.entireDocument(fill: .required))
 		
-			#expect(metrics?.lineCount == 1)
-		}
+		#expect(metrics?.lineCount == 1)
 	}
 }
