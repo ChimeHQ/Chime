@@ -51,7 +51,7 @@ public struct ObservableState<Value: AnyObject & Observable>: DynamicProperty {
 	public struct Wrapper {
 		let value: Value
 
-		subscript<Subject>(
+		public subscript<Subject>(
 			dynamicMember keyPath: ReferenceWritableKeyPath<Value, Subject>
 		) -> Binding<Subject> {
 			Binding(
