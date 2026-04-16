@@ -94,4 +94,4 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-spm-
       - name: xcodebuild
-        run: set -o pipefail && xcodebuild -scheme MultiplatformApp -destination "platform=iOS Simulator,name=iPhone 16" build | xcbeautify
+        run: set -o pipefail && xcodebuild -scheme MultiplatformApp -destination "generic/platform=iOS" build | xcbeautify
