@@ -66,10 +66,15 @@ struct EditFocusFilterIntent: SetFocusFilterIntent {
 	}
 
 	@Parameter(title: "Selected Theme")
-	var theme: ThemeEntity
+	var theme: ThemeEntity?
 
 	func perform() async throws -> some IntentResult {
+		guard let theme else {
+			return .result()
+		}
+
 		UserDefaults.sharedSuite?.setValue("CurrentTheme", forKey: theme.themeIdentity.storageString)
+		
 		return .result()
 	}
 }
