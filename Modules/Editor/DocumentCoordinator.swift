@@ -88,14 +88,7 @@ public final class DocumentCoordinator<Service: TokenService> {
 
 		sourceView.cursorOperationHandler = cursorCoordinator.mutateCursors(with:)
 		sourceView.operationProcessor = { [cursorCoordinator] in
-			do {
-				try cursorCoordinator.processOperation($0)
-			} catch {
-				print("failed to process input operation: \(error)")
-				assertionFailure()
-
-				return false
-			}
+			cursorCoordinator.processOperation($0)
 
 			return true
 		}
