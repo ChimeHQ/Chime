@@ -51,6 +51,7 @@ final class OpenPanelAccessoryViewController: NSViewController {
 
 		kvoObservation = panel.observe(\.showsHiddenFiles, changeHandler: { [unowned self] (obj, _) in
 			MainActor.assumeIsolated {
+				// this warning is a bug...
 				self.hiddenFilesButton.state = obj.showsHiddenFiles ? .on : .off
 			}
 		})
@@ -60,4 +61,3 @@ final class OpenPanelAccessoryViewController: NSViewController {
 		kvoObservation = nil
 	}
 }
-
