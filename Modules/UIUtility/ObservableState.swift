@@ -47,6 +47,7 @@ public struct ObservableState<Value: AnyObject & Observable>: DynamicProperty {
 		}
 	}
 
+	@MainActor
 	@dynamicMemberLookup
 	public struct Wrapper {
 		let value: Value
