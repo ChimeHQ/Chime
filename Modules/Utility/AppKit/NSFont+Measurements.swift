@@ -19,5 +19,6 @@ public extension NSUIFont {
 }
 
 public extension NSUIFont {
+	@MainActor
 	static let defaultSystemFont = systemFont(ofSize: systemFontSize)
 }
