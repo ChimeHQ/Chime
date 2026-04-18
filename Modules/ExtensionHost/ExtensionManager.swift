@@ -82,7 +82,7 @@ public final class ExtensionManager<Host: HostProtocol> {
 
 extension ExtensionManager {
 	private func matchIdentities() {
-		Task.detached {
+		Task {
 			do {
 				let stream = try AppExtensionIdentity.matching(
 					appExtensionPointIDs:
@@ -97,10 +97,10 @@ extension ExtensionManager {
 						await self.setUpIdentity(identity)
 					}
 
-					await self.extensionsUpdated()
+					extensionsUpdated()
 				}
 			} catch {
-				await self.logError(error)
+				logError(error)
 			}
 		}
 	}
