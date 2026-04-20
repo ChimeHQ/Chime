@@ -1,5 +1,5 @@
 {
-  "originHash" : "5bdea16cba196cc61e85e77d3b1975df0b084777cc19db72869b5f046a3a5a28",
+  "originHash" : "20569d8664d46834b51c7120843590d77ebef63d74a7070c0d5445bdc069a1e4",
   "pins" : [
     {
       "identity" : "asyncxpcconnection",
@@ -85,8 +85,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ChimeHQ/Glyph",
       "state" : {
-        "branch" : "main",
-        "revision" : "639ec587d8cfd14eacacf7cf1b649e096db2b137"
+        "revision" : "38453ad0aeec9390f10841a5784e1231b144914d",
+        "version" : "0.1.0"
       }
     },
     {
@@ -94,8 +94,7 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ChimeHQ/IBeam",
       "state" : {
-        "branch" : "main",
-        "revision" : "c6aa0d75c29c38fffc9470d35d7e2059f9dccd52"
+        "revision" : "8b13d99609296b3cea828f1fef13269af4a4e7e0"
       }
     },
     {
@@ -138,8 +137,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ChimeHQ/Ligature",
       "state" : {
-        "branch" : "main",
-        "revision" : "c9407984c5e9185098cfef6b2bc8dd03a4bbd5bb"
+        "revision" : "e260df8c26a93cd712ef66758c812c63e0817c9f",
+        "version" : "0.1.0"
       }
     },
     {
@@ -165,7 +164,7 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ChimeHQ/Neon",
       "state" : {
-        "revision" : "c4498a839a80425ff1ba2c4b8f40f4855e58b09b"
+        "revision" : "484d6fb9e0c4fb679a1d5f5ddaf2cac2ecf21165"
       }
     },
     {
@@ -208,7 +207,7 @@
       "location" : "https://github.com/ChimeHQ/Rearrange",
       "state" : {
         "branch" : "main",
-        "revision" : "eae38792ce4cc4c8ba74632d63109b35163f5877"
+        "revision" : "66a819f867bd61b07f97778f96265b421e81226b"
       }
     },
     {
@@ -243,7 +242,7 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ChimeHQ/SourceView",
       "state" : {
-        "revision" : "72c81b4dcad7f23540a28990836e629fcb6b5354"
+        "revision" : "0b510164faa57df056915f112c15629e82dc2b38"
       }
     },
     {
@@ -279,7 +278,7 @@
       "location" : "https://github.com/ChimeHQ/TextFormation",
       "state" : {
         "branch" : "main",
-        "revision" : "2dda10f8c206e23714900c0279f6020c3ebbd576"
+        "revision" : "3ac64ec1c0d7e3f30aef132452a9f168e3323831"
       }
     },
     {
