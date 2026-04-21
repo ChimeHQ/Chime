@@ -39,7 +39,7 @@ let package = Package(
 		.package(url: "https://github.com/alex-pinkus/tree-sitter-swift", branch: "with-generated-files"),
 
 		.package(url: "https://github.com/ChimeHQ/Borderline", branch: "main"),
-		.package(url: "https://github.com/ChimeHQ/Glyph", from: "0.1.0"),
+		.package(url: "https://github.com/ChimeHQ/Glyph", from: "0.1.1"),
 		.package(url: "https://github.com/ChimeHQ/IBeam", revision: "8b13d99609296b3cea828f1fef13269af4a4e7e0"),
 		.package(url: "https://github.com/ChimeHQ/Ligature", from: "0.1.0"),
 		.package(url: "https://github.com/ChimeHQ/Lowlight", branch: "main"),

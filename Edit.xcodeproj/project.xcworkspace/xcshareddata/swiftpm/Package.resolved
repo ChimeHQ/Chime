@@ -85,8 +85,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ChimeHQ/Glyph",
       "state" : {
-        "revision" : "38453ad0aeec9390f10841a5784e1231b144914d",
-        "version" : "0.1.0"
+        "revision" : "85aa0bab83180d60265689e649e1a61b5489342c",
+        "version" : "0.1.1"
       }
     },
     {
