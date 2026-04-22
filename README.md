@@ -78,7 +78,7 @@ By participating in this project you agree to abide by the [Contributor Code of 
 
 ### Building
 
-**Note**: requires Xcode 26.4+ and macOS 26.2
+**Note**: requires Xcode 26.4+ and macOS 26.2+
 
 - clone the repo
 - `git submodule update --init --recursive`
