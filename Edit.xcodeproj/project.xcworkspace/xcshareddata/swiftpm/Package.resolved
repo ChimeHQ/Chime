@@ -1,5 +1,5 @@
 {
-  "originHash" : "20569d8664d46834b51c7120843590d77ebef63d74a7070c0d5445bdc069a1e4",
+  "originHash" : "7efb8efbf6a9f96e81b7254f4f9d6a4ba1704438091cc36b199de53b5f4b51f4",
   "pins" : [
     {
       "identity" : "asyncxpcconnection",
@@ -286,7 +286,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ChimeHQ/TextStory.git",
       "state" : {
-        "revision" : "e23226da4a29a606b532d3f4d7d04102cd7826c5"
+        "revision" : "a52db1a2eca74d37c8c19bf3165416941632ed45",
+        "version" : "0.9.2"
       }
     },
     {

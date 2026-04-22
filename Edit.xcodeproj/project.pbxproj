@@ -46,7 +46,6 @@
 		C95B91292BD98C3B006FDD00 /* Rearrange in Frameworks */ = {isa = PBXBuildFile; productRef = C95B91282BD98C3B006FDD00 /* Rearrange */; };
 		C95B91302BD98C76006FDD00 /* libDocumentContent.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9891B132AFEC11A00C8F393 /* libDocumentContent.a */; };
 		C95B91342BD98CA1006FDD00 /* SwiftTreeSitter in Frameworks */ = {isa = PBXBuildFile; productRef = C95B91332BD98CA1006FDD00 /* SwiftTreeSitter */; };
-		C95B913C2BD98CF1006FDD00 /* TextStory in Frameworks */ = {isa = PBXBuildFile; productRef = C95B913B2BD98CF1006FDD00 /* TextStory */; };
 		C95B913E2BD98D01006FDD00 /* SwiftTreeSitterLayer in Frameworks */ = {isa = PBXBuildFile; productRef = C95B913D2BD98D01006FDD00 /* SwiftTreeSitterLayer */; };
 		C95B913F2BD99328006FDD00 /* LanguageData in Resources */ = {isa = PBXBuildFile; fileRef = C9CDEB872B55B889009E252A /* LanguageData */; };
 		C95E7C3B2DE114960098F248 /* libHighlighting.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C973E0002B62BDB3000998F7 /* libHighlighting.a */; };
@@ -1090,7 +1089,6 @@
 				C93C25AD2D381DE800B97DE8 /* MainOffender in Frameworks */,
 				C95B91342BD98CA1006FDD00 /* SwiftTreeSitter in Frameworks */,
 				C9E0BA0F2BD280C4007AF034 /* ChimeKit.framework in Frameworks */,
-				C95B913C2BD98CF1006FDD00 /* TextStory in Frameworks */,
 				C9E0BA0E2BD2807B007AF034 /* libDiagnostics.a in Frameworks */,
 				C9EFE30C2D6F6763009D201E /* Borderline in Frameworks */,
 				C929316B2B822BAD00C64DDE /* libUtility.a in Frameworks */,
@@ -1903,7 +1901,6 @@
 				C9BFA1B62BC162EF00E86487 /* NSUI */,
 				C95B91282BD98C3B006FDD00 /* Rearrange */,
 				C95B91332BD98CA1006FDD00 /* SwiftTreeSitter */,
-				C95B913B2BD98CF1006FDD00 /* TextStory */,
 				C95B913D2BD98D01006FDD00 /* SwiftTreeSitterLayer */,
 				C96B61FC2BDA714700561DE8 /* ScrollViewPlus */,
 				C9439A702C3EB4410020DDF5 /* TreeSitterParsers */,
@@ -2095,7 +2092,6 @@
 				C9655F952D1454DA0008AED1 /* PBXTargetDependency */,
 				C926737F2B0782C500B3CE2F /* PBXTargetDependency */,
 				C9891B2C2AFEC88300C8F393 /* PBXTargetDependency */,
-				C9891B2A2AFEC24B00C8F393 /* PBXTargetDependency */,
 				C9891B1E2AFEC13500C8F393 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
@@ -2146,7 +2142,6 @@
 				C9BFA1A92BC072E300E86487 /* PBXTargetDependency */,
 				C9B8A9F22B31E8EE00C79606 /* PBXTargetDependency */,
 				C9B8A9F02B31E8EB00C79606 /* PBXTargetDependency */,
-				C9B8A9EE2B31E83800C79606 /* PBXTargetDependency */,
 				C9B8A9EC2B31E83400C79606 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
@@ -2415,7 +2410,6 @@
 			dependencies = (
 				C99D76172B5FE1530028E3B0 /* PBXTargetDependency */,
 				C9B8A9FE2B31F5DA00C79606 /* PBXTargetDependency */,
-				C99491BA2B0B8A14002DC2AC /* PBXTargetDependency */,
 				C9891B202AFEC16600C8F393 /* PBXTargetDependency */,
 				C9891AFF2AFEA3E400C8F393 /* PBXTargetDependency */,
 				C9FE53902A766A9400CACA1A /* PBXTargetDependency */,
@@ -2572,7 +2566,6 @@
 				C96B61F72BDA710A00561DE8 /* PBXTargetDependency */,
 				C9B8AA022B31FB2D00C79606 /* PBXTargetDependency */,
 				C9B8A9B92B235EFC00C79606 /* PBXTargetDependency */,
-				C99491BC2B0CCF6D002DC2AC /* PBXTargetDependency */,
 				C9891B422AFFF29E00C8F393 /* PBXTargetDependency */,
 				C97918722A9CBD6B0046EAF1 /* PBXTargetDependency */,
 				C9FE53D22A77CC3100CACA1A /* PBXTargetDependency */,
@@ -2830,7 +2823,6 @@
 				C98EA4162A90F17700B8815E /* XCRemoteSwiftPackageReference "ProcessEnv" */,
 				C9409C642A98CC9800B5D898 /* XCRemoteSwiftPackageReference "Outline" */,
 				C97918C92A9D4C600046EAF1 /* XCRemoteSwiftPackageReference "FuzzyFind" */,
-				C9891B262AFEC24100C8F393 /* XCRemoteSwiftPackageReference "TextStory" */,
 				C9B8A9B52B235EF100C79606 /* XCRemoteSwiftPackageReference "Rearrange" */,
 				C9B8AA5B2B370A1800C79606 /* XCRemoteSwiftPackageReference "SwiftTreeSitter" */,
 				C9CDEB582B51620E009E252A /* XCRemoteSwiftPackageReference "ColorToolbox" */,
@@ -3670,10 +3662,6 @@
 			target = C9FE53F32A7A5EF900CACA1A /* Utility */;
 			targetProxy = C9891B222AFEC18300C8F393 /* PBXContainerItemProxy */;
 		};
-		C9891B2A2AFEC24B00C8F393 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			productRef = C9891B292AFEC24B00C8F393 /* TextStory */;
-		};
 		C9891B2C2AFEC88300C8F393 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C9FE53F32A7A5EF900CACA1A /* Utility */;
@@ -3683,14 +3671,6 @@
 			isa = PBXTargetDependency;
 			target = C9891B342AFFF1F700C8F393 /* Gutter */;
 			targetProxy = C9891B412AFFF29E00C8F393 /* PBXContainerItemProxy */;
-		};
-		C99491BA2B0B8A14002DC2AC /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			productRef = C99491B92B0B8A14002DC2AC /* TextStory */;
-		};
-		C99491BC2B0CCF6D002DC2AC /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			productRef = C99491BB2B0CCF6D002DC2AC /* TextStory */;
 		};
 		C995EA6C2C3EC90A00D3ED4C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -3735,10 +3715,6 @@
 			isa = PBXTargetDependency;
 			target = C9891B122AFEC11A00C8F393 /* DocumentContent */;
 			targetProxy = C9B8A9EB2B31E83400C79606 /* PBXContainerItemProxy */;
-		};
-		C9B8A9EE2B31E83800C79606 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			productRef = C9B8A9ED2B31E83800C79606 /* TextStory */;
 		};
 		C9B8A9F02B31E8EB00C79606 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -4317,6 +4293,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C9D8C85B2DB014CE0037FE3C /* Project-Debug.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 5GXRS83U4Z;
 			};
 			name = Debug;
 		};
@@ -4324,6 +4301,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C9D8C85A2DB014CE0037FE3C /* Project.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 5GXRS83U4Z;
 			};
 			name = Release;
 		};
@@ -4893,14 +4871,6 @@
 				revision = 1e66ecbb80de85d5ecefacbcc0702fafaf67c1d8;
 			};
 		};
-		C9891B262AFEC24100C8F393 /* XCRemoteSwiftPackageReference "TextStory" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ChimeHQ/TextStory.git";
-			requirement = {
-				kind = revision;
-				revision = e23226da4a29a606b532d3f4d7d04102cd7826c5;
-			};
-		};
 		C98EA4162A90F17700B8815E /* XCRemoteSwiftPackageReference "ProcessEnv" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ChimeHQ/ProcessEnv.git";
@@ -5080,11 +5050,6 @@
 			package = C9B8AA5B2B370A1800C79606 /* XCRemoteSwiftPackageReference "SwiftTreeSitter" */;
 			productName = SwiftTreeSitter;
 		};
-		C95B913B2BD98CF1006FDD00 /* TextStory */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C9891B262AFEC24100C8F393 /* XCRemoteSwiftPackageReference "TextStory" */;
-			productName = TextStory;
-		};
 		C95B913D2BD98D01006FDD00 /* SwiftTreeSitterLayer */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C9B8AA5B2B370A1800C79606 /* XCRemoteSwiftPackageReference "SwiftTreeSitter" */;
@@ -5150,30 +5115,10 @@
 			package = C9FE53372A75A75400CACA1A /* XCRemoteSwiftPackageReference "WindowTreatment" */;
 			productName = WindowTreatment;
 		};
-		C9891B292AFEC24B00C8F393 /* TextStory */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C9891B262AFEC24100C8F393 /* XCRemoteSwiftPackageReference "TextStory" */;
-			productName = TextStory;
-		};
-		C99491B92B0B8A14002DC2AC /* TextStory */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C9891B262AFEC24100C8F393 /* XCRemoteSwiftPackageReference "TextStory" */;
-			productName = TextStory;
-		};
-		C99491BB2B0CCF6D002DC2AC /* TextStory */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C9891B262AFEC24100C8F393 /* XCRemoteSwiftPackageReference "TextStory" */;
-			productName = TextStory;
-		};
 		C9B8A9B82B235EFC00C79606 /* Rearrange */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C9B8A9B52B235EF100C79606 /* XCRemoteSwiftPackageReference "Rearrange" */;
 			productName = Rearrange;
-		};
-		C9B8A9ED2B31E83800C79606 /* TextStory */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C9891B262AFEC24100C8F393 /* XCRemoteSwiftPackageReference "TextStory" */;
-			productName = TextStory;
 		};
 		C9B8AA642B3722CC00C79606 /* SwiftTreeSitter */ = {
 			isa = XCSwiftPackageProductDependency;

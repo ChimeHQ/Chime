@@ -46,7 +46,8 @@ let package = Package(
 		.package(url: "https://github.com/ChimeHQ/Neon", revision: "484d6fb9e0c4fb679a1d5f5ddaf2cac2ecf21165"),
 		.package(url: "https://github.com/ChimeHQ/RelativeCollections", branch: "main"),
 		.package(url: "https://github.com/ChimeHQ/SourceView", revision: "0b510164faa57df056915f112c15629e82dc2b38"),
-		.package(url: "https://github.com/ChimeHQ/TextFormation", branch: "main")
+		.package(url: "https://github.com/ChimeHQ/TextFormation", branch: "main"),
+		.package(url: "https://github.com/ChimeHQ/TextStory", from: "0.9.2"),
 	],
 	targets: [
 		.target(
@@ -84,6 +85,7 @@ let package = Package(
 				"RelativeCollections",
 				.product(name: "SourceView", package: "SourceView", condition: .when(platforms: [.macOS])),
 				"TextFormation",
+				"TextStory",
 			]
 		),
 	]
