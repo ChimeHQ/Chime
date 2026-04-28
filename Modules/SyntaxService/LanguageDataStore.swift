@@ -52,6 +52,8 @@ extension LanguageDataStore {
 		switch name {
 		case "markdown_inline":
 			return .markdownInline
+		case "yaml":
+			return .yaml
 		default:
 			logger.warning("Unhandled language name: \(identifier, privacy: .public)")
 			return .plainText
