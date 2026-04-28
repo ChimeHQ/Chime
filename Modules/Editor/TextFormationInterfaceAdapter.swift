@@ -56,7 +56,7 @@ extension TextFormationInterfaceAdapter: @MainActor TextFormation.TextSystemInte
 		return MutationOutput<NSRange>(selection: newSelection, delta: delta)
 	}
 	
-	func substring(in range: NSRange) throws -> String? {
+	func substring(in range: NSRange) throws -> String {
 		try storage.substring(with: range)
 	}
 	

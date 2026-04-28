@@ -43,7 +43,6 @@
 		C95248C92BF3AFD700F55E71 /* ChimeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE52F42A7539B100CACA1A /* ChimeKit.framework */; };
 		C958C7812BC5A82900EC95F8 /* ConfigurationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C958C7802BC5A82900EC95F8 /* ConfigurationTests.swift */; };
 		C95B91232BD98B64006FDD00 /* libTextSystem.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9B8A9DD2B31E43800C79606 /* libTextSystem.a */; };
-		C95B91292BD98C3B006FDD00 /* Rearrange in Frameworks */ = {isa = PBXBuildFile; productRef = C95B91282BD98C3B006FDD00 /* Rearrange */; };
 		C95B91302BD98C76006FDD00 /* libDocumentContent.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9891B132AFEC11A00C8F393 /* libDocumentContent.a */; };
 		C95B91342BD98CA1006FDD00 /* SwiftTreeSitter in Frameworks */ = {isa = PBXBuildFile; productRef = C95B91332BD98CA1006FDD00 /* SwiftTreeSitter */; };
 		C95B913E2BD98D01006FDD00 /* SwiftTreeSitterLayer in Frameworks */ = {isa = PBXBuildFile; productRef = C95B913D2BD98D01006FDD00 /* SwiftTreeSitterLayer */; };
@@ -1097,7 +1096,6 @@
 				C92931692B822B7B00C64DDE /* ColorToolbox in Frameworks */,
 				C9655F872D11A7A70008AED1 /* Dependencies in Frameworks */,
 				C9439A712C3EB4410020DDF5 /* TreeSitterParsers in Frameworks */,
-				C95B91292BD98C3B006FDD00 /* Rearrange in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1887,7 +1885,6 @@
 				C96B61FB2BDA714000561DE8 /* PBXTargetDependency */,
 				C96B61F52BDA70E000561DE8 /* PBXTargetDependency */,
 				C95B91322BD98C98006FDD00 /* PBXTargetDependency */,
-				C95B91272BD98C34006FDD00 /* PBXTargetDependency */,
 				C95B911E2BD98B2E006FDD00 /* PBXTargetDependency */,
 				C9E0BA132BD28513007AF034 /* PBXTargetDependency */,
 				C929315C2B80D9F900C64DDE /* PBXTargetDependency */,
@@ -1896,7 +1893,6 @@
 			name = EditKit;
 			packageProductDependencies = (
 				C92931682B822B7B00C64DDE /* ColorToolbox */,
-				C95B91282BD98C3B006FDD00 /* Rearrange */,
 				C95B91332BD98CA1006FDD00 /* SwiftTreeSitter */,
 				C95B913D2BD98D01006FDD00 /* SwiftTreeSitterLayer */,
 				C96B61FC2BDA714700561DE8 /* ScrollViewPlus */,
@@ -2184,7 +2180,6 @@
 				C9439A652C3EA9930020DDF5 /* PBXTargetDependency */,
 				C9CDEB912B56ACBB009E252A /* PBXTargetDependency */,
 				C9EA095F2B4D708000732203 /* PBXTargetDependency */,
-				C9B8AA672B373A6200C79606 /* PBXTargetDependency */,
 				C9B8AA652B3722CC00C79606 /* PBXTargetDependency */,
 				C9B8AA582B3708E700C79606 /* PBXTargetDependency */,
 				C9B8AA562B37070E00C79606 /* PBXTargetDependency */,
@@ -2562,7 +2557,6 @@
 				C9655F8D2D11F5A70008AED1 /* PBXTargetDependency */,
 				C96B61F72BDA710A00561DE8 /* PBXTargetDependency */,
 				C9B8AA022B31FB2D00C79606 /* PBXTargetDependency */,
-				C9B8A9B92B235EFC00C79606 /* PBXTargetDependency */,
 				C9891B422AFFF29E00C8F393 /* PBXTargetDependency */,
 				C97918722A9CBD6B0046EAF1 /* PBXTargetDependency */,
 				C9FE53D22A77CC3100CACA1A /* PBXTargetDependency */,
@@ -2821,7 +2815,6 @@
 				C98EA4162A90F17700B8815E /* XCRemoteSwiftPackageReference "ProcessEnv" */,
 				C9409C642A98CC9800B5D898 /* XCRemoteSwiftPackageReference "Outline" */,
 				C97918C92A9D4C600046EAF1 /* XCRemoteSwiftPackageReference "FuzzyFind" */,
-				C9B8A9B52B235EF100C79606 /* XCRemoteSwiftPackageReference "Rearrange" */,
 				C9B8AA5B2B370A1800C79606 /* XCRemoteSwiftPackageReference "SwiftTreeSitter" */,
 				C9CDEB582B51620E009E252A /* XCRemoteSwiftPackageReference "ColorToolbox" */,
 				C9CDEB8D2B56ACA3009E252A /* XCRemoteSwiftPackageReference "MainOffender" */,
@@ -3421,10 +3414,6 @@
 			target = C973DFFF2B62BDB3000998F7 /* Highlighting */;
 			targetProxy = C95B911D2BD98B2E006FDD00 /* PBXContainerItemProxy */;
 		};
-		C95B91272BD98C34006FDD00 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			productRef = C95B91262BD98C34006FDD00 /* Rearrange */;
-		};
 		C95B91322BD98C98006FDD00 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			productRef = C95B91312BD98C98006FDD00 /* SwiftTreeSitter */;
@@ -3704,10 +3693,6 @@
 			target = C9FE53DC2A7A5A2A00CACA1A /* ExtensionHost */;
 			targetProxy = C99D76162B5FE1530028E3B0 /* PBXContainerItemProxy */;
 		};
-		C9B8A9B92B235EFC00C79606 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			productRef = C9B8A9B82B235EFC00C79606 /* Rearrange */;
-		};
 		C9B8A9EC2B31E83400C79606 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C9891B122AFEC11A00C8F393 /* DocumentContent */;
@@ -3761,10 +3746,6 @@
 		C9B8AA652B3722CC00C79606 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			productRef = C9B8AA642B3722CC00C79606 /* SwiftTreeSitter */;
-		};
-		C9B8AA672B373A6200C79606 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			productRef = C9B8AA662B373A6200C79606 /* Rearrange */;
 		};
 		C9BDB54F2B00FD89009225FB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -4880,14 +4861,6 @@
 				minimumVersion = 1.0.0;
 			};
 		};
-		C9B8A9B52B235EF100C79606 /* XCRemoteSwiftPackageReference "Rearrange" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ChimeHQ/Rearrange.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.0;
-			};
-		};
 		C9B8AA5B2B370A1800C79606 /* XCRemoteSwiftPackageReference "SwiftTreeSitter" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ChimeHQ/SwiftTreeSitter.git";
@@ -5023,16 +4996,6 @@
 			package = C9E0BA3A2BD2EB05007AF034 /* XCRemoteSwiftPackageReference "ThemePark" */;
 			productName = ThemePark;
 		};
-		C95B91262BD98C34006FDD00 /* Rearrange */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C9B8A9B52B235EF100C79606 /* XCRemoteSwiftPackageReference "Rearrange" */;
-			productName = Rearrange;
-		};
-		C95B91282BD98C3B006FDD00 /* Rearrange */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C9B8A9B52B235EF100C79606 /* XCRemoteSwiftPackageReference "Rearrange" */;
-			productName = Rearrange;
-		};
 		C95B91312BD98C98006FDD00 /* SwiftTreeSitter */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C9B8AA5B2B370A1800C79606 /* XCRemoteSwiftPackageReference "SwiftTreeSitter" */;
@@ -5108,20 +5071,10 @@
 			package = C9FE53372A75A75400CACA1A /* XCRemoteSwiftPackageReference "WindowTreatment" */;
 			productName = WindowTreatment;
 		};
-		C9B8A9B82B235EFC00C79606 /* Rearrange */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C9B8A9B52B235EF100C79606 /* XCRemoteSwiftPackageReference "Rearrange" */;
-			productName = Rearrange;
-		};
 		C9B8AA642B3722CC00C79606 /* SwiftTreeSitter */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C9B8AA5B2B370A1800C79606 /* XCRemoteSwiftPackageReference "SwiftTreeSitter" */;
 			productName = SwiftTreeSitter;
-		};
-		C9B8AA662B373A6200C79606 /* Rearrange */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C9B8A9B52B235EF100C79606 /* XCRemoteSwiftPackageReference "Rearrange" */;
-			productName = Rearrange;
 		};
 		C9BFA1A82BC072E300E86487 /* Glyph */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -197,4 +197,8 @@ extension TextDocument {
 	@IBAction func refresh(_ sender: Any?) {
 		coordinator.refresh()
 	}
+
+	@IBAction func addCursorsToEndOfLines(_ sender: Any?) {
+		coordinator.addCursorsToEndOfLines()
+	}
 }

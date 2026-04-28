@@ -133,6 +133,33 @@ public final class DocumentCoordinator<Service: TokenService> {
 		highlighter.invalidate(.all)
 	}
 
+	public func addCursorsToEndOfLines() {
+		// there's plenty of opportinity to make this more efficient
+		let cursorRanges = cursorCoordinator.cursorState.cursorSet.ranges
+
+		let max = cursorRanges.max { a, b in
+			a.upperBound < b.upperBound
+		}?.upperBound ?? 0
+
+		guard let textMetrics = textSystem.textMetricsCalculator.valueProvider.sync(.location(max, fill: .required)) else {
+			print("no metrics")
+			return
+		}
+
+		let ranges = cursorCoordinator.cursorState.cursorSet.ranges
+			.flatMap { range in
+				textMetrics.lines(for: range)
+			}
+			.map { line in
+				// the lines here are defined to exclude the endings
+				let location = line.range(of: .ending).lowerBound
+
+				return NSRange(location: location, length: 0)
+			}
+
+		cursorCoordinator.cursorState.mutateCursors(with: .reset(ranges))
+	}
+
 	public func updateTheme(_ theme: Theme, context: Query.Context) {
 		highlighter.updateTheme(theme, context: context)
 
