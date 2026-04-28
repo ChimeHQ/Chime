@@ -21,7 +21,7 @@ final class TokenStyleSource {
 		let style = theme.highlightsQueryCaptureStyle(for: name, context: context)
 
 		#if os(macOS)
-		// this is a hack to ensure we actually do this when necessary. It really is the responcibility of the theme.
+		// this is a hack to ensure we actually do this when necessary. It really is the responsibility of the theme.
 		switch name {
 		case "text.strong":
 			var attrs = style.attributes
