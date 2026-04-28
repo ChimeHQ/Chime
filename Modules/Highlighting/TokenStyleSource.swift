@@ -3,6 +3,14 @@ import NSUI
 import Theme
 import ThemePark
 
+extension NSUIFont {
+	func applySymbolicTraits(_ traits: NSUIFontDescriptor.SymbolicTraits) -> NSUIFont {
+		let descriptor = fontDescriptor.nsuiWithSymbolicTraits(traits) ?? fontDescriptor
+
+		return NSUIFont(nsuiDescriptor: descriptor, size: pointSize) ?? self
+	}
+}
+
 @MainActor
 final class TokenStyleSource {
 	private var theme: Theme = Theme.fallback
@@ -20,7 +28,6 @@ final class TokenStyleSource {
 	func tokenStyle(for name: String) -> [NSAttributedString.Key : Any] {
 		let style = theme.highlightsQueryCaptureStyle(for: name, context: context)
 
-		#if os(macOS)
 		// this is a hack to ensure we actually do this when necessary. It really is the responsibility of the theme.
 		switch name {
 		case "text.strong":
@@ -28,7 +35,7 @@ final class TokenStyleSource {
 
 			let font = (attrs[.font] as? PlatformFont) ?? fallbackFont
 
-			attrs[.font] = NSFontManager.shared.convert(font, toHaveTrait: .boldFontMask)
+			attrs[.font] = font.applySymbolicTraits(.traitBold)
 
 			return attrs
 		case "text.emphasis":
@@ -36,13 +43,13 @@ final class TokenStyleSource {
 
 			let font = (attrs[.font] as? PlatformFont) ?? fallbackFont
 
-			attrs[.font] = NSFontManager.shared.convert(font, toHaveTrait: .italicFontMask)
+			attrs[.font] = font.applySymbolicTraits(.traitItalic)
 
 			return attrs
 		default:
 			break
 		}
-		#endif
+
 		return style.attributes
 	}
 }
