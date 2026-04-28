@@ -1,5 +1,5 @@
 {
-  "originHash" : "7efb8efbf6a9f96e81b7254f4f9d6a4ba1704438091cc36b199de53b5f4b51f4",
+  "originHash" : "b0438191caab07d3a9a115a103ca4e6eca0d0acdd9f6a75708cacc744745e695",
   "pins" : [
     {
       "identity" : "asyncxpcconnection",
@@ -94,7 +94,7 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ChimeHQ/IBeam",
       "state" : {
-        "revision" : "8b13d99609296b3cea828f1fef13269af4a4e7e0"
+        "revision" : "d02f0b65f6e15d1adce7d3932136cbb5697376c0"
       }
     },
     {
@@ -137,8 +137,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ChimeHQ/Ligature",
       "state" : {
-        "revision" : "e260df8c26a93cd712ef66758c812c63e0817c9f",
-        "version" : "0.1.0"
+        "revision" : "677abb3ad29e0979248f062dc969c16160951217",
+        "version" : "0.1.1"
       }
     },
     {
@@ -172,7 +172,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/mattmassicotte/nsui.git",
       "state" : {
-        "revision" : "8792b2f789bf03be1be9ecb4df43d2bfe0e5d361"
+        "revision" : "5d91aab05bb74945423ae021391a584d0ccd1671",
+        "version" : "1.4.0"
       }
     },
     {
@@ -242,7 +243,7 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ChimeHQ/SourceView",
       "state" : {
-        "revision" : "0b510164faa57df056915f112c15629e82dc2b38"
+        "revision" : "d09c0a20cca8a3cd288fd2f7a98104cc909d32ea"
       }
     },
     {

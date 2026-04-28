@@ -96,7 +96,6 @@
 		C9BDB54B2B00FD89009225FB /* SwiftStandaloneExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BDB54A2B00FD89009225FB /* SwiftStandaloneExtension.swift */; };
 		C9BDB5502B00FD89009225FB /* SwiftExtension.appex in Copy Extensions */ = {isa = PBXBuildFile; fileRef = C9BDB5482B00FD89009225FB /* SwiftExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C9BDB5572B010094009225FB /* ChimeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE52F42A7539B100CACA1A /* ChimeKit.framework */; };
-		C9BFA1B72BC162EF00E86487 /* NSUI in Frameworks */ = {isa = PBXBuildFile; productRef = C9BFA1B62BC162EF00E86487 /* NSUI */; };
 		C9CDEB8F2B56ACA3009E252A /* MainOffender in Frameworks */ = {isa = PBXBuildFile; productRef = C9CDEB8E2B56ACA3009E252A /* MainOffender */; };
 		C9CFCF7E2BF92BB70053C9A6 /* EditFocusFilterIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CFCF7D2BF92BB70053C9A6 /* EditFocusFilterIntent.swift */; };
 		C9D8C7F92DB000570037FE3C /* ChimeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE52F42A7539B100CACA1A /* ChimeKit.framework */; };
@@ -1092,7 +1091,6 @@
 				C9E0BA0E2BD2807B007AF034 /* libDiagnostics.a in Frameworks */,
 				C9EFE30C2D6F6763009D201E /* Borderline in Frameworks */,
 				C929316B2B822BAD00C64DDE /* libUtility.a in Frameworks */,
-				C9BFA1B72BC162EF00E86487 /* NSUI in Frameworks */,
 				C929316A2B822BA700C64DDE /* libTheme.a in Frameworks */,
 				C9655F8F2D1205210008AED1 /* TextFormation in Frameworks */,
 				C95B913E2BD98D01006FDD00 /* SwiftTreeSitterLayer in Frameworks */,
@@ -1898,7 +1896,6 @@
 			name = EditKit;
 			packageProductDependencies = (
 				C92931682B822B7B00C64DDE /* ColorToolbox */,
-				C9BFA1B62BC162EF00E86487 /* NSUI */,
 				C95B91282BD98C3B006FDD00 /* Rearrange */,
 				C95B91332BD98CA1006FDD00 /* SwiftTreeSitter */,
 				C95B913D2BD98D01006FDD00 /* SwiftTreeSitterLayer */,
@@ -2496,7 +2493,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				C9CDC24D2BDABFE000183752 /* PBXTargetDependency */,
+				C9D5D8F92FA0D1F9003C76EE /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				C9D8C2B62DAFF4D60037FE3C /* UIUtility */,
@@ -2642,6 +2639,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				C9D5D8FB2FA0D205003C76EE /* PBXTargetDependency */,
 				C9E0BA0D2BD28060007AF034 /* PBXTargetDependency */,
 				C9FE54012A7A606100CACA1A /* PBXTargetDependency */,
 				C9FE53EA2A7A5D4000CACA1A /* PBXTargetDependency */,
@@ -2665,7 +2663,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				C9BFA1A52BBF4FD600E86487 /* PBXTargetDependency */,
+				C9D5D8FD2FA0D235003C76EE /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				C9D8C2D22DAFF5CE0037FE3C /* Utility */,
@@ -2827,7 +2825,6 @@
 				C9B8AA5B2B370A1800C79606 /* XCRemoteSwiftPackageReference "SwiftTreeSitter" */,
 				C9CDEB582B51620E009E252A /* XCRemoteSwiftPackageReference "ColorToolbox" */,
 				C9CDEB8D2B56ACA3009E252A /* XCRemoteSwiftPackageReference "MainOffender" */,
-				C9BFA1A12BBF4FA200E86487 /* XCRemoteSwiftPackageReference "nsui" */,
 				C93F72252BF0F9290021ACF3 /* XCRemoteSwiftPackageReference "Sparkle" */,
 				C976D7E42C4A86F800CC6EA6 /* XCRemoteSwiftPackageReference "ThemePark" */,
 			);
@@ -3774,17 +3771,9 @@
 			target = C9BDB5472B00FD89009225FB /* SwiftExtension */;
 			targetProxy = C9BDB54E2B00FD89009225FB /* PBXContainerItemProxy */;
 		};
-		C9BFA1A52BBF4FD600E86487 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			productRef = C9BFA1A42BBF4FD600E86487 /* NSUI */;
-		};
 		C9BFA1A92BC072E300E86487 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			productRef = C9BFA1A82BC072E300E86487 /* Glyph */;
-		};
-		C9CDC24D2BDABFE000183752 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			productRef = C9CDC24C2BDABFE000183752 /* NSUI */;
 		};
 		C9CDEB5C2B51621C009E252A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -3793,6 +3782,18 @@
 		C9CDEB912B56ACBB009E252A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			productRef = C9CDEB902B56ACBB009E252A /* MainOffender */;
+		};
+		C9D5D8F92FA0D1F9003C76EE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = C9D5D8F82FA0D1F9003C76EE /* Dependencies */;
+		};
+		C9D5D8FB2FA0D205003C76EE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = C9D5D8FA2FA0D205003C76EE /* Dependencies */;
+		};
+		C9D5D8FD2FA0D235003C76EE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = C9D5D8FC2FA0D235003C76EE /* Dependencies */;
 		};
 		C9DCE14E2BD7BC500067D354 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -4895,14 +4896,6 @@
 				kind = branch;
 			};
 		};
-		C9BFA1A12BBF4FA200E86487 /* XCRemoteSwiftPackageReference "nsui" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/mattmassicotte/nsui.git";
-			requirement = {
-				kind = revision;
-				revision = 8792b2f789bf03be1be9ecb4df43d2bfe0e5d361;
-			};
-		};
 		C9CDEB582B51620E009E252A /* XCRemoteSwiftPackageReference "ColorToolbox" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/raymondjavaxx/ColorToolbox";
@@ -5130,24 +5123,9 @@
 			package = C9B8A9B52B235EF100C79606 /* XCRemoteSwiftPackageReference "Rearrange" */;
 			productName = Rearrange;
 		};
-		C9BFA1A42BBF4FD600E86487 /* NSUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C9BFA1A12BBF4FA200E86487 /* XCRemoteSwiftPackageReference "nsui" */;
-			productName = NSUI;
-		};
 		C9BFA1A82BC072E300E86487 /* Glyph */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Glyph;
-		};
-		C9BFA1B62BC162EF00E86487 /* NSUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C9BFA1A12BBF4FA200E86487 /* XCRemoteSwiftPackageReference "nsui" */;
-			productName = NSUI;
-		};
-		C9CDC24C2BDABFE000183752 /* NSUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C9BFA1A12BBF4FA200E86487 /* XCRemoteSwiftPackageReference "nsui" */;
-			productName = NSUI;
 		};
 		C9CDEB5B2B51621C009E252A /* ColorToolbox */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -5163,6 +5141,18 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C9CDEB8D2B56ACA3009E252A /* XCRemoteSwiftPackageReference "MainOffender" */;
 			productName = MainOffender;
+		};
+		C9D5D8F82FA0D1F9003C76EE /* Dependencies */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Dependencies;
+		};
+		C9D5D8FA2FA0D205003C76EE /* Dependencies */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Dependencies;
+		};
+		C9D5D8FC2FA0D235003C76EE /* Dependencies */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Dependencies;
 		};
 		C9D8C7FF2DB0026F0037FE3C /* TreeSitterParsers */ = {
 			isa = XCSwiftPackageProductDependency;
