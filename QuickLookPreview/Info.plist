@@ -23,8 +23,6 @@
 				<string>dev.go.go-sum</string>
 				<string>public.html</string>
 				<string>public.json</string>
-				<string>org.ocaml.ocaml</string>
-				<string>org.ocaml.ocaml-interface</string>
 				<string>public.python-script</string>
 				<string>public.ruby-script</string>
 				<string>org.rubygems.specification</string>
